@@ -55,6 +55,6 @@ const noteId = `${idPrefix}-note`;
     <label for={`${idPrefix}-website`}>{w.honeypot}</label>
     <input id={`${idPrefix}-website`} name="website" type="text" tabindex="-1" autocomplete="off" />
   </div>
-  <p class="note" id={noteId}>{w.privacy}</p>
+  <p class="note" id={noteId} set:html={w.privacyHtml} />
   <p class="status" id={statusId} role="status" aria-live="polite"></p>
 </form>

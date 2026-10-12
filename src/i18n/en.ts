@@ -261,7 +261,8 @@ export const en: Copy = {
     button: "Tell me",
     sending: "Saving…",
     honeypot: "Leave this field empty",
-    privacy: "We keep the address, this page’s language and the time. Nothing else.",
+    privacyHtml:
+      'We keep the e-mail, this page’s language and the time; no other personal data (the network address only counts the tries, hashed, and is gone within an hour). To leave the list, write to <a href="mailto:sergiosjs@pm.me">sergiosjs@pm.me</a>.',
     ok: "Done. We will tell you when there is something to download.",
     invalid: "That does not look like an e-mail. Check it and try again.",
     limited: "Too many tries from this network in a short time. Try again in an hour.",
@@ -270,7 +271,8 @@ export const en: Copy = {
   thanks: {
     metaTitle: "On the list — Verso",
     title: "Done, you are on the list.",
-    bodyHtml: "We will tell you when there is something to download. If the address was already on the list, nothing changed.",
+    bodyHtml:
+      'We will tell you when there is something to download. If the address was already on the list, nothing changed. No personal data besides the e-mail is kept; to leave the list, write to <a href="mailto:sergiosjs@pm.me">sergiosjs@pm.me</a>.',
     back: "Back to the start",
   },
   failed: {

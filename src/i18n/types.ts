@@ -60,7 +60,7 @@ export interface Copy {
     button: string;
     sending: string;
     honeypot: string;
-    privacy: string;
+    privacyHtml: string;
     ok: string;
     invalid: string;
     limited: string;

@@ -262,7 +262,8 @@ export const ptBR: Copy = {
     button: "Me avise",
     sending: "Guardando…",
     honeypot: "Deixe este campo vazio",
-    privacy: "Guardamos o endereço, o idioma desta página e a hora. Mais nada.",
+    privacyHtml:
+      'Guardamos o e-mail, o idioma desta página e a hora; nenhum outro dado pessoal (o endereço de rede só conta as tentativas, embaralhado, e some em uma hora). Para sair da lista, escreva para <a href="mailto:sergiosjs@pm.me">sergiosjs@pm.me</a>.',
     ok: "Pronto. Avisamos quando houver o que baixar.",
     invalid: "Isso não parece um e-mail. Confira e tente de novo.",
     limited: "Muitas tentativas desta rede em pouco tempo. Tente de novo daqui a uma hora.",
@@ -271,7 +272,8 @@ export const ptBR: Copy = {
   thanks: {
     metaTitle: "Na lista — Verso",
     title: "Pronto, você está na lista.",
-    bodyHtml: "Avisamos quando houver o que baixar. Se o endereço já estava na lista, nada mudou.",
+    bodyHtml:
+      'Avisamos quando houver o que baixar. Se o endereço já estava na lista, nada mudou. Além do e-mail, nenhum dado pessoal fica guardado; para sair da lista, escreva para <a href="mailto:sergiosjs@pm.me">sergiosjs@pm.me</a>.',
     back: "Voltar ao início",
   },
   failed: {
