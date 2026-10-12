@@ -17,107 +17,197 @@ const second = rest.join(" ");
 
 let n = 0;
 const next = () => ++n;
+const heroNumber = next();
+const stepNumbers = how.steps.map(() => next());
+const motionNumbers = motion.figures.map(() => next());
 ---
 
-<article class="page">
-  <header class="hero wide">
-    <p class="eyebrow">{hero.eyebrow}</p>
-    <h1>
-      <span class="md" aria-hidden="true">#</span>
-      <span class="h1-a">{first}</span>
-      {second && <span class="h1-b">{second}</span>}
-    </h1>
-    <div class="hero-body">
-      <p class="lede" set:html={hero.ledeHtml} />
-      <section class="props" aria-label={hero.propsLabel}>
-        <p class="props-label" aria-hidden="true">{hero.propsLabel}</p>
-        <dl>
-          {
-            hero.props.map((p) => (
-              <div>
-                <dt>{p.key}</dt>
-                <dd set:html={p.valueHtml} />
-              </div>
-            ))
-          }
-        </dl>
-      </section>
+<article class="landing">
+  <!-- The fold: the words on the left, the window on the right. -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{hero.eyebrow}</p>
+        <h1>
+          <span class="md" aria-hidden="true">#</span>
+          <span class="h1-a">{first}</span>
+          {second && <span class="h1-b">{second}</span>}
+        </h1>
+        <p class="lede" set:html={hero.ledeHtml} />
+        <p class="actions">
+          <a class="button" href={`#${ids.waitlist}`}>{hero.cta}</a>
+          <a class="quiet" href={`#${ids.notYet}`}>{hero.ctaSecondary}</a>
+        </p>
+      </div>
+      <Figure figure={hero.figure} label={copy.figLabel} number={heroNumber} eager class="hero-plate" />
     </div>
-    <p class="actions">
-      <a class="button" href={`#${ids.waitlist}`}>{hero.cta}</a>
-      <a class="quiet" href={`#${ids.notYet}`}>{hero.ctaSecondary}</a>
-    </p>
   </header>
 
-  <Figure figure={hero.figure} label={copy.figLabel} number={next()} eager class="wide hero-plate" />
-
-  <section class="block" aria-labelledby="who">
-    <h2 id="who"><span class="md" aria-hidden="true">##</span>{who.title}</h2>
-    <ul class="who">
-      {who.items.map((item) => <li>{item}</li>)}
-    </ul>
+  <!-- "In short": the properties, as the app shows a note's frontmatter. -->
+  <section class="facts" aria-label={hero.propsLabel}>
+    <div class="wrap">
+      <p class="facts-label" aria-hidden="true">{hero.propsLabel}</p>
+      <dl>
+        {
+          hero.props.map((p) => (
+            <div>
+              <dt>{p.key}</dt>
+              <dd set:html={p.valueHtml} />
+            </div>
+          ))
+        }
+      </dl>
+    </div>
   </section>
 
-  <section class="block" aria-labelledby={ids.how}>
-    <h2 id={ids.how}><span class="md" aria-hidden="true">##</span>{how.title}</h2>
-
-    <h3><span class="md" aria-hidden="true">###</span>{how.files.title}</h3>
-    {how.files.paragraphsHtml.map((p) => <p set:html={p} />)}
-
-    <h3><span class="md" aria-hidden="true">###</span>{how.server.title}</h3>
-    <p set:html={how.server.introHtml} />
-    <dl class="features">
-      {
-        how.server.items.map((item) => (
-          <div>
-            <dt>{item.term}</dt>
-            <dd set:html={item.textHtml} />
-          </div>
-        ))
-      }
-    </dl>
+  <section class="block values" aria-labelledby="who">
+    <div class="wrap">
+      <h2 id="who"><span class="md" aria-hidden="true">##</span>{who.title}</h2>
+      <ul class="cards">
+        {
+          who.items.map((item) => (
+            <li class="card">
+              <p class="card-kicker" aria-hidden="true">{item.kicker}</p>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 
-  <div class="plates-pair wide">
-    {how.figures.map((f) => <Figure figure={f} label={copy.figLabel} number={next()} />)}
-  </div>
+  <section class="block how" aria-labelledby={ids.how}>
+    <div class="wrap">
+      <h2 id={ids.how}><span class="md" aria-hidden="true">##</span>{how.title}</h2>
 
-  <section class="block" aria-labelledby="vps">
-    <h3 id="vps" class="h3-standalone"><span class="md" aria-hidden="true">###</span>{how.vps.title}</h3>
-    <p set:html={how.vps.introHtml} />
-    <div class="table-wrap" role="region" aria-labelledby="vps-caption" tabindex="0">
-      <table class="numbers">
-        <caption id="vps-caption">{how.vps.tableCaption}</caption>
-        <thead>
-          <tr><th scope="col">{how.vps.head[0]}</th><th scope="col">{how.vps.head[1]}</th></tr>
-        </thead>
-        <tbody>
+      <div class="files">
+        <h3>{how.files.title}</h3>
+        <div class="files-text">
+          {how.files.paragraphsHtml.map((p) => <p set:html={p} />)}
+        </div>
+      </div>
+
+      <div class="server-intro">
+        <h3>{how.server.title}</h3>
+        <p set:html={how.server.introHtml} />
+      </div>
+
+      <ol class="steps">
+        {
+          how.steps.map((step, i) => (
+            <li class="step">
+              <div class="step-text">
+                <p class="step-label">
+                  {how.stepLabel} <span class="step-n">{i + 1}</span>
+                </p>
+                <h4>{step.title}</h4>
+                <p set:html={step.textHtml} />
+              </div>
+              <Figure figure={step.figure} label={copy.figLabel} number={stepNumbers[i]} class="step-plate" />
+            </li>
+          ))
+        }
+      </ol>
+
+      <dl class="features">
+        {
+          how.server.items.map((item) => (
+            <div>
+              <dt>{item.term}</dt>
+              <dd set:html={item.textHtml} />
+            </div>
+          ))
+        }
+      </dl>
+
+      <div class="vps">
+        <h3 id="vps">{how.vps.title}</h3>
+        <p class="vps-intro" set:html={how.vps.introHtml} />
+        <ul class="stats">
           {
-            how.vps.rows.map(([what, measured]) => (
-              <tr>
-                <th scope="row">{what}</th>
-                <td>{measured}</td>
-              </tr>
+            how.vps.stats.map((s) => (
+              <li>
+                <span class="stat-value">{s.value}</span>
+                <span class="stat-label">{s.label}</span>
+              </li>
             ))
           }
-        </tbody>
-      </table>
+        </ul>
+        <details class="all-numbers">
+          <summary>{how.vps.allNumbers}</summary>
+          <div class="table-wrap" role="region" aria-labelledby="vps-caption" tabindex="0">
+            <table class="numbers">
+              <caption id="vps-caption">{how.vps.tableCaption}</caption>
+              <thead>
+                <tr><th scope="col">{how.vps.head[0]}</th><th scope="col">{how.vps.head[1]}</th></tr>
+              </thead>
+              <tbody>
+                {
+                  how.vps.rows.map(([what, measured]) => (
+                    <tr>
+                      <th scope="row">{what}</th>
+                      <td>{measured}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <div class="vps-after">
+          {how.vps.afterHtml.map((p, i) => <p class:list={[i > 0 && "aside"]} set:html={p} />)}
+        </div>
+      </div>
+
+      <p class="cta-strip">
+        <span>{waitlist.intro}</span>
+        <a class="button" href={`#${ids.waitlist}`}>{hero.cta}</a>
+      </p>
     </div>
-    {how.vps.afterHtml.map((p, i) => <p class:list={[i > 0 && "aside"]} set:html={p} />)}
   </section>
 
-  <section class="block wide motion" aria-labelledby="motion">
-    <div class="motion-head">
+  <section class="block motion" aria-labelledby="motion">
+    <div class="wrap">
       <h2 id="motion"><span class="md" aria-hidden="true">##</span>{motion.title}</h2>
-      <p class="aside">{motion.intro}</p>
-    </div>
-    <div class="motion-grid">
-      {motion.figures.map((f) => <Figure figure={f} label={copy.figLabel} number={next()} />)}
+      <p class="aside motion-intro">{motion.intro}</p>
+      <!--
+        Without JavaScript the four recordings stand one under the other and the
+        tab list stays hidden. The script below shows the tabs and one panel.
+      -->
+      <div class="tabs" data-tabs>
+        <div class="tablist" role="tablist" aria-label={motion.tabsLabel} hidden>
+          {
+            motion.tabs.map((label, i) => (
+              <button
+                type="button"
+                role="tab"
+                id={`tab-${i + 1}`}
+                aria-controls={`panel-${i + 1}`}
+                aria-selected={i === 0 ? "true" : "false"}
+                tabindex={i === 0 ? 0 : -1}
+              >
+                {label}
+              </button>
+            ))
+          }
+        </div>
+        {
+          motion.figures.map((f, i) => (
+            <div class="panel" id={`panel-${i + 1}`} data-panel>
+              <Figure figure={f} label={copy.figLabel} number={motionNumbers[i]} />
+              <button type="button" class="play" aria-pressed="false" hidden>
+                {motion.play}
+              </button>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 
-  <section class="not-yet full" aria-labelledby={ids.notYet}>
-    <div class="not-yet-inner">
+  <section class="not-yet" aria-labelledby={ids.notYet}>
+    <div class="wrap">
       <h2 id={ids.notYet}><span class="md" aria-hidden="true">##</span>{notYet.title}</h2>
       <p class="aside">{notYet.intro}</p>
       <ul>
@@ -133,19 +223,23 @@ const next = () => ++n;
     </div>
   </section>
 
-  <section class="block" aria-labelledby={ids.faq}>
-    <h2 id={ids.faq}><span class="md" aria-hidden="true">##</span>{faq.title}</h2>
-    {
-      faq.items.map((item) => (
-        <div class="qa">
-          <h3>{item.q}</h3>
-          {item.aHtml.map((p) => <p set:html={p} />)}
-        </div>
-      ))
-    }
+  <section class="block faq" aria-labelledby={ids.faq}>
+    <div class="wrap">
+      <h2 id={ids.faq}><span class="md" aria-hidden="true">##</span>{faq.title}</h2>
+      <div class="qa-list">
+        {
+          faq.items.map((item) => (
+            <details class="qa">
+              <summary>{item.q}</summary>
+              <div class="qa-a">{item.aHtml.map((p) => <p set:html={p} />)}</div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
   </section>
 
-  <section class="waitlist full" aria-labelledby={ids.waitlist}>
+  <section class="waitlist" aria-labelledby={ids.waitlist}>
     <div class="waitlist-inner">
       <h2 id={ids.waitlist}><span class="md" aria-hidden="true">##</span>{waitlist.title}</h2>
       <p>{waitlist.intro}</p>
@@ -154,3 +248,78 @@ const next = () => ++n;
   </section>
 </article>
 <script is:inline src="/waitlist.js" defer></script>
+<script>
+  // The recordings as tabs (WAI-ARIA tabs pattern, automatic activation):
+  // one panel at a time, roving tabindex, arrows / Home / End. With reduced
+  // motion the posters stay and a button plays the one in view.
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-tabs]")) {
+    const list = root.querySelector<HTMLElement>("[role=tablist]");
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>("[role=tab]"));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>("[data-panel]"));
+    if (!list || tabs.length === 0 || tabs.length !== panels.length) continue;
+
+    panels.forEach((panel, i) => {
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", tabs[i].id);
+      panel.tabIndex = 0;
+    });
+
+    const select = (index: number, focus: boolean) => {
+      tabs.forEach((tab, i) => {
+        const on = i === index;
+        tab.setAttribute("aria-selected", on ? "true" : "false");
+        tab.tabIndex = on ? 0 : -1;
+        panels[i].hidden = !on;
+      });
+      if (focus) tabs[index].focus();
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => select(i, false));
+      tab.addEventListener("keydown", (event) => {
+        const last = tabs.length - 1;
+        let to = -1;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") to = i === last ? 0 : i + 1;
+        else if (event.key === "ArrowLeft" || event.key === "ArrowUp") to = i === 0 ? last : i - 1;
+        else if (event.key === "Home") to = 0;
+        else if (event.key === "End") to = last;
+        if (to < 0) return;
+        event.preventDefault();
+        select(to, true);
+      });
+    });
+
+    list.hidden = false;
+    root.classList.add("is-tabbed");
+    select(0, false);
+
+    // Reduced motion: a still until asked. "Play" turns the still source off,
+    // which makes the picture choose the recording; pressing again restores it.
+    const syncPlayButtons = () => {
+      for (const panel of panels) {
+        const button = panel.querySelector<HTMLButtonElement>(".play");
+        const still = panel.querySelector<HTMLSourceElement>("source[data-still]");
+        if (!button || !still) continue;
+        button.hidden = !reduce.matches;
+        if (!reduce.matches) {
+          still.media = "(prefers-reduced-motion: reduce)";
+          button.setAttribute("aria-pressed", "false");
+        }
+      }
+    };
+    for (const panel of panels) {
+      const button = panel.querySelector<HTMLButtonElement>(".play");
+      const still = panel.querySelector<HTMLSourceElement>("source[data-still]");
+      if (!button || !still) continue;
+      button.addEventListener("click", () => {
+        const playing = button.getAttribute("aria-pressed") === "true";
+        still.media = playing ? "(prefers-reduced-motion: reduce)" : "not all";
+        button.setAttribute("aria-pressed", playing ? "false" : "true");
+      });
+    }
+    syncPlayButtons();
+    reduce.addEventListener("change", syncPlayButtons);
+  }
+</script>

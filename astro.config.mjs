@@ -19,4 +19,7 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   devToolbar: { enabled: false },
+  // Astro inlines a small processed <script>; the policy's script-src 'self'
+  // forbids inline code, so every script is emitted as a file in /_astro/.
+  vite: { build: { assetsInlineLimit: 0 } },
 });

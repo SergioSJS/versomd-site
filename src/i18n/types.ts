@@ -7,7 +7,9 @@ export type Lang = "pt-BR" | "en";
 export interface Figure {
   /** File stem under /media: <stem>.gif (or .png), <stem>.png poster. */
   stem: string;
-  kind: "gif" | "still";
+  /** gif: a recording; still: a screenshot (PNG + WebP); poster: the first
+   *  frame of a recording, shown as a still (<stem>.png only, no WebP). */
+  kind: "gif" | "still" | "poster";
   /** An animated WebP exists beside the GIF (smaller); only when it helps. */
   webp?: boolean;
   width: number;
@@ -34,22 +36,40 @@ export interface Copy {
     ctaSecondary: string;
     figure: Figure;
   };
-  who: { title: string; items: string[] };
+  /** The three value cards after the hero: a small mark, a title, and the
+   *  "who it is for" sentence that goes with it. */
+  who: { title: string; items: { kicker: string; title: string; text: string }[] };
   how: {
     title: string;
     files: { title: string; paragraphsHtml: string[] };
     server: { title: string; introHtml: string; items: { term: string; textHtml: string }[] };
+    /** "Step", before each step's number. */
+    stepLabel: string;
+    /** Three steps, each with its picture beside it. */
+    steps: { title: string; textHtml: string; figure: Figure }[];
     vps: {
       title: string;
       introHtml: string;
+      /** The four highlights shown as a row; the table has every number. */
+      stats: { value: string; label: string }[];
+      /** The disclosure that holds the full table. */
+      allNumbers: string;
       tableCaption: string;
       head: [string, string];
       rows: [string, string][];
       afterHtml: string[];
     };
+  };
+  motion: {
+    title: string;
+    intro: string;
+    /** The tab list's accessible name, and one short label per recording. */
+    tabsLabel: string;
+    tabs: string[];
+    /** With reduced motion, the posters show; this button plays one. */
+    play: string;
     figures: Figure[];
   };
-  motion: { title: string; intro: string; figures: Figure[] };
   notYet: { title: string; intro: string; items: { lead: string; textHtml: string }[] };
   faq: { title: string; items: { q: string; aHtml: string[] }[] };
   waitlist: {

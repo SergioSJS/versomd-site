@@ -1,7 +1,8 @@
 # Cloudflare Pages response headers (https://developers.cloudflare.com/pages/configuration/headers/).
 # No inline script or style anywhere in the build, so the policy needs no
-# 'unsafe-inline'; the only script is /waitlist.js, and it talks only to
-# /api/waitlist on this origin.
+# 'unsafe-inline'. Two scripts, both files on this origin: /waitlist.js, which
+# talks only to /api/waitlist, and the recordings' tabs, which Astro bundles
+# into /_astro/ (astro.config.mjs keeps it from being inlined).
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'; object-src 'none'
   Referrer-Policy: no-referrer

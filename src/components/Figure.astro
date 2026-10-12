@@ -16,15 +16,18 @@ const loading = eager ? "eager" : "lazy";
 const shape = figure.width / figure.height < 0.8 ? "tall" : figure.width / figure.height < 1.2 ? "square" : "wide";
 ---
 
-<figure class:list={["plate", `plate--${shape}`, figure.kind === "gif" && "plate--motion", className]}>
+<figure class:list={["plate", `plate--${shape}`, `plate--${figure.kind}`, className]}>
   {
     figure.kind === "gif" ? (
       <picture>
-        {/* Reduced motion: the first frame, still. */}
-        <source media="(prefers-reduced-motion: reduce)" srcset={`${base}.png`} />
+        {/* Reduced motion: the first frame, still. The tabs' script can turn
+            this source off ("play") and back on. */}
+        <source media="(prefers-reduced-motion: reduce)" srcset={`${base}.png`} data-still />
         {figure.webp && <source type="image/webp" srcset={`${base}.webp`} />}
         <img src={`${base}.gif`} width={figure.width} height={figure.height} alt={figure.alt} loading={loading} decoding="async" />
       </picture>
+    ) : figure.kind === "poster" ? (
+      <img src={`${base}.png`} width={figure.width} height={figure.height} alt={figure.alt} loading={loading} decoding="async" />
     ) : (
       <picture>
         <source type="image/webp" srcset={`${base}.webp`} />

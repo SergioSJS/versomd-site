@@ -50,9 +50,21 @@ export const ptBR: Copy = {
   who: {
     title: "Para quem é",
     items: [
-      "Para quem já guarda notas em Markdown — no Obsidian ou numa pasta qualquer — e quer as mesmas notas no computador, no navegador e no celular sem um serviço de terceiros no meio.",
-      "Para uma casa, um grupo de RPG ou um time pequeno que quer partilhar pastas num servidor que alguém de confiança roda.",
-      "Para quem quer que um agente de IA leia as notas: o Verso traz um servidor MCP que busca e lê a pasta, sem depender de um provedor de modelo.",
+      {
+        kicker: ".md",
+        title: "Os arquivos são a verdade",
+        text: "Para quem já guarda notas em Markdown — no Obsidian ou numa pasta qualquer — e quer as mesmas notas no computador, no navegador e no celular sem um serviço de terceiros no meio.",
+      },
+      {
+        kicker: "UniVerso",
+        title: "O servidor é seu",
+        text: "Para uma casa, um grupo de RPG ou um time pequeno que quer partilhar pastas num servidor que alguém de confiança roda.",
+      },
+      {
+        kicker: "MCP",
+        title: "Um agente lê as notas",
+        text: "Para quem quer que um agente de IA leia as notas: o Verso traz um servidor MCP que busca e lê a pasta, sem depender de um provedor de modelo.",
+      },
     ],
   },
   how: {
@@ -101,10 +113,59 @@ export const ptBR: Copy = {
         },
       ],
     },
+    stepLabel: "Passo",
+    steps: [
+      {
+        title: "Ligue uma pasta ao UniVerso",
+        textHtml:
+          "Em Ajustes › Sincronizar, uma pasta deste computador passa a ficar em dia com uma pasta do UniVerso. A mudança cruza ao salvar, e a primeira sincronização não apaga nada.",
+        figure: {
+          stem: "sincronizar-tudo-em-dia",
+          kind: "still",
+          width: 990,
+          height: 660,
+          alt: "O painel Sincronizar dos ajustes do Verso, com o título “Tudo em dia.”, a linha “demo-vault em notas.casa · você é dona da pasta · última vez há 2 min”, os botões Sincronizar agora, Pausar e Desligar, e a seção Esperando por você, vazia.",
+          captionHtml: "Ajustes › Sincronizar quando não há nada esperando por você.",
+        },
+      },
+      {
+        title: "Abra no navegador e no celular",
+        textHtml:
+          "O UniVerso serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial. Cada pasta aparece com o seu papel nela: dona, edita ou só lê.",
+        figure: {
+          stem: "celular-servidores",
+          kind: "still",
+          width: 390,
+          height: 844,
+          alt: "Os ajustes do Verso num celular, na seção Servidores: um UniVerso chamado notas.casa, a conta conectada e três pastas com o papel da pessoa em cada uma — Caderno (dona), Mesa de RPG (edita), Regras da Bia (só lê) — cada uma com o botão Abrir aqui.",
+          captionHtml: "No celular: as pastas de um UniVerso, com o papel de cada pessoa — dona, edita, só lê.",
+        },
+      },
+      {
+        title: "Administre pelo console",
+        textHtml:
+          "Ninguém se cadastra sozinho: quem administra convida. Em <code>/admin</code> ficam as contas, as pastas, os convites, as cotas e o registro de auditoria.",
+        figure: {
+          stem: "universo-console-admin",
+          kind: "poster",
+          width: 1080,
+          height: 1026,
+          alt: "O console de administração do UniVerso, no tema escuro, na página Contas: três contas (admin, Ana e Bia), com e-mail, pastas, espaço usado, último acesso e data de criação. Ao lado, o menu Visão geral, Contas, Pastas, Convites, Registro e Servidor.",
+          captionHtml: "O console de quem administra, na página Contas.",
+        },
+      },
+    ],
     vps: {
       title: "Uma VPS de 1 GB dá conta",
       introHtml:
         "Medimos numa máquina virtual do tamanho da menor VPS: 1 núcleo, 1 GB de memória, disco virtual de 10 GB, Ubuntu sem interface gráfica e o UniVerso instalado do <code>.deb</code>. Quatro computadores — dois Macs, um Windows e um Linux — sincronizaram com ela uma pasta de 133 arquivos e 62 MB.",
+      stats: [
+        { value: "~18 MB", label: "de memória com o programa recém-iniciado" },
+        { value: "< 2 %", label: "de CPU em 20 minutos com os quatro editando" },
+        { value: "69 s", label: "a primeira sincronização dos 62 MB para os quatro ao mesmo tempo" },
+        { value: "50", label: "aparelhos gravando juntos por 60 s, sem nenhum problema de integridade" },
+      ],
+      allNumbers: "Todos os números",
       tableCaption: "O que a máquina de 1 núcleo e 1 GB mostrou",
       head: ["Situação", "Medido"],
       rows: [
@@ -121,29 +182,14 @@ export const ptBR: Copy = {
         "As vazões vêm do build usado nos testes; a memória depois da rajada, do build que é distribuído. Os números completos estão no guia de instalação do servidor, que sai junto com o código.",
       ],
     },
-    figures: [
-      {
-        stem: "sincronizar-tudo-em-dia",
-        kind: "still",
-        width: 990,
-        height: 660,
-        alt: "O painel Sincronizar dos ajustes do Verso, com o título “Tudo em dia.”, a linha “demo-vault em notas.casa · você é dona da pasta · última vez há 2 min”, os botões Sincronizar agora, Pausar e Desligar, e a seção Esperando por você, vazia.",
-        captionHtml: "Ajustes › Sincronizar quando não há nada esperando por você.",
-      },
-      {
-        stem: "celular-servidores",
-        kind: "still",
-        width: 390,
-        height: 844,
-        alt: "Os ajustes do Verso num celular, na seção Servidores: um UniVerso chamado notas.casa, a conta conectada e três pastas com o papel da pessoa em cada uma — Caderno (dona), Mesa de RPG (edita), Regras da Bia (só lê) — cada uma com o botão Abrir aqui.",
-        captionHtml: "No celular: as pastas de um UniVerso, com o papel de cada pessoa — dona, edita, só lê.",
-      },
-    ],
   },
   motion: {
     title: "Funcionando",
     intro:
       "Gravado no laboratório de testes do Verso — por isso as pastas cheias de notas numeradas e de cópias de conflito.",
+    tabsLabel: "Gravações",
+    tabs: ["Ao vivo no navegador", "Conflitos", "Guardar os dois", "Console"],
+    play: "Reproduzir a gravação",
     figures: [
       {
         stem: "universo-nota-chega-ao-vivo",

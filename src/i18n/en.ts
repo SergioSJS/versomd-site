@@ -49,9 +49,21 @@ export const en: Copy = {
   who: {
     title: "Who it is for",
     items: [
-      "For people who already keep notes in Markdown — in Obsidian or in any folder — and want the same notes on the computer, in the browser and on the phone without a third-party service in between.",
-      "For a household, a tabletop RPG group or a small team that wants to share folders on a server someone they trust runs.",
-      "For people who want an AI agent to read the notes: Verso has an MCP server that searches and reads the folder, tied to no model provider.",
+      {
+        kicker: ".md",
+        title: "The files are the truth",
+        text: "For people who already keep notes in Markdown — in Obsidian or in any folder — and want the same notes on the computer, in the browser and on the phone without a third-party service in between.",
+      },
+      {
+        kicker: "UniVerso",
+        title: "The server is yours",
+        text: "For a household, a tabletop RPG group or a small team that wants to share folders on a server someone they trust runs.",
+      },
+      {
+        kicker: "MCP",
+        title: "An agent reads the notes",
+        text: "For people who want an AI agent to read the notes: Verso has an MCP server that searches and reads the folder, tied to no model provider.",
+      },
     ],
   },
   how: {
@@ -100,10 +112,59 @@ export const en: Copy = {
         },
       ],
     },
+    stepLabel: "Step",
+    steps: [
+      {
+        title: "Connect a folder to a UniVerso",
+        textHtml:
+          "In Settings › Sync, a folder of this computer starts to stay in step with a folder of the UniVerso. A change crosses when saved, and the first sync deletes nothing.",
+        figure: {
+          stem: "sincronizar-tudo-em-dia",
+          kind: "still",
+          width: 990,
+          height: 660,
+          alt: "The Sync panel of Verso’s settings, in Portuguese, titled “Tudo em dia.” (All up to date), with the line “demo-vault on notas.casa · you own the folder · last time 2 min ago”, the buttons Sync now, Pause and Turn off, and an empty Waiting for you section.",
+          captionHtml: "Settings › Sync when nothing is waiting for you.",
+        },
+      },
+      {
+        title: "Open it in a browser and on a phone",
+        textHtml:
+          "UniVerso serves the app’s own window; on a phone and a tablet it installs on the home screen. Each folder shows your role in it: owner, edits or reads only.",
+        figure: {
+          stem: "celular-servidores",
+          kind: "still",
+          width: 390,
+          height: 844,
+          alt: "Verso’s settings on a phone, in Portuguese, in the Servers section: a UniVerso named notas.casa, the account signed in, and three folders with the person’s role in each — Caderno (owner), Mesa de RPG (edits), Regras da Bia (reads only) — each with an Open here button.",
+          captionHtml: "On a phone: a UniVerso’s folders, with each person’s role — owner, edits, reads only.",
+        },
+      },
+      {
+        title: "Run it from the console",
+        textHtml:
+          "Nobody signs themselves up: the admin invites. At <code>/admin</code> are the accounts, the folders, the invitations, the quotas and the audit log.",
+        figure: {
+          stem: "universo-console-admin",
+          kind: "poster",
+          width: 1080,
+          height: 1026,
+          alt: "UniVerso’s administration console, in Portuguese and in the dark theme, on the Accounts page: three accounts (admin, Ana and Bia), with e-mail, folders, space used, last access and creation date. Beside it, the menu Overview, Accounts, Folders, Invitations, Log and Server.",
+          captionHtml: "The admin’s console, on the Accounts page.",
+        },
+      },
+    ],
     vps: {
       title: "A 1 GB VPS is enough",
       introHtml:
         "We measured on a virtual machine sized like the smallest VPS: 1 core, 1 GB of memory, a 10 GB virtual disk, Ubuntu with no desktop, and UniVerso installed from the <code>.deb</code>. Four computers — two Macs, one Windows, one Linux — synced a folder of 133 files and 62 MB with it.",
+      stats: [
+        { value: "~18 MB", label: "of memory with the program just started" },
+        { value: "< 2 %", label: "CPU over 20 minutes of the four editing" },
+        { value: "69 s", label: "for the first sync of the 62 MB to the four at once" },
+        { value: "50", label: "devices writing at once for 60 s, with no integrity problem" },
+      ],
+      allNumbers: "All the numbers",
       tableCaption: "What the 1-core, 1 GB machine showed",
       head: ["Situation", "Measured"],
       rows: [
@@ -120,29 +181,14 @@ export const en: Copy = {
         "The throughput figures come from the build used in the tests; the memory after a burst, from the build that ships. The full numbers are in the server’s install guide, which comes out with the code.",
       ],
     },
-    figures: [
-      {
-        stem: "sincronizar-tudo-em-dia",
-        kind: "still",
-        width: 990,
-        height: 660,
-        alt: "The Sync panel of Verso’s settings, in Portuguese, titled “Tudo em dia.” (All up to date), with the line “demo-vault on notas.casa · you own the folder · last time 2 min ago”, the buttons Sync now, Pause and Turn off, and an empty Waiting for you section.",
-        captionHtml: "Settings › Sync when nothing is waiting for you.",
-      },
-      {
-        stem: "celular-servidores",
-        kind: "still",
-        width: 390,
-        height: 844,
-        alt: "Verso’s settings on a phone, in Portuguese, in the Servers section: a UniVerso named notas.casa, the account signed in, and three folders with the person’s role in each — Caderno (owner), Mesa de RPG (edits), Regras da Bia (reads only) — each with an Open here button.",
-        captionHtml: "On a phone: a UniVerso’s folders, with each person’s role — owner, edits, reads only.",
-      },
-    ],
   },
   motion: {
     title: "At work",
     intro:
       "Recorded in Verso’s test lab, in Portuguese — hence the folders full of numbered notes and conflict copies.",
+    tabsLabel: "Recordings",
+    tabs: ["Live in the browser", "Conflicts", "Keep both", "Console"],
+    play: "Play the recording",
     figures: [
       {
         stem: "universo-nota-chega-ao-vivo",
