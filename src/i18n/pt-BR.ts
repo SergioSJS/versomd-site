@@ -295,6 +295,13 @@ export const ptBR: Copy = {
         ],
       },
       {
+        q: "Como sei que o site e o download são oficiais?",
+        aHtml: [
+          "O site do Verso é só este, <span lang=\"en\">versomd.com</span>; o código dele é público em <a href=\"https://github.com/SergioSJS/versomd-site\">github.com/SergioSJS/versomd-site</a>.",
+          "Os instaladores e os pacotes do UniVerso saem só nas versões publicadas no GitHub de SergioSJS e são assinados com minisign. A chave pública é <code>RWS1zv2nvs/ng1hA0YspwOg7wGda98zkXjVfx8m9CtT5obRW5zabNHaT</code>. O app confere a assinatura antes de se atualizar, e o <code>universo.sh</code> antes de instalar. Um arquivo assinado com outra chave, ou um site com outro endereço, não é nosso."
+        ],
+      },
+      {
         q: "Quando abre?",
         aHtml: ["Sem data marcada. Deixe o e-mail e avisamos quando houver o que baixar."],
       },
@@ -329,7 +336,7 @@ export const ptBR: Copy = {
     back: "Voltar ao início",
   },
   footer: {
-    lineHtml: "Verso · <span lang=\"en\">versomd.com</span> · MPL-2.0",
+    lineHtml: "Verso · <span lang=\"en\">versomd.com</span> · MPL-2.0 · <a href=\"https://github.com/SergioSJS/versomd-site\">código deste site</a>",
     fontsHtml:
       "Fraunces, Literata e Instrument Sans, sob a SIL Open Font License — as mesmas fontes e cores da janela do app.",
     noTracking: "Sem analytics, sem cookies.",

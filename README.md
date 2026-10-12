@@ -141,3 +141,28 @@ Nothing here is a secret. The only one the project uses is the optional
 `.github/workflows/check.yml` runs on pull requests only: `npm ci`, build,
 `astro check` and the Function's types, then the tokens check. One Linux job;
 Cloudflare Pages builds `main` by itself.
+
+## Licence and authenticity
+
+- **The site's code** (everything under `src/`, `functions/`, `scripts/`,
+  `public/*.js`, the configuration) is under the Mozilla Public License 2.0,
+  the same licence as Verso: see `LICENSE`.
+- **The text, the screenshots and recordings, the icon and the names
+  Verso and UniVerso** are © 2026 Sérgio J. Sousa, all rights reserved. They
+  are not covered by the MPL: a copy of this site under another address may
+  not reuse them.
+- **The fonts** are under the SIL Open Font License 1.1, with their licences
+  beside them in `public/fonts/`.
+
+The official site is **https://versomd.com**; its source is this repository.
+Verso's builds and UniVerso's packages come only from the releases of
+**github.com/SergioSJS/verso**, signed with minisign:
+
+```
+RWS1zv2nvs/ng1hA0YspwOg7wGda98zkXjVfx8m9CtT5obRW5zabNHaT
+```
+
+The app checks that signature before it updates itself; `universo.sh`
+checks it before it installs. `public/universo.sh` is a copy of
+`packaging/server/universo.sh` in the product repository, which is the
+source.
