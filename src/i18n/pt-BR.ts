@@ -175,10 +175,10 @@ export const ptBR: Copy = {
         ["Um aparelho gravando sozinho", "cerca de 100 ms por gravação — o tempo do disco"],
         ["50 aparelhos gravando ao mesmo tempo por 60 s", "1001 operações; metade esperou até 4,5 s na fila do disco; nenhum problema de integridade"],
         ["Depois de uma rajada de 50, no build distribuído", "cerca de 70 MB retidos"],
-        ["Numa máquina com 453 MiB de memória", "duas rajadas de 50 sem o processo ser derrubado, com metade da vazão"],
+        ["Numa máquina com 453 MiB de memória", "dez aparelhos baixando uma pasta de 181 MB ao mesmo tempo: pico de 44 MB; rajadas de 50 sem o processo ser derrubado, com metade da vazão"],
       ],
       afterHtml: [
-        "O mínimo que indicamos: 1 núcleo e 512 MB, para 1 a 3 pessoas com anexos pequenos. Para uma família ou um time de até umas 10 pessoas, 2 núcleos e 2 GB — uma estimativa, ainda não medida. A máquina estava na rede local, não num provedor; Raspberry Pi e NAS ainda não foram medidos.",
+        "O mínimo que indicamos: 1 núcleo e 512 MB, para uma família ou um time pequeno — medido com até dez aparelhos, anexos de qualquer tamanho. Com 1 GB sobra folga. A máquina estava na rede local, não num provedor; Raspberry Pi e NAS ainda não foram medidos.",
         "As vazões vêm do build usado nos testes; a memória depois da rajada, do build que é distribuído. Os números completos estão no guia de instalação do servidor, que sai junto com o código.",
       ],
     },

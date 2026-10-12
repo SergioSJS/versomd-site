@@ -174,10 +174,10 @@ export const en: Copy = {
         ["One device writing alone", "about 100 ms per write — the disk’s time"],
         ["50 devices writing at once for 60 s", "1001 operations; half waited up to 4.5 s in the disk’s queue; no integrity problem"],
         ["After a burst of 50, in the shipped build", "about 70 MB held"],
-        ["On a machine with 453 MiB of memory", "two bursts of 50 without the process being killed, at half the throughput"],
+        ["On a machine with 453 MiB of memory", "ten devices fetching a 181 MB folder at once: a 44 MB peak; bursts of 50 without the process being killed, at half the throughput"],
       ],
       afterHtml: [
-        "The minimum we suggest: 1 core and 512 MB, for 1 to 3 people with small attachments. For a family or a team of up to about 10 people, 2 cores and 2 GB — an estimate, not measured yet. The machine was on the local network, not at a provider; a Raspberry Pi and a NAS have not been measured yet.",
+        "The minimum we suggest: 1 core and 512 MB, for a family or a small team — measured with up to ten devices, attachments of any size. 1 GB leaves room to spare. The machine was on the local network, not at a provider; a Raspberry Pi and a NAS have not been measured yet.",
         "The throughput figures come from the build used in the tests; the memory after a burst, from the build that ships. The full numbers are in the server’s install guide, which comes out with the code.",
       ],
     },
