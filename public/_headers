@@ -18,3 +18,10 @@
 
 /media/*
   Cache-Control: public, max-age=86400
+
+# The UniVerso installer script, a copy of packaging/server/universo.sh in
+# the Verso repository (the source). Served as text, so a browser shows it
+# to be read and nothing runs it.
+/universo.sh
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=300
