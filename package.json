@@ -1,0 +1,26 @@
+{
+  "name": "versomd-site",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "The landing page of Verso at versomd.com",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc -p functions",
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "check:functions": "tsc -p functions"
+  },
+  "dependencies": {
+    "astro": "5.18.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@cloudflare/workers-types": "5.20261010.1",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

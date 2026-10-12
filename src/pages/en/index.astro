@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import Landing from "../../components/Landing.astro";
+import { copies } from "../../i18n";
+
+const copy = copies["en"];
+---
+
+<Base copy={copy} title={copy.meta.title} description={copy.meta.description} path="/en/" altPath="/">
+  <Landing copy={copy} />
+</Base>

@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import Note from "../../components/Note.astro";
+import { copies } from "../../i18n";
+
+const copy = copies["en"];
+---
+
+<Base copy={copy} title={copy.thanks.metaTitle} description={copy.meta.description} path="/en/thanks/" altPath="/obrigado/" noindex>
+  <Note copy={copy} kind="thanks" />
+</Base>

@@ -1,0 +1,47 @@
+---
+import type { Figure } from "../i18n";
+
+interface Props {
+  figure: Figure;
+  label: string;
+  number: number;
+  /** The hero's picture loads at once; the rest when scrolled to. */
+  eager?: boolean;
+  class?: string;
+}
+
+const { figure, label, number, eager = false, class: className = "" } = Astro.props;
+const base = `/media/${figure.stem}`;
+const loading = eager ? "eager" : "lazy";
+const shape = figure.width / figure.height < 0.8 ? "tall" : figure.width / figure.height < 1.2 ? "square" : "wide";
+---
+
+<figure class:list={["plate", `plate--${shape}`, figure.kind === "gif" && "plate--motion", className]}>
+  {
+    figure.kind === "gif" ? (
+      <picture>
+        {/* Reduced motion: the first frame, still. */}
+        <source media="(prefers-reduced-motion: reduce)" srcset={`${base}.png`} />
+        {figure.webp && <source type="image/webp" srcset={`${base}.webp`} />}
+        <img src={`${base}.gif`} width={figure.width} height={figure.height} alt={figure.alt} loading={loading} decoding="async" />
+      </picture>
+    ) : (
+      <picture>
+        <source type="image/webp" srcset={`${base}.webp`} />
+        <img
+          src={`${base}.png`}
+          width={figure.width}
+          height={figure.height}
+          alt={figure.alt}
+          loading={loading}
+          decoding="async"
+          fetchpriority={eager ? "high" : undefined}
+        />
+      </picture>
+    )
+  }
+  <figcaption>
+    <span class="plate-label">{label} {number}</span>
+    <span set:html={figure.captionHtml} />
+  </figcaption>
+</figure>

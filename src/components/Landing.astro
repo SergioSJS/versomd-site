@@ -1,0 +1,156 @@
+---
+import type { Copy } from "../i18n";
+import Figure from "./Figure.astro";
+import WaitlistForm from "./WaitlistForm.astro";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const { hero, who, how, motion, notYet, faq, waitlist, ids } = copy;
+
+// The title is two sentences; the second is set apart, as the app sets a
+// note's title apart from its body.
+const [first, ...rest] = hero.title.split(/(?<=\.)\s+/);
+const second = rest.join(" ");
+
+let n = 0;
+const next = () => ++n;
+---
+
+<article class="page">
+  <header class="hero wide">
+    <p class="eyebrow">{hero.eyebrow}</p>
+    <h1>
+      <span class="md" aria-hidden="true">#</span>
+      <span class="h1-a">{first}</span>
+      {second && <span class="h1-b">{second}</span>}
+    </h1>
+    <div class="hero-body">
+      <p class="lede" set:html={hero.ledeHtml} />
+      <section class="props" aria-label={hero.propsLabel}>
+        <p class="props-label" aria-hidden="true">{hero.propsLabel}</p>
+        <dl>
+          {
+            hero.props.map((p) => (
+              <div>
+                <dt>{p.key}</dt>
+                <dd set:html={p.valueHtml} />
+              </div>
+            ))
+          }
+        </dl>
+      </section>
+    </div>
+    <p class="actions">
+      <a class="button" href={`#${ids.waitlist}`}>{hero.cta}</a>
+      <a class="quiet" href={`#${ids.notYet}`}>{hero.ctaSecondary}</a>
+    </p>
+  </header>
+
+  <Figure figure={hero.figure} label={copy.figLabel} number={next()} eager class="wide hero-plate" />
+
+  <section class="block" aria-labelledby="who">
+    <h2 id="who"><span class="md" aria-hidden="true">##</span>{who.title}</h2>
+    <ul class="who">
+      {who.items.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby={ids.how}>
+    <h2 id={ids.how}><span class="md" aria-hidden="true">##</span>{how.title}</h2>
+
+    <h3><span class="md" aria-hidden="true">###</span>{how.files.title}</h3>
+    {how.files.paragraphsHtml.map((p) => <p set:html={p} />)}
+
+    <h3><span class="md" aria-hidden="true">###</span>{how.server.title}</h3>
+    <p set:html={how.server.introHtml} />
+    <dl class="features">
+      {
+        how.server.items.map((item) => (
+          <div>
+            <dt>{item.term}</dt>
+            <dd set:html={item.textHtml} />
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <div class="plates-pair wide">
+    {how.figures.map((f) => <Figure figure={f} label={copy.figLabel} number={next()} />)}
+  </div>
+
+  <section class="block" aria-labelledby="vps">
+    <h3 id="vps" class="h3-standalone"><span class="md" aria-hidden="true">###</span>{how.vps.title}</h3>
+    <p set:html={how.vps.introHtml} />
+    <div class="table-wrap" role="region" aria-labelledby="vps-caption" tabindex="0">
+      <table class="numbers">
+        <caption id="vps-caption">{how.vps.tableCaption}</caption>
+        <thead>
+          <tr><th scope="col">{how.vps.head[0]}</th><th scope="col">{how.vps.head[1]}</th></tr>
+        </thead>
+        <tbody>
+          {
+            how.vps.rows.map(([what, measured]) => (
+              <tr>
+                <th scope="row">{what}</th>
+                <td>{measured}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    {how.vps.afterHtml.map((p, i) => <p class:list={[i > 0 && "aside"]} set:html={p} />)}
+  </section>
+
+  <section class="block wide motion" aria-labelledby="motion">
+    <div class="motion-head">
+      <h2 id="motion"><span class="md" aria-hidden="true">##</span>{motion.title}</h2>
+      <p class="aside">{motion.intro}</p>
+    </div>
+    <div class="motion-grid">
+      {motion.figures.map((f) => <Figure figure={f} label={copy.figLabel} number={next()} />)}
+    </div>
+  </section>
+
+  <section class="not-yet full" aria-labelledby={ids.notYet}>
+    <div class="not-yet-inner">
+      <h2 id={ids.notYet}><span class="md" aria-hidden="true">##</span>{notYet.title}</h2>
+      <p class="aside">{notYet.intro}</p>
+      <ul>
+        {
+          notYet.items.map((item) => (
+            <li>
+              <strong>{item.lead}</strong>
+              <span set:html={item.textHtml} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby={ids.faq}>
+    <h2 id={ids.faq}><span class="md" aria-hidden="true">##</span>{faq.title}</h2>
+    {
+      faq.items.map((item) => (
+        <div class="qa">
+          <h3>{item.q}</h3>
+          {item.aHtml.map((p) => <p set:html={p} />)}
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="waitlist full" aria-labelledby={ids.waitlist}>
+    <div class="waitlist-inner">
+      <h2 id={ids.waitlist}><span class="md" aria-hidden="true">##</span>{waitlist.title}</h2>
+      <p>{waitlist.intro}</p>
+      <WaitlistForm copy={copy} />
+    </div>
+  </section>
+</article>
+<script is:inline src="/waitlist.js" defer></script>

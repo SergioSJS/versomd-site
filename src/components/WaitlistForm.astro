@@ -1,0 +1,60 @@
+---
+import type { Copy } from "../i18n";
+
+interface Props {
+  copy: Copy;
+  /** A second form on the same page needs its own ids. */
+  idPrefix?: string;
+}
+
+const { copy, idPrefix = "wl" } = Astro.props;
+const w = copy.waitlist;
+const emailId = `${idPrefix}-email`;
+const statusId = `${idPrefix}-status`;
+const noteId = `${idPrefix}-note`;
+---
+
+<!--
+  Without JavaScript: a plain POST to the Pages Function, which answers with a
+  303 to the thank-you page (or the "could not save" page). With it,
+  /waitlist.js sends the same fields with Accept: application/json and says
+  the result in the status line below, without leaving the page.
+-->
+<form
+  class="waitlist-form"
+  method="post"
+  action="/api/waitlist"
+  data-waitlist
+  data-sending={w.sending}
+  data-ok={w.ok}
+  data-invalid={w.invalid}
+  data-limited={w.limited}
+  data-failed={w.failed}
+>
+  <input type="hidden" name="lang" value={copy.lang} />
+  <div class="field">
+    <label for={emailId}>{w.label}</label>
+    <div class="field-row">
+      <input
+        id={emailId}
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        autocapitalize="off"
+        spellcheck="false"
+        required
+        maxlength="254"
+        placeholder={w.placeholder}
+        aria-describedby={`${noteId} ${statusId}`}
+      />
+      <button type="submit" class="button">{w.button}</button>
+    </div>
+  </div>
+  <div class="trap" aria-hidden="true">
+    <label for={`${idPrefix}-website`}>{w.honeypot}</label>
+    <input id={`${idPrefix}-website`} name="website" type="text" tabindex="-1" autocomplete="off" />
+  </div>
+  <p class="note" id={noteId}>{w.privacy}</p>
+  <p class="status" id={statusId} role="status" aria-live="polite"></p>
+</form>

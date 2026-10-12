@@ -1,0 +1,69 @@
+/* Design tokens of versomd.com.
+ *
+ * Copied from the Verso window: app/ui/css/base.css, its first `:root` block,
+ * in the product repository (SergioSJS/verso, private) at commit 6d1b1f7.
+ * "A calm manuscript: warm parchment neutrals tinted toward the ink, one
+ * wax-seal accent, brass for small marks. Fraunces for the title, Literata to
+ * read and write, Instrument Sans for the chrome. No cards, no shadows:
+ * hairlines and space do the work." (the window's own words)
+ *
+ * Between BEGIN and END every value is the product's, character for
+ * character. Do not edit them here: change the product, then copy again.
+ * `npm run check:tokens` (scripts/check-tokens.mjs) compares this block with
+ * the product's file and with its fonts, and fails when they drift.
+ * Left out on purpose: --side-w, --ribbon-w, --rail-w (the window's layout).
+ *
+ * Light and dark come from the system: `color-scheme: light dark` makes
+ * `light-dark()` follow prefers-color-scheme, as in the window. The dark tone
+ * is the window's default ("soft": --dk-lift 4.5 %, --dk-dim 3.5 %).
+ */
+:root {
+  color-scheme: light dark;
+
+  /* BEGIN copied from verso app/ui/css/base.css @ 6d1b1f7 */
+  --dk-lift: 4.5%;
+  --dk-dim: 3.5%;
+  --dk-up: 4.5%;
+  --paper: light-dark(oklch(97.5% 0.012 80), oklch(calc(19% + var(--dk-lift)) 0.012 62));
+  --paper-2: light-dark(oklch(95% 0.015 78), oklch(calc(22% + var(--dk-lift)) 0.013 62));
+  --paper-3: light-dark(oklch(91.5% 0.02 76), oklch(calc(27% + var(--dk-lift)) 0.015 62));
+  --ink: light-dark(oklch(24% 0.025 60), oklch(calc(90% - var(--dk-dim)) 0.02 78));
+  --ink-2: light-dark(oklch(45% 0.03 60), oklch(calc(72% + var(--dk-up)) 0.02 76));
+  --ink-3: light-dark(oklch(49% 0.025 65), oklch(calc(67% + var(--dk-up)) 0.02 70));
+  --hair: light-dark(oklch(86% 0.02 75), oklch(calc(31% + var(--dk-lift)) 0.015 62));
+  --seal: light-dark(oklch(46% 0.15 28), oklch(calc(72% + var(--dk-up)) 0.13 32));
+  --seal-ink: light-dark(oklch(98% 0.01 80), oklch(calc(19% + var(--dk-lift)) 0.012 62));
+  --seal-wash: light-dark(oklch(93% 0.035 30), oklch(calc(28% + var(--dk-lift)) 0.045 30));
+  --brass: light-dark(oklch(62% 0.11 78), oklch(76% 0.11 82));
+  --brass-ink: light-dark(oklch(49% 0.11 78), oklch(calc(76% + var(--dk-up)) 0.11 82));
+  --brass-wash: light-dark(oklch(94% 0.05 85), oklch(calc(30% + var(--dk-lift)) 0.05 82));
+  --selection: light-dark(oklch(88% 0.07 85), oklch(calc(38% + var(--dk-lift)) 0.07 82));
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --heading-font: var(--display);
+  --heading-color: var(--brass-ink);
+  --book: "Literata", "Charter", Georgia, serif;
+  --ui: "Instrument Sans", -apple-system, "Helvetica Neue", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 64ch;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  /* END copied */
+
+  /* Radii. The window has no radius variables; these are the values its
+     rules use most (app/ui/css/*.css at the same commit): 3px the focus
+     ring, 4px small marks and keys, 6px controls, 8px panels and pictures,
+     999px pills. Site-only, not checked. */
+  --radius-xs: 3px;
+  --radius-s: 4px;
+  --radius-m: 6px;
+  --radius-l: 8px;
+  --radius-pill: 999px;
+}
+
+/* The window's fonts, the same files (public/fonts, SIL Open Font License
+   1.1, the licences beside them). */
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/fonts/fraunces-latin-wght-normal.woff2) format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 100 900; font-display: swap; src: url(/fonts/fraunces-latin-wght-italic.woff2) format("woff2"); }
+@font-face { font-family: "Literata"; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/literata-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Literata"; font-style: italic; font-weight: 400; font-display: swap; src: url(/fonts/literata-latin-400-italic.woff2) format("woff2"); }
+@font-face { font-family: "Literata"; font-style: normal; font-weight: 600; font-display: swap; src: url(/fonts/literata-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Instrument Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/instrument-sans-latin-wght-normal.woff2) format("woff2"); }

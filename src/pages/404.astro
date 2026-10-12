@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import { copies } from "../i18n";
+
+const copy = copies["pt-BR"];
+---
+
+<Base copy={copy} title="Página não encontrada — Verso" description={copy.meta.description} path="/404/" altPath="/en/" noindex>
+  <article class="page note-page">
+    <div class="note-body">
+      <h1>Esta página não existe.</h1>
+      <p><a href="/">Voltar ao início</a></p>
+      <p lang="en">This page does not exist. <a href="/en/">Go to the English page</a>.</p>
+    </div>
+  </article>
+</Base>

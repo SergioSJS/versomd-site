@@ -1,0 +1,34 @@
+---
+// A short page after the waitlist's plain POST: thanks, or could not save.
+import type { Copy } from "../i18n";
+import WaitlistForm from "./WaitlistForm.astro";
+
+interface Props {
+  copy: Copy;
+  kind: "thanks" | "failed";
+}
+
+const { copy, kind } = Astro.props;
+---
+
+<article class="page note-page">
+  <div class="note-body">
+    {
+      kind === "thanks" ? (
+        <>
+          <h1>{copy.thanks.title}</h1>
+          <p set:html={copy.thanks.bodyHtml} />
+          <p><a href={copy.routes.home}>{copy.thanks.back}</a></p>
+        </>
+      ) : (
+        <>
+          <h1>{copy.failed.title}</h1>
+          <p>{copy.failed.body}</p>
+          <WaitlistForm copy={copy} />
+          <p><a href={copy.routes.home}>{copy.failed.back}</a></p>
+        </>
+      )
+    }
+  </div>
+</article>
+{kind === "failed" && <script is:inline src="/waitlist.js" defer></script>}

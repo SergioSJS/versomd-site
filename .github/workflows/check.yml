@@ -1,0 +1,50 @@
+name: check
+
+# Cheap on purpose: one Linux job, on pull requests only (Cloudflare Pages
+# builds and deploys main by itself). This repository's own Actions quota.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VERSO_READ_TOKEN: ${{ secrets.VERSO_READ_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check
+
+      # The design tokens against the Verso window. The product repository is
+      # private: with a read-only token in the secret VERSO_READ_TOKEN the
+      # check compares for real; without it, it warns and passes.
+      - name: Check out the product's stylesheet and fonts
+        if: ${{ env.VERSO_READ_TOKEN != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: SergioSJS/verso
+          token: ${{ secrets.VERSO_READ_TOKEN }}
+          path: verso
+          sparse-checkout: |
+            app/ui/css/base.css
+            app/ui/fonts
+          sparse-checkout-cone-mode: false
+
+      - name: Tokens in step with the product
+        run: node scripts/check-tokens.mjs --product verso --allow-missing

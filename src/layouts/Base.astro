@@ -1,0 +1,87 @@
+---
+import "../styles/tokens.css";
+import "../styles/site.css";
+import type { Copy } from "../i18n";
+
+interface Props {
+  copy: Copy;
+  title: string;
+  description: string;
+  /** This page's path, and the same page in the other language. */
+  path: string;
+  altPath: string;
+  noindex?: boolean;
+}
+
+const { copy, title, description, path, altPath, noindex = false } = Astro.props;
+const site = Astro.site ?? new URL("https://versomd.com");
+const canonical = new URL(path, site).href;
+const alternate = new URL(altPath, site).href;
+const ptHref = copy.lang === "pt-BR" ? canonical : alternate;
+const enHref = copy.lang === "en" ? canonical : alternate;
+const ogImage = new URL("/media/janela-no-navegador.png", site).href;
+const home = copy.routes.home;
+---
+
+<!doctype html>
+<html lang={copy.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbf6ee" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221d18" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="pt-BR" href={ptHref} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="x-default" href={ptHref} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/literata-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Verso" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="820" />
+    <meta property="og:locale" content={copy.ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <a class="skip" href={`#${copy.ids.content}`}>{copy.skip}</a>
+    <header class="masthead">
+      <a class="wordmark" href={home} aria-label="Verso">
+        <img src="/media/verso-icon.png" width="28" height="28" alt="" />
+        <span>Verso</span>
+      </a>
+      <nav class="sections" aria-label={copy.nav.label}>
+        <a href={`${home}#${copy.ids.how}`}>{copy.nav.how}</a>
+        <a href={`${home}#${copy.ids.notYet}`}>{copy.nav.notYet}</a>
+        <a href={`${home}#${copy.ids.faq}`}>{copy.nav.faq}</a>
+        <a href={`${home}#${copy.ids.waitlist}`}>{copy.nav.waitlist}</a>
+      </nav>
+      <a class="lang" href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang} aria-label={copy.switchTo.label}>
+        {copy.switchTo.name}
+      </a>
+    </header>
+
+    <main id={copy.ids.content} tabindex="-1">
+      <slot />
+    </main>
+
+    <footer class="colophon">
+      <p set:html={copy.footer.lineHtml} />
+      <p>{copy.footer.noTracking}</p>
+      <p class="fonts" set:html={copy.footer.fontsHtml} />
+      <p>
+        <a href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang}>{copy.switchTo.label}</a>
+      </p>
+    </footer>
+  </body>
+</html>
