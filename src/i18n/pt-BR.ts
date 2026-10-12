@@ -11,7 +11,7 @@ export const ptBR: Copy = {
   meta: {
     title: "Verso — notas em Markdown, servidor seu",
     description:
-      "App de notas em Markdown que abre qualquer pasta, compatível com o Obsidian. Com o Universo, um servidor que você mesmo roda, a pasta sincroniza entre computadores, abre no navegador e no celular e é partilhada com quem você escolher.",
+      "App de notas em Markdown que abre qualquer pasta, compatível com o Obsidian. Com o UniVerso, um servidor que você mesmo roda, a pasta sincroniza entre computadores, abre no navegador e no celular e é partilhada com quem você escolher.",
   },
   skip: "Pular para o conteúdo",
   nav: {
@@ -26,12 +26,12 @@ export const ptBR: Copy = {
     eyebrow: "Notas em Markdown · local-first · servidor próprio",
     title: "Suas notas são arquivos. O servidor é seu.",
     ledeHtml:
-      "O Verso é um app de notas que abre qualquer pasta de arquivos Markdown — um vault do Obsidian também — e nunca reescreve um arquivo ao abri-lo. Com o <strong>Universo</strong>, o servidor do Verso que você mesmo instala, a mesma pasta fica em dia entre seus computadores, abre no navegador e no celular, e pode ser partilhada com outras pessoas.",
+      "O Verso é um app de notas que abre qualquer pasta de arquivos Markdown — um vault do Obsidian também — e nunca reescreve um arquivo ao abri-lo. Com o <strong>UniVerso</strong>, o servidor do Verso que você mesmo instala, a mesma pasta fica em dia entre seus computadores, abre no navegador e no celular, e pode ser partilhada com outras pessoas.",
     propsLabel: "Em resumo",
     props: [
       { key: "estado", valueHtml: "em teste; ainda sem download público" },
-      { key: "roda em", valueHtml: "macOS, Windows e Linux; no navegador e no celular, por um Universo" },
-      { key: "servidor", valueHtml: "Universo, numa máquina sua: um mini PC, um NAS, a menor VPS" },
+      { key: "roda em", valueHtml: "macOS, Windows e Linux; no navegador e no celular, por um UniVerso" },
+      { key: "servidor", valueHtml: "UniVerso, numa máquina sua: um mini PC, um NAS, a menor VPS" },
       { key: "licença", valueHtml: "MPL-2.0" },
       { key: "custa", valueHtml: "nada além da máquina onde ele roda" },
     ],
@@ -44,7 +44,7 @@ export const ptBR: Copy = {
       height: 820,
       alt: "A janela do Verso aberta num navegador. À esquerda, a árvore de arquivos de uma pasta chamada Exemplo, com subpastas Diário, Personagens, Projetos e Templates. À direita, a nota “Bem-vindo ao Verso”, com propriedades (título, data, tags, status, autor) e dois callouts.",
       captionHtml:
-        "A janela do Verso no navegador, servida por um Universo: a pasta de exemplo que acompanha o app, com propriedades e callouts como no Obsidian.",
+        "A janela do Verso no navegador, servida por um UniVerso: a pasta de exemplo que acompanha o app, com propriedades e callouts como no Obsidian.",
     },
   },
   who: {
@@ -67,17 +67,17 @@ export const ptBR: Copy = {
     server: {
       title: "O servidor é seu",
       introHtml:
-        "O Universo é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida. Cada pasta tem um dono, quem edita e quem só lê.",
+        "O UniVerso é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida. Cada pasta tem um dono, quem edita e quem só lê.",
       items: [
         {
           term: "Sincronizar",
           textHtml:
-            "Uma pasta deste computador fica em dia com uma pasta do Universo. A mudança cruza ao salvar. Um arquivo mudado dos dois lados vira uma cópia ao lado, nunca uma perda; a primeira sincronização não apaga nada.",
+            "Uma pasta deste computador fica em dia com uma pasta do UniVerso. A mudança cruza ao salvar. Um arquivo mudado dos dois lados vira uma cópia ao lado, nunca uma perda; a primeira sincronização não apaga nada.",
         },
         {
           term: "Partilhar",
           textHtml:
-            "O dono dá a outra conta do mesmo Universo acesso de leitura ou de escrita a uma pasta, e pode tirar depois.",
+            "O dono dá a outra conta do mesmo UniVerso acesso de leitura ou de escrita a uma pasta, e pode tirar depois.",
         },
         {
           term: "Editar junto",
@@ -97,14 +97,14 @@ export const ptBR: Copy = {
         {
           term: "Navegador e celular",
           textHtml:
-            "O Universo serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial.",
+            "O UniVerso serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial.",
         },
       ],
     },
     vps: {
       title: "Uma VPS de 1 GB dá conta",
       introHtml:
-        "Medimos numa máquina virtual do tamanho da menor VPS: 1 núcleo, 1 GB de memória, disco virtual de 10 GB, Ubuntu sem interface gráfica e o Universo instalado do <code>.deb</code>. Quatro computadores — dois Macs, um Windows e um Linux — sincronizaram com ela uma pasta de 133 arquivos e 62 MB.",
+        "Medimos numa máquina virtual do tamanho da menor VPS: 1 núcleo, 1 GB de memória, disco virtual de 10 GB, Ubuntu sem interface gráfica e o UniVerso instalado do <code>.deb</code>. Quatro computadores — dois Macs, um Windows e um Linux — sincronizaram com ela uma pasta de 133 arquivos e 62 MB.",
       tableCaption: "O que a máquina de 1 núcleo e 1 GB mostrou",
       head: ["Situação", "Medido"],
       rows: [
@@ -135,8 +135,8 @@ export const ptBR: Copy = {
         kind: "still",
         width: 390,
         height: 844,
-        alt: "Os ajustes do Verso num celular, na seção Servidores: um Universo chamado notas.casa, a conta conectada e três pastas com o papel da pessoa em cada uma — Caderno (dona), Mesa de RPG (edita), Regras da Bia (só lê) — cada uma com o botão Abrir aqui.",
-        captionHtml: "No celular: as pastas de um Universo, com o papel de cada pessoa — dona, edita, só lê.",
+        alt: "Os ajustes do Verso num celular, na seção Servidores: um UniVerso chamado notas.casa, a conta conectada e três pastas com o papel da pessoa em cada uma — Caderno (dona), Mesa de RPG (edita), Regras da Bia (só lê) — cada uma com o botão Abrir aqui.",
+        captionHtml: "No celular: as pastas de um UniVerso, com o papel de cada pessoa — dona, edita, só lê.",
       },
     ],
   },
@@ -178,7 +178,7 @@ export const ptBR: Copy = {
         webp: true,
         width: 1080,
         height: 1026,
-        alt: "O console de administração do Universo, no tema escuro, passando pelas páginas Visão geral, Contas, Pastas e Registro; o registro lista quem deu acesso a quem, em que pasta e quando.",
+        alt: "O console de administração do UniVerso, no tema escuro, passando pelas páginas Visão geral, Contas, Pastas e Registro; o registro lista quem deu acesso a quem, em que pasta e quando.",
         captionHtml: "O console de quem administra: visão geral, contas, pastas e o registro de auditoria.",
       },
     ],
@@ -190,7 +190,7 @@ export const ptBR: Copy = {
       {
         lead: "Não tem download público.",
         textHtml:
-          "O repositório do Verso ainda é privado. Quando abrir, os instaladores para macOS, Windows e Linux e os pacotes do Universo aparecem nesta página.",
+          "O repositório do Verso ainda é privado. Quando abrir, os instaladores para macOS, Windows e Linux e os pacotes do UniVerso aparecem nesta página.",
       },
       {
         lead: "Não funciona offline no celular.",
@@ -205,7 +205,7 @@ export const ptBR: Copy = {
       {
         lead: "Não tem link público para partilhar.",
         textHtml:
-          "A partilha é entre contas do mesmo Universo. Um link que qualquer pessoa abre, sem conta, não existe.",
+          "A partilha é entre contas do mesmo UniVerso. Um link que qualquer pessoa abre, sem conta, não existe.",
       },
       {
         lead: "Não tem criptografia de ponta a ponta.",
@@ -214,7 +214,7 @@ export const ptBR: Copy = {
       },
       {
         lead: "Não sincroniza por Dropbox, Google Drive ou iCloud.",
-        textHtml: "Hoje a sincronização é só com um Universo.",
+        textHtml: "Hoje a sincronização é só com um UniVerso.",
       },
     ],
   },
@@ -237,8 +237,8 @@ export const ptBR: Copy = {
       {
         q: "E a privacidade?",
         aHtml: [
-          "O app não manda telemetria. Ele só vai à rede para endereços que estão nas suas notas ou em que você clica, para ver se há versão nova e para o Universo que você configurou.",
-          "No Universo, as notas ficam no disco de quem hospeda — e quem hospeda pode lê-las (veja acima).",
+          "O app não manda telemetria. Ele só vai à rede para endereços que estão nas suas notas ou em que você clica, para ver se há versão nova e para o UniVerso que você configurou.",
+          "No UniVerso, as notas ficam no disco de quem hospeda — e quem hospeda pode lê-las (veja acima).",
           "Este site não tem analytics nem cookies. A lista de espera guarda seu e-mail, o idioma da página e a hora, e serve só para avisar quando houver o que baixar.",
         ],
       },

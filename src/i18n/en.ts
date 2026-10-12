@@ -10,7 +10,7 @@ export const en: Copy = {
   meta: {
     title: "Verso — Markdown notes, your own server",
     description:
-      "A Markdown note app that opens any folder, compatible with Obsidian. With Universo, a server you run yourself, the folder syncs between computers, opens in a browser and on a phone, and is shared with whoever you choose.",
+      "A Markdown note app that opens any folder, compatible with Obsidian. With UniVerso, a server you run yourself, the folder syncs between computers, opens in a browser and on a phone, and is shared with whoever you choose.",
   },
   skip: "Skip to the content",
   nav: {
@@ -25,12 +25,12 @@ export const en: Copy = {
     eyebrow: "Markdown notes · local-first · your own server",
     title: "Your notes are files. The server is yours.",
     ledeHtml:
-      "Verso is a note app that opens any folder of Markdown files — an Obsidian vault too — and never rewrites a file by opening it. With <strong>Universo</strong>, Verso’s server that you install yourself, the same folder stays in step across your computers, opens in a browser and on a phone, and can be shared with other people.",
+      "Verso is a note app that opens any folder of Markdown files — an Obsidian vault too — and never rewrites a file by opening it. With <strong>UniVerso</strong>, Verso’s server that you install yourself, the same folder stays in step across your computers, opens in a browser and on a phone, and can be shared with other people.",
     propsLabel: "In short",
     props: [
       { key: "status", valueHtml: "in testing; no public download yet" },
-      { key: "runs on", valueHtml: "macOS, Windows and Linux; in a browser and on a phone, through a Universo" },
-      { key: "server", valueHtml: "Universo, on a machine of yours: a mini PC, a NAS, the smallest VPS" },
+      { key: "runs on", valueHtml: "macOS, Windows and Linux; in a browser and on a phone, through a UniVerso" },
+      { key: "server", valueHtml: "UniVerso, on a machine of yours: a mini PC, a NAS, the smallest VPS" },
       { key: "licence", valueHtml: "MPL-2.0" },
       { key: "costs", valueHtml: "nothing beyond the machine it runs on" },
     ],
@@ -43,7 +43,7 @@ export const en: Copy = {
       height: 820,
       alt: "The Verso window open in a browser, in Portuguese. On the left, the file tree of a folder named Exemplo, with subfolders for a journal, characters, projects and templates. On the right, the note “Bem-vindo ao Verso” (Welcome to Verso), with properties (title, date, tags, status, author) and two callouts.",
       captionHtml:
-        "The Verso window in a browser, served by a Universo: the example folder that comes with the app, with properties and callouts as in Obsidian.",
+        "The Verso window in a browser, served by a UniVerso: the example folder that comes with the app, with properties and callouts as in Obsidian.",
     },
   },
   who: {
@@ -66,17 +66,17 @@ export const en: Copy = {
     server: {
       title: "The server is yours",
       introHtml:
-        "Universo is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites. Each folder has an owner, editors and readers.",
+        "UniVerso is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites. Each folder has an owner, editors and readers.",
       items: [
         {
           term: "Sync",
           textHtml:
-            "A folder of this computer stays in step with a folder of the Universo. A change crosses when saved. A file changed on both sides becomes a copy beside it, never a loss; the first sync deletes nothing.",
+            "A folder of this computer stays in step with a folder of the UniVerso. A change crosses when saved. A file changed on both sides becomes a copy beside it, never a loss; the first sync deletes nothing.",
         },
         {
           term: "Share",
           textHtml:
-            "The owner gives another account of the same Universo read or write access to a folder, and can take it back.",
+            "The owner gives another account of the same UniVerso read or write access to a folder, and can take it back.",
         },
         {
           term: "Edit together",
@@ -96,14 +96,14 @@ export const en: Copy = {
         {
           term: "Browser and phone",
           textHtml:
-            "Universo serves the app’s own window; on a phone and a tablet it installs on the home screen.",
+            "UniVerso serves the app’s own window; on a phone and a tablet it installs on the home screen.",
         },
       ],
     },
     vps: {
       title: "A 1 GB VPS is enough",
       introHtml:
-        "We measured on a virtual machine sized like the smallest VPS: 1 core, 1 GB of memory, a 10 GB virtual disk, Ubuntu with no desktop, and Universo installed from the <code>.deb</code>. Four computers — two Macs, one Windows, one Linux — synced a folder of 133 files and 62 MB with it.",
+        "We measured on a virtual machine sized like the smallest VPS: 1 core, 1 GB of memory, a 10 GB virtual disk, Ubuntu with no desktop, and UniVerso installed from the <code>.deb</code>. Four computers — two Macs, one Windows, one Linux — synced a folder of 133 files and 62 MB with it.",
       tableCaption: "What the 1-core, 1 GB machine showed",
       head: ["Situation", "Measured"],
       rows: [
@@ -134,8 +134,8 @@ export const en: Copy = {
         kind: "still",
         width: 390,
         height: 844,
-        alt: "Verso’s settings on a phone, in Portuguese, in the Servers section: a Universo named notas.casa, the account signed in, and three folders with the person’s role in each — Caderno (owner), Mesa de RPG (edits), Regras da Bia (reads only) — each with an Open here button.",
-        captionHtml: "On a phone: a Universo’s folders, with each person’s role — owner, edits, reads only.",
+        alt: "Verso’s settings on a phone, in Portuguese, in the Servers section: a UniVerso named notas.casa, the account signed in, and three folders with the person’s role in each — Caderno (owner), Mesa de RPG (edits), Regras da Bia (reads only) — each with an Open here button.",
+        captionHtml: "On a phone: a UniVerso’s folders, with each person’s role — owner, edits, reads only.",
       },
     ],
   },
@@ -177,7 +177,7 @@ export const en: Copy = {
         webp: true,
         width: 1080,
         height: 1026,
-        alt: "Universo’s administration console, in the dark theme, going through the Overview, Accounts, Folders and Log pages; the log lists who gave access to whom, in which folder and when.",
+        alt: "UniVerso’s administration console, in the dark theme, going through the Overview, Accounts, Folders and Log pages; the log lists who gave access to whom, in which folder and when.",
         captionHtml: "The admin’s console: overview, accounts, folders and the audit log.",
       },
     ],
@@ -189,7 +189,7 @@ export const en: Copy = {
       {
         lead: "No public download.",
         textHtml:
-          "Verso’s repository is still private. When it opens, the installers for macOS, Windows and Linux and Universo’s packages appear on this page.",
+          "Verso’s repository is still private. When it opens, the installers for macOS, Windows and Linux and UniVerso’s packages appear on this page.",
       },
       {
         lead: "No offline use on a phone.",
@@ -204,7 +204,7 @@ export const en: Copy = {
       {
         lead: "No public links for shares.",
         textHtml:
-          "Sharing is between accounts of the same Universo. A link anyone can open, without an account, does not exist.",
+          "Sharing is between accounts of the same UniVerso. A link anyone can open, without an account, does not exist.",
       },
       {
         lead: "No end-to-end encryption.",
@@ -213,7 +213,7 @@ export const en: Copy = {
       },
       {
         lead: "No sync through Dropbox, Google Drive or iCloud.",
-        textHtml: "Today sync is with a Universo only.",
+        textHtml: "Today sync is with a UniVerso only.",
       },
     ],
   },
@@ -236,8 +236,8 @@ export const en: Copy = {
       {
         q: "What about privacy?",
         aHtml: [
-          "The app sends no telemetry. It reaches the network only for addresses in your notes or that you click, to check for a new version, and for the Universo you set up.",
-          "On a Universo, the notes live on the host’s disk — and whoever hosts can read them (see above).",
+          "The app sends no telemetry. It reaches the network only for addresses in your notes or that you click, to check for a new version, and for the UniVerso you set up.",
+          "On a UniVerso, the notes live on the host’s disk — and whoever hosts can read them (see above).",
           "This site has no analytics and no cookies. The waitlist keeps your e-mail, the page’s language and the time, and serves only to tell you when there is something to download.",
         ],
       },

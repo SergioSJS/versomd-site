@@ -2,7 +2,7 @@
 
 The landing page of [Verso](https://versomd.com): Markdown notes in
 Obsidian-compatible folders, local-first, with a self-hosted server named
-Universo. Static [Astro](https://astro.build) site in pt-BR (at `/`) and
+UniVerso. Static [Astro](https://astro.build) site in pt-BR (at `/`) and
 English (at `/en/`), served by Cloudflare Pages, with a waitlist kept in
 Cloudflare KV by a Pages Function. No analytics, no cookies, no third party.
 
