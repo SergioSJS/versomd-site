@@ -45,6 +45,7 @@ npx wrangler pages dev dist --kv WAITLIST
 | `public/fonts/` | Fraunces, Literata, Instrument Sans (SIL OFL 1.1, licences beside them). |
 | `public/waitlist.js` | Sends the form with `fetch` and answers in place. |
 | `<script>` in `Landing.astro` | The recordings as tabs (one at a time, arrow keys; "play" under reduced motion). Bundled into `/_astro/` as a file, never inlined, for the Content-Security-Policy. Without JavaScript the four recordings stand stacked. |
+| second `<script>` in `Landing.astro` | The comparison's controls: shortcuts, a chip per tool, a chip per capability group, "only what differs", a polite count and "show everything"; the view in the address (`#comparativo?f=…&g=…&diff=1`, `#compare?…` in English) and, as a convenience, in `localStorage`; and a copy of the tools' row that stays at the top of the screen while the table's own header is above it, kept to its column widths and sideways scroll. Bundled into `/_astro/` like the first. Without JavaScript the whole table stands and the controls stay hidden. |
 | `public/_headers` | Content-Security-Policy and caching on Cloudflare Pages. |
 | `functions/api/waitlist.ts` | The waitlist's endpoint (Cloudflare Pages Function). |
 | `scripts/check-tokens.mjs` | The tokens' drift check. |

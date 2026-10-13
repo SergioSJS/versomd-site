@@ -93,12 +93,30 @@ export interface Copy {
     marks: Record<Mark, { symbol: string; word: string }>;
     /** The first column's header. */
     capability: string;
-    /** The groups of columns after Verso's, in order; spans add up to tools.length - 1. */
-    groups: { label: string; span: number }[];
-    /** tools[0] is Verso; every other one links to its official site. */
-    tools: { name: string; href?: string; note: string }[];
-    /** One cell per tool, in the order of `tools`. */
-    rows: { label: string; cells: CompareCell[] }[];
+    /** The groups of columns after Verso's, in order; spans add up to
+     *  tools.length - 1. The id names the "only these" shortcut. */
+    groups: { id: "notes" | "rpg"; label: string; span: number }[];
+    /** tools[0] is Verso; every other one links to its official site. The id
+     *  is the same in both languages: it is what a shared link names. */
+    tools: { id: string; name: string; href?: string; note: string }[];
+    /** The capability groups, in the table's order; ids shared by both
+     *  languages (a link names them). */
+    rowGroups: { id: string; label: string }[];
+    /** One cell per tool, in the order of `tools`; rows sit in their group's order. */
+    rows: { group: string; label: string; cells: CompareCell[] }[];
+    /** The controls above the table, shown only with JavaScript. */
+    controls: {
+      label: string;
+      presetsLabel: string;
+      presets: { id: "notes" | "rpg" | "all" | "versus"; label: string }[];
+      toolsLabel: string;
+      capsLabel: string;
+      diff: string;
+      diffHint: string;
+      reset: string;
+      /** With {tools}, {toolsTotal}, {rows} and {rowsTotal}. */
+      count: string;
+    };
     legendHtml: string;
     verified: string;
   };
