@@ -49,6 +49,8 @@ npx wrangler pages dev dist --kv WAITLIST
 | `public/_headers` | Content-Security-Policy and caching on Cloudflare Pages. |
 | `functions/api/waitlist.ts` | The waitlist's endpoint (Cloudflare Pages Function). |
 | `scripts/check-tokens.mjs` | The tokens' drift check. |
+| `scripts/compare/` | The comparison's one source for both languages (`compare_data.py`) and the emitter that writes it into the two locale files (`emit.py`). |
+| `CLAUDE.md` | How an AI session works on this site: where the product's facts come from, the comparison's rules, checks, commits. |
 
 ## Design tokens
 
