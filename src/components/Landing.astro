@@ -655,6 +655,8 @@ const motionNumbers = motion.figures.map(() => next());
         shownRows += shownHere;
       }
 
+      fit(shownTools);
+
       if (count) {
         count.textContent = template
           .replace("{tools}", String(shownTools))
@@ -664,6 +666,21 @@ const motionNumbers = motion.figures.map(() => next());
       }
       buildStrip();
     };
+
+    // When the shown columns fit the box, they share its width and nothing
+    // scrolls sideways: on a phone up to three tools, on a wider screen as
+    // many as get their usual width (the table's 9.5rem); otherwise the box
+    // scrolls, as without this script.
+    const hint = document.getElementById("compare-hint");
+    const rem = () => parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    function fit(shownTools: number) {
+      const room = wrap.clientWidth;
+      const narrow = room < 520;
+      const fits = narrow ? shownTools <= 3 : 8.5 * rem() + shownTools * 9.5 * rem() <= room;
+      if (fits) table.dataset.fit = "";
+      else delete table.dataset.fit;
+      if (hint) hint.hidden = fits;
+    }
 
     // A change made here: shown, written to the address (without a jump or a
     // new history entry) and kept for this viewer.
@@ -785,7 +802,12 @@ const motionNumbers = motion.figures.map(() => next());
     };
     window.addEventListener("scroll", () => soon(follow), { passive: true });
     wrap.addEventListener("scroll", () => soon(follow), { passive: true });
-    window.addEventListener("resize", () => soon(measure));
+    window.addEventListener("resize", () =>
+      soon(() => {
+        fit(allTools.filter((t) => view.tools.has(t)).length);
+        measure();
+      }),
+    );
     if ("ResizeObserver" in window) new ResizeObserver(() => soon(measure)).observe(table);
 
     // ── start: the address, then this viewer's last view, then the default ──

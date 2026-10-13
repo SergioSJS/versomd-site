@@ -951,6 +951,29 @@ a.tool-name { color: var(--seal); }
   .compare-table td { min-width: 8.5rem; }
   .compare-table .cap { min-width: 6.5rem; max-width: 7.5rem; }
 }
+/* The shown columns fit the box (the script says so with data-fit): they
+   share its width, the capability column keeps its own, text wraps inside
+   each cell, and nothing scrolls sideways. */
+.compare-table[data-fit] { width: 100%; table-layout: fixed; }
+.compare-table[data-fit] th,
+.compare-table[data-fit] td { min-width: 0; max-width: none; }
+.compare-table[data-fit] .groups .corner:first-child { width: 8.5rem; }
+.compare-table[data-fit] .cell-text,
+.compare-table[data-fit] .tool-name,
+.compare-table[data-fit] .tool-note,
+.compare-table[data-fit] .cap {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+@media (max-width: 559px) {
+  .compare-table[data-fit] .groups .corner:first-child { width: 6rem; }
+  .compare-table[data-fit] th,
+  .compare-table[data-fit] td { padding: 0.55rem 0.45rem; font-size: 0.8rem; }
+  .compare-table[data-fit] .tool-name { font-size: 0.88rem; }
+  .compare-table[data-fit] .tool-note { font-size: 0.72rem; }
+  .compare-table[data-fit] .is-partial .mark { padding: 0 0.25rem; font-size: 0.66rem; }
+}
+
 .compare .compare-legend { margin: 0.9rem 0 0.2rem; max-width: var(--measure); }
 .compare .compare-verified { margin: 0; max-width: var(--measure); }
 
