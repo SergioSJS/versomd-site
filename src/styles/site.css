@@ -696,6 +696,165 @@ details > summary { cursor: pointer; }
   color: var(--ink-2);
 }
 
+/* ── how it compares: the intro, the pains, one table ─────────────────── */
+/* Text a screen reader hears and the eye does not (the word behind ✓ / ✗). */
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.compare-intro p { max-width: var(--measure); }
+.pains { margin: 1.8rem 0 0; }
+.pains ul {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 2.5rem;
+}
+@media (min-width: 1000px) {
+  .pains ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.pains li {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 0 1rem;
+  border-top: 1px solid var(--hair);
+}
+.pains li strong { font: 600 1rem/1.35 var(--ui); color: var(--ink); }
+.pains li span { font-size: 0.94em; line-height: 1.5; color: var(--ink-2); }
+
+.compare .scroll-hint {
+  margin: 2.2rem 0 0;
+  font: 500 0.88rem/1.4 var(--ui);
+  color: var(--ink-2);
+}
+.scroll-hint span { color: var(--brass-ink); margin-right: 0.3rem; }
+.compare-wrap {
+  /* Positioned, so the .sr words inside the cells are clipped with the table
+     instead of widening the page at their place far to the right. */
+  position: relative;
+  margin-top: 0.6rem;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-l);
+  background: var(--paper);
+}
+.compare-wrap:focus-visible { outline-offset: 3px; }
+.compare-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 100%;
+  font: 400 0.86rem/1.4 var(--ui);
+  color: var(--ink);
+}
+.compare-table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0.85rem 1rem 0.6rem;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+/* The caption is as wide as the table; its words stay within the screen. */
+.compare-table caption span {
+  display: block;
+  position: sticky;
+  left: 1rem;
+  max-width: calc(100vw - 4rem);
+}
+.compare-table th,
+.compare-table td {
+  min-width: 9.5rem;
+  max-width: 13rem;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--hair);
+}
+.compare-table .groups th,
+.compare-table .groups td {
+  padding-block: 0.35rem;
+  font: 600 0.7rem/1.3 var(--ui);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-left: 1px solid var(--hair);
+}
+.compare-table .groups .corner { border-left: 0; }
+.compare-table .tools th { vertical-align: bottom; }
+.tool-name {
+  display: block;
+  font: 600 0.98rem/1.2 var(--ui);
+  color: var(--ink);
+}
+a.tool-name { color: var(--seal); }
+.tool-note {
+  display: block;
+  margin-top: 0.15rem;
+  font-weight: 400;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--ink-3);
+}
+/* The capability column stays in view while the others scroll under it. */
+.compare-table .cap {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 8.5rem;
+  max-width: 11rem;
+  background: var(--paper-2);
+  border-right: 1px solid var(--hair);
+  font-weight: 600;
+  color: var(--ink);
+}
+.compare-table .groups .corner:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--paper-2);
+  border-right: 1px solid var(--hair);
+}
+.compare-table thead .cap { color: var(--ink-3); font-weight: 500; }
+.compare-table .is-verso { background: var(--brass-wash); }
+.compare-table .mark {
+  font-weight: 700;
+  margin-right: 0.15rem;
+}
+.compare-table .is-yes .mark { color: var(--brass-ink); }
+.compare-table .is-no .mark { color: var(--seal); }
+.compare-table .is-partial .mark {
+  display: inline-block;
+  padding: 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-pill);
+}
+.compare-table .cell-text { color: var(--ink-2); }
+.compare-table .is-verso .cell-text { color: var(--ink); }
+@media (max-width: 479px) {
+  .compare-table th,
+  .compare-table td { min-width: 8.5rem; }
+  .compare-table .cap { min-width: 6.5rem; max-width: 7.5rem; }
+}
+.compare .compare-legend { margin: 0.9rem 0 0.2rem; max-width: var(--measure); }
+.compare .compare-verified { margin: 0; max-width: var(--measure); }
+
 /* ── questions: native disclosures ─────────────────────────────────────── */
 @media (min-width: 1000px) {
   .faq .wrap {

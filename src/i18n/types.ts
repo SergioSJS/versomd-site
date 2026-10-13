@@ -18,13 +18,22 @@ export interface Figure {
   captionHtml: string;
 }
 
+/** A cell of the comparison: ✓, partial or ✗, and a few words; "info" is
+ *  words alone (the licence, the cost model, what a site does not say).
+ *  Never a price. */
+export type Mark = "yes" | "partial" | "no" | "info";
+export interface CompareCell {
+  mark: Mark;
+  text: string;
+}
+
 export interface Copy {
   lang: Lang;
   htmlLang: string;
   ogLocale: string;
   meta: { title: string; description: string };
   skip: string;
-  nav: { label: string; how: string; notYet: string; faq: string; waitlist: string };
+  nav: { label: string; how: string; notYet: string; compare: string; faq: string; waitlist: string };
   switchTo: { label: string; name: string; href: string; hreflang: string };
   hero: {
     eyebrow: string;
@@ -71,6 +80,28 @@ export interface Copy {
     figures: Figure[];
   };
   notYet: { title: string; intro: string; items: { lead: string; textHtml: string }[] };
+  /** Verso beside the tools people compare it with: a short honest intro,
+   *  the pains Verso answers (only those), then one table, Verso first. */
+  compare: {
+    title: string;
+    introHtml: string[];
+    pains: { title: string; items: { lead: string; textHtml: string }[] };
+    tableCaption: string;
+    /** Shown above the table: it scrolls sideways. */
+    scrollHint: string;
+    /** The visible mark of each kind, and the word a screen reader hears. */
+    marks: Record<Mark, { symbol: string; word: string }>;
+    /** The first column's header. */
+    capability: string;
+    /** The groups of columns after Verso's, in order; spans add up to tools.length - 1. */
+    groups: { label: string; span: number }[];
+    /** tools[0] is Verso; every other one links to its official site. */
+    tools: { name: string; href?: string; note: string }[];
+    /** One cell per tool, in the order of `tools`. */
+    rows: { label: string; cells: CompareCell[] }[];
+    legendHtml: string;
+    verified: string;
+  };
   faq: { title: string; items: { q: string; aHtml: string[] }[] };
   waitlist: {
     title: string;
@@ -92,5 +123,5 @@ export interface Copy {
   figLabel: string;
   routes: { home: string; thanks: string; failed: string };
   /** Section anchors, in the page's language. */
-  ids: { content: string; how: string; notYet: string; faq: string; waitlist: string };
+  ids: { content: string; how: string; notYet: string; compare: string; faq: string; waitlist: string };
 }

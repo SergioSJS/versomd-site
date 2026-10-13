@@ -8,7 +8,20 @@ interface Props {
 }
 
 const { copy } = Astro.props;
-const { hero, who, how, motion, notYet, faq, waitlist, ids } = copy;
+const { hero, who, how, motion, notYet, compare, faq, waitlist, ids } = copy;
+
+// The comparison's shape is checked at build time: a row missing a cell, or
+// groups that do not cover the columns after Verso's, fail the build.
+const groupSpan = compare.groups.reduce((sum, g) => sum + g.span, 0);
+if (groupSpan !== compare.tools.length - 1) {
+  throw new Error(`compare.groups span ${groupSpan}, expected ${compare.tools.length - 1}`);
+}
+for (const row of compare.rows) {
+  if (row.cells.length !== compare.tools.length) {
+    throw new Error(`compare row "${row.label}" has ${row.cells.length} cells, expected ${compare.tools.length}`);
+  }
+}
+const [verso, ...others] = compare.tools;
 
 // The title is two sentences; the second is set apart, as the app sets a
 // note's title apart from its body.
@@ -220,6 +233,104 @@ const motionNumbers = motion.figures.map(() => next());
           ))
         }
       </ul>
+    </div>
+  </section>
+
+  <section class="block compare" aria-labelledby={ids.compare}>
+    <div class="wrap">
+      <h2 id={ids.compare}><span class="md" aria-hidden="true">##</span>{compare.title}</h2>
+      <div class="compare-intro">
+        {compare.introHtml.map((p) => <p set:html={p} />)}
+      </div>
+
+      <div class="pains">
+        <h3>{compare.pains.title}</h3>
+        <ul>
+          {
+            compare.pains.items.map((item) => (
+              <li>
+                <strong>{item.lead}</strong>
+                <span set:html={item.textHtml} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p class="scroll-hint" id="compare-hint"><span aria-hidden="true">↔</span> {compare.scrollHint}</p>
+      <div
+        class="table-wrap compare-wrap"
+        role="region"
+        aria-labelledby="compare-caption"
+        aria-describedby="compare-hint"
+        tabindex="0"
+      >
+        <table class="compare-table">
+          <caption id="compare-caption"><span>{compare.tableCaption}</span></caption>
+          <colgroup>
+            <col class="col-cap" />
+            <col class="col-verso" />
+            {others.map(() => <col />)}
+          </colgroup>
+          <thead>
+            <tr class="groups">
+              <td class="corner"></td>
+              <td class="corner"></td>
+              {
+                compare.groups.map((g) => (
+                  <th scope="colgroup" colspan={g.span}>{g.label}</th>
+                ))
+              }
+            </tr>
+            <tr class="tools">
+              <th scope="col" class="cap">{compare.capability}</th>
+              <th scope="col" class="is-verso">
+                <span class="tool-name">{verso.name}</span>
+                <span class="tool-note">{verso.note}</span>
+              </th>
+              {
+                others.map((t) => (
+                  <th scope="col">
+                    {t.href ? (
+                      <a class="tool-name" href={t.href} rel="noopener noreferrer">{t.name}</a>
+                    ) : (
+                      <span class="tool-name">{t.name}</span>
+                    )}
+                    <span class="tool-note">{t.note}</span>
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          <tbody>
+            {
+              compare.rows.map((row) => (
+                <tr>
+                  <th scope="row" class="cap">{row.label}</th>
+                  {row.cells.map((cell, i) => {
+                    const m = compare.marks[cell.mark];
+                    return (
+                      <td class:list={[`is-${cell.mark}`, i === 0 && "is-verso"]}>
+                        {m.symbol === "" ? null : m.symbol === m.word ? (
+                          <span class="mark">{m.symbol}</span>
+                        ) : (
+                          <>
+                            <span class="mark" aria-hidden="true">{m.symbol}</span>
+                            <span class="sr">{m.word}:</span>
+                          </>
+                        )}{" "}
+                        <span class="cell-text">{cell.text}</span>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="aside compare-legend" set:html={compare.legendHtml} />
+      <p class="aside compare-verified">{compare.verified}</p>
     </div>
   </section>
 
