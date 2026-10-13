@@ -37,7 +37,7 @@ npx wrangler pages dev dist --kv WAITLIST
 | Path | What it is |
 |---|---|
 | `src/i18n/pt-BR.ts`, `src/i18n/en.ts` | Every word of the site. pt-BR is written first; en mirrors it field for field (`src/i18n/types.ts`). |
-| `src/components/Landing.astro` | The landing page, for either language: hero, "in short" strip, value cards, how it works in three steps, the numbers, the recordings as tabs, what it does not do yet, how it compares (one table, Verso first; checked against each product's official pages, no prices), questions, waitlist. |
+| `src/components/Landing.astro` | The landing page, for either language: hero, "in short" strip, value cards, how it works in three steps, the numbers, the recordings as tabs, what it does not do yet, how it compares (one table, Verso first, then twelve note, worldbuilding and solo-play tools; checked against each product's official pages, no prices), questions, waitlist. |
 | `src/pages/` | `/` and `/en/`; `/obrigado/` and `/en/thanks/`; `/lista/nao-deu/` and `/en/waitlist/failed/`; `404`; `sitemap.xml`. |
 | `src/styles/tokens.css` | Colours, fonts and measure copied from the Verso window. |
 | `src/styles/site.css` | The page's layout. |

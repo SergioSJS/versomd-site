@@ -290,7 +290,7 @@ export const en: Copy = {
       info: { symbol: "", word: "" },
     },
     capability: "Capability",
-    groups: [{ label: "Notes and writing", span: 5 }, { label: "Worlds and RPG", span: 7 }],
+    groups: [{ label: "Notes and writing", span: 5 }, { label: "Worlds and RPG", span: 8 }],
     tools: [
       { name: "Verso", note: "in testing; no public download" },
       { name: "Obsidian", href: "https://obsidian.md/", note: "Markdown notes" },
@@ -305,6 +305,7 @@ export const en: Copy = {
       { name: "Campfire", href: "https://www.campfirewriting.com/", note: "writing and worlds" },
       { name: "Fantasia Archive", href: "https://fantasiaarchive.com/", note: "local worldbuilding" },
       { name: "Foundry VTT", href: "https://foundryvtt.com/", note: "virtual tabletop" },
+      { name: "PUM Companion", href: "https://jeansenvaars.itch.io/pum-companion", note: "solo play with oracles" },
     ],
     rows: [
       {
@@ -323,6 +324,7 @@ export const en: Copy = {
           { mark: "no", text: "in their cloud; exports DOCX, PDF and EPUB" },
           { mark: "partial", text: "on the computer, in the app’s format" },
           { mark: "partial", text: "on your server, in the world’s database" },
+          { mark: "partial", text: "a save file per game, in the app’s format; exports .md" },
         ],
       },
       {
@@ -341,6 +343,7 @@ export const en: Copy = {
           { mark: "no", text: "no" },
           { mark: "info", text: "the site does not say" },
           { mark: "partial", text: "Markdown pages, kept in its database" },
+          { mark: "partial", text: "exports the story as Markdown" },
         ],
       },
       {
@@ -359,6 +362,7 @@ export const en: Copy = {
           { mark: "yes", text: "Mac and Windows app with an offline mode" },
           { mark: "yes", text: "a local app" },
           { mark: "yes", text: "a desktop app" },
+          { mark: "yes", text: "local and offline" },
         ],
       },
       {
@@ -377,6 +381,7 @@ export const en: Copy = {
           { mark: "no", text: "no" },
           { mark: "info", text: "a local app, no server" },
           { mark: "yes", text: "a Node.js server or the app itself" },
+          { mark: "no", text: "no; optional backup to Google Drive" },
         ],
       },
       {
@@ -395,6 +400,7 @@ export const en: Copy = {
           { mark: "info", text: "collaborators edit; live not confirmed" },
           { mark: "no", text: "no" },
           { mark: "yes", text: "several people on one page" },
+          { mark: "no", text: "no; solo play" },
         ],
       },
       {
@@ -413,6 +419,7 @@ export const en: Copy = {
           { mark: "yes", text: "view, comment or edit" },
           { mark: "no", text: "no" },
           { mark: "yes", text: "per person, on each journal and page" },
+          { mark: "no", text: "exports the game or the story as a file" },
         ],
       },
       {
@@ -431,6 +438,7 @@ export const en: Copy = {
           { mark: "info", text: "the site does not say" },
           { mark: "no", text: "no" },
           { mark: "yes", text: "Secret blocks the GM reveals" },
+          { mark: "info", text: "does not apply: the oracle plays the GM" },
         ],
       },
       {
@@ -449,6 +457,7 @@ export const en: Copy = {
           { mark: "partial", text: "worldbuilding modules, not RPG" },
           { mark: "yes", text: "worldbuilding document types" },
           { mark: "yes", text: "through game systems" },
+          { mark: "yes", text: "50+ oracles, custom tables, dice" },
         ],
       },
       {
@@ -467,6 +476,7 @@ export const en: Copy = {
           { mark: "yes", text: "pins, zones and layers" },
           { mark: "no", text: "no" },
           { mark: "yes", text: "scenes with map notes" },
+          { mark: "no", text: "imported images, no interactive map" },
         ],
       },
       {
@@ -485,6 +495,7 @@ export const en: Copy = {
           { mark: "info", text: "the site does not say" },
           { mark: "info", text: "the site does not say" },
           { mark: "partial", text: "drawing on scenes" },
+          { mark: "info", text: "the site does not say" },
         ],
       },
       {
@@ -503,6 +514,7 @@ export const en: Copy = {
           { mark: "info", text: "the site does not say" },
           { mark: "partial", text: "structured fields" },
           { mark: "no", text: "no" },
+          { mark: "info", text: "the site does not say" },
         ],
       },
       {
@@ -521,6 +533,7 @@ export const en: Copy = {
           { mark: "info", text: "the site does not say" },
           { mark: "info", text: "the site does not say" },
           { mark: "partial", text: "links between documents, no graph" },
+          { mark: "info", text: "the site does not say" },
         ],
       },
       {
@@ -539,6 +552,7 @@ export const en: Copy = {
           { mark: "no", text: "no" },
           { mark: "no", text: "no" },
           { mark: "yes", text: "modules and systems" },
+          { mark: "no", text: "no; paid extras" },
         ],
       },
       {
@@ -557,6 +571,7 @@ export const en: Copy = {
           { mark: "partial", text: "an app with fewer modules, online" },
           { mark: "no", text: "no" },
           { mark: "no", text: "phones not supported" },
+          { mark: "yes", text: "iOS and Android apps (bought separately)" },
         ],
       },
       {
@@ -575,6 +590,7 @@ export const en: Copy = {
           { mark: "no", text: "no" },
           { mark: "no", text: "no" },
           { mark: "no", text: "no official one" },
+          { mark: "no", text: "no; an optional paid AI assistant" },
         ],
       },
       {
@@ -593,6 +609,7 @@ export const en: Copy = {
           { mark: "info", text: "proprietary" },
           { mark: "info", text: "GPL-3.0, open source" },
           { mark: "info", text: "proprietary" },
+          { mark: "info", text: "proprietary; no licence published" },
         ],
       },
       {
@@ -611,6 +628,7 @@ export const en: Copy = {
           { mark: "info", text: "free with paid modules" },
           { mark: "info", text: "free; v1 stopped in 2025, a rewrite is under way" },
           { mark: "info", text: "paid, one licence for the GM" },
+          { mark: "info", text: "paid: pay what you want above a minimum, per platform; PUM Lite is free" },
         ],
       },
     ],

@@ -291,7 +291,7 @@ export const ptBR: Copy = {
       info: { symbol: "", word: "" },
     },
     capability: "Capacidade",
-    groups: [{ label: "Notas e escrita", span: 5 }, { label: "Mundos e RPG", span: 7 }],
+    groups: [{ label: "Notas e escrita", span: 5 }, { label: "Mundos e RPG", span: 8 }],
     tools: [
       { name: "Verso", note: "em teste; sem download público" },
       { name: "Obsidian", href: "https://obsidian.md/", note: "notas em Markdown" },
@@ -306,6 +306,7 @@ export const ptBR: Copy = {
       { name: "Campfire", href: "https://www.campfirewriting.com/", note: "escrita e mundos" },
       { name: "Fantasia Archive", href: "https://fantasiaarchive.com/", note: "worldbuilding local" },
       { name: "Foundry VTT", href: "https://foundryvtt.com/", note: "mesa virtual" },
+      { name: "PUM Companion", href: "https://jeansenvaars.itch.io/pum-companion", note: "jogo solo com oráculos" },
     ],
     rows: [
       {
@@ -324,6 +325,7 @@ export const ptBR: Copy = {
           { mark: "no", text: "na nuvem deles; exporta DOCX, PDF e EPUB" },
           { mark: "partial", text: "no computador, no formato do app" },
           { mark: "partial", text: "no seu servidor, no banco do mundo" },
+          { mark: "partial", text: "um arquivo de save por jogo, no formato do app; exporta .md" },
         ],
       },
       {
@@ -342,6 +344,7 @@ export const ptBR: Copy = {
           { mark: "no", text: "não" },
           { mark: "info", text: "o site não diz" },
           { mark: "partial", text: "páginas em Markdown, guardadas no banco" },
+          { mark: "partial", text: "exporta a história em Markdown" },
         ],
       },
       {
@@ -360,6 +363,7 @@ export const ptBR: Copy = {
           { mark: "yes", text: "app de Mac e Windows com modo offline" },
           { mark: "yes", text: "app local" },
           { mark: "yes", text: "app de computador" },
+          { mark: "yes", text: "local e offline" },
         ],
       },
       {
@@ -378,6 +382,7 @@ export const ptBR: Copy = {
           { mark: "no", text: "não" },
           { mark: "info", text: "app local, sem servidor" },
           { mark: "yes", text: "servidor Node.js ou o próprio app" },
+          { mark: "no", text: "não; backup opcional no Google Drive" },
         ],
       },
       {
@@ -396,6 +401,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "colaboradores editam; ao vivo, não confirmado" },
           { mark: "no", text: "não" },
           { mark: "yes", text: "várias pessoas na mesma página" },
+          { mark: "no", text: "não; jogo solo" },
         ],
       },
       {
@@ -414,6 +420,7 @@ export const ptBR: Copy = {
           { mark: "yes", text: "ver, comentar ou editar" },
           { mark: "no", text: "não" },
           { mark: "yes", text: "por pessoa, em cada diário e página" },
+          { mark: "no", text: "exporta o jogo ou a história em arquivo" },
         ],
       },
       {
@@ -432,6 +439,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "o site não diz" },
           { mark: "no", text: "não" },
           { mark: "yes", text: "blocos Secret, que o mestre revela" },
+          { mark: "info", text: "não se aplica: o oráculo faz o papel do mestre" },
         ],
       },
       {
@@ -450,6 +458,7 @@ export const ptBR: Copy = {
           { mark: "partial", text: "módulos de mundo, não de RPG" },
           { mark: "yes", text: "tipos de documento de mundo" },
           { mark: "yes", text: "pelos sistemas de jogo" },
+          { mark: "yes", text: "mais de 50 oráculos, tabelas próprias, dados" },
         ],
       },
       {
@@ -468,6 +477,7 @@ export const ptBR: Copy = {
           { mark: "yes", text: "pinos, zonas e camadas" },
           { mark: "no", text: "não" },
           { mark: "yes", text: "cenas com notas no mapa" },
+          { mark: "no", text: "imagens importadas, sem mapa interativo" },
         ],
       },
       {
@@ -486,6 +496,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "o site não diz" },
           { mark: "info", text: "o site não diz" },
           { mark: "partial", text: "desenho sobre as cenas" },
+          { mark: "info", text: "o site não diz" },
         ],
       },
       {
@@ -504,6 +515,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "o site não diz" },
           { mark: "partial", text: "campos estruturados" },
           { mark: "no", text: "não" },
+          { mark: "info", text: "o site não diz" },
         ],
       },
       {
@@ -522,6 +534,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "o site não diz" },
           { mark: "info", text: "o site não diz" },
           { mark: "partial", text: "links entre documentos, sem grafo" },
+          { mark: "info", text: "o site não diz" },
         ],
       },
       {
@@ -540,6 +553,7 @@ export const ptBR: Copy = {
           { mark: "no", text: "não" },
           { mark: "no", text: "não" },
           { mark: "yes", text: "módulos e sistemas" },
+          { mark: "no", text: "não; extras pagos" },
         ],
       },
       {
@@ -558,6 +572,7 @@ export const ptBR: Copy = {
           { mark: "partial", text: "app com menos módulos, online" },
           { mark: "no", text: "não" },
           { mark: "no", text: "não suporta celular" },
+          { mark: "yes", text: "apps iOS e Android (compra à parte)" },
         ],
       },
       {
@@ -576,6 +591,7 @@ export const ptBR: Copy = {
           { mark: "no", text: "não" },
           { mark: "no", text: "não" },
           { mark: "no", text: "nenhum oficial" },
+          { mark: "no", text: "não; assistente de IA pago, opcional" },
         ],
       },
       {
@@ -594,6 +610,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "proprietária" },
           { mark: "info", text: "GPL-3.0, código aberto" },
           { mark: "info", text: "proprietária" },
+          { mark: "info", text: "proprietária; nenhuma licença publicada" },
         ],
       },
       {
@@ -612,6 +629,7 @@ export const ptBR: Copy = {
           { mark: "info", text: "gratuito com plano pago (módulos)" },
           { mark: "info", text: "gratuito; a v1 parou em 2025, uma nova está em obra" },
           { mark: "info", text: "pago, licença única do mestre" },
+          { mark: "info", text: "pago: pague quanto quiser, acima de um mínimo, por plataforma; o PUM Lite é gratuito" },
         ],
       },
     ],
