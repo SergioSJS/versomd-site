@@ -863,7 +863,7 @@ export const en: Copy = {
               { lead: "Dice and random tables.", textHtml: "<code>dice: 1d20</code> rolls with a click, and a table in a note draws a row; the result is never written into the note." },
               { lead: "Linking mentions.", textHtml: "Where a note is named without a link, one click makes the link — one at a time, or all at once, after seeing what changes." },
               { lead: "Maps on the board.", textHtml: "A picture under the board, pins that open notes, and secret pins the players do not see." },
-              { lead: "Version history.", textHtml: "On a UniVerso: who changed a note and when, the difference between versions, and an older version brought back." },
+              { lead: "Version history.", textHtml: "Who changed a note and when, the difference between versions, and an older version brought back — on a UniVerso and in the computer's own folders." },
               { lead: "The phone offline.", textHtml: "The folders you choose stay on the phone; you write without a connection, and everything syncs when the network is back." },
               { lead: "Periodic notes.", textHtml: "Weekly and monthly, beside the daily note." },
               { lead: "Fuller bases.", textHtml: "Filters with regular expressions, and the map view." },

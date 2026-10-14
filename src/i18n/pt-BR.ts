@@ -864,7 +864,7 @@ export const ptBR: Copy = {
               { lead: "Dados e tabelas aleatórias.", textHtml: "<code>dice: 1d20</code> rola com um clique, e uma tabela da nota sorteia uma linha; o resultado nunca é gravado na nota." },
               { lead: "Ligar menções.", textHtml: "Onde uma nota é citada pelo nome sem link, um clique faz o link — um por um, ou todos de uma vez, vendo antes o que muda." },
               { lead: "Mapas no board.", textHtml: "Uma imagem por baixo do board, pinos que abrem notas, e pinos secretos que os jogadores não veem." },
-              { lead: "Histórico de versões.", textHtml: "Num UniVerso: quem mudou uma nota e quando, a diferença entre versões, e uma versão antiga de volta." },
+              { lead: "Histórico de versões.", textHtml: "Quem mudou uma nota e quando, a diferença entre versões, e uma versão antiga de volta — num UniVerso e nas pastas do computador." },
               { lead: "O celular offline.", textHtml: "As pastas que você escolher ficam no celular; você escreve sem conexão, e tudo sincroniza quando a rede volta." },
               { lead: "Notas periódicas.", textHtml: "Da semana e do mês, ao lado da nota do dia." },
               { lead: "Bases mais completas.", textHtml: "Filtros com expressões regulares e a vista em mapa." },
