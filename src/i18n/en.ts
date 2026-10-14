@@ -14,13 +14,14 @@ export const en: Copy = {
   },
   skip: "Skip to the content",
   nav: {
-    label: "Sections",
-    how: "How it works",
-    notYet: "What it does not do yet",
+    label: "Pages",
+    home: "Home",
+    features: "Features",
+    server: "UniVerso",
     compare: "Compare",
-    faq: "Questions",
     waitlist: "Waitlist",
   },
+  toTop: "Back to top",
   switchTo: { label: "Ler em português", name: "Português", href: "/", hreflang: "pt-BR" },
   hero: {
     eyebrow: "Markdown notes · local-first · your own server",
@@ -67,8 +68,30 @@ export const en: Copy = {
       },
     ],
   },
+  more: {
+    title: "Read on",
+    items: [
+      {
+        page: "features",
+        title: "Features",
+        text: "What Verso does today — writing, linking notes, boards, bases — and the roadmap to V1.",
+        link: "See the features and the roadmap",
+      },
+      {
+        page: "server",
+        title: "UniVerso",
+        text: "The server you run yourself: sync, sharing, editing together, and the numbers measured on a 1 GB VPS.",
+        link: "Meet UniVerso",
+      },
+      {
+        page: "compare",
+        title: "How it compares",
+        text: "Verso beside thirteen note and RPG tools, with what each one does and does not do.",
+        link: "Open the comparison",
+      },
+    ],
+  },
   how: {
-    title: "How it works",
     files: {
       title: "The files are the truth",
       paragraphsHtml: [
@@ -77,9 +100,6 @@ export const en: Copy = {
       ],
     },
     server: {
-      title: "The server is yours",
-      introHtml:
-        "UniVerso is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites. Each folder has an owner, editors and readers.",
       items: [
         {
           term: "Sync",
@@ -241,7 +261,7 @@ export const en: Copy = {
       {
         lead: "No offline use on a phone.",
         textHtml:
-          "On a phone and in a browser you work directly on the server’s folder; without a connection, you cannot edit. A local copy with a queue of writes is a later step.",
+          "On a phone and in a browser you work directly on the server’s folder; without a connection, you cannot edit. The phone offline is on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>.",
       },
       {
         lead: "No plugins.",
@@ -256,7 +276,7 @@ export const en: Copy = {
       {
         lead: "No end-to-end encryption.",
         textHtml:
-          "Editing together and searching on the server need the server to read the files: whoever hosts sees the notes. Encryption at rest is the server’s disk’s.",
+          "Editing together and searching on the server need the server to read the files: whoever hosts sees the notes. Encryption at rest is the server’s disk’s. Optional end-to-end encryption comes after V1.",
       },
       {
         lead: "No sync through Dropbox, Google Drive or iCloud.",
@@ -714,6 +734,190 @@ export const en: Copy = {
       },
     ],
   },
+  pages: {
+    features: {
+      meta: {
+        title: "Features and roadmap — Verso",
+        description:
+          "What Verso does today — writing in Markdown, linking notes, boards, bases, syncing with a server of your own — and what comes next, up to V1.",
+      },
+      eyebrow: "Features",
+      title: "What Verso does, and what comes next.",
+      ledeHtml:
+        "First what the test releases already have; right below, <a href=\"#roadmap\">the roadmap</a> to V1, the release for everyone.",
+      today: {
+        title: "What it does today",
+        introHtml:
+          "All of this is in today’s test releases: on a Mac with an Apple chip, on Windows 10 and 11 and on Linux (x64), and in a browser and on a phone through a UniVerso.",
+        groups: [
+          {
+            title: "Writing",
+            itemsHtml: [
+              "Three modes: reading, editing and the raw Markdown.",
+              "Blocks you drag by their handle and a <code>/</code> menu, as in Notion.",
+              "Tables edited as tables.",
+              "A panel for the note’s properties, and typed notes: the type gives a note its fields.",
+              "Callouts, maths, Mermaid diagrams and code blocks with a copy button.",
+            ],
+          },
+          {
+            title: "Linking notes",
+            itemsHtml: [
+              "<code>[[…]]</code> links to notes, headings and blocks, and embeds that show the note or the block.",
+              "Backlinks, outgoing links and the links that lead to no note yet.",
+              "Renaming a note updates every link to it.",
+              "A graph of the notes to explore.",
+            ],
+          },
+          {
+            title: "Boards",
+            itemsHtml: [
+              "<code>.canvas</code> files, Obsidian’s format, drawn with Excalidraw.",
+              "The folder’s notes as cards you edit in place; pictures, which you can crop, and PDFs.",
+              "Arrows that keep the point they were drawn to, and the drawings of Obsidian’s Excalidraw plugin.",
+            ],
+          },
+          {
+            title: "Bases",
+            itemsHtml: [
+              "<code>.base</code> files shown as a table, cards, a list, a kanban or a calendar, with filters, sorting, groups and formulas.",
+              "A base embedded live in a note; the same file Obsidian opens.",
+            ],
+          },
+          {
+            title: "Organizing",
+            itemsHtml: [
+              "A file tree with multiple selection, stickers, colours and covers.",
+              "Folder pages, manual order and focuses, shared with make.md.",
+              "The daily note, with a calendar, and templates offered when a note is made.",
+            ],
+          },
+          {
+            title: "Reading and keeping",
+            itemsHtml: [
+              "A PDF reader with two-page spreads, pictures and HTML files.",
+              "Web pages kept as notes.",
+            ],
+          },
+          {
+            title: "Finding",
+            itemsHtml: [
+              "Search across the text of every note, open by name and a command palette.",
+              "Find and replace across notes.",
+              "Pinned and preview tabs, split panes, workspaces and one folder per window.",
+            ],
+          },
+          {
+            title: "With a UniVerso",
+            itemsHtml: [
+              "The folder in step across your computers; the first sync deletes nothing.",
+              "Folders shared with other accounts, to read or to write.",
+              "Notes, boards and bases edited together, live, with each person’s cursor and name.",
+              "A 30-day trash, and a console for the admin.",
+              "The same window in a browser and on a phone. <a href=\"/en/universo/\">More about UniVerso</a>.",
+            ],
+          },
+          {
+            title: "AI agents and the terminal",
+            itemsHtml: [
+              "A read-only MCP server, which Settings connects to Claude Desktop; every call an agent makes is logged.",
+              "The <code>verso</code> command indexes, searches and lists backlinks in the terminal.",
+            ],
+          },
+          {
+            title: "Your way, no account",
+            itemsHtml: [
+              "Themes, palettes, fonts and your own shortcuts; the app in Portuguese or in English.",
+              "No sign-up and no telemetry: the folder is yours.",
+              "The app updates itself, and installs only an update whose signature checks out.",
+            ],
+          },
+        ],
+      },
+      roadmap: {
+        title: "Roadmap",
+        introHtml: [
+          "What comes next, up to V1 — the release for everyone. It is a plan, not a promise: what goes in and in what order may change, and there are no dates.",
+          "<strong>Being built</strong> is what is being made now for the next test release; <strong>planned</strong> is what is decided for V1 and has not reached the test releases yet.",
+        ],
+        states: { building: "being built", planned: "planned", later: "after V1" },
+        groups: [
+          {
+            title: "In the next test release",
+            state: "building",
+            items: [
+              {
+                lead: "Notifications in the app.",
+                textHtml:
+                  "A notice when something changes without you asking — sync dropped or came back, a folder was shared with you, a new version is out — and a list to look at later. You choose, kind by kind, what notifies you.",
+              },
+            ],
+          },
+          {
+            title: "In V1",
+            state: "planned",
+            items: [
+              { lead: "Preview on hover.", textHtml: "Rest the pointer on a link and read the note without leaving where you are." },
+              { lead: "A note’s card.", textHtml: "The properties become a card beside the text, with a picture — a character sheet, a place, a project." },
+              { lead: "The game master’s secrets.", textHtml: "A <code>&gt; [!secret]</code> block inside the note, which someone who can only read the shared note never receives." },
+              { lead: "Dice and random tables.", textHtml: "<code>dice: 1d20</code> rolls with a click, and a table in a note draws a row; the result is never written into the note." },
+              { lead: "Linking mentions.", textHtml: "Where a note is named without a link, one click makes the link — one at a time, or all at once, after seeing what changes." },
+              { lead: "Maps on the board.", textHtml: "A picture under the board, pins that open notes, and secret pins the players do not see." },
+              { lead: "Version history.", textHtml: "On a UniVerso: who changed a note and when, the difference between versions, and an older version brought back." },
+              { lead: "The phone offline.", textHtml: "The folders you choose stay on the phone; you write without a connection, and everything syncs when the network is back." },
+              { lead: "Periodic notes.", textHtml: "Weekly and monthly, beside the daily note." },
+              { lead: "Fuller bases.", textHtml: "Filters with regular expressions, and the map view." },
+              { lead: "The app as a server.", textHtml: "The desktop app serves its folder on your network; the phone finds it there and connects by reading a QR code." },
+              { lead: "Intel Macs and Linux ARM64.", textHtml: "Apps for those computers too." },
+            ],
+          },
+          {
+            title: "Also before V1",
+            state: "planned",
+            items: [
+              { lead: "A security test from outside.", textHtml: "Someone outside the project tries to break into a test UniVerso." },
+              { lead: "Signed apps.", textHtml: "On a Mac and on Windows, with no unknown-app warning when installing." },
+              { lead: "A pass with a screen reader.", textHtml: "The whole app gone through with a screen reader, so it works for people who cannot see the screen." },
+              { lead: "A month of real use.", textHtml: "A month of using Verso every day, without losing any data." },
+              { lead: "The code in the open.", textHtml: "Verso’s repository public, and the installers on this site." },
+            ],
+          },
+          {
+            title: "Later",
+            state: "later",
+            items: [
+              { lead: "Optional end-to-end encryption." },
+              { lead: "The MCP server over the network." },
+              { lead: "The folder on outside storage: a bucket of yours or WebDAV." },
+            ],
+          },
+        ],
+      },
+    },
+    server: {
+      meta: {
+        title: "UniVerso, Verso’s server",
+        description:
+          "UniVerso is Verso as a server, on a machine of yours: the folder in step across computers, in a browser and on a phone, shared and edited together. Measured on a 1-core, 1 GB VPS.",
+      },
+      eyebrow: "UniVerso · Verso’s server",
+      title: "The server is yours.",
+      ledeHtml:
+        "UniVerso is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites. Each folder has an owner, editors and readers.",
+      stepsTitle: "In three steps",
+      featuresTitle: "What it does",
+    },
+    compare: {
+      meta: {
+        title: "How it compares — Verso",
+        description:
+          "Verso beside thirteen note, worldbuilding and RPG tools, capability by capability: what each one does and does not do. No prices.",
+      },
+      eyebrow: "Notes, worlds and RPG",
+      roadmapHtml:
+        "Part of what is missing — the game master’s secret inside a note, maps with pins, the phone offline — is on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. It is a plan, with no dates.",
+    },
+  },
   waitlist: {
     title: "Waitlist",
     intro: "One e-mail when there is something to download.",
@@ -749,6 +953,17 @@ export const en: Copy = {
     noTracking: "No analytics, no cookies.",
   },
   figLabel: "Fig.",
-  routes: { home: "/en/", thanks: "/en/thanks/", failed: "/en/waitlist/failed/" },
-  ids: { content: "content", how: "how-it-works", notYet: "not-yet", compare: "compare", faq: "questions", waitlist: "waitlist" },
+  routes: { home: "/en/", features: "/en/features/", server: "/en/universo/", compare: "/en/compare/", thanks: "/en/thanks/", failed: "/en/waitlist/failed/" },
+  ids: {
+    content: "content",
+    notYet: "not-yet",
+    compare: "compare",
+    faq: "questions",
+    waitlist: "waitlist",
+    files: "files",
+    today: "today",
+    roadmap: "roadmap",
+    steps: "steps",
+    serverFeatures: "what-it-does",
+  },
 };

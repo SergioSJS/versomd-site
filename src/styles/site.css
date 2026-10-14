@@ -102,8 +102,9 @@ strong { font-weight: 600; }
 /* ── the masthead ──────────────────────────────────────────────────────── */
 .masthead {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem 1.5rem;
+  gap: 0 1.5rem;
   width: min(100% - 32px, 72rem);
   margin: 0 auto;
   padding: 0.55rem 0;
@@ -122,7 +123,17 @@ strong { font-weight: 600; }
   letter-spacing: -0.01em;
 }
 .wordmark img { border-radius: var(--radius-m); }
-.sections { display: flex; gap: 1.4rem; margin-left: auto; }
+/* The pages: a list of links, the current one said (aria-current) and
+   shown by its weight and a seal-coloured rule under it. */
+.sections { margin-left: auto; }
+.sections ul {
+  display: flex;
+  gap: 0 1.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sections a { position: relative; }
 .sections a,
 .lang,
 .mast-cta {
@@ -136,6 +147,16 @@ strong { font-weight: 600; }
 .lang { color: var(--ink-2); }
 .sections a:hover,
 .lang:hover { color: var(--seal); }
+.sections a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.sections a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 7px;
+  /* A border, not a background, so forced colours still draw it. */
+  border-bottom: 2px solid var(--seal);
+}
 .lang {
   padding: 0 0.75rem;
   border: 1px solid var(--hair);
@@ -150,9 +171,18 @@ strong { font-weight: 600; }
   border-radius: var(--radius-pill);
 }
 .mast-cta:hover { background: color-mix(in oklch, var(--seal) 88%, var(--ink)); }
+/* Narrower: the pages go to a row of their own under the name, spread
+   across it; they scroll sideways rather than overflow if a font is large. */
 @media (max-width: 860px) {
-  .sections { display: none; }
   .mast-cta { margin-left: auto; }
+  .sections {
+    order: 3;
+    flex-basis: 100%;
+    margin: 0;
+    border-top: 1px solid var(--hair);
+    overflow-x: auto;
+  }
+  .sections ul { justify-content: space-between; gap: 0 1rem; }
 }
 @media (max-width: 479px) {
   .masthead { gap: 0.5rem; }
@@ -269,6 +299,28 @@ strong { font-weight: 600; }
   gap: 0.75rem 1.75rem;
   margin: 1.8rem 0 0;
 }
+
+/* ── the head of a page other than the home page ───────────────────────── */
+.page-head { padding: clamp(2rem, 1.4rem + 3vw, 4rem) 0 0; }
+.page-head h1 {
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--display);
+  font-weight: 560;
+  font-size: clamp(2.2rem, 1.4rem + 3.2vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144;
+  overflow-wrap: break-word;
+}
+.page-head h1 .md { font-size: 0.5em; vertical-align: 0.35em; }
+@media (min-width: 1320px) {
+  .page-head h1 .md { top: 0.35em; vertical-align: baseline; }
+}
+.page-head .eyebrow { margin-bottom: 0.9rem; }
+.page-head + .block { padding-top: clamp(2.25rem, 1.75rem + 2vw, 3.5rem); }
+.subpage > .wrap:last-child { padding-bottom: clamp(1rem, 0.5rem + 2vw, 2rem); }
 
 /* ── figures, as plates ────────────────────────────────────────────────── */
 .plate { margin: 0; min-width: 0; }
@@ -395,26 +447,127 @@ h4 {
 .card h3 { font-size: clamp(1.3rem, 1.18rem + 0.4vw, 1.5rem); margin-bottom: 0.55rem; }
 .card p:last-child { margin: 0; color: var(--ink-2); font-size: 0.97em; line-height: 1.55; }
 
-/* ── how it works ──────────────────────────────────────────────────────── */
-.files,
-.server-intro {
+/* ── "read on": a card per page, the whole card the link's target ─────── */
+.more-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
 }
-.server-intro { margin-top: 2.2rem; }
-@media (min-width: 1000px) {
-  .files,
-  .server-intro { grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); }
-  .files h3,
-  .server-intro h3 { margin-top: 0.15rem; }
+.more-card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.3rem 1.4rem 0.9rem;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-l);
+  background: var(--paper-2);
 }
+.more-card:hover { border-color: var(--ink-3); }
+.more-card:has(.more-link:focus-visible) { outline: 2px solid var(--brass-ink); outline-offset: 3px; }
+.more-card h3 { margin: 0; }
+.more .more-card p { flex: 1; margin: 0; color: var(--ink-2); font-size: 0.97em; line-height: 1.55; }
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  font: 600 0.98rem/1.2 var(--ui);
+}
+/* The link covers its card, so a click anywhere on it follows the link. */
+.more-link::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-l); }
+
+/* ── features: the files, what it does today, the roadmap ─────────────── */
 .files-text { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 2.5rem; }
 @media (min-width: 1200px) {
   .files-text { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-.files p,
-.server-intro p { max-width: var(--measure); }
+.files-text p { max-width: var(--measure); }
+
+.today-intro { max-width: var(--measure); margin-top: -0.6rem; }
+.feature-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 0 2.5rem;
+  margin-top: 1.4rem;
+}
+.feature-group {
+  min-width: 0;
+  padding: 1rem 0 1.1rem;
+  border-top: 1px solid var(--hair);
+}
+.feature-group h3 { margin: 0 0 0.5rem; font-size: clamp(1.15rem, 1.08rem + 0.3vw, 1.3rem); }
+.feature-group ul { margin: 0; padding-left: 1.1rem; }
+.feature-group li {
+  margin: 0 0 0.35rem;
+  font-size: 0.94em;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.feature-group li::marker { color: var(--brass); }
+
+/* The roadmap: a band, as "what it does not do yet" is; each group says
+   its state in a small label beside its title, in words and colour. */
+.roadmap {
+  margin-top: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  padding-block: clamp(2.75rem, 2.25rem + 2.5vw, 4.5rem);
+  background: var(--paper-2);
+  border-block: 1px solid var(--hair);
+}
+.roadmap h2 { margin-bottom: 0.9rem; }
+.roadmap-intro p { max-width: var(--measure); margin: 0 0 0.8rem; }
+.roadmap-intro p + p { font-size: 0.94em; color: var(--ink-2); }
+.roadmap-group { margin-top: 2.2rem; }
+.roadmap-group h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.state {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.65rem;
+  font: 600 0.72rem/1.4 var(--ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-pill);
+}
+.is-building .state { color: var(--seal-ink); background: var(--seal); border-color: var(--seal); }
+.is-planned .state { color: var(--brass-ink); border-color: color-mix(in oklch, var(--brass) 55%, var(--hair)); }
+.roadmap-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 2.5rem;
+}
+@media (min-width: 760px) {
+  .roadmap-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.roadmap-group li {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 0 0.95rem;
+  border-top: 1px solid var(--hair);
+}
+.roadmap-group li strong { font: 600 1rem/1.35 var(--ui); color: var(--ink); }
+.roadmap-group li span { font-size: 0.92em; line-height: 1.5; color: var(--ink-2); }
+.is-later li { padding-block: 0.6rem 0.7rem; }
+.is-later li strong { font-weight: 500; color: var(--ink-2); }
+
+/* ── UniVerso: the steps, what it does, the numbers ────────────────────── */
 
 .steps {
   list-style: none;
@@ -437,6 +590,9 @@ h4 {
   .step:has(.plate--tall) { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
 }
 .step-text { max-width: var(--measure); }
+.step h3 { margin: 0 0 0.6rem; font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem); line-height: 1.2; }
+.server-page .steps { margin-top: 0.5rem; }
+.server-page .features { margin-top: 0; }
 .step-text p:last-child { margin-bottom: 0; }
 .how .step-label {
   display: flex;
@@ -485,11 +641,7 @@ h4 {
 }
 
 /* The numbers: four highlights, the table folded under them. */
-.vps {
-  margin-top: clamp(3rem, 2.25rem + 3vw, 5rem);
-  padding-top: 2rem;
-  border-top: 1px solid var(--hair);
-}
+.vps { min-width: 0; }
 .vps-intro,
 .vps-after p { max-width: 58ch; }
 @media (min-width: 1000px) {
@@ -587,8 +739,8 @@ details > summary { cursor: pointer; }
 .numbers tbody th { font-weight: 400; color: var(--ink-2); width: 46%; }
 .numbers td { color: var(--ink); }
 
-/* The second call to the waitlist, after how it works. */
-.how .cta-strip {
+/* The call to the waitlist at the end of a page without the form. */
+.cta-strip {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -710,8 +862,10 @@ details > summary { cursor: pointer; }
   white-space: nowrap;
   border: 0;
 }
+.compare-page .page-head + .wrap { padding-top: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); }
 .compare-intro p { max-width: var(--measure); }
-.pains { margin: 1.8rem 0 0; }
+.pains { margin: 2.2rem 0 0; }
+.pains h2 { margin-bottom: 0.7rem; font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.8rem); }
 .pains ul {
   list-style: none;
   margin: 0.4rem 0 0;
@@ -1109,6 +1263,62 @@ a.tool-name { color: var(--seal); }
 .colophon .fonts { flex-basis: 100%; order: 3; }
 .colophon a { color: var(--ink-2); display: inline-block; padding-block: 0.7rem; }
 .colophon p:not(.fonts) a { min-height: 44px; }
+
+/* ── back to top ───────────────────────────────────────────────────────── */
+/* Without the script: a link at the end of the page. With it: a round
+   button in the corner, shown once the reader is well down the page;
+   hidden, it is out of the tab order too (visibility). */
+.to-top-wrap { width: min(100% - 32px, 72rem); margin: 2.5rem auto 0; }
+.to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 1rem;
+  font: 600 0.92rem/1.2 var(--ui);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink-3);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+}
+.to-top:hover { border-color: var(--ink); color: var(--seal); }
+.to-top-arrow { font-size: 1.05rem; color: var(--seal); }
+.to-top-wrap:has(.is-floating) { margin: 0; }
+.to-top.is-floating {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out), visibility 0s linear 0.2s;
+}
+.to-top.is-floating.is-shown {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out), visibility 0s;
+}
+.to-top.is-floating .to-top-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .to-top.is-floating,
+  .to-top.is-floating.is-shown { transform: none; transition: none; }
+}
 
 /* ── one entrance, at load ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: no-preference) {

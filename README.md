@@ -37,15 +37,20 @@ npx wrangler pages dev dist --kv WAITLIST
 | Path | What it is |
 |---|---|
 | `src/i18n/pt-BR.ts`, `src/i18n/en.ts` | Every word of the site. pt-BR is written first; en mirrors it field for field (`src/i18n/types.ts`). |
-| `src/components/Landing.astro` | The landing page, for either language: hero, "in short" strip, value cards, how it works in three steps, the numbers, the recordings as tabs, what it does not do yet, how it compares (one table, Verso first, then twelve note, worldbuilding and solo-play tools; checked against each product's official pages, no prices), questions, waitlist. |
-| `src/pages/` | `/` and `/en/`; `/obrigado/` and `/en/thanks/`; `/lista/nao-deu/` and `/en/waitlist/failed/`; `404`; `sitemap.xml`. |
+| `src/layouts/Base.astro` | Every page's frame: the header with the pages (the current one marked with `aria-current`), the language switch, the footer, and the "back to top" link of a long page with its small script. |
+| `src/components/Landing.astro` | The home page, kept short: hero, "in short" strip, who it is for, a card for each other page, the recordings as tabs, what it does not do yet, questions, waitlist. A script sends an old link to a section that moved (`#como-funciona`, `#comparativo?f=…`) to its page. |
+| `src/components/FeaturesPage.astro` | Recursos / Features: the files are the truth, what Verso does today (in a reader's words), then the roadmap to V1 — each group with its state (being built, planned, after V1), no dates. |
+| `src/components/ServerPage.astro` | UniVerso: the server in three steps with their pictures, what it does, and the numbers measured on a 1-core, 1 GB machine. |
+| `src/components/ComparePage.astro` | Comparativo / How it compares: one table, Verso first, then thirteen note, worldbuilding and solo-play tools (checked against each product's official pages, no prices). |
+| `src/components/PageHead.astro`, `CtaStrip.astro` | The head of a page other than the home page; the call to the waitlist at the end of one. |
+| `src/pages/` | `/` and `/en/`; `/recursos/` and `/en/features/`; `/universo/` and `/en/universo/`; `/comparativo/` and `/en/compare/`; `/obrigado/` and `/en/thanks/`; `/lista/nao-deu/` and `/en/waitlist/failed/`; `404`; `sitemap.xml`. |
 | `src/styles/tokens.css` | Colours, fonts and measure copied from the Verso window. |
 | `src/styles/site.css` | The page's layout. |
 | `public/media/` | Screenshots and the four recordings (GIF; a PNG poster of each for reduced motion; an animated WebP where it is smaller). |
 | `public/fonts/` | Fraunces, Literata, Instrument Sans (SIL OFL 1.1, licences beside them). |
 | `public/waitlist.js` | Sends the form with `fetch` and answers in place. |
-| `<script>` in `Landing.astro` | The recordings as tabs (one at a time, arrow keys; "play" under reduced motion). Bundled into `/_astro/` as a file, never inlined, for the Content-Security-Policy. Without JavaScript the four recordings stand stacked. |
-| second `<script>` in `Landing.astro` | The comparison's controls: shortcuts, a chip per tool, a chip per capability group, "only what differs", a polite count and "show everything"; the view in the address (`#comparativo?f=…&g=…&diff=1`, `#compare?…` in English) and, as a convenience, in `localStorage`; and a copy of the tools' row that stays at the top of the screen while the table's own header is above it, kept to its column widths and sideways scroll. Bundled into `/_astro/` like the first. Without JavaScript the whole table stands and the controls stay hidden. |
+| second `<script>` in `Landing.astro` | The recordings as tabs (one at a time, arrow keys; "play" under reduced motion). Bundled into `/_astro/` as a file, never inlined, for the Content-Security-Policy. Without JavaScript the four recordings stand stacked. |
+| `<script>` in `ComparePage.astro` | The comparison's controls: shortcuts, a chip per tool, a chip per capability group, "only what differs", a polite count and "show everything"; the view in the address (`/comparativo/#comparativo?f=…&g=…&diff=1`, `/en/compare/#compare?…` in English) and, as a convenience, in `localStorage`; and a copy of the tools' row that stays at the top of the screen while the table's own header is above it, kept to its column widths and sideways scroll. Bundled into `/_astro/` like the first. Without JavaScript the whole table stands and the controls stay hidden. |
 | `public/_headers` | Content-Security-Policy and caching on Cloudflare Pages. |
 | `functions/api/waitlist.ts` | The waitlist's endpoint (Cloudflare Pages Function). |
 | `scripts/check-tokens.mjs` | The tokens' drift check. |

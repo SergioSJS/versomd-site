@@ -1,4 +1,7 @@
 ---
+// The home page: the essentials, short. The features and the roadmap, the
+// server and the comparison each have a page of their own (Base's header
+// links them); the cards under "who it is for" point at them too.
 import type { Copy } from "../i18n";
 import Figure from "./Figure.astro";
 import WaitlistForm from "./WaitlistForm.astro";
@@ -8,41 +11,7 @@ interface Props {
 }
 
 const { copy } = Astro.props;
-const { hero, who, how, motion, notYet, compare, faq, waitlist, ids } = copy;
-
-// The comparison's shape is checked at build time: a row missing a cell, or
-// groups that do not cover the columns after Verso's, fail the build.
-const groupSpan = compare.groups.reduce((sum, g) => sum + g.span, 0);
-if (groupSpan !== compare.tools.length - 1) {
-  throw new Error(`compare.groups span ${groupSpan}, expected ${compare.tools.length - 1}`);
-}
-for (const row of compare.rows) {
-  if (row.cells.length !== compare.tools.length) {
-    throw new Error(`compare row "${row.label}" has ${row.cells.length} cells, expected ${compare.tools.length}`);
-  }
-}
-for (const row of compare.rows) {
-  if (!compare.rowGroups.some((g) => g.id === row.group)) {
-    throw new Error(`compare row "${row.label}" names an unknown group "${row.group}"`);
-  }
-}
-const [verso, ...others] = compare.tools;
-// Each tool's column group ("notes" / "rpg"), from the spans, in order.
-const toolGroup: string[] = ["verso"];
-for (const g of compare.groups) for (let i = 0; i < g.span; i++) toolGroup.push(g.id);
-// The tools each shortcut turns on; Verso is in every one.
-const presetTools: Record<string, string[]> = {
-  all: compare.tools.map((t) => t.id),
-  versus: [verso.id, "obsidian"],
-};
-for (const g of compare.groups) {
-  presetTools[g.id] = compare.tools.filter((_, i) => i === 0 || toolGroup[i] === g.id).map((t) => t.id);
-}
-const rowsByGroup = compare.rowGroups.map((g) => ({ ...g, rows: compare.rows.filter((r) => r.group === g.id) }));
-for (const g of rowsByGroup) {
-  if (g.rows.length === 0) throw new Error(`compare group "${g.id}" has no row`);
-}
-const columns = compare.tools.length + 1;
+const { hero, who, more, motion, notYet, faq, waitlist, ids, routes } = copy;
 
 // The title is two sentences; the second is set apart, as the app sets a
 // note's title apart from its body.
@@ -52,11 +21,16 @@ const second = rest.join(" ");
 let n = 0;
 const next = () => ++n;
 const heroNumber = next();
-const stepNumbers = how.steps.map(() => next());
 const motionNumbers = motion.figures.map(() => next());
+
+// Sections that moved to a page of their own: an old link to one of them
+// (#como-funciona, #comparativo?f=…) is sent on by the script below.
+const moved: Record<string, string> = copy.lang === "pt-BR"
+  ? { "como-funciona": routes.server, vps: `${routes.server}#vps`, [ids.compare]: routes.compare }
+  : { "how-it-works": routes.server, vps: `${routes.server}#vps`, [ids.compare]: routes.compare };
 ---
 
-<article class="landing">
+<article class="landing" data-moved={JSON.stringify(moved)} data-compare-id={ids.compare}>
   <!-- The fold: the words on the left, the window on the right. -->
   <header class="hero">
     <div class="wrap hero-grid">
@@ -111,93 +85,25 @@ const motionNumbers = motion.figures.map(() => next());
     </div>
   </section>
 
-  <section class="block how" aria-labelledby={ids.how}>
+  <!-- The other pages, one card each: the whole card is the link's target,
+       the link itself is the last line (its words say where it goes). -->
+  <section class="block more" aria-labelledby="more">
     <div class="wrap">
-      <h2 id={ids.how}><span class="md" aria-hidden="true">##</span>{how.title}</h2>
-
-      <div class="files">
-        <h3>{how.files.title}</h3>
-        <div class="files-text">
-          {how.files.paragraphsHtml.map((p) => <p set:html={p} />)}
-        </div>
-      </div>
-
-      <div class="server-intro">
-        <h3>{how.server.title}</h3>
-        <p set:html={how.server.introHtml} />
-      </div>
-
-      <ol class="steps">
+      <h2 id="more"><span class="md" aria-hidden="true">##</span>{more.title}</h2>
+      <ul class="more-cards">
         {
-          how.steps.map((step, i) => (
-            <li class="step">
-              <div class="step-text">
-                <p class="step-label">
-                  {how.stepLabel} <span class="step-n">{i + 1}</span>
-                </p>
-                <h4>{step.title}</h4>
-                <p set:html={step.textHtml} />
-              </div>
-              <Figure figure={step.figure} label={copy.figLabel} number={stepNumbers[i]} class="step-plate" />
+          more.items.map((item) => (
+            <li class="more-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <a class="more-link" href={routes[item.page]}>
+                {item.link}
+                <span aria-hidden="true">→</span>
+              </a>
             </li>
           ))
         }
-      </ol>
-
-      <dl class="features">
-        {
-          how.server.items.map((item) => (
-            <div>
-              <dt>{item.term}</dt>
-              <dd set:html={item.textHtml} />
-            </div>
-          ))
-        }
-      </dl>
-
-      <div class="vps">
-        <h3 id="vps">{how.vps.title}</h3>
-        <p class="vps-intro" set:html={how.vps.introHtml} />
-        <ul class="stats">
-          {
-            how.vps.stats.map((s) => (
-              <li>
-                <span class="stat-value">{s.value}</span>
-                <span class="stat-label">{s.label}</span>
-              </li>
-            ))
-          }
-        </ul>
-        <details class="all-numbers">
-          <summary>{how.vps.allNumbers}</summary>
-          <div class="table-wrap" role="region" aria-labelledby="vps-caption" tabindex="0">
-            <table class="numbers">
-              <caption id="vps-caption">{how.vps.tableCaption}</caption>
-              <thead>
-                <tr><th scope="col">{how.vps.head[0]}</th><th scope="col">{how.vps.head[1]}</th></tr>
-              </thead>
-              <tbody>
-                {
-                  how.vps.rows.map(([what, measured]) => (
-                    <tr>
-                      <th scope="row">{what}</th>
-                      <td>{measured}</td>
-                    </tr>
-                  ))
-                }
-              </tbody>
-            </table>
-          </div>
-        </details>
-        <div class="vps-after">
-          {how.vps.afterHtml.map((p, i) => <p class:list={[i > 0 && "aside"]} set:html={p} />)}
-        </div>
-      </div>
-
-      <p class="cta-strip">
-        <span>{waitlist.intro}</span>
-        <a class="button" href={`#${ids.waitlist}`}>{hero.cta}</a>
-      </p>
+      </ul>
     </div>
   </section>
 
@@ -257,172 +163,6 @@ const motionNumbers = motion.figures.map(() => next());
     </div>
   </section>
 
-  <section class="block compare" aria-labelledby={ids.compare}>
-    <div class="wrap">
-      <h2 id={ids.compare}><span class="md" aria-hidden="true">##</span>{compare.title}</h2>
-      <div class="compare-intro">
-        {compare.introHtml.map((p) => <p set:html={p} />)}
-      </div>
-
-      <div class="pains">
-        <h3>{compare.pains.title}</h3>
-        <ul>
-          {
-            compare.pains.items.map((item) => (
-              <li>
-                <strong>{item.lead}</strong>
-                <span set:html={item.textHtml} />
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <!--
-        The controls are hidden until the script below shows them: without
-        JavaScript the whole table stands as it is, every column and row.
-      -->
-      <div
-        class="compare-controls"
-        role="group"
-        aria-label={compare.controls.label}
-        data-compare-controls
-        data-count={compare.controls.count}
-        hidden
-      >
-        <div class="cc-row">
-          <span class="cc-label" id="cc-presets">{compare.controls.presetsLabel}</span>
-          <div class="cc-chips" role="group" aria-labelledby="cc-presets">
-            {
-              compare.controls.presets.map((p) => (
-                <button type="button" class="cc-preset" data-preset-tools={presetTools[p.id].join(",")} aria-controls="compare-table">
-                  {p.label}
-                </button>
-              ))
-            }
-          </div>
-        </div>
-        <div class="cc-row">
-          <span class="cc-label" id="cc-tools">{compare.controls.toolsLabel}</span>
-          <div class="cc-chips" role="group" aria-labelledby="cc-tools">
-            {
-              compare.tools.map((t, i) => (
-                <button type="button" class:list={["cc-chip", i === 0 && "is-verso"]} data-tool={t.id} aria-pressed="true" aria-controls="compare-table">
-                  {t.name}
-                </button>
-              ))
-            }
-          </div>
-        </div>
-        <div class="cc-row">
-          <span class="cc-label" id="cc-caps">{compare.controls.capsLabel}</span>
-          <div class="cc-chips" role="group" aria-labelledby="cc-caps">
-            {
-              compare.rowGroups.map((g) => (
-                <button type="button" class="cc-chip" data-group={g.id} aria-pressed="true" aria-controls="compare-table">
-                  {g.label}
-                </button>
-              ))
-            }
-            <button type="button" class="cc-chip cc-diff" data-diff aria-pressed="false" aria-controls="compare-table" aria-describedby="cc-diff-hint">
-              {compare.controls.diff}
-            </button>
-          </div>
-        </div>
-        <p class="cc-hint" id="cc-diff-hint">{compare.controls.diffHint}</p>
-        <div class="cc-foot">
-          <p class="cc-count" role="status" aria-live="polite" data-compare-count></p>
-          <button type="button" class="cc-reset" data-reset aria-controls="compare-table">{compare.controls.reset}</button>
-        </div>
-      </div>
-
-      <p class="scroll-hint" id="compare-hint"><span aria-hidden="true">↔</span> {compare.scrollHint}</p>
-      <div class="compare-frame" data-compare-frame>
-        <!--
-          The tools' names while the table's own header has gone above the
-          screen: a copy the script fills and keeps in step, out of the
-          accessibility tree (the real header stays the one that is read).
-        -->
-        <div class="compare-sticky" aria-hidden="true" data-compare-sticky>
-          <div class="compare-sticky-inner" inert hidden></div>
-        </div>
-        <div
-          class="table-wrap compare-wrap"
-          role="region"
-          aria-labelledby="compare-caption"
-          aria-describedby="compare-hint"
-          tabindex="0"
-        >
-          <table class="compare-table" id="compare-table">
-            <caption id="compare-caption"><span>{compare.tableCaption}</span></caption>
-            <thead>
-              <tr class="groups">
-                <td class="corner"></td>
-                <td class="corner" data-tool={verso.id}></td>
-                {
-                  compare.groups.map((g) => (
-                    <th scope="colgroup" colspan={g.span} data-tool-group={g.id}>{g.label}</th>
-                  ))
-                }
-              </tr>
-              <tr class="tools">
-                <th scope="col" class="cap">{compare.capability}</th>
-                <th scope="col" class="is-verso" data-tool={verso.id}>
-                  <span class="tool-name">{verso.name}</span>
-                  <span class="tool-note">{verso.note}</span>
-                </th>
-                {
-                  others.map((t) => (
-                    <th scope="col" data-tool={t.id}>
-                      {t.href ? (
-                        <a class="tool-name" href={t.href} rel="noopener noreferrer">{t.name}</a>
-                      ) : (
-                        <span class="tool-name">{t.name}</span>
-                      )}
-                      <span class="tool-note">{t.note}</span>
-                    </th>
-                  ))
-                }
-              </tr>
-            </thead>
-            {
-              rowsByGroup.map((g) => (
-                <tbody data-row-group={g.id}>
-                  <tr class="row-group">
-                    <th scope="rowgroup" colspan={columns}><span>{g.label}</span></th>
-                  </tr>
-                  {g.rows.map((row) => (
-                    <tr data-row>
-                      <th scope="row" class="cap">{row.label}</th>
-                      {row.cells.map((cell, i) => {
-                        const m = compare.marks[cell.mark];
-                        return (
-                          <td class:list={[`is-${cell.mark}`, i === 0 && "is-verso"]} data-tool={compare.tools[i].id} data-mark={cell.mark}>
-                            {m.symbol === "" ? null : m.symbol === m.word ? (
-                              <span class="mark">{m.symbol}</span>
-                            ) : (
-                              <>
-                                <span class="mark" aria-hidden="true">{m.symbol}</span>
-                                <span class="sr">{m.word}:</span>
-                              </>
-                            )}{" "}
-                            <span class="cell-text">{cell.text}</span>
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              ))
-            }
-          </table>
-        </div>
-      </div>
-      <p class="aside compare-legend" set:html={compare.legendHtml} />
-      <p class="aside compare-verified">{compare.verified}</p>
-    </div>
-  </section>
-
   <section class="block faq" aria-labelledby={ids.faq}>
     <div class="wrap">
       <h2 id={ids.faq}><span class="md" aria-hidden="true">##</span>{faq.title}</h2>
@@ -448,6 +188,24 @@ const motionNumbers = motion.figures.map(() => next());
   </section>
 </article>
 <script is:inline src="/waitlist.js" defer></script>
+<script>
+  // An old link to a section that has moved to a page of its own goes
+  // there (replacing this entry in the history), the comparison's view in
+  // the address kept: #comparativo?f=… becomes /comparativo/#comparativo?f=….
+  const article = document.querySelector<HTMLElement>("[data-moved]");
+  const hash = location.hash.slice(1);
+  if (article && hash) {
+    let moved: Record<string, string> = {};
+    try {
+      moved = JSON.parse(article.dataset.moved ?? "{}");
+    } catch {
+      moved = {};
+    }
+    const key = decodeURIComponent(hash.split("?")[0]);
+    const to = moved[key];
+    if (to) location.replace(key === article.dataset.compareId ? `${to}#${hash}` : to);
+  }
+</script>
 <script>
   // The recordings as tabs (WAI-ARIA tabs pattern, automatic activation):
   // one panel at a time, roving tabindex, arrows / Home / End. With reduced
@@ -521,320 +279,5 @@ const motionNumbers = motion.figures.map(() => next());
     }
     syncPlayButtons();
     reduce.addEventListener("change", syncPlayButtons);
-  }
-</script>
-<script>
-  // The comparison's controls. Without this script the whole table stands,
-  // controls hidden. With it: which tools (columns) and which capability
-  // groups (rows) show, "only what differs", a count said politely, the
-  // state in the address (#<section>?f=…&g=…&diff=1) so a view can be
-  // linked, and the tools' names kept at the top of the screen while the
-  // table's own header has gone above it.
-  const table = document.getElementById("compare-table") as HTMLTableElement | null;
-  const controls = document.querySelector<HTMLElement>("[data-compare-controls]");
-  const frame = document.querySelector<HTMLElement>("[data-compare-frame]");
-  if (table && controls && frame && table.tHead) setUpComparison(table, table.tHead, controls, frame);
-
-  interface View {
-    tools: Set<string>;
-    groups: Set<string>;
-    diff: boolean;
-  }
-
-  function setUpComparison(table: HTMLTableElement, thead: HTMLTableSectionElement, controls: HTMLElement, frame: HTMLElement) {
-    const section = table.closest("section");
-    const sectionId = section?.querySelector("h2")?.id ?? "";
-    const wrap = table.parentElement as HTMLElement;
-    const toolChips = Array.from(controls.querySelectorAll<HTMLButtonElement>("button[data-tool]"));
-    const groupChips = Array.from(controls.querySelectorAll<HTMLButtonElement>("button[data-group]"));
-    const presets = Array.from(controls.querySelectorAll<HTMLButtonElement>("button[data-preset-tools]"));
-    const diffButton = controls.querySelector<HTMLButtonElement>("button[data-diff]");
-    const resetButton = controls.querySelector<HTMLButtonElement>("button[data-reset]");
-    const count = controls.querySelector<HTMLElement>("[data-compare-count]");
-    const template = controls.dataset.count ?? "";
-    const allTools = toolChips.map((b) => b.dataset.tool ?? "");
-    const allGroups = groupChips.map((b) => b.dataset.group ?? "");
-    const toolCells = Array.from(table.querySelectorAll<HTMLElement>("[data-tool]"));
-    const bodies = Array.from(table.tBodies);
-    const toolRow = thead.rows[1];
-    const groupHeads = Array.from(thead.rows[0].querySelectorAll<HTMLTableCellElement>("th[data-tool-group]"));
-    const storageKey = "versomd-compare";
-    const phone = window.matchMedia("(max-width: 760px)");
-
-    // Which column group each tool sits in, from the header's own spans.
-    const groupOfTool = new Map<string, string>();
-    let column = 1;
-    for (const head of groupHeads) {
-      for (let i = 0; i < head.colSpan; i++) groupOfTool.set(allTools[column++], head.dataset.toolGroup ?? "");
-    }
-
-    const everything = (): View => ({ tools: new Set(allTools), groups: new Set(allGroups), diff: false });
-    // A phone starts with three columns, not fourteen squeezed ones.
-    const firstView = (): View =>
-      phone.matches
-        ? { tools: new Set(["verso", "obsidian", "world-anvil"].filter((t) => allTools.includes(t))), groups: new Set(allGroups), diff: false }
-        : everything();
-
-    const serialize = (v: View) =>
-      `f=${allTools.filter((t) => v.tools.has(t)).join(",")}&g=${allGroups.filter((g) => v.groups.has(g)).join(",")}${v.diff ? "&diff=1" : ""}`;
-
-    const parse = (query: string): View | null => {
-      const params = new URLSearchParams(query);
-      if (!params.has("f") && !params.has("g") && !params.has("diff")) return null;
-      const list = (key: string, known: string[]) =>
-        new Set((params.get(key) ?? "").split(",").map((s) => s.trim()).filter((s) => known.includes(s)));
-      const base = firstView();
-      const tools = params.has("f") ? list("f", allTools) : base.tools;
-      const groups = params.has("g") ? list("g", allGroups) : base.groups;
-      return {
-        tools: tools.size ? tools : base.tools,
-        groups: groups.size ? groups : base.groups,
-        diff: params.get("diff") === "1",
-      };
-    };
-
-    const queryOfHash = (): string | null => {
-      const prefix = `#${sectionId}?`;
-      return location.hash.startsWith(prefix) ? location.hash.slice(prefix.length) : null;
-    };
-
-    const remember = (v: View | null) => {
-      try {
-        if (v) localStorage.setItem(storageKey, serialize(v));
-        else localStorage.removeItem(storageKey);
-      } catch {
-        // Storage refused (private window, blocked site data): the address still holds the view.
-      }
-    };
-    const recalled = (): View | null => {
-      try {
-        const saved = localStorage.getItem(storageKey);
-        return saved ? parse(saved) : null;
-      } catch {
-        return null;
-      }
-    };
-
-    let view: View = firstView();
-
-    const render = () => {
-      for (const chip of toolChips) chip.setAttribute("aria-pressed", String(view.tools.has(chip.dataset.tool ?? "")));
-      for (const chip of groupChips) chip.setAttribute("aria-pressed", String(view.groups.has(chip.dataset.group ?? "")));
-      diffButton?.setAttribute("aria-pressed", String(view.diff));
-
-      // Columns: a hidden cell leaves the layout and the accessibility tree.
-      for (const cell of toolCells) cell.hidden = !view.tools.has(cell.dataset.tool ?? "");
-      for (const head of groupHeads) {
-        const shown = allTools.filter((t) => groupOfTool.get(t) === head.dataset.toolGroup && view.tools.has(t)).length;
-        head.hidden = shown === 0;
-        if (shown > 0) head.colSpan = shown;
-      }
-      const shownTools = allTools.filter((t) => view.tools.has(t)).length;
-
-      // Rows: their group on, and, with "only what differs", marks that are
-      // not all the same across the tools shown (✓ / partial / ✗ / words).
-      let shownRows = 0;
-      let totalRows = 0;
-      for (const body of bodies) {
-        const groupOn = view.groups.has(body.dataset.rowGroup ?? "");
-        let shownHere = 0;
-        for (const row of Array.from(body.querySelectorAll<HTMLTableRowElement>("tr[data-row]"))) {
-          totalRows++;
-          const marks = new Set(
-            Array.from(row.querySelectorAll<HTMLElement>("td[data-tool]"))
-              .filter((td) => !td.hidden)
-              .map((td) => td.dataset.mark),
-          );
-          const same = view.diff && shownTools >= 2 && marks.size <= 1;
-          row.hidden = !groupOn || same;
-          if (!row.hidden) shownHere++;
-        }
-        body.hidden = shownHere === 0;
-        const label = body.querySelector<HTMLTableCellElement>("tr.row-group th");
-        if (label) label.colSpan = shownTools + 1;
-        shownRows += shownHere;
-      }
-
-      fit(shownTools);
-
-      if (count) {
-        count.textContent = template
-          .replace("{tools}", String(shownTools))
-          .replace("{toolsTotal}", String(allTools.length))
-          .replace("{rows}", String(shownRows))
-          .replace("{rowsTotal}", String(totalRows));
-      }
-      buildStrip();
-    };
-
-    // When the shown columns fit the box, they share its width and nothing
-    // scrolls sideways: on a phone up to three tools, on a wider screen as
-    // many as get their usual width (the table's 9.5rem); otherwise the box
-    // scrolls, as without this script.
-    const hint = document.getElementById("compare-hint");
-    const rem = () => parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-    function fit(shownTools: number) {
-      const room = wrap.clientWidth;
-      const narrow = room < 520;
-      const fits = narrow ? shownTools <= 3 : 8.5 * rem() + shownTools * 9.5 * rem() <= room;
-      if (fits) table.dataset.fit = "";
-      else delete table.dataset.fit;
-      if (hint) hint.hidden = fits;
-    }
-
-    // A change made here: shown, written to the address (without a jump or a
-    // new history entry) and kept for this viewer.
-    const change = (next: View) => {
-      view = next;
-      render();
-      history.replaceState(null, "", `${location.pathname}${location.search}#${sectionId}?${serialize(view)}`);
-      remember(view);
-    };
-
-    for (const chip of toolChips) {
-      chip.addEventListener("click", () => {
-        const id = chip.dataset.tool ?? "";
-        const tools = new Set(view.tools);
-        if (tools.has(id)) {
-          if (tools.size === 1) return; // at least one column stays
-          tools.delete(id);
-        } else tools.add(id);
-        change({ ...view, tools });
-      });
-    }
-    for (const chip of groupChips) {
-      chip.addEventListener("click", () => {
-        const id = chip.dataset.group ?? "";
-        const groups = new Set(view.groups);
-        if (groups.has(id)) {
-          if (groups.size === 1) return; // at least one group stays
-          groups.delete(id);
-        } else groups.add(id);
-        change({ ...view, groups });
-      });
-    }
-    for (const preset of presets) {
-      preset.addEventListener("click", () => {
-        const tools = new Set((preset.dataset.presetTools ?? "").split(",").filter((t) => allTools.includes(t)));
-        if (tools.size) change({ ...view, tools });
-      });
-    }
-    diffButton?.addEventListener("click", () => change({ ...view, diff: !view.diff }));
-    resetButton?.addEventListener("click", () => {
-      view = everything();
-      render();
-      history.replaceState(null, "", `${location.pathname}${location.search}#${sectionId}`);
-      remember(null);
-    });
-
-    // ── the names that stay at the top ──────────────────────────────────
-    // The table scrolls sideways in its own box, which makes that box the
-    // reference of a sticky header; so the header that follows the page is a
-    // copy of the tools' row, kept to the table's column widths and to its
-    // sideways scroll, shown only while the real one is above the screen.
-    const sticky = frame.querySelector<HTMLElement>("[data-compare-sticky]");
-    const strip = sticky?.querySelector<HTMLElement>(".compare-sticky-inner") ?? null;
-    let cols: HTMLTableColElement | null = null;
-    let copy: HTMLTableElement | null = null;
-    let stripHeight = 0;
-
-    function buildStrip() {
-      if (!strip) return;
-      const row = toolRow.cloneNode(true) as HTMLTableRowElement;
-      for (const hidden of Array.from(row.querySelectorAll("[hidden]"))) hidden.remove();
-      for (const link of Array.from(row.querySelectorAll("a"))) {
-        const name = document.createElement("span");
-        name.className = link.className;
-        name.textContent = link.textContent;
-        link.replaceWith(name);
-      }
-      copy = document.createElement("table");
-      copy.className = "compare-table compare-copy";
-      cols = document.createElement("colgroup") as HTMLTableColElement;
-      const head = document.createElement("thead");
-      head.append(row);
-      copy.append(cols, head);
-      strip.replaceChildren(copy);
-      measure();
-    }
-
-    function measure() {
-      if (!strip || !copy || !cols || !sticky) return;
-      const cells = Array.from(toolRow.cells).filter((c) => !c.hidden);
-      const widths = cells.map((c) => c.getBoundingClientRect().width);
-      cols.replaceChildren(
-        ...widths.map((w) => {
-          const col = document.createElement("col");
-          col.style.width = `${w}px`;
-          return col;
-        }),
-      );
-      copy.style.width = `${widths.reduce((a, b) => a + b, 0)}px`;
-      const wrapBox = wrap.getBoundingClientRect();
-      const stickyBox = sticky.getBoundingClientRect();
-      strip.style.left = `${wrapBox.left + wrap.clientLeft - stickyBox.left}px`;
-      strip.style.width = `${wrap.clientWidth}px`;
-      stripHeight = 0;
-      follow();
-    }
-
-    function follow() {
-      if (!strip) return;
-      const head = thead.getBoundingClientRect();
-      const whole = table.getBoundingClientRect();
-      const height = stripHeight || toolRow.getBoundingClientRect().height;
-      const show = head.top < 0 && whole.bottom > height + 16;
-      strip.hidden = !show;
-      if (show) {
-        if (!stripHeight) stripHeight = strip.offsetHeight;
-        strip.scrollLeft = wrap.scrollLeft;
-      }
-    }
-
-    let queued = false;
-    const soon = (task: () => void) => {
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(() => {
-        queued = false;
-        task();
-      });
-    };
-    window.addEventListener("scroll", () => soon(follow), { passive: true });
-    wrap.addEventListener("scroll", () => soon(follow), { passive: true });
-    window.addEventListener("resize", () =>
-      soon(() => {
-        fit(allTools.filter((t) => view.tools.has(t)).length);
-        measure();
-      }),
-    );
-    if ("ResizeObserver" in window) new ResizeObserver(() => soon(measure)).observe(table);
-
-    // ── start: the address, then this viewer's last view, then the default ──
-    const fromHash = queryOfHash();
-    view = (fromHash !== null ? parse(fromHash) : null) ?? recalled() ?? firstView();
-    controls.hidden = false;
-    render();
-    // Opened from a link to a view: go to the section at once (the page's
-    // smooth scrolling would still be travelling), and again when pictures
-    // above it have loaded and moved it, unless the reader has scrolled.
-    const goToSection = () => section?.scrollIntoView({ behavior: "instant", block: "start" });
-    if (fromHash !== null) {
-      goToSection();
-      if (document.readyState !== "complete") {
-        const landed = window.scrollY;
-        window.addEventListener("load", () => { if (Math.abs(window.scrollY - landed) < 2) goToSection(); }, { once: true });
-      }
-    }
-
-    window.addEventListener("hashchange", () => {
-      const query = queryOfHash();
-      const next = query !== null ? parse(query) : null;
-      if (!next) return;
-      view = next;
-      render();
-      remember(view);
-      goToSection();
-    });
   }
 </script>

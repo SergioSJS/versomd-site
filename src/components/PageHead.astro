@@ -1,0 +1,21 @@
+---
+// The head of a page other than the home page: a small line above, the
+// page's one h1 (with its Markdown mark, as the app shows a title), a lede.
+interface Props {
+  eyebrow: string;
+  title: string;
+  ledeHtml?: string;
+  /** The h1's id, when a link or a script names the page's heading. */
+  id?: string;
+}
+
+const { eyebrow, title, ledeHtml, id } = Astro.props;
+---
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1 id={id}><span class="md" aria-hidden="true">#</span>{title}</h1>
+    {ledeHtml && <p class="lede" set:html={ledeHtml} />}
+  </div>
+</header>

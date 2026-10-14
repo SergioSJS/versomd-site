@@ -1,0 +1,105 @@
+---
+// UniVerso: the server, in three steps with their pictures, what it does,
+// and what a 1-core, 1 GB machine measured.
+import type { Copy } from "../i18n";
+import Figure from "./Figure.astro";
+import PageHead from "./PageHead.astro";
+import CtaStrip from "./CtaStrip.astro";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const page = copy.pages.server;
+const { how, ids } = copy;
+---
+
+<article class="landing subpage server-page how">
+  <PageHead eyebrow={page.eyebrow} title={page.title} ledeHtml={page.ledeHtml} />
+
+  <section class="block" aria-labelledby={ids.steps}>
+    <div class="wrap">
+      <h2 id={ids.steps}><span class="md" aria-hidden="true">##</span>{page.stepsTitle}</h2>
+      <ol class="steps">
+        {
+          how.steps.map((step, i) => (
+            <li class="step">
+              <div class="step-text">
+                <p class="step-label">
+                  {how.stepLabel} <span class="step-n">{i + 1}</span>
+                </p>
+                <h3>{step.title}</h3>
+                <p set:html={step.textHtml} />
+              </div>
+              <Figure figure={step.figure} label={copy.figLabel} number={i + 1} class="step-plate" />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby={ids.serverFeatures}>
+    <div class="wrap">
+      <h2 id={ids.serverFeatures}><span class="md" aria-hidden="true">##</span>{page.featuresTitle}</h2>
+      <dl class="features">
+        {
+          how.server.items.map((item) => (
+            <div>
+              <dt>{item.term}</dt>
+              <dd set:html={item.textHtml} />
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="vps">
+    <div class="wrap">
+      <div class="vps">
+        <h2 id="vps"><span class="md" aria-hidden="true">##</span>{how.vps.title}</h2>
+        <p class="vps-intro" set:html={how.vps.introHtml} />
+        <ul class="stats">
+          {
+            how.vps.stats.map((s) => (
+              <li>
+                <span class="stat-value">{s.value}</span>
+                <span class="stat-label">{s.label}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <details class="all-numbers">
+          <summary>{how.vps.allNumbers}</summary>
+          <div class="table-wrap" role="region" aria-labelledby="vps-caption" tabindex="0">
+            <table class="numbers">
+              <caption id="vps-caption">{how.vps.tableCaption}</caption>
+              <thead>
+                <tr><th scope="col">{how.vps.head[0]}</th><th scope="col">{how.vps.head[1]}</th></tr>
+              </thead>
+              <tbody>
+                {
+                  how.vps.rows.map(([what, measured]) => (
+                    <tr>
+                      <th scope="row">{what}</th>
+                      <td>{measured}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <div class="vps-after">
+          {how.vps.afterHtml.map((p, i) => <p class:list={[i > 0 && "aside"]} set:html={p} />)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <CtaStrip copy={copy} />
+  </div>
+</article>

@@ -1,0 +1,16 @@
+---
+// The call to the waitlist at the end of a page without the form: the
+// waitlist's one line and a button to the form on the home page.
+import type { Copy } from "../i18n";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+---
+
+<p class="cta-strip">
+  <span>{copy.waitlist.intro}</span>
+  <a class="button" href={`${copy.routes.home}#${copy.ids.waitlist}`}>{copy.hero.cta}</a>
+</p>

@@ -11,9 +11,16 @@ interface Props {
   path: string;
   altPath: string;
   noindex?: boolean;
+  /** Which page of the header's navigation this is, marked as current. */
+  current?: Page;
+  /** A long page: a "back to top" control at its end, which the script
+   *  below keeps in the corner once the reader has scrolled down. */
+  long?: boolean;
 }
 
-const { copy, title, description, path, altPath, noindex = false } = Astro.props;
+type Page = "home" | "features" | "server" | "compare";
+
+const { copy, title, description, path, altPath, noindex = false, current, long = false } = Astro.props;
 const site = Astro.site ?? new URL("https://versomd.com");
 const canonical = new URL(path, site).href;
 const alternate = new URL(altPath, site).href;
@@ -21,6 +28,12 @@ const ptHref = copy.lang === "pt-BR" ? canonical : alternate;
 const enHref = copy.lang === "en" ? canonical : alternate;
 const ogImage = new URL("/media/janela-no-navegador.png", site).href;
 const home = copy.routes.home;
+const pages: { id: Page; href: string; label: string }[] = [
+  { id: "home", href: home, label: copy.nav.home },
+  { id: "features", href: copy.routes.features, label: copy.nav.features },
+  { id: "server", href: copy.routes.server, label: copy.nav.server },
+  { id: "compare", href: copy.routes.compare, label: copy.nav.compare },
+];
 ---
 
 <!doctype html>
@@ -55,16 +68,21 @@ const home = copy.routes.home;
   </head>
   <body>
     <a class="skip" href={`#${copy.ids.content}`}>{copy.skip}</a>
-    <header class="masthead">
+    <header class="masthead" id="top">
       <a class="wordmark" href={home} aria-label="Verso">
         <img src="/media/verso-icon.png" width="28" height="28" alt="" />
         <span>Verso</span>
       </a>
       <nav class="sections" aria-label={copy.nav.label}>
-        <a href={`${home}#${copy.ids.how}`}>{copy.nav.how}</a>
-        <a href={`${home}#${copy.ids.notYet}`}>{copy.nav.notYet}</a>
-        <a href={`${home}#${copy.ids.compare}`}>{copy.nav.compare}</a>
-        <a href={`${home}#${copy.ids.faq}`}>{copy.nav.faq}</a>
+        <ul>
+          {
+            pages.map((p) => (
+              <li>
+                <a href={p.href} aria-current={p.id === current ? "page" : undefined}>{p.label}</a>
+              </li>
+            ))
+          }
+        </ul>
       </nav>
       <a class="mast-cta" href={`${home}#${copy.ids.waitlist}`}>{copy.nav.waitlist}</a>
       <a class="lang" href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang} aria-label={copy.switchTo.label}>
@@ -74,6 +92,16 @@ const home = copy.routes.home;
 
     <main id={copy.ids.content} tabindex="-1">
       <slot />
+      {
+        long && (
+          <p class="to-top-wrap">
+            <a class="to-top" href="#top" data-to-top>
+              <span class="to-top-arrow" aria-hidden="true">↑</span>
+              <span class="to-top-text">{copy.toTop}</span>
+            </a>
+          </p>
+        )
+      }
     </main>
 
     <footer class="colophon">
@@ -84,5 +112,30 @@ const home = copy.routes.home;
         <a href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang}>{copy.switchTo.label}</a>
       </p>
     </footer>
+    <script>
+      // "Back to top" on a long page (on a short one there is no link, and
+      // nothing to do). Without this script it is a plain link at the end of
+      // the page; with it, the same link floats in the corner once the reader
+      // is a screen and a half down, and steps aside near the top.
+      const link = document.querySelector<HTMLAnchorElement>("[data-to-top]");
+      if (link) {
+        link.classList.add("is-floating");
+        let queued = false;
+        const update = () => {
+          queued = false;
+          link.classList.toggle("is-shown", window.scrollY > window.innerHeight * 1.5);
+        };
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(update);
+          },
+          { passive: true },
+        );
+        update();
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import ComparePage from "../../components/ComparePage.astro";
+import { copies } from "../../i18n";
+
+const copy = copies["en"];
+---
+
+<Base copy={copy} title={copy.pages.compare.meta.title} description={copy.pages.compare.meta.description} path="/en/compare/" altPath="/comparativo/" current="compare" long>
+  <ComparePage copy={copy} />
+</Base>

@@ -1,0 +1,83 @@
+---
+// Features: what Verso does today, in the words of someone who uses it,
+// then the roadmap — what comes next, one line each, with its state.
+import type { Copy } from "../i18n";
+import PageHead from "./PageHead.astro";
+import CtaStrip from "./CtaStrip.astro";
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const page = copy.pages.features;
+const { files } = copy.how;
+const { today, roadmap } = page;
+const { ids } = copy;
+---
+
+<article class="landing subpage features-page">
+  <PageHead eyebrow={page.eyebrow} title={page.title} ledeHtml={page.ledeHtml} />
+
+  <section class="block" aria-labelledby={ids.files}>
+    <div class="wrap">
+      <h2 id={ids.files}><span class="md" aria-hidden="true">##</span>{files.title}</h2>
+      <div class="files-text">
+        {files.paragraphsHtml.map((p) => <p set:html={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="block today" aria-labelledby={ids.today}>
+    <div class="wrap">
+      <h2 id={ids.today}><span class="md" aria-hidden="true">##</span>{today.title}</h2>
+      <p class="today-intro aside" set:html={today.introHtml} />
+      <div class="feature-groups">
+        {
+          today.groups.map((g) => (
+            <div class="feature-group">
+              <h3>{g.title}</h3>
+              <ul>
+                {g.itemsHtml.map((item) => (
+                  <li set:html={item} />
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="roadmap" aria-labelledby={ids.roadmap}>
+    <div class="wrap">
+      <h2 id={ids.roadmap}><span class="md" aria-hidden="true">##</span>{roadmap.title}</h2>
+      <div class="roadmap-intro">
+        {roadmap.introHtml.map((p) => <p set:html={p} />)}
+      </div>
+      {
+        roadmap.groups.map((g) => (
+          <div class:list={["roadmap-group", `is-${g.state}`]}>
+            <h3>
+              {g.title}
+              <span class="sr">: </span>
+              <span class="state">{roadmap.states[g.state]}</span>
+            </h3>
+            <ul>
+              {g.items.map((item) => (
+                <li>
+                  <strong>{item.lead}</strong>
+                  {item.textHtml && <span set:html={item.textHtml} />}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="wrap">
+    <CtaStrip copy={copy} />
+  </div>
+</article>

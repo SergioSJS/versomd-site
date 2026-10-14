@@ -15,13 +15,14 @@ export const ptBR: Copy = {
   },
   skip: "Pular para o conteúdo",
   nav: {
-    label: "Seções",
-    how: "Como funciona",
-    notYet: "O que ainda não faz",
+    label: "Páginas",
+    home: "Início",
+    features: "Recursos",
+    server: "UniVerso",
     compare: "Comparativo",
-    faq: "Perguntas",
     waitlist: "Lista de espera",
   },
+  toTop: "Voltar ao topo",
   switchTo: { label: "Read in English", name: "English", href: "/en/", hreflang: "en" },
   hero: {
     eyebrow: "Notas em Markdown · local-first · servidor próprio",
@@ -68,8 +69,30 @@ export const ptBR: Copy = {
       },
     ],
   },
+  more: {
+    title: "Continue lendo",
+    items: [
+      {
+        page: "features",
+        title: "Recursos",
+        text: "O que o Verso faz hoje — escrever, ligar notas, boards, bases — e o roteiro até a V1.",
+        link: "Ver os recursos e o roteiro",
+      },
+      {
+        page: "server",
+        title: "UniVerso",
+        text: "O servidor que você mesmo roda: sincronizar, partilhar, editar junto, e os números medidos numa VPS de 1 GB.",
+        link: "Conhecer o UniVerso",
+      },
+      {
+        page: "compare",
+        title: "Comparativo",
+        text: "O Verso ao lado de treze ferramentas de notas e de RPG, com o que cada uma faz e o que não faz.",
+        link: "Abrir o comparativo",
+      },
+    ],
+  },
   how: {
-    title: "Como funciona",
     files: {
       title: "Os arquivos são a verdade",
       paragraphsHtml: [
@@ -78,9 +101,6 @@ export const ptBR: Copy = {
       ],
     },
     server: {
-      title: "O servidor é seu",
-      introHtml:
-        "O UniVerso é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida. Cada pasta tem um dono, quem edita e quem só lê.",
       items: [
         {
           term: "Sincronizar",
@@ -242,7 +262,7 @@ export const ptBR: Copy = {
       {
         lead: "Não funciona offline no celular.",
         textHtml:
-          "No celular e no navegador você trabalha direto na pasta do servidor; sem conexão, não edita. Uma cópia local com fila de gravações é um passo posterior.",
+          "No celular e no navegador você trabalha direto na pasta do servidor; sem conexão, não edita. O celular offline está no <a href=\"/recursos/#roteiro\">roteiro da V1</a>.",
       },
       {
         lead: "Não tem plugins.",
@@ -257,7 +277,7 @@ export const ptBR: Copy = {
       {
         lead: "Não tem criptografia de ponta a ponta.",
         textHtml:
-          "Editar junto e buscar no servidor exigem que o servidor leia os arquivos: quem hospeda vê as notas. A criptografia em repouso é a do disco do servidor.",
+          "Editar junto e buscar no servidor exigem que o servidor leia os arquivos: quem hospeda vê as notas. A criptografia em repouso é a do disco do servidor. Uma criptografia de ponta a ponta opcional fica para depois da V1.",
       },
       {
         lead: "Não sincroniza por Dropbox, Google Drive ou iCloud.",
@@ -715,6 +735,190 @@ export const ptBR: Copy = {
       },
     ],
   },
+  pages: {
+    features: {
+      meta: {
+        title: "Recursos e roteiro — Verso",
+        description:
+          "O que o Verso faz hoje — escrever em Markdown, ligar notas, boards, bases, sincronizar com um servidor seu — e o que vem até a V1.",
+      },
+      eyebrow: "Recursos",
+      title: "O que o Verso faz, e o que vem depois.",
+      ledeHtml:
+        "Primeiro o que já está nas versões de teste; logo abaixo, <a href=\"#roteiro\">o roteiro</a> até a V1, a versão do lançamento público.",
+      today: {
+        title: "O que já faz",
+        introHtml:
+          "Tudo isto está nas versões de teste de hoje: no Mac com chip Apple, no Windows 10 e 11 e no Linux (x64), e no navegador e no celular por um UniVerso.",
+        groups: [
+          {
+            title: "Escrever",
+            itemsHtml: [
+              "Três modos: leitura, edição e o Markdown cru.",
+              "Blocos que você arrasta pela alça e um menu <code>/</code>, como no Notion.",
+              "Tabelas editadas como tabelas.",
+              "Um painel para as propriedades da nota, e notas tipadas: o tipo dá à nota os campos dela.",
+              "Callouts, fórmulas, diagramas Mermaid e blocos de código com botão de copiar.",
+            ],
+          },
+          {
+            title: "Ligar as notas",
+            itemsHtml: [
+              "Links <code>[[…]]</code> para notas, títulos e blocos, e embeds que mostram a nota ou o bloco.",
+              "Backlinks, links de saída e os links que ainda não levam a nenhuma nota.",
+              "Renomear uma nota atualiza todos os links para ela.",
+              "Um grafo das notas, que você explora.",
+            ],
+          },
+          {
+            title: "Boards",
+            itemsHtml: [
+              "Arquivos <code>.canvas</code>, o formato do Obsidian, desenhados com o Excalidraw.",
+              "As notas da pasta como cartões que você edita ali mesmo; imagens, que dá para recortar, e PDFs.",
+              "Setas que ficam no ponto onde foram desenhadas, e os desenhos do plugin Excalidraw do Obsidian.",
+            ],
+          },
+          {
+            title: "Bases",
+            itemsHtml: [
+              "Arquivos <code>.base</code> vistos como tabela, cartões, lista, kanban ou calendário, com filtros, ordem, grupos e fórmulas.",
+              "Uma base embutida numa nota, ao vivo; o mesmo arquivo que o Obsidian abre.",
+            ],
+          },
+          {
+            title: "Organizar",
+            itemsHtml: [
+              "Uma árvore de arquivos com seleção múltipla, figurinhas, cores e capas.",
+              "Páginas de pasta, ordem manual e focos, compartilhados com o make.md.",
+              "A nota do dia, com calendário, e modelos oferecidos ao criar uma nota.",
+            ],
+          },
+          {
+            title: "Ler e guardar",
+            itemsHtml: [
+              "Um leitor de PDF com duas páginas lado a lado, imagens e arquivos HTML.",
+              "Páginas da web guardadas como notas.",
+            ],
+          },
+          {
+            title: "Encontrar",
+            itemsHtml: [
+              "Busca no texto de todas as notas, abrir pelo nome e uma paleta de comandos.",
+              "Localizar e substituir em todas as notas.",
+              "Abas fixas e de prévia, painéis divididos, espaços de trabalho e uma pasta por janela.",
+            ],
+          },
+          {
+            title: "Com um UniVerso",
+            itemsHtml: [
+              "A pasta em dia entre seus computadores; a primeira sincronização não apaga nada.",
+              "Pastas partilhadas com outras contas, para ler ou para escrever.",
+              "Notas, boards e bases editados junto, ao vivo, com o cursor e o nome de cada pessoa.",
+              "Uma lixeira de 30 dias, e um console para quem administra.",
+              "A mesma janela no navegador e no celular. <a href=\"/universo/\">Mais sobre o UniVerso</a>.",
+            ],
+          },
+          {
+            title: "Agentes de IA e terminal",
+            itemsHtml: [
+              "Um servidor MCP só de leitura, que os Ajustes ligam ao Claude Desktop; cada chamada de um agente fica registrada.",
+              "O comando <code>verso</code> indexa, busca e lista backlinks no terminal.",
+            ],
+          },
+          {
+            title: "Do seu jeito, sem conta",
+            itemsHtml: [
+              "Temas, paletas, fontes e atalhos seus; o app em português ou em inglês.",
+              "Sem cadastro e sem telemetria: a pasta é sua.",
+              "O app se atualiza e só instala uma atualização cuja assinatura confere.",
+            ],
+          },
+        ],
+      },
+      roadmap: {
+        title: "Roteiro",
+        introHtml: [
+          "O que vem a seguir, até a V1 — a versão do lançamento público. É um plano, não uma promessa: o que entra e em que ordem pode mudar, e não há datas.",
+          "<strong>Em construção</strong> é o que está sendo feito agora para a próxima versão de teste; <strong>planejado</strong> é o que está decidido para a V1 e ainda não chegou às versões de teste.",
+        ],
+        states: { building: "em construção", planned: "planejado", later: "depois da V1" },
+        groups: [
+          {
+            title: "Na próxima versão de teste",
+            state: "building",
+            items: [
+              {
+                lead: "Notificações no app.",
+                textHtml:
+                  "Um aviso quando algo muda sem você ter pedido — a sincronização caiu ou voltou, uma pasta foi partilhada com você, saiu uma versão nova — e uma lista para ver depois. Você escolhe, por tipo, o que avisa.",
+              },
+            ],
+          },
+          {
+            title: "Na V1",
+            state: "planned",
+            items: [
+              { lead: "Prévia ao passar o mouse.", textHtml: "Pare o ponteiro sobre um link e leia a nota sem sair de onde está." },
+              { lead: "Ficha da nota.", textHtml: "As propriedades viram um cartão ao lado do texto, com imagem — a ficha de um personagem, de um lugar, de um projeto." },
+              { lead: "Segredos do mestre.", textHtml: "Um bloco <code>&gt; [!secret]</code> dentro da nota, que quem só pode ler a nota partilhada nunca recebe." },
+              { lead: "Dados e tabelas aleatórias.", textHtml: "<code>dice: 1d20</code> rola com um clique, e uma tabela da nota sorteia uma linha; o resultado nunca é gravado na nota." },
+              { lead: "Ligar menções.", textHtml: "Onde uma nota é citada pelo nome sem link, um clique faz o link — um por um, ou todos de uma vez, vendo antes o que muda." },
+              { lead: "Mapas no board.", textHtml: "Uma imagem por baixo do board, pinos que abrem notas, e pinos secretos que os jogadores não veem." },
+              { lead: "Histórico de versões.", textHtml: "Num UniVerso: quem mudou uma nota e quando, a diferença entre versões, e uma versão antiga de volta." },
+              { lead: "O celular offline.", textHtml: "As pastas que você escolher ficam no celular; você escreve sem conexão, e tudo sincroniza quando a rede volta." },
+              { lead: "Notas periódicas.", textHtml: "Da semana e do mês, ao lado da nota do dia." },
+              { lead: "Bases mais completas.", textHtml: "Filtros com expressões regulares e a vista em mapa." },
+              { lead: "O app como servidor.", textHtml: "O app do computador serve a pasta na sua rede; o celular o encontra ali e se liga lendo um QR code." },
+              { lead: "Mac com Intel e Linux ARM64.", textHtml: "Apps para esses computadores também." },
+            ],
+          },
+          {
+            title: "Também antes da V1",
+            state: "planned",
+            items: [
+              { lead: "Um teste de segurança feito de fora.", textHtml: "Uma pessoa de fora do projeto tenta invadir um UniVerso de teste." },
+              { lead: "Apps assinados.", textHtml: "No Mac e no Windows, sem o aviso de app desconhecido na instalação." },
+              { lead: "Uma passada com leitor de tela.", textHtml: "O app inteiro percorrido com um leitor de tela, para funcionar para quem não vê a tela." },
+              { lead: "Um mês de uso real.", textHtml: "Um mês usando o Verso todos os dias, sem perder nenhum dado." },
+              { lead: "O código aberto.", textHtml: "O repositório do Verso público, e os instaladores neste site." },
+            ],
+          },
+          {
+            title: "Mais tarde",
+            state: "later",
+            items: [
+              { lead: "Criptografia de ponta a ponta, opcional." },
+              { lead: "O servidor MCP pela rede." },
+              { lead: "A pasta num armazenamento externo: um bucket seu ou WebDAV." },
+            ],
+          },
+        ],
+      },
+    },
+    server: {
+      meta: {
+        title: "UniVerso, o servidor do Verso",
+        description:
+          "O UniVerso é o Verso como servidor, numa máquina sua: a pasta em dia entre computadores, no navegador e no celular, partilhada e editada junto. Medido numa VPS de 1 núcleo e 1 GB.",
+      },
+      eyebrow: "UniVerso · o servidor do Verso",
+      title: "O servidor é seu.",
+      ledeHtml:
+        "O UniVerso é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida. Cada pasta tem um dono, quem edita e quem só lê.",
+      stepsTitle: "Em três passos",
+      featuresTitle: "O que ele faz",
+    },
+    compare: {
+      meta: {
+        title: "Comparativo — Verso",
+        description:
+          "O Verso ao lado de treze ferramentas de notas, de mundos e de RPG, capacidade por capacidade: o que cada uma faz e o que não faz. Sem preços.",
+      },
+      eyebrow: "Notas, mundos e RPG",
+      roadmapHtml:
+        "Parte do que falta — o segredo do mestre dentro da nota, mapas com pinos, o celular offline — está no <a href=\"/recursos/#roteiro\">roteiro da V1</a>. É um plano, sem datas.",
+    },
+  },
   waitlist: {
     title: "Lista de espera",
     intro: "Um e-mail quando houver o que baixar.",
@@ -750,6 +954,17 @@ export const ptBR: Copy = {
     noTracking: "Sem analytics, sem cookies.",
   },
   figLabel: "Fig.",
-  routes: { home: "/", thanks: "/obrigado/", failed: "/lista/nao-deu/" },
-  ids: { content: "conteudo", how: "como-funciona", notYet: "ainda-nao", compare: "comparativo", faq: "perguntas", waitlist: "lista" },
+  routes: { home: "/", features: "/recursos/", server: "/universo/", compare: "/comparativo/", thanks: "/obrigado/", failed: "/lista/nao-deu/" },
+  ids: {
+    content: "conteudo",
+    notYet: "ainda-nao",
+    compare: "comparativo",
+    faq: "perguntas",
+    waitlist: "lista",
+    files: "arquivos",
+    today: "hoje",
+    roadmap: "roteiro",
+    steps: "passos",
+    serverFeatures: "o-que-faz",
+  },
 };

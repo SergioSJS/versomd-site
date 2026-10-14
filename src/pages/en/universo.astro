@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import ServerPage from "../../components/ServerPage.astro";
+import { copies } from "../../i18n";
+
+const copy = copies["en"];
+---
+
+<Base copy={copy} title={copy.pages.server.meta.title} description={copy.pages.server.meta.description} path="/en/universo/" altPath="/universo/" current="server" long>
+  <ServerPage copy={copy} />
+</Base>

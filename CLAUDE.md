@@ -44,7 +44,20 @@ Verso is **in testing, with no public download** until the maintainer says
 otherwise: the site never links to its repository, releases or a download
 before that (README, "The rule while the product is private").
 
-## The comparison section ("Comparativo")
+## The pages
+
+The home page (`/`, `/en/`) holds the essentials and stays short; the rest
+has a page each, linked from the header: Recursos / Features (what Verso does
+today, then the roadmap to V1), UniVerso (the server), Comparativo / How it
+compares. A new page goes in the header's list in `src/layouts/Base.astro`,
+in `sitemap.xml.ts`, and in both languages.
+
+The roadmap on the features page says only what the product's roadmap and
+ADRs say (on the branch where the roadmap is being written, until it is on
+`../verso`'s `main`), in a reader's words, one line each, with its state;
+never a date, and always that it is a plan that may change.
+
+## The comparison page ("Comparativo")
 
 - **One source for both languages**: `scripts/compare/compare_data.py` holds
   every row, cell and label in pt-BR and English; `python3

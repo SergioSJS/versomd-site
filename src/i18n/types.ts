@@ -33,7 +33,10 @@ export interface Copy {
   ogLocale: string;
   meta: { title: string; description: string };
   skip: string;
-  nav: { label: string; how: string; notYet: string; compare: string; faq: string; waitlist: string };
+  /** The header's pages, in order; the waitlist is a call to action, not a page. */
+  nav: { label: string; home: string; features: string; server: string; compare: string; waitlist: string };
+  /** The control that goes back to the top of a long page. */
+  toTop: string;
   switchTo: { label: string; name: string; href: string; hreflang: string };
   hero: {
     eyebrow: string;
@@ -48,10 +51,13 @@ export interface Copy {
   /** The three value cards after the hero: a small mark, a title, and the
    *  "who it is for" sentence that goes with it. */
   who: { title: string; items: { kicker: string; title: string; text: string }[] };
+  /** "Read on": the other pages, one card each, on the home page. */
+  more: { title: string; items: { page: "features" | "server" | "compare"; title: string; text: string; link: string }[] };
+  /** What used to be "how it works": the files on the features page, the
+   *  server on UniVerso's page. */
   how: {
-    title: string;
     files: { title: string; paragraphsHtml: string[] };
-    server: { title: string; introHtml: string; items: { term: string; textHtml: string }[] };
+    server: { items: { term: string; textHtml: string }[] };
     /** "Step", before each step's number. */
     stepLabel: string;
     /** Three steps, each with its picture beside it. */
@@ -121,6 +127,16 @@ export interface Copy {
     verified: string;
   };
   faq: { title: string; items: { q: string; aHtml: string[] }[] };
+  /** The pages besides the home page: their head, and what only they say. */
+  pages: {
+    features: PageHead & {
+      today: { title: string; introHtml: string; groups: { title: string; itemsHtml: string[] }[] };
+      roadmap: Roadmap;
+    };
+    server: PageHead & { stepsTitle: string; featuresTitle: string };
+    /** The page's title is the comparison's own (compare.title). */
+    compare: Pick<PageHead, "meta" | "eyebrow"> & { roadmapHtml: string };
+  };
   waitlist: {
     title: string;
     intro: string;
@@ -139,7 +155,37 @@ export interface Copy {
   failed: { metaTitle: string; title: string; body: string; back: string };
   footer: { lineHtml: string; fontsHtml: string; noTracking: string };
   figLabel: string;
-  routes: { home: string; thanks: string; failed: string };
+  routes: { home: string; features: string; server: string; compare: string; thanks: string; failed: string };
   /** Section anchors, in the page's language. */
-  ids: { content: string; how: string; notYet: string; compare: string; faq: string; waitlist: string };
+  ids: {
+    content: string;
+    notYet: string;
+    compare: string;
+    faq: string;
+    waitlist: string;
+    files: string;
+    today: string;
+    roadmap: string;
+    steps: string;
+    serverFeatures: string;
+  };
 }
+
+/** The head of a page other than the home page. */
+export interface PageHead {
+  meta: { title: string; description: string };
+  eyebrow: string;
+  title: string;
+  ledeHtml: string;
+}
+
+/** What comes next: groups in order, each with its state, each item one
+ *  short line a reader cares about. A plan, never a date. */
+export interface Roadmap {
+  title: string;
+  introHtml: string[];
+  /** The words of each state, shown beside a group's title. */
+  states: Record<RoadmapState, string>;
+  groups: { title: string; state: RoadmapState; items: { lead: string; textHtml?: string }[] }[];
+}
+export type RoadmapState = "building" | "planned" | "later";

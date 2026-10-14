@@ -1,7 +1,12 @@
 import type { APIRoute } from "astro";
 
-// The two pages worth indexing, each with its other language.
-const pairs: [string, string][] = [["/", "/en/"]];
+// The pages worth indexing, each with its other language.
+const pairs: [string, string][] = [
+  ["/", "/en/"],
+  ["/recursos/", "/en/features/"],
+  ["/universo/", "/en/universo/"],
+  ["/comparativo/", "/en/compare/"],
+];
 
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL("https://versomd.com");

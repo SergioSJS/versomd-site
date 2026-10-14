@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import FeaturesPage from "../../components/FeaturesPage.astro";
+import { copies } from "../../i18n";
+
+const copy = copies["en"];
+---
+
+<Base copy={copy} title={copy.pages.features.meta.title} description={copy.pages.features.meta.description} path="/en/features/" altPath="/recursos/" current="features" long>
+  <FeaturesPage copy={copy} />
+</Base>
