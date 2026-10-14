@@ -151,7 +151,7 @@ const columns = compare.tools.length + 1;
               <thead>
                 <tr class="groups">
                   <td class="corner"></td>
-                  <td class="corner" data-tool={verso.id}></td>
+                  <td class="corner is-verso" data-tool={verso.id}></td>
                   {
                     compare.groups.map((g) => (
                       <th scope="colgroup" colspan={g.span} data-tool-group={g.id}>{g.label}</th>
@@ -452,9 +452,13 @@ const columns = compare.tools.length + 1;
     }
 
     function measure() {
-      if (!strip || !copy || !cols || !sticky) return;
       const cells = Array.from(toolRow.cells).filter((c) => !c.hidden);
       const widths = cells.map((c) => c.getBoundingClientRect().width);
+      // Verso's column stays put just right of the capability column: its
+      // offset is that column's width as drawn (the stylesheet's own value
+      // is the same width, for a page without this script).
+      if (widths.length) frame.style.setProperty("--verso-left", `${widths[0]}px`);
+      if (!strip || !copy || !cols || !sticky) return;
       cols.replaceChildren(
         ...widths.map((w) => {
           const col = document.createElement("col");

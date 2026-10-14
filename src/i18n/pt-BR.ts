@@ -303,7 +303,7 @@ export const ptBR: Copy = {
       ],
     },
     tableCaption: "O Verso e outras ferramentas de notas e de RPG, capacidade por capacidade",
-    scrollHint: "A tabela rola para o lado; a primeira coluna fica parada.",
+    scrollHint: "A tabela rola para o lado; a coluna das capacidades e a do Verso ficam paradas.",
     marks: {
       yes: { symbol: "✓", word: "sim" },
       partial: { symbol: "parcial", word: "parcial" },

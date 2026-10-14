@@ -956,8 +956,19 @@ details > summary { cursor: pointer; }
 .compare .cc-count { margin: 0; font-weight: 600; font-size: 0.95rem; color: var(--ink); }
 .cc-reset { font-weight: 600; }
 
-/* The table and the names that follow the page. */
-.compare-frame { position: relative; }
+/* The table and the names that follow the page. Two columns stay put while
+   the others scroll sideways under them: the capabilities', and Verso's
+   just right of it. Their widths are set here so Verso's offset is known
+   without a script; the script measures the drawn width and sets
+   --verso-left to it. */
+.compare-frame {
+  position: relative;
+  --cap-w: 9.5rem;
+  --verso-w: 9.5rem;
+}
+@media (max-width: 479px) {
+  .compare-frame { --cap-w: 6.5rem; --verso-w: 7.5rem; }
+}
 .compare-sticky {
   position: sticky;
   top: 0;
@@ -986,6 +997,8 @@ details > summary { cursor: pointer; }
   /* Positioned, so the .sr words inside the cells are clipped with the table
      instead of widening the page at their place far to the right. */
   position: relative;
+  /* A cell reached with Tab scrolls clear of the two columns that stay. */
+  scroll-padding-left: calc(var(--cap-w) + var(--verso-w));
   margin-top: 0.6rem;
   border: 1px solid var(--hair);
   border-radius: var(--radius-l);
@@ -1050,22 +1063,28 @@ a.tool-name { color: var(--seal); }
   line-height: 1.3;
   color: var(--ink-3);
 }
-/* The capability column stays in view while the others scroll under it. */
+/* The capability column stays in view while the others scroll under it;
+   above Verso's, should the two ever meet. */
 .compare-table .cap {
   position: sticky;
   left: 0;
-  z-index: 1;
-  min-width: 8.5rem;
-  max-width: 11rem;
+  z-index: 2;
+  width: var(--cap-w);
+  min-width: var(--cap-w);
+  max-width: var(--cap-w);
   background: var(--paper-2);
   border-right: 1px solid var(--hair);
   font-weight: 600;
   color: var(--ink);
 }
+/* The corner above it shares its column, and so its width. */
 .compare-table .groups .corner:first-child {
   position: sticky;
   left: 0;
-  z-index: 1;
+  z-index: 2;
+  width: var(--cap-w);
+  min-width: var(--cap-w);
+  max-width: var(--cap-w);
   background: var(--paper-2);
   border-right: 1px solid var(--hair);
 }
@@ -1081,7 +1100,18 @@ a.tool-name { color: var(--seal); }
   border-top: 1px solid var(--ink-3);
 }
 .compare-table .row-group th span { position: sticky; left: 0.8rem; }
-.compare-table .is-verso { background: var(--brass-wash); }
+/* Verso's column stays in view right of the capabilities': an opaque
+   background (the wash over the paper), and a rule in brass on its right,
+   where the other columns pass under it. */
+.compare-table .is-verso {
+  position: sticky;
+  left: var(--verso-left, var(--cap-w));
+  z-index: 1;
+  min-width: var(--verso-w);
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--brass-wash), var(--brass-wash));
+  border-right: 2px solid color-mix(in oklch, var(--brass) 60%, var(--hair));
+}
 .compare-table .mark {
   font-weight: 700;
   margin-right: 0.15rem;
@@ -1103,15 +1133,15 @@ a.tool-name { color: var(--seal); }
 @media (max-width: 479px) {
   .compare-table th,
   .compare-table td { min-width: 8.5rem; }
-  .compare-table .cap { min-width: 6.5rem; max-width: 7.5rem; }
+  .compare-table .is-verso { min-width: var(--verso-w); }
 }
 /* The shown columns fit the box (the script says so with data-fit): they
    share its width, the capability column keeps its own, text wraps inside
    each cell, and nothing scrolls sideways. */
-.compare-table[data-fit] { width: 100%; table-layout: fixed; }
+.compare-table[data-fit] { width: 100%; table-layout: fixed; --cap-w: 8.5rem; }
 .compare-table[data-fit] th,
 .compare-table[data-fit] td { min-width: 0; max-width: none; }
-.compare-table[data-fit] .groups .corner:first-child { width: 8.5rem; }
+.compare-table[data-fit] .groups .corner:first-child { width: var(--cap-w); }
 .compare-table[data-fit] .cell-text,
 .compare-table[data-fit] .tool-name,
 .compare-table[data-fit] .tool-note,
@@ -1120,7 +1150,7 @@ a.tool-name { color: var(--seal); }
   hyphens: auto;
 }
 @media (max-width: 559px) {
-  .compare-table[data-fit] .groups .corner:first-child { width: 6rem; }
+  .compare-table[data-fit] { --cap-w: 6rem; }
   .compare-table[data-fit] th,
   .compare-table[data-fit] td { padding: 0.55rem 0.45rem; font-size: 0.8rem; }
   .compare-table[data-fit] .tool-name { font-size: 0.88rem; }

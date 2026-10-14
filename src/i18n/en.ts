@@ -302,7 +302,7 @@ export const en: Copy = {
       ],
     },
     tableCaption: "Verso and other note and RPG tools, capability by capability",
-    scrollHint: "The table scrolls sideways; the first column stays put.",
+    scrollHint: "The table scrolls sideways; the capability column and Verso’s stay put.",
     marks: {
       yes: { symbol: "✓", word: "yes" },
       partial: { symbol: "partial", word: "partial" },
