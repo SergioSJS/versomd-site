@@ -351,19 +351,28 @@ strong { font-weight: 600; }
   margin-right: 0.6rem;
 }
 
-/* The app icon above the title: the dark tile, crisp at any size (an SVG),
-   with a hairline ring so it keeps its edge on the dark paper and a soft
-   shadow, as a book resting on the page. The radius is the tile's own. */
+/* The app icon beside the eyebrow, on one line above the title: the dark
+   tile, crisp at any size (an SVG), with a hairline ring so it keeps its
+   edge on the dark paper and a soft shadow, as a book resting on the page.
+   Small enough that the title keeps the top of the hero, level with the
+   window's picture beside it. The radius is the tile's own. */
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 0.6rem + 0.6vw, 1.1rem);
+  margin: 0 0 1.3rem;
+}
+.hero-brand .eyebrow { margin: 0; }
 .hero-icon {
-  width: clamp(5.5rem, 4.5rem + 4vw, 8.25rem);
+  flex: none;
+  width: clamp(3rem, 2.5rem + 1.4vw, 3.9rem);
   height: auto;
   aspect-ratio: 1;
-  margin: 0 0 clamp(1.4rem, 1rem + 1.5vw, 2rem);
   border-radius: 22.45%;
   box-shadow:
     0 0 0 1px color-mix(in oklch, var(--ink) 14%, transparent),
     0 1px 2px oklch(15% 0.02 60 / 0.2),
-    0 14px 30px -10px oklch(15% 0.02 60 / 0.5);
+    0 8px 18px -8px oklch(15% 0.02 60 / 0.45);
 }
 
 /* ── "in short": a thin strip under the hero ───────────────────────────── */

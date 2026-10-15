@@ -35,8 +35,10 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
   <header class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <img class="hero-icon" src="/brand/verso-tile.svg" width="132" height="132" alt={hero.iconAlt} />
-        <p class="eyebrow">{hero.eyebrow}</p>
+        <div class="hero-brand">
+          <img class="hero-icon" src="/brand/verso-tile.svg" width="60" height="60" alt={hero.iconAlt} />
+          <p class="eyebrow">{hero.eyebrow}</p>
+        </div>
         <h1>
           <span class="md" aria-hidden="true">#</span>
           <span class="h1-a">{first}</span>
