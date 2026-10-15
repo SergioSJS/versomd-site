@@ -39,6 +39,8 @@ export interface Copy {
   toTop: string;
   switchTo: { label: string; name: string; href: string; hreflang: string };
   hero: {
+    /** Alt text of the app icon shown above the title. */
+    iconAlt: string;
     eyebrow: string;
     title: string;
     ledeHtml: string;
@@ -153,6 +155,8 @@ export interface Copy {
   };
   thanks: { metaTitle: string; title: string; bodyHtml: string; back: string };
   failed: { metaTitle: string; title: string; body: string; back: string };
+  /** The social-sharing image (Open Graph). */
+  og: { imageAlt: string };
   footer: { lineHtml: string; fontsHtml: string; noTracking: string };
   figLabel: string;
   routes: { home: string; features: string; server: string; compare: string; thanks: string; failed: string };

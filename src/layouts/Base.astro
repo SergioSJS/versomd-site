@@ -26,7 +26,7 @@ const canonical = new URL(path, site).href;
 const alternate = new URL(altPath, site).href;
 const ptHref = copy.lang === "pt-BR" ? canonical : alternate;
 const enHref = copy.lang === "en" ? canonical : alternate;
-const ogImage = new URL("/media/janela-no-navegador.png", site).href;
+const ogImage = new URL(copy.lang === "en" ? "/brand/og-verso-en.png" : "/brand/og-verso.png", site).href;
 const home = copy.routes.home;
 const pages: { id: Page; href: string; label: string }[] = [
   { id: "home", href: home, label: copy.nav.home },
@@ -62,16 +62,18 @@ const pages: { id: Page; href: string; label: string }[] = [
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1280" />
-    <meta property="og:image:height" content="820" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={copy.og.imageAlt} />
     <meta property="og:locale" content={copy.ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
     <a class="skip" href={`#${copy.ids.content}`}>{copy.skip}</a>
     <header class="masthead" id="top">
       <a class="wordmark" href={home} aria-label="Verso">
-        <img src="/media/verso-icon.png" width="28" height="28" alt="" />
+        <img class="mark" src="/brand/verso-mark-crop.svg" width="31" height="27" alt="" />
         <span>Verso</span>
       </a>
       <nav class="sections" aria-label={copy.nav.label}>
@@ -106,6 +108,7 @@ const pages: { id: Page; href: string; label: string }[] = [
     </main>
 
     <footer class="colophon">
+      <img class="colophon-mark" src="/brand/verso-mark-crop.svg" width="26" height="23" alt="" />
       <p set:html={copy.footer.lineHtml} />
       <p>{copy.footer.noTracking}</p>
       <p class="fonts" set:html={copy.footer.fontsHtml} />

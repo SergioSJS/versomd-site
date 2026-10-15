@@ -122,7 +122,11 @@ strong { font-weight: 600; }
   font: 600 1.35rem/1 var(--display);
   letter-spacing: -0.01em;
 }
-.wordmark img { border-radius: var(--radius-m); }
+.wordmark .mark {
+  width: auto;
+  height: 1.8rem;
+  margin-top: -0.12rem;
+}
 /* The pages: a list of links, the current one said (aria-current) and
    shown by its weight and a seal-coloured rule under it. */
 .sections { margin-left: auto; }
@@ -345,6 +349,21 @@ strong { font-weight: 600; }
   text-transform: uppercase;
   color: var(--brass-ink);
   margin-right: 0.6rem;
+}
+
+/* The app icon above the title: the dark tile, crisp at any size (an SVG),
+   with a hairline ring so it keeps its edge on the dark paper and a soft
+   shadow, as a book resting on the page. The radius is the tile's own. */
+.hero-icon {
+  width: clamp(5.5rem, 4.5rem + 4vw, 8.25rem);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 0 clamp(1.4rem, 1rem + 1.5vw, 2rem);
+  border-radius: 22.45%;
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--ink) 14%, transparent),
+    0 1px 2px oklch(15% 0.02 60 / 0.2),
+    0 14px 30px -10px oklch(15% 0.02 60 / 0.5);
 }
 
 /* ── "in short": a thin strip under the hero ───────────────────────────── */
@@ -1291,6 +1310,7 @@ a.tool-name { color: var(--seal); }
   color: var(--ink-3);
 }
 .colophon p { margin: 0; }
+.colophon-mark { width: auto; height: 1.45rem; flex: none; }
 .colophon .fonts { flex-basis: 100%; order: 3; }
 .colophon a { color: var(--ink-2); display: inline-block; padding-block: 0.7rem; }
 .colophon p:not(.fonts) a { min-height: 44px; }

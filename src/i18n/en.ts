@@ -24,6 +24,7 @@ export const en: Copy = {
   toTop: "Back to top",
   switchTo: { label: "Ler em português", name: "Português", href: "/", hreflang: "pt-BR" },
   hero: {
+    iconAlt: "Verso's icon: an open book with a ribbon",
     eyebrow: "Markdown notes · local-first · your own server",
     title: "Your notes are files. The server is yours.",
     ledeHtml:
@@ -941,6 +942,7 @@ export const en: Copy = {
     body: "The address did not look like an e-mail, there were too many tries from this network in the last hour, or the service failed. Try again:",
     back: "Back to the start",
   },
+  og: { imageAlt: "Verso: your notes are files. The server is yours." },
   footer: {
     lineHtml: "Verso · versomd.com · MPL-2.0 · <a href=\"https://github.com/SergioSJS/versomd-site\">this site’s source</a>",
     fontsHtml:

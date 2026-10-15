@@ -25,6 +25,7 @@ export const ptBR: Copy = {
   toTop: "Voltar ao topo",
   switchTo: { label: "Read in English", name: "English", href: "/en/", hreflang: "en" },
   hero: {
+    iconAlt: "Ícone do Verso: um livro aberto com uma fita",
     eyebrow: "Notas em Markdown · local-first · servidor próprio",
     title: "Suas notas são arquivos. O servidor é seu.",
     ledeHtml:
@@ -942,6 +943,7 @@ export const ptBR: Copy = {
     body: "O endereço não parecia um e-mail, houve tentativas demais desta rede na última hora, ou o serviço falhou. Tente de novo:",
     back: "Voltar ao início",
   },
+  og: { imageAlt: "Verso: suas notas são arquivos. O servidor é seu." },
   footer: {
     lineHtml: "Verso · <span lang=\"en\">versomd.com</span> · MPL-2.0 · <a href=\"https://github.com/SergioSJS/versomd-site\">código deste site</a>",
     fontsHtml:
