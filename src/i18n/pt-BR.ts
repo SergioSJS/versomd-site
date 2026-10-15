@@ -262,7 +262,7 @@ export const ptBR: Copy = {
       {
         lead: "Não funciona offline no celular.",
         textHtml:
-          "No celular e no navegador você trabalha direto na pasta do servidor; sem conexão, não edita. O celular offline está no <a href=\"/recursos/#roteiro\">roteiro da V1</a>.",
+          "No celular e no navegador você trabalha direto na pasta do servidor; sem conexão, não edita — por enquanto: o celular offline já está pronto e chega na próxima versão de teste (<a href=\"/recursos/#roteiro\">roteiro</a>).",
       },
       {
         lead: "Não tem plugins.",
@@ -839,48 +839,43 @@ export const ptBR: Copy = {
         title: "Roteiro",
         introHtml: [
           "O que vem a seguir, até a V1 — a versão do lançamento público. É um plano, não uma promessa: o que entra e em que ordem pode mudar, e não há datas.",
-          "<strong>Em construção</strong> é o que está sendo feito agora para a próxima versão de teste; <strong>planejado</strong> é o que está decidido para a V1 e ainda não chegou às versões de teste.",
+          "<strong>Já feito</strong> está pronto e chega na próxima versão de teste; <strong>em construção</strong> está sendo feito agora; <strong>planejado</strong> está decidido para a V1.",
         ],
-        states: { building: "em construção", planned: "planejado", later: "depois da V1" },
+        states: { ready: "já feito", building: "em construção", planned: "planejado", later: "depois da V1" },
         groups: [
           {
-            title: "Na próxima versão de teste",
-            state: "building",
+            title: "Pronto, na próxima versão de teste",
+            state: "ready",
             items: [
-              {
-                lead: "Notificações no app.",
-                textHtml:
-                  "Um aviso quando algo muda sem você ter pedido — a sincronização caiu ou voltou, uma pasta foi partilhada com você, saiu uma versão nova — e uma lista para ver depois. Você escolhe, por tipo, o que avisa.",
-              },
-            ],
-          },
-          {
-            title: "Na V1",
-            state: "planned",
-            items: [
+              { lead: "Notificações no app.", textHtml: "Um aviso quando algo muda sem você ter pedido — a sincronização caiu ou voltou, uma pasta foi partilhada com você, saiu uma versão nova — e uma lista para ver depois. Você escolhe, por tipo, o que avisa, e se também aparece nas notificações do sistema." },
               { lead: "Prévia ao passar o mouse.", textHtml: "Pare o ponteiro sobre um link e leia a nota sem sair de onde está." },
               { lead: "Ficha da nota.", textHtml: "As propriedades viram um cartão ao lado do texto, com imagem — a ficha de um personagem, de um lugar, de um projeto." },
-              { lead: "Segredos do mestre.", textHtml: "Um bloco <code>&gt; [!secret]</code> dentro da nota, que quem só pode ler a nota partilhada nunca recebe." },
+              { lead: "Segredos do mestre.", textHtml: "Um bloco <code>&gt; [!secret]</code> dentro da nota, ou num cartão de texto do board, que quem só pode ler a pasta partilhada nunca recebe." },
               { lead: "Dados e tabelas aleatórias.", textHtml: "<code>dice: 1d20</code> rola com um clique, e uma tabela da nota sorteia uma linha; o resultado nunca é gravado na nota." },
               { lead: "Ligar menções.", textHtml: "Onde uma nota é citada pelo nome sem link, um clique faz o link — um por um, ou todos de uma vez, vendo antes o que muda." },
               { lead: "Mapas no board.", textHtml: "Uma imagem por baixo do board, pinos que abrem notas, e pinos secretos que os jogadores não veem." },
               { lead: "Histórico de versões.", textHtml: "Quem mudou uma nota e quando, a diferença entre versões, e uma versão antiga de volta — num UniVerso e nas pastas do computador." },
               { lead: "O celular offline.", textHtml: "As pastas que você escolher ficam no celular; você escreve sem conexão, e tudo sincroniza quando a rede volta." },
-              { lead: "Notas periódicas.", textHtml: "Da semana e do mês, ao lado da nota do dia." },
+              { lead: "Notas periódicas.", textHtml: "Da semana, do mês, do trimestre e do ano, ao lado da nota do dia." },
               { lead: "Bases mais completas.", textHtml: "Filtros com expressões regulares e a vista em mapa." },
-              { lead: "O app como servidor.", textHtml: "O app do computador serve a pasta na sua rede; o celular o encontra ali e se liga lendo um QR code." },
-              { lead: "Mac com Intel e Linux ARM64.", textHtml: "Apps para esses computadores também." },
+              { lead: "Páginas da web dentro da nota.", textHtml: "Uma página embutida rola com a nota e é recortada no lugar certo, como um iframe — também nos sites que não deixam ser embutidos." },
             ],
           },
           {
-            title: "Também antes da V1",
+            title: "Em construção",
+            state: "building",
+            items: [
+              { lead: "O app como servidor.", textHtml: "O app do computador serve as pastas que você escolher na rede da sua casa; o celular se liga lendo um QR code, e você aprova no computador." },
+            ],
+          },
+          {
+            title: "Também na V1",
             state: "planned",
             items: [
-              { lead: "Um teste de segurança feito de fora.", textHtml: "Uma pessoa de fora do projeto tenta invadir um UniVerso de teste." },
               { lead: "Apps assinados.", textHtml: "No Mac e no Windows, sem o aviso de app desconhecido na instalação." },
-              { lead: "Uma passada com leitor de tela.", textHtml: "O app inteiro percorrido com um leitor de tela, para funcionar para quem não vê a tela." },
-              { lead: "Um mês de uso real.", textHtml: "Um mês usando o Verso todos os dias, sem perder nenhum dado." },
-              { lead: "O código aberto.", textHtml: "O repositório do Verso público, e os instaladores neste site." },
+              { lead: "O código aberto.", textHtml: "O repositório do Verso público, e os instaladores para baixar aqui." },
+              { lead: "Mac com Intel e Linux ARM64.", textHtml: "Apps para esses computadores também." },
+              { lead: "Feito para leitor de tela.", textHtml: "O app inteiro usável com um leitor de tela." },
             ],
           },
           {
@@ -916,7 +911,7 @@ export const ptBR: Copy = {
       },
       eyebrow: "Notas, mundos e RPG",
       roadmapHtml:
-        "Parte do que falta — o segredo do mestre dentro da nota, mapas com pinos, o celular offline — está no <a href=\"/recursos/#roteiro\">roteiro da V1</a>. É um plano, sem datas.",
+        "Parte do que falta aqui — o segredo do mestre dentro da nota, mapas com pinos, o celular offline — já está pronto e chega na próxima versão de teste; o resto está no <a href=\"/recursos/#roteiro\">roteiro da V1</a>. A tabela mostra só o que já está nas versões de teste.",
     },
   },
   waitlist: {

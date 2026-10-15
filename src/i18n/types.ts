@@ -188,4 +188,4 @@ export interface Roadmap {
   states: Record<RoadmapState, string>;
   groups: { title: string; state: RoadmapState; items: { lead: string; textHtml?: string }[] }[];
 }
-export type RoadmapState = "building" | "planned" | "later";
+export type RoadmapState = "ready" | "building" | "planned" | "later";

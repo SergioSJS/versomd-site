@@ -541,7 +541,8 @@ h4 {
   border: 1px solid var(--hair);
   border-radius: var(--radius-pill);
 }
-.is-building .state { color: var(--seal-ink); background: var(--seal); border-color: var(--seal); }
+.is-ready .state { color: var(--seal-ink); background: var(--seal); border-color: var(--seal); }
+.is-building .state { color: var(--brass-ink); border-color: var(--seal); }
 .is-planned .state { color: var(--brass-ink); border-color: color-mix(in oklch, var(--brass) 55%, var(--hair)); }
 .roadmap-group ul {
   list-style: none;

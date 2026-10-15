@@ -261,7 +261,7 @@ export const en: Copy = {
       {
         lead: "No offline use on a phone.",
         textHtml:
-          "On a phone and in a browser you work directly on the server’s folder; without a connection, you cannot edit. The phone offline is on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>.",
+          "On a phone and in a browser you work directly on the server’s folder; without a connection, you cannot edit — for now: the phone offline is ready and comes in the next test release (<a href=\"/en/features/#roadmap\">roadmap</a>).",
       },
       {
         lead: "No plugins.",
@@ -838,48 +838,43 @@ export const en: Copy = {
         title: "Roadmap",
         introHtml: [
           "What comes next, up to V1 — the release for everyone. It is a plan, not a promise: what goes in and in what order may change, and there are no dates.",
-          "<strong>Being built</strong> is what is being made now for the next test release; <strong>planned</strong> is what is decided for V1 and has not reached the test releases yet.",
+          "<strong>Done</strong> is ready and comes in the next test release; <strong>being built</strong> is being made now; <strong>planned</strong> is decided for V1.",
         ],
-        states: { building: "being built", planned: "planned", later: "after V1" },
+        states: { ready: "done", building: "being built", planned: "planned", later: "after V1" },
         groups: [
           {
-            title: "In the next test release",
+            title: "Ready, in the next test release",
+            state: "ready",
+            items: [
+              { lead: "Notifications in the app.", textHtml: "A notice when something changes without your asking — sync dropped or came back, a folder was shared with you, a new version is out — and a list to see later. You choose, per kind, what notifies you, and whether it also goes to the system’s notifications." },
+              { lead: "Hover preview.", textHtml: "Rest the pointer on a link and read the note without leaving where you are." },
+              { lead: "The note’s card.", textHtml: "The properties become a card beside the text, with a picture — the sheet of a character, a place, a project." },
+              { lead: "The game master’s secrets.", textHtml: "A <code>&gt; [!secret]</code> block inside a note, or in a board’s text card, that someone who can only read the shared folder never receives." },
+              { lead: "Dice and random tables.", textHtml: "<code>dice: 1d20</code> rolls with a click, and a table in the note draws a row; the result is never written into the note." },
+              { lead: "Linking mentions.", textHtml: "Where a note is named without a link, one click makes the link — one by one, or all at once, seeing first what changes." },
+              { lead: "Maps on the board.", textHtml: "A picture under the board, pins that open notes, and secret pins the players do not see." },
+              { lead: "Version history.", textHtml: "Who changed a note and when, the difference between versions, and an older version brought back — on a UniVerso and in the computer’s own folders." },
+              { lead: "The phone offline.", textHtml: "The folders you choose stay on the phone; you write without a connection, and everything syncs when the network is back." },
+              { lead: "Periodic notes.", textHtml: "For the week, the month, the quarter and the year, beside the daily note." },
+              { lead: "Fuller bases.", textHtml: "Filters with regular expressions, and the map view." },
+              { lead: "Web pages inside a note.", textHtml: "An embedded page scrolls with the note and is clipped in the right place, like an iframe — also on sites that refuse to be embedded." },
+            ],
+          },
+          {
+            title: "Being built",
             state: "building",
             items: [
-              {
-                lead: "Notifications in the app.",
-                textHtml:
-                  "A notice when something changes without you asking — sync dropped or came back, a folder was shared with you, a new version is out — and a list to look at later. You choose, kind by kind, what notifies you.",
-              },
+              { lead: "The app as a server.", textHtml: "The desktop app serves the folders you choose on your home network; the phone connects by reading a QR code, and you approve it on the computer." },
             ],
           },
           {
-            title: "In V1",
+            title: "Also in V1",
             state: "planned",
             items: [
-              { lead: "Preview on hover.", textHtml: "Rest the pointer on a link and read the note without leaving where you are." },
-              { lead: "A note’s card.", textHtml: "The properties become a card beside the text, with a picture — a character sheet, a place, a project." },
-              { lead: "The game master’s secrets.", textHtml: "A <code>&gt; [!secret]</code> block inside the note, which someone who can only read the shared note never receives." },
-              { lead: "Dice and random tables.", textHtml: "<code>dice: 1d20</code> rolls with a click, and a table in a note draws a row; the result is never written into the note." },
-              { lead: "Linking mentions.", textHtml: "Where a note is named without a link, one click makes the link — one at a time, or all at once, after seeing what changes." },
-              { lead: "Maps on the board.", textHtml: "A picture under the board, pins that open notes, and secret pins the players do not see." },
-              { lead: "Version history.", textHtml: "Who changed a note and when, the difference between versions, and an older version brought back — on a UniVerso and in the computer's own folders." },
-              { lead: "The phone offline.", textHtml: "The folders you choose stay on the phone; you write without a connection, and everything syncs when the network is back." },
-              { lead: "Periodic notes.", textHtml: "Weekly and monthly, beside the daily note." },
-              { lead: "Fuller bases.", textHtml: "Filters with regular expressions, and the map view." },
-              { lead: "The app as a server.", textHtml: "The desktop app serves its folder on your network; the phone finds it there and connects by reading a QR code." },
+              { lead: "Signed apps.", textHtml: "On the Mac and on Windows, without the unknown-app warning when installing." },
+              { lead: "Open source.", textHtml: "Verso’s repository public, and the installers to download here." },
               { lead: "Intel Macs and Linux ARM64.", textHtml: "Apps for those computers too." },
-            ],
-          },
-          {
-            title: "Also before V1",
-            state: "planned",
-            items: [
-              { lead: "A security test from outside.", textHtml: "Someone outside the project tries to break into a test UniVerso." },
-              { lead: "Signed apps.", textHtml: "On a Mac and on Windows, with no unknown-app warning when installing." },
-              { lead: "A pass with a screen reader.", textHtml: "The whole app gone through with a screen reader, so it works for people who cannot see the screen." },
-              { lead: "A month of real use.", textHtml: "A month of using Verso every day, without losing any data." },
-              { lead: "The code in the open.", textHtml: "Verso’s repository public, and the installers on this site." },
+              { lead: "Made for screen readers.", textHtml: "The whole app usable with a screen reader." },
             ],
           },
           {
@@ -888,7 +883,7 @@ export const en: Copy = {
             items: [
               { lead: "Optional end-to-end encryption." },
               { lead: "The MCP server over the network." },
-              { lead: "The folder on outside storage: a bucket of yours or WebDAV." },
+              { lead: "The folder on external storage: your own bucket or WebDAV." },
             ],
           },
         ],
@@ -915,7 +910,7 @@ export const en: Copy = {
       },
       eyebrow: "Notes, worlds and RPG",
       roadmapHtml:
-        "Part of what is missing — the game master’s secret inside a note, maps with pins, the phone offline — is on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. It is a plan, with no dates.",
+        "Part of what is missing here — the game master’s secret inside a note, maps with pins, the phone offline — is ready and comes in the next test release; the rest is on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. The table shows only what is already in the test releases.",
     },
   },
   waitlist: {
