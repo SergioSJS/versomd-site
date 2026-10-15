@@ -171,6 +171,7 @@ RWS1zv2nvs/ng1hA0YspwOg7wGda98zkXjVfx8m9CtT5obRW5zabNHaT
 ```
 
 The app checks that signature before it updates itself; `universo.sh`
-checks it before it installs. `public/universo.sh` is a copy of
-`packaging/server/universo.sh` in the product repository, which is the
-source.
+checks it before it installs. `https://versomd.com/universo.sh` redirects
+(`public/_redirects`) to `packaging/server/universo.sh` on the product
+repository's `main`, the only copy; it answers once that repository is
+public.

@@ -872,7 +872,7 @@ export const en: Copy = {
             title: "Also in V1",
             state: "planned",
             items: [
-              { lead: "Signed apps.", textHtml: "On the Mac and on Windows, without the unknown-app warning when installing." },
+              { lead: "A signed Windows app.", textHtml: "No SmartScreen warning when installing. On the Mac, the app opens through System Settings’ “Open Anyway”, once." },
               { lead: "Open source.", textHtml: "Verso’s repository public, and the installers to download here." },
               { lead: "Intel Macs and Linux ARM64.", textHtml: "Apps for those computers too." },
               { lead: "Made for screen readers.", textHtml: "The whole app usable with a screen reader." },

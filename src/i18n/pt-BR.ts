@@ -873,7 +873,7 @@ export const ptBR: Copy = {
             title: "Também na V1",
             state: "planned",
             items: [
-              { lead: "Apps assinados.", textHtml: "No Mac e no Windows, sem o aviso de app desconhecido na instalação." },
+              { lead: "App do Windows assinado.", textHtml: "Sem o aviso do SmartScreen na instalação. No Mac, o app abre pelo “Abrir mesmo assim” dos Ajustes do Sistema, uma vez." },
               { lead: "O código aberto.", textHtml: "O repositório do Verso público, e os instaladores para baixar aqui." },
               { lead: "Mac com Intel e Linux ARM64.", textHtml: "Apps para esses computadores também." },
               { lead: "Feito para leitor de tela.", textHtml: "O app inteiro usável com um leitor de tela." },

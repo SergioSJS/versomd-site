@@ -92,8 +92,10 @@ never a date, and always that it is a plan that may change.
   targets ≥ 44 px, works without JavaScript (the full table, controls
   hidden), `prefers-reduced-motion` respected.
 - No analytics, no cookies, no third-party script or font host.
-- `public/universo.sh` is a **copy** of `../verso/packaging/server/universo.sh`
-  (the source); it must stay byte-identical.
+- `/universo.sh` is a **redirect** (`public/_redirects`) to the installer in the
+  product repository, `packaging/server/universo.sh` on `main` — no copy here
+  that can go stale (the maintainer, 2026-10-15). It answers once the
+  repository is public.
 
 ## Checks before a commit
 
