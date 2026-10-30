@@ -753,7 +753,7 @@ export const en: Copy = {
       today: {
         title: "What it does today",
         introHtml:
-          "All of this is in the test releases: on a Mac with an Apple chip, on Windows 10 and 11 and on Linux (x64), and in a browser and on a phone through a UniVerso. What is ready but has not yet shipped in a test release is in the <a href=\"#roadmap\">roadmap</a>.",
+          "All of this is in the test releases: on a Mac with an Apple chip, on Windows 11 and on Linux (x64), and in a browser and on a phone through a UniVerso. What is ready but has not yet shipped in a test release is in the <a href=\"#roadmap\">roadmap</a>.",
         groups: [
           {
             title: "Writing",

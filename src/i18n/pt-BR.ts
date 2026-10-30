@@ -754,7 +754,7 @@ export const ptBR: Copy = {
       today: {
         title: "O que já faz",
         introHtml:
-          "Tudo isto está nas versões de teste: no Mac com chip Apple, no Windows 10 e 11 e no Linux (x64), e no navegador e no celular por um UniVerso. O que está pronto mas ainda não saiu numa versão de teste fica no <a href=\"#roteiro\">roteiro</a>.",
+          "Tudo isto está nas versões de teste: no Mac com chip Apple, no Windows 11 e no Linux (x64), e no navegador e no celular por um UniVerso. O que está pronto mas ainda não saiu numa versão de teste fica no <a href=\"#roteiro\">roteiro</a>.",
         groups: [
           {
             title: "Escrever",
