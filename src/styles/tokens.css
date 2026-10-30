@@ -1,7 +1,7 @@
 /* Design tokens of versomd.com.
  *
  * Copied from the Verso window: app/ui/css/base.css, its first `:root` block,
- * in the product repository (SergioSJS/verso, private) at commit 6d1b1f7.
+ * in the product repository (SergioSJS/verso, private) at commit 9a6587cd.
  * "A calm manuscript: warm parchment neutrals tinted toward the ink, one
  * wax-seal accent, brass for small marks. Fraunces for the title, Literata to
  * read and write, Instrument Sans for the chrome. No cards, no shadows:
@@ -20,7 +20,7 @@
 :root {
   color-scheme: light dark;
 
-  /* BEGIN copied from verso app/ui/css/base.css @ 6d1b1f7 */
+  /* BEGIN copied from verso app/ui/css/base.css @ 9a6587cd */
   --dk-lift: 4.5%;
   --dk-dim: 3.5%;
   --dk-up: 4.5%;
@@ -31,9 +31,15 @@
   --ink-2: light-dark(oklch(45% 0.03 60), oklch(calc(72% + var(--dk-up)) 0.02 76));
   --ink-3: light-dark(oklch(49% 0.025 65), oklch(calc(67% + var(--dk-up)) 0.02 70));
   --hair: light-dark(oklch(86% 0.02 75), oklch(calc(31% + var(--dk-lift)) 0.015 62));
+  --control-line: light-dark(oklch(55% 0.02 70), oklch(calc(58% + var(--dk-lift)) 0.02 70));
   --seal: light-dark(oklch(46% 0.15 28), oklch(calc(72% + var(--dk-up)) 0.13 32));
   --seal-ink: light-dark(oklch(98% 0.01 80), oklch(calc(19% + var(--dk-lift)) 0.012 62));
   --seal-wash: light-dark(oklch(93% 0.035 30), oklch(calc(28% + var(--dk-lift)) 0.045 30));
+  --danger: light-dark(oklch(48% 0.19 27), oklch(calc(72% + var(--dk-up)) 0.16 25));
+  --danger-wash: light-dark(oklch(95% 0.03 25), oklch(calc(28% + var(--dk-lift)) 0.06 25));
+  --danger-ink: light-dark(oklch(98% 0.01 25), oklch(19% 0.02 25));
+  --good: light-dark(oklch(42% 0.12 150), oklch(78% 0.12 150));
+  --good-wash: light-dark(oklch(94% 0.04 150), oklch(calc(28% + var(--dk-lift)) 0.05 150));
   --brass: light-dark(oklch(62% 0.11 78), oklch(76% 0.11 82));
   --brass-ink: light-dark(oklch(49% 0.11 78), oklch(calc(76% + var(--dk-up)) 0.11 82));
   --brass-wash: light-dark(oklch(94% 0.05 85), oklch(calc(30% + var(--dk-lift)) 0.05 82));
