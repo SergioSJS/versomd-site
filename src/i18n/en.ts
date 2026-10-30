@@ -105,32 +105,67 @@ export const en: Copy = {
         {
           term: "Sync",
           textHtml:
-            "A folder of this computer stays in step with a folder of the UniVerso. A change crosses when saved. A file changed on both sides becomes a copy beside it, never a loss; the first sync deletes nothing.",
+            "A folder on this computer stays in step with a folder on UniVerso. A change crosses when you save. A file changed on both sides becomes a copy beside it, never a loss; the first sync deletes nothing.",
         },
         {
-          term: "Share",
+          term: "Share and give access",
           textHtml:
-            "The owner gives another account of the same UniVerso read or write access to a folder, and can take it back.",
+            "The owner gives another account on the same UniVerso access to a folder, a note, a board or a file. The Access window has three choices — does not see, sees, edits — says where each comes from, and the owner can take it back.",
         },
         {
           term: "Edit together",
           textHtml:
-            "While sync is connected, a note two people have open receives the other’s edits letter by letter, with each one’s cursor and name.",
+            "A note or a board open to two people gets the other’s edits at once, with each person’s cursor and name. Whoever joins shows as a quiet avatar, with no pop-ups jumping on the screen.",
+        },
+        {
+          term: "The Table",
+          textHtml:
+            "A folder becomes a campaign, with a chat and roll log that everyone at the table sees. The server does the rolling, with the roller’s name; there are secret rolls (only the game master sees the result) and images in the chat.",
+        },
+        {
+          term: "Invite players",
+          textHtml:
+            "The game master invites each player by a single-use link that opens only that campaign. Notes start hidden: release them to the whole table or to some players, and hide them again whenever you like.",
+        },
+        {
+          term: "One access model",
+          textHtml:
+            "Four rights per player — Images, Files, Create notes and Create boards — all off for someone who just joined. An image a player pastes into a note lands in an <code>assets</code> folder beside it, with the same access as the note.",
+        },
+        {
+          term: "Read link",
+          textHtml:
+            "A folder or a note can be read in a browser by whoever holds the address, no account needed. The link can expire, ask for a passphrase and be revoked at once; secret blocks never reach the reader. It starts off: the administrator turns it on.",
+        },
+        {
+          term: "Version history",
+          textHtml:
+            "Each note keeps who changed it, when and the difference; an old version comes back with a click.",
         },
         {
           term: "Trash",
           textHtml:
-            "What is deleted is kept for 30 days by default, with who deleted it and when, and goes back to its place with “Restore”.",
+            "What is deleted stays 30 days by default, with who deleted it and when, and returns to its place with “Restore”.",
         },
         {
-          term: "Console",
+          term: "Notifications",
           textHtml:
-            "The admin sees accounts, folders, invitations, quotas and the audit log at <code>/admin</code>.",
+            "What changes without your asking lands in a notifications centre, and also in the system’s notifications if you want. Each kind of notice can be turned on or off.",
         },
         {
           term: "Browser and phone",
           textHtml:
-            "UniVerso serves the app’s own window; on a phone and a tablet it installs on the home screen.",
+            "UniVerso serves the same window as the app; on a phone or tablet it installs on the home screen. For folders you choose, over HTTPS, the phone also opens and edits with no network, and sends what changed when the network returns.",
+        },
+        {
+          term: "No server to rent",
+          textHtml:
+            "The desktop app can also serve folders on your home network: the phone connects by reading a QR code, and you approve it on the computer. Good for a game night at home; to stay up all the time, install UniVerso on a machine of your own.",
+        },
+        {
+          term: "Console",
+          textHtml:
+            "Whoever administers sees accounts, folders, invitations, quotas and the audit log at <code>/admin</code>.",
         },
       ],
     },

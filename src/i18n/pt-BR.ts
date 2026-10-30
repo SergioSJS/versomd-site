@@ -109,14 +109,39 @@ export const ptBR: Copy = {
             "Uma pasta deste computador fica em dia com uma pasta do UniVerso. A mudança cruza ao salvar. Um arquivo mudado dos dois lados vira uma cópia ao lado, nunca uma perda; a primeira sincronização não apaga nada.",
         },
         {
-          term: "Partilhar",
+          term: "Partilhar e dar acesso",
           textHtml:
-            "O dono dá a outra conta do mesmo UniVerso acesso de leitura ou de escrita a uma pasta, e pode tirar depois.",
+            "O dono dá a outra conta do mesmo UniVerso acesso a uma pasta, a uma nota, a um board ou a um arquivo. A janela Acesso tem três escolhas — não vê, vê, edita —, diz de onde vem cada uma, e o dono pode tirar depois.",
         },
         {
           term: "Editar junto",
           textHtml:
-            "Com a sincronização conectada, uma nota aberta por duas pessoas recebe as edições da outra letra a letra, com o cursor e o nome de cada uma.",
+            "Uma nota ou um board aberto por duas pessoas recebe as edições da outra na hora, com o cursor e o nome de cada uma. Quem entra aparece como um avatar discreto, sem janelinhas pulando na tela.",
+        },
+        {
+          term: "A Mesa",
+          textHtml:
+            "Uma pasta vira uma campanha, com um registro de conversa e rolagens que todo mundo da mesa vê. Quem rola é o servidor, com o nome de quem rolou; há rolagem secreta (só o mestre vê o resultado) e imagens no chat.",
+        },
+        {
+          term: "Convidar jogadores",
+          textHtml:
+            "O mestre convida cada jogador por um link de uso único, que entra só naquela campanha. As notas começam escondidas: ele libera para a mesa toda ou só para alguns jogadores, e esconde de novo quando quiser.",
+        },
+        {
+          term: "Um só modelo de acesso",
+          textHtml:
+            "Quatro direitos por jogador — Imagens, Arquivos, Criar notas e Criar boards — todos desligados para quem acabou de entrar. Uma imagem que o jogador cola numa nota fica numa pasta <code>assets</code> ao lado dela, com o mesmo acesso da nota.",
+        },
+        {
+          term: "Link de leitura",
+          textHtml:
+            "Uma pasta ou uma nota pode ser lida no navegador por quem tem o endereço, sem conta. O link pode expirar, pedir uma senha e ser revogado na hora; os blocos secretos nunca chegam ao leitor. Vem desligado: quem administra liga.",
+        },
+        {
+          term: "Histórico de versões",
+          textHtml:
+            "De cada nota ficam quem mudou, quando e a diferença; uma versão antiga volta com um clique.",
         },
         {
           term: "Lixeira",
@@ -124,14 +149,24 @@ export const ptBR: Copy = {
             "O que é apagado fica 30 dias por padrão, com quem apagou e quando, e volta para o lugar com “Restaurar”.",
         },
         {
-          term: "Console",
+          term: "Avisos",
           textHtml:
-            "Quem administra vê contas, pastas, convites, cotas e o registro de auditoria em <code>/admin</code>.",
+            "O que muda sem você pedir cai numa central de avisos, e também nas notificações do sistema, se você quiser. Cada tipo de aviso se liga ou desliga.",
         },
         {
           term: "Navegador e celular",
           textHtml:
-            "O UniVerso serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial.",
+            "O UniVerso serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial. Em pastas que você escolhe, e com HTTPS, o celular também abre e edita sem rede, e envia o que mudou quando a rede volta.",
+        },
+        {
+          term: "Sem alugar servidor",
+          textHtml:
+            "O app do computador também pode servir pastas na rede de casa: o celular se liga lendo um QR code, e você aprova no computador. Serve para uma noite de jogo em casa; para ficar no ar sempre, instale o UniVerso numa máquina sua.",
+        },
+        {
+          term: "Console",
+          textHtml:
+            "Quem administra vê contas, pastas, convites, cotas e o registro de auditoria em <code>/admin</code>.",
         },
       ],
     },
