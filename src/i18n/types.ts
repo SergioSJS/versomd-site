@@ -8,8 +8,9 @@ export interface Figure {
   /** File stem under /media: <stem>.gif (or .png), <stem>.png poster. */
   stem: string;
   /** gif: a recording; still: a screenshot (PNG + WebP); poster: the first
-   *  frame of a recording, shown as a still (<stem>.png only, no WebP). */
-  kind: "gif" | "still" | "poster";
+   *  frame of a recording, shown as a still (<stem>.png only, no WebP);
+   *  shot: a screenshot of the app (<stem>.webp only). */
+  kind: "gif" | "still" | "poster" | "shot";
   /** An animated WebP exists beside the GIF (smaller); only when it helps. */
   webp?: boolean;
   width: number;
@@ -133,6 +134,8 @@ export interface Copy {
   pages: {
     features: PageHead & {
       today: { title: string; introHtml: string; groups: { title: string; itemsHtml: string[] }[] };
+      /** Screenshots of the app (English interface in both languages). */
+      gallery: { title: string; introHtml: string; figures: Figure[] };
       roadmap: Roadmap;
     };
     server: PageHead & { stepsTitle: string; featuresTitle: string };
@@ -169,6 +172,7 @@ export interface Copy {
     waitlist: string;
     files: string;
     today: string;
+    gallery: string;
     roadmap: string;
     steps: string;
     serverFeatures: string;

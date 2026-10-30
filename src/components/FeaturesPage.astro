@@ -4,6 +4,7 @@
 import type { Copy } from "../i18n";
 import PageHead from "./PageHead.astro";
 import CtaStrip from "./CtaStrip.astro";
+import Figure from "./Figure.astro";
 
 interface Props {
   copy: Copy;
@@ -12,7 +13,7 @@ interface Props {
 const { copy } = Astro.props;
 const page = copy.pages.features;
 const { files } = copy.how;
-const { today, roadmap } = page;
+const { today, gallery, roadmap } = page;
 const { ids } = copy;
 ---
 
@@ -45,6 +46,16 @@ const { ids } = copy;
             </div>
           ))
         }
+      </div>
+    </div>
+  </section>
+
+  <section class="block gallery" aria-labelledby={ids.gallery}>
+    <div class="wrap">
+      <h2 id={ids.gallery}><span class="md" aria-hidden="true">##</span>{gallery.title}</h2>
+      <p class="today-intro aside" set:html={gallery.introHtml} />
+      <div class="gallery-grid">
+        {gallery.figures.map((f, i) => <Figure figure={f} label={copy.figLabel} number={i + 1} class="gallery-plate" />)}
       </div>
     </div>
   </section>

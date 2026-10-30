@@ -26,6 +26,8 @@ const shape = figure.width / figure.height < 0.8 ? "tall" : figure.width / figur
         {figure.webp && <source type="image/webp" srcset={`${base}.webp`} />}
         <img src={`${base}.gif`} width={figure.width} height={figure.height} alt={figure.alt} loading={loading} decoding="async" />
       </picture>
+    ) : figure.kind === "shot" ? (
+      <img src={`${base}.webp`} width={figure.width} height={figure.height} alt={figure.alt} loading={loading} decoding="async" />
     ) : figure.kind === "poster" ? (
       <img src={`${base}.png`} width={figure.width} height={figure.height} alt={figure.alt} loading={loading} decoding="async" />
     ) : (
