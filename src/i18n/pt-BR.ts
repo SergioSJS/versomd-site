@@ -61,7 +61,7 @@ export const ptBR: Copy = {
       {
         kicker: "UniVerso",
         title: "O servidor é seu",
-        text: "Para uma casa, um grupo de RPG ou um time pequeno que quer partilhar pastas num servidor que alguém de confiança roda.",
+        text: "Para uma casa, um time pequeno ou uma mesa de RPG — com a Mesa de rolagens e conversa, dados, oráculos e fichas — que quer partilhar pastas num servidor que alguém de confiança roda.",
       },
       {
         kicker: "MCP",
@@ -76,7 +76,7 @@ export const ptBR: Copy = {
       {
         page: "features",
         title: "Recursos",
-        text: "O que o Verso faz hoje — escrever, ligar notas, boards, bases — e o roteiro até a V1.",
+        text: "O que o Verso faz — escrever, ligar notas, boards, bases e as ferramentas de RPG — com telas do app, e o roteiro até a V1.",
         link: "Ver os recursos e o roteiro",
       },
       {
@@ -261,9 +261,9 @@ export const ptBR: Copy = {
           "O repositório do Verso ainda é privado. Quando abrir, os instaladores para macOS, Windows e Linux e os pacotes do UniVerso aparecem nesta página.",
       },
       {
-        lead: "Não funciona offline no celular.",
+        lead: "No celular, o offline pede HTTPS.",
         textHtml:
-          "No celular e no navegador você trabalha direto na pasta do servidor; sem conexão, não edita — por enquanto: o celular offline já está pronto e chega na próxima versão de teste (<a href=\"/recursos/#roteiro\">roteiro</a>).",
+          "As pastas que você escolher ficam guardadas no celular e você escreve sem conexão, mas só num UniVerso servido por HTTPS. Sem HTTPS, ou num navegador comum, você trabalha direto na pasta do servidor e, sem conexão, não edita.",
       },
       {
         lead: "Não tem plugins.",
@@ -271,9 +271,9 @@ export const ptBR: Copy = {
           "Nem os do Obsidian, nem plugins próprios. Um sistema de plugins está planejado; os plugins do Obsidian não rodam no Verso.",
       },
       {
-        lead: "Não tem link público para partilhar.",
+        lead: "Quem não tem conta só lê.",
         textHtml:
-          "A partilha é entre contas do mesmo UniVerso. Um link que qualquer pessoa abre, sem conta, não existe.",
+          "Um link de leitura abre uma pasta ou uma nota para qualquer pessoa, sem conta, mas só para ler. Para editar junto, a pessoa precisa de uma conta do mesmo UniVerso.",
       },
       {
         lead: "Não tem criptografia de ponta a ponta.",
@@ -281,8 +281,12 @@ export const ptBR: Copy = {
           "Editar junto e buscar no servidor exigem que o servidor leia os arquivos: quem hospeda vê as notas. A criptografia em repouso é a do disco do servidor. Uma criptografia de ponta a ponta opcional fica para depois da V1.",
       },
       {
-        lead: "Não sincroniza por Dropbox, Google Drive ou iCloud.",
-        textHtml: "Hoje a sincronização é só com um UniVerso.",
+        lead: "Dropbox, OneDrive e Google Drive ainda não.",
+        textHtml: "O app do computador já sincroniza uma pasta com um UniVerso, com um WebDAV (como o Nextcloud) ou com um bucket S3. Dropbox, OneDrive e Google Drive estão planejados para a V1 (<a href=\"/recursos/#roteiro\">roteiro</a>).",
+      },
+      {
+        lead: "Os apps ainda avisam na instalação.",
+        textHtml: "O app do Mac não é notarizado pela Apple: na primeira vez, ele abre pelo “Abrir mesmo assim” dos Ajustes do Sistema. O do Windows ainda não é assinado, e o SmartScreen avisa; a assinatura está planejada para a V1.",
       },
     ],
   },
@@ -293,14 +297,14 @@ export const ptBR: Copy = {
     introHtml: [
       "A tabela põe o Verso ao lado das ferramentas que quem guarda notas e quem mestra RPG costuma usar, com o que cada uma faz e o que não faz.",
       "<strong>Onde o Verso está à frente:</strong> as notas são arquivos Markdown seus, que o Obsidian também abre; o servidor é seu; várias pessoas editam a mesma nota, o mesmo board e a mesma base ao vivo; e não há plano pago. O Obsidian guarda arquivos, mas não edita ao vivo sem plugin de terceiros; o Notion e o LegendKeeper editam ao vivo, mas guardam as notas no serviço deles.",
-      "<strong>Onde está atrás:</strong> o Verso ainda está em teste e sem download público. Não tem segredo do mestre dentro de uma nota, mapas com pinos e camadas, linhas do tempo, árvores genealógicas nem modelos de RPG prontos; não tem plugins; no celular, só pelo navegador e com conexão. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
+      "<strong>Onde está atrás:</strong> o Verso ainda está em teste e sem download público. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, é pelo navegador, sem app de loja, e o offline pede HTTPS. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
     ],
     pains: {
       title: "Três problemas comuns, e o que o Verso faz com eles",
       items: [
-        { lead: "O dilema do mestre.", textHtml: "Hoje o Verso partilha por pasta: a pasta dos jogadores com leitura, a sua só sua, no mesmo vault, sem duplicar notas. Um segredo dentro de uma nota — um parágrafo que só o mestre vê — ainda não existe; World Anvil, Kanka, LegendKeeper e Foundry VTT têm." },
+        { lead: "O dilema do mestre.", textHtml: "O Verso partilha por pasta e por nota: a pasta dos jogadores com leitura, a sua só sua, no mesmo vault, sem duplicar notas. E um segredo dentro de uma nota — um parágrafo que só o mestre vê — nunca chega a quem só lê. World Anvil, Kanka, LegendKeeper e Foundry VTT também têm segredos." },
         { lead: "Preso a um serviço.", textHtml: "As notas são arquivos <code>.md</code> numa pasta sua, e o servidor é uma máquina sua. Sair do Verso é fechar o app: a pasta continua abrindo no Obsidian ou em qualquer editor." },
-        { lead: "Sincronizar entre aparelhos.", textHtml: "Com um UniVerso, a pasta fica em dia entre Mac, Windows e Linux e abre no navegador e no celular, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado, e no celular é só online." },
+        { lead: "Sincronizar entre aparelhos.", textHtml: "Com um UniVerso, a pasta fica em dia entre Mac, Windows e Linux e abre no navegador e no celular, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado, e no celular o offline pede HTTPS." },
       ],
     },
     tableCaption: "O Verso e outras ferramentas de notas e de RPG, capacidade por capacidade",
@@ -482,7 +486,7 @@ export const ptBR: Copy = {
         group: "collab",
         label: "Segredo do mestre dentro da nota",
         cells: [
-          { mark: "no", text: "ainda não; hoje, separe por pasta" },
+          { mark: "yes", text: "bloco > [!secret]; quem só lê a pasta partilhada não o recebe" },
           { mark: "no", text: "não" },
           { mark: "no", text: "não" },
           { mark: "no", text: "não há permissão por bloco" },
@@ -502,7 +506,7 @@ export const ptBR: Copy = {
         group: "rpg",
         label: "Modelos de RPG prontos",
         cells: [
-          { mark: "partial", text: "notas tipadas que você define; sem pacotes de RPG" },
+          { mark: "partial", text: "modelos de campanha e de mundo, fichas de mais de trinta layouts, oráculos; sem pacotes de regras prontos" },
           { mark: "no", text: "não nativos" },
           { mark: "no", text: "não" },
           { mark: "partial", text: "modelos da comunidade" },
@@ -522,7 +526,7 @@ export const ptBR: Copy = {
         group: "rpg",
         label: "Mapas interativos",
         cells: [
-          { mark: "no", text: "uma imagem num board, sem pinos nem camadas" },
+          { mark: "partial", text: "uma imagem num board, com pinos que abrem notas e pinos secretos; sem camadas" },
           { mark: "partial", text: "mapa geográfico nas bases; de mundo, por plugin" },
           { mark: "no", text: "não" },
           { mark: "partial", text: "mapa geográfico nas bases de dados" },
@@ -602,7 +606,7 @@ export const ptBR: Copy = {
         group: "platforms",
         label: "Celular",
         cells: [
-          { mark: "partial", text: "no navegador, por um UniVerso; só online" },
+          { mark: "partial", text: "no navegador, por um UniVerso; offline nas pastas que você escolher, com HTTPS; sem app de loja" },
           { mark: "yes", text: "apps iOS e Android, offline" },
           { mark: "yes", text: "apps; os da versão nova em teste" },
           { mark: "yes", text: "apps, com offline" },
@@ -741,7 +745,7 @@ export const ptBR: Copy = {
       meta: {
         title: "Recursos e roteiro — Verso",
         description:
-          "O que o Verso faz hoje — escrever em Markdown, ligar notas, boards, bases, sincronizar com um servidor seu — e o que vem até a V1.",
+          "O que o Verso faz — escrever em Markdown, ligar notas, boards, bases, ferramentas de RPG, sincronizar com um servidor seu — e o que vem até a V1.",
       },
       eyebrow: "Recursos",
       title: "O que o Verso faz, e o que vem depois.",
@@ -750,7 +754,7 @@ export const ptBR: Copy = {
       today: {
         title: "O que já faz",
         introHtml:
-          "Tudo isto está nas versões de teste de hoje: no Mac com chip Apple, no Windows 10 e 11 e no Linux (x64), e no navegador e no celular por um UniVerso.",
+          "Tudo isto está nas versões de teste: no Mac com chip Apple, no Windows 10 e 11 e no Linux (x64), e no navegador e no celular por um UniVerso. O que está pronto mas ainda não saiu numa versão de teste fica no <a href=\"#roteiro\">roteiro</a>.",
         groups: [
           {
             title: "Escrever",
@@ -759,14 +763,18 @@ export const ptBR: Copy = {
               "Blocos que você arrasta pela alça e um menu <code>/</code>, como no Notion.",
               "Tabelas editadas como tabelas.",
               "Um painel para as propriedades da nota, e notas tipadas: o tipo dá à nota os campos dela.",
+              "A ficha da nota: as propriedades viram um cartão ao lado do texto, com imagem — o personagem, o lugar, o projeto.",
               "Callouts, fórmulas, diagramas Mermaid e blocos de código com botão de copiar.",
+              "Páginas da web dentro da nota, rolando com ela.",
             ],
           },
           {
             title: "Ligar as notas",
             itemsHtml: [
               "Links <code>[[…]]</code> para notas, títulos e blocos, e embeds que mostram a nota ou o bloco.",
+              "Pare o ponteiro sobre um link e leia a nota sem sair de onde está.",
               "Backlinks, links de saída e os links que ainda não levam a nenhuma nota.",
+              "Onde uma nota é citada sem link, um clique faz o link — um por um, ou todos de uma vez, vendo antes o que muda.",
               "Renomear uma nota atualiza todos os links para ela.",
               "Um grafo das notas, que você explora.",
             ],
@@ -777,12 +785,13 @@ export const ptBR: Copy = {
               "Arquivos <code>.canvas</code>, o formato do Obsidian, desenhados com o Excalidraw.",
               "As notas da pasta como cartões que você edita ali mesmo; imagens, que dá para recortar, e PDFs.",
               "Setas que ficam no ponto onde foram desenhadas, e os desenhos do plugin Excalidraw do Obsidian.",
+              "Mapas: uma imagem por baixo do board, pinos que abrem notas e pinos secretos que os jogadores não veem.",
             ],
           },
           {
             title: "Bases",
             itemsHtml: [
-              "Arquivos <code>.base</code> vistos como tabela, cartões, lista, kanban ou calendário, com filtros, ordem, grupos e fórmulas.",
+              "Arquivos <code>.base</code> vistos como tabela, cartões, lista, kanban, calendário ou mapa, com filtros (também por expressão regular), ordem, grupos e fórmulas.",
               "Uma base embutida numa nota, ao vivo; o mesmo arquivo que o Obsidian abre.",
             ],
           },
@@ -791,7 +800,8 @@ export const ptBR: Copy = {
             itemsHtml: [
               "Uma árvore de arquivos com seleção múltipla, figurinhas, cores e capas.",
               "Páginas de pasta, ordem manual e focos, compartilhados com o make.md.",
-              "A nota do dia, com calendário, e modelos oferecidos ao criar uma nota.",
+              "A nota do dia, com calendário, e as notas da semana, do mês, do trimestre e do ano; modelos oferecidos ao criar uma nota.",
+              "Histórico de versões: quem mudou uma nota e quando, a diferença entre versões e uma versão antiga de volta.",
             ],
           },
           {
@@ -810,13 +820,22 @@ export const ptBR: Copy = {
             ],
           },
           {
+            title: "Para jogar RPG",
+            itemsHtml: [
+              "Segredos do mestre: um bloco <code>&gt; [!secret]</code> na nota, ou num cartão de texto do board, que quem só pode ler a pasta partilhada nunca recebe.",
+              "<code>dice: 1d20</code> rola com um clique, e uma tabela da nota sorteia uma linha; o resultado nunca é gravado na nota.",
+            ],
+          },
+          {
             title: "Com um UniVerso",
             itemsHtml: [
               "A pasta em dia entre seus computadores; a primeira sincronização não apaga nada.",
               "Pastas partilhadas com outras contas, para ler ou para escrever.",
               "Notas, boards e bases editados junto, ao vivo, com o cursor e o nome de cada pessoa.",
               "Uma lixeira de 30 dias, e um console para quem administra.",
-              "A mesma janela no navegador e no celular. <a href=\"/universo/\">Mais sobre o UniVerso</a>.",
+              "A mesma janela no navegador e no celular; no celular, as pastas que você escolher ficam guardadas e você escreve sem conexão.",
+              "O app do computador também pode servir suas pastas na rede de casa: o celular se liga lendo um QR code, e você aprova no computador.",
+              "Avisos no app quando algo muda sem você pedir — a sincronização caiu ou voltou, uma pasta foi partilhada com você —, por tipo, e nas notificações do sistema se você quiser. <a href=\"/universo/\">Mais sobre o UniVerso</a>.",
             ],
           },
           {
@@ -836,44 +855,72 @@ export const ptBR: Copy = {
           },
         ],
       },
+      gallery: {
+        title: "Em imagens",
+        introHtml:
+          "Algumas telas do app, com a interface em inglês e as notas do tutorial em inglês que acompanham o Verso. São do que já está pronto, inclusive o que ainda vai chegar numa próxima versão de teste.",
+        figures: [
+          { stem: "oracles", kind: "shot", width: 1280, height: 800, alt: "O Oráculo e Improvisação aberto sobre uma nota: a pergunta “o guarda ouviu o barulho?”, chance de 50 por cento e a resposta “Sim, mas…” com o resultado do d100.", captionHtml: "Oráculos: sim ou não com chances ajustáveis, centelhas de ideias e tabelas suas." },
+          { stem: "statblock", kind: "shot", width: 1280, height: 800, alt: "A ficha de uma criatura de d20, a Cave Gnawer, com classe de armadura, pontos de vida, atributos com modificadores, traços e ações com dados que se rolam com um clique, seguida de uma ficha de personagem.", captionHtml: "Fichas: um bloco <code>statblock</code> vira um cartão, no layout do seu sistema." },
+          { stem: "dice3d", kind: "shot", width: 1280, height: 800, alt: "Dados em 3D parados sobre a página depois de uma rolagem de 4d6 descartando o menor, com o cartão do resultado ao lado do botão.", captionHtml: "Dados em 3D, se você ligar: o resultado já está sorteado, os dados só caem até ele." },
+          { stem: "dice-tables", kind: "shot", width: 1280, height: 800, alt: "Uma nota com uma tabela de encontros por d6; o botão de dados sorteou uma linha, “um mercador com a carroça atolada”, e oferece rolar de novo.", captionHtml: "Dados e tabelas aleatórias dentro da nota." },
+          { stem: "table", kind: "shot", width: 1280, height: 800, alt: "O painel da Mesa ao lado de uma nota: o registro compartilhado de conversa e rolagens do mestre e de dois jogadores, com dados e totais, e o campo para escrever.", captionHtml: "A Mesa: um registro de rolagens e conversa que todo mundo da campanha vê." },
+          { stem: "access", kind: "shot", width: 1280, height: 960, alt: "A janela de acesso de uma pasta de campanha, com uma linha por jogador e quatro direitos que o mestre liga ou desliga: imagens, arquivos, criar notas e criar boards.", captionHtml: "Um só modelo de acesso: quem vê, quem edita e o que cada jogador pode criar." },
+          { stem: "board-map", kind: "shot", width: 1280, height: 800, alt: "Um board aberto sobre o mapa ilustrado de uma costa, com pinos nomeados e um pino secreto, tracejado e com um cadeado, para o arco da campanha.", captionHtml: "Mapas no board: pinos que abrem notas, e pinos secretos que os jogadores não veem." },
+          { stem: "secret", kind: "shot", width: 1280, height: 800, alt: "Uma nota com um callout vermelho de segredo, “o que os jogadores não sabem”, marcado como escondido de quem só lê.", captionHtml: "O segredo do mestre, no meio da nota." },
+          { stem: "infobox", kind: "shot", width: 1280, height: 800, alt: "A nota de um lugar, Gray Harbor, com um cartão ao lado do texto: uma ilustração, a região, o perigo e os habitantes ligados a outras notas.", captionHtml: "A ficha da nota: as propriedades viram um cartão." },
+          { stem: "datagraph", kind: "shot", width: 1280, height: 800, alt: "Um arquivo JSON de personagens e lugares desenhado como caixas ligadas por linhas, com botões para dobrar, desdobrar e ajustar à tela.", captionHtml: "Dados estruturados (JSON, YAML, TOML, XML, CSV) como diagrama." },
+          { stem: "theme-builder", kind: "shot", width: 1280, height: 800, alt: "O construtor de temas com um tema próprio em azul-esverdeado e ferrugem: campos de cor à esquerda e, à direita, uma página de exemplo já desenhada com as cores novas.", captionHtml: "Aparência: um construtor de temas com a prévia ao vivo, e um catálogo de temas prontos." },
+          { stem: "swatches", kind: "shot", width: 1280, height: 800, alt: "Uma nota com códigos de cor, como #1d9e75 e rgb(29 158 117), cada um com um quadradinho da cor ao lado.", captionHtml: "Quadradinhos de cor ao lado de cada código de cor; um clique abre o seletor." },
+          { stem: "wizard", kind: "shot", width: 1280, height: 800, alt: "O assistente de novo projeto, na etapa de conferir o que será criado: as pastas e os arquivos de um modelo de mundo, cada um com uma caixa para marcar e um nome que se pode editar.", captionHtml: "Novo projeto a partir de um modelo: você vê a árvore e edita antes de gravar qualquer coisa." },
+          { stem: "read-link", kind: "shot", width: 1280, height: 800, alt: "A janela de link de leitura de uma pasta, depois de criar um link de 7 dias: o endereço, mostrado uma só vez, e o aviso de que ele pode ser revogado.", captionHtml: "Link de leitura: quem tem o endereço lê a pasta ou a nota no navegador, sem conta." },
+          { stem: "history", kind: "shot", width: 1280, height: 800, alt: "O histórico de versões de uma nota: a lista de versões com quem mudou, quando e o tamanho, e a diferença entre a versão escolhida e a anterior, com as linhas novas marcadas.", captionHtml: "Histórico de versões, com a diferença à vista." },
+          { stem: "notifications", kind: "shot", width: 1280, height: 800, alt: "A central de notificações do app, com a lista dos avisos que apareceram sem você pedir.", captionHtml: "Notificações: o que mudou sem você pedir, numa lista para ver depois." },
+          { stem: "cloud-sync", kind: "shot", width: 1280, height: 1000, alt: "A janela para sincronizar uma pasta com um serviço que você já tem, com a escolha entre WebDAV e S3 e os campos do endereço.", captionHtml: "Sincronizar uma pasta com WebDAV (Nextcloud) ou S3, sem servidor seu." },
+          { stem: "phone", kind: "shot", width: 390, height: 844, alt: "A Mesa na tela de um celular: o registro de rolagens e conversa, o campo para escrever e a barra de navegação embaixo.", captionHtml: "No celular, a mesma janela." },
+        ],
+      },
       roadmap: {
         title: "Roteiro",
         introHtml: [
           "O que vem a seguir, até a V1 — a versão do lançamento público. É um plano, não uma promessa: o que entra e em que ordem pode mudar, e não há datas.",
-          "<strong>Já feito</strong> está pronto e chega na próxima versão de teste; <strong>em construção</strong> está sendo feito agora; <strong>planejado</strong> está decidido para a V1.",
+          "<strong>Já feito</strong> está pronto e chega na próxima versão de teste; <strong>planejado</strong> está decidido para a V1; <strong>depois da V1</strong> fica para mais tarde.",
         ],
         states: { ready: "já feito", building: "em construção", planned: "planejado", later: "depois da V1" },
         groups: [
           {
-            title: "Pronto, na próxima versão de teste",
+            title: "Pronto, na próxima versão de teste: ferramentas de RPG",
             state: "ready",
             items: [
-              { lead: "Notificações no app.", textHtml: "Um aviso quando algo muda sem você ter pedido — a sincronização caiu ou voltou, uma pasta foi partilhada com você, saiu uma versão nova — e uma lista para ver depois. Você escolhe, por tipo, o que avisa, e se também aparece nas notificações do sistema." },
-              { lead: "Prévia ao passar o mouse.", textHtml: "Pare o ponteiro sobre um link e leia a nota sem sair de onde está." },
-              { lead: "Ficha da nota.", textHtml: "As propriedades viram um cartão ao lado do texto, com imagem — a ficha de um personagem, de um lugar, de um projeto." },
-              { lead: "Segredos do mestre.", textHtml: "Um bloco <code>&gt; [!secret]</code> dentro da nota, ou num cartão de texto do board, que quem só pode ler a pasta partilhada nunca recebe." },
-              { lead: "Dados e tabelas aleatórias.", textHtml: "<code>dice: 1d20</code> rola com um clique, e uma tabela da nota sorteia uma linha; o resultado nunca é gravado na nota." },
-              { lead: "Ligar menções.", textHtml: "Onde uma nota é citada pelo nome sem link, um clique faz o link — um por um, ou todos de uma vez, vendo antes o que muda." },
-              { lead: "Mapas no board.", textHtml: "Uma imagem por baixo do board, pinos que abrem notas, e pinos secretos que os jogadores não veem." },
-              { lead: "Histórico de versões.", textHtml: "Quem mudou uma nota e quando, a diferença entre versões, e uma versão antiga de volta — num UniVerso e nas pastas do computador." },
-              { lead: "O celular offline.", textHtml: "As pastas que você escolher ficam no celular; você escreve sem conexão, e tudo sincroniza quando a rede volta." },
-              { lead: "Notas periódicas.", textHtml: "Da semana, do mês, do trimestre e do ano, ao lado da nota do dia." },
-              { lead: "Bases mais completas.", textHtml: "Filtros com expressões regulares e a vista em mapa." },
-              { lead: "Páginas da web dentro da nota.", textHtml: "Uma página embutida rola com a nota e é recortada no lugar certo, como um iframe — também nos sites que não deixam ser embutidos." },
+              { lead: "Oráculos.", textHtml: "Perguntas de sim ou não com chances ajustáveis, centelhas de ideias a partir de listas de palavras que você edita, e suas próprias tabelas aleatórias; a resposta pode ir para a nota." },
+              { lead: "Fichas de criatura e de personagem.", textHtml: "Um bloco <code>statblock</code> desenha um cartão, com dados que rolam com um clique. Há mais de trinta layouts: sistemas abertos, Fractal, World of Darkness, Cyberpunk RED e genéricos. Uma criatura pode partir de outra." },
+              { lead: "Novo projeto a partir de um modelo.", textHtml: "Campanha, mundo, ficção ou P.A.R.A.: você vê a árvore de pastas e notas, desmarca e renomeia o que quiser, e só então ela é criada. Os modelos que você importa ficam na pasta." },
+              { lead: "Dados em 3D.", textHtml: "Opcional: a rolagem faz cair dados de verdade na tela, com o tamanho, o tempo e o som que você escolher. O resultado já foi sorteado; os dados só o mostram." },
+              { lead: "Dados estruturados como diagrama.", textHtml: "Um arquivo JSON, YAML, TOML, XML ou CSV aparece como caixas ligadas por linhas, que você arrasta, dobra e ajusta; também dentro de um board." },
+              { lead: "Aparência.", textHtml: "Um assistente de aparência com prévia ao vivo, um construtor de temas, temas salvos em arquivo e um catálogo de temas prontos; o tema é escolhido por pasta e por pessoa." },
+              { lead: "Quadradinhos de cor.", textHtml: "Um código de cor na nota ganha um quadradinho da cor, e um clique abre o seletor." },
+              { lead: "O tutorial em inglês.", textHtml: "Com o app em inglês, o conteúdo de exemplo e os modelos de projeto vêm em inglês." },
             ],
           },
           {
-            title: "Em construção",
-            state: "building",
+            title: "Pronto, na próxima versão de teste: a Mesa e o compartilhamento",
+            state: "ready",
             items: [
-              { lead: "O app como servidor.", textHtml: "O app do computador serve as pastas que você escolher na rede da sua casa; o celular se liga lendo um QR code, e você aprova no computador." },
+              { lead: "A Mesa.", textHtml: "Um registro de rolagens e conversa que todo mundo que abriu a pasta de um UniVerso vê, com as imagens enviadas. Quem rola é o servidor, e cada rolagem leva o nome de quem rolou; um jogador pode ter uma rolagem secreta. Uma rolagem vira um cartão nas suas notas se você a arrastar." },
+              { lead: "Uma pasta é uma campanha.", textHtml: "O dono da pasta a transforma numa mesa, convida os jogadores por um link de uso único e libera cada nota para a mesa toda ou para alguns jogadores; cada nota diz quem a vê. Uma pasta pode ter mais de uma mesa, cada uma com a sua conversa." },
+              { lead: "Um só modelo de acesso.", textHtml: "Qualquer nota, board, arquivo ou pasta tem a janela Acesso, com quem não vê, quem vê e quem edita. O jogador que edita um board o edita ao vivo, só com o que pode ver, e pode pôr imagens nele; quatro direitos, todos desligados de início, dizem o resto: imagens, arquivos, criar notas e criar boards." },
+              { lead: "Link de leitura, sem conta.", textHtml: "Do UniVerso, uma pasta ou uma nota num endereço que qualquer pessoa abre no navegador para ler, com prazo e senha se você quiser, e que você revoga. Quem lê não recebe os segredos do mestre." },
+              { lead: "Sincronizar com uma nuvem que você já tem.", textHtml: "No app do computador, uma pasta pode ficar em dia com um WebDAV (Nextcloud e parecidos) ou com um bucket S3 (Amazon, MinIO, Cloudflare R2), sem servidor seu. O app confere o serviço antes de usar." },
             ],
           },
           {
             title: "Também na V1",
             state: "planned",
             items: [
-              { lead: "App do Windows assinado.", textHtml: "Sem o aviso do SmartScreen na instalação. No Mac, o app abre pelo “Abrir mesmo assim” dos Ajustes do Sistema, uma vez." },
+              { lead: "Mais da Mesa.", textHtml: "O painel do mestre, mostrar uma nota à mesa, sessões, avisos de “novo”, ver como um jogador vê, uma área dos jogadores nos boards e pinos de mapa." },
+              { lead: "Dropbox, OneDrive e Google Drive.", textHtml: "A sincronização com esses serviços, além do WebDAV e do S3 que já existem." },
+              { lead: "Confirmar que é você num aparelho ligado.", textHtml: "A verificação do sistema e uma chave por aparelho." },
+              { lead: "App do Windows assinado.", textHtml: "Sem o aviso do SmartScreen na instalação. O app do Mac não é notarizado pela Apple: ele abre pelo “Abrir mesmo assim” dos Ajustes do Sistema, uma vez." },
               { lead: "O código aberto.", textHtml: "O repositório do Verso público, e os instaladores para baixar aqui." },
               { lead: "Mac com Intel e Linux ARM64.", textHtml: "Apps para esses computadores também." },
               { lead: "Feito para leitor de tela.", textHtml: "O app inteiro usável com um leitor de tela." },
@@ -883,9 +930,11 @@ export const ptBR: Copy = {
             title: "Mais tarde",
             state: "later",
             items: [
+              { lead: "Plugins de terceiros." },
               { lead: "Criptografia de ponta a ponta, opcional." },
               { lead: "O servidor MCP pela rede." },
-              { lead: "A pasta num armazenamento externo: um bucket seu ou WebDAV." },
+              { lead: "Um agente que escreve nas notas, com a diferença à vista." },
+              { lead: "Juntar por bloco o que duas pessoas editaram offline." },
             ],
           },
         ],
@@ -912,7 +961,7 @@ export const ptBR: Copy = {
       },
       eyebrow: "Notas, mundos e RPG",
       roadmapHtml:
-        "Parte do que falta aqui — o segredo do mestre dentro da nota, mapas com pinos, o celular offline — já está pronto e chega na próxima versão de teste; o resto está no <a href=\"/recursos/#roteiro\">roteiro da V1</a>. A tabela mostra só o que já está nas versões de teste.",
+        "O que falta aqui — camadas nos mapas, linhas do tempo, plugins — está, quando está planejado, no <a href=\"/recursos/#roteiro\">roteiro da V1</a>. A tabela conta o que o Verso já tem pronto, inclusive as ferramentas de RPG e a Mesa, que chegam na próxima versão de teste.",
     },
   },
   waitlist: {
@@ -960,6 +1009,7 @@ export const ptBR: Copy = {
     waitlist: "lista",
     files: "arquivos",
     today: "hoje",
+    gallery: "em-imagens",
     roadmap: "roteiro",
     steps: "passos",
     serverFeatures: "o-que-faz",

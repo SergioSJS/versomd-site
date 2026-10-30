@@ -114,7 +114,7 @@ ROWS = [
   ('N', 'exporta o jogo ou a história em arquivo', 'exports the game or the story as a file'),
  ]),
  (('Segredo do mestre dentro da nota', 'GM secrets inside a note'), [
-  ('N', 'ainda não; hoje, separe por pasta', 'not yet; today, split by folder'),
+  ('Y', 'bloco > [!secret]; quem só lê a pasta partilhada não o recebe', 'a > [!secret] block; whoever only reads the shared folder never receives it'),
   ('N', 'não', 'no'),
   ('N', 'não', 'no'),
   ('N', 'não há permissão por bloco', 'no per-block permission'),
@@ -130,7 +130,7 @@ ROWS = [
   ('I', 'não se aplica: o oráculo faz o papel do mestre', 'does not apply: the oracle plays the GM'),
  ]),
  (('Modelos de RPG prontos', 'Ready-made RPG templates'), [
-  ('P', 'notas tipadas que você define; sem pacotes de RPG', 'typed notes you define; no RPG packs'),
+  ('P', 'modelos de campanha e de mundo, fichas de mais de trinta layouts, oráculos; sem pacotes de regras prontos', 'campaign and world templates, sheets in over thirty layouts, oracles; no ready-made rules packs'),
   ('N', 'não nativos', 'not built in'),
   ('N', 'não', 'no'),
   ('P', 'modelos da comunidade', 'community templates'),
@@ -146,7 +146,7 @@ ROWS = [
   ('Y', 'mais de 50 oráculos, tabelas próprias, dados', '50+ oracles, custom tables, dice'),
  ]),
  (('Mapas interativos', 'Interactive maps'), [
-  ('N', 'uma imagem num board, sem pinos nem camadas', 'an image on a board, no pins or layers'),
+  ('P', 'uma imagem num board, com pinos que abrem notas e pinos secretos; sem camadas', 'an image on a board, with pins that open notes and secret pins; no layers'),
   ('P', 'mapa geográfico nas bases; de mundo, por plugin', 'geographic map in bases; fantasy maps by plugin'),
   ('N', 'não', 'no'),
   ('P', 'mapa geográfico nas bases de dados', 'geographic map in databases'),
@@ -226,7 +226,7 @@ ROWS = [
   ('N', 'não; extras pagos', 'no; paid extras'),
  ]),
  (('Celular', 'Phone'), [
-  ('P', 'no navegador, por um UniVerso; só online', 'in the browser, through a UniVerso; online only'),
+  ('P', 'no navegador, por um UniVerso; offline nas pastas que você escolher, com HTTPS; sem app de loja', 'in the browser, through a UniVerso; offline in the folders you choose, over HTTPS; no store app'),
   ('Y', 'apps iOS e Android, offline', 'iOS and Android apps, offline'),
   ('Y', 'apps; os da versão nova em teste', 'apps; the new version’s in testing'),
   ('Y', 'apps, com offline', 'apps, with offline'),
@@ -296,13 +296,13 @@ PT = dict(
  intro=[
   "A tabela põe o Verso ao lado das ferramentas que quem guarda notas e quem mestra RPG costuma usar, com o que cada uma faz e o que não faz.",
   "<strong>Onde o Verso está à frente:</strong> as notas são arquivos Markdown seus, que o Obsidian também abre; o servidor é seu; várias pessoas editam a mesma nota, o mesmo board e a mesma base ao vivo; e não há plano pago. O Obsidian guarda arquivos, mas não edita ao vivo sem plugin de terceiros; o Notion e o LegendKeeper editam ao vivo, mas guardam as notas no serviço deles.",
-  "<strong>Onde está atrás:</strong> o Verso ainda está em teste e sem download público. Não tem segredo do mestre dentro de uma nota, mapas com pinos e camadas, linhas do tempo, árvores genealógicas nem modelos de RPG prontos; não tem plugins; no celular, só pelo navegador e com conexão. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
+  "<strong>Onde está atrás:</strong> o Verso ainda está em teste e sem download público. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, é pelo navegador, sem app de loja, e o offline pede HTTPS. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
  ],
  painsTitle="Três problemas comuns, e o que o Verso faz com eles",
  pains=[
-  ("O dilema do mestre.", "Hoje o Verso partilha por pasta: a pasta dos jogadores com leitura, a sua só sua, no mesmo vault, sem duplicar notas. Um segredo dentro de uma nota — um parágrafo que só o mestre vê — ainda não existe; World Anvil, Kanka, LegendKeeper e Foundry VTT têm."),
+  ("O dilema do mestre.", "O Verso partilha por pasta e por nota: a pasta dos jogadores com leitura, a sua só sua, no mesmo vault, sem duplicar notas. E um segredo dentro de uma nota — um parágrafo que só o mestre vê — nunca chega a quem só lê. World Anvil, Kanka, LegendKeeper e Foundry VTT também têm segredos."),
   ("Preso a um serviço.", "As notas são arquivos <code>.md</code> numa pasta sua, e o servidor é uma máquina sua. Sair do Verso é fechar o app: a pasta continua abrindo no Obsidian ou em qualquer editor."),
-  ("Sincronizar entre aparelhos.", "Com um UniVerso, a pasta fica em dia entre Mac, Windows e Linux e abre no navegador e no celular, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado, e no celular é só online."),
+  ("Sincronizar entre aparelhos.", "Com um UniVerso, a pasta fica em dia entre Mac, Windows e Linux e abre no navegador e no celular, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado, e no celular o offline pede HTTPS."),
  ],
  caption="O Verso e outras ferramentas de notas e de RPG, capacidade por capacidade",
  hint="A tabela rola para o lado; a coluna das capacidades e a do Verso ficam paradas.",
@@ -317,13 +317,13 @@ EN = dict(
  intro=[
   "The table puts Verso beside the tools people who keep notes and people who run tabletop games tend to use, with what each one does and does not do.",
   "<strong>Where Verso is ahead:</strong> the notes are Markdown files you own, which Obsidian opens too; the server is yours; several people edit the same note, the same board and the same base live; and there is no paid plan. Obsidian keeps files but does not edit live without a third-party plugin; Notion and LegendKeeper edit live but keep the notes in their own service.",
-  "<strong>Where it is behind:</strong> Verso is still in testing, with no public download. It has no game master’s secret inside a note, no maps with pins and layers, no timelines, no family trees and no ready-made RPG templates; it has no plugins; on a phone it works only in the browser and only online. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
+  "<strong>Where it is behind:</strong> Verso is still in testing, with no public download. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
  ],
  painsTitle="Three common problems, and what Verso does about them",
  pains=[
-  ("The game master’s dilemma.", "Today Verso shares per folder: the players’ folder read-only, yours yours alone, in the same vault, with no duplicated notes. A secret inside a note — a paragraph only the game master sees — does not exist yet; World Anvil, Kanka, LegendKeeper and Foundry VTT have it."),
+  ("The game master’s dilemma.", "Verso shares per folder and per note: the players’ folder read-only, yours yours alone, in the same vault, with no duplicated notes. And a secret inside a note — a paragraph only the game master sees — never reaches someone who only reads. World Anvil, Kanka, LegendKeeper and Foundry VTT have secrets too."),
   ("Tied to a service.", "The notes are <code>.md</code> files in a folder of yours, and the server is a machine of yours. Leaving Verso is closing the app: the folder still opens in Obsidian or any editor."),
-  ("Keeping devices in step.", "With a UniVerso, the folder stays in step across Mac, Windows and Linux and opens in a browser and on a phone, with no sync subscription. But someone has to keep the server running, and on a phone it is online only."),
+  ("Keeping devices in step.", "With a UniVerso, the folder stays in step across Mac, Windows and Linux and opens in a browser and on a phone, with no sync subscription. But someone has to keep the server running, and on a phone offline needs HTTPS."),
  ],
  caption="Verso and other note and RPG tools, capability by capability",
  hint="The table scrolls sideways; the capability column and Verso’s stay put.",

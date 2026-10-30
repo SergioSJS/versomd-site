@@ -60,7 +60,7 @@ export const en: Copy = {
       {
         kicker: "UniVerso",
         title: "The server is yours",
-        text: "For a household, a tabletop RPG group or a small team that wants to share folders on a server someone they trust runs.",
+        text: "For a household, a small team or a tabletop RPG group — with the Table’s rolls and chat, dice, oracles and sheets — that wants to share folders on a server someone they trust runs.",
       },
       {
         kicker: "MCP",
@@ -75,7 +75,7 @@ export const en: Copy = {
       {
         page: "features",
         title: "Features",
-        text: "What Verso does today — writing, linking notes, boards, bases — and the roadmap to V1.",
+        text: "What Verso does — writing, linking notes, boards, bases and the RPG tools — with screens of the app, and the roadmap to V1.",
         link: "See the features and the roadmap",
       },
       {
@@ -260,9 +260,9 @@ export const en: Copy = {
           "Verso’s repository is still private. When it opens, the installers for macOS, Windows and Linux and UniVerso’s packages appear on this page.",
       },
       {
-        lead: "No offline use on a phone.",
+        lead: "On a phone, offline needs HTTPS.",
         textHtml:
-          "On a phone and in a browser you work directly on the server’s folder; without a connection, you cannot edit — for now: the phone offline is ready and comes in the next test release (<a href=\"/en/features/#roadmap\">roadmap</a>).",
+          "The folders you choose are kept on the phone and you write without a connection, but only on a UniVerso served over HTTPS. Without HTTPS, or in an ordinary browser, you work directly on the server’s folder and, without a connection, you cannot edit.",
       },
       {
         lead: "No plugins.",
@@ -270,9 +270,9 @@ export const en: Copy = {
           "Neither Obsidian’s nor its own. A plugin system is planned; Obsidian’s plugins do not run in Verso.",
       },
       {
-        lead: "No public links for shares.",
+        lead: "Without an account you only read.",
         textHtml:
-          "Sharing is between accounts of the same UniVerso. A link anyone can open, without an account, does not exist.",
+          "A read link opens a folder or a note for anyone, with no account, but only to read. To edit together, a person needs an account on the same UniVerso.",
       },
       {
         lead: "No end-to-end encryption.",
@@ -280,8 +280,12 @@ export const en: Copy = {
           "Editing together and searching on the server need the server to read the files: whoever hosts sees the notes. Encryption at rest is the server’s disk’s. Optional end-to-end encryption comes after V1.",
       },
       {
-        lead: "No sync through Dropbox, Google Drive or iCloud.",
-        textHtml: "Today sync is with a UniVerso only.",
+        lead: "Not yet Dropbox, OneDrive or Google Drive.",
+        textHtml: "The desktop app already syncs a folder with a UniVerso, with a WebDAV server (such as Nextcloud) or with an S3 bucket. Dropbox, OneDrive and Google Drive are planned for V1 (<a href=\"/en/features/#roadmap\">roadmap</a>).",
+      },
+      {
+        lead: "The apps still warn at install.",
+        textHtml: "The Mac app is not notarized by Apple: the first time, it opens through System Settings’ “Open Anyway”. The Windows one is not signed yet, and SmartScreen warns; signing is planned for V1.",
       },
     ],
   },
@@ -292,14 +296,14 @@ export const en: Copy = {
     introHtml: [
       "The table puts Verso beside the tools people who keep notes and people who run tabletop games tend to use, with what each one does and does not do.",
       "<strong>Where Verso is ahead:</strong> the notes are Markdown files you own, which Obsidian opens too; the server is yours; several people edit the same note, the same board and the same base live; and there is no paid plan. Obsidian keeps files but does not edit live without a third-party plugin; Notion and LegendKeeper edit live but keep the notes in their own service.",
-      "<strong>Where it is behind:</strong> Verso is still in testing, with no public download. It has no game master’s secret inside a note, no maps with pins and layers, no timelines, no family trees and no ready-made RPG templates; it has no plugins; on a phone it works only in the browser and only online. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
+      "<strong>Where it is behind:</strong> Verso is still in testing, with no public download. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
     ],
     pains: {
       title: "Three common problems, and what Verso does about them",
       items: [
-        { lead: "The game master’s dilemma.", textHtml: "Today Verso shares per folder: the players’ folder read-only, yours yours alone, in the same vault, with no duplicated notes. A secret inside a note — a paragraph only the game master sees — does not exist yet; World Anvil, Kanka, LegendKeeper and Foundry VTT have it." },
+        { lead: "The game master’s dilemma.", textHtml: "Verso shares per folder and per note: the players’ folder read-only, yours yours alone, in the same vault, with no duplicated notes. And a secret inside a note — a paragraph only the game master sees — never reaches someone who only reads. World Anvil, Kanka, LegendKeeper and Foundry VTT have secrets too." },
         { lead: "Tied to a service.", textHtml: "The notes are <code>.md</code> files in a folder of yours, and the server is a machine of yours. Leaving Verso is closing the app: the folder still opens in Obsidian or any editor." },
-        { lead: "Keeping devices in step.", textHtml: "With a UniVerso, the folder stays in step across Mac, Windows and Linux and opens in a browser and on a phone, with no sync subscription. But someone has to keep the server running, and on a phone it is online only." },
+        { lead: "Keeping devices in step.", textHtml: "With a UniVerso, the folder stays in step across Mac, Windows and Linux and opens in a browser and on a phone, with no sync subscription. But someone has to keep the server running, and on a phone offline needs HTTPS." },
       ],
     },
     tableCaption: "Verso and other note and RPG tools, capability by capability",
@@ -481,7 +485,7 @@ export const en: Copy = {
         group: "collab",
         label: "GM secrets inside a note",
         cells: [
-          { mark: "no", text: "not yet; today, split by folder" },
+          { mark: "yes", text: "a > [!secret] block; whoever only reads the shared folder never receives it" },
           { mark: "no", text: "no" },
           { mark: "no", text: "no" },
           { mark: "no", text: "no per-block permission" },
@@ -501,7 +505,7 @@ export const en: Copy = {
         group: "rpg",
         label: "Ready-made RPG templates",
         cells: [
-          { mark: "partial", text: "typed notes you define; no RPG packs" },
+          { mark: "partial", text: "campaign and world templates, sheets in over thirty layouts, oracles; no ready-made rules packs" },
           { mark: "no", text: "not built in" },
           { mark: "no", text: "no" },
           { mark: "partial", text: "community templates" },
@@ -521,7 +525,7 @@ export const en: Copy = {
         group: "rpg",
         label: "Interactive maps",
         cells: [
-          { mark: "no", text: "an image on a board, no pins or layers" },
+          { mark: "partial", text: "an image on a board, with pins that open notes and secret pins; no layers" },
           { mark: "partial", text: "geographic map in bases; fantasy maps by plugin" },
           { mark: "no", text: "no" },
           { mark: "partial", text: "geographic map in databases" },
@@ -601,7 +605,7 @@ export const en: Copy = {
         group: "platforms",
         label: "Phone",
         cells: [
-          { mark: "partial", text: "in the browser, through a UniVerso; online only" },
+          { mark: "partial", text: "in the browser, through a UniVerso; offline in the folders you choose, over HTTPS; no store app" },
           { mark: "yes", text: "iOS and Android apps, offline" },
           { mark: "yes", text: "apps; the new version’s in testing" },
           { mark: "yes", text: "apps, with offline" },
@@ -740,7 +744,7 @@ export const en: Copy = {
       meta: {
         title: "Features and roadmap — Verso",
         description:
-          "What Verso does today — writing in Markdown, linking notes, boards, bases, syncing with a server of your own — and what comes next, up to V1.",
+          "What Verso does — writing in Markdown, linking notes, boards, bases, RPG tools, syncing with a server of your own — and what comes next, up to V1.",
       },
       eyebrow: "Features",
       title: "What Verso does, and what comes next.",
@@ -749,7 +753,7 @@ export const en: Copy = {
       today: {
         title: "What it does today",
         introHtml:
-          "All of this is in today’s test releases: on a Mac with an Apple chip, on Windows 10 and 11 and on Linux (x64), and in a browser and on a phone through a UniVerso.",
+          "All of this is in the test releases: on a Mac with an Apple chip, on Windows 10 and 11 and on Linux (x64), and in a browser and on a phone through a UniVerso. What is ready but has not yet shipped in a test release is in the <a href=\"#roadmap\">roadmap</a>.",
         groups: [
           {
             title: "Writing",
@@ -758,14 +762,18 @@ export const en: Copy = {
               "Blocks you drag by their handle and a <code>/</code> menu, as in Notion.",
               "Tables edited as tables.",
               "A panel for the note’s properties, and typed notes: the type gives a note its fields.",
+              "The note’s card: the properties become a card beside the text, with a picture — the character, the place, the project.",
               "Callouts, maths, Mermaid diagrams and code blocks with a copy button.",
+              "Web pages inside a note, scrolling with it.",
             ],
           },
           {
             title: "Linking notes",
             itemsHtml: [
               "<code>[[…]]</code> links to notes, headings and blocks, and embeds that show the note or the block.",
+              "Rest the pointer on a link and read the note without leaving where you are.",
               "Backlinks, outgoing links and the links that lead to no note yet.",
+              "Where a note is named without a link, one click makes the link — one by one, or all at once, seeing first what changes.",
               "Renaming a note updates every link to it.",
               "A graph of the notes to explore.",
             ],
@@ -776,12 +784,13 @@ export const en: Copy = {
               "<code>.canvas</code> files, Obsidian’s format, drawn with Excalidraw.",
               "The folder’s notes as cards you edit in place; pictures, which you can crop, and PDFs.",
               "Arrows that keep the point they were drawn to, and the drawings of Obsidian’s Excalidraw plugin.",
+              "Maps: a picture under the board, pins that open notes, and secret pins the players do not see.",
             ],
           },
           {
             title: "Bases",
             itemsHtml: [
-              "<code>.base</code> files shown as a table, cards, a list, a kanban or a calendar, with filters, sorting, groups and formulas.",
+              "<code>.base</code> files shown as a table, cards, a list, a kanban, a calendar or a map, with filters (regular expressions too), sorting, groups and formulas.",
               "A base embedded live in a note; the same file Obsidian opens.",
             ],
           },
@@ -790,7 +799,8 @@ export const en: Copy = {
             itemsHtml: [
               "A file tree with multiple selection, stickers, colours and covers.",
               "Folder pages, manual order and focuses, shared with make.md.",
-              "The daily note, with a calendar, and templates offered when a note is made.",
+              "The daily note, with a calendar, and the notes of the week, the month, the quarter and the year; templates offered when a note is made.",
+              "Version history: who changed a note and when, the difference between versions, and an older version brought back.",
             ],
           },
           {
@@ -809,13 +819,22 @@ export const en: Copy = {
             ],
           },
           {
+            title: "For playing RPGs",
+            itemsHtml: [
+              "The game master’s secrets: a <code>&gt; [!secret]</code> block inside a note, or in a board’s text card, that someone who can only read the shared folder never receives.",
+              "<code>dice: 1d20</code> rolls with a click, and a table in the note draws a row; the result is never written into the note.",
+            ],
+          },
+          {
             title: "With a UniVerso",
             itemsHtml: [
               "The folder in step across your computers; the first sync deletes nothing.",
               "Folders shared with other accounts, to read or to write.",
               "Notes, boards and bases edited together, live, with each person’s cursor and name.",
               "A 30-day trash, and a console for the admin.",
-              "The same window in a browser and on a phone. <a href=\"/en/universo/\">More about UniVerso</a>.",
+              "The same window in a browser and on a phone; on a phone, the folders you choose are kept there and you write without a connection.",
+              "The desktop app can also serve its folders on your home network: the phone connects by reading a QR code, and you approve it on the computer.",
+              "Notices in the app when something changes without your asking — sync dropped or came back, a folder was shared with you — by kind, and in the system’s notifications if you want. <a href=\"/en/universo/\">More about UniVerso</a>.",
             ],
           },
           {
@@ -835,44 +854,72 @@ export const en: Copy = {
           },
         ],
       },
+      gallery: {
+        title: "In pictures",
+        introHtml:
+          "A few screens of the app, with the interface in English and the English tutorial notes that come with Verso. They show what is ready, including what has yet to arrive in a next test release.",
+        figures: [
+          { stem: "oracles", kind: "shot", width: 1280, height: 800, alt: "The Oracle and Improvisation dialog open over a note: the question “Did the guard patrol hear the noise of the break-in?”, 50/50 odds, and the answer with the d100 result.", captionHtml: "Oracles: yes or no with adjustable odds, idea sparks and your own tables." },
+          { stem: "statblock", kind: "shot", width: 1280, height: 800, alt: "A d20 creature card, the Cave Gnawer, with armor class, hit points, ability scores with modifiers, traits and actions with dice you roll by clicking, followed by a character card.", captionHtml: "Statblocks: a <code>statblock</code> block becomes a card, in your system’s layout." },
+          { stem: "dice3d", kind: "shot", width: 1280, height: 800, alt: "3D dice resting on the page after a roll of 4d6 dropping the lowest, with the result card beside the button.", captionHtml: "3D dice, if you turn them on: the result is already drawn, the dice only fall to it." },
+          { stem: "dice-tables", kind: "shot", width: 1280, height: 800, alt: "A note with an encounter table by d6; the dice button drew a row, “A merchant with his cart stuck in the mud”, and offers to roll again.", captionHtml: "Dice and random tables inside the note." },
+          { stem: "table", kind: "shot", width: 1280, height: 800, alt: "The Table panel beside a note: the shared chat and roll log of the game master and two players, with dice and totals, and the message field.", captionHtml: "The Table: a log of rolls and chat everyone in the campaign sees." },
+          { stem: "access", kind: "shot", width: 1280, height: 960, alt: "The Access dialog of a campaign folder, one row per player and four rights the game master turns on or off: images, files, creating notes and creating boards.", captionHtml: "One access model: who sees, who edits and what each player may create." },
+          { stem: "board-map", kind: "shot", width: 1280, height: 800, alt: "A board opened on an illustrated map of a coast, with named pins and one secret pin, dashed and with a padlock, for the campaign’s arc.", captionHtml: "Maps on the board: pins that open notes, and secret pins the players do not see." },
+          { stem: "secret", kind: "shot", width: 1280, height: 800, alt: "A note with a red secret callout, “What the players don’t know”, marked as hidden from readers.", captionHtml: "The game master’s secret, in the middle of the note." },
+          { stem: "infobox", kind: "shot", width: 1280, height: 800, alt: "The note of a place, Gray Harbor, with a card beside the text: an illustration, the region, the danger and the inhabitants linked to other notes.", captionHtml: "The note’s card: the properties become a card." },
+          { stem: "datagraph", kind: "shot", width: 1280, height: 800, alt: "A JSON file of characters and places drawn as boxes joined by lines, with buttons to fold, unfold and fit to the screen.", captionHtml: "Structured data (JSON, YAML, TOML, XML, CSV) as a diagram." },
+          { stem: "theme-builder", kind: "shot", width: 1280, height: 800, alt: "The theme builder with a custom teal-and-rust theme: colour fields on the left and, on the right, a sample page already drawn in the new colours.", captionHtml: "Appearance: a theme builder with a live preview, and a catalogue of ready-made themes." },
+          { stem: "swatches", kind: "shot", width: 1280, height: 800, alt: "A note with colour codes, such as #1d9e75 and rgb(29 158 117), each with a small square of its colour beside it.", captionHtml: "A small square of colour beside each colour code; a click opens the picker." },
+          { stem: "wizard", kind: "shot", width: 1280, height: 800, alt: "The new project wizard at the step that checks what will be created: the folders and files of a world template, each with a checkbox and a name you can edit.", captionHtml: "A new project from a template: you see the tree and edit it before anything is written." },
+          { stem: "read-link", kind: "shot", width: 1280, height: 800, alt: "A folder’s Read link dialog after making a 7-day link: the address, shown only once, and the notice that it can be revoked.", captionHtml: "Read link: whoever holds the address reads the folder or the note in a browser, with no account." },
+          { stem: "history", kind: "shot", width: 1280, height: 800, alt: "A note’s version history: the list of versions with who changed it, when and the size, and the difference between the chosen version and the one before, with added lines marked.", captionHtml: "Version history, with the difference in view." },
+          { stem: "notifications", kind: "shot", width: 1280, height: 800, alt: "The app’s notification centre, listing the notices that appeared without your asking.", captionHtml: "Notifications: what changed without your asking, in a list for later." },
+          { stem: "cloud-sync", kind: "shot", width: 1280, height: 1000, alt: "The dialog to sync a folder with a service you already have, with the choice between WebDAV and S3 and the address fields.", captionHtml: "Sync a folder with WebDAV (Nextcloud) or S3, with no server of your own." },
+          { stem: "phone", kind: "shot", width: 390, height: 844, alt: "The Table on a phone screen: the roll and chat log, the message field and the bottom navigation bar.", captionHtml: "On a phone, the same window." },
+        ],
+      },
       roadmap: {
         title: "Roadmap",
         introHtml: [
           "What comes next, up to V1 — the release for everyone. It is a plan, not a promise: what goes in and in what order may change, and there are no dates.",
-          "<strong>Done</strong> is ready and comes in the next test release; <strong>being built</strong> is being made now; <strong>planned</strong> is decided for V1.",
+          "<strong>Done</strong> is ready and comes in the next test release; <strong>planned</strong> is decided for V1; <strong>after V1</strong> is for later.",
         ],
         states: { ready: "done", building: "being built", planned: "planned", later: "after V1" },
         groups: [
           {
-            title: "Ready, in the next test release",
+            title: "Ready, in the next test release: RPG tools",
             state: "ready",
             items: [
-              { lead: "Notifications in the app.", textHtml: "A notice when something changes without your asking — sync dropped or came back, a folder was shared with you, a new version is out — and a list to see later. You choose, per kind, what notifies you, and whether it also goes to the system’s notifications." },
-              { lead: "Hover preview.", textHtml: "Rest the pointer on a link and read the note without leaving where you are." },
-              { lead: "The note’s card.", textHtml: "The properties become a card beside the text, with a picture — the sheet of a character, a place, a project." },
-              { lead: "The game master’s secrets.", textHtml: "A <code>&gt; [!secret]</code> block inside a note, or in a board’s text card, that someone who can only read the shared folder never receives." },
-              { lead: "Dice and random tables.", textHtml: "<code>dice: 1d20</code> rolls with a click, and a table in the note draws a row; the result is never written into the note." },
-              { lead: "Linking mentions.", textHtml: "Where a note is named without a link, one click makes the link — one by one, or all at once, seeing first what changes." },
-              { lead: "Maps on the board.", textHtml: "A picture under the board, pins that open notes, and secret pins the players do not see." },
-              { lead: "Version history.", textHtml: "Who changed a note and when, the difference between versions, and an older version brought back — on a UniVerso and in the computer’s own folders." },
-              { lead: "The phone offline.", textHtml: "The folders you choose stay on the phone; you write without a connection, and everything syncs when the network is back." },
-              { lead: "Periodic notes.", textHtml: "For the week, the month, the quarter and the year, beside the daily note." },
-              { lead: "Fuller bases.", textHtml: "Filters with regular expressions, and the map view." },
-              { lead: "Web pages inside a note.", textHtml: "An embedded page scrolls with the note and is clipped in the right place, like an iframe — also on sites that refuse to be embedded." },
+              { lead: "Oracles.", textHtml: "Yes-or-no questions with adjustable odds, idea sparks from word lists you edit, and your own random tables; the answer can go into the note." },
+              { lead: "Creature and character sheets.", textHtml: "A <code>statblock</code> block draws a card, with dice that roll on a click. There are over thirty layouts: open systems, Fractal, World of Darkness, Cyberpunk RED and generic ones. A creature can start from another." },
+              { lead: "A new project from a template.", textHtml: "Campaign, world, fiction or P.A.R.A.: you see the tree of folders and notes, uncheck and rename what you like, and only then is it created. Templates you import stay in the folder." },
+              { lead: "3D dice.", textHtml: "Optional: a roll drops real dice on the screen, with the size, the time and the sound you choose. The result is already drawn; the dice only show it." },
+              { lead: "Structured data as a diagram.", textHtml: "A JSON, YAML, TOML, XML or CSV file appears as boxes joined by lines that you drag, fold and fit; also inside a board." },
+              { lead: "Appearance.", textHtml: "An appearance wizard with a live preview, a theme builder, themes saved as files and a catalogue of ready-made themes; the theme is chosen per folder and per person." },
+              { lead: "Colour swatches.", textHtml: "A colour code in a note gets a small square of its colour, and a click opens the picker." },
+              { lead: "The tutorial in English.", textHtml: "With the app in English, the sample content and the project templates come in English." },
             ],
           },
           {
-            title: "Being built",
-            state: "building",
+            title: "Ready, in the next test release: the Table and sharing",
+            state: "ready",
             items: [
-              { lead: "The app as a server.", textHtml: "The desktop app serves the folders you choose on your home network; the phone connects by reading a QR code, and you approve it on the computer." },
+              { lead: "The Table.", textHtml: "A log of rolls and chat that everyone who opened a UniVerso folder sees, with the pictures sent. The server does the rolling, and each roll carries the name of who rolled; a player can make a secret roll. Drag a roll and it becomes a card in your notes." },
+              { lead: "A folder is a campaign.", textHtml: "The folder’s owner turns it into a table, invites players with a single-use link and releases each note to the whole table or to some players; each note says who sees it. A folder can have more than one table, each with its own chat." },
+              { lead: "One access model.", textHtml: "Any note, board, file or folder has the Access window: who does not see it, who sees it and who edits it. A player who edits a board edits it live, with only what they may see, and can put pictures into it; four rights, all off at first, say the rest: images, files, creating notes and creating boards." },
+              { lead: "Read links, no account.", textHtml: "From the UniVerso, a folder or a note at an address anyone opens in a browser to read, with an expiry and a passphrase if you want, and that you revoke. A reader does not receive the game master’s secrets." },
+              { lead: "Sync with a cloud you already have.", textHtml: "In the desktop app, a folder can stay in step with a WebDAV server (Nextcloud and the like) or an S3 bucket (Amazon, MinIO, Cloudflare R2), with no server of your own. The app checks the service before it uses it." },
             ],
           },
           {
             title: "Also in V1",
             state: "planned",
             items: [
-              { lead: "A signed Windows app.", textHtml: "No SmartScreen warning when installing. On the Mac, the app opens through System Settings’ “Open Anyway”, once." },
+              { lead: "More of the Table.", textHtml: "The game master’s dashboard, showing a note to the table, sessions, “new” notices, seeing as a player sees, a players’ area on boards and map pins." },
+              { lead: "Dropbox, OneDrive and Google Drive.", textHtml: "Sync with those services, besides the WebDAV and S3 that already exist." },
+              { lead: "Confirming it is you on a linked device.", textHtml: "The system’s own check and a key for each device." },
+              { lead: "A signed Windows app.", textHtml: "No SmartScreen warning when installing. The Mac app is not notarized by Apple: it opens through System Settings’ “Open Anyway”, once." },
               { lead: "Open source.", textHtml: "Verso’s repository public, and the installers to download here." },
               { lead: "Intel Macs and Linux ARM64.", textHtml: "Apps for those computers too." },
               { lead: "Made for screen readers.", textHtml: "The whole app usable with a screen reader." },
@@ -882,9 +929,11 @@ export const en: Copy = {
             title: "Later",
             state: "later",
             items: [
+              { lead: "Third-party plugins." },
               { lead: "Optional end-to-end encryption." },
               { lead: "The MCP server over the network." },
-              { lead: "The folder on external storage: your own bucket or WebDAV." },
+              { lead: "An agent that writes into notes, with the difference in view." },
+              { lead: "Merging by block what two people edited offline." },
             ],
           },
         ],
@@ -911,7 +960,7 @@ export const en: Copy = {
       },
       eyebrow: "Notes, worlds and RPG",
       roadmapHtml:
-        "Part of what is missing here — the game master’s secret inside a note, maps with pins, the phone offline — is ready and comes in the next test release; the rest is on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. The table shows only what is already in the test releases.",
+        "What is missing here — layers on maps, timelines, plugins — is, where planned, on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. The table counts what Verso already has ready, including the RPG tools and the Table, which come in the next test release.",
     },
   },
   waitlist: {
@@ -959,6 +1008,7 @@ export const en: Copy = {
     waitlist: "waitlist",
     files: "files",
     today: "today",
+    gallery: "in-pictures",
     roadmap: "roadmap",
     steps: "steps",
     serverFeatures: "what-it-does",
