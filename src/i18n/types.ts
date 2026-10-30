@@ -138,7 +138,14 @@ export interface Copy {
       gallery: { title: string; introHtml: string; figures: Figure[] };
       roadmap: Roadmap;
     };
-    server: PageHead & { stepsTitle: string; featuresTitle: string };
+    server: PageHead & {
+      stepsTitle: string;
+      featuresTitle: string;
+      /** Screenshots of the app (English interface in both languages). */
+      gallery: { title: string; figures: Figure[] };
+      /** What keeps edits from being lost, in plain words. */
+      safety: { title: string; paragraphsHtml: string[] };
+    };
     /** The page's title is the comparison's own (compare.title). */
     compare: Pick<PageHead, "meta" | "eyebrow"> & { roadmapHtml: string };
   };

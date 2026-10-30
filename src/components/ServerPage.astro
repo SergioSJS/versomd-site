@@ -1,6 +1,6 @@
 ---
 // UniVerso: the server, in three steps with their pictures, what it does,
-// and what a 1-core, 1 GB machine measured.
+// the app in pictures, what keeps edits safe, and what a 1-core, 1 GB machine measured.
 import type { Copy } from "../i18n";
 import Figure from "./Figure.astro";
 import PageHead from "./PageHead.astro";
@@ -53,6 +53,22 @@ const { how, ids } = copy;
           ))
         }
       </dl>
+    </div>
+  </section>
+
+  <section class="block gallery" aria-labelledby="server-gallery">
+    <div class="wrap">
+      <h2 id="server-gallery"><span class="md" aria-hidden="true">##</span>{page.gallery.title}</h2>
+      <div class="gallery-grid">
+        {page.gallery.figures.map((f, i) => <Figure figure={f} label={copy.figLabel} number={i + 1} class="gallery-plate" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="server-safety">
+    <div class="wrap">
+      <h2 id="server-safety"><span class="md" aria-hidden="true">##</span>{page.safety.title}</h2>
+      {page.safety.paragraphsHtml.map((p) => <p set:html={p} />)}
     </div>
   </section>
 
