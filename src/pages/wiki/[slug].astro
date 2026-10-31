@@ -14,6 +14,6 @@ const copy = copies["pt-BR"];
 const t = wikiText.pt;
 ---
 
-<Base copy={copy} title={`${entry.data.title} · ${t.title}`} description={entry.data.description} path={pagePath("pt", entry.data.slug)} altPath={t.otherBase + entry.data.twin + "/"} current="wiki" long>
-  <WikiPage copy={copy} lang="pt" pages={pages} entry={entry} />
+<Base copy={copy} title={`${entry.data.title} · ${t.title}`} description={entry.data.description} path={pagePath("pt", entry.data.slug)} altPath={t.otherBase + entry.data.twin + "/"} current="wiki" skipTo="wiki-article" long>
+  <WikiPage lang="pt" pages={pages} entry={entry} />
 </Base>

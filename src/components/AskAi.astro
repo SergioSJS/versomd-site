@@ -1,16 +1,19 @@
 ---
-// "Ask an AI": a question field and buttons that open an assistant with a
+// "Ask an AI": a question field and links that open an assistant with a
 // ready prompt (the documentation's link + rules + the question). Without
 // JavaScript the links open with the question left blank and the prompt text
 // stands in a <details> to copy by hand; the script fills the question in and
-// adds "Copy prompt".
+// adds "Copy the prompt".
+//
+// On the index it is a quiet section at the end ("Rather ask an AI?"); on a
+// page it is a disclosure after the article, closed until opened.
 import { wikiText, AI_TARGETS, type WikiLang } from "../i18n/wiki";
 
 interface Props {
   lang: WikiLang;
   /** The Markdown URL the assistant must read. */
   url: string;
-  /** Page or index: only changes the title and the field's id. */
+  /** Page or index: the title, the wrapper and the field's id. */
   scope: "index" | "page";
 }
 
@@ -19,34 +22,41 @@ const t = wikiText[lang].ask;
 const id = `ask-${scope}`;
 const template = scope === "index" ? t.indexPrompt("{{q}}") : t.prompt(url, "{{q}}");
 const blank = scope === "index" ? t.indexPrompt("") : t.prompt(url, "");
+const Wrap = scope === "page" ? "details" : "section";
 ---
 
-<section class="ask" aria-labelledby={`${id}-h`} data-ask data-template={template} data-copied={t.copied}>
-  <h2 id={`${id}-h`}>{scope === "page" ? t.pageTitle : t.title}</h2>
-  <p class="ask-intro">{t.intro}</p>
-  <div class="ask-field">
-    <label for={`${id}-q`}>{t.label}</label>
+<Wrap class:list={["ask", `ask-${scope}`]} id={scope === "index" ? "ask" : undefined} aria-labelledby={scope === "index" ? `${id}-h` : undefined} data-ask data-template={template} data-copied={t.copied}>
+  {
+    scope === "page" ? (
+      <summary><h2 id={`${id}-h`}>{t.pageTitle}</h2></summary>
+    ) : (
+      <h2 id={`${id}-h`}>{t.title}</h2>
+    )
+  }
+  <div class="ask-body">
+    <p class="ask-intro">{t.intro}</p>
+    <label class="ask-label" for={`${id}-q`}>{t.label}</label>
     <textarea id={`${id}-q`} rows="2" maxlength="600" placeholder={t.placeholder} data-ask-q></textarea>
+    <ul class="ask-actions">
+      {
+        AI_TARGETS.map((a) => (
+          <li>
+            <a class="ask-btn" href={a.url + encodeURIComponent(blank)} target="_blank" rel="noopener noreferrer" data-ask-link data-base={a.url}>
+              {t.openIn(a.name)}
+            </a>
+          </li>
+        ))
+      }
+      <li><button type="button" class="ask-btn ask-copy" data-ask-copy hidden>{t.copy}</button></li>
+    </ul>
+    <p class="ask-hint">{t.copyHint}</p>
+    <p class="ask-status" role="status" aria-live="polite" data-ask-status></p>
+    <details class="ask-prompt">
+      <summary>{t.showPrompt}</summary>
+      <pre><code data-ask-text>{blank}</code></pre>
+    </details>
   </div>
-  <ul class="ask-buttons">
-    {
-      AI_TARGETS.map((a) => (
-        <li>
-          <a class="button ask-go" href={a.url + encodeURIComponent(blank)} target="_blank" rel="noopener noreferrer" data-ask-link data-base={a.url}>
-            {t.openIn(a.name)}
-          </a>
-        </li>
-      ))
-    }
-    <li><button type="button" class="button ask-copy" data-ask-copy hidden>{t.copy}</button></li>
-  </ul>
-  <p class="ask-hint">{t.copyHint}</p>
-  <p class="ask-status" role="status" aria-live="polite" data-ask-status></p>
-  <details class="ask-prompt">
-    <summary>{t.showPrompt}</summary>
-    <pre><code data-ask-text>{blank}</code></pre>
-  </details>
-</section>
+</Wrap>
 
 <script>
   document.querySelectorAll<HTMLElement>("[data-ask]").forEach((root) => {
@@ -55,6 +65,7 @@ const blank = scope === "index" ? t.indexPrompt("") : t.prompt(url, "");
     const text = root.querySelector<HTMLElement>("[data-ask-text]")!;
     const copy = root.querySelector<HTMLButtonElement>("[data-ask-copy]")!;
     const status = root.querySelector<HTMLElement>("[data-ask-status]")!;
+    const shown = root.querySelector<HTMLDetailsElement>(".ask-prompt")!;
     const links = root.querySelectorAll<HTMLAnchorElement>("[data-ask-link]");
     const prompt = () => template.replace("{{q}}", () => q.value.trim());
     const update = () => {
@@ -70,7 +81,7 @@ const blank = scope === "index" ? t.indexPrompt("") : t.prompt(url, "");
         await navigator.clipboard.writeText(p);
       } catch {
         // No clipboard permission: select the text so Ctrl/Cmd+C works.
-        root.querySelector("details")!.open = true;
+        shown.open = true;
         const r = document.createRange();
         r.selectNodeContents(text);
         const s = window.getSelection();
