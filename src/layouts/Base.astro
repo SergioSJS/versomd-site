@@ -124,15 +124,24 @@ const pages: { id: Page; href: string; label: string }[] = [
       // "Back to top" on a long page (on a short one there is no link, and
       // nothing to do). Without this script it is a plain link at the end of
       // the page; with it, the same link floats in the corner once the reader
-      // is a screen and a half down, and steps aside near the top.
+      // is a screen and a half down, and steps aside near the top — and over
+      // the footer, which on a phone it covered (the maintainer, 2026-10-31).
       const link = document.querySelector<HTMLAnchorElement>("[data-to-top]");
       if (link) {
         link.classList.add("is-floating");
         let queued = false;
+        let footerSeen = false;
         const update = () => {
           queued = false;
-          link.classList.toggle("is-shown", window.scrollY > window.innerHeight * 1.5);
+          link.classList.toggle("is-shown", !footerSeen && window.scrollY > window.innerHeight * 1.5);
         };
+        const footer = document.querySelector(".colophon");
+        if (footer && "IntersectionObserver" in window) {
+          new IntersectionObserver((entries) => {
+            footerSeen = entries.some((e) => e.isIntersecting);
+            update();
+          }).observe(footer);
+        }
         window.addEventListener(
           "scroll",
           () => {
