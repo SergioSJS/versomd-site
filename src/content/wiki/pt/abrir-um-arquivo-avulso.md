@@ -14,14 +14,14 @@ Um `.md` na pasta Downloads, na Mesa, anexado a uma mensagem: dois cliques, leia
 
 ## Como abrir
 
-- **Dois cliques** num `.md` (ou `.markdown`) no Finder, no Explorer ou no gerenciador de arquivos, quando o Verso é o app desse arquivo; ou **Abrir com › Verso**.
+- **Dois cliques** num `.md` (ou `.markdown`) no Finder, no Explorer ou no gerenciador de arquivos, quando o Verso é o app desse arquivo; ou **Abrir com › Verso**. O mesmo vale para um arquivo de dados — `.json`, `.yaml`, `.yml`, `.toml`, `.xml`, `.csv` (abaixo).
 - Arraste o arquivo para o ícone do Verso no Dock (macOS).
 - No terminal: `verso nota.md` (ou `verso open nota.md`).
 - No app: **Arquivo › Abrir arquivo…**, ou o comando **Abrir arquivo…** na paleta. **Arquivo › Abrir recente** guarda os últimos dez arquivos num grupo abaixo das pastas.
 
 Se o arquivo está **dentro de uma pasta que uma janela já mostra**, ele abre como aba daquela janela. Senão, abre na janela de arquivos avulsos — uma só por app; cada arquivo vira uma aba, e a faixa acima das abas mostra o nome do arquivo e a pasta onde ele está.
 
-Se ele está dentro de uma pasta que você **já abriu antes** no Verso, a faixa diz isso e oferece **Abrir a pasta**.
+Se ele está dentro de uma pasta que você **já abriu antes** no Verso, a faixa ganha um botão com o nome dela — **Abrir “Notas”**, por exemplo — que abre essa pasta sem perguntar de novo. Quando essa pasta é a própria pasta do arquivo, é o único botão.
 
 ## O que a janela faz e não faz
 
@@ -33,17 +33,26 @@ Se ele está dentro de uma pasta que você **já abriu antes** no Verso, a faixa
 - Um arquivo que está só na nuvem (iCloud, OneDrive) é baixado ao abrir, como uma nota de pasta; o que não puder ser baixado é dito, nunca aberto vazio.
 - A janela de arquivos avulsos **não volta** ao reabrir o app; os arquivos ficam em **Abrir recente**.
 
+## Um arquivo de dados: JSON, YAML, TOML, XML, CSV
+
+O Verso também aparece em **Abrir com** para `.json`, `.yaml`, `.yml`, `.toml`, `.xml` e `.csv`. Um arquivo desses abre na mesma janela de arquivos avulsos, mas **no diagrama** de [Dados Estruturados como Diagrama](/wiki/dados-estruturados-como-diagrama/): caixas para mover, ramos para recolher, busca em todas as chaves e valores.
+
+- **Texto | Diagrama** no alto da aba passa para o texto do arquivo, que você pode editar; ele é gravado como um `.md` — de forma atômica, com a faixa de conflito se outro programa o mudou, e nada escrito ao lado. De volta ao **Diagrama**, as caixas acompanham o que você digitou.
+- Um arquivo que o diagrama **não consegue ler** — inválido, grande demais, caixas demais — abre como texto, com a própria linha do diagrama dizendo por quê acima dele.
+- **Salvar como board** não aparece aqui: criaria um arquivo novo ao lado deste. Abra a pasta inteira para fazer um board do diagrama.
+- Com o diagrama desligado (**Ajustes › Aplicação › Recursos › Diagrama de dados**), o arquivo abre como texto.
+
 ## Voltar para a pasta
 
-A faixa tem **Abrir a pasta inteira no Verso**: depois de uma confirmação que diz o nome da pasta, ela abre como uma pasta normal — indexada, com árvore, busca, links e tudo o mais — numa janela sua. É a única porta de volta, e está sempre à vista.
+A faixa tem **Abrir a pasta inteira**: depois de uma confirmação que diz o nome da pasta, ela abre como uma pasta normal — indexada, com árvore, busca, links e tudo o mais — numa janela sua. É a porta de volta, e está sempre à vista, numa linha só, mesmo com a janela estreita (os nomes longos encurtam com reticências). A faixa é a linha de cima da janela: no macOS ela começa depois dos três botões da janela, e arrastá-la move a janela. Como a janela tem um arquivo só, ela não mostra o caminho de pastas acima da nota, nem dividir, nem histórico de versões.
 
 ## Fazer do Verso o app padrão de `.md`
 
-O instalador registra o Verso como **um** app que abre `.md` e `.markdown`, e nunca o torna o padrão sozinho — isso é escolha sua. O gesto está em **Ajustes › Arquivos e links › Abrir arquivos .md com o Verso por padrão**:
+O instalador registra o Verso como **um** app que abre `.md` e `.markdown` — e `.json`, `.yaml`, `.yml`, `.toml`, `.xml`, `.csv` —, e nunca o torna o padrão sozinho — isso é escolha sua. Os gestos abaixo são os mesmos para um arquivo de dados: escolha um arquivo desse tipo. O gesto está em **Ajustes › Arquivos e links › Abrir arquivos .md com o Verso por padrão**:
 
 - **macOS:** no Finder, selecione um arquivo `.md`, **Obter Informações › Abrir com › Verso › Alterar tudo**.
-- **Windows:** **Ajustes › Aplicativos › Aplicativos padrão**, escolha o Verso para `.md` e `.markdown` (o botão nos Ajustes do Verso abre essa página).
-- **Linux:** no gerenciador de arquivos, **Abrir com › Verso**, marcando como padrão; ou no terminal `xdg-mime default verso-app.desktop text/markdown`. Um AppImage só conta depois de integrado ao menu do sistema.
+- **Windows:** **Ajustes › Aplicativos › Aplicativos padrão**, escolha o Verso para `.md` e `.markdown`, ou para cada extensão de dados que quiser (o botão nos Ajustes do Verso abre essa página).
+- **Linux:** no gerenciador de arquivos, **Abrir com › Verso**, marcando como padrão; ou no terminal `xdg-mime default verso-app.desktop text/markdown` (para um arquivo de dados, o tipo dele: `application/json`, `application/yaml`, `application/toml`, `application/xml`, `text/csv`). Um AppImage só conta depois de integrado ao menu do sistema.
 
 ---
 
