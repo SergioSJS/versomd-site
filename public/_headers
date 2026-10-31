@@ -25,3 +25,16 @@
 /universo.sh
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=300
+
+# The wiki's plain-text twins, for people and AI assistants: UTF-8 declared,
+# so Portuguese reads right wherever it is fetched.
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+/en/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+/wiki-assets/*
+  Cache-Control: public, max-age=86400

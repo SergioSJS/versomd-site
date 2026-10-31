@@ -18,7 +18,7 @@ interface Props {
   long?: boolean;
 }
 
-type Page = "home" | "features" | "server" | "compare";
+type Page = "home" | "features" | "server" | "compare" | "wiki";
 
 const { copy, title, description, path, altPath, noindex = false, current, long = false } = Astro.props;
 const site = Astro.site ?? new URL("https://versomd.com");
@@ -33,6 +33,7 @@ const pages: { id: Page; href: string; label: string }[] = [
   { id: "features", href: copy.routes.features, label: copy.nav.features },
   { id: "server", href: copy.routes.server, label: copy.nav.server },
   { id: "compare", href: copy.routes.compare, label: copy.nav.compare },
+  { id: "wiki", href: copy.routes.wiki, label: copy.nav.wiki },
 ];
 ---
 

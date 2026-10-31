@@ -1,0 +1,38 @@
+---
+import type { Copy } from "../i18n";
+import { wikiText, type WikiLang } from "../i18n/wiki";
+import { GROUP_ORDER, abs, mdPath, pagePath, wikiMeta, type WikiEntry } from "../lib/wiki";
+import PageHead from "./PageHead.astro";
+import AskAi from "./AskAi.astro";
+import WikiNav from "./WikiNav.astro";
+
+interface Props { copy: Copy; lang: WikiLang; pages: WikiEntry[] }
+const { copy, lang, pages } = Astro.props;
+const t = wikiText[lang];
+---
+
+<article class="landing subpage wiki-index">
+  <PageHead eyebrow={t.eyebrow} title={t.title} ledeHtml={t.lede} />
+  <div class="wrap wiki-layout">
+    <div class="wiki-main">
+      <AskAi lang={lang} url={abs(t.llmsFull)} scope="index" />
+      {
+        GROUP_ORDER.map((g) => (
+          <section class="wiki-group" aria-labelledby={`g-${g}`}>
+            <h2 id={`g-${g}`}>{t.groups[g]}</h2>
+            <ul class="wiki-list">
+              {pages.filter((p) => p.data.group === g).map((p) => (
+                <li>
+                  <a href={pagePath(lang, p.data.slug)}>{p.data.title}</a>
+                  <span>{p.data.description}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+      <p class="wiki-meta">{t.writtenFor(wikiMeta.version)} · <a href={t.llmsFull}>{t.fullFile}</a> · <a href="/llms.txt">llms.txt</a></p>
+    </div>
+    <WikiNav lang={lang} pages={pages} />
+  </div>
+</article>

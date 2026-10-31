@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import WikiPage from "../../components/WikiPage.astro";
+import { copies } from "../../i18n";
+import { wikiText } from "../../i18n/wiki";
+import { wikiPages, pagePath } from "../../lib/wiki";
+
+export async function getStaticPaths() {
+  const pages = await wikiPages("pt");
+  return pages.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry, pages } }));
+}
+const { entry, pages } = Astro.props;
+const copy = copies["pt-BR"];
+const t = wikiText.pt;
+---
+
+<Base copy={copy} title={`${entry.data.title} · ${t.title}`} description={entry.data.description} path={pagePath("pt", entry.data.slug)} altPath={t.otherBase + entry.data.twin + "/"} current="wiki" long>
+  <WikiPage copy={copy} lang="pt" pages={pages} entry={entry} />
+</Base>

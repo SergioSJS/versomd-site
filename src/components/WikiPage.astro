@@ -1,0 +1,46 @@
+---
+import type { Copy } from "../i18n";
+import { wikiText, type WikiLang } from "../i18n/wiki";
+import { abs, mdPath, pagePath, wikiMeta, type WikiEntry } from "../lib/wiki";
+import PageHead from "./PageHead.astro";
+import AskAi from "./AskAi.astro";
+import WikiNav from "./WikiNav.astro";
+
+interface Props { copy: Copy; lang: WikiLang; pages: WikiEntry[]; entry: WikiEntry }
+const { copy, lang, pages, entry } = Astro.props;
+const t = wikiText[lang];
+const i = pages.findIndex((p) => p.id === entry.id);
+const prev = pages[i - 1];
+const next = pages[i + 1];
+const { Content } = await (await import("astro:content")).render(entry);
+---
+
+<article class="landing subpage wiki-page">
+  <div class="wrap">
+    <nav class="crumbs" aria-label={t.breadcrumb}>
+      <ol>
+        <li><a href={copy.routes.home}>{t.home}</a></li>
+        <li><a href={t.base}>{t.title}</a></li>
+        <li><a href={t.base + "#g-" + entry.data.group}>{t.groups[entry.data.group]}</a></li>
+        <li aria-current="page">{entry.data.title}</li>
+      </ol>
+    </nav>
+  </div>
+  <PageHead eyebrow={t.groups[entry.data.group]} title={entry.data.title} />
+  <div class="wrap wiki-layout">
+    <div class="wiki-main">
+      <p class="wiki-meta">
+        {t.writtenFor(wikiMeta.version)} ·
+        <a href={mdPath(lang, entry.data.slug)} type="text/markdown">{t.asMarkdown}</a> ·
+        <a href={wikiText[lang === "pt" ? "en" : "pt"].base + entry.data.twin + "/"} hreflang={lang === "pt" ? "en" : "pt-BR"} lang={lang === "pt" ? "en" : "pt-BR"}>{t.otherLang}</a>
+      </p>
+      <div class="prose"><Content /></div>
+      <nav class="wiki-prevnext" aria-label={`${t.prev} / ${t.next}`}>
+        {prev ? <a rel="prev" href={pagePath(lang, prev.data.slug)}><span>{t.prev}</span>{prev.data.title}</a> : <span />}
+        {next ? <a rel="next" href={pagePath(lang, next.data.slug)}><span>{t.next}</span>{next.data.title}</a> : <span />}
+      </nav>
+      <AskAi lang={lang} url={abs(mdPath(lang, entry.data.slug))} scope="page" />
+    </div>
+    <WikiNav lang={lang} pages={pages} current={entry.data.slug} />
+  </div>
+</article>

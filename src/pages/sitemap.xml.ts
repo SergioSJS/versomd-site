@@ -8,10 +8,18 @@ const pairs: [string, string][] = [
   ["/comparativo/", "/en/compare/"],
 ];
 
-export const GET: APIRoute = ({ site }) => {
+import { wikiPages, pagePath } from "../lib/wiki";
+
+export const GET: APIRoute = async ({ site }) => {
+  const [ptWiki, enWiki] = [await wikiPages("pt"), await wikiPages("en")];
+  const wikiPairs: [string, string][] = [
+    ["/wiki/", "/en/wiki/"],
+    ...ptWiki.map((p) => [pagePath("pt", p.data.slug), pagePath("en", p.data.twin)] as [string, string]),
+  ];
+  void enWiki;
   const base = site ?? new URL("https://versomd.com");
   const url = (path: string) => new URL(path, base).href;
-  const entries = pairs.flatMap(([pt, en]) =>
+  const entries = [...pairs, ...wikiPairs].flatMap(([pt, en]) =>
     [pt, en].map(
       (loc) => `  <url>
     <loc>${url(loc)}</loc>
