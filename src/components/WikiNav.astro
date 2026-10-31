@@ -1,0 +1,39 @@
+---
+// The wiki's topics, grouped, as a nav: the left column of a page on a wide
+// screen and the "Topics" panel on a narrow one (the page renders it twice
+// and CSS shows one, so each place has plain links and no script). Each
+// group is a disclosure; the current page's group starts open.
+import { wikiText, type WikiLang } from "../i18n/wiki";
+import { GROUP_ORDER, pagePath, type WikiEntry } from "../lib/wiki";
+
+interface Props {
+  lang: WikiLang;
+  pages: WikiEntry[];
+  current: WikiEntry;
+  /** Distinguishes the two copies' ids. */
+  place: "side" | "panel";
+}
+const { lang, pages, current, place } = Astro.props;
+const t = wikiText[lang];
+---
+
+<nav class:list={["wn", `wn-${place}`]} aria-label={t.allTopics}>
+  <p class="wn-home"><a href={t.base}>{t.title}</a></p>
+  {
+    GROUP_ORDER.map((g) => {
+      const here = current.data.group === g;
+      return (
+        <details class="wn-group" open={here}>
+          <summary class:list={{ "is-here": here }}>{t.groups[g]}</summary>
+          <ul>
+            {pages.filter((p) => p.data.group === g).map((p) => (
+              <li>
+                <a href={pagePath(lang, p.data.slug)} aria-current={p.id === current.id ? "page" : undefined}>{p.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      );
+    })
+  }
+</nav>

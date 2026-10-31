@@ -1,0 +1,142 @@
+---
+// A wiki page. Wide screens: the topics on the left, the article in a
+// reading measure, "On this page" on the right (from the article's h2/h3).
+// Narrow screens: a bar under the header with two disclosures, "Topics"
+// and "On this page". After the article: previous/next, a quiet line with
+// the Markdown twin, the other language and the version, then "Ask an AI
+// about this page", closed.
+import "../styles/wiki.css";
+import { render } from "astro:content";
+import { wikiText, type WikiLang } from "../i18n/wiki";
+import { abs, mdPath, pagePath, wikiMeta, type WikiEntry } from "../lib/wiki";
+import AskAi from "./AskAi.astro";
+import WikiNav from "./WikiNav.astro";
+import WikiToc from "./WikiToc.astro";
+
+interface Props { lang: WikiLang; pages: WikiEntry[]; entry: WikiEntry }
+const { lang, pages, entry } = Astro.props;
+const t = wikiText[lang];
+const other = wikiText[lang === "pt" ? "en" : "pt"];
+const i = pages.findIndex((p) => p.id === entry.id);
+const prev = pages[i - 1];
+const next = pages[i + 1];
+const { Content, headings } = await render(entry);
+const outline = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+<div class="wiki wiki-page">
+  <div class="wiki-bar" data-wiki-bar>
+    <div class="wrap wiki-bar-in">
+      <details class="wb" name="wiki-bar">
+        <summary>{t.topicsButton}</summary>
+        <div class="wb-panel"><WikiNav lang={lang} pages={pages} current={entry} place="panel" /></div>
+      </details>
+      {
+        outline.length > 0 && (
+          <details class="wb" name="wiki-bar">
+            <summary>{t.onThisPage}</summary>
+            <div class="wb-panel"><WikiToc headings={headings} label={t.onThisPage} place="panel" /></div>
+          </details>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="wrap wp">
+    <WikiNav lang={lang} pages={pages} current={entry} place="side" />
+
+    <article class="wp-main" id="wiki-article" tabindex="-1" aria-labelledby="wiki-title">
+      <nav class="crumb" aria-label={t.breadcrumb}>
+        <a href={t.base}>{t.crumbRoot}</a><span aria-hidden="true">/</span><a href={`${t.base}#g-${entry.data.group}`}>{t.groups[entry.data.group]}</a>
+      </nav>
+      <h1 id="wiki-title">{entry.data.title}</h1>
+      <div class="prose"><Content /></div>
+
+      <nav class="wp-prevnext" aria-label={`${t.prev} / ${t.next}`}>
+        {prev ? <a rel="prev" href={pagePath(lang, prev.data.slug)}><span>{t.prev}</span>{prev.data.title}</a> : <span />}
+        {next ? <a rel="next" href={pagePath(lang, next.data.slug)}><span>{t.next}</span>{next.data.title}</a> : <span />}
+      </nav>
+
+      <ul class="wp-foot">
+        <li><a href={mdPath(lang, entry.data.slug)} type="text/markdown">{t.asMarkdown}</a></li>
+        <li><a href={other.base + entry.data.twin + "/"} hreflang={other.htmlLang} lang={other.htmlLang}>{t.otherLang}</a></li>
+        <li>{t.writtenFor(wikiMeta.version)}</li>
+      </ul>
+
+      <AskAi lang={lang} url={abs(mdPath(lang, entry.data.slug))} scope="page" />
+    </article>
+
+    <WikiToc headings={headings} label={t.onThisPage} place="side" />
+  </div>
+</div>
+
+<script>
+  // The narrow-screen bar: one panel open at a time (also where the
+  // `name` attribute of <details> is not known), closed by a link chosen
+  // in it, by Escape (focus back on its button) or by a click outside.
+  const bar = document.querySelector<HTMLElement>("[data-wiki-bar]");
+  const panels = bar ? [...bar.querySelectorAll<HTMLDetailsElement>("details.wb")] : [];
+  for (const d of panels) {
+    d.addEventListener("toggle", () => {
+      if (d.open) for (const o of panels) if (o !== d) o.open = false;
+    });
+    d.querySelector(".wb-panel")?.addEventListener("click", (e) => {
+      if ((e.target as Element).closest("a")) d.open = false;
+    });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const open = panels.find((d) => d.open);
+    if (open) {
+      open.open = false;
+      open.querySelector("summary")?.focus();
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (bar && !bar.contains(e.target as Node)) for (const d of panels) d.open = false;
+  });
+
+  // The topics column: the current page in view inside it.
+  const side = document.querySelector<HTMLElement>(".wn-side");
+  const here = side?.querySelector<HTMLElement>("[aria-current='page']");
+  if (side && here && side.scrollHeight > side.clientHeight) {
+    const top = here.offsetTop - side.clientHeight / 3;
+    if (top > 0) side.scrollTop = top;
+  }
+
+  // A wide table or code block scrolls in its own box: make that box
+  // reachable from the keyboard when it does scroll.
+  for (const el of document.querySelectorAll<HTMLElement>(".prose .table-scroll, .prose pre")) {
+    if (el.scrollWidth > el.clientWidth + 1) el.tabIndex = 0;
+  }
+
+  // "On this page": the section being read is marked (aria-current).
+  const links = [...document.querySelectorAll<HTMLAnchorElement>("[data-toc] a")];
+  const ids = [...new Set(links.map((a) => decodeURIComponent(a.hash.slice(1))))];
+  const heads = ids.map((id) => document.getElementById(id)).filter((h): h is HTMLElement => !!h);
+  if (heads.length) {
+    let queued = false;
+    let last = "";
+    const mark = () => {
+      queued = false;
+      let cur = "";
+      for (const h of heads) {
+        if (h.getBoundingClientRect().top < 120) cur = h.id;
+        else break;
+      }
+      if (cur === last) return;
+      last = cur;
+      for (const a of links) {
+        if (cur && decodeURIComponent(a.hash.slice(1)) === cur) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+      }
+    };
+    window.addEventListener("scroll", () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(mark);
+      }
+    }, { passive: true });
+    mark();
+  }
+</script>

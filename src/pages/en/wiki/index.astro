@@ -1,0 +1,15 @@
+---
+import Base from "../../../layouts/Base.astro";
+import WikiIndex from "../../../components/WikiIndex.astro";
+import { copies } from "../../../i18n";
+import { wikiText } from "../../../i18n/wiki";
+import { wikiPages } from "../../../lib/wiki";
+
+const copy = copies["en"];
+const t = wikiText.en;
+const pages = await wikiPages("en");
+---
+
+<Base copy={copy} title={t.title} description={t.metaDescription} path={t.base} altPath={t.otherBase} current="wiki" long>
+  <WikiIndex lang="en" pages={pages} />
+</Base>

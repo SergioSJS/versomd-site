@@ -35,7 +35,7 @@ export interface Copy {
   meta: { title: string; description: string };
   skip: string;
   /** The header's pages, in order; the waitlist is a call to action, not a page. */
-  nav: { label: string; home: string; features: string; server: string; compare: string; waitlist: string };
+  nav: { label: string; home: string; features: string; server: string; compare: string; wiki: string; waitlist: string };
   /** The control that goes back to the top of a long page. */
   toTop: string;
   switchTo: { label: string; name: string; href: string; hreflang: string };
@@ -169,7 +169,7 @@ export interface Copy {
   og: { imageAlt: string };
   footer: { lineHtml: string; fontsHtml: string; noTracking: string };
   figLabel: string;
-  routes: { home: string; features: string; server: string; compare: string; thanks: string; failed: string };
+  routes: { home: string; features: string; server: string; compare: string; wiki: string; thanks: string; failed: string };
   /** Section anchors, in the page's language. */
   ids: {
     content: string;

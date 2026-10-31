@@ -20,6 +20,7 @@ export const ptBR: Copy = {
     features: "Recursos",
     server: "UniVerso",
     compare: "Comparativo",
+    wiki: "Wiki",
     waitlist: "Lista de espera",
   },
   toTop: "Voltar ao topo",
@@ -1061,7 +1062,7 @@ export const ptBR: Copy = {
     noTracking: "Sem analytics, sem cookies.",
   },
   figLabel: "Fig.",
-  routes: { home: "/", features: "/recursos/", server: "/universo/", compare: "/comparativo/", thanks: "/obrigado/", failed: "/lista/nao-deu/" },
+  routes: { home: "/", features: "/recursos/", server: "/universo/", compare: "/comparativo/", wiki: "/wiki/", thanks: "/obrigado/", failed: "/lista/nao-deu/" },
   ids: {
     content: "conteudo",
     notYet: "ainda-nao",

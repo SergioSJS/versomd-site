@@ -1,0 +1,28 @@
+---
+// "On this page": the article's h2 and h3 as anchor links. Rendered in the
+// right column on a wide screen and in the "On this page" panel otherwise.
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+  label: string;
+  place: "side" | "panel";
+}
+const { headings, label, place } = Astro.props;
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{
+  items.length > 0 && (
+    <nav class:list={["toc", `toc-${place}`]} aria-label={label} data-toc>
+      {place === "side" && <p class="toc-title" aria-hidden="true">{label}</p>}
+      <ul>
+        {items.map((h) => (
+          <li class={`toc-d${h.depth}`}>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}

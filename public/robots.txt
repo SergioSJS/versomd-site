@@ -1,4 +1,15 @@
+# Everything is public, for people and for AI assistants. Assistants that a
+# person points at a page (ChatGPT-User, Claude-User, Perplexity-User, Google)
+# are welcome: the wiki is written to be read by them (see /llms.txt).
 User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Googlebot
 Allow: /
 Disallow: /api/
 

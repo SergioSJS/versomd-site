@@ -1,0 +1,139 @@
+---
+// /wiki/ and /en/wiki/: a title and one sentence, a field that filters the
+// topics as you type (shown only with JavaScript; without it the whole list
+// stands), the common questions, every topic grouped with its one-line
+// description, and at the end, quietly, "Rather ask an AI?".
+import "../styles/wiki.css";
+import { wikiText, type WikiLang } from "../i18n/wiki";
+import { GROUP_ORDER, abs, pagePath, wikiMeta, type WikiEntry } from "../lib/wiki";
+import AskAi from "./AskAi.astro";
+
+interface Props { lang: WikiLang; pages: WikiEntry[] }
+const { lang, pages } = Astro.props;
+const t = wikiText[lang];
+// A description may hold `code` (as in the vault): shown as code here; the
+// llms.txt keeps the backticks.
+const runs = (d: string) => d.split(/(`[^`]+`)/).filter(Boolean).map((x) => (x.startsWith("`") && x.endsWith("`") ? { code: true, text: x.slice(1, -1) } : { code: false, text: x }));
+const faq = t.faq.map((f) => {
+  const page = pages.find((p) => p.data.slug === f.slug);
+  if (!page) throw new Error(`wiki faq: no page "${f.slug}" in ${lang}`);
+  return { ...f, page, href: pagePath(lang, f.slug) + (f.hash ? `#${f.hash}` : "") };
+});
+---
+
+<div class="wiki wiki-index">
+  <div class="wrap">
+    <header class="wi-head">
+      <h1>{t.title}</h1>
+      <p class="wi-lede">{t.lede}</p>
+      <form class="wi-search" role="search" action="#" data-wiki-search hidden>
+        <label for="wiki-q">{t.searchLabel}</label>
+        <div class="wi-field">
+          <svg class="wi-glass" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M12.6 12.6 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+          <input id="wiki-q" type="search" name="q" autocomplete="off" spellcheck="false" placeholder={t.searchPlaceholder} aria-describedby="wiki-count" />
+        </div>
+        <p class="wi-count" id="wiki-count" role="status" aria-live="polite" data-wiki-count data-one={t.searchCount(1)} data-many={t.searchCount(2)}></p>
+      </form>
+    </header>
+
+    <section class="wi-faq" aria-labelledby="wi-faq-h" data-wiki-faq>
+      <h2 id="wi-faq-h">{t.faqTitle}</h2>
+      <ul>
+        {faq.map((f) => (
+          <li>
+            <a href={f.href}><span class="wi-q">{f.q}</span><span class="wi-where">{f.page.data.title}</span></a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="wi-topics" aria-labelledby="wi-topics-h">
+      <h2 id="wi-topics-h">{t.allTopics}</h2>
+      <div class="wi-groups">
+        {
+          GROUP_ORDER.map((g) => (
+            <section class="wi-group" aria-labelledby={`g-${g}`} data-wiki-group>
+              <h3 id={`g-${g}`}>{t.groups[g]}</h3>
+              <ul>
+                {pages.filter((p) => p.data.group === g).map((p) => (
+                  <li data-wiki-topic>
+                    <a href={pagePath(lang, p.data.slug)}>
+                      <span class="wi-t">{p.data.title}</span>
+                      <span class="wi-d">{runs(p.data.description).map((r) => (r.code ? <code>{r.text}</code> : r.text))}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
+      <p class="wi-none" data-wiki-none hidden>{t.searchNone} <a href="#ask">{t.searchNoneLink}</a>.</p>
+    </section>
+
+    <AskAi lang={lang} url={abs("/llms.txt")} scope="index" />
+
+    <ul class="wi-foot">
+      <li>{t.writtenFor(wikiMeta.version)}</li>
+      <li><a href={t.llmsFull}>{t.fullFile}</a></li>
+      <li><a href="/llms.txt">llms.txt</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // The topic filter: every word typed must appear in a topic's title,
+  // description or group, accents and case aside. Groups with nothing left
+  // hide; the common questions step aside while a search is on, so the
+  // results sit right under the field. Enter opens the first result.
+  const form = document.querySelector<HTMLFormElement>("[data-wiki-search]");
+  if (form) {
+    const input = form.querySelector<HTMLInputElement>("input")!;
+    const count = form.querySelector<HTMLElement>("[data-wiki-count]")!;
+    const faq = document.querySelector<HTMLElement>("[data-wiki-faq]");
+    const none = document.querySelector<HTMLElement>("[data-wiki-none]")!;
+    const fold = (s: string) => s.normalize("NFD").replace(/\p{M}+/gu, "").toLowerCase();
+    const groups = [...document.querySelectorAll<HTMLElement>("[data-wiki-group]")].map((g) => {
+      const name = g.querySelector("h3")?.textContent ?? "";
+      const items = [...g.querySelectorAll<HTMLElement>("[data-wiki-topic]")].map((li) => ({ li, text: fold(`${li.textContent} ${name}`) }));
+      return { g, items };
+    });
+    const total = groups.reduce((n, g) => n + g.items.length, 0);
+    const label = (n: number) => (n === 1 ? count.dataset.one! : count.dataset.many!.replace(/\d+/, String(n)));
+    let timer = 0;
+    const apply = () => {
+      const words = fold(input.value).split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const { g, items } of groups) {
+        let here = 0;
+        for (const { li, text } of items) {
+          const ok = words.every((w) => text.includes(w));
+          li.hidden = !ok;
+          if (ok) here++;
+        }
+        g.hidden = here === 0;
+        shown += here;
+      }
+      const active = words.length > 0;
+      if (faq) faq.hidden = active;
+      none.hidden = !active || shown > 0;
+      // Announce the count a moment after typing stops, not on every key.
+      clearTimeout(timer);
+      timer = window.setTimeout(() => (count.textContent = active ? label(shown) : ""), 350);
+    };
+    form.hidden = false;
+    input.addEventListener("input", apply);
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const first = document.querySelector<HTMLAnchorElement>("[data-wiki-topic]:not([hidden]) a");
+      if (input.value.trim() && first) first.click();
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && input.value) {
+        input.value = "";
+        apply();
+      }
+    });
+    if (total && input.value) apply();
+  }
+</script>

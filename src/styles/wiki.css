@@ -1,0 +1,511 @@
+/* The wiki (/wiki/, /en/wiki/): a help centre inside the site.
+ *
+ * Calm, dense, fast to scan. Same tokens, header and footer as the rest of
+ * the site; Fraunces only for the page title and the article's sections,
+ * Literata for reading (the article, the common questions), Instrument Sans
+ * for everything you navigate with (topics, outline, search, buttons).
+ * Hairlines and space, no cards or shadows; the seal colour only for links
+ * and for "you are here".
+ *
+ * Widths: under 70rem a bar under the header holds "Topics" and "On this
+ * page" as disclosures; from 70rem the topics are a left column and the
+ * outline a right one, both sticky and scrolling on their own.
+ */
+
+.wiki {
+  font-family: var(--ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-bottom: clamp(1rem, 0.5rem + 2vw, 2rem);
+}
+.wiki summary { list-style: none; cursor: pointer; }
+.wiki summary::-webkit-details-marker { display: none; }
+
+/* A small chevron drawn with borders, turned when its disclosure opens. */
+.wb > summary::after,
+.wn-group > summary::before,
+.ask-page > summary::after,
+.ask-prompt > summary::before {
+  content: "";
+  flex: none;
+  width: 0.42em;
+  height: 0.42em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.15s var(--ease-out);
+  opacity: 0.75;
+}
+.wn-group[open] > summary::before,
+.ask-prompt[open] > summary::before { transform: rotate(45deg); }
+.ask-page > summary::after { transform: rotate(45deg); margin-top: -0.25em; }
+.ask-page[open] > summary::after { transform: rotate(-135deg); margin-top: 0.15em; }
+@media (prefers-reduced-motion: reduce) {
+  .wiki summary::before,
+  .wiki summary::after { transition: none; }
+}
+
+/* ── the index ─────────────────────────────────────────────────────────── */
+.wi-head { padding-top: clamp(2rem, 1.5rem + 2.5vw, 3.5rem); max-width: 44rem; }
+.wiki h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 560;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+.wi-head h1 { font-size: clamp(2.2rem, 1.7rem + 2vw, 3.2rem); }
+.wi-lede {
+  margin: 0.6rem 0 0;
+  font: 1.15rem/1.5 var(--book);
+  color: var(--ink-2);
+}
+
+.wi-search { margin-top: 1.75rem; }
+.wi-search label { display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.95rem; }
+.wi-field { position: relative; }
+.wi-glass { position: absolute; left: 0.9rem; top: 50%; translate: 0 -50%; color: var(--ink-3); pointer-events: none; }
+.wi-field input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.6rem 0.9rem 0.6rem 2.75rem;
+  font: 1.05rem/1.3 var(--ui);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--control-line);
+  border-radius: var(--radius-l);
+  -webkit-appearance: none;
+  appearance: none;
+}
+.wi-field input::placeholder { color: var(--ink-3); opacity: 1; }
+.wi-field input:focus-visible { outline-offset: 1px; }
+.wi-count { min-height: 1.5em; margin: 0.45rem 0 0; font-size: 0.88rem; color: var(--ink-2); }
+
+.wiki h2 {
+  margin: 0 0 0.75rem;
+  font: 600 1.4rem/1.25 var(--display);
+  color: var(--ink);
+}
+
+.wi-faq { margin-top: 1.75rem; }
+.wi-faq ul,
+.wi-group ul,
+.wi-foot,
+.wp-foot,
+.wn ul,
+.toc ul,
+.ask-actions { margin: 0; padding: 0; list-style: none; }
+.wi-faq ul { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 3rem; border-bottom: 1px solid var(--hair); }
+@media (min-width: 52rem) { .wi-faq ul { grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 0; } }
+.wi-faq li { border-top: 1px solid var(--hair); }
+.wi-faq a { display: block; padding: 0.7rem 0 0.75rem; text-decoration: none; color: var(--ink); }
+.wi-q { display: block; font: 1.08rem/1.4 var(--book); }
+.wi-where { display: block; margin-top: 0.15rem; font-size: 0.86rem; color: var(--ink-2); }
+.wi-faq a:hover .wi-q,
+.wi-group a:hover .wi-t { color: var(--seal); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+
+.wi-topics { margin-top: clamp(2.5rem, 2rem + 2vw, 3.5rem); }
+.wi-groups { columns: 1; }
+@media (min-width: 52rem) { .wi-groups { columns: 2; column-gap: 3rem; } }
+.wi-group { break-inside: avoid; padding-bottom: 1.75rem; }
+.wi-group h3 {
+  margin: 0;
+  padding: 0.5rem 0 0.45rem;
+  font: 600 1.15rem/1.3 var(--display);
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--ink-3);
+}
+.wi-group li { border-bottom: 1px solid var(--hair); }
+.wi-group a { display: block; padding: 0.6rem 0 0.65rem; text-decoration: none; color: var(--ink); }
+.wi-t { display: block; font-weight: 600; font-size: 1rem; line-height: 1.35; }
+.wi-d { display: block; margin-top: 0.12rem; font-size: 0.92rem; line-height: 1.42; color: var(--ink-2); }
+.wi-d code { font-size: 0.85em; color: var(--ink); }
+.wi-none { margin: 0.5rem 0 0; color: var(--ink-2); }
+
+.wi-foot,
+.wp-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 1.5rem;
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--hair);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+.wi-foot li,
+.wp-foot li { display: flex; align-items: center; min-height: 44px; }
+.wi-foot a,
+.wp-foot a { color: var(--ink-2); display: inline-flex; align-items: center; min-height: 44px; }
+.wi-foot a:hover,
+.wp-foot a:hover { color: var(--seal); }
+
+/* ── a page: the frame ─────────────────────────────────────────────────── */
+.wiki-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hair);
+}
+.wiki-bar-in { position: relative; display: flex; gap: 0.25rem; padding: 0.25rem 0; }
+.wb > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.7rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  border-radius: var(--radius-m);
+}
+.wb:first-child > summary { margin-left: -0.7rem; }
+/* Down when closed, up when open: the panel drops below the bar. */
+.wb > summary::after { transform: rotate(45deg); margin-top: -0.25em; }
+.wb[open] > summary::after { transform: rotate(-135deg); margin-top: 0.15em; }
+.wb > summary:hover,
+.wb[open] > summary { background: var(--paper-2); }
+.wb[open] > summary { color: var(--seal); }
+.wb-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 0.1rem);
+  max-height: min(72dvh, 36rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.5rem 1rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--control-line);
+  border-radius: var(--radius-l);
+}
+@media (max-width: 69.99rem) {
+  html:has(.wiki-bar) { scroll-padding-top: 4.75rem; }
+}
+
+.wp { padding-top: 0.75rem; }
+.wp > .wn-side,
+.wp > .toc-side { display: none; }
+.wp-main { min-width: 0; max-width: 44rem; margin-inline: auto; }
+.wp-main:focus { outline: none; }
+
+@media (min-width: 70rem) {
+  .wiki-bar { display: none; }
+  .wp {
+    display: grid;
+    grid-template-columns: 14.5rem minmax(0, 1fr) 12.5rem;
+    gap: 0 clamp(2rem, 1rem + 1.5vw, 3rem);
+    align-items: start;
+    padding-top: 1.25rem;
+  }
+  .wp > .wn-side,
+  .wp > .toc-side {
+    display: block;
+    position: sticky;
+    top: 1rem;
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .wp-main { max-width: none; margin: 0; }
+  /* No outline on this page: the article takes the space. */
+  .wp:not(:has(> .toc-side)) { grid-template-columns: 14.5rem minmax(0, 1fr); }
+}
+
+/* The topics (left column, or the "Topics" panel). */
+.wn { font-size: 0.94rem; line-height: 1.3; }
+.wn-home { margin: 0 0 0.25rem; }
+.wn-home a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.wn-home a:hover { color: var(--seal); }
+.wn-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.wn-group > summary::before { margin-left: 0.1rem; }
+.wn-group > summary:hover,
+.wn-group > summary.is-here { color: var(--ink); }
+.wn-group ul { margin: 0 0 0.5rem 0.3rem; border-left: 1px solid var(--hair); }
+.wn-group a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-left: -1px;
+  padding: 0.35rem 0.5rem 0.35rem 0.9rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+.wn-group a:hover { color: var(--seal); }
+.wn-group a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+  border-left-color: var(--seal);
+  background: var(--paper-2);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+}
+.wn a:focus-visible,
+.wn summary:focus-visible,
+.toc a:focus-visible { outline-offset: -2px; }
+
+/* On this page (right column, or its panel). */
+.toc { font-size: 0.88rem; line-height: 1.3; }
+.toc-title { margin: 0.6rem 0 0.25rem; font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+.toc ul { border-left: 1px solid var(--hair); }
+.toc a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-left: -1px;
+  padding: 0.3rem 0.25rem 0.3rem 0.8rem;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+.toc .toc-d3 a { padding-left: 1.6rem; }
+.toc a:hover { color: var(--seal); }
+.toc a[aria-current] { color: var(--ink); border-left-color: var(--seal); }
+.toc-panel ul { margin-top: 0.25rem; }
+.toc-panel a { font-size: 0.94rem; }
+
+/* ── a page: the article ───────────────────────────────────────────────── */
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  font-size: 0.9rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.crumb a {
+  display: block;
+  line-height: 44px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.crumb a:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.crumb a:hover { color: var(--seal); text-decoration: underline; }
+.wp-main h1 {
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+  margin: 0.1rem 0 1.25rem;
+}
+
+.prose {
+  max-width: 70ch;
+  font-family: var(--book);
+  font-size: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+  line-height: 1.66;
+  overflow-wrap: break-word;
+}
+.prose > :first-child { margin-top: 0; }
+.prose p,
+.prose ul,
+.prose ol { margin: 0 0 1rem; }
+.prose ul,
+.prose ol { padding-left: 1.35rem; }
+.prose li { margin-block: 0.3rem; }
+.prose li > ul,
+.prose li > ol { margin: 0.3rem 0 0; }
+.prose li::marker { color: var(--ink-3); }
+.prose h2,
+.prose h3,
+.prose h4 { scroll-margin-top: 1rem; overflow-wrap: break-word; }
+.prose h2 {
+  margin: 2.6rem 0 0.7rem;
+  font: 600 1.55rem/1.25 var(--display);
+  color: var(--heading-color);
+  letter-spacing: -0.01em;
+}
+.prose h3 { margin: 2rem 0 0.5rem; font: 600 1.22rem/1.3 var(--display); color: var(--ink); }
+.prose h4 { margin: 1.5rem 0 0.4rem; font: 600 1rem/1.4 var(--ui); color: var(--ink); }
+.prose h2 code,
+.prose h3 code { font-size: 0.8em; }
+/* The vault rules off each section; the section's own title does that. */
+.prose hr { border: 0; border-top: 1px solid var(--hair); margin: 2rem 0; }
+.prose hr:has(+ h2) { display: none; }
+.prose strong { font-weight: 600; }
+
+.prose img {
+  margin: 1.25rem 0;
+  border-radius: var(--radius-l);
+  border: 1px solid var(--hair);
+}
+.prose pre {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  font: 0.86rem/1.6 var(--mono);
+  color: var(--ink);
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-l);
+  tab-size: 2;
+}
+.prose pre code { padding: 0; border: 0; background: none; font-size: inherit; overflow-wrap: normal; white-space: pre; }
+
+.table-scroll {
+  margin: 1.25rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-l);
+}
+.table-scroll table { width: 100%; border-collapse: collapse; font: 0.92rem/1.45 var(--ui); }
+.table-scroll th,
+.table-scroll td { padding: 0.55rem 0.8rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--hair); }
+.table-scroll th { font-weight: 600; background: var(--paper-2); white-space: nowrap; }
+.table-scroll tr:last-child td { border-bottom: 0; }
+.table-scroll code { overflow-wrap: normal; white-space: nowrap; }
+
+.prose blockquote {
+  margin: 1.25rem 0;
+  padding: 0.1rem 0 0.1rem 1rem;
+  border-left: 3px solid var(--hair);
+  color: var(--ink-2);
+}
+.prose blockquote > :last-child { margin-bottom: 0; }
+.prose blockquote.callout {
+  padding: 0.8rem 1rem 0.85rem 1.1rem;
+  color: var(--ink);
+  background: var(--brass-wash);
+  border-left-color: var(--brass);
+  border-radius: 0 var(--radius-m) var(--radius-m) 0;
+}
+.prose blockquote.callout > p:first-child { margin-bottom: 0.35rem; }
+.prose .callout-title { font: 600 0.92rem/1.4 var(--ui); color: var(--brass-ink); }
+.prose blockquote.callout-tip,
+.prose blockquote.callout-example { border-left-color: var(--good); background: var(--good-wash); }
+.prose .callout-tip .callout-title,
+.prose .callout-example .callout-title { color: var(--good); }
+.prose blockquote.callout-warning,
+.prose blockquote.callout-important { border-left-color: var(--danger); background: var(--danger-wash); }
+.prose .callout-warning .callout-title,
+.prose .callout-important .callout-title { color: var(--danger); }
+.prose .callout pre,
+.prose .callout code { background: var(--paper); }
+
+/* After the article. */
+.wp-prevnext {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  max-width: 70ch;
+  margin: 3rem 0 0;
+}
+@media (min-width: 40rem) { .wp-prevnext { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.wp-prevnext a {
+  display: block;
+  min-height: 44px;
+  padding: 0.75rem 1rem 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-m);
+}
+.wp-prevnext a:hover { border-color: var(--control-line); color: var(--seal); }
+.wp-prevnext a[rel="next"] { grid-column: -2; text-align: right; }
+.wp-prevnext a span { display: block; margin-bottom: 0.1rem; font-weight: 400; font-size: 0.85rem; color: var(--ink-2); }
+.wp-foot { max-width: 70ch; margin-top: 1.5rem; }
+
+/* ── ask an AI ─────────────────────────────────────────────────────────── */
+.ask { max-width: 44rem; }
+.ask-index {
+  margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hair);
+}
+.ask-index h2 { font-size: 1.25rem; margin-bottom: 0.35rem; }
+.ask-page { max-width: 70ch; border-bottom: 1px solid var(--hair); }
+.ask-page > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 48px;
+  color: var(--ink);
+}
+.ask-page > summary h2 { margin: 0; font: 600 1rem/1.3 var(--ui); color: inherit; }
+.ask-page > summary:hover { color: var(--seal); }
+.ask-page[open] .ask-body { padding-bottom: 1.25rem; }
+.ask-intro { margin: 0 0 0.9rem; color: var(--ink-2); font-size: 0.95rem; }
+.ask-label { display: block; margin-bottom: 0.3rem; font-weight: 600; font-size: 0.92rem; }
+.ask textarea {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: 1rem/1.5 var(--book);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--control-line);
+  border-radius: var(--radius-m);
+  resize: vertical;
+}
+.ask textarea::placeholder { color: var(--ink-3); opacity: 1; }
+.ask-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.ask-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.85rem;
+  font: 600 0.9rem/1.2 var(--ui);
+  color: var(--ink);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--control-line);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+.ask-btn:hover { color: var(--seal); border-color: var(--ink-2); }
+.ask-copy { color: var(--ink-2); border-color: transparent; text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+.ask-copy:hover { border-color: transparent; }
+.ask-hint { margin: 0.6rem 0 0; font-size: 0.86rem; color: var(--ink-2); }
+.ask-status { min-height: 1.4em; margin: 0.25rem 0 0; font-weight: 600; font-size: 0.88rem; color: var(--good); }
+.ask-prompt > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+.ask-prompt > summary::before { margin-left: 0.1rem; }
+.ask-prompt > summary:hover { color: var(--seal); }
+.ask-prompt pre {
+  margin: 0.25rem 0 0;
+  padding: 0.7rem 0.8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 0.84rem/1.5 var(--mono);
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-m);
+}
+.ask-prompt code { white-space: inherit; border: 0; background: none; padding: 0; }
+
+/* With a mouse or trackpad the two side columns are a denser list (the
+   targets stay well above the 24 px floor); on touch every row is 44 px. */
+@media (min-width: 70rem) and (pointer: fine) {
+  .wn-side .wn-group a,
+  .wn-side .wn-home a,
+  .wn-side .wn-group > summary { min-height: 36px; }
+  .toc-side a { min-height: 32px; padding-block: 0.25rem; }
+}

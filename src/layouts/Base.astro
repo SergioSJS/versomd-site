@@ -16,11 +16,14 @@ interface Props {
   /** A long page: a "back to top" control at its end, which the script
    *  below keeps in the corner once the reader has scrolled down. */
   long?: boolean;
+  /** Where the skip link lands, when not the start of <main> (a wiki page:
+   *  its article, past the topics). */
+  skipTo?: string;
 }
 
-type Page = "home" | "features" | "server" | "compare";
+type Page = "home" | "features" | "server" | "compare" | "wiki";
 
-const { copy, title, description, path, altPath, noindex = false, current, long = false } = Astro.props;
+const { copy, title, description, path, altPath, noindex = false, current, long = false, skipTo } = Astro.props;
 const site = Astro.site ?? new URL("https://versomd.com");
 const canonical = new URL(path, site).href;
 const alternate = new URL(altPath, site).href;
@@ -33,6 +36,7 @@ const pages: { id: Page; href: string; label: string }[] = [
   { id: "features", href: copy.routes.features, label: copy.nav.features },
   { id: "server", href: copy.routes.server, label: copy.nav.server },
   { id: "compare", href: copy.routes.compare, label: copy.nav.compare },
+  { id: "wiki", href: copy.routes.wiki, label: copy.nav.wiki },
 ];
 ---
 
@@ -70,7 +74,7 @@ const pages: { id: Page; href: string; label: string }[] = [
     <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
-    <a class="skip" href={`#${copy.ids.content}`}>{copy.skip}</a>
+    <a class="skip" href={`#${skipTo ?? copy.ids.content}`}>{copy.skip}</a>
     <header class="masthead" id="top">
       <a class="wordmark" href={home} aria-label="Verso">
         <img class="mark" src="/brand/verso-mark-crop.svg" width="31" height="27" alt="" />

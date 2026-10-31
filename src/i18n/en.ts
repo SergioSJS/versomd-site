@@ -19,6 +19,7 @@ export const en: Copy = {
     features: "Features",
     server: "UniVerso",
     compare: "Compare",
+    wiki: "Wiki",
     waitlist: "Waitlist",
   },
   toTop: "Back to top",
@@ -1060,7 +1061,7 @@ export const en: Copy = {
     noTracking: "No analytics, no cookies.",
   },
   figLabel: "Fig.",
-  routes: { home: "/en/", features: "/en/features/", server: "/en/universo/", compare: "/en/compare/", thanks: "/en/thanks/", failed: "/en/waitlist/failed/" },
+  routes: { home: "/en/", features: "/en/features/", server: "/en/universo/", compare: "/en/compare/", wiki: "/en/wiki/", thanks: "/en/thanks/", failed: "/en/waitlist/failed/" },
   ids: {
     content: "content",
     notYet: "not-yet",
