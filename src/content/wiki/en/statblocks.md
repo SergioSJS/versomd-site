@@ -14,7 +14,7 @@ It is a feature with its own switch: **Settings › RPG & Solo Play › Dice and
 
 ---
 
-## 🛡️ What a `statblock` block is
+## What a `statblock` block is
 
 A code block with the `statblock` language draws a statblock from the YAML it holds. The keys are those of Obsidian's **Fantasy Statblocks** plugin (`name`, `ac`, `hp`, `stats`, `traits`, `actions`…): a block written for the plugin looks the same here, and one written here looks the same there. Without the plugin, Obsidian shows the code — the file is always the same text.
 
@@ -24,7 +24,7 @@ Each example below carries its `layout:` on the first line. **Try it:** swap the
 
 ---
 
-## 📚 One example of each layout
+## One example of each layout
 
 In order: character and adversary side by side, system by system. Each one's license notices are in **Settings › Application › Credits and acknowledgements**.
 
@@ -1002,7 +1002,7 @@ notes: Roll 1d6 when the toll goes unpaid.
 
 ---
 
-## 🧬 Inheritance: `monster:` and `extends:`
+## Inheritance: `monster:` and `extends:`
 
 As in Fantasy Statblocks, a statblock can **start from another one** and change only what differs. In Verso the "bestiary" is your **ordinary notes**: a creature is any `statblock` block with that `name:` (or the first block of the note with that title, or the frontmatter of a note with `statblock: true`). If there are two, the `name:` written exactly the same wins, then the note's title, then the path order.
 
@@ -1051,7 +1051,7 @@ traits+:
 
 ---
 
-## 🎲 Using statblocks
+## Using statblocks
 
 - **Dice.** A value like `+4 to hit` or `4 (1d4 + 2)` has a **die** beside it. Each ability's modifier — the `(+2)` — is itself the button: one click rolls, and the result opens on top of the statblock, pushing nothing aside and **not written to the note** (Esc, the × or a click outside closes it). On a server, the server does the rolling and everyone in the room sees it.
 - **Roll block.** A system layout has a button like *Roll (Fractal — Risk roll)*: it asks, for example, how many facts apply and shows the result the way the system reads it. Try it on the Fractal statblock above.
@@ -1061,7 +1061,7 @@ traits+:
 
 ---
 
-## ✏️ Your own layouts
+## Your own layouts
 
 In **Settings › RPG & Solo Play › Statblock Templates**:
 

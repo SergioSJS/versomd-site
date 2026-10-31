@@ -52,6 +52,11 @@ const report = { skipped: [], unresolved: [], missingAssets: [], assets: new Set
 
 const slugify = (s) =>
   s.normalize("NFD").replace(/\p{M}+/gu, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+// Emoji the vault puts at the start of a heading ("## 🛡️ O que é…"): the
+// site drops them from headings (and from links to a heading), so titles,
+// outlines and anchors read as words. Emoji inside body text stay.
+const LEAD_EMOJI = /^(?:[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}][\u{FE0F}\u{20E3}\u{200D}\u{1F3FB}-\u{1F3FF}\p{Extended_Pictographic}]*\s*)+/u;
+const stripLeadEmoji = (s) => s.replace(LEAD_EMOJI, "");
 // Same rule as the heading ids Astro (github-slugger) gives.
 const headingId = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}\p{M}\s_-]/gu, "").replace(/ /g, "-");
 
@@ -152,7 +157,8 @@ function convert(page) {
       if (p) return `[${p.title}](${prefix}${p.slug}/)`;
       return `*${label(nt)}*`;
     }
-    const [nt, frag = ""] = target.split("#");
+    let [nt, frag = ""] = target.split("#");
+    frag = stripLeadEmoji(frag);
     if (!nt) return `[${alias ?? frag}](#${headingId(frag)})`;
     const p = resolve(nt);
     if (!p) {
@@ -176,6 +182,8 @@ function convert(page) {
     }
     if (fence) { out.push(line); continue; }
     if (!droppedH1 && /^# /.test(line)) { droppedH1 = true; continue; }
+    const h = line.match(/^(#{1,6}\s+)(.*)$/);
+    if (h) line = h[1] + stripLeadEmoji(h[2]);
     // Callout header -> bold label inside a plain blockquote.
     const c = line.match(/^(\s*>\s?)\[!([A-Za-z]+)\][-+]?\s*(.*)$/);
     if (c) {

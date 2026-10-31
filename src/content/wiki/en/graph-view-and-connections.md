@@ -12,14 +12,14 @@ Verso's **Knowledge Graph** maps the connections between all your notes, reveali
 
 ---
 
-## 🕸️ How to Open the Graph
+## How to Open the Graph
 
 - **Vault graph**: all the notes. The **Vault graph** button in the left ribbon, or the command palette (`⌘⇧P`).
 - **Relations** (`⌘⇧G`): the graph around the open note — the note, the ones it cites and the ones that cite it. Also in a tab's menu and in a note's menu in the file tree.
 
 ---
 
-## 🎛️ The Controls
+## The Controls
 
 - **Filter: name or tag:x**: type part of a name, or `tag:` and a tag, to see only those notes; **All tags** picks a tag from the list.
 - **Depth** (in **Relations**): 1, 2 or 3 steps from the note.
@@ -30,7 +30,7 @@ Verso's **Knowledge Graph** maps the connections between all your notes, reveali
 
 ---
 
-## 🧭 Smooth Navigation Gestures
+## Smooth Navigation Gestures
 
 Navigation in the graph was designed to behave with the fluidity expected of modern apps:
 

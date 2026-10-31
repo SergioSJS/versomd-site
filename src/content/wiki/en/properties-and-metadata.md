@@ -12,7 +12,7 @@ Verso recognizes metadata written in YAML at the top of the file (the so-called 
 
 ---
 
-## 🗂️ The Collapsible Properties Panel
+## The Collapsible Properties Panel
 
 Look at the properties table at the top of this note:
 

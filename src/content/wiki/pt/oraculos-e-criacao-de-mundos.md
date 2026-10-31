@@ -12,7 +12,7 @@ Ferramentas para mestres, jogadores solo e quem constrói mundos — ou só escr
 
 ---
 
-## 🎚️ Ligar e desligar: Ajustes › RPG & Mesa Solo › Dados e RPG
+## Ligar e desligar: Ajustes › RPG & Mesa Solo › Dados e RPG
 
 Os recursos de RPG têm uma página só deles, a primeira do grupo **RPG & Mesa Solo**: **Dados e RPG**. Cada ferramenta é um recurso com a sua chave: **Dados**, **Tabelas sorteadas**, **Oráculos**, **Fichas** (as de [Fichas](/wiki/fichas/)) e **Assistente de mundo e campanha** e **Dados 3D**. Todas vêm **ligadas**, menos os Dados 3D. A página tem os links **Ligar todos** e **Desligar todos**, e **Oráculos** e **Fichas** têm um link **Ajustes…** para a própria página. Os atalhos **Tudo** e **Só escrita**, em **Ajustes › Aplicação › Recursos** (onde fica também o **Diagrama de dados**), ligam ou desligam todas de uma vez, as de RPG também — antes, o Verso mostra o que vai mudar, e você pode cancelar.
 
@@ -20,7 +20,7 @@ Desligar não muda arquivo nenhum: uma ficha vira um bloco de código, um `[!ora
 
 ---
 
-## 🔮 Oráculo
+## Oráculo
 
 Para jogo solo, improviso ou uma cena travada. Um destaque `[!oracle]` é a pergunta; a resposta vai **escrita na nota**:
 
@@ -71,7 +71,7 @@ Numa sala de um servidor, quem **sorteia** é o servidor, e todos da sala veem q
 
 ---
 
-## 🏰 Novo projeto a partir de modelo
+## Novo projeto a partir de modelo
 
 Em vez de criar pastas e arquivos um a um para um mundo, uma campanha ou um livro, use o assistente:
 
@@ -84,7 +84,7 @@ Na aba **Gerador com IA**, **Copiar System Prompt para IA** copia as instruçõe
 
 ---
 
-## 🙏 Créditos
+## Créditos
 
 **Ajustes › Aplicação › Créditos e agradecimentos** lista as pessoas e obras de que o Verso parte (como o Fractal, de Igor Téuri e Walter Licínio), os avisos de licença dos layouts de ficha e o software livre. **Abrir** leva ao site de cada um no navegador.
 

@@ -12,7 +12,7 @@ A **base** — a `.base` file, the same format as Obsidian's — shows notes as 
 
 ---
 
-## 📊 A Base Inside the Note
+## A Base Inside the Note
 
 The **All Projects** view of the base, embedded here with `![[Projects.base#All Projects]]`:
 
@@ -44,7 +44,7 @@ A base can have several views; switch views with the menu at the top of it.
 
 ---
 
-## 🗺️ The Map
+## The Map
 
 The base's **Map** view, embedded:
 
@@ -59,7 +59,7 @@ The base's **Map** view, embedded:
 
 ---
 
-## 🔎 Regular Expressions in Formulas
+## Regular Expressions in Formulas
 
 A formula can use a regular expression, as in Obsidian: `/pattern/flags`. The **Month** column of the table above comes from this one:
 

@@ -12,7 +12,7 @@ One note per day — and per week, per month, per quarter and per year —, a ca
 
 ---
 
-## 📅 Today's Note
+## Today's Note
 
 - **`⌘⇧D`**, the **Today's note** button in the left ribbon, or **Today's note** in the command palette (`⌘⇧P`).
 - The note is named `YYYY-MM-DD.md` and lives in the **Daily** folder — the default in **Settings › Periodic notes**.
@@ -22,7 +22,7 @@ Notes in this vault: September 24 and September 25.
 
 ---
 
-## 📆 The Week, the Month, the Quarter and the Year
+## The Week, the Month, the Quarter and the Year
 
 Besides the day, each period has its own note, in the same **Daily** folder:
 
@@ -42,7 +42,7 @@ Besides the day, each period has its own note, in the same **Daily** folder:
 
 ---
 
-## 🗓️ The Calendar
+## The Calendar
 
 Open the right panel (`⌘⌥→`) and choose the **Calendar** tab:
 
@@ -55,7 +55,7 @@ Open the right panel (`⌘⌥→`) and choose the **Calendar** tab:
 
 ---
 
-## 📋 Templates
+## Templates
 
 A template is any note in the **Templates** folder (**Settings › Files and links › Templates folder**). The ones in this vault:
 

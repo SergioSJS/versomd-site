@@ -32,7 +32,7 @@ An `.html` file in the folder opens as a page — without running scripts. In th
 
 ## A Page Inside a Note
 
-An `<iframe>` embeds a page in the middle of a note; the first time a site appears, Verso asks before loading it. See how in [Documents and Media](/en/wiki/documents-and-media/#-web-pages-inside-the-note).
+An `<iframe>` embeds a page in the middle of a note; the first time a site appears, Verso asks before loading it. See how in [Documents and Media](/en/wiki/documents-and-media/#web-pages-inside-the-note).
 
 > **Note: Remote content**
 >

@@ -14,7 +14,7 @@ Ela é um recurso com chave própria: **Ajustes › RPG & Mesa Solo › Dados e 
 
 ---
 
-## 🛡️ O que é um bloco `statblock`
+## O que é um bloco `statblock`
 
 Um bloco de código com a linguagem `statblock` desenha uma ficha a partir do YAML que ele guarda. As chaves são as do plugin **Fantasy Statblocks** do Obsidian (`name`, `ac`, `hp`, `stats`, `traits`, `actions`…): um bloco escrito para o plugin aparece igual aqui, e um escrito aqui aparece lá. Sem o plugin, o Obsidian mostra o código — o arquivo é sempre o mesmo texto.
 
@@ -24,7 +24,7 @@ Cada exemplo abaixo traz o seu `layout:` na primeira linha. **Experimente:** tro
 
 ---
 
-## 📚 Um exemplo de cada layout
+## Um exemplo de cada layout
 
 Em ordem: personagem e adversário lado a lado, sistema por sistema. Os avisos de licença de cada um estão em **Ajustes › Aplicação › Créditos e agradecimentos**.
 
@@ -1002,7 +1002,7 @@ notes: Roll 1d6 when the toll goes unpaid.
 
 ---
 
-## 🧬 Herança: `monster:` e `extends:`
+## Herança: `monster:` e `extends:`
 
 Como no Fantasy Statblocks, uma ficha pode **partir de outra** e mudar só o que for diferente. No Verso o "bestiário" são as suas **notas comuns**: uma criatura é qualquer bloco `statblock` com aquele `name:` (ou o primeiro bloco da nota com aquele título, ou o frontmatter de uma nota com `statblock: true`). Se houver duas, vale o `name:` escrito exatamente igual, depois o título da nota, depois a ordem do caminho.
 
@@ -1051,7 +1051,7 @@ traits+:
 
 ---
 
-## 🎲 Usando as fichas
+## Usando as fichas
 
 - **Dados.** Um valor como `+4 to hit` ou `4 (1d4 + 2)` tem um **dado** ao lado. O modificador de cada atributo — o `(+2)` — é ele mesmo o botão: um clique rola, e o resultado abre por cima da ficha, sem empurrar nada e **sem ser gravado na nota** (Esc, o × ou um clique fora fecha). Num servidor, quem rola é o servidor e todos da sala veem.
 - **Bloco de rolagem.** Um layout de sistema tem um botão como *Rolar (Fractal)*: ele pergunta, por exemplo, quantos fatos se aplicam e mostra o resultado como o sistema lê. Experimente na ficha do Fractal acima.
@@ -1061,7 +1061,7 @@ traits+:
 
 ---
 
-## ✏️ Seus próprios layouts
+## Seus próprios layouts
 
 Em **Ajustes › RPG & Mesa Solo › Fichas e Templates**:
 

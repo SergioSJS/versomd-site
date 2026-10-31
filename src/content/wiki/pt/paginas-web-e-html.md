@@ -32,7 +32,7 @@ Um arquivo `.html` da pasta abre como página — sem rodar scripts. No canto da
 
 ## Uma Página Dentro da Nota
 
-Um `<iframe>` embute uma página no meio da nota; na primeira vez que um site aparece, o Verso pergunta antes de carregar. Veja como em [Documentos e Mídia](/wiki/documentos-e-midia/#-páginas-da-web-dentro-da-nota).
+Um `<iframe>` embute uma página no meio da nota; na primeira vez que um site aparece, o Verso pergunta antes de carregar. Veja como em [Documentos e Mídia](/wiki/documentos-e-midia/#páginas-da-web-dentro-da-nota).
 
 > **Nota: Conteúdo remoto**
 >

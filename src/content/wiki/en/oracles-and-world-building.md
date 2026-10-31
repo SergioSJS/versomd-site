@@ -12,7 +12,7 @@ Tools for game masters, solo players and people who build worlds — or just wri
 
 ---
 
-## 🎚️ Turning on and off: Settings › RPG & Solo Play › Dice and RPG
+## Turning on and off: Settings › RPG & Solo Play › Dice and RPG
 
 The RPG features have a page of their own, the first of the **RPG & Solo Play** group: **Dice and RPG**. Each tool is a feature with its own switch: **Dice**, **Random tables**, **Oracles**, **Statblocks** (the ones in [Statblocks](/en/wiki/statblocks/)) **World and campaign wizard** and **3D dice**. All of them come **on**, except 3D dice. The page has **Turn all on** and **Turn all off** links, and **Oracles** and **Statblocks** have a **Settings…** link to their own page. The shortcuts **Everything** and **Writing only**, in **Settings › Application › Features** (which also holds the **Data diagram** switch), turn them all on or off at once, the RPG ones too — first, Verso shows what will change, and you can cancel.
 
@@ -20,7 +20,7 @@ Turning one off changes no file: a statblock becomes a code block, an `[!oracle]
 
 ---
 
-## 🔮 Oracle
+## Oracle
 
 For solo play, improvisation or a stuck scene. An `[!oracle]` callout is the question; the answer is **written in the note**:
 
@@ -71,7 +71,7 @@ In a server room, it is the server that **draws**, and everyone in the room sees
 
 ---
 
-## 🏰 New project from a template
+## New project from a template
 
 Instead of creating folders and files one by one for a world, a campaign or a book, use the wizard:
 
@@ -84,7 +84,7 @@ In the **AI Generator** tab, **Copy System Prompt for AI** copies the instructio
 
 ---
 
-## 🙏 Credits
+## Credits
 
 **Settings › Application › Credits and acknowledgements** lists the people and works Verso builds on (such as Fractal, by Igor Téuri and Walter Licínio), the licence notices of the statblock layouts and the free software. **Open** takes you to each one's website in the browser.
 

@@ -12,7 +12,7 @@ Imagens, PDFs e páginas da web moram nas notas como o texto: num link, num embe
 
 ---
 
-## 🖼️ Imagens com Controle de Escala
+## Imagens com Controle de Escala
 
 Inclua uma imagem com wikilink (`![[arquivo]]`) ou com Markdown, e dê a largura depois de `|`:
 
@@ -30,7 +30,7 @@ Inclua uma imagem com wikilink (`![[arquivo]]`) ou com Markdown, e dê a largura
 
 ---
 
-## 📑 Leitor de PDF
+## Leitor de PDF
 
 Abra o Manual do Verso (PDF). A barra do leitor tem, em ordem:
 
@@ -51,7 +51,7 @@ Também valem `#2`, `|page=5`, `|600` (a altura, em pixels) e `|800x600` (largur
 
 ---
 
-## 🌐 Páginas da Web Dentro da Nota
+## Páginas da Web Dentro da Nota
 
 Um `<iframe>` mostra uma página da web no meio da nota:
 

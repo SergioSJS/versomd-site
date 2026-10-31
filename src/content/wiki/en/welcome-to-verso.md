@@ -22,7 +22,7 @@ updated: "2026-09-25"
 
 ---
 
-## 🚀 Featured Capabilities
+## Featured Capabilities
 
 In this vault you will find hands-on demos of all of Verso's main capabilities:
 
@@ -43,7 +43,7 @@ In this vault you will find hands-on demos of all of Verso's main capabilities:
 
 ---
 
-## 🗺️ Vault Exploration Map
+## Vault Exploration Map
 
 Explore the modules below to see each feature in detail:
 
@@ -84,7 +84,7 @@ Explore the modules below to see each feature in detail:
 
 ---
 
-## ⌨️ Essential Shortcuts
+## Essential Shortcuts
 
 | Action | macOS shortcut | Linux / Windows shortcut |
 | :--- | :--- | :--- |

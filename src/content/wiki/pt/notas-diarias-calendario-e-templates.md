@@ -12,7 +12,7 @@ Uma nota por dia — e por semana, por mês, por trimestre e por ano —, um cal
 
 ---
 
-## 📅 A Nota de Hoje
+## A Nota de Hoje
 
 - **`⌘⇧D`**, o botão **Nota de hoje** na faixa da esquerda, ou **Nota de hoje** na paleta (`⌘⇧P`).
 - A nota se chama `AAAA-MM-DD.md` e fica na pasta **Diário** — o padrão de **Ajustes › Notas periódicas**.
@@ -22,7 +22,7 @@ Notas deste cofre: 24 de setembro e 25 de setembro.
 
 ---
 
-## 📆 A Semana, o Mês, o Trimestre e o Ano
+## A Semana, o Mês, o Trimestre e o Ano
 
 Além do dia, cada período tem a sua nota, na mesma pasta **Diário**:
 
@@ -42,7 +42,7 @@ Além do dia, cada período tem a sua nota, na mesma pasta **Diário**:
 
 ---
 
-## 🗓️ O Calendário
+## O Calendário
 
 Abra o painel da direita (`⌘⌥→`) e escolha a aba **Calendário**:
 
@@ -55,7 +55,7 @@ Abra o painel da direita (`⌘⌥→`) e escolha a aba **Calendário**:
 
 ---
 
-## 📋 Templates
+## Templates
 
 Um template é uma nota qualquer da pasta **Templates** (**Ajustes › Arquivos e links › Pasta de templates**). Os deste cofre:
 

@@ -12,7 +12,7 @@ O Verso reconhece metadados escritos em formato YAML no início do arquivo (o ch
 
 ---
 
-## 🗂️ Painel Retrátil de Propriedades
+## Painel Retrátil de Propriedades
 
 Observe a tabela de propriedades no topo desta nota:
 

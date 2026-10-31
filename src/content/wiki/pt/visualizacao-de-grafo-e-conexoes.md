@@ -12,14 +12,14 @@ O **Grafo de Conhecimento** do Verso mapeia as conexões entre todas as suas not
 
 ---
 
-## 🕸️ Como Abrir o Grafo
+## Como Abrir o Grafo
 
 - **Grafo do cofre**: todas as notas. Botão **Grafo do cofre** na faixa da esquerda, ou a paleta (`⌘⇧P`).
 - **Relações** (`⌘⇧G`): o grafo em volta da nota aberta — a nota, as que ela cita e as que a citam. Também no menu de uma aba e no menu de uma nota na árvore de arquivos.
 
 ---
 
-## 🎛️ Os Controles
+## Os Controles
 
 - **Filtrar**: escreva parte de um nome, ou `tag:` e uma tag, para ver só essas notas; **Tags** escolhe uma tag da lista.
 - **Profundidade** (em **Relações**): 1, 2 ou 3 passos a partir da nota.
@@ -30,7 +30,7 @@ O **Grafo de Conhecimento** do Verso mapeia as conexões entre todas as suas not
 
 ---
 
-## 🧭 Gestos de Navegação Suaves
+## Gestos de Navegação Suaves
 
 A navegação no grafo foi projetada para se comportar com a fluidez esperada de aplicativos modernos:
 

@@ -22,7 +22,7 @@ O **Verso** é um ambiente de anotações e gestão de conhecimento focado em si
 
 ---
 
-## 🚀 Recursos em Destaque
+## Recursos em Destaque
 
 Neste vault você encontrará demonstrações práticas de todas as principais capacidades do Verso:
 
@@ -43,7 +43,7 @@ Neste vault você encontrará demonstrações práticas de todas as principais c
 
 ---
 
-## 🗺️ Mapa de Exploração do Vault
+## Mapa de Exploração do Vault
 
 Explore os módulos organizados abaixo para conferir cada funcionalidade em detalhes:
 
@@ -84,7 +84,7 @@ Explore os módulos organizados abaixo para conferir cada funcionalidade em deta
 
 ---
 
-## ⌨️ Atalhos Essenciais
+## Atalhos Essenciais
 
 | Ação | Atalho macOS | Atalho Linux / Windows |
 | :--- | :--- | :--- |

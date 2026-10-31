@@ -12,7 +12,7 @@ Images, PDFs and web pages live in notes just like text: in a link, in an embed 
 
 ---
 
-## 🖼️ Images with Scale Control
+## Images with Scale Control
 
 Include an image with a wikilink (`![[file]]`) or with Markdown, and give the width after a `|`:
 
@@ -30,7 +30,7 @@ Include an image with a wikilink (`![[file]]`) or with Markdown, and give the wi
 
 ---
 
-## 📑 PDF Reader
+## PDF Reader
 
 Open the Verso Manual (PDF). The reader's bar has, in order:
 
@@ -51,7 +51,7 @@ Open the Verso Manual (PDF). The reader's bar has, in order:
 
 ---
 
-## 🌐 Web Pages Inside the Note
+## Web Pages Inside the Note
 
 An `<iframe>` shows a web page in the middle of the note:
 
