@@ -17,8 +17,8 @@ interface Props {
 const { lang, url, scope } = Astro.props;
 const t = wikiText[lang].ask;
 const id = `ask-${scope}`;
-const template = t.prompt(url, "{{q}}");
-const blank = t.prompt(url, "");
+const template = scope === "index" ? t.indexPrompt("{{q}}") : t.prompt(url, "{{q}}");
+const blank = scope === "index" ? t.indexPrompt("") : t.prompt(url, "");
 ---
 
 <section class="ask" aria-labelledby={`${id}-h`} data-ask data-template={template} data-copied={t.copied}>

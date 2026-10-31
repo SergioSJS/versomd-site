@@ -8,6 +8,7 @@ export const wikiText = {
     base: "/wiki/",
     otherBase: "/en/wiki/",
     llmsFull: "/llms-full.txt",
+    llmsPart: (n: number) => `/llms-full-${n}.txt`,
     title: "Wiki do Verso",
     metaDescription: "Documentação do Verso, tópico por tópico: escrever, organizar, sincronizar, servidor e ferramentas de RPG. Também em Markdown para assistentes de IA.",
     eyebrow: "Documentação",
@@ -17,7 +18,7 @@ export const wikiText = {
     allTopics: "Todos os tópicos",
     writtenFor: (v: string) => `Escrito para o Verso ${v}`,
     asMarkdown: "Esta página em Markdown",
-    fullFile: "Toda a wiki em um arquivo (para IA)",
+    fullFile: "Toda a wiki em partes (para IA)",
     prev: "Anterior",
     next: "Próxima",
     otherLang: "Read this page in English",
@@ -42,6 +43,8 @@ export const wikiText = {
       showPrompt: "Ver o texto do pedido",
       prompt: (url: string, q: string) =>
         `Você vai responder dúvidas sobre o Verso usando só a documentação oficial. Primeiro leia ${url} inteira. Regras: responda em português; para cada resposta, cite o link da página da wiki de onde tirou; se a documentação não cobre a pergunta, diga isso em vez de supor; se não conseguir abrir o link, avise e não invente. Minha dúvida: ${q}`,
+      indexPrompt: (q: string) =>
+        `Você vai responder dúvidas sobre o Verso usando só a documentação oficial. Primeiro leia o índice https://versomd.com/llms.txt; depois abra as páginas .md listadas ali que tratam da minha dúvida (pode abrir várias) e responda só com base nelas. Regras: responda em português; para cada resposta, cite o link da página da wiki de onde tirou; se a documentação não cobre a pergunta, diga isso em vez de supor; se não conseguir abrir um link, avise e não invente. Minha dúvida: ${q}`,
     },
   },
   en: {
@@ -50,6 +53,7 @@ export const wikiText = {
     base: "/en/wiki/",
     otherBase: "/wiki/",
     llmsFull: "/en/llms-full.txt",
+    llmsPart: (n: number) => `/en/llms-full-${n}.txt`,
     title: "Verso wiki",
     metaDescription: "Verso's documentation, one topic per page: writing, organizing, syncing, the server and role-playing tools. Also as Markdown for AI assistants.",
     eyebrow: "Documentation",
@@ -59,7 +63,7 @@ export const wikiText = {
     allTopics: "All topics",
     writtenFor: (v: string) => `Written for Verso ${v}`,
     asMarkdown: "This page as Markdown",
-    fullFile: "The whole wiki in one file (for AI)",
+    fullFile: "The whole wiki in parts (for AI)",
     prev: "Previous",
     next: "Next",
     otherLang: "Ler esta página em português",
@@ -84,6 +88,8 @@ export const wikiText = {
       showPrompt: "Show the prompt text",
       prompt: (url: string, q: string) =>
         `You will answer questions about Verso using only its official documentation. First read all of ${url}. Rules: answer in English; for each answer, cite the link of the wiki page you took it from; if the documentation does not cover the question, say so instead of guessing; if you cannot open the link, say so and do not make anything up. My question: ${q}`,
+      indexPrompt: (q: string) =>
+        `You will answer questions about Verso using only its official documentation. First read the index https://versomd.com/llms.txt; then open the .md pages listed there that deal with my question (you may open several) and answer only from them. Rules: answer in English; for each answer, cite the link of the wiki page you took it from; if the documentation does not cover the question, say so instead of guessing; if you cannot open a link, say so and do not make anything up. My question: ${q}`,
     },
   },
 } as const;

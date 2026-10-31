@@ -15,7 +15,7 @@ const t = wikiText[lang];
   <PageHead eyebrow={t.eyebrow} title={t.title} ledeHtml={t.lede} />
   <div class="wrap wiki-layout">
     <div class="wiki-main">
-      <AskAi lang={lang} url={abs(t.llmsFull)} scope="index" />
+      <AskAi lang={lang} url={abs("/llms.txt")} scope="index" />
       {
         GROUP_ORDER.map((g) => (
           <section class="wiki-group" aria-labelledby={`g-${g}`}>
