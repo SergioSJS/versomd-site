@@ -52,7 +52,7 @@ banner_y: "42"
 
 ## 3. Folder pages
 
-Click a folder in the tree to open the **folder page**: at the top, the folder's note; below, a table with its items.
+Click the small **folder button** at the end of a folder's row in the tree (it shows when the mouse is over the row or the keyboard reaches it; a click on the rest of the row only opens or closes the folder) to open the **folder page**: at the top, the folder's note; below, a table with its items.
 
 - The folder note is `Projects/Projects.md` (inside the folder, with its name) or `Projects.md` (beside the folder). To use another name, like `README`, fill in **Settings › Organizing › Folder note name**.
 - The folder note does not show in the tree: open it by right-clicking the folder › **Organize › Open the folder note**, or from the folder page.

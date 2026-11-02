@@ -91,6 +91,7 @@ Com a pasta aberta, o jeito mais curto é **Ajustes › Servidores › Sincroniz
 - uma mudança de um lado vai para o outro — ao salvar, quando o servidor avisa, ao reconectar e a cada cinco minutos; sem rede, ela espera;
 - arquivos grandes vão **em pedaços**, e só são gravados quando chegam inteiros;
 - **na primeira vez nada é apagado**: o que só um lado tem vai para o outro;
+- um arquivo **renomeado ou movido** de um lado — aqui, no navegador, em outro aparelho — é renomeado do outro também, nunca apagado e criado de novo, mesmo quando foi editado logo antes; uma nota aberta numa aba vai junto para o novo nome. Se este computador o editou nesse meio-tempo, a edição vai junto para o novo nome (editado dos dois lados: um conflito com o novo nome); se o novo nome já é de outro arquivo aqui, os dois ficam;
 - se os dois lados mudaram o mesmo arquivo, é um **conflito**: a versão do servidor fica com o nome, e a deste computador fica ao lado, como `Nota (conflito, Mac, 2026-10-10 15.34).md`. Em Ajustes › Sincronizar, a lista de conflitos mostra **a diferença**; junte à mão e apague a cópia;
 - se os dois lados só **acrescentaram linhas ao fim** de uma nota, não é conflito: as linhas se juntam numa nota só, as do servidor primeiro, e a atividade recente diz *juntado*;
 - um nome com acento é **um arquivo só** em todo lugar, mesmo que um sistema guarde o `é` inteiro e outro como `e` mais o acento (como os Macs antigos gravavam): cada computador fica com a grafia que o seu sistema deu ao nome, e o mesmo arquivo mudado dos dois lados é um conflito;
@@ -119,6 +120,8 @@ Boards, arquivos de texto e bases abertos aqui também ficam ao vivo, do mesmo j
 ## Compartilhar com outra pessoa
 
 Cada pessoa tem o seu vault no mesmo UniVerso. Para dividir **uma pasta** do seu com outra pessoa, clique com o botão direito na pasta, na árvore, e escolha **Compartilhar…**: escreva o e-mail da conta dela neste servidor e o papel — **lê** ou **edita**. Para dividir **o vault todo**, o mesmo diálogo no menu da raiz da árvore, **Compartilhar a pasta toda…**. Só a dona da pasta compartilha; quem recebe não repassa.
+
+Quem **edita** uma pasta compartilhada escreve, cria, renomeia e move dentro dela, mas **só a dona apaga**. Tirar um arquivo de uma pasta compartilhada é apagá-lo para quem a recebe, então também é só da dona. Na janela do computador de quem edita, **Apagar** nem é oferecido numa pasta sincronizada que não é dela (o menu, a barra de seleção, as teclas e a paleta dizem por quê). Se um arquivo ainda assim é apagado ou tirado dali por fora do Verso, o servidor recusa e o arquivo volta para o lugar — nada se perde, e Ajustes › Sincronizar diz por quê.
 
 A pasta compartilhada ganha uma marquinha de pessoa na árvore. No diálogo, mude o papel de alguém ou tire o acesso — o diálogo pergunta antes, e as janelas abertas dessa pessoa fecham a pasta na hora. O que ela já tinha sincronizado continua no computador dela, e a sincronização desse compartilhamento é **desligada**: a barra de status e Ajustes › Sincronizar dizem que quem compartilhou revogou o acesso, e quando.
 

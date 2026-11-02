@@ -144,6 +144,7 @@ services:
       - SETGID
     security_opt:
       - no-new-privileges:true
+    mem_limit: 768m           # memory limit: if it runs out, the container restarts, the machine does not go down
     ports:
       - "7340:7340"                                 # all addresses: plain HTTP over the network
     volumes:
@@ -195,6 +196,7 @@ services:
       - SETGID
     security_opt:
       - no-new-privileges:true
+    mem_limit: 768m           # memory limit: if it runs out, the container restarts, the machine does not go down
     ports:
       - "7340:7340"
     volumes:
@@ -391,7 +393,7 @@ docker logs universo                     # Docker
 
 - **The service does not start.** The log names the line: a `VERSO_PUBLIC_URL` that is not `http(s)://…`, `VERSO_ADMIN_EMAIL is set without VERSO_ADMIN_PASSWORD`. Fix it in `/etc/universo/universo.env` (or in the compose file) and restart. With Docker, a directory that belongs to someone else (a NAS user) the container does not touch: the administration console and the log say `UniVerso cannot write to … sudo chown -R 1000:1000 <the host folder>`; run that command.
 - **The page shows "Connection without HTTPS"**: it is not an error. You opened it over `http://`, and the UniVerso works, it only leaves offline mode, notifications and passkeys off. Click "How to turn on HTTPS" (section 5).
-- **The page says "does not answer to that name"** (error 421): `VERSO_PUBLIC_URL` is set and you opened it through an address that is not its own (often the IP). Use its name; or, without `VERSO_PUBLIC_URL`, you typed a public name, which is only accepted with it: use the IP, or set `VERSO_PUBLIC_URL`. The e-mail links (sign in by link, "forgot password") also only exist with it set.
+- **The page says "This address has changed"** (error 421, or the line "does not answer to that name" in an app or script): `VERSO_PUBLIC_URL` is set and you opened it through an address that is not its own (often the IP). The page names the right address and links to it: open that one and bookmark it. Use its name; or, without `VERSO_PUBLIC_URL`, you typed a public name, which is only accepted with it: use the IP, or set `VERSO_PUBLIC_URL`. The e-mail links (sign in by link, "forgot password") also only exist with it set.
 - **The invitation link (or the password-reset one) opens "localhost refused to connect".** Without `VERSO_PUBLIC_URL` the server does not know which address people reach it by: the table's invitation link opens at the address you yourself use, but what leaves by e-mail (password reset) and the link in the start-up log say `localhost`. If people reach the server by another address (the network IP, a name, a tunnel), set `VERSO_PUBLIC_URL` to that address and restart; the log warns about it at start.
 - **The proxy answers 502**: the UniVerso is not running, or it listens on a port other than the one in the Caddy block (`sh universo.sh status`, the "Listening on" line).
 - **Two warnings in the log that are not errors.** `update check: the release feed answered 404: a private repository needs VERSO_UPDATE_TOKEN`: while the repository is private, the new-version check cannot see it; the server works. And `plain HTTP works; offline, notifications and the like need HTTPS`: it only says that the server has no TLS of its own.

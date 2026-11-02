@@ -16,7 +16,7 @@ An `.md` in Downloads, on the Desktop, attached to a message: double-click, read
 
 - **Double-click** an `.md` (or `.markdown`) in Finder, Explorer or the file manager, when Verso is the app for that file; or **Open with › Verso**. The same goes for a data file — `.json`, `.yaml`, `.yml`, `.toml`, `.xml`, `.csv` (below).
 - Drag the file onto Verso's Dock icon (macOS).
-- In a terminal: `verso note.md` (or `verso open note.md`).
+- In a terminal: `verso note.md` (or `verso open note.md`); for a data file, `verso data.json` — it opens in the diagram.
 - In the app: **File › Open File…**, or the **Open File…** command in the palette. **File › Open Recent** keeps the last ten files in a group under the folders.
 
 If the file lies **inside a folder a window already shows**, it opens as a tab of that window. Otherwise it opens in the loose-files window — one per app; each file is a tab, and the bar above the tabs names the file and the folder it sits in.

@@ -91,6 +91,7 @@ With the folder open, the shortest way is **Settings › Servers › Sync ‘you
 - a change on one side goes to the other — on save, when the server signals, on reconnect and every five minutes; with no network, it waits;
 - large files go **in pieces**, and are only written once they arrive whole;
 - **the first time nothing is deleted**: what only one side has goes to the other;
+- a file **renamed or moved** on one side — here, in the browser, on another device — is renamed on the other too, never deleted and made again, even when it was also edited just before; a note open in a tab follows it to its new name. If this computer edited it meanwhile, the edit goes with it to the new name (edited on both sides: a conflict under the new name); if the new name is already another file's here, both are kept;
 - if both sides changed the same file, it is a **conflict**: the server's version keeps the name, and this computer's sits beside it, like `Note (conflict, Mac, 2026-10-10 15.34).md`. In Settings › Sync, the list of conflicts shows **the difference**; merge by hand and delete the copy;
 - if both sides only **added lines to the end** of a note, it is not a conflict: the lines are joined into a single note, the server's first, and recent activity says *merged*;
 - a name with an accent is **a single file** everywhere, even if one system stores the `é` whole and another as `e` plus the accent (as old Macs wrote it): each computer keeps the spelling its system gave the name, and the same file changed on both sides is a conflict;
@@ -119,6 +120,8 @@ Boards, text files and bases opened here also go live, the same way; attachments
 ## Sharing with someone else
 
 Each person has their own vault in the same UniVerso. To share **one folder** of yours with someone else, right-click the folder in the tree and choose **Share…**: type the e-mail of their account on this server and the role — **reads** or **edits**. To share **the whole vault**, the same dialog is in the tree root's menu, **Share the whole folder…**. Only the folder's owner shares; whoever receives it does not pass it on.
+
+Whoever **edits** a shared folder writes, creates, renames and moves inside it, but **only the owner deletes**. Taking a file out of a shared folder deletes it for those it is shared with, so that is the owner's alone too. In the window of the computer of someone who edits, **Delete** is not even offered on a synced folder that is not theirs (the menu, the selection bar, the keys and the palette say why). If a file is deleted or taken out there anyway, outside Verso, the server refuses and the file goes back where it was — nothing is lost, and Settings › Sync says why.
 
 A shared folder gets a little person mark in the tree. In the dialog, change someone's role or take their access away — the dialog asks first, and that person's open windows close the folder at once. What they had already synced stays on their computer, and sync of that share is **turned off**: the status bar and Settings › Sync say that whoever shared revoked the access, and when.
 

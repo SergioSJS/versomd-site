@@ -52,7 +52,7 @@ banner_y: "42"
 
 ## 3. Páginas de pasta
 
-Clique numa pasta na árvore para abrir a **página da pasta**: no topo, a nota da pasta; embaixo, uma tabela com os itens dela.
+Clique no **botãozinho de pasta** no fim da linha de uma pasta na árvore (ele aparece quando o mouse passa pela linha ou o teclado chega nela; um clique no resto da linha só abre ou fecha a pasta) para abrir a **página da pasta**: no topo, a nota da pasta; embaixo, uma tabela com os itens dela.
 
 - A nota da pasta é `Projetos/Projetos.md` (dentro da pasta, com o nome dela) ou `Projetos.md` (ao lado da pasta). Para usar outro nome, como `README`, preencha **Ajustes › Organização › Nome da nota da pasta**.
 - A nota da pasta não aparece na árvore: abra pelo botão direito na pasta › **Organizar › Abrir nota da pasta**, ou pela página da pasta.

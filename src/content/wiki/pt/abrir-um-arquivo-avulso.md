@@ -16,7 +16,7 @@ Um `.md` na pasta Downloads, na Mesa, anexado a uma mensagem: dois cliques, leia
 
 - **Dois cliques** num `.md` (ou `.markdown`) no Finder, no Explorer ou no gerenciador de arquivos, quando o Verso é o app desse arquivo; ou **Abrir com › Verso**. O mesmo vale para um arquivo de dados — `.json`, `.yaml`, `.yml`, `.toml`, `.xml`, `.csv` (abaixo).
 - Arraste o arquivo para o ícone do Verso no Dock (macOS).
-- No terminal: `verso nota.md` (ou `verso open nota.md`).
+- No terminal: `verso nota.md` (ou `verso open nota.md`); com um arquivo de dados, `verso dados.json` — ele abre no diagrama.
 - No app: **Arquivo › Abrir arquivo…**, ou o comando **Abrir arquivo…** na paleta. **Arquivo › Abrir recente** guarda os últimos dez arquivos num grupo abaixo das pastas.
 
 Se o arquivo está **dentro de uma pasta que uma janela já mostra**, ele abre como aba daquela janela. Senão, abre na janela de arquivos avulsos — uma só por app; cada arquivo vira uma aba, e a faixa acima das abas mostra o nome do arquivo e a pasta onde ele está.

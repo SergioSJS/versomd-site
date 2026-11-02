@@ -68,4 +68,6 @@ Try asking: *"which notes have the tag project and what does the Verso Tour show
 
 ---
 
+The app also has a real terminal in a tab, where you run Claude Code and other AI tools beside your notes: [Terminal and AI Agents](/en/wiki/terminal-and-ai-agents/).
+
 Go on to [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).

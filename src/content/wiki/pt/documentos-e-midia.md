@@ -8,7 +8,7 @@ twin: "documents-and-media"
 source: "demo-vault/06 - Documentos e Mídia.md"
 updated: "2026-09-25"
 ---
-Imagens, PDFs e páginas da web moram nas notas como o texto: num link, num embed ou numa aba só deles.
+Imagens, PDFs, sons e páginas da web moram nas notas como o texto: num link, num embed ou numa aba só deles.
 
 ---
 
@@ -48,6 +48,23 @@ Abra o Manual do Verso (PDF). A barra do leitor tem, em ordem:
 [manual-verso.pdf](/wiki-assets/manual-verso.pdf)
 
 Também valem `#2`, `|page=5`, `|600` (a altura, em pixels) e `|800x600` (largura e altura). O que vem depois de `|` vale no modo Leitura.
+
+---
+
+## Som na Nota
+
+Um arquivo de som incluído como embed vira um **player**, como no Obsidian. `![[assets/sons/taverna.mp3]]`:
+
+*taverna.mp3*
+
+- **Tocar** e **Pausar**; a barra com o tempo (arraste, ou use as setas, para ir a outro ponto); **Silenciar** e o **Volume**. O volume é seu, guardado neste aparelho, e vale para todos os players.
+- Um clique no **nome** abre o arquivo (com `⌘`, ao lado).
+- Toca **só para você**, e um por vez: começar um player pausa o outro.
+- Vale para `.mp3`, `.m4a`, `.aac`, `.ogg`, `.wav` e `.flac`, e para o embed em Markdown também: `![](assets/sons/estrada.mp3)`. **MP3** e **AAC** tocam em todo lugar; OGG não toca no iPhone, no iPad nem no Mac.
+- No modo **Fonte** aparece o texto como está escrito; abrir ou tocar nunca muda a nota.
+- No celular e no tablet, o volume é o dos botões do aparelho; **Silenciar** continua no player.
+- Num **board**, um arquivo de som — trazido de **Inserir › Nota ou arquivo da pasta…** ou arrastado do computador — vira um cartão com o mesmo player, que se redimensiona como os outros.
+- Numa mesa, o mestre tem também **Tocar para a mesa**: veja [Som e Música na Mesa](/wiki/som-e-musica-na-mesa/).
 
 ---
 

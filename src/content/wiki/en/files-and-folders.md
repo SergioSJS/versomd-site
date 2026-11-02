@@ -59,7 +59,8 @@ What you delete stays in the folder's **Trash** for 30 days, and then is gone fo
 - **Restore** puts the item back where it was — a folder comes back with everything it had. If another file with that name already exists, nothing is replaced: the item comes back beside it, as `Name (restored 2026-10-11).md`, and Verso tells you where it went — also when the name that is there differs only in upper and lower case. A name that Windows cannot store is not restored: Verso says why, and the item stays in the trash.
 - **Delete now** and **Empty the trash** delete for good, and ask first, right there, with the size.
 - **Keep deleted files for** changes this folder's period: from 1 day to **Forever**. Shortening it deletes at once whatever is already past the new period.
-- In a server folder ([Verso on a Server](/en/wiki/verso-on-a-server/)), whoever can edit sees the trash and restores; deleting for good and shortening the period belong to the folder's owner. When a synced device overwrites a note, the version it replaced also goes to the trash, as **replaced by** that device — if another program saved an old text over it, you can go back.
+- On a server, each folder's trash has a **size limit** (1 GiB unless whoever runs the server changes it): past it, the oldest items go before their time — but **never an item younger than 1 day**, which waits. If what you are about to delete passes that limit by itself, the question warns you: it will stay in the trash for 1 day and then go for good, and cannot be restored.
+- In a server folder ([Verso on a Server](/en/wiki/verso-on-a-server/)), outside a table, **only the folder's owner deletes**: whoever edits creates, renames and moves, and is not offered **Move to Trash** — `Delete` says why. Whoever can edit sees the trash and restores; deleting for good and shortening the period belong to the owner too. When a synced device overwrites a note, the version it replaced also goes to the trash, as **replaced by** that device — if another program saved an old text over it, you can go back.
 
 ---
 
@@ -90,7 +91,7 @@ The file tree is a single stop of `Tab`: it remembers the item you were on, so `
 
 ## Folder View
 
-The little arrow beside a folder opens and closes it in the tree. Verso remembers which folders you left open: when you open the app again, the tree comes back as it was. In a large folder, the first-level folders start closed, so the tree does not draw thousands of rows at once.
+A click anywhere on a folder's row opens and closes it in the tree (the little arrow does the same); the folder's page opens from the small folder button at the end of the row. Verso remembers which folders you left open: when you open the app again, the tree comes back as it was. In a large folder, the first-level folders start closed, so the tree does not draw thousands of rows at once.
 
 A click on a folder's name opens the folder in a tab: **Thumbnails** or **List**, with the columns **Name**, **Kind**, **Size** and **Modified**. An image appears as a thumbnail, and a PDF shows its first page. A folder can have its own note — `Folder/Folder.md` —, which appears at the top as the **Folder note**; if it does not exist, **Create the folder note** creates it.
 

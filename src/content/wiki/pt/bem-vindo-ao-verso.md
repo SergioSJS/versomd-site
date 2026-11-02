@@ -81,6 +81,10 @@ Explore os módulos organizados abaixo para conferir cada funcionalidade em deta
 32. [Rodando uma Mesa](/wiki/rodando-uma-mesa/) — Uma pasta de campanha num UniVerso: convidar as jogadoras, notas ocultas até você liberar, links para o que ainda não apareceu com um cadeado, quem edita o quê e os limites da mesa.
 33. [Abrir um Arquivo Avulso](/wiki/abrir-um-arquivo-avulso/) — Dois cliques num `.md` abrem o arquivo sozinho, sem pasta, numa janela sem árvore nem índice e sem nada escrito ao lado; e como fazer do Verso o app padrão de `.md` em cada sistema.
 34. [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/) — O roteiro para quem nunca montou um servidor: uma máquina grátis da Oracle, o menu do instalador, o HTTPS com um nome grátis, o primeiro admin e o celular.
+35. [Terminal e Agentes de IA](/wiki/terminal-e-agentes-de-ia/) — Um terminal deste computador numa aba, aberto na raiz da pasta: ligar, abrir, os botões que acham o Claude Code, o Gemini CLI e as outras ferramentas de IA, as teclas e o que um programa rodado ali faz nos arquivos.
+36. [Som e Música na Mesa](/wiki/som-e-musica-na-mesa/) — A mestra toca um arquivo de som e todos da mesa ouvem no mesmo ponto, cada um com o seu volume; uma nota com links de som vira a mesa de som, e quem não vê o arquivo não o ouve.
+37. [Compatibilidade com o Obsidian](/wiki/compatibilidade-com-o-obsidian/) — Para quem vem do Obsidian ou usa os dois: a mesma pasta, nada reescrito ao abrir, o que funciona igual, o que o Verso acrescenta, o que não existe e como experimentar.
+38. [Instalar o servidor num NAS ou VPS](/wiki/instalar-o-servidor-num-nas-ou-vps/) — O servidor num NAS (CasaOS, ZimaOS, outros com Docker) ou num VPS: o compose ou o instalador, o HTTPS, o endereço público, backups e os limites da lixeira.
 
 ---
 

@@ -97,4 +97,4 @@ No navegador do celular, abra o endereço `https://…` que o instalador imprimi
 >
 > Uma máquina grátis que a Oracle julga parada (pouco uso de CPU, rede e memória por sete dias) pode ser recuperada por ela. Um servidor de notas para poucas pessoas pode parecer parado: **guarde backups fora da máquina**.
 
-Volte à [Abrir um Arquivo Avulso](/wiki/abrir-um-arquivo-avulso/). Para ver o que fazer com o servidor no ar, vá à [Verso num Servidor](/wiki/verso-num-servidor/); para a mesa de jogo, [Rodando uma Mesa](/wiki/rodando-uma-mesa/). Volte à [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Siga para [Terminal e Agentes de IA](/wiki/terminal-e-agentes-de-ia/) ou volte à [Abrir um Arquivo Avulso](/wiki/abrir-um-arquivo-avulso/). Para ver o que fazer com o servidor no ar, vá à [Verso num Servidor](/wiki/verso-num-servidor/); para a mesa de jogo, [Rodando uma Mesa](/wiki/rodando-uma-mesa/). Volte à [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.

@@ -59,7 +59,8 @@ O que você apaga fica na **Lixeira** da pasta por 30 dias, e depois some de vez
 - **Restaurar** devolve o item para onde estava — uma pasta volta com tudo o que tinha. Se já existe outro arquivo com aquele nome, nada é substituído: o item volta ao lado, como `Nome (restaurado 2026-10-11).md`, e o Verso diz onde ele foi parar — também quando o nome que está ali só difere em maiúsculas e minúsculas. Um nome que o Windows não guarda não é restaurado: o Verso diz por quê, e o item continua na lixeira.
 - **Apagar agora** e **Esvaziar a lixeira** apagam de vez, e perguntam antes, ali mesmo, com o tamanho.
 - **Manter arquivos apagados por** muda o prazo desta pasta: de 1 dia a **Para sempre**. Encurtar apaga na hora o que já passou do novo prazo.
-- Numa pasta de um servidor ([Verso num Servidor](/wiki/verso-num-servidor/)), quem pode editar vê a lixeira e restaura; apagar de vez e encurtar o prazo é da dona da pasta. Quando um aparelho sincronizado grava por cima de uma nota, a versão que ele substituiu também vai para a lixeira, como **substituído por** aquele aparelho — se outro programa salvou um texto velho por cima, dá para voltar.
+- No servidor, a lixeira de cada pasta tem um **limite de tamanho** (1 GiB, a menos que quem cuida do servidor mude): passando dele, os itens mais antigos saem antes do prazo — mas **nunca um item com menos de 1 dia**, que espera. Se o que você vai apagar sozinho passa desse limite, a pergunta avisa: ficará 1 dia na lixeira e depois sairá de vez, sem poder ser restaurado.
+- Numa pasta de um servidor ([Verso num Servidor](/wiki/verso-num-servidor/)), fora de uma mesa, **só a dona da pasta apaga**: quem edita cria, renomeia e move, e não vê **Mover para a lixeira** — `Delete` diz por quê. Quem pode editar vê a lixeira e restaura; apagar de vez e encurtar o prazo também é da dona. Quando um aparelho sincronizado grava por cima de uma nota, a versão que ele substituiu também vai para a lixeira, como **substituído por** aquele aparelho — se outro programa salvou um texto velho por cima, dá para voltar.
 
 ---
 
@@ -90,7 +91,7 @@ A árvore de arquivos é uma única parada do `Tab`: ela lembra o item em que vo
 
 ## A Visão de Pasta
 
-A setinha ao lado de uma pasta abre e fecha a pasta na árvore. O Verso lembra quais pastas você deixou abertas: ao abrir o app de novo, a árvore volta como estava. Num cofre grande, as pastas de primeiro nível começam fechadas, para a árvore não desenhar milhares de linhas de uma vez.
+Um clique em qualquer ponto da linha de uma pasta abre e fecha a pasta na árvore (a setinha faz o mesmo); a página da pasta abre pelo botãozinho de pasta no fim da linha. O Verso lembra quais pastas você deixou abertas: ao abrir o app de novo, a árvore volta como estava. Num cofre grande, as pastas de primeiro nível começam fechadas, para a árvore não desenhar milhares de linhas de uma vez.
 
 Um clique no nome de uma pasta abre a pasta numa aba: **Miniaturas** ou **Lista**, com as colunas **Nome**, **Tipo**, **Tamanho** e **Modificado**. Uma imagem aparece em miniatura, e um PDF mostra a primeira página. Uma pasta pode ter a sua própria nota — `Pasta/Pasta.md` —, que aparece no topo como **Nota da pasta**; se ela não existe, **Criar nota da pasta** a cria.
 

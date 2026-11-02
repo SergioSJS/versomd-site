@@ -8,7 +8,7 @@ twin: "documentos-e-midia"
 source: "demo-vault-en/06 - Documents and Media.md"
 updated: "2026-09-25"
 ---
-Images, PDFs and web pages live in notes just like text: in a link, in an embed or in a tab of their own.
+Images, PDFs, sounds and web pages live in notes just like text: in a link, in an embed or in a tab of their own.
 
 ---
 
@@ -48,6 +48,23 @@ Open the Verso Manual (PDF). The reader's bar has, in order:
 [manual-verso.pdf](/wiki-assets/manual-verso.pdf)
 
 `#2`, `|page=5`, `|600` (the height, in pixels) and `|800x600` (width and height) also work. What comes after `|` applies in Reading mode.
+
+---
+
+## Sound in the Note
+
+A sound file included as an embed becomes a **player**, as in Obsidian. `![[assets/sons/taverna.mp3]]`:
+
+*taverna.mp3*
+
+- **Play** and **Pause**; the bar with the time (drag it, or use the arrow keys, to go elsewhere in the track); **Mute** and the **Volume**. The volume is yours, kept on this device, and the same for every player.
+- A click on the **name** opens the file (with `⌘`, beside).
+- It plays **for you only**, one at a time: starting a player pauses the other.
+- It works for `.mp3`, `.m4a`, `.aac`, `.ogg`, `.wav` and `.flac`, and for the Markdown embed too: `![](assets/sons/estrada.mp3)`. **MP3** and **AAC** play everywhere; OGG does not play on the iPhone, the iPad or the Mac.
+- In **Source** mode the text shows as written; opening or playing never changes the note.
+- On a phone or a tablet, the volume is the device's own buttons; **Mute** stays on the player.
+- On a **board**, a sound file — brought from **Insert › Note or file of the folder…** or dragged from the computer — becomes a card with the same player, resized like the others.
+- At a table, the game master also has **Play for the table**: see [Sound and Music at the Table](/en/wiki/sound-and-music-at-the-table/).
 
 ---
 

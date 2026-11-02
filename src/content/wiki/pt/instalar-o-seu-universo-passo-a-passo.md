@@ -144,6 +144,7 @@ services:
       - SETGID
     security_opt:
       - no-new-privileges:true
+    mem_limit: 768m           # limite de memória: se acabar, o contêiner reinicia, a máquina não cai
     ports:
       - "7340:7340"                                 # todos os endereços: HTTP simples pela rede
     volumes:
@@ -195,6 +196,7 @@ services:
       - SETGID
     security_opt:
       - no-new-privileges:true
+    mem_limit: 768m           # limite de memória: se acabar, o contêiner reinicia, a máquina não cai
     ports:
       - "7340:7340"
     volumes:
@@ -391,7 +393,7 @@ docker logs universo                     # Docker
 
 - **O serviço não sobe.** O log nomeia a linha: um `VERSO_PUBLIC_URL` que não é `http(s)://…`, `VERSO_ADMIN_EMAIL is set without VERSO_ADMIN_PASSWORD`. Corrija no `/etc/universo/universo.env` (ou no compose) e reinicie. Com Docker, um diretório que é de outra pessoa (um usuário do NAS) o contêiner não toca: o console de administração e o log dizem `O UniVerso não pode escrever em … sudo chown -R 1000:1000 <pasta do host>`; rode esse comando.
 - **A página mostra "Conexão sem HTTPS"**: não é erro. Você abriu por `http://`, e o UniVerso funciona, só deixa desligados o modo offline, as notificações e as passkeys. Clique em "Como ligar o HTTPS" (seção 5).
-- **A página diz "does not answer to that name"** (erro 421): o `VERSO_PUBLIC_URL` está definido e você abriu por um endereço que não é o dele (muitas vezes o IP). Use o nome dele; ou, sem `VERSO_PUBLIC_URL`, você digitou um nome público, que só é aceito com ele: use o IP, ou defina o `VERSO_PUBLIC_URL`. Os links por e-mail (entrar por link, "esqueci a senha") também só existem com ele definido.
+- **A página diz "Este endereço mudou"** (erro 421, ou a linha "does not answer to that name" num app ou script): o `VERSO_PUBLIC_URL` está definido e você abriu por um endereço que não é o dele (muitas vezes o IP). A página diz o endereço certo e leva a ele: abra esse e guarde-o nos favoritos. Use o nome dele; ou, sem `VERSO_PUBLIC_URL`, você digitou um nome público, que só é aceito com ele: use o IP, ou defina o `VERSO_PUBLIC_URL`. Os links por e-mail (entrar por link, "esqueci a senha") também só existem com ele definido.
 - **O link de convite (ou de redefinição de senha) abre "localhost recusou a conexão".** Sem o `VERSO_PUBLIC_URL` o servidor não sabe por qual endereço as pessoas chegam a ele: o link de convite da mesa abre no endereço pelo qual você mesmo o usa, mas o que sai por e-mail (redefinir senha) e o link do log de início trazem `localhost`. Se as pessoas chegam ao servidor por outro endereço (o IP da rede, um nome, um túnel), defina o `VERSO_PUBLIC_URL` com esse endereço e reinicie; o log avisa disso ao iniciar.
 - **O proxy responde 502**: o UniVerso não está rodando, ou escuta noutra porta que não a do bloco do Caddy (`sh universo.sh status`, linha "Escuta em").
 - **Dois avisos no log que não são erro.** `update check: the release feed answered 404: a private repository needs VERSO_UPDATE_TOKEN`: enquanto o repositório é privado, a verificação de versão nova não o enxerga; o servidor funciona. E `plain HTTP works; offline, notifications and the like need HTTPS`: só informa que o servidor está sem TLS próprio.
