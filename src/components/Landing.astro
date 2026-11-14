@@ -46,7 +46,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
         </h1>
         <p class="lede" set:html={hero.ledeHtml} />
         <p class="actions">
-          <a class="button" href={copy.links.releases}>{hero.cta}</a>
+          <a class="button" href={copy.routes.download}>{hero.cta}</a>
           <a class="quiet" href={`#${ids.waitlist}`}>{hero.ctaWaitlist}</a>
           <a class="quiet" href={`#${ids.notYet}`}>{hero.ctaSecondary}</a>
         </p>

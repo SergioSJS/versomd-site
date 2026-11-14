@@ -1034,6 +1034,108 @@ export const ptBR: Copy = {
       roadmapHtml:
         "O que falta aqui — camadas nos mapas, linhas do tempo, plugins — está, quando está planejado, no <a href=\"/recursos/#roteiro\">roteiro da V1</a>. A tabela conta o que o Verso já tem pronto, inclusive as ferramentas de RPG e a Mesa, que já estão na versão de teste 0.8.5-beta.1.",
     },
+    download: {
+      meta: {
+        title: "Baixar — Verso",
+        description:
+          "Todos os arquivos do Verso e do UniVerso, com o nome, a versão e o tamanho de cada um, e o do seu sistema em destaque: macOS, Windows, Linux, Android, iPad e iPhone.",
+      },
+      eyebrow: "Arquivos para baixar",
+      title: "Baixar o Verso",
+      ledeHtml:
+        "Você precisa de <strong>um</strong> arquivo, o do seu sistema. A lista vem das versões publicadas no <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub do Verso</a>, que tem também as notas de cada versão.",
+      recommend: {
+        title: "Para o seu sistema",
+        id: "recomendado",
+        detected: "Seu sistema parece ser {os}.",
+        button: "Baixar para {os}",
+        linuxAlso: "Ou, como pacote do sistema:",
+        missing: "A versão {version} não tem arquivo para {os}.",
+        alsoOther: "{channel} {version}:",
+        unknown: "Não reconhecemos o seu sistema, ou o Verso ainda não tem app para ele. Escolha o arquivo na lista abaixo.",
+        badge: "Recomendado para o seu sistema",
+      },
+      os: { macos: "macOS", windows: "Windows", linux: "Linux", android: "Android", ios: "iPad ou iPhone" },
+      channels: {
+        stable: { name: "Estável", id: "estavel", intro: "A versão mais nova que não é de teste." },
+        test: {
+          name: "Versão de teste",
+          id: "teste",
+          intro: "Para experimentar o que acabou de ficar pronto: pode ter erros. Instala como “Verso Beta”, ao lado de qualquer outro Verso.",
+        },
+      },
+      noStableHtml: "<strong>Ainda não há versão estável.</strong> Por enquanto o Verso sai só em versões de teste; a mais nova está logo abaixo.",
+      noneHtml:
+        "Não conseguimos ler a lista de versões. Os arquivos estão na <a href=\"https://github.com/SergioSJS/verso/releases\">página de versões do GitHub</a>.",
+      published: "Publicada em {date}",
+      releasePage: "Notas e arquivos desta versão no GitHub",
+      fields: { version: "Versão", size: "Tamanho" },
+      groups: {
+        app: "O app",
+        cli: "A linha de comando",
+        cliIntroHtml:
+          "Quase ninguém precisa: o app já traz o comando <code>verso</code>. Estes arquivos são para um computador <strong>sem</strong> o app, como uma máquina em que um agente de IA busca nas suas notas.",
+        server: "UniVerso, o servidor",
+        serverIntroHtml:
+          "Para hospedar as suas notas você mesmo, numa máquina Linux sua; para usar o Verso no seu computador, você não precisa dele. O jeito fácil é o instalador: ele escolhe o arquivo certo, confere a assinatura, instala e inicia o UniVerso. No servidor, com o seu usuário de sempre:",
+        serverAfterHtml:
+          "Passo a passo, também com Docker, em <a href=\"/wiki/instalar-o-seu-universo-passo-a-passo/\">Instalar o seu UniVerso, passo a passo</a>; num NAS ou numa VPS, em <a href=\"/wiki/instalar-o-servidor-num-nas-ou-vps/\">Instalar o servidor num NAS ou VPS</a>; de graça na Oracle Cloud, em <a href=\"/wiki/universo-num-servidor-gratis-da-oracle/\">UniVerso num servidor grátis da Oracle</a>. À mão, o arquivo depende do processador: <code>uname -m</code> diz <code>x86_64</code> (x64) ou <code>aarch64</code> (ARM64).",
+        verify: "Conferir os arquivos (opcional)",
+        verifyIntroHtml:
+          "Pode ignorar estes arquivos: o atualizador do app e o instalador do UniVerso já conferem tudo sozinhos. A lista traz o checksum de cada arquivo da versão, assinada com minisign pela chave do Verso, <code>RWS1zv2nvs/ng1hA0YspwOg7wGda98zkXjVfx8m9CtT5obRW5zabNHaT</code>. Para conferir à mão, num Linux com o minisign instalado, na pasta em que baixou a lista, o <code>.sig</code> dela e o arquivo:",
+        sigs: "A assinatura de cada arquivo, à parte",
+        other: "Outros arquivos desta versão",
+      },
+      kinds: {
+        mac: {
+          platform: "macOS, chip Apple (M1, M2, M3, M4…)",
+          noteHtml:
+            "Abra o <code>.zip</code> e arraste o app para Aplicativos. Na primeira vez: Ajustes do Sistema › Privacidade e Segurança › <strong>Abrir Mesmo Assim</strong> (o app é assinado ad hoc). Não roda em Mac com processador Intel.",
+        },
+        windows: {
+          platform: "Windows 10 ou 11 (x64)",
+          noteHtml:
+            "Se aparecer “O Windows protegeu o computador”: <strong>Mais informações</strong> › <strong>Executar assim mesmo</strong> (o Verso ainda não tem certificado de código). Instala para o seu usuário, sem administrador. Windows em ARM: não disponível.",
+        },
+        appImage: {
+          platform: "Linux x64, qualquer distribuição (AppImage)",
+          noteHtml: "Permita executá-lo como programa (ou <code>chmod +x {file}</code>) e dê dois cliques nele.",
+        },
+        deb: {
+          platform: "Linux x64: Ubuntu 22.04+, Debian 12+, Linux Mint, Pop!_OS",
+          noteHtml: "Num terminal, na pasta em que o baixou: <code>sudo apt install ./{file}</code>",
+        },
+        rpm: {
+          platform: "Linux x64: Fedora 36+",
+          noteHtml: "Num terminal, na pasta em que o baixou: <code>sudo dnf install ./{file}</code>",
+        },
+        android: {
+          platform: "Android 10 ou mais novo",
+          noteHtml:
+            "Abra o arquivo baixado no celular; na primeira vez, permita instalar apps desconhecidos pelo navegador. Mais em <a href=\"/wiki/verso-no-celular-e-no-tablet/#o-app-para-android\">O app para Android</a>.",
+        },
+        ios: {
+          platform: "iPad e iPhone, iOS 16 ou mais novo",
+          noteHtml:
+            "Pela AltStore Classic, que assina o app com o seu próprio Apple ID: veja <a href=\"/wiki/verso-no-celular-e-no-tablet/#o-app-para-ipad-e-iphone\">O app para iPad e iPhone</a>.",
+        },
+        cliMac: { platform: "Mac, chip Apple", noteHtml: "O comando <code>verso</code>, compactado." },
+        cliWindows: { platform: "Windows (x64)", noteHtml: "O comando <code>verso</code>, compactado." },
+        cliLinux: { platform: "Linux (x64)", noteHtml: "O comando <code>verso</code>, compactado." },
+        serverDebX64: { platform: "Ubuntu, Debian · x64", noteHtml: "Pacote <code>.deb</code>, para instalar à mão." },
+        serverDebArm: { platform: "Ubuntu, Debian · ARM64", noteHtml: "Pacote <code>.deb</code>, para instalar à mão." },
+        serverRpmX64: { platform: "Fedora, RHEL, Oracle Linux · x64", noteHtml: "Pacote <code>.rpm</code>, para instalar à mão." },
+        serverRpmArm: { platform: "Fedora, RHEL, Oracle Linux · ARM64", noteHtml: "Pacote <code>.rpm</code>, para instalar à mão." },
+        serverTarX64: { platform: "Qualquer outro Linux · x64", noteHtml: "Um arquivo compactado, para rodar sem pacote." },
+        serverTarArm: { platform: "Qualquer outro Linux · ARM64", noteHtml: "Um arquivo compactado, para rodar sem pacote." },
+      },
+      source: {
+        github: "Lista lida do GitHub em {date}.",
+        fallback: "O GitHub não respondeu quando esta página foi publicada: lista guardada em {date}; a página do GitHub tem sempre a mais nova.",
+      },
+      allReleasesHtml:
+        "Todas as versões, as anteriores também, com as notas de cada uma: <a href=\"https://github.com/SergioSJS/verso/releases\">página de versões do GitHub</a>.",
+    },
   },
   waitlist: {
     title: "Aviso de versão nova",
@@ -1071,7 +1173,7 @@ export const ptBR: Copy = {
     noTracking: "Sem analytics, sem cookies.",
   },
   figLabel: "Fig.",
-  routes: { home: "/", features: "/recursos/", server: "/universo/", compare: "/comparativo/", wiki: "/wiki/", thanks: "/obrigado/", failed: "/lista/nao-deu/" },
+  routes: { home: "/", features: "/recursos/", server: "/universo/", compare: "/comparativo/", wiki: "/wiki/", download: "/baixar/", thanks: "/obrigado/", failed: "/lista/nao-deu/" },
   ids: {
     content: "conteudo",
     notYet: "ainda-nao",

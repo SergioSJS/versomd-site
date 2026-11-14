@@ -21,7 +21,7 @@ interface Props {
   skipTo?: string;
 }
 
-type Page = "home" | "features" | "server" | "compare" | "wiki";
+type Page = "home" | "features" | "server" | "compare" | "wiki" | "download";
 
 const { copy, title, description, path, altPath, noindex = false, current, long = false, skipTo } = Astro.props;
 const site = Astro.site ?? new URL("https://versomd.com");
@@ -91,7 +91,7 @@ const pages: { id: Page; href: string; label: string }[] = [
           }
         </ul>
       </nav>
-      <a class="mast-cta" href={copy.links.releases}>{copy.nav.download}</a>
+      <a class="mast-cta" href={copy.routes.download} aria-current={current === "download" ? "page" : undefined}>{copy.nav.download}</a>
       <a class="lang" href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang} aria-label={copy.switchTo.label}>
         {copy.switchTo.name}
       </a>

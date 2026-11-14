@@ -1,0 +1,134 @@
+/* Baixar / Download (src/components/DownloadPage.astro): the box for the
+   visitor's system, then each channel's files as a list, one row per file. */
+
+.dl-page [hidden] { display: none !important; }
+
+/* ── the box for the visitor's system ─────────────────────────────────── */
+.dl-recommend {
+  padding: clamp(1.1rem, 0.9rem + 1vw, 1.6rem);
+  border: 1px solid color-mix(in oklch, var(--seal) 30%, var(--hair));
+  border-radius: var(--radius-l);
+  background: color-mix(in oklch, var(--seal-wash) 60%, var(--paper));
+}
+.dl-recommend h2 { margin-bottom: 0.5rem; }
+.dl-recommend p { margin: 0 0 0.8rem; }
+.dl-rec > :last-child { margin-bottom: 0; }
+.dl-rec-detected { font: 500 1.05rem/1.4 var(--ui); color: var(--ink); }
+.dl-rec-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.1rem;
+}
+.dl-rec-file { display: grid; gap: 0.1rem; min-width: 0; }
+.dl-rec-meta { font: 0.9rem/1.4 var(--ui); color: var(--ink-2); }
+.dl-rec-also { font: 500 0.95rem/1.4 var(--ui); }
+.dl-rec-list { margin: -0.3rem 0 0.8rem; padding-left: 1.1rem; }
+.dl-rec-list li { margin: 0.2rem 0; }
+.dl-rec-list a,
+.dl-rec-other a { overflow-wrap: anywhere; }
+.dl-rec-missing { font-weight: 500; }
+
+/* ── a channel ─────────────────────────────────────────────────────────── */
+.dl-notice {
+  margin: clamp(2rem, 1.5rem + 2vw, 3rem) 0 0;
+  max-width: var(--measure);
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--brass);
+  background: var(--brass-wash);
+  border-radius: 0 var(--radius-m) var(--radius-m) 0;
+}
+.dl-recommend-block + .wrap > .dl-notice { margin-top: 1.6rem; }
+.dl-version { font-variant-numeric: tabular-nums; color: var(--ink); }
+.block .dl-channel-intro { max-width: var(--measure); margin: -0.4rem 0 0.4rem; }
+.block .dl-channel-meta { margin: 0 0 1.4rem; font: 0.92rem/1.5 var(--ui); color: var(--ink-2); }
+
+.dl-group { margin-top: 2rem; }
+.dl-group h3 { margin: 0 0 0.6rem; font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem); }
+.block .dl-group-intro { max-width: var(--measure); margin: 0 0 0.9rem; color: var(--ink-2); }
+
+.dl-code {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
+  /* Wrapped, never scrolled: a phone shows the whole command, and a copy
+     of it is the same text. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 0.86rem/1.6 var(--mono);
+  color: var(--ink);
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-m);
+}
+.dl-code code { padding: 0; border: 0; background: none; font-size: inherit; white-space: inherit; }
+
+/* ── a file ────────────────────────────────────────────────────────────── */
+.dl-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hair); }
+.dl-item {
+  display: grid;
+  grid-template-areas: "platform" "file" "meta" "note";
+  gap: 0.15rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--hair);
+  font-family: var(--ui);
+}
+.block .dl-item p { margin: 0; }
+.dl-platform { grid-area: platform; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.6rem; color: var(--ink); }
+.dl-file { grid-area: file; min-width: 0; }
+.dl-file a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 500 0.95rem/1.35 var(--mono);
+  overflow-wrap: anywhere;
+}
+.dl-meta { grid-area: meta; display: flex; flex-wrap: wrap; gap: 0 1.2rem; margin: 0; font-size: 0.88rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dl-meta div { display: flex; gap: 0.35rem; }
+.dl-meta dt { color: var(--ink-3); }
+.dl-meta dd { margin: 0; color: var(--ink); }
+.dl-note { grid-area: note; font-size: 0.92rem; line-height: 1.5; color: var(--ink-2); max-width: var(--measure); }
+.dl-recommend .dl-note { font-family: var(--ui); }
+
+@media (min-width: 860px) {
+  .dl-item {
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "platform file meta"
+      "platform note note";
+    column-gap: 1.5rem;
+    align-items: baseline;
+  }
+  .dl-file a { min-height: 0; padding-block: 0.15rem; }
+  .dl-meta { justify-content: flex-end; text-align: right; }
+}
+
+.dl-item.is-recommended {
+  margin-inline: -0.75rem;
+  padding-inline: 0.75rem;
+  background: var(--brass-wash);
+  border-radius: var(--radius-m);
+  box-shadow: inset 3px 0 0 var(--brass);
+}
+.dl-badge {
+  padding: 0.1rem 0.55rem;
+  font: 600 0.72rem/1.5 var(--ui);
+  letter-spacing: 0.04em;
+  color: var(--seal-ink);
+  background: var(--seal);
+  border-radius: var(--radius-pill);
+}
+
+/* ── checksums and signatures, folded ──────────────────────────────────── */
+.dl-verify { margin: 1.8rem 0 0; }
+.dl-verify-body { padding-top: 1rem; max-width: 52rem; }
+.dl-verify-body p { max-width: var(--measure); color: var(--ink-2); }
+.dl-verify-body h4 { margin: 1.2rem 0 0.4rem; font-size: 1.05rem; }
+.dl-plain { margin: 0 0 1rem; padding-left: 1.1rem; font-family: var(--ui); }
+.dl-plain li { margin: 0.15rem 0; }
+.dl-plain a { display: inline-block; padding-block: 0.6rem; font-family: var(--mono); font-size: 0.88rem; overflow-wrap: anywhere; }
+.dl-sigs { columns: 2 22rem; column-gap: 2rem; }
+.dl-quiet { color: var(--ink-3); font-size: 0.88rem; }
+
+.block .dl-source,
+.dl-source { margin: clamp(2.5rem, 2rem + 2vw, 3.5rem) 0 0; max-width: var(--measure); font: 0.92rem/1.55 var(--ui); color: var(--ink-2); }
+.dl-source + .cta-strip { margin-top: 1.4rem; }

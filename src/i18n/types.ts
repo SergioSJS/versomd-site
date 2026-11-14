@@ -2,7 +2,12 @@
 // field for field. Strings named *Html carry inline markup (links, <code>,
 // <strong>) and are written by us, never by a visitor.
 
+import type { FileKind } from "../lib/releases";
+
 export type Lang = "pt-BR" | "en";
+
+/** The systems the download page recognises in the visitor's browser. */
+export type DownloadOs = "macos" | "windows" | "linux" | "android" | "ios";
 
 export interface Figure {
   /** File stem under /media: <stem>.gif (or .png), <stem>.png poster. */
@@ -37,7 +42,7 @@ export interface Copy {
   /** The header's pages, in order; the waitlist is a call to action, not a page. */
   nav: { label: string; home: string; features: string; server: string; compare: string; wiki: string; download: string };
   /** The control that goes back to the top of a long page. */
-  /** Where the downloads and the code are: the GitHub releases page and the repository. */
+  /** The GitHub releases page and the repository (the download page, routes.download, links the first). */
   links: { releases: string; repo: string };
   toTop: string;
   switchTo: { label: string; name: string; href: string; hreflang: string };
@@ -151,6 +156,7 @@ export interface Copy {
     };
     /** The page's title is the comparison's own (compare.title). */
     compare: Pick<PageHead, "meta" | "eyebrow"> & { roadmapHtml: string };
+    download: DownloadPage;
   };
   waitlist: {
     title: string;
@@ -172,7 +178,7 @@ export interface Copy {
   og: { imageAlt: string };
   footer: { lineHtml: string; fontsHtml: string; noTracking: string };
   figLabel: string;
-  routes: { home: string; features: string; server: string; compare: string; wiki: string; thanks: string; failed: string };
+  routes: { home: string; features: string; server: string; compare: string; wiki: string; download: string; thanks: string; failed: string };
   /** Section anchors, in the page's language. */
   ids: {
     content: string;
@@ -207,3 +213,59 @@ export interface Roadmap {
   groups: { title: string; state: RoadmapState; items: { lead: string; textHtml?: string }[] }[];
 }
 export type RoadmapState = "ready" | "building" | "planned" | "later";
+
+/** Baixar / Download: every file of the newest production release and of
+ *  the newest test release, read from GitHub at build time, and the one for
+ *  the visitor's system at the top (the page's script; without it, the
+ *  lists alone). Placeholders in braces are filled by the page: {os},
+ *  {version}, {date}, {file}. */
+export interface DownloadPage extends PageHead {
+  recommend: {
+    /** The box's heading and its id. */
+    title: string;
+    id: string;
+    /** "Your system looks like {os}." */
+    detected: string;
+    /** The button: "Download for {os}". */
+    button: string;
+    /** Linux: the packages after the AppImage. */
+    linuxAlso: string;
+    /** The release shown first has no file for this system: {version}, {os}. */
+    missing: string;
+    /** The other channel's file for this system: {channel} {version}. */
+    alsoOther: string;
+    /** No system recognised (or one Verso has no app for). */
+    unknown: string;
+    /** Beside the file in the lists, for the screen reader too. */
+    badge: string;
+  };
+  os: Record<DownloadOs, string>;
+  /** The two channels: their name, an id for the section, one line. */
+  channels: Record<"stable" | "test", { name: string; id: string; intro: string }>;
+  /** When there is no production release yet. */
+  noStableHtml: string;
+  /** When GitHub gave no release at all (never expected). */
+  noneHtml: string;
+  /** "Published {date}", and the link to the release's own page. */
+  published: string;
+  releasePage: string;
+  fields: { version: string; size: string };
+  groups: {
+    app: string;
+    cli: string;
+    cliIntroHtml: string;
+    server: string;
+    /** With {version} where the installer's command is shown after it. */
+    serverIntroHtml: string;
+    serverAfterHtml: string;
+    verify: string;
+    verifyIntroHtml: string;
+    sigs: string;
+    other: string;
+  };
+  /** Each file: who it is for, and one line on installing it ({file}). */
+  kinds: Record<FileKind, { platform: string; noteHtml: string }>;
+  /** Where this list came from: {date}. */
+  source: { github: string; fallback: string };
+  allReleasesHtml: string;
+}

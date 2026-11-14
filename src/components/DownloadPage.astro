@@ -1,0 +1,309 @@
+---
+// Baixar / Download: every file of the newest production release and of the
+// newest test release (read from GitHub at build time, src/lib/releases.ts),
+// each with its name, version, size and one line on installing it; and, at
+// the top, the file for the visitor's system, which the script below picks.
+// Without JavaScript the box stays hidden and the lists stand alone.
+import "../styles/download.css";
+import type { Copy } from "../i18n";
+import type { DownloadOs } from "../i18n/types";
+import { wikiPages, pagePath } from "../lib/wiki";
+import {
+  APP_KINDS,
+  CLI_KINDS,
+  SERVER_KINDS,
+  classify,
+  formatDate,
+  formatSize,
+  type AppKind,
+  type Asset,
+  type FileKind,
+  type LoadedReleases,
+  type Release,
+} from "../lib/releases";
+import PageHead from "./PageHead.astro";
+import CtaStrip from "./CtaStrip.astro";
+
+interface Props {
+  copy: Copy;
+  releases: LoadedReleases;
+}
+
+const { copy, releases } = Astro.props;
+const page = copy.pages.download;
+const locale = copy.htmlLang;
+const { stable, test } = releases.data;
+
+// A wiki link this page names must exist: a re-imported wiki that renamed a
+// lesson breaks the build here instead of leaving a dead link.
+const wikiLang = copy.lang === "pt-BR" ? "pt" : "en";
+const known = new Set((await wikiPages(wikiLang)).map((p) => pagePath(wikiLang, p.data.slug)));
+for (const [, href] of JSON.stringify(page).matchAll(/href=\\"((?:\/en)?\/wiki\/[^"#\\]+)/g)) {
+  if (!known.has(href)) throw new Error(`download page (${copy.lang}): no wiki page at ${href}`);
+}
+
+const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/** Fills {name} placeholders; the values are escaped, the template is ours. */
+const fill = (template: string, vars: Record<string, string>) => template.replace(/\{(\w+)\}/g, (whole, k: string) => (k in vars ? esc(vars[k]) : whole));
+
+// The channels shown, newest production first. A test release older than
+// the newest production one is not offered.
+type Channel = { key: "stable" | "test"; release: Release };
+const channels: Channel[] = [];
+if (stable) channels.push({ key: "stable", release: stable });
+if (test && (!stable || test.publishedAt > stable.publishedAt)) channels.push({ key: "test", release: test });
+const shown = channels.map((c) => ({ ...c, files: classify(c.release), copy: page.channels[c.key] }));
+const primary = shown[0];
+const secondary = shown[1];
+
+// The visitor's system → the file recommended for it (Linux: the AppImage,
+// with the packages after it).
+const OS_KIND: Record<DownloadOs, AppKind> = { macos: "mac", windows: "windows", linux: "appImage", android: "android", ios: "ios" };
+const OSES = Object.keys(OS_KIND) as DownloadOs[];
+
+const groups: { id: string; title: string; kinds: readonly FileKind[] }[] = [
+  { id: "app", title: page.groups.app, kinds: APP_KINDS },
+  { id: "cli", title: page.groups.cli, kinds: CLI_KINDS },
+  { id: "server", title: page.groups.server, kinds: SERVER_KINDS },
+];
+const items = (files: Partial<Record<FileKind, Asset>>, kinds: readonly FileKind[]) =>
+  kinds.flatMap((kind) => (files[kind] ? [{ kind, asset: files[kind] as Asset }] : []));
+const sumsName = (r: Release) => `verso-${r.version}-SHA256SUMS`;
+const sourceLine = fill(releases.source === "github" ? page.source.github : page.source.fallback, {
+  date: formatDate(releases.data.checkedAt, locale),
+});
+---
+
+<article class="landing subpage dl-page">
+  <PageHead eyebrow={page.eyebrow} title={page.title} ledeHtml={page.ledeHtml} />
+
+  {
+    primary && (
+      <section class="block dl-recommend-block" aria-labelledby={page.recommend.id} data-recommend hidden>
+        <div class="wrap">
+          <div class="dl-recommend">
+            <h2 id={page.recommend.id}><span class="md" aria-hidden="true">##</span>{page.recommend.title}</h2>
+            {OSES.map((os) => {
+              const kind = OS_KIND[os];
+              const file = primary.files.files[kind];
+              const other = secondary?.files.files[kind];
+              const osName = page.os[os];
+              return (
+                <div class="dl-rec" data-os={os} hidden>
+                  <p class="dl-rec-detected" set:html={fill(page.recommend.detected, { os: osName })} />
+                  {file ? (
+                    <>
+                      <p class="dl-rec-action">
+                        <a class="button" href={file.url}>{fill(page.recommend.button, { os: osName })}</a>
+                        <span class="dl-rec-file">
+                          <span class="dl-name">{file.name}</span>
+                          <span class="dl-rec-meta">
+                            {primary.copy.name} {primary.release.version} · {formatSize(file.size, locale)}
+                          </span>
+                        </span>
+                      </p>
+                      <p class="dl-note" set:html={fill(page.kinds[kind].noteHtml, { file: file.name })} />
+                      {os === "linux" && (
+                        <>
+                          <p class="dl-rec-also">{page.recommend.linuxAlso}</p>
+                          <ul class="dl-rec-list">
+                            {items(primary.files.files, ["deb", "rpm"]).map(({ kind: k, asset }) => (
+                              <li>
+                                <a href={asset.url}>{asset.name}</a> <span class="dl-rec-meta">· {page.kinds[k].platform} · {formatSize(asset.size, locale)}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    <p class="dl-rec-missing">{fill(page.recommend.missing, { version: primary.release.version, os: osName })}</p>
+                  )}
+                  {secondary && other && (
+                    <p class="dl-rec-other">
+                      {fill(page.recommend.alsoOther, { channel: secondary.copy.name, version: secondary.release.version })}{" "}
+                      <a href={other.url}>{other.name}</a> <span class="dl-rec-meta">· {formatSize(other.size, locale)}</span>
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+            <div class="dl-rec" data-os="unknown" hidden>
+              <p>{page.recommend.unknown}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    !stable && (
+      <div class="wrap">
+        <p class="dl-notice" set:html={page.noStableHtml} />
+      </div>
+    )
+  }
+  {
+    shown.length === 0 && (
+      <div class="wrap">
+        <p class="dl-notice" set:html={page.noneHtml} />
+      </div>
+    )
+  }
+
+  {
+    shown.map(({ key, release, files, copy: ch }) => (
+      <section class="block dl-channel" aria-labelledby={ch.id} data-channel={key}>
+        <div class="wrap">
+          <h2 id={ch.id}><span class="md" aria-hidden="true">##</span>{ch.name} <span class="dl-version">{release.version}</span></h2>
+          <p class="dl-channel-intro">{ch.intro}</p>
+          <p class="dl-channel-meta">
+            {fill(page.published, { date: formatDate(release.publishedAt, locale) })} · <a href={release.url}>{page.releasePage}</a>
+          </p>
+
+          {groups.map((g) => {
+            const list = items(files.files, g.kinds);
+            if (list.length === 0) return null;
+            const gid = `${ch.id}-${g.id}`;
+            return (
+              <section class="dl-group" aria-labelledby={gid}>
+                <h3 id={gid}>{g.title}</h3>
+                {g.id === "cli" && <p class="dl-group-intro" set:html={page.groups.cliIntroHtml} />}
+                {g.id === "server" && (
+                  <>
+                    <p class="dl-group-intro" set:html={page.groups.serverIntroHtml} />
+                    <pre class="dl-code"><code>{`curl -fsSLO https://versomd.com/universo.sh\nsh universo.sh install --version ${release.version}`}</code></pre>
+                    <p class="dl-group-intro" set:html={page.groups.serverAfterHtml} />
+                  </>
+                )}
+                <ul class="dl-list">
+                  {list.map(({ kind, asset }) => (
+                    <li class="dl-item" data-kind={kind}>
+                      <p class="dl-platform">
+                        {primary && key === primary.key && (APP_KINDS as readonly string[]).includes(kind) && (
+                          <strong class="dl-badge" data-badge hidden>
+                            {page.recommend.badge}
+                          </strong>
+                        )}
+                        <strong>{page.kinds[kind].platform}</strong>
+                      </p>
+                      <p class="dl-file">
+                        <a href={asset.url}>{asset.name}</a>
+                      </p>
+                      <dl class="dl-meta">
+                        <div>
+                          <dt>{page.fields.version}</dt>
+                          <dd>{release.version}</dd>
+                        </div>
+                        <div>
+                          <dt>{page.fields.size}</dt>
+                          <dd>{formatSize(asset.size, locale)}</dd>
+                        </div>
+                      </dl>
+                      <p class="dl-note" set:html={fill(page.kinds[kind].noteHtml, { file: asset.name })} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+
+          {files.other.length > 0 && (
+            <section class="dl-group" aria-labelledby={`${ch.id}-other`}>
+              <h3 id={`${ch.id}-other`}>{page.groups.other}</h3>
+              <ul class="dl-plain">
+                {files.other.map((a) => (
+                  <li>
+                    <a href={a.url}>{a.name}</a> <span class="dl-quiet">· {formatSize(a.size, locale)}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {(files.sums || files.sigs.length > 0) && (
+            <details class="all-numbers dl-verify">
+              <summary>{page.groups.verify}</summary>
+              <div class="dl-verify-body">
+                <p set:html={page.groups.verifyIntroHtml} />
+                <ul class="dl-plain">
+                  {[files.sums, files.sumsSig].map(
+                    (a) =>
+                      a && (
+                        <li>
+                          <a href={a.url}>{a.name}</a> <span class="dl-quiet">· {formatSize(a.size, locale)}</span>
+                        </li>
+                      ),
+                  )}
+                </ul>
+                {files.sums && (
+                  <pre class="dl-code"><code>{`base64 -d < ${sumsName(release)}.sig > list.minisig\nminisign -V -P RWS1zv2nvs/ng1hA0YspwOg7wGda98zkXjVfx8m9CtT5obRW5zabNHaT \\\n  -m ${sumsName(release)} -x list.minisig\nsha256sum --check --ignore-missing ${sumsName(release)}`}</code></pre>
+                )}
+                {files.sigs.length > 0 && (
+                  <>
+                    <h4>{page.groups.sigs}</h4>
+                    <ul class="dl-plain dl-sigs">
+                      {files.sigs.map((a) => (
+                        <li>
+                          <a href={a.url}>{a.name}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+            </details>
+          )}
+        </div>
+      </section>
+    ))
+  }
+
+  <div class="wrap">
+    <p class="dl-source">
+      {sourceLine} <span set:html={page.allReleasesHtml} />
+    </p>
+    <CtaStrip copy={copy} />
+  </div>
+</article>
+
+<script>
+  // The visitor's system, from the browser: User-Agent Client Hints where
+  // the browser has them, else the User-Agent string. iPadOS's Safari says
+  // "Macintosh"; a touch screen tells it apart. Nothing is stored or sent.
+  type Os = "macos" | "windows" | "linux" | "android" | "ios";
+  const detect = (): Os | null => {
+    const nav = navigator as Navigator & { userAgentData?: { platform?: string } };
+    const platform = nav.userAgentData?.platform ?? "";
+    const ua = navigator.userAgent;
+    if (/android/i.test(platform) || /Android/.test(ua)) return "android";
+    if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "ios";
+    if (/^macOS$/i.test(platform) || /Macintosh|Mac OS X/.test(ua)) return "macos";
+    if (/^Windows$/i.test(platform) || /Windows/.test(ua)) return "windows";
+    if (/Chrome OS|ChromeOS/i.test(platform) || /CrOS/.test(ua)) return null;
+    if (/^Linux$/i.test(platform) || /Linux|X11/.test(ua)) return "linux";
+    return null;
+  };
+  const KIND: Record<Os, string> = { macos: "mac", windows: "windows", linux: "appImage", android: "android", ios: "ios" };
+
+  const box = document.querySelector<HTMLElement>("[data-recommend]");
+  if (box) {
+    const os = detect();
+    const panel = box.querySelector<HTMLElement>(`[data-os="${os ?? "unknown"}"]`);
+    if (panel) {
+      panel.hidden = false;
+      box.hidden = false;
+    }
+    if (os) {
+      // The same file in the first channel's list gets the badge (read
+      // aloud with the item) and the highlight.
+      const item = document.querySelector<HTMLElement>(`.dl-channel [data-kind="${KIND[os]}"]`);
+      const badge = item?.querySelector<HTMLElement>("[data-badge]");
+      if (item && badge) {
+        item.classList.add("is-recommended");
+        badge.hidden = false;
+      }
+    }
+  }
+</script>

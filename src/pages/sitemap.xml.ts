@@ -6,6 +6,7 @@ const pairs: [string, string][] = [
   ["/recursos/", "/en/features/"],
   ["/universo/", "/en/universo/"],
   ["/comparativo/", "/en/compare/"],
+  ["/baixar/", "/en/download/"],
 ];
 
 import { wikiPages, pagePath } from "../lib/wiki";

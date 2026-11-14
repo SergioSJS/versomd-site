@@ -41,15 +41,18 @@ product has its own rules (`../verso/CLAUDE.md`) and its own sessions. If the
 site needs a product change, say so to the maintainer.
 
 Verso is **in testing (beta)**: its repository is public (MPL-2.0) and the
-downloads are on its GitHub releases page, which the site links to (README,
-"Where the downloads are"). It is not V1; the site never says it is.
+downloads are on its GitHub releases page, which the site's download page
+(`/baixar/`, `/en/download/`) lists file by file, read at build time with a
+committed fallback (README, "Where the downloads are"). The page never
+hard-codes a version or the word "beta": it shows whatever the newest
+production and test releases are. It is not V1; the site never says it is.
 
 ## The pages
 
 The home page (`/`, `/en/`) holds the essentials and stays short; the rest
 has a page each, linked from the header: Recursos / Features (what Verso does
 today, then the roadmap to V1), UniVerso (the server), Comparativo / How it
-compares. A new page goes in the header's list in `src/layouts/Base.astro`,
+compares. The header's button leads to Baixar / Download. A new page goes in the header's list in `src/layouts/Base.astro`,
 in `sitemap.xml.ts`, and in both languages.
 
 The roadmap on the features page says only what the product's roadmap and

@@ -8,10 +8,34 @@ Cloudflare KV by a Pages Function. No analytics, no cookies, no third party.
 
 ## Where the downloads are
 
-Verso's repository is public (MPL-2.0) and 0.8.5-beta.1 is a prerelease on
-its GitHub releases page. The site links to that page (`links.releases` in
-`src/i18n/`) for the download; the waitlist is now "an e-mail when a new
-version comes out".
+Verso's repository is public (MPL-2.0) and its builds are on its GitHub
+releases page. The site's own download page, `/baixar/` (`/en/download/` in
+English), lists every file of the newest production release and of the
+newest test release, each with its name, version, size and one line on
+installing it, and puts the one for the visitor's system at the top; the
+header's "Baixar"/"Download" button, the hero's and the call at the end of
+a page lead there. The waitlist is "an e-mail when a new version comes out".
+
+How the page gets a new version: **it is read at build time**. `npm run
+build` asks the GitHub API (`api.github.com/repos/SergioSJS/verso/releases`,
+public, no token) for the releases (`src/lib/releases.ts`). If that fails —
+offline, the anonymous limit of 60 requests an hour per address, GitHub down
+— the build says so in its log and uses the committed copy
+`src/data/releases.json`; the page then says the list is the saved one, with
+its date. The build never fails because of GitHub. So after a release:
+
+- redeploy (Cloudflare Pages rebuilds on every push to `main`, or *Retry
+  deployment* in its dashboard), and
+- refresh the copy, review the diff and commit it: `npm run releases:refresh`.
+
+Optional build variables: `GITHUB_TOKEN` (sent with the request, for a
+build machine whose address is over the limit), `VERSO_RELEASES_OFFLINE=1`
+(skip the fetch) and `VERSO_RELEASES_URL` (fetch another address, e.g. to
+prove the fallback with an address that does not answer).
+
+The page does not ask GitHub again from the visitor's browser: the
+Content-Security-Policy's `connect-src 'self'` (`public/_headers`) forbids it,
+and widening it is a decision for the maintainer.
 
 ## Run it
 
@@ -42,8 +66,11 @@ npx wrangler pages dev dist --kv WAITLIST
 | `src/components/FeaturesPage.astro` | Recursos / Features: the files are the truth, what Verso does today (in a reader's words), then the roadmap to V1 — each group with its state (being built, planned, after V1), no dates. |
 | `src/components/ServerPage.astro` | UniVerso: the server in three steps with their pictures, what it does, and the numbers measured on a 1-core, 1 GB machine. |
 | `src/components/ComparePage.astro` | Comparativo / How it compares: one table, Verso first, then thirteen note, worldbuilding and solo-play tools (checked against each product's official pages, no prices); the capability and Verso columns stay put while the others scroll sideways. |
-| `src/components/PageHead.astro`, `CtaStrip.astro` | The head of a page other than the home page; the call to the waitlist at the end of one. |
-| `src/pages/` | `/` and `/en/`; `/recursos/` and `/en/features/`; `/universo/` and `/en/universo/`; `/comparativo/` and `/en/compare/`; `/obrigado/` and `/en/thanks/`; `/lista/nao-deu/` and `/en/waitlist/failed/`; `404`; `sitemap.xml`. |
+| `src/components/DownloadPage.astro`, `src/styles/download.css` | Baixar / Download: the box for the visitor's system (filled by the page's script from User-Agent Client Hints or the User-Agent: macOS → the Apple-chip zip, Windows → the installer, Linux → the AppImage with the .deb and .rpm after it, Android → the APK, iPad/iPhone → the .ipa through AltStore Classic; nothing is stored or sent; without JavaScript the box stays hidden), then each channel's files — the app, the command line, UniVerso with its installer and the wiki's install lessons, and, folded, the checksums list, its signature and the minisign key. A wiki link it names that does not exist fails the build. |
+| `src/lib/releases.ts`, `src/lib/releases-data.mjs`, `src/data/releases.json` | The releases at build time: the fetch, the fallback copy, and what each file is for, by its name as the product's release workflow writes it (`scripts/release-page.mjs` there). |
+| `scripts/releases-refresh.mjs` | `npm run releases:refresh`: rewrites `src/data/releases.json` from the GitHub API. |
+| `src/components/PageHead.astro`, `CtaStrip.astro` | The head of a page other than the home page; the call at the end of one (the waitlist, and the download page). |
+| `src/pages/` | `/` and `/en/`; `/recursos/` and `/en/features/`; `/universo/` and `/en/universo/`; `/comparativo/` and `/en/compare/`; `/baixar/` and `/en/download/`; `/obrigado/` and `/en/thanks/`; `/lista/nao-deu/` and `/en/waitlist/failed/`; `404`; `sitemap.xml`. |
 | `src/styles/tokens.css` | Colours, fonts and measure copied from the Verso window. |
 | `src/styles/site.css` | The page's layout. |
 | `public/media/` | Screenshots and the four recordings (GIF; a PNG poster of each for reduced motion; an animated WebP where it is smaller). |

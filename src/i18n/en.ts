@@ -1033,6 +1033,108 @@ export const en: Copy = {
       roadmapHtml:
         "What is missing here — layers on maps, timelines, plugins — is, where planned, on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. The table counts what Verso already has ready, including the RPG tools and the Table, which are already in the 0.8.5-beta.1 test version.",
     },
+    download: {
+      meta: {
+        title: "Download — Verso",
+        description:
+          "Every file of Verso and UniVerso, with each one's name, version and size, and the one for your system at the top: macOS, Windows, Linux, Android, iPad and iPhone.",
+      },
+      eyebrow: "Files to download",
+      title: "Download Verso",
+      ledeHtml:
+        "You need <strong>one</strong> file, the one for your system. The list comes from the releases published on <a href=\"https://github.com/SergioSJS/verso/releases\">Verso’s GitHub</a>, which also has each release’s notes.",
+      recommend: {
+        title: "For your system",
+        id: "recommended",
+        detected: "Your system looks like {os}.",
+        button: "Download for {os}",
+        linuxAlso: "Or, as a system package:",
+        missing: "Version {version} has no file for {os}.",
+        alsoOther: "{channel} {version}:",
+        unknown: "We could not tell your system, or Verso has no app for it yet. Pick the file from the list below.",
+        badge: "Recommended for your system",
+      },
+      os: { macos: "macOS", windows: "Windows", linux: "Linux", android: "Android", ios: "iPad or iPhone" },
+      channels: {
+        stable: { name: "Stable", id: "stable", intro: "The newest release that is not a test version." },
+        test: {
+          name: "Test version",
+          id: "test",
+          intro: "To try what has just been finished: it may have bugs. It installs as “Verso Beta”, beside any other Verso.",
+        },
+      },
+      noStableHtml: "<strong>There is no stable release yet.</strong> For now Verso comes out in test versions only; the newest is right below.",
+      noneHtml:
+        "We could not read the list of releases. The files are on the <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>.",
+      published: "Published {date}",
+      releasePage: "This release’s notes and files on GitHub",
+      fields: { version: "Version", size: "Size" },
+      groups: {
+        app: "The app",
+        cli: "The command line",
+        cliIntroHtml:
+          "Almost nobody needs it: the app already brings the <code>verso</code> command. These files are for a computer <strong>without</strong> the app, such as a machine where an AI agent searches your notes.",
+        server: "UniVerso, the server",
+        serverIntroHtml:
+          "To host your notes yourself, on a Linux machine of yours; to use Verso on your own computer you do not need it. The easy way is the installer: it picks the right file, checks its signature, installs and starts UniVerso. On the server, as your ordinary user:",
+        serverAfterHtml:
+          "Step by step, with Docker too, in <a href=\"/en/wiki/installing-your-universo-step-by-step/\">Installing your UniVerso, step by step</a>; on a NAS or a VPS, in <a href=\"/en/wiki/installing-the-server-on-a-nas-or-a-vps/\">Installing the server on a NAS or a VPS</a>; for free on Oracle Cloud, in <a href=\"/en/wiki/universo-on-a-free-oracle-server/\">UniVerso on a free Oracle server</a>. By hand, the file depends on the processor: <code>uname -m</code> says <code>x86_64</code> (x64) or <code>aarch64</code> (ARM64).",
+        verify: "Check the files (optional)",
+        verifyIntroHtml:
+          "You can ignore these files: the app’s updater and UniVerso’s installer already check everything themselves. The list holds the checksum of each file of the release, signed with minisign by Verso’s key, <code>RWS1zv2nvs/ng1hA0YspwOg7wGda98zkXjVfx8m9CtT5obRW5zabNHaT</code>. To check by hand, on Linux with minisign installed, in the folder where you downloaded the list, its <code>.sig</code> and the file:",
+        sigs: "Each file’s own signature",
+        other: "Other files of this release",
+      },
+      kinds: {
+        mac: {
+          platform: "macOS, Apple chip (M1, M2, M3, M4…)",
+          noteHtml:
+            "Open the <code>.zip</code> and drag the app into Applications. The first time: System Settings › Privacy &amp; Security › <strong>Open Anyway</strong> (the app is signed ad hoc). It does not run on a Mac with an Intel processor.",
+        },
+        windows: {
+          platform: "Windows 10 or 11 (x64)",
+          noteHtml:
+            "If “Windows protected your PC” shows: <strong>More info</strong> › <strong>Run anyway</strong> (Verso has no code-signing certificate yet). It installs for your user, without an administrator. Windows on ARM: not available.",
+        },
+        appImage: {
+          platform: "Linux x64, any distribution (AppImage)",
+          noteHtml: "Allow it to run as a program (or <code>chmod +x {file}</code>) and double-click it.",
+        },
+        deb: {
+          platform: "Linux x64: Ubuntu 22.04+, Debian 12+, Linux Mint, Pop!_OS",
+          noteHtml: "In a terminal, in the folder you downloaded it to: <code>sudo apt install ./{file}</code>",
+        },
+        rpm: {
+          platform: "Linux x64: Fedora 36+",
+          noteHtml: "In a terminal, in the folder you downloaded it to: <code>sudo dnf install ./{file}</code>",
+        },
+        android: {
+          platform: "Android 10 or newer",
+          noteHtml:
+            "Open the downloaded file on the phone; the first time, allow installing unknown apps from the browser. More in <a href=\"/en/wiki/verso-on-phone-and-tablet/#the-android-app\">The Android app</a>.",
+        },
+        ios: {
+          platform: "iPad and iPhone, iOS 16 or newer",
+          noteHtml:
+            "Through AltStore Classic, which signs the app with your own Apple ID: see <a href=\"/en/wiki/verso-on-phone-and-tablet/#the-app-for-ipad-and-iphone\">The app for iPad and iPhone</a>.",
+        },
+        cliMac: { platform: "Mac, Apple chip", noteHtml: "The <code>verso</code> command, compressed." },
+        cliWindows: { platform: "Windows (x64)", noteHtml: "The <code>verso</code> command, compressed." },
+        cliLinux: { platform: "Linux (x64)", noteHtml: "The <code>verso</code> command, compressed." },
+        serverDebX64: { platform: "Ubuntu, Debian · x64", noteHtml: "A <code>.deb</code> package, to install by hand." },
+        serverDebArm: { platform: "Ubuntu, Debian · ARM64", noteHtml: "A <code>.deb</code> package, to install by hand." },
+        serverRpmX64: { platform: "Fedora, RHEL, Oracle Linux · x64", noteHtml: "An <code>.rpm</code> package, to install by hand." },
+        serverRpmArm: { platform: "Fedora, RHEL, Oracle Linux · ARM64", noteHtml: "An <code>.rpm</code> package, to install by hand." },
+        serverTarX64: { platform: "Any other Linux · x64", noteHtml: "An archive, to run without a package." },
+        serverTarArm: { platform: "Any other Linux · ARM64", noteHtml: "An archive, to run without a package." },
+      },
+      source: {
+        github: "List read from GitHub on {date}.",
+        fallback: "GitHub did not answer when this page was published: list saved on {date}; the GitHub page always has the newest.",
+      },
+      allReleasesHtml:
+        "Every release, the earlier ones too, with each one’s notes: <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>.",
+    },
   },
   waitlist: {
     title: "New-version notice",
@@ -1070,7 +1172,7 @@ export const en: Copy = {
     noTracking: "No analytics, no cookies.",
   },
   figLabel: "Fig.",
-  routes: { home: "/en/", features: "/en/features/", server: "/en/universo/", compare: "/en/compare/", wiki: "/en/wiki/", thanks: "/en/thanks/", failed: "/en/waitlist/failed/" },
+  routes: { home: "/en/", features: "/en/features/", server: "/en/universo/", compare: "/en/compare/", wiki: "/en/wiki/", download: "/en/download/", thanks: "/en/thanks/", failed: "/en/waitlist/failed/" },
   ids: {
     content: "content",
     notYet: "not-yet",

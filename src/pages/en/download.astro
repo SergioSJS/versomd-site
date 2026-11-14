@@ -1,0 +1,13 @@
+---
+import Base from "../../layouts/Base.astro";
+import DownloadPage from "../../components/DownloadPage.astro";
+import { copies } from "../../i18n";
+import { loadReleases } from "../../lib/releases";
+
+const copy = copies["en"];
+const releases = await loadReleases();
+---
+
+<Base copy={copy} title={copy.pages.download.meta.title} description={copy.pages.download.meta.description} path="/en/download/" altPath="/baixar/" current="download" long>
+  <DownloadPage copy={copy} releases={releases} />
+</Base>
