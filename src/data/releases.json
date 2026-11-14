@@ -1,162 +1,182 @@
 {
-  "checkedAt": "2026-11-14T12:14:55.617Z",
+  "checkedAt": "2026-11-14T16:12:22.232Z",
   "stable": null,
   "test": {
-    "tag": "v0.8.4-beta.1",
-    "version": "0.8.4-beta.1",
+    "tag": "v0.9.0-beta.1",
+    "version": "0.9.0-beta.1",
     "prerelease": true,
-    "publishedAt": "2026-11-03T01:29:36Z",
-    "url": "https://github.com/SergioSJS/verso/releases/tag/v0.8.4-beta.1",
+    "publishedAt": "2026-11-14T16:10:35Z",
+    "url": "https://github.com/SergioSJS/verso/releases/tag/v0.9.0-beta.1",
     "assets": [
       {
-        "name": "universo-0.8.4-beta.1-aarch64.rpm",
-        "size": 39785177,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-aarch64.rpm"
+        "name": "universo-0.9.0-beta.1-aarch64.rpm",
+        "size": 40345622,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-aarch64.rpm"
       },
       {
-        "name": "universo-0.8.4-beta.1-aarch64.rpm.sig",
+        "name": "universo-0.9.0-beta.1-aarch64.rpm.sig",
         "size": 424,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-aarch64.rpm.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-aarch64.rpm.sig"
       },
       {
-        "name": "universo-0.8.4-beta.1-aarch64.tar.gz",
-        "size": 39478717,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-aarch64.tar.gz"
+        "name": "universo-0.9.0-beta.1-aarch64.tar.gz",
+        "size": 40032784,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-aarch64.tar.gz"
       },
       {
-        "name": "universo-0.8.4-beta.1-aarch64.tar.gz.sig",
+        "name": "universo-0.9.0-beta.1-aarch64.tar.gz.sig",
         "size": 428,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-aarch64.tar.gz.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-aarch64.tar.gz.sig"
       },
       {
-        "name": "universo-0.8.4-beta.1-amd64.deb",
-        "size": 40042642,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-amd64.deb"
+        "name": "universo-0.9.0-beta.1-amd64.deb",
+        "size": 40620866,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-amd64.deb"
       },
       {
-        "name": "universo-0.8.4-beta.1-amd64.deb.sig",
+        "name": "universo-0.9.0-beta.1-amd64.deb.sig",
         "size": 424,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-amd64.deb.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-amd64.deb.sig"
       },
       {
-        "name": "universo-0.8.4-beta.1-arm64.deb",
-        "size": 39863450,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-arm64.deb"
+        "name": "universo-0.9.0-beta.1-arm64.deb",
+        "size": 40432384,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-arm64.deb"
       },
       {
-        "name": "universo-0.8.4-beta.1-arm64.deb.sig",
+        "name": "universo-0.9.0-beta.1-arm64.deb.sig",
         "size": 424,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-arm64.deb.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-arm64.deb.sig"
       },
       {
-        "name": "universo-0.8.4-beta.1-x86_64.rpm",
-        "size": 40017582,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-x86_64.rpm"
+        "name": "universo-0.9.0-beta.1-x86_64.rpm",
+        "size": 40588972,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-x86_64.rpm"
       },
       {
-        "name": "universo-0.8.4-beta.1-x86_64.rpm.sig",
+        "name": "universo-0.9.0-beta.1-x86_64.rpm.sig",
         "size": 424,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-x86_64.rpm.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-x86_64.rpm.sig"
       },
       {
-        "name": "universo-0.8.4-beta.1-x86_64.tar.gz",
-        "size": 39875559,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-x86_64.tar.gz"
+        "name": "universo-0.9.0-beta.1-x86_64.tar.gz",
+        "size": 40442876,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-x86_64.tar.gz"
       },
       {
-        "name": "universo-0.8.4-beta.1-x86_64.tar.gz.sig",
+        "name": "universo-0.9.0-beta.1-x86_64.tar.gz.sig",
         "size": 428,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/universo-0.8.4-beta.1-x86_64.tar.gz.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/universo-0.9.0-beta.1-x86_64.tar.gz.sig"
       },
       {
-        "name": "verso-0.8.4-beta.1-SHA256SUMS",
-        "size": 1465,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-0.8.4-beta.1-SHA256SUMS"
+        "name": "verso-0.9.0-beta.1-SHA256SUMS",
+        "size": 1671,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-0.9.0-beta.1-SHA256SUMS"
       },
       {
-        "name": "verso-0.8.4-beta.1-SHA256SUMS.sig",
+        "name": "verso-0.9.0-beta.1-SHA256SUMS.sig",
         "size": 420,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-0.8.4-beta.1-SHA256SUMS.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-0.9.0-beta.1-SHA256SUMS.sig"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-linux-amd64.deb",
-        "size": 104682620,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-linux-amd64.deb"
+        "name": "Verso-Beta-0.9.0-beta.1-android-arm64.apk",
+        "size": 71929264,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-android-arm64.apk"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-linux-amd64.deb.sig",
+        "name": "Verso-Beta-0.9.0-beta.1-android-arm64.apk.sig",
+        "size": 436,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-android-arm64.apk.sig"
+      },
+      {
+        "name": "Verso-Beta-0.9.0-beta.1-ios.ipa",
+        "size": 86467846,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-ios.ipa"
+      },
+      {
+        "name": "Verso-Beta-0.9.0-beta.1-ios.ipa.sig",
+        "size": 424,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-ios.ipa.sig"
+      },
+      {
+        "name": "Verso-Beta-0.9.0-beta.1-linux-amd64.deb",
+        "size": 110050222,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-linux-amd64.deb"
+      },
+      {
+        "name": "Verso-Beta-0.9.0-beta.1-linux-amd64.deb.sig",
         "size": 432,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-linux-amd64.deb.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-linux-amd64.deb.sig"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-linux-x86_64.AppImage",
-        "size": 177617400,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-linux-x86_64.AppImage"
+        "name": "Verso-Beta-0.9.0-beta.1-linux-x86_64.AppImage",
+        "size": 182344184,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-linux-x86_64.AppImage"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-linux-x86_64.AppImage.sig",
+        "name": "Verso-Beta-0.9.0-beta.1-linux-x86_64.AppImage.sig",
         "size": 440,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-linux-x86_64.AppImage.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-linux-x86_64.AppImage.sig"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-linux-x86_64.rpm",
-        "size": 100763402,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-linux-x86_64.rpm"
+        "name": "Verso-Beta-0.9.0-beta.1-linux-x86_64.rpm",
+        "size": 105695249,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-linux-x86_64.rpm"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-linux-x86_64.rpm.sig",
+        "name": "Verso-Beta-0.9.0-beta.1-linux-x86_64.rpm.sig",
         "size": 436,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-linux-x86_64.rpm.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-linux-x86_64.rpm.sig"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-macos-arm64.zip",
-        "size": 100006980,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-macos-arm64.zip"
+        "name": "Verso-Beta-0.9.0-beta.1-macos-arm64.zip",
+        "size": 102471515,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-macos-arm64.zip"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-macos-arm64.zip.sig",
+        "name": "Verso-Beta-0.9.0-beta.1-macos-arm64.zip.sig",
         "size": 432,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-macos-arm64.zip.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-macos-arm64.zip.sig"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-windows-x64-setup.exe",
-        "size": 88609096,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-windows-x64-setup.exe"
+        "name": "Verso-Beta-0.9.0-beta.1-windows-x64-setup.exe",
+        "size": 90466458,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-windows-x64-setup.exe"
       },
       {
-        "name": "Verso-Beta-0.8.4-beta.1-windows-x64-setup.exe.sig",
+        "name": "Verso-Beta-0.9.0-beta.1-windows-x64-setup.exe.sig",
         "size": 440,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/Verso-Beta-0.8.4-beta.1-windows-x64-setup.exe.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/Verso-Beta-0.9.0-beta.1-windows-x64-setup.exe.sig"
       },
       {
-        "name": "verso-cli-0.8.4-beta.1-linux-x86_64.tar.gz",
-        "size": 13780895,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-cli-0.8.4-beta.1-linux-x86_64.tar.gz"
+        "name": "verso-cli-0.9.0-beta.1-linux-x86_64.tar.gz",
+        "size": 14280446,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-cli-0.9.0-beta.1-linux-x86_64.tar.gz"
       },
       {
-        "name": "verso-cli-0.8.4-beta.1-linux-x86_64.tar.gz.sig",
+        "name": "verso-cli-0.9.0-beta.1-linux-x86_64.tar.gz.sig",
         "size": 436,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-cli-0.8.4-beta.1-linux-x86_64.tar.gz.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-cli-0.9.0-beta.1-linux-x86_64.tar.gz.sig"
       },
       {
-        "name": "verso-cli-0.8.4-beta.1-macos-arm64.tar.gz",
-        "size": 12799457,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-cli-0.8.4-beta.1-macos-arm64.tar.gz"
+        "name": "verso-cli-0.9.0-beta.1-macos-arm64.tar.gz",
+        "size": 13231887,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-cli-0.9.0-beta.1-macos-arm64.tar.gz"
       },
       {
-        "name": "verso-cli-0.8.4-beta.1-macos-arm64.tar.gz.sig",
+        "name": "verso-cli-0.9.0-beta.1-macos-arm64.tar.gz.sig",
         "size": 436,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-cli-0.8.4-beta.1-macos-arm64.tar.gz.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-cli-0.9.0-beta.1-macos-arm64.tar.gz.sig"
       },
       {
-        "name": "verso-cli-0.8.4-beta.1-windows-x64.zip",
-        "size": 13160760,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-cli-0.8.4-beta.1-windows-x64.zip"
+        "name": "verso-cli-0.9.0-beta.1-windows-x64.zip",
+        "size": 13603606,
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-cli-0.9.0-beta.1-windows-x64.zip"
       },
       {
-        "name": "verso-cli-0.8.4-beta.1-windows-x64.zip.sig",
+        "name": "verso-cli-0.9.0-beta.1-windows-x64.zip.sig",
         "size": 432,
-        "url": "https://github.com/SergioSJS/verso/releases/download/v0.8.4-beta.1/verso-cli-0.8.4-beta.1-windows-x64.zip.sig"
+        "url": "https://github.com/SergioSJS/verso/releases/download/v0.9.0-beta.1/verso-cli-0.9.0-beta.1-windows-x64.zip.sig"
       }
     ]
   }
