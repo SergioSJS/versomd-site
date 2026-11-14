@@ -1555,4 +1555,7 @@ a.tool-name { color: var(--seal); }
   align-items: start;
   margin-top: 1.5rem;
 }
-.gallery-plate--tall img { max-width: 20rem; margin-inline: auto; display: block; }
+/* A phone's screenshot keeps a phone's width, not a column's. */
+.gallery-plate.plate--tall img,
+.gallery-plate.plate--tall figcaption { max-width: 20rem; margin-inline: auto; }
+.server-safety p { max-width: var(--measure); }
