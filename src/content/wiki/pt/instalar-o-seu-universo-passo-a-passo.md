@@ -12,7 +12,7 @@ Esta nota leva você, sem pressa, de uma máquina vazia a um **UniVerso** funcio
 
 > **Aviso: O Verso está em testes**
 >
-> Ainda **não há um download público**: o repositório do Verso é privado enquanto o app amadurece, e os comandos abaixo baixam o programa de lá com um **token** do GitHub que o mantenedor lhe dá. Sem esse acesso, ainda não dá para instalar. Os comandos são os do guia de referência do projeto (`docs/reference/server-hands-on.md`), escritos a partir da versão **0.8.0-beta.1** e conferidos passo a passo, em 2026-10-15, numa máquina Ubuntu 26.04 de 1 núcleo e 1 GB com a **0.8.2-beta.1** (o Caminho 1 inteiro; o Caminho 2 com a imagem montada à mão). O que ficou sem rodar num navegador de verdade: o HTTPS com nome ou Tailscale, o app de desktop e o celular. Se algo não bater, vá a [Se algo der errado](#se-algo-der-errado) e conte ao mantenedor.
+> Os comandos abaixo baixam o programa das releases públicas do Verso no GitHub; **não precisa de conta nem de token**. Eles são os do guia de referência do projeto (`docs/reference/server-hands-on.md`), escritos a partir da versão **0.8.0-beta.1** e conferidos passo a passo, em 2026-10-15, numa máquina Ubuntu 26.04 de 1 núcleo e 1 GB com a **0.8.2-beta.1** (o Caminho 1 inteiro; o Caminho 2 com a imagem montada à mão). O que ficou sem rodar num navegador de verdade: o HTTPS com nome ou Tailscale, o app de desktop e o celular. Se algo não bater, vá a [Se algo der errado](#se-algo-der-errado) e conte ao mantenedor.
 
 > **Dica: Nunca montou um servidor?**
 >
@@ -36,7 +36,6 @@ Esta nota leva você, sem pressa, de uma máquina vazia a um **UniVerso** funcio
 
   `x86_64` é x64 (a maioria dos PCs e VPS); `aarch64` é ARM64 (Raspberry Pi 4, a Ampere da Oracle). O instalador escolhe o arquivo certo sozinho; você só precisa saber, caso algo peça.
 - **Um terminal na máquina**, normalmente por SSH, a partir do seu computador: `ssh seu-usuario@<IP da máquina>`. O IP e o usuário vêm de quem lhe deu a máquina (o painel da nuvem, o roteador, o NAS).
-- **O token do GitHub**, enquanto o Verso está em testes (veja o aviso acima).
 - **Nada mais é obrigatório.** Um **nome** (domínio) e o HTTPS são opcionais, para depois: veja [5. HTTPS (opcional), para liberar offline e notificações](#5-https-opcional-para-liberar-offline-e-notificações).
 
 O UniVerso é **livre e seu**: roda numa máquina sua, as notas continuam arquivos Markdown comuns numa pasta dela, e não há conta nem assinatura de ninguém no meio.
@@ -48,10 +47,9 @@ O UniVerso é **livre e seu**: roda numa máquina sua, as notas continuam arquiv
 Serve para uma máquina Linux com `apt` ou `dnf`, com ou sem Docker. No servidor, com o seu usuário comum (o script pede `sudo` quando precisar):
 
 ```bash
-V=0.8.4-beta.1
+V=0.8.5-beta.1
 curl -fsSLO https://versomd.com/universo.sh
 less universo.sh                          # opcional: ler o que ele faz (q para sair)
-read -rs GITHUB_TOKEN && export GITHUB_TOKEN   # cole o token, Enter; enquanto o repositório é privado
 sh universo.sh install --version "$V"
 ```
 
@@ -59,8 +57,7 @@ O que cada linha faz:
 
 1. `V=...` guarda a versão numa variável, para uma atualização depois mudar uma linha só.
 2. `curl` baixa o script `universo.sh`.
-3. `read -rs` pede o token sem mostrá-lo na tela; cole e aperte Enter. Um token *fine-grained* do GitHub com **Contents: Read-only** no repositório; sem ele, o script explica como criar.
-4. `sh universo.sh install` baixa o pacote desta máquina, confere a assinatura, instala, liga o serviço e espera ele responder. O script pergunta um endereço `https://` opcional (o `--url`): aperte Enter, o HTTP simples funciona sem ele; com HTTPS na frente você o define depois.
+3. `sh universo.sh install` baixa o pacote desta máquina, confere a assinatura, instala, liga o serviço e espera ele responder. O script pergunta um endereço `https://` opcional (o `--url`): aperte Enter, o HTTP simples funciona sem ele; com HTTPS na frente você o define depois. O `GITHUB_TOKEN` é opcional: só ajuda se o GitHub recusar o download pelo limite de pedidos sem conta (60 por hora por endereço).
 
 > **Importante: Guarde a saída do script**
 >
@@ -108,18 +105,10 @@ Seu usuário não fica no grupo `docker`: ponha `sudo` antes de todo `docker` e 
 sudo mkdir -p /srv/universo/data /srv/universo/folders
 ```
 
-**Passo 2: entrar no registro de imagens** (uma vez; enquanto o repositório é privado, com um token *classic* do GitHub que tenha `read:packages`):
+**Passo 2: a versão e o arquivo compose.**
 
 ```bash
-echo "$TOKEN" | sudo docker login ghcr.io -u <seu-usuario-github> --password-stdin
-```
-
-O `Login Succeeded` **não prova** que o token serve: o registro só o confere ao puxar a imagem. Se o `docker compose up` do passo 4 responder `403 Forbidden`, o token não tem `read:packages` (um token com só `repo` ou Contents não basta). O Docker guarda o token sem criptografia em `/root/.docker/config.json`; quando não precisar mais puxar versões novas, `sudo docker logout ghcr.io` o apaga.
-
-**Passo 3: a versão e o arquivo compose.**
-
-```bash
-V=0.8.4-beta.1
+V=0.8.5-beta.1
 echo "V=$V" | sudo tee /srv/universo/.env
 sudoedit /srv/universo/compose.yaml
 ```
@@ -166,7 +155,7 @@ services:
       # VERSO_PUBLIC_URL: "https://notas.exemplo.com"
 ```
 
-**Passo 4: ligar e ver o log.**
+**Passo 3: ligar e ver o log.**
 
 ```bash
 cd /srv/universo
@@ -177,11 +166,13 @@ docker logs -f universo        # Ctrl+C para sair
 
 Abra `http://<IP da máquina>:7340` no navegador e use o link de configuração do log (seção 6). O contêiner não tem como saber o IP da máquina hospedeira, então o log imprime o link com `localhost`: troque `localhost` pelo IP da máquina ao abrir de outro computador. `restart: unless-stopped` traz o contêiner de volta depois de uma queda e de um reboot, desde que o próprio Docker suba no boot (`systemctl is-enabled docker` deve dizer `enabled`).
 
+Se o `docker pull` (ou o `docker compose up`) responder `denied` ou `unauthorized`, a imagem ainda não é pública: entre antes com `docker login ghcr.io` (um token *classic* do GitHub com `read:packages`), como se fazia.
+
 ---
 
 ## 4. CasaOS e ZimaOS
 
-No painel do CasaOS ou do ZimaOS, instale um **app personalizado** colando o arquivo compose abaixo e clique em instalar: **não há nada para preencher**. É o `packaging/server/docker-compose.yml` do projeto, sem os metadados do painel. Antes, uma vez, no terminal do sistema, entre no registro (o `docker login` do passo 2 do Caminho 2).
+No painel do CasaOS ou do ZimaOS, instale um **app personalizado** colando o arquivo compose abaixo e clique em instalar: **não há nada para preencher**. É o `packaging/server/docker-compose.yml` do projeto, sem os metadados do painel. Se o pull responder `denied`, veja o fim do passo 3 do Caminho 2.
 
 ```yaml
 name: universo
@@ -394,7 +385,7 @@ Com **Docker**, troque a versão no `.env` e recrie o contêiner (os dados ficam
 
 ```bash
 cd /srv/universo
-echo "V=0.8.4-beta.1" | sudo tee .env   # troque pelo número da versão nova
+echo "V=0.8.5-beta.1" | sudo tee .env   # troque pelo número da versão nova
 docker compose pull
 docker compose up -d
 ```
@@ -418,7 +409,7 @@ docker logs universo                     # Docker
 - **A página diz "Este endereço mudou"** (erro 421, ou a linha "does not answer to that name" num app ou script): o `VERSO_PUBLIC_URL` está definido e você abriu por um endereço que não é o dele (muitas vezes o IP). A página diz o endereço certo e leva a ele: abra esse e guarde-o nos favoritos. Use o nome dele; ou, sem `VERSO_PUBLIC_URL`, você digitou um nome público, que só é aceito com ele: use o IP, ou defina o `VERSO_PUBLIC_URL`. Os links por e-mail (entrar por link, "esqueci a senha") também só existem com ele definido.
 - **O link de convite (ou de redefinição de senha) abre "localhost recusou a conexão".** Sem o `VERSO_PUBLIC_URL` o servidor não sabe por qual endereço as pessoas chegam a ele: o link de convite da mesa abre no endereço pelo qual você mesmo o usa, mas o que sai por e-mail (redefinir senha) e o link do log de início trazem `localhost`. Se as pessoas chegam ao servidor por outro endereço (o IP da rede, um nome, um túnel), defina o `VERSO_PUBLIC_URL` com esse endereço e reinicie; o log avisa disso ao iniciar.
 - **O proxy responde 502**: o UniVerso não está rodando, ou escuta noutra porta que não a do bloco do Caddy (`sh universo.sh status`, linha "Escuta em").
-- **Dois avisos no log que não são erro.** `update check: the release feed answered 404: a private repository needs VERSO_UPDATE_TOKEN`: enquanto o repositório é privado, a verificação de versão nova não o enxerga; o servidor funciona. E `plain HTTP works; offline, notifications and the like need HTTPS`: só informa que o servidor está sem TLS próprio.
+- **Um aviso no log que não é erro.** `plain HTTP works; offline, notifications and the like need HTTPS`: só informa que o servidor está sem TLS próprio.
 - **A porta 7340 está ocupada**: o log diz `Address already in use`. Dê outra ao UniVerso (`VERSO_LISTEN=0.0.0.0:7341`, ou `127.0.0.1:7341` atrás de um proxy) e a mesma porta ao proxy (`reverse_proxy 127.0.0.1:7341`).
 - **Ninguém de fora chega, mas na máquina funciona**: o **firewall** (a porta 7340 para o HTTP simples; 80 e 443 para o Caddy), e, no pacote, o `VERSO_LISTEN=0.0.0.0:7340`. Confira o `sh universo.sh firewall` e a regra de entrada da nuvem.
 - **A senha do admin se perdeu.** Na máquina:

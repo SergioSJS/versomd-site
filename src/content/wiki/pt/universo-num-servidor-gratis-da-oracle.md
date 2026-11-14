@@ -12,7 +12,7 @@ Esta nota é o roteiro para quem **nunca montou um servidor** e quer o seu UniVe
 
 > **Aviso: Verso está em testes**
 >
-> Enquanto o repositório do Verso for privado, o instalador baixa o programa de lá com um **token** do GitHub que o mantenedor entrega a você (passo 5). E o que a Oracle dá de graça é decisão dela e pode mudar: confira a página "Always Free" dela antes. Os menus do console da Oracle abaixo foram escritos pela documentação dela e podem ter outro nome ou lugar; os comandos do instalador foram testados num Ubuntu 24.04 com systemd, mas não numa máquina da Oracle de verdade.
+> O que a Oracle dá de graça é decisão dela e pode mudar: confira a página "Always Free" dela antes. Os menus do console da Oracle abaixo foram escritos pela documentação dela e podem ter outro nome ou lugar; os comandos do instalador foram testados num Ubuntu 24.04 com systemd, mas não numa máquina da Oracle de verdade.
 
 ---
 
@@ -64,7 +64,7 @@ Aparece o **menu do UniVerso**. Se a máquina tiver o `whiptail` (o Ubuntu tem),
 
 ## 5. Opção 1: instalar
 
-Escolha **Instalar o UniVerso**. Em uma máquina de 1 GB ele avisa que não há *swap* e oferece criar um arquivo (1 GB, que continua depois de reiniciar): responda **s**. Enquanto o repositório é privado, ele pede o token do GitHub; o menu explica como criar um, e você cola sem aparecer na tela. Ele baixa o pacote, **confere a assinatura**, instala e liga o serviço. Ao fim, ele reconhece a Oracle e **repete os passos da seção 2** — o segundo firewall, o da própria máquina, se resolve na opção 9 do menu (**Abrir as portas 80 e 443 nesta máquina**): escolha-a agora e responda **s** a tudo.
+Escolha **Instalar o UniVerso**. Em uma máquina de 1 GB ele avisa que não há *swap* e oferece criar um arquivo (1 GB, que continua depois de reiniciar): responda **s**. Ele baixa o pacote, **confere a assinatura**, instala e liga o serviço. Ao fim, ele reconhece a Oracle e **repete os passos da seção 2** — o segundo firewall, o da própria máquina, se resolve na opção 9 do menu (**Abrir as portas 80 e 443 nesta máquina**): escolha-a agora e responda **s** a tudo.
 
 ## 6. Opção 2: HTTPS com um nome grátis
 

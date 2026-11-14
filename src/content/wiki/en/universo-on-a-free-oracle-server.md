@@ -12,7 +12,7 @@ This note is the route for someone who has **never set up a server** and wants t
 
 > **Warning: Verso is in testing**
 >
-> While Verso's repository is private, the installer fetches the program from it with a GitHub **token** that the maintainer gives you (step 5). And what Oracle gives for free is Oracle's decision and may change: check its "Always Free" page first. The Oracle console menus below are written from its documentation and may be named or placed differently; the installer's commands were tested on Ubuntu 24.04 with systemd, not on a real Oracle machine.
+> What Oracle gives for free is Oracle's decision and may change: check its "Always Free" page first. The Oracle console menus below are written from its documentation and may be named or placed differently; the installer's commands were tested on Ubuntu 24.04 with systemd, not on a real Oracle machine.
 
 ---
 
@@ -64,7 +64,7 @@ The **UniVerso menu** appears. If the machine has `whiptail` (Ubuntu does), move
 
 ## 5. Option 1: install
 
-Choose **Install UniVerso**. On a 1 GB machine it warns that there is no *swap* and offers to make a file (1 GB, kept across reboots): answer **y**. While the repository is private it asks for the GitHub token; the menu explains how to make one, and you paste it without it showing on screen. It downloads the package, **checks the signature**, installs and starts the service. At the end it recognises Oracle and **repeats the steps of section 2** — the second firewall, the machine's own, is sorted out by option 9 of the menu (**Open ports 80 and 443 on this machine**): choose it now and answer **y** to everything.
+Choose **Install UniVerso**. On a 1 GB machine it warns that there is no *swap* and offers to make a file (1 GB, kept across reboots): answer **y**. It downloads the package, **checks the signature**, installs and starts the service. At the end it recognises Oracle and **repeats the steps of section 2** — the second firewall, the machine's own, is sorted out by option 9 of the menu (**Open ports 80 and 443 on this machine**): choose it now and answer **y** to everything.
 
 ## 6. Option 2: HTTPS with a free name
 
