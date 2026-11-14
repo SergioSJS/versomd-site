@@ -47,7 +47,7 @@ O UniVerso é **livre e seu**: roda numa máquina sua, as notas continuam arquiv
 Serve para uma máquina Linux com `apt` ou `dnf`, com ou sem Docker. No servidor, com o seu usuário comum (o script pede `sudo` quando precisar):
 
 ```bash
-V=0.8.5-beta.1
+V=0.9.0-beta.1
 curl -fsSLO https://versomd.com/universo.sh
 less universo.sh                          # opcional: ler o que ele faz (q para sair)
 sh universo.sh install --version "$V"
@@ -108,7 +108,7 @@ sudo mkdir -p /srv/universo/data /srv/universo/folders
 **Passo 2: a versão e o arquivo compose.**
 
 ```bash
-V=0.8.5-beta.1
+V=0.9.0-beta.1
 echo "V=$V" | sudo tee /srv/universo/.env
 sudoedit /srv/universo/compose.yaml
 ```
@@ -385,7 +385,7 @@ Com **Docker**, troque a versão no `.env` e recrie o contêiner (os dados ficam
 
 ```bash
 cd /srv/universo
-echo "V=0.8.5-beta.1" | sudo tee .env   # troque pelo número da versão nova
+echo "V=0.9.0-beta.1" | sudo tee .env   # troque pelo número da versão nova
 docker compose pull
 docker compose up -d
 ```

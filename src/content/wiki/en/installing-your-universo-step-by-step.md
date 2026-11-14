@@ -47,7 +47,7 @@ The UniVerso is **free and yours**: it runs on a machine of your own, your notes
 It works for a Linux machine with `apt` or `dnf`, with or without Docker. On the server, as your regular user (the script asks for `sudo` when it needs it):
 
 ```bash
-V=0.8.5-beta.1
+V=0.9.0-beta.1
 curl -fsSLO https://versomd.com/universo.sh
 less universo.sh                          # optional: read what it does (q to quit)
 sh universo.sh install --version "$V"
@@ -108,7 +108,7 @@ sudo mkdir -p /srv/universo/data /srv/universo/folders
 **Step 2: the version and the compose file.**
 
 ```bash
-V=0.8.5-beta.1
+V=0.9.0-beta.1
 echo "V=$V" | sudo tee /srv/universo/.env
 sudoedit /srv/universo/compose.yaml
 ```
@@ -385,7 +385,7 @@ With **Docker**, change the version in `.env` and recreate the container (the da
 
 ```bash
 cd /srv/universo
-echo "V=0.8.5-beta.1" | sudo tee .env   # swap in the new version's number
+echo "V=0.9.0-beta.1" | sudo tee .env   # swap in the new version's number
 docker compose pull
 docker compose up -d
 ```
