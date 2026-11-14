@@ -1,11 +1,11 @@
 ---
 title: "Dados e Tabelas Sorteadas"
-description: "`dice:` numa nota rola dados, uma tabela ou lista com `^id` sorteia uma linha; nada escrito, e numa nota compartilhada todos veem."
-order: 25
-group: rpg
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 22
+group: tools
 slug: "dados-e-tabelas-sorteadas"
 twin: "dice-and-random-tables"
-source: "demo-vault/25 - Dados e Tabelas Sorteadas.md"
+source: "demo-vault/22 - Dados e Tabelas Sorteadas.md"
 updated: "2026-10-14"
 ---
 Um código `dice:` numa nota é um **dado**: na **Leitura** e no **Editar**, fora da linha do cursor, ele aparece como um botão. Um clique — ou `Tab` até ele e `Enter` — rola e mostra o resultado num cartão ao lado: o total, cada dado e o que foi somado, com **Rolar de novo**. É a mesma forma do plugin Dice Roller do Obsidian, então um cofre que já usa o plugin rola aqui, e uma nota escrita aqui rola lá.
@@ -41,7 +41,7 @@ Com um leitor de tela, o botão se chama *Rolar 1d20+5*, e o resultado é dito: 
 
 Uma tabela ou uma lista com um `^id` é uma **tabela sorteada**. Um código `dice:` com um link para ela sorteia uma linha:
 
-Quem aparece na estrada? `dice: [[25 - Dados e Tabelas Sorteadas#^encontros]]`
+Quem aparece na estrada? `dice: [[22 - Dados e Tabelas Sorteadas#^encontros]]`
 
 | d6 | Encontro |
 | --- | --- |
@@ -56,7 +56,7 @@ A primeira coluna tem um **dado no cabeçalho** (`d6`, `d100`, `2d6`): cada linh
 
 Numa tabela sem dado no cabeçalho, ou numa lista, cada linha tem a mesma chance:
 
-O tempo hoje: `dice: [[25 - Dados e Tabelas Sorteadas#^tempo]]`
+O tempo hoje: `dice: [[22 - Dados e Tabelas Sorteadas#^tempo]]`
 
 - Sol forte
 - Garoa fina
@@ -113,4 +113,4 @@ O número **já foi sorteado** antes de os dados caírem, pelo gerador criptogr�
 
 ---
 
-Veja a seguir as fichas visuais em [Fichas](/wiki/fichas/), e o oráculo para jogo solo e a criação de campanhas em [Oráculos e Criação de Mundos](/wiki/oraculos-e-criacao-de-mundos/). Volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Anterior: [Desenhando no Board](/wiki/desenhando-no-board/) · Próxima: [Fichas](/wiki/fichas/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

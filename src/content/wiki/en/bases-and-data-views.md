@@ -1,11 +1,11 @@
 ---
 title: "Bases and Data Views"
-description: "How `.base` files work and how to embed live views in your notes."
-order: 4
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 14
+group: start
 slug: "bases-and-data-views"
 twin: "visualizacao-de-bases-e-dados"
-source: "demo-vault-en/04 - Bases and Data Views.md"
+source: "demo-vault-en/14 - Bases and Data Views.md"
 updated: "2026-09-25"
 ---
 A **base** — a `.base` file, the same format as Obsidian's — shows notes as a living spreadsheet: each note is a row, and its properties become columns. Open this vault's Projects: it gathers the notes in the `projects/` folder.
@@ -134,8 +134,8 @@ views:
 
 ## How to Create a Base
 
-- In the left ribbon, the **New note** button (`+`) opens the **New** menu: choose **New base**.
-- Right-click on a folder, or on the empty space of the file tree: **New base**.
+- In the left ribbon, the **New note** button (`+`) opens a menu of what can be made: choose **New base**.
+- Right-click on the empty space of the file tree: **New base**; on a folder, under **New** › **New base**.
 - In the command palette (`⌘⇧P`): **New base**.
 
 Explore this vault's project notes:
@@ -143,4 +143,4 @@ Explore this vault's project notes:
 - Project Beta
 - Research and Findings
 
-Go back to [Start](/en/wiki/welcome-to-verso/) or go on to [Graph View and Connections](/en/wiki/graph-view-and-connections/).
+Previous: [Typed Notes](/en/wiki/typed-notes/) · Next: [Graph View and Connections](/en/wiki/graph-view-and-connections/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

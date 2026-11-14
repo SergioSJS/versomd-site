@@ -1,11 +1,11 @@
 ---
 title: "The Table"
-description: "One log of every roll, table roll and oracle question, with who made it and from which note, in the right panel; other people's rolls arrive with their names."
-order: 31
+description: "Where to start: what Verso is and a map of every lesson."
+order: 25
 group: rpg
 slug: "the-table"
 twin: "a-mesa"
-source: "demo-vault-en/31 - The Table.md"
+source: "demo-vault-en/25 - The Table.md"
 updated: "2026-10-22"
 ---
 In a game nobody rolls inside a single note: the game master rolls from a monster's statblock, a player from their character, someone asks the oracle from the session note. The **Table** puts it all in one place: **one log** of every roll, random-table roll and oracle question, with who made it, when and from which note. It lives in the **right panel**, beside Outline and Links, and nothing is written to any file because of it, except an image you send yourself.
@@ -18,7 +18,7 @@ In a game nobody rolls inside a single note: the game master rolls from a monste
 2. Roll any die: `dice: 1d20+5`, `dice: 2d6`, or the palette's **Roll dice…**.
 3. The line appears at the end of the list: **You**, the time, the note it came from (a link: a click opens the note), the notation, each die as a small square and the **total**.
 
-Roll from a random table — `dice: [[25 - Dice and Random Tables#^encontros]]` — and the line shows the row that came out. A question to the oracle gets its line too, with the answer.
+Roll from a random table — `dice: [[22 - Dice and Random Tables#^encontros]]` — and the line shows the row that came out. A question to the oracle gets its line too, with the answer.
 
 The log scrolls to the newest roll on its own, unless you scrolled up to read older ones; then **Jump to the end** appears. Each person's dice are drawn **in their colours** when the server tells them.
 
@@ -63,7 +63,7 @@ With **3D dice** on, other people's rolls also fall in 3D on your screen. To kee
 
 **Table sound.** When someone else sends a **message** (or a roll that does not fall in 3D) at the Table, the window plays a short sound — never for what **you** send, and not while you are writing in the Table's box. In **Settings › Notifications** pick **Table sound** (Soft, Bell, Pop or Off; it starts on Soft) and the **volume**; choosing plays it once so you can hear it. The dice have their own sound, switched on separately. If the browser has not yet allowed audio (it does so only after you touch the page), the sound stays silent instead of playing late.
 
-In a folder that is **not** a UniVerso's (only on your computer), the Table shows your rolls and the ones you hear in shared notes **this session**, and says it is neither shared nor kept. In a UniVerso folder it is **everyone's table**: see below.
+In a folder that is **not** a UniVerso's (only on your computer), the Table shows your rolls and the ones you hear in shared notes **this session**, and says it is neither shared nor kept. In a UniVerso folder, or in one your own Verso serves with the window sitting at the table ([A Table over the Internet](/en/wiki/a-table-over-the-internet/)), it is **everyone's table**: see below.
 
 ---
 
@@ -84,7 +84,7 @@ At the foot of the panel is the **Write to the table…** field:
 - **Messages.** Type and press **Enter** (Shift+Enter breaks the line). Plain text, up to **500 characters**; a counter shows near the limit. A `[[link]]` to a note of the folder is a link.
 - **Rolling.** Type `/r 1d20+3` (or `/roll 4d6kh3`) and the server rolls, for everyone to see — or put the roll together in the dice row right below, as above.
 - **Secret.** In the box's toolbar, the **Public / Secret** menu (Foundry's and Roll20's roll mode: who sees the roll) set to **Secret** makes the roll yours and the **folder's owners'**: the others read "Ana rolled in secret", with no notation and no number.
-- **Images.** **Paste** straight into the field: copy an image or take a screenshot and press `Ctrl+V` / `⌘V`, or right click › **Paste**, or, on a phone, hold your finger on the field › **Paste**; dropping an image on the panel works too, and the paperclip in the field picks from the gallery. The image waits in the field as a thumbnail with an **×** to take it out; `Enter` sends it (the image first, then the text, if any). It takes a **PNG, JPEG, WebP or GIF** (up to 10 MB; a GIF stays animated in the log). The image becomes **a file of the folder** (in the attachments place), shows as a thumbnail and opens large on a click. Someone without **Images** in the Table window sends no images; PDFs and audio need **Files**.
+- **Images.** **Paste** straight into the field: copy an image or take a screenshot and press `Ctrl+V` / `⌘V`, or right click › **Paste**, or, on a phone, hold your finger on the field › **Paste**; dropping an image on the panel works too, and the paperclip in the field picks from the gallery. The image waits in the field as a thumbnail with an **×** to take it out; `Enter` sends it (the image first, then the text, if any). It takes a **PNG, JPEG, WebP or GIF** (up to 10 MB, or the limit the game master set; a GIF stays animated in the log). The image becomes **a file of the folder** (in the attachments place), shows as a thumbnail and opens large on a click. Someone without **Images** in the Table window sends no images. **PDFs** and **audio** (MP3, Ogg, WAV, M4A) go too, with the same limit, for whoever has **Files**: they arrive as a card that opens the file.
 
 Every line has a **⋯** button:
 
@@ -100,7 +100,7 @@ In **Settings › Notifications**, the **Table** kind tells you of a message or 
 
 ## Taking a roll into a note
 
-**Drag** the line of a roll, a random-table roll or an oracle draw from the Table panel and **drop it on a note's text** (in Edit mode or in Source): a line shows where it will land, and the block goes in with a blank line each side, **in one step** that **⌘Z** undoes. Drop it on a **board** and it becomes a text card. Messages and images are not dragged: use the **⋯** (see below).
+**Drag** the line of a roll, a random-table roll or an oracle draw from the Table panel and **drop it on a note's text** (in Edit mode or in Source): a line shows where it will land, and the block goes in with a blank line each side, **in one step** that **⌘Z** undoes. Drop it on a **board** and it becomes a text card. **Messages** drag too (they go in as a line), and so do the chat's **images** and **files** (a link to the file, which is already in the folder, goes in; nothing is uploaded again). To drop, you only need to **edit** the target note or board, whoever wrote the line.
 
 In the note it is written as a small `roll` block, text anyone can read, even in Obsidian:
 
@@ -114,7 +114,7 @@ who: Ana · when: 2026-10-22 21:40 · where: [The Table](/en/wiki/the-table/)
 Verso draws it as a **fixed card** — who, when, where (a link), the dice and the total — and it **never rolls again**: it is the record of what came out, like the game master's notebook.
 
 ```roll
-who: Ana · when: 2026-10-22 21:40 · where: [[31 - The Table]]
+who: Ana · when: 2026-10-22 21:40 · where: [[25 - The Table]]
 2d6 + 1d4 + 3 → [4, 3] + [2] + 3 = 12
 ```
 
@@ -135,4 +135,4 @@ In **Settings › RPG & Solo Play › Dice and RPG**, the **Table** switch remov
 
 ---
 
-Go back to [Colour Swatches](/en/wiki/colour-swatches/), continue to [Running a Table](/en/wiki/running-a-table/), see the [Home Page](/en/wiki/welcome-to-verso/) or explore the Verso Tour.
+Previous: [Oracles and World Building](/en/wiki/oracles-and-world-building/) · Next: [Running a Table](/en/wiki/running-a-table/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

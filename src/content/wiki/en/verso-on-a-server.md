@@ -1,11 +1,11 @@
 ---
 title: "Verso on a Server"
-description: "`verso serve`: installing, accounts by invitation, owner, editors and readers, editing together and the connected desktop app."
-order: 23
-group: server
+description: "Where to start: what Verso is and a map of every lesson."
+order: 30
+group: organize
 slug: "verso-on-a-server"
 twin: "verso-num-servidor"
-source: "demo-vault-en/23 - Verso on a Server.md"
+source: "demo-vault-en/30 - Verso on a Server.md"
 updated: ""
 ---
 **UniVerso** is Verso without the window, on a machine of your own — a server at home, a NAS, any cloud. Your notes stay **ordinary folders of Markdown files** on its disk; you open them in a browser, on your computer, phone or tablet, and several people can work in the same folder.
@@ -24,7 +24,9 @@ Three ways, all the same program (the full guide is in `docs/reference/server-in
 
 - **Docker**, for amd64 and arm64;
 - **CasaOS and ZimaOS**, through a compose file;
-- a **`.deb` or `.rpm`** package with a systemd service, for a machine without Docker.
+- a **`.deb` or `.rpm`** package with a systemd service, for a machine without Docker — or the **guided installer** `universo.sh`, which downloads, checks and installs the right package on a Linux machine with systemd (Ubuntu, Debian, Fedora…) and takes care of HTTPS, the first admin and backups.
+
+On a NAS or a VPS, step by step: [Installing the server on a NAS or a VPS](/en/wiki/installing-the-server-on-a-nas-or-a-vps/); on Oracle's free server: [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/). And, for a game session, the desktop app itself can be the server, with nothing to install: [A Table over the Internet](/en/wiki/a-table-over-the-internet/).
 
 Two folders matter: `VERSO_DATA_DIR`, on a local disk, with the accounts and the indexes; and `VERSO_FOLDERS_DIR`, with the note folders, which can live on a NAS. The backup covers both.
 
@@ -35,7 +37,7 @@ The shortest path: paste the compose file, open `http://<the machine's IP>:7340`
 ## The first admin and the accounts
 
 - The admin comes from the `VERSO_ADMIN_EMAIL` and `VERSO_ADMIN_PASSWORD` variables, **on the first start only**. Without them, the log shows a setup link that is valid for one hour.
-- **Nobody signs up on their own**: the admin **invites**, with a single-use link that is valid for seven days, and sees who used it.
+- **Nobody signs up on their own**: the admin **invites**, with a single-use link that is valid for seven days, and sees who used it. An account the admin gave the **creates folders** power invites too, only into the tables of its own folders and only to read; in the console, **Made by** says who made each invitation.
 - Each folder has an **owner**, **editors** and **readers**. The admin does not enter a folder without granting themselves access — and that goes in the log the owner reads.
 - Forgotten password: the admin makes a new-password link. Lost admin: `universo admin reset <e-mail>` on the machine itself.
 - Lost phone: on the account page, in the console, **End sessions and tokens** signs the account out of every browser and device at once and revokes its tokens, without changing the password — and it goes in the log.
@@ -80,7 +82,7 @@ That is also where **this device's name** lives — by default, the system's nam
 
 ---
 
-**With no server at all**: the desktop app can also serve the folders you mark straight to the phone, on your network, with no account and no password — the phone is paired by a QR and you allow it on the computer. See [Pair the phone with your computer](/en/wiki/verso-on-phone-and-tablet/#pair-the-phone-with-your-computer).
+**With no server at all**: the desktop app is a server too, in **Settings › Turn into a server**. **On my network**, it serves the folders you mark straight to your phone, with no account and no password — the phone is paired by a QR and you allow it on the computer; see [Pair the phone with your computer](/en/wiki/verso-on-phone-and-tablet/#pair-the-phone-with-your-computer). **By an internet link**, it takes in people from outside with invitations, accounts, the Table and read links, like a UniVerso, while the computer stays on; the Verso of someone you invited connects through **Settings › Servers** with the link's address. See [A Table over the Internet](/en/wiki/a-table-over-the-internet/).
 
 ## Syncing a folder from this computer
 
@@ -137,8 +139,10 @@ Whoever only **reads** a note does not receive its `[!secret]` blocks: the game 
 
 For players, or anyone, to **read** the world without making an account, the folder's owner makes a **read link**: right-click the folder and choose **Read link…**, or a note and choose **Copy read link…**. Pick the expiry (none, 1, 7 or 30 days, or until a date) and, if you like, a **password**. The address (`/r/…`) shows **once**, already copied: the server keeps only a mark of it. Whoever opens it reads, in a browser, only what the link points at — the folder, or the note and what it embeds —, in the reader's view: **without** the `[!secret]` blocks, no editing, no history, and a link to a note that was not shared shows as plain text *(not shared)*. Dice roll in the reader's browser and write nothing.
 
-Before the link is made, the dialog says how many notes have secrets and that readers will not see them. The tree marks what has a live link, and the panel lists the links with who made each and when it was last opened. **Revoke** ends the link at once, open pages included. Read links **start off**: whoever runs the server turns them on in *Administration › Server*, and turning them off ends them all. A wrong password counts as a refused sign-in, and the owner is mailed when there are many.
+Before the link is made, the dialog says how many notes have secrets and that readers will not see them. The tree marks what has a live link, and the panel lists the links with who made each and when it was last opened. **Revoke** ends the link at once, open pages included. Read links **start off**: whoever runs the server turns them on in *Administration › Server* (in the app serving over the internet, with **Turn read links on**; see [A Table over the Internet](/en/wiki/a-table-over-the-internet/#read-links)), and turning them off ends them all. A wrong password counts as a refused sign-in, and the owner is mailed when there are many — if the server has a mail server set up (`VERSO_SMTP_URL`).
 
 ---
 
-For the phone and the tablet, see [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/); to roll dice and draw from a table, [Dice and Random Tables](/en/wiki/dice-and-random-tables/). Go back to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+For the phone and the tablet, see [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/); to roll dice and draw from a table, [Dice and Random Tables](/en/wiki/dice-and-random-tables/).
+
+Previous: [A Table over the Internet](/en/wiki/a-table-over-the-internet/) · Next: [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

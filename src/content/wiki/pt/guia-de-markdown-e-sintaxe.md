@@ -1,6 +1,6 @@
 ---
 title: "Guia de Markdown e Sintaxe"
-description: "Títulos recolhíveis, blocos de código com botão de copiar, fórmulas matemáticas em KaTeX, tabelas com colunas redimensionáveis e listas hierárquicas."
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
 order: 1
 group: start
 slug: "guia-de-markdown-e-sintaxe"
@@ -53,7 +53,7 @@ As listas suportam indentação inteligente via `Tab` e `Shift-Tab`, com níveis
 
 ## Blocos de Código com Botão de Copiar
 
-Passe o cursor sobre qualquer bloco de código abaixo para visualizar o botão **Copiar** no canto superior direito:
+Passe o cursor sobre qualquer bloco de código abaixo para visualizar o botão **Copiar código** (o ícone de cópia) no canto superior direito, nos modos Leitura e Editar:
 
 ### Rust
 ```rust
@@ -165,4 +165,4 @@ O arquivo continua Markdown: a cada mudança as barras `|` se alinham sozinhas, 
 
 Para alargar uma coluna, arraste a borda direita da célula de cabeçalho dela, no modo Editar ou na Leitura. O Verso guarda essa largura para a tabela e a nota — o arquivo não muda, e o Obsidian mostra a tabela como sempre.
 
-Voltar para a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou continuar para [Links, Âncoras e Notas Incorporadas](/wiki/links-ancoras-e-notas-incorporadas/).
+Anterior: [Bem-vindo ao Verso](/wiki/bem-vindo-ao-verso/) · Próxima: [Links, Âncoras e Notas Incorporadas](/wiki/links-ancoras-e-notas-incorporadas/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

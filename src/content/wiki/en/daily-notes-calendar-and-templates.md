@@ -1,11 +1,11 @@
 ---
 title: "Daily Notes, Calendar and Templates"
-description: "Daily chronological log, monthly calendar navigation and note automation with templates."
-order: 7
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 12
+group: start
 slug: "daily-notes-calendar-and-templates"
 twin: "notas-diarias-calendario-e-templates"
-source: "demo-vault-en/07 - Daily Notes, Calendar and Templates.md"
+source: "demo-vault-en/12 - Daily Notes, Calendar and Templates.md"
 updated: "2026-10-14"
 ---
 One note per day — and per week, per month, per quarter and per year —, a calendar that shows the ones that exist, and templates that fill in new notes.
@@ -16,7 +16,7 @@ One note per day — and per week, per month, per quarter and per year —, a ca
 
 - **`⌘⇧D`**, the **Today's note** button in the left ribbon, or **Today's note** in the command palette (`⌘⇧P`).
 - The note is named `YYYY-MM-DD.md` and lives in the **Daily** folder — the default in **Settings › Periodic notes**.
-- If the day's note does not exist yet, Verso creates it from the template with the same name as the folder — here, Templates/Daily — and puts the cursor at the end.
+- If the day's note does not exist yet, Verso creates it from the template with the same name as the folder, or the one called **Daily** — here, Templates/Daily — and puts the cursor at the end. Another template is chosen in **Settings › Periodic notes**.
 
 Notes in this vault: September 24 and September 25.
 
@@ -64,7 +64,7 @@ A template is any note in the **Templates** folder (**Settings › Files and lin
 - Meeting Note: agenda, attendees, decisions and next steps.
 - New Project: project properties, scope and schedule.
 
-When used, a template swaps `{{date}}` for today's date (`YYYY-MM-DD`) and `{{title}}` for the note's name.
+When used, a template swaps `{{date}}` for today's date (`YYYY-MM-DD`), `{{time}}` for the time (`HH:mm`) and `{{title}}` for the note's name; `{{date:DD/MM/YYYY}}` and `{{time:HH[h]mm}}` write the date and the time in a Moment.js format, as in Obsidian.
 
 ### Start a new note from a template
 
@@ -81,4 +81,4 @@ In the palette (`⌘⇧P`), **Save this note as a template** copies the open not
 
 ---
 
-Go on to [Mermaid Diagrams](/en/wiki/mermaid-diagrams/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Organizing: stickers, covers and pages](/en/wiki/organizing-with-stickers-covers-and-pages/) · Next: [Typed Notes](/en/wiki/typed-notes/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

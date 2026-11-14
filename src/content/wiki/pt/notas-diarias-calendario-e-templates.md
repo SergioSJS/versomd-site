@@ -1,11 +1,11 @@
 ---
 title: "Notas Diárias, Calendário e Templates"
-description: "Registro cronológico diário, navegação mensal pelo calendário e automação de notas com templates."
-order: 7
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 12
+group: start
 slug: "notas-diarias-calendario-e-templates"
 twin: "daily-notes-calendar-and-templates"
-source: "demo-vault/07 - Notas Diárias, Calendário e Templates.md"
+source: "demo-vault/12 - Notas Diárias, Calendário e Templates.md"
 updated: "2026-10-14"
 ---
 Uma nota por dia — e por semana, por mês, por trimestre e por ano —, um calendário que mostra as que existem, e templates que preenchem as notas novas.
@@ -16,7 +16,7 @@ Uma nota por dia — e por semana, por mês, por trimestre e por ano —, um cal
 
 - **`⌘⇧D`**, o botão **Nota de hoje** na faixa da esquerda, ou **Nota de hoje** na paleta (`⌘⇧P`).
 - A nota se chama `AAAA-MM-DD.md` e fica na pasta **Diário** — o padrão de **Ajustes › Notas periódicas**.
-- Se a nota do dia ainda não existe, o Verso a cria a partir do template com o mesmo nome da pasta — aqui, Templates/Diário — e põe o cursor no fim.
+- Se a nota do dia ainda não existe, o Verso a cria a partir do template com o mesmo nome da pasta, ou do chamado **Diário** — aqui, Templates/Diário — e põe o cursor no fim. Outro template se escolhe em **Ajustes › Notas periódicas**.
 
 Notas deste cofre: 24 de setembro e 25 de setembro.
 
@@ -64,7 +64,7 @@ Um template é uma nota qualquer da pasta **Templates** (**Ajustes › Arquivos 
 - Nota de Reunião: pauta, participantes, decisões e próximos passos.
 - Novo Projeto: propriedades de projeto, escopo e cronograma.
 
-Ao ser usado, um template troca `{{date}}` pela data de hoje (`AAAA-MM-DD`) e `{{title}}` pelo nome da nota.
+Ao ser usado, um template troca `{{date}}` pela data de hoje (`AAAA-MM-DD`), `{{time}}` pela hora (`HH:mm`) e `{{title}}` pelo nome da nota; `{{date:DD/MM/YYYY}}` e `{{time:HH[h]mm}}` escrevem a data e a hora no formato do Moment.js, como no Obsidian.
 
 ### Começar uma nota nova por um template
 
@@ -81,4 +81,4 @@ Na paleta (`⌘⇧P`), **Salvar esta nota como template** copia a nota aberta pa
 
 ---
 
-Siga para [Diagramas Mermaid](/wiki/diagramas-mermaid/) ou volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Organizando: figurinhas, capas e páginas](/wiki/organizando-com-figurinhas-capas-e-paginas/) · Próxima: [Notas Tipadas](/wiki/notas-tipadas/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

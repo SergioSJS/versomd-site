@@ -1,11 +1,11 @@
 ---
 title: "Documents and Media"
-description: "Viewing PDFs in 2-page mode, resizing images and embedding safe web pages through iframes."
-order: 6
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 18
+group: tools
 slug: "documents-and-media"
 twin: "documentos-e-midia"
-source: "demo-vault-en/06 - Documents and Media.md"
+source: "demo-vault-en/18 - Documents and Media.md"
 updated: "2026-09-25"
 ---
 Images, PDFs, sounds and web pages live in notes just like text: in a link, in an embed or in a tab of their own.
@@ -57,10 +57,10 @@ A sound file included as an embed becomes a **player**, as in Obsidian. `![[asse
 
 *taverna.mp3*
 
-- **Play** and **Pause**; the bar with the time (drag it, or use the arrow keys, to go elsewhere in the track); **Mute** and the **Volume**. The volume is yours, kept on this device, and the same for every player.
+- **Play** and **Pause**; the bar with the time (drag it, or use the arrow keys, to go elsewhere in the track); **Mute** and the **Volume**; **Loop** plays the file over and over, for you only. The volume is yours, kept on this device, and the same for every player.
 - A click on the **name** opens the file (with `⌘`, beside).
 - It plays **for you only**, one at a time: starting a player pauses the other.
-- It works for `.mp3`, `.m4a`, `.aac`, `.ogg`, `.wav` and `.flac`, and for the Markdown embed too: `![](assets/sons/estrada.mp3)`. **MP3** and **AAC** play everywhere; OGG does not play on the iPhone, the iPad or the Mac.
+- It works for `.mp3`, `.m4a`, `.aac`, `.ogg`, `.opus`, `.wav` and `.flac`, and for the Markdown embed too: `![](assets/sons/estrada.mp3)`. **MP3** and **AAC** play everywhere; OGG does not play on the iPhone, the iPad or the Mac.
 - In **Source** mode the text shows as written; opening or playing never changes the note.
 - On a phone or a tablet, the volume is the device's own buttons; **Mute** stays on the player.
 - On a **board**, a sound file — brought from **Insert › Note or file of the folder…** or dragged from the computer — becomes a card with the same player, resized like the others.
@@ -83,5 +83,4 @@ A whole page can also be a note of your own — see [Web Pages and HTML](/en/wik
 
 ---
 
-Move on to the next guide: [Daily Notes, Calendar and Templates](/en/wiki/daily-notes-calendar-and-templates/).
-Or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Mermaid Diagrams](/en/wiki/mermaid-diagrams/) · Next: [Web Pages and HTML](/en/wiki/web-pages-and-html/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,11 +1,11 @@
 ---
 title: "Dice and Random Tables"
-description: "`dice:` in a note rolls dice, a table or list with `^id` draws a row; nothing is written, and in a shared note everyone sees it."
-order: 25
-group: rpg
+description: "Where to start: what Verso is and a map of every lesson."
+order: 22
+group: tools
 slug: "dice-and-random-tables"
 twin: "dados-e-tabelas-sorteadas"
-source: "demo-vault-en/25 - Dice and Random Tables.md"
+source: "demo-vault-en/22 - Dice and Random Tables.md"
 updated: "2026-10-14"
 ---
 A `dice:` code in a note is a **die**: in **Reading** and in **Edit**, away from the cursor line, it shows up as a button. One click — or `Tab` to it and `Enter` — rolls it and shows the result on a card beside it: the total, each die, and what was added, with **Roll again**. It is the same form as Obsidian's Dice Roller plugin, so a vault that already uses the plugin rolls here, and a note written here rolls there.
@@ -41,7 +41,7 @@ With a screen reader, the button is named *Roll 1d20+5*, and the result is spoke
 
 A table or a list with a `^id` is a **random table**. A `dice:` code with a link to it draws a row:
 
-Who shows up on the road? `dice: [[25 - Dice and Random Tables#^encontros]]`
+Who shows up on the road? `dice: [[22 - Dice and Random Tables#^encontros]]`
 
 | d6 | Encounter |
 | --- | --- |
@@ -56,7 +56,7 @@ The first column has a **die in the header** (`d6`, `d100`, `2d6`): each row say
 
 In a table with no die in the header, or in a list, every row has the same chance:
 
-The weather today: `dice: [[25 - Dice and Random Tables#^tempo]]`
+The weather today: `dice: [[22 - Dice and Random Tables#^tempo]]`
 
 - Blazing sun
 - Light drizzle
@@ -112,4 +112,4 @@ The number is **already drawn** before the dice fall, by the window's cryptograp
 
 ---
 
-Next, see the visual statblocks in [Statblocks](/en/wiki/statblocks/), and the oracle for solo play and for building campaigns in [Oracles and World Building](/en/wiki/oracles-and-world-building/). Go back to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+Previous: [Drawing on the Board](/en/wiki/drawing-on-the-board/) · Next: [Statblocks](/en/wiki/statblocks/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,14 +1,14 @@
 ---
 title: "Desenhando no Board"
-description: "A cola do Excalidraw: ferramentas, grupos, setas, camadas e atalhos."
-order: 10
-group: boards
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 21
+group: organize
 slug: "desenhando-no-board"
 twin: "drawing-on-the-board"
-source: "demo-vault/10 - Desenhando no Board.md"
+source: "demo-vault/21 - Desenhando no Board.md"
 updated: "2026-10-01"
 ---
-Os boards do Verso são desenhados com o **Excalidraw**. Para aprender fazendo, abra o Treino do Board: catorze lições, cada uma com um espaço para praticar. Esta nota é a cola, para consultar depois.
+Os boards do Verso são desenhados com o **Excalidraw**. Para aprender fazendo, abra o Treino do Board: dezesseis lições, cada uma com um espaço para praticar. Esta nota é a cola, para consultar depois.
 
 *Treino do Board*
 
@@ -89,6 +89,6 @@ Com algo selecionado, o painel da esquerda mostra **Contorno**, **Fundo**, **Pre
 
 > **Nota**
 >
-> Com o board em foco, alguns atalhos do Verso dão lugar aos do Excalidraw: `⌘ D` duplica, `⌘ K` cria um link no que estiver selecionado, `⌘ [` e `⌘ ]` mudam a camada. Clique fora do board — na lista de arquivos, por exemplo — para usá-los no Verso. `⌘ P`, `⌘ F` e `⌘ ⇧ E` funcionam também no board.
+> Com o board em foco, alguns atalhos do Verso dão lugar aos do Excalidraw: `⌘ D` duplica, `⌘ K` cria um link no que estiver selecionado, `⌘ [` e `⌘ ]` mudam a camada, e `⌘ +`, `⌘ −` e `⌘ 0` dão zoom no board, não na janela. Clique fora do board — na lista de arquivos, por exemplo — para usá-los no Verso. `⌘ P`, `⌘ F` e `⌘ ⇧ E` funcionam também no board.
 
-Siga para [Escrevendo no Editor](/wiki/escrevendo-no-editor/) ou volte para [Início](/wiki/bem-vindo-ao-verso/) · Veja também o Tour do Verso.
+Anterior: [Board e Relações](/wiki/board-e-relacoes/) · Próxima: [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

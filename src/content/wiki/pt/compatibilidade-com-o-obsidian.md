@@ -1,11 +1,11 @@
 ---
 title: "Compatibilidade com o Obsidian"
-description: "Para quem vem do Obsidian ou usa os dois: a mesma pasta, nada reescrito ao abrir, o que funciona igual, o que o Verso acrescenta, o que não existe e como experimentar."
-order: 37
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 38
 group: start
 slug: "compatibilidade-com-o-obsidian"
 twin: "compatibility-with-obsidian"
-source: "demo-vault/37 - Compatibilidade com o Obsidian.md"
+source: "demo-vault/38 - Compatibilidade com o Obsidian.md"
 updated: "2026-10-31"
 ---
 Se você já guarda suas notas no **Obsidian**, não precisa mover nada para experimentar o Verso. O Verso abre **a mesma pasta**, lê os mesmos arquivos, e o formato dele *estende* o do Obsidian: nunca dá a uma construção que já existe um significado diferente. Esta nota diz o que isso quer dizer na prática: o que funciona igual, o que o Verso acrescenta, o que é diferente ou não existe, e como usar os dois na mesma pasta sem susto.
@@ -106,4 +106,4 @@ Desligar um recurso de RPG no Verso não muda nenhum arquivo; a ficha vira um bl
 
 Quando terminar, o cofre continua sendo um cofre do Obsidian.
 
-A seguir: [Instalar o servidor num NAS ou VPS](/wiki/instalar-o-servidor-num-nas-ou-vps/) põe as suas notas num servidor seu. Volte à [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Anterior: [Ajuda, Atualizações e Diagnóstico](/wiki/ajuda-atualizacoes-e-diagnostico/) · Última lição · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

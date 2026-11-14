@@ -1,11 +1,11 @@
 ---
 title: "Installing Your UniVerso, Step by Step"
-description: "From zero to a server of your own, for someone who has never set one up: the compose file or the install script, the first admin, HTTPS (optional, for offline use and notifications), the backup."
-order: 24
-group: server
+description: "Where to start: what Verso is and a map of every lesson."
+order: 31
+group: rpg
 slug: "installing-your-universo-step-by-step"
 twin: "instalar-o-seu-universo-passo-a-passo"
-source: "demo-vault-en/24 - Installing Your UniVerso, Step by Step.md"
+source: "demo-vault-en/31 - Installing Your UniVerso, Step by Step.md"
 updated: "2026-10-15"
 ---
 This note takes you, with no rush, from an empty machine to a working **UniVerso**: Verso on a server of your own, open in the browser of your computer, your phone and your tablet. What the UniVerso does once it is installed is in [Verso on a Server](/en/wiki/verso-on-a-server/); here is only the road to get there. You do not need to be a programmer: you need to copy and paste carefully.
@@ -16,11 +16,11 @@ This note takes you, with no rush, from an empty machine to a working **UniVerso
 
 > **Tip: Never set up a server?**
 >
-> The note [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/) is the route with the **installer's menu** (`sh universo.sh`): HTTPS with a free name and the first admin in a few steps, on a free Oracle machine. What is below is the manual road.
+> The note [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/) is the route with the **installer's menu** (`sh universo.sh`): HTTPS with a free name and the first admin in a few steps, on a free Oracle machine. On a NAS (ZimaOS, CasaOS) or a VPS, the route is [Installing the server on a NAS or a VPS](/en/wiki/installing-the-server-on-a-nas-or-a-vps/); to play for a few hours with no server at all, the desktop app itself serves the table: [A Table over the Internet](/en/wiki/a-table-over-the-internet/). What is below is the manual road.
 
 > **Note: The shortest path**
 >
-> Paste the compose file, open `http://<machine IP>:7340` and use the setup link that shows up in the log. **No HTTPS, no name, no proxy.** HTTPS is an optional step, later, to unlock offline mode and notifications (section 5). This holds from the version after 0.8.2-beta.1; earlier ones refuse to let you in over HTTP from another machine.
+> Paste the compose file, open `http://<machine IP>:7340` and use the setup link that shows up in the log. **No HTTPS, no name, no proxy.** HTTPS is an optional step, later, to unlock offline mode and notifications (section 5). This holds since 0.8.3-beta.2; earlier ones refuse to let you in over HTTP from another machine.
 
 ---
 
@@ -48,7 +48,7 @@ The UniVerso is **free and yours**: it runs on a machine of your own, your notes
 It works for a Linux machine with `apt` or `dnf`, with or without Docker. On the server, as your regular user (the script asks for `sudo` when it needs it):
 
 ```bash
-V=0.8.2-beta.1
+V=0.8.4-beta.1
 curl -fsSLO https://versomd.com/universo.sh
 less universo.sh                          # optional: read what it does (q to quit)
 read -rs GITHUB_TOKEN && export GITHUB_TOKEN   # paste the token, Enter; while the repository is private
@@ -119,7 +119,7 @@ echo "$TOKEN" | sudo docker login ghcr.io -u <your-github-user> --password-stdin
 **Step 3: the version and the compose file.**
 
 ```bash
-V=0.8.2-beta.1
+V=0.8.4-beta.1
 echo "V=$V" | sudo tee /srv/universo/.env
 sudoedit /srv/universo/compose.yaml
 ```
@@ -145,6 +145,11 @@ services:
     security_opt:
       - no-new-privileges:true
     mem_limit: 768m           # memory limit: if it runs out, the container restarts, the machine does not go down
+    logging:                  # the log rotated by Docker: three files of 10 MB at most
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "7340:7340"                                 # all addresses: plain HTTP over the network
     volumes:
@@ -197,6 +202,11 @@ services:
     security_opt:
       - no-new-privileges:true
     mem_limit: 768m           # memory limit: if it runs out, the container restarts, the machine does not go down
+    logging:                  # the log rotated by Docker: three files of 10 MB at most
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "7340:7340"
     volumes:
@@ -297,6 +307,18 @@ Done: `https://notas.exemplo.com` opens the UniVerso's sign-in page, and offline
 
 ---
 
+### No domain and no open port: the Cloudflare link
+
+The UniVerso itself can open a link on the internet through Cloudflare, with no domain, no certificate and no port opened on the router — the same link as the computer's app ([A Table over the Internet](/en/wiki/a-table-over-the-internet/)).
+
+- **With the script:** `sh universo.sh link quick` turns on a **quick link**; `sh universo.sh link own` asks for your address and the tunnel's token; `sh universo.sh link off` turns it off. In the script's menu it is item **11**.
+- **With Docker, CasaOS or ZimaOS:** the variable `VERSO_TUNNEL=quick` (or `own`, with `VERSO_TUNNEL_HOSTNAME` and `VERSO_TUNNEL_TOKEN_FILE`) in `universo.env` or the compose file.
+- **In the console:** the administration console's **Server** page has **Turn on a quick link**, **Turn on my own address**, **Extend 12 hours** and **Turn off**. Turning it on and extending ask you to confirm it is you. **The address shows only there**: the log does not write it.
+
+The first time, the UniVerso downloads **cloudflared** (Cloudflare's program, a pinned version checked by its sum) into its data folder; nothing else is installed. A **quick link** is Cloudflare's testing mode: a random name that changes each time it is turned on, **12 hours** (the console extends by 12 more), up to 200 requests at once. Passkeys and the offline copy are tied to its name and end with it. With the link on and no `VERSO_PUBLIC_URL`, invitations and the table's link go out with the link's address.
+
+**Your own address**, which does not change: with a free Cloudflare account and a domain there, in the dashboard (**Zero Trust › Networks › Tunnels**) make a tunnel, copy the **token** shown after `--token`, and under **Public Hostname** point your address at `http://localhost:7341`. Then `sh universo.sh link own` (or the variables). A token pasted in the console lasts only until the server restarts; for good, use the variable.
+
 ## 6. The first admin, and connecting the app
 
 Nobody signs up on their own: the first account is the **admin**'s. With `VERSO_ADMIN_EMAIL` and `VERSO_ADMIN_PASSWORD` empty, the server prints in the log, on startup, a **setup link** that is valid for one hour and one use. To find it:
@@ -351,7 +373,7 @@ scp 'ubuntu@<server IP>:universo-backup-*.tar.gz' .                             
 
 Copy the name the command printed (or look with `ls /var/backups/universo`): in a newer copy of the script it ends with a random part (`-a1b2c3`), in an older one it ends with the time.
 
-The guide also teaches how to **encrypt** the backup (`backup --keygen` and `backup --encrypt`) before it leaves the machine, in a newer version of the script.
+The guide also teaches how to **encrypt** the backup (`backup --keygen` and `backup --encrypt`) before it leaves the machine.
 
 With **Docker**, stop the server, copy the two directories and start it again. The `umask 077` and the `>` make the file be born yours and readable only by you (it holds the accounts and the password hashes; without that, `tar` with `sudo` leaves it owned by root and open to any user on the machine):
 
@@ -372,7 +394,7 @@ With **Docker**, change the version in `.env` and recreate the container (the da
 
 ```bash
 cd /srv/universo
-echo "V=0.8.2-beta.1" | sudo tee .env   # swap in the new version's number
+echo "V=0.8.4-beta.1" | sudo tee .env   # swap in the new version's number
 docker compose pull
 docker compose up -d
 ```
@@ -414,4 +436,6 @@ Going deeper: the project's full manual is `docs/reference/server-install.md` an
 
 ---
 
-For what to do with the server up, go back to [Verso on a Server](/en/wiki/verso-on-a-server/); for the phone, [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/). The next note, [Dice and Random Tables](/en/wiki/dice-and-random-tables/), rolls dice and draws from tables — at a table with your UniVerso, everyone sees the same roll. Go back to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+For the phone, see [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/); at a table with your UniVerso, everyone sees the same roll of the [dice](/en/wiki/dice-and-random-tables/).
+
+Previous: [Verso on a Server](/en/wiki/verso-on-a-server/) · Next: [Installing the server on a NAS or a VPS](/en/wiki/installing-the-server-on-a-nas-or-a-vps/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

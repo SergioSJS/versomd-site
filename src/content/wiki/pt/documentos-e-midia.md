@@ -1,11 +1,11 @@
 ---
 title: "Documentos e Mídia"
-description: "Visualização de PDFs com modo de 2 páginas, redimensionamento de imagens e incorporação de páginas web seguras via iframes."
-order: 6
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 18
+group: tools
 slug: "documentos-e-midia"
 twin: "documents-and-media"
-source: "demo-vault/06 - Documentos e Mídia.md"
+source: "demo-vault/18 - Documentos e Mídia.md"
 updated: "2026-09-25"
 ---
 Imagens, PDFs, sons e páginas da web moram nas notas como o texto: num link, num embed ou numa aba só deles.
@@ -23,9 +23,9 @@ Inclua uma imagem com wikilink (`![[arquivo]]`) ou com Markdown, e dê a largura
 ![Diagrama](/wiki-assets/diagrama.svg)
 
 - Arraste o **canto** de uma imagem para mudar o tamanho: o Verso escreve a medida no embed.
-- No modo Editar, o botão **Inserir imagem** da barra de ferramentas (o último) abre um menu: **Do computador…** abre o seletor de arquivos do sistema, e a imagem escolhida é **copiada** para a pasta `assets` ao lado da nota (o nome da pasta está em Ajustes › Anexos) e o embed `![[nome.png]]` é inserido onde está o cursor. Se já existe uma imagem com esse nome, a nova fica como `nome (2).png`; nada é sobrescrito, e os bytes não são alterados. **Da pasta…** continua mostrando os arquivos que já estão na pasta. No celular e no tablet, o menu oferece **Fotos e arquivos…** e **Tirar foto** (a câmera; a foto entra como `Foto 2026-10-15 142530.jpg`).
+- No modo Editar, o botão **Inserir imagem** da barra de ferramentas (o último) abre um menu: **Do computador…** abre o seletor de arquivos do sistema, e a imagem escolhida é **copiada** para a pasta `assets` ao lado da nota (o nome da pasta está em **Ajustes › Arquivos e links › Pasta de anexos (ao lado da nota)**) e o embed `![[nome.png]]` é inserido onde está o cursor. Se já existe uma imagem com esse nome, a nova fica como `nome (2).png`; nada é sobrescrito, e os bytes não são alterados. **Da pasta…** continua mostrando os arquivos que já estão na pasta. No celular e no tablet, o menu oferece **Fotos e arquivos…** e **Tirar foto** (a câmera; a foto entra como `Foto 2026-10-15 142530.jpg`).
 - **Cole** ou **arraste** uma imagem para dentro de uma nota (modo Editar) faz o mesmo caminho: ela é salva em `assets` ao lado da nota, e o embed é inserido onde está o cursor.
-- Num servidor, uma imagem passa de **32 MB** não é enviada, e quem só lê a pasta não insere imagens.
+- Num servidor, uma imagem que passa de **32 MB** não é enviada, e quem só lê a pasta não insere imagens.
 - Numa aba de imagem, um clique alterna entre caber na tela e o tamanho real.
 
 ---
@@ -57,10 +57,10 @@ Um arquivo de som incluído como embed vira um **player**, como no Obsidian. `![
 
 *taverna.mp3*
 
-- **Tocar** e **Pausar**; a barra com o tempo (arraste, ou use as setas, para ir a outro ponto); **Silenciar** e o **Volume**. O volume é seu, guardado neste aparelho, e vale para todos os players.
+- **Tocar** e **Pausar**; a barra com o tempo (arraste, ou use as setas, para ir a outro ponto); **Silenciar** e o **Volume**; **Repetir** toca o arquivo de novo sem parar, só para você. O volume é seu, guardado neste aparelho, e vale para todos os players.
 - Um clique no **nome** abre o arquivo (com `⌘`, ao lado).
 - Toca **só para você**, e um por vez: começar um player pausa o outro.
-- Vale para `.mp3`, `.m4a`, `.aac`, `.ogg`, `.wav` e `.flac`, e para o embed em Markdown também: `![](assets/sons/estrada.mp3)`. **MP3** e **AAC** tocam em todo lugar; OGG não toca no iPhone, no iPad nem no Mac.
+- Vale para `.mp3`, `.m4a`, `.aac`, `.ogg`, `.opus`, `.wav` e `.flac`, e para o embed em Markdown também: `![](assets/sons/estrada.mp3)`. **MP3** e **AAC** tocam em todo lugar; OGG não toca no iPhone, no iPad nem no Mac.
 - No modo **Fonte** aparece o texto como está escrito; abrir ou tocar nunca muda a nota.
 - No celular e no tablet, o volume é o dos botões do aparelho; **Silenciar** continua no player.
 - Num **board**, um arquivo de som — trazido de **Inserir › Nota ou arquivo da pasta…** ou arrastado do computador — vira um cartão com o mesmo player, que se redimensiona como os outros.
@@ -83,5 +83,4 @@ Uma página inteira também pode ser uma nota sua — veja [Páginas Web e HTML]
 
 ---
 
-Avance para o próximo guia: [Notas Diárias, Calendário e Templates](/wiki/notas-diarias-calendario-e-templates/).
-Ou retorne para a [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Diagramas Mermaid](/wiki/diagramas-mermaid/) · Próxima: [Páginas Web e HTML](/wiki/paginas-web-e-html/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

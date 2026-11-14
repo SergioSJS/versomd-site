@@ -1,11 +1,11 @@
 ---
 title: "Dados Estruturados como Diagrama"
-description: "Um arquivo JSON, YAML, TOML, XML ou CSV, ou um bloco de código desses formatos, visto como caixas e linhas para mover, recolher e buscar; só leitura."
-order: 28
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 16
+group: tools
 slug: "dados-estruturados-como-diagrama"
 twin: "structured-data-as-a-diagram"
-source: "demo-vault/28 - Dados Estruturados como Diagrama.md"
+source: "demo-vault/16 - Dados Estruturados como Diagrama.md"
 updated: "2026-10-21"
 ---
 Um arquivo **JSON**, **YAML**, **TOML**, **XML** ou **CSV** abre como texto, no editor de código. Quando ele fica grande ou fundo, ler o texto cansa: onde termina um ramo? quantos itens tem esta lista? O **Diagrama** desenha o mesmo arquivo como **caixas ligadas por linhas** — uma caixa para cada objeto ou lista, uma linha para cada valor simples — e deixa você mover, recolher e buscar.
@@ -22,7 +22,7 @@ Abra npcs-da-campanha.json (ou o npcs-da-campanha.yaml, o mesmo em YAML). No alt
 2. **Recolha** um ramo na setinha da caixa (ou com **Enter**): ela passa a dizer quanto esconde, como *3 itens* ou *6 chaves*. **Recolher tudo**, **Expandir tudo** e **Expandir até o nível…** ficam na barra (no celular, no menu **…** do fim da barra).
 3. **Busque** no campo do alto: chaves e valores, mesmo dentro de um ramo recolhido — o diagrama abre o caminho até o resultado. **Enter** vai ao próximo, **Shift+Enter** ao anterior, **Esc** limpa.
 4. Clique numa caixa ou numa linha dela: o trecho correspondente fica **selecionado no texto**, se você abrir o mesmo arquivo em outro painel (⌘\ divide a tela). E o cursor no texto marca a caixa onde ele está.
-5. Clique com o botão direito numa caixa ou linha: **Copiar caminho** dá algo como `$.npcs[0].itens`; **Copiar valor** copia o valor.
+5. Clique com o botão direito numa caixa ou linha: **Copiar caminho** dá algo como `$.npcs[0].itens`; **Copiar valor** copia o valor; **Mostrar no texto** volta ao texto com aquele trecho selecionado.
 6. **Arrumar de novo** devolve tudo ao desenho original; **De cima para baixo** troca a direção; **Ajustar à tela** mostra o conjunto. No celular a barra é uma linha só de ícones — lupa, afastar, aproximar, ajustar — e o menu **…** guarda o resto; a lupa abre a busca sobre a barra, e a dica de toque some quando você a dispensa.
 
 Um valor comprido aparece cortado, com um **…** que mostra o texto inteiro. Um número aparece como foi escrito (`12345678901234567890`, sem arredondar).
@@ -74,4 +74,4 @@ O comando **Salvar como board…** (na barra do diagrama e na paleta) escreve um
 
 ---
 
-Volte às ferramentas de mesa em [Oráculos e Criação de Mundos](/wiki/oraculos-e-criacao-de-mundos/), veja como ligar uma pasta a uma nuvem sua em [Sincronizar com uma Nuvem](/wiki/sincronizar-com-uma-nuvem/), consulte a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou explore o Tour do Verso.
+Anterior: [Visualização de Grafo e Conexões](/wiki/visualizacao-de-grafo-e-conexoes/) · Próxima: [Diagramas Mermaid](/wiki/diagramas-mermaid/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

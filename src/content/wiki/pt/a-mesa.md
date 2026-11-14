@@ -1,11 +1,11 @@
 ---
 title: "A Mesa"
-description: "Um registro de todas as rolagens, sorteios e perguntas ao oráculo, com quem fez e de qual nota, no painel da direita; as de outras pessoas chegam com o nome delas."
-order: 31
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 25
 group: rpg
 slug: "a-mesa"
 twin: "the-table"
-source: "demo-vault/31 - A Mesa.md"
+source: "demo-vault/25 - A Mesa.md"
 updated: "2026-10-22"
 ---
 Num jogo, ninguém rola dentro de uma nota só: o mestre rola numa ficha de monstro, a jogadora no personagem, alguém pergunta ao oráculo na nota da sessão. A **Mesa** junta tudo num lugar: **um registro** de cada rolagem, sorteio de tabela e pergunta ao oráculo, com quem fez, a que horas e de qual nota. Fica no **painel da direita**, ao lado de Estrutura e Links, e nada é escrito em arquivo nenhum por causa dela, a não ser a imagem que você mesmo envia.
@@ -18,7 +18,7 @@ Num jogo, ninguém rola dentro de uma nota só: o mestre rola numa ficha de mons
 2. Role um dado qualquer: `dice: 1d20+5`, `dice: 2d6`, ou o **Rolar dados…** da paleta.
 3. A linha aparece no fim da lista: **Você**, a hora, a nota de onde saiu (um link: um clique abre a nota), a notação, cada dado como um quadradinho e o **total**.
 
-Role de uma tabela sorteada — `dice: [[25 - Dados e Tabelas Sorteadas#^encontros]]` — e a linha mostra a linha da tabela que saiu. Uma pergunta ao oráculo também ganha a sua linha, com a resposta.
+Role de uma tabela sorteada — `dice: [[22 - Dados e Tabelas Sorteadas#^encontros]]` — e a linha mostra a linha da tabela que saiu. Uma pergunta ao oráculo também ganha a sua linha, com a resposta.
 
 O registro rola sozinho para a rolagem mais nova, a menos que você tenha subido para ler as antigas; aí aparece **Ir para o fim**. Os dados de cada pessoa são desenhados **nas cores dela** quando o servidor as informa.
 
@@ -63,7 +63,7 @@ Com os **Dados 3D** ligados, a rolagem dos outros também cai em 3D na sua tela.
 
 **Som da Mesa.** Quando outra pessoa manda uma **mensagem** (ou uma rolagem que não cai em 3D) na Mesa, a janela toca um som curto — nunca para o que **você** manda, e não enquanto você escreve na caixa da Mesa. Em **Ajustes › Notificações** escolha **Som da Mesa** (Suave, Sino, Estalo ou Desligado; vem em Suave) e o **volume**; ao escolher, o som toca uma vez para você ouvir. Os dados têm o seu próprio som, ligado à parte. Se o navegador ainda não liberou o áudio (ele só libera depois que você toca na página), o som fica mudo em vez de tocar atrasado.
 
-Numa pasta que **não** é de um UniVerso (só do seu computador), a Mesa mostra as suas rolagens e as que você ouve nas notas compartilhadas **desta sessão**, e diz que não é compartilhada nem guardada. Numa pasta de um UniVerso, ela é **a mesa de todos**: veja abaixo.
+Numa pasta que **não** é de um UniVerso (só do seu computador), a Mesa mostra as suas rolagens e as que você ouve nas notas compartilhadas **desta sessão**, e diz que não é compartilhada nem guardada. Numa pasta de um UniVerso, ou numa que o seu próprio Verso serve com a janela sentada à mesa ([Mesa pela Internet](/wiki/mesa-pela-internet/)), ela é **a mesa de todos**: veja abaixo.
 
 ---
 
@@ -84,7 +84,7 @@ No pé do painel há o campo **Escreva para a mesa…**:
 - **Mensagens.** Escreva e aperte **Enter** (Shift+Enter quebra a linha). Texto simples, até **500 caracteres**; perto do limite aparece um contador. Um `[[link]]` para uma nota da pasta vira link.
 - **Rolar.** Escreva `/r 1d20+3` (ou `/roll 4d6kh3`) e o servidor rola, para todos verem — ou monte a rolagem na fila de dados logo abaixo, como acima.
 - **Secreta.** Na barra da caixa, o menu **Pública / Secreta** (o de Foundry e Roll20: quem vê a rolagem) em **Secreta** faz a rolagem ser só sua e dos **donos da pasta**: os outros leem "Ana rolou em segredo", sem notação nem número.
-- **Imagens.** **Cole** direto no campo: copie uma imagem ou tire um print e aperte `Ctrl+V` / `⌘V`, ou botão direito › **Colar**, ou, no celular, segure o dedo no campo › **Colar**; também vale soltar a imagem sobre o painel, e o clipe do campo escolhe da galeria. A imagem espera no campo como uma miniatura com um **×** para tirar; `Enter` envia (a imagem primeiro, depois o texto, se houver). Aceita **PNG, JPEG, WebP ou GIF** (até 10 MB; o GIF continua animado no registro). A imagem vira **um arquivo da pasta** (na pasta de anexos), aparece como miniatura e abre grande com um clique. Quem não tem **Imagens** na janela da Mesa não envia imagens; PDF e áudio pedem **Arquivos**.
+- **Imagens.** **Cole** direto no campo: copie uma imagem ou tire um print e aperte `Ctrl+V` / `⌘V`, ou botão direito › **Colar**, ou, no celular, segure o dedo no campo › **Colar**; também vale soltar a imagem sobre o painel, e o clipe do campo escolhe da galeria. A imagem espera no campo como uma miniatura com um **×** para tirar; `Enter` envia (a imagem primeiro, depois o texto, se houver). Aceita **PNG, JPEG, WebP ou GIF** (até 10 MB, ou o limite que a mestra definir; o GIF continua animado no registro). A imagem vira **um arquivo da pasta** (na pasta de anexos), aparece como miniatura e abre grande com um clique. Quem não tem **Imagens** na janela da Mesa não envia imagens. **PDF** e **áudio** (MP3, Ogg, WAV, M4A) também vão, com o mesmo limite, para quem tem **Arquivos**: chegam como um cartão que abre o arquivo.
 
 Cada linha tem o botão **⋯**:
 
@@ -100,7 +100,7 @@ Em **Ajustes › Notificações**, o tipo **Mesa** avisa de uma mensagem ou rola
 
 ## Levar uma rolagem para uma nota
 
-**Arraste** a linha de uma rolagem, de uma tabela sorteada ou de um oráculo do painel da Mesa e **solte sobre o texto de uma nota** (no modo Editar ou na Fonte): um traço mostra onde ela vai cair, e o bloco entra com uma linha em branco de cada lado, **num único passo** que um **⌘Z** desfaz. Solte sobre um **board** e ela vira um cartão de texto. Quem edita a nota arrasta também **mensagens** e **rolagens** do chat da Mesa; as imagens não se arrastam: use o **⋯** (veja abaixo).
+**Arraste** a linha de uma rolagem, de uma tabela sorteada ou de um oráculo do painel da Mesa e **solte sobre o texto de uma nota** (no modo Editar ou na Fonte): um traço mostra onde ela vai cair, e o bloco entra com uma linha em branco de cada lado, **num único passo** que um **⌘Z** desfaz. Solte sobre um **board** e ela vira um cartão de texto. Arrastam-se também as **mensagens** (entram como uma linha) e as **imagens** e **arquivos** do chat (entra um link para o arquivo, que já está na pasta; nada é enviado de novo). Para soltar basta poder **editar** a nota ou o board de destino, seja quem for o autor da linha.
 
 Na nota ela fica escrita como um pequeno bloco `roll`, texto que qualquer um lê, até no Obsidian:
 
@@ -114,7 +114,7 @@ quem: Ana · quando: 2026-10-22 21:40 · onde: [A Mesa](/wiki/a-mesa/)
 O Verso o desenha como um **cartão fixo** — quem, quando, onde (um link), os dados e o total — e **nunca rola de novo**: é o registro do que saiu, como no caderno do mestre.
 
 ```roll
-quem: Ana · quando: 2026-10-22 21:40 · onde: [[31 - A Mesa]]
+quem: Ana · quando: 2026-10-22 21:40 · onde: [[25 - A Mesa]]
 2d6 + 1d4 + 3 → [4, 3] + [2] + 3 = 12
 ```
 
@@ -135,4 +135,4 @@ Em **Ajustes › RPG & Mesa Solo › Dados e RPG**, a chave **Mesa** tira a aba 
 
 ---
 
-Volte a [Amostras de Cor](/wiki/amostras-de-cor/), siga para [Rodando uma Mesa](/wiki/rodando-uma-mesa/), consulte a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou explore o Tour do Verso.
+Anterior: [Oráculos e Criação de Mundos](/wiki/oraculos-e-criacao-de-mundos/) · Próxima: [Rodando uma Mesa](/wiki/rodando-uma-mesa/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

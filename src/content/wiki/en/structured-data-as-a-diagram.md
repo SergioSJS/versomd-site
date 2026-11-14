@@ -1,11 +1,11 @@
 ---
 title: "Structured Data as a Diagram"
-description: "A JSON, YAML, TOML, XML or CSV file, or a code block in one of those formats, seen as boxes and lines to move, collapse and search; read-only."
-order: 28
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 16
+group: tools
 slug: "structured-data-as-a-diagram"
 twin: "dados-estruturados-como-diagrama"
-source: "demo-vault-en/28 - Structured Data as a Diagram.md"
+source: "demo-vault-en/16 - Structured Data as a Diagram.md"
 updated: "2026-10-21"
 ---
 A **JSON**, **YAML**, **TOML**, **XML** or **CSV** file opens as text, in the code editor. When it gets large or deep, reading the text is tiring: where does a branch end? how many items does this list have? The **Diagram** draws the same file as **boxes joined by lines** — one box for each object or list, one line for each simple value — and lets you move, fold and search.
@@ -22,7 +22,7 @@ Open campaign-npcs.json (or campaign-npcs.yaml, the same in YAML). At the top of
 2. **Fold** a branch with the little arrow on the box (or with **Enter**): it then says how much it hides, like *3 items* or *6 keys*. **Fold all**, **Unfold all** and **Unfold to level…** are in the bar (on a phone, in the **…** menu at the bar's end).
 3. **Search** in the field at the top: keys and values, even inside a folded branch — the diagram opens the way to the result. **Enter** goes to the next one, **Shift+Enter** to the previous, **Esc** clears.
 4. Click a box or one of its lines: the matching piece of text is **selected in the text**, if you open the same file in another pane (⌘\ splits the screen). And the cursor in the text marks the box it is in.
-5. Right-click a box or line: **Copy path** gives something like `$.npcs[0].items`; **Copy value** copies the value.
+5. Right-click a box or line: **Copy path** gives something like `$.npcs[0].items`; **Copy value** copies the value; **Show in the text** goes back to the text with that piece selected.
 6. **Arrange again** puts everything back in the original layout; **Top to bottom** switches the direction; **Fit to window** shows the whole. On a phone the bar is a single row of icons — magnifier, zoom out, zoom in, fit — and the **…** menu keeps the rest; the magnifier opens the search over the bar, and the touch tip goes away when you dismiss it.
 
 A long value appears cut off, with a **…** that shows the whole text. A number appears as it was written (`12345678901234567890`, not rounded).
@@ -74,4 +74,4 @@ The **Save as board…** command (in the diagram's bar and in the palette) write
 
 ---
 
-Go back to the tabletop tools in [Oracles and World Building](/en/wiki/oracles-and-world-building/), see how to tie a folder to a cloud of yours in [Syncing with a Cloud](/en/wiki/syncing-with-a-cloud/), see the [Home Page](/en/wiki/welcome-to-verso/) or explore the Verso Tour.
+Previous: [Graph View and Connections](/en/wiki/graph-view-and-connections/) · Next: [Mermaid Diagrams](/en/wiki/mermaid-diagrams/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,11 +1,11 @@
 ---
 title: "Statblocks"
-description: "An example of each `statblock` layout, with dice and counters that write to the note, and the layout editor. A complete example, the Fractal, is in the Fractal Campaign."
-order: 26
-group: rpg
+description: "Where to start: what Verso is and a map of every lesson."
+order: 23
+group: server
 slug: "statblocks"
 twin: "fichas"
-source: "demo-vault-en/26 - Statblocks.md"
+source: "demo-vault-en/23 - Statblocks.md"
 updated: "2026-10-20"
 ---
 A monster, a character or a faction sheet without leaving the note. Here you see **one example of every layout that ships with Verso** — 40 in all — and learn how to use them. What the statblock stores is **plain Markdown**: a code block any editor can read.
@@ -21,6 +21,8 @@ A code block with the `statblock` language draws a statblock from the YAML it ho
 The look comes from the **layout**, chosen with `layout:` by id or by name (capitals and accents do not matter). Without `layout:`, the first one on the list applies. A layout that does not exist draws the default and says so on the statblock itself.
 
 Each example below carries its `layout:` on the first line. **Try it:** swap the id for another one on the list and watch the same statblock change its look. The **View source** / **View card** button switches between the YAML and the drawing.
+
+To start a new statblock, type `/` in the editor and choose **Statblock Card**: a block comes in for you to fill — change its `layout:` to an id from the list below.
 
 ---
 
@@ -120,7 +122,7 @@ traits:
     desc: A trait of our own making.
 actions:
   - name: Spear
-    desc: Melee Attack Roll +4, reach 5 ft. Hit 4 (1d4 + 2) piercing damage.
+    desc: Melee Attack Roll +4, reach 5 ft. Hit 5 (1d6 + 2) piercing damage.
 ```
 
 ### Pathfinder 2e and Starfinder 2e
@@ -1053,11 +1055,13 @@ traits+:
 
 ## Using statblocks
 
-- **Dice.** A value like `+4 to hit` or `4 (1d4 + 2)` has a **die** beside it. Each ability's modifier — the `(+2)` — is itself the button: one click rolls, and the result opens on top of the statblock, pushing nothing aside and **not written to the note** (Esc, the × or a click outside closes it). On a server, the server does the rolling and everyone in the room sees it.
-- **Roll block.** A system layout has a button like *Roll (Fractal — Risk roll)*: it asks, for example, how many facts apply and shows the result the way the system reads it. Try it on the Fractal statblock above.
-- **Trackers.** The − and + buttons of *PV atuais*, the stress boxes and the clock's boxes write **only that number** into the YAML (`hp_current`, `stress`…); comments, quotes and order stay. Open **Source** mode and check. With the keyboard, `Tab` reaches the group, the arrows change the value, `Home` empties and `End` fills. If a value stops being a number or goes past the maximum, the statblock shows it as it is and the **Repair** button.
-- **Broken.** In Fractal's Obstacles each item has the **Broken** mark (*Quebrado* in the game's own words): a button that strikes the item through and writes `quebrado: true` into the YAML, with the count *N of M broken* in the title.
-- **Links.** A `[[link]]` inside an Obstáculo opens the note. The complete example, with the world, the character, three nested Challenges and a session log, is in the **Fractal Campaign** folder: start with World.
+- **Dice.** A value like `+4 to hit` or `4 (1d4 + 2)` has a **die** beside it. Each ability's modifier — the `(+2)` — is itself the button: one click rolls, and the result opens on top of the statblock, pushing nothing aside and **not written to the note** (Esc, the × or a click outside closes it). On a server, the server does the rolling and everyone in the room sees it. With the **Table** on, the roll also goes into the **Table** panel (see [The Table](/en/wiki/the-table/)).
+- **Roll block.** A system layout may have a button that rolls the system's way — in Fractal, **Risk roll**; in the World of Darkness ones, *Roll the pool…*. It reads from the statblock what it already holds (in Fractal, `fatos_aplicaveis`, the number of facts that apply), asks for what is missing (here, *Advantage?*) and shows the result the way the system reads it, under the button — in this window only, not written to the note. Try it on the Fractal statblock above.
+- **Trackers.** The − and + buttons of *Current HP*, the stress boxes and the clock's boxes write **only that number** into the YAML (`hp_current`, `stress`…); comments, quotes and order stay. Open **Source** mode and check. With the keyboard, `Tab` reaches the group, the arrows change the value, `Home` empties and `End` fills. If a value stops being a number or goes past the maximum, the statblock shows it as it is and the **Repair to…** button.
+- **Broken.** In Fractal's Challenge Obstacles and character Facts, each item has the **Broken** mark (*Quebrado* in the game's own words): a button that strikes the item through and writes `quebrado: true` into the YAML, with the count *N of M broken* in the title.
+- **Links.** A `[[link]]` inside an Obstacle opens the note. The complete example, with the world, the character, three nested Challenges and a session log, is in the **Fractal Campaign** folder: start with World.
+- **Picture.** Every layout draws a picture when the statblock has `image:` — a path in the folder (`image: "[[portrait.png]]"` works too) or a web address.
+- **In an embedded note.** `![[Statblock note]]` in Reading mode shows the drawn statblock, read-only; to change a tracker, open its own note.
 
 ---
 
@@ -1074,4 +1078,4 @@ A block with invalid YAML shows the code as it is; while you type, the statblock
 
 ---
 
-Now learn the oracle and the project wizard in [Oracles and World Building](/en/wiki/oracles-and-world-building/). Go back to the dice rules in [Dice and Random Tables](/en/wiki/dice-and-random-tables/), or to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Dice and Random Tables](/en/wiki/dice-and-random-tables/) · Next: [Oracles and World Building](/en/wiki/oracles-and-world-building/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

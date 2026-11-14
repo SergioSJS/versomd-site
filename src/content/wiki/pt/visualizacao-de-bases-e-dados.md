@@ -1,11 +1,11 @@
 ---
 title: "Visualização de Bases e Dados"
-description: "Como funcionam os arquivos `.base` e como incorporar exibições vivas nas suas notas."
-order: 4
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 14
+group: start
 slug: "visualizacao-de-bases-e-dados"
 twin: "bases-and-data-views"
-source: "demo-vault/04 - Visualização de Bases e Dados.md"
+source: "demo-vault/14 - Visualização de Bases e Dados.md"
 updated: "2026-09-25"
 ---
 Uma **base** — um arquivo `.base`, o mesmo formato do Obsidian — mostra notas como uma planilha viva: cada nota é uma linha, e as propriedades dela viram colunas. Abra a Projetos deste cofre: ela reúne as notas da pasta `projetos/`.
@@ -27,7 +27,7 @@ Ela não é só para olhar: os menus dela — **Ordenar**, **Filtrar**, **Propri
 Uma base pode ter várias visões; troque de visão pelo menu no topo dela.
 
 1. **Tabela**: linhas e colunas. Clique num cabeçalho para ordenar; o menu do cabeçalho tem **Resumir: Soma**, **Resumir: Média** e outros, que somam a coluna numa linha de total.
-2. **Fichas** (o tipo **Cards**): um cartão por nota.
+2. **Cards**: um cartão por nota.
 3. **Lista**: compacta, para ler rápido.
 4. **Kanban**: colunas por uma propriedade (aqui, `status`). Arraste um cartão para outra coluna e o Verso grava o valor novo na nota.
 5. **Calendário**: cada nota no dia da sua propriedade de data (aqui, `date`). Os projetos são de setembro de 2026: volte até lá com a seta **‹**. Arraste uma nota para outro dia e a data muda na nota; o **+** num dia cria uma nota nele.
@@ -54,7 +54,7 @@ A visão **Mapa** da base, incorporada:
 - Clique num marcador e a nota abre; pare o ponteiro sobre ele e ela aparece numa prévia.
 - Abaixo do mapa, os mesmos lugares em lista, na ordem da visão: é por ela que o teclado e o leitor de tela chegam a cada lugar.
 - Com o botão direito no mapa: **Copiar coordenadas**, **Usar como centro da visão** e **Usar este zoom na visão**.
-- **Sem rede por padrão**: o mapa desenha o contorno do mundo que vem com o Verso (Natural Earth, domínio público). Um fundo detalhado só com a sua escolha, em **Ajustes › Fundo dos mapas** — o OpenFreeMap está lá pelo nome, desligado até você ligar. Uma base que peça o próprio fundo (`mapTiles`) pergunta antes de buscar qualquer coisa: o servidor de tiles fica sabendo quais lugares você olha.
+- **Sem rede por padrão**: o mapa desenha o contorno do mundo que vem com o Verso (Natural Earth, domínio público). Um fundo detalhado só com a sua escolha, em **Ajustes › Geral › Fundo dos mapas** — o OpenFreeMap está lá pelo nome, desligado até você ligar. Uma base que peça o próprio fundo (`mapTiles`) pergunta antes de buscar qualquer coisa: o servidor de tiles fica sabendo quais lugares você olha.
 - O formato é o do plugin **Maps** do Obsidian: a mesma base abre como mapa nos dois.
 
 ---
@@ -134,8 +134,8 @@ views:
 
 ## Como Criar uma Base
 
-- Na faixa da esquerda, o botão **Nova nota** (`+`) abre o menu **Nova…**: escolha **Nova base**.
-- Com o botão direito numa pasta, ou no espaço vazio da árvore de arquivos: **Nova base**.
+- Na faixa da esquerda, o botão **Nova nota** (`+`) abre um menu do que se cria: escolha **Nova base**.
+- Com o botão direito no espaço vazio da árvore de arquivos: **Nova base**; numa pasta, em **Novo** › **Nova base**.
 - Na paleta (`⌘⇧P`): **Nova base**.
 
 Explore as notas de projetos deste cofre:
@@ -143,4 +143,4 @@ Explore as notas de projetos deste cofre:
 - Projeto Beta
 - Pesquisa e Descobertas
 
-Voltar para [Início](/wiki/bem-vindo-ao-verso/) ou seguir para [Visualização de Grafo e Conexões](/wiki/visualizacao-de-grafo-e-conexoes/).
+Anterior: [Notas Tipadas](/wiki/notas-tipadas/) · Próxima: [Visualização de Grafo e Conexões](/wiki/visualizacao-de-grafo-e-conexoes/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

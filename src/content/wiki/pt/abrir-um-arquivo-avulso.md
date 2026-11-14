@@ -1,11 +1,11 @@
 ---
 title: "Abrir um Arquivo Avulso"
-description: "Dois cliques num `.md` abrem o arquivo sozinho, sem pasta, numa janela sem árvore nem índice e sem nada escrito ao lado; e como fazer do Verso o app padrão de `.md` em cada sistema."
-order: 33
-group: tools
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 8
+group: organize
 slug: "abrir-um-arquivo-avulso"
 twin: "open-a-single-file"
-source: "demo-vault/33 - Abrir um Arquivo Avulso.md"
+source: "demo-vault/08 - Abrir um Arquivo Avulso.md"
 updated: "2026-10-30"
 ---
 Um `.md` na pasta Downloads, na Mesa, anexado a uma mensagem: dois cliques, leia, corrija uma linha, feche. Para isso o Verso não precisa de uma pasta: ele abre **um arquivo só**, numa janela de arquivos avulsos — sem árvore, sem busca, sem grafo, sem lixeira, sem sincronização —, e **não escreve nada ao lado do arquivo**: nem índice, nem `.verso`, nem `.trash`. O que ele grava é o arquivo, com a mesma segurança de uma pasta: gravação atômica e, se outro programa mudou o arquivo enquanto você editava, a faixa de conflito com as duas versões.
@@ -37,7 +37,7 @@ Se ele está dentro de uma pasta que você **já abriu antes** no Verso, a faixa
 
 O Verso também aparece em **Abrir com** para `.json`, `.yaml`, `.yml`, `.toml`, `.xml` e `.csv`. Um arquivo desses abre na mesma janela de arquivos avulsos, mas **no diagrama** de [Dados Estruturados como Diagrama](/wiki/dados-estruturados-como-diagrama/): caixas para mover, ramos para recolher, busca em todas as chaves e valores.
 
-- **Texto | Diagrama** no alto da aba passa para o texto do arquivo, que você pode editar; ele é gravado como um `.md` — de forma atômica, com a faixa de conflito se outro programa o mudou, e nada escrito ao lado. De volta ao **Diagrama**, as caixas acompanham o que você digitou.
+- **Texto | Diagrama** no alto da aba passa para o texto do arquivo, que você pode editar; ele é gravado como se grava um `.md` — de forma atômica, com a faixa de conflito se outro programa o mudou, e nada escrito ao lado. De volta ao **Diagrama**, as caixas acompanham o que você digitou.
 - Um arquivo que o diagrama **não consegue ler** — inválido, grande demais, caixas demais — abre como texto, com a própria linha do diagrama dizendo por quê acima dele.
 - **Salvar como board** não aparece aqui: criaria um arquivo novo ao lado deste. Abra a pasta inteira para fazer um board do diagrama.
 - Com o diagrama desligado (**Ajustes › Aplicação › Recursos › Diagrama de dados**), o arquivo abre como texto.
@@ -56,4 +56,4 @@ O instalador registra o Verso como **um** app que abre `.md` e `.markdown` — e
 
 ---
 
-Siga para [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/), volte a [Rodando uma Mesa](/wiki/rodando-uma-mesa/), consulte a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou explore o Tour do Verso.
+Anterior: [Arquivos e Pastas](/wiki/arquivos-e-pastas/) · Próxima: [Busca e Navegação](/wiki/busca-e-navegacao/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

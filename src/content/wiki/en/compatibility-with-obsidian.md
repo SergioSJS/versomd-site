@@ -1,11 +1,11 @@
 ---
 title: "Compatibility with Obsidian"
-description: "For anyone coming from Obsidian or using both: the same folder, nothing rewritten on open, what works the same, what Verso adds, what does not exist and how to try it."
-order: 37
+description: "Where to start: what Verso is and a map of every lesson."
+order: 38
 group: start
 slug: "compatibility-with-obsidian"
 twin: "compatibilidade-com-o-obsidian"
-source: "demo-vault-en/37 - Compatibility with Obsidian.md"
+source: "demo-vault-en/38 - Compatibility with Obsidian.md"
 updated: "2026-10-31"
 ---
 If you already keep notes in **Obsidian**, you do not need to move anything to try Verso. Verso opens **the same folder**, reads the same files, and its file format *extends* Obsidian's: it never gives an existing construct a different meaning. This note says what that means in practice: what works the same, what Verso adds, what is different or not there, and how to use both on one folder without surprises.
@@ -106,4 +106,4 @@ Turning an RPG feature off in Verso changes no file; the statblock becomes a cod
 
 When you are done, the vault is still an Obsidian vault.
 
-Next: [Installing the server on a NAS or a VPS](/en/wiki/installing-the-server-on-a-nas-or-a-vps/) puts your notes on a server of your own. Back to the [Home Page](/en/wiki/welcome-to-verso/) or the Verso Tour.
+Previous: [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/) · The last lesson · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

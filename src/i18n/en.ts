@@ -33,7 +33,7 @@ export const en: Copy = {
     propsLabel: "In short",
     props: [
       { key: "status", valueHtml: "in testing; no public download yet" },
-      { key: "runs on", valueHtml: "macOS, Windows and Linux; in a browser and on a phone, through a UniVerso" },
+      { key: "runs on", valueHtml: "macOS, Windows, Linux, Android, iPad and iPhone; in a browser, through a UniVerso" },
       { key: "server", valueHtml: "UniVerso, on a machine of yours: a mini PC, a NAS, the smallest VPS" },
       { key: "licence", valueHtml: "MPL-2.0" },
       { key: "costs", valueHtml: "nothing beyond the machine it runs on" },
@@ -645,7 +645,7 @@ export const en: Copy = {
         group: "platforms",
         label: "Phone",
         cells: [
-          { mark: "partial", text: "in the browser, through a UniVerso; offline in the folders you choose, over HTTPS; no store app" },
+          { mark: "partial", text: "an Android app (APK) and iPad/iPhone through AltStore, or in the browser through a UniVerso; no store app" },
           { mark: "yes", text: "iOS and Android apps, offline" },
           { mark: "yes", text: "apps; the new version’s in testing" },
           { mark: "yes", text: "apps, with offline" },
@@ -793,7 +793,7 @@ export const en: Copy = {
       today: {
         title: "What it does today",
         introHtml:
-          "All of this is in the test releases: on a Mac with an Apple chip, on Windows 11 and on Linux (x64), and in a browser and on a phone through a UniVerso. What is ready but has not yet shipped in a test release is in the <a href=\"#roadmap\">roadmap</a>.",
+          "All of this is in the test releases: on a Mac with an Apple chip, on Windows 11, on Linux (x64), on Android, on iPad and iPhone (through AltStore Classic; through AltStore PAL later, and in Brazil only for now), and in a browser through a UniVerso. What is ready but has not yet shipped in a test release is in the <a href=\"#roadmap\">roadmap</a>.",
         groups: [
           {
             title: "Writing",

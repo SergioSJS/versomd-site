@@ -1,14 +1,14 @@
 ---
 title: "Sound and Music at the Table"
-description: "The game master plays a sound file and everyone at the table hears it at the same point, each with their own volume; a note of sound links becomes the soundboard, and whoever does not see the file does not hear it."
-order: 36
-group: start
+description: "Where to start: what Verso is and a map of every lesson."
+order: 27
+group: rpg
 slug: "sound-and-music-at-the-table"
 twin: "som-e-musica-na-mesa"
-source: "demo-vault-en/36 - Sound and Music at the Table.md"
+source: "demo-vault-en/27 - Sound and Music at the Table.md"
 updated: "2026-10-31"
 ---
-In a session, music is half the mood: the noisy tavern, the road at night, the battle. In Verso, **the game master presses play and everyone at the table hears the same thing, at the same point**, each with their own volume. Music has a tab of its own, **Music**, in the right panel, beside the **Table** ([The Table](/en/wiki/the-table/)); it works on a UniVerso ([Running a Table](/en/wiki/running-a-table/)) and in the desktop app that serves the folder.
+In a session, music is half the mood: the noisy tavern, the road at night, the battle. In Verso, **the game master presses play and everyone at the table hears the same thing, at the same point**, each with their own volume. Music has a tab of its own, **Music**, in the right panel, beside the **Table** ([The Table](/en/wiki/the-table/)); it works on a UniVerso ([Running a Table](/en/wiki/running-a-table/)) and at the table your own Verso serves, with the window sitting at the table ([A Table over the Internet](/en/wiki/a-table-over-the-internet/)).
 
 No sound crosses the network: each window plays **its own copy** of the file, and only "what plays and where" is shared, by the server's clock. So the quality is the file's, and nobody lags behind. Nothing of it is written to any file: what is playing lives in the server's memory and goes away when the last person leaves the table.
 
@@ -16,7 +16,7 @@ No sound crosses the network: each window plays **its own copy** of the file, an
 
 ## Turn it on
 
-**Settings › Features › RPG and tabletop › Table sound**. It is on whenever the **Table** is on; off, there is no Music tab, no button and no status-bar item, and nothing is loaded. Until the first track plays, nothing of the player is loaded either.
+**Settings › RPG & Solo Play › Dice and RPG › Table sound**. It is on whenever the **Table** is on; off, there is no Music tab, no button and no status-bar item, and nothing is loaded. Until the first track plays, nothing of the player is loaded either.
 
 ---
 
@@ -55,7 +55,7 @@ Nothing special is needed: **any link to a sound file in a note gets a play butt
 
 - The road, again
 
-Press the button beside **The tavern**: the track plays, *From: 36 - Sound and Music at the Table › Tavern*, and **Next track** goes to **The road**. At the end of the list, Next is greyed out; with **Loop: the list**, it goes back to the first. When a track ends without looping, the game master's window plays the next of the list, or stops.
+Press the button beside **The tavern**: the track plays, *From: 27 - Sound and Music at the Table › Tavern*, and **Next track** goes to **The road**. At the end of the list, Next is greyed out; with **Loop: the list**, it goes back to the first. When a track ends without looping, the game master's window plays the next of the list, or stops.
 
 In Obsidian, this same note is an ordinary list of links: no new code, nothing Obsidian does not read.
 
@@ -67,7 +67,7 @@ A sound **embed** becomes a player in the note itself, as in Obsidian ([Document
 
 *taverna.mp3*
 
-- It plays **only for whoever presses it**, in this window: a way to hear a track before playing it for the table.
+- It plays **only for whoever presses it**, in this window: a way to hear a track before playing it for the table. Its buttons: play and pause, the bar with the time, **Loop**, **Mute** and the volume. Once the player is the table's, **Loop** is the Music tab's.
 - For the game master, the player also has **Play for the table**: the track goes to the Music tab, with the scene of the heading above it, and Verso asks the same question as above when some player does not see the file. Alone, with no table, the button reads **Play in the Music tab**.
 - If the table's music is playing and you press play on a player in a note, **the table's music goes lower** while it plays — the player says so — and comes back when it stops. If the game master starts music for the table while your player plays, **yours pauses**: *Paused: the table's music started.*
 - A player at the table only gets the audio player of a file they see. The embed of a hidden file shows as **🔒 (not revealed yet)**, without its name; on a board, its card is locked. Mind: a file with no access of its own follows the notes that include it — embedded in a note the players see, they see it too. To keep a track back, right-click it › **Access…** › *Whole table: Does not see*.
@@ -130,7 +130,7 @@ In a folder of this computer alone there is no table, but the Music tab works th
 
 The game master can share **the sound of the pages open in Verso** (YouTube, Spotify Web, an ambience loop) with everyone at the table, with no file in the folder. Only that source goes: never other programs on the computer, never the whole system, and never Verso's own sounds (dice, alerts, the table's music, the audio players in notes). Those keep playing on your computer, from the application itself, and never reach the table. This exists only in the **desktop app**; in a browser or on a phone you **listen**, but cannot share, and the button is not drawn.
 
-1. In the **Music** tab, **Share audio…** (in the empty state or at the top of the tab). Only the game master sees the button.
+1. In the **Music** tab, **Share audio…** (at the top of the tab). Only the game master sees the button.
 2. Open the page **as a page**, not inside a note, and let it play. In the list, pick **Pages open in Verso**. Under **Quality** (folded) is the rate: 96 kbit/s is a good start. With no page open, the list asks you to open one.
 3. The first time, Verso says: *the sound of what you share goes to everyone at this table; what you may play to others is your responsibility; Verso records nothing*.
 4. While you share, the tab shows *Sharing …*, a **level meter** with *Sound arriving* (or *Silence*, when the page gives no sound or is blocked), how many are listening and the rate. **Stop sharing** is in the tab, in the Table tab's row and in the status bar. You keep hearing the page directly; Verso never plays your own stream back to you.
@@ -138,7 +138,7 @@ The game master can share **the sound of the pages open in Verso** (YouTube, Spo
 
 > **On a Mac (macOS 14.4 or newer)** the only source is **Pages open in Verso**: the sound of the pages opened as a page (YouTube, Spotify Web, an ambience loop), all together, and its name says which sites are playing now (*Pages open in Verso: open.spotify.com*). It is listed once a page has made sound: start playing in it and open **Share audio…** again. Verso's own sounds leave, while you share, by a path of their own, a few hundredths of a second late. **Videos and pages shown inside a note go along**: on the Mac their sound cannot be told apart, and the notice Verso shows says so. The first time, macOS asks to allow **System Audio Recording** for Verso. If you say no, Verso tells you, and you can allow it later in **System Settings > Privacy & Security > System Audio Recording** (in some versions *Screen & System Audio Recording*), then start again. A source that gives *Silence* while it plays usually means this permission is off. A copy of Verso started from a terminal (a development build) finds no pages: use the installed app. On an older macOS the picker says it needs a newer one.
 >
-> **On Windows (Windows 11 or newer)** Verso shares **only the sound of pages open in Verso**, never other programs and never Verso's own sounds (dice, alerts, the table's music: those already play in your window). The list has one source, **Pages open in Verso**, and names the sites that are playing now; all open pages go together. Open the page **as a page**: a page shown inside a note is not shared, because inside a note its sound cannot be separated from Verso's own. With no page open the picker asks you to open one; on **Windows 10** it says it needs Windows 11. The pages now keep their sign-ins in a profile of their own, so after this update sign in once more in the pages you use.
+> **On Windows (Windows 11 or newer)** Verso shares **only the sound of pages open in Verso**, never other programs and never Verso's own sounds (dice, alerts, the table's music: those already play in your window). The list has one source, **Pages open in Verso**, and names the sites that are playing now; all open pages go together. Open the page **as a page**: a page shown inside a note is not shared, because inside a note its sound cannot be separated from Verso's own. With no page open the picker asks you to open one; on **Windows 10** it says it needs Windows 11. The pages keep their sign-ins in a profile of their own: sign in once, inside Verso, to the pages you use.
 >
 > **On Linux** the list is the same as on Windows: **only the sound of pages open in Verso** (YouTube, Spotify Web, an ambience loop), all together, never other programs and never Verso's own sounds; the list names the sites playing now. Open the page **as a page**: **videos and pages shown inside a note are not shared on Linux**. While you share, Verso's own sounds leave by a path of their own, a few hundredths of a second late. It needs the sound tools of PulseAudio (`pactl`, `parec` and `pacat`, from the package `pulseaudio-utils`, which PipeWire also uses): the .deb and .rpm recommend it, and whoever uses the AppImage installs it by hand. Without them the picker says so. With no page open it asks you to open one.
 
@@ -149,4 +149,4 @@ The two sample tracks
 
 The two sample tracks (`assets/sons/`) are by **RandomMind**, in the public domain (CC0 1.0): `taverna.mp3` is “The Old Tower Inn” (<https://opengameart.org/content/medieval-the-old-tower-inn>) and `estrada.mp3` is “The Bard's Tale” (<https://opengameart.org/content/medieval-the-bards-tale>), their loop versions, re-encoded in mono to weigh little.
 
-Go on to [Compatibility with Obsidian](/en/wiki/compatibility-with-obsidian/), or back to [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/) or to [The Table](/en/wiki/the-table/), see the [Home Page](/en/wiki/welcome-to-verso/) or explore the Verso Tour.
+Previous: [Running a Table](/en/wiki/running-a-table/) · Next: [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

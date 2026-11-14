@@ -1,11 +1,11 @@
 ---
 title: "Notas Tipadas"
-description: "`type:` e um schema: o formulário de um tipo, o que não cabe marcado, nada escrito sem você, e `type:` na busca."
-order: 21
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 13
+group: tools
 slug: "notas-tipadas"
 twin: "typed-notes"
-source: "demo-vault/21 - Notas Tipadas.md"
+source: "demo-vault/13 - Notas Tipadas.md"
 updated: "2026-10-07"
 ---
 Uma **nota tipada** é uma nota comum com `type:` no frontmatter. Quando esse nome é o de um **schema** do cofre, o painel de propriedades vira um formulário: as propriedades que o tipo declara vêm primeiro, com o nome certo e o campo certo para cada uma. O arquivo continua Markdown puro — o Obsidian lê a nota como uma nota com propriedades.
@@ -78,7 +78,7 @@ No Obsidian, a nota mostra as mesmas propriedades do jeito do Obsidian: nada no 
 ## Buscar e Agentes
 
 - Na busca, `type:personagem` lista as notas do tipo — junto com `tag:`, `path:` e as palavras.
-- Um agente pelo MCP ([Terminal, CLI e Agentes](/wiki/terminal-cli-e-agentes/)) recebe o tipo e as propriedades declaradas de cada nota, e lista as notas de um tipo.
+- Um agente pelo MCP ([Terminal, CLI e Agentes de IA](/wiki/terminal-cli-e-agentes-de-ia/)) recebe o tipo e as propriedades declaradas de cada nota, e lista as notas de um tipo.
 
 ---
 
@@ -93,6 +93,4 @@ No Obsidian, a nota mostra as mesmas propriedades do jeito do Obsidian: nada no 
 
 ---
 
-Próxima: [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/) — o Verso com um dedo no lugar do mouse.
-
-Volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Anterior: [Notas Diárias, Calendário e Templates](/wiki/notas-diarias-calendario-e-templates/) · Próxima: [Visualização de Bases e Dados](/wiki/visualizacao-de-bases-e-dados/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -1,11 +1,11 @@
 ---
 title: "Instalar o seu UniVerso, Passo a Passo"
-description: "Do zero a um servidor seu, para quem nunca montou um: o compose ou o script de instalação, o primeiro admin, o HTTPS (opcional, para o offline e as notificações), o backup."
-order: 24
-group: server
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 31
+group: rpg
 slug: "instalar-o-seu-universo-passo-a-passo"
 twin: "installing-your-universo-step-by-step"
-source: "demo-vault/24 - Instalar o seu UniVerso, Passo a Passo.md"
+source: "demo-vault/31 - Instalar o seu UniVerso, Passo a Passo.md"
 updated: "2026-10-15"
 ---
 Esta nota leva você, sem pressa, de uma máquina vazia a um **UniVerso** funcionando: o Verso num servidor seu, aberto no navegador do computador, do celular e do tablet. O que o UniVerso faz depois de instalado está em [Verso num Servidor](/wiki/verso-num-servidor/); aqui é só o caminho até lá. Não precisa ser programador: precisa copiar e colar com atenção.
@@ -16,11 +16,11 @@ Esta nota leva você, sem pressa, de uma máquina vazia a um **UniVerso** funcio
 
 > **Dica: Nunca montou um servidor?**
 >
-> A nota [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/) é o roteiro com o **menu do instalador** (`sh universo.sh`): HTTPS com um nome grátis e o primeiro admin em poucos passos, numa máquina grátis da Oracle. O que está abaixo é o caminho manual.
+> A nota [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/) é o roteiro com o **menu do instalador** (`sh universo.sh`): HTTPS com um nome grátis e o primeiro admin em poucos passos, numa máquina grátis da Oracle. Num NAS (ZimaOS, CasaOS) ou num VPS, o roteiro é a [Instalar o servidor num NAS ou VPS](/wiki/instalar-o-servidor-num-nas-ou-vps/); para jogar algumas horas sem servidor nenhum, o próprio app do computador serve a mesa: [Mesa pela Internet](/wiki/mesa-pela-internet/). O que está abaixo é o caminho manual.
 
 > **Nota: O caminho mais curto**
 >
-> Cole o arquivo compose, abra `http://<IP da máquina>:7340` e use o link de configuração que aparece no log. **Sem HTTPS, sem nome, sem proxy.** O HTTPS é um passo opcional, depois, para liberar o modo offline e as notificações (seção 5). Isso vale a partir da versão que vem depois da 0.8.2-beta.1; as anteriores recusam entrar por HTTP vindo de outra máquina.
+> Cole o arquivo compose, abra `http://<IP da máquina>:7340` e use o link de configuração que aparece no log. **Sem HTTPS, sem nome, sem proxy.** O HTTPS é um passo opcional, depois, para liberar o modo offline e as notificações (seção 5). Isso vale desde a 0.8.3-beta.2; as anteriores recusam entrar por HTTP vindo de outra máquina.
 
 ---
 
@@ -48,7 +48,7 @@ O UniVerso é **livre e seu**: roda numa máquina sua, as notas continuam arquiv
 Serve para uma máquina Linux com `apt` ou `dnf`, com ou sem Docker. No servidor, com o seu usuário comum (o script pede `sudo` quando precisar):
 
 ```bash
-V=0.8.2-beta.1
+V=0.8.4-beta.1
 curl -fsSLO https://versomd.com/universo.sh
 less universo.sh                          # opcional: ler o que ele faz (q para sair)
 read -rs GITHUB_TOKEN && export GITHUB_TOKEN   # cole o token, Enter; enquanto o repositório é privado
@@ -119,7 +119,7 @@ O `Login Succeeded` **não prova** que o token serve: o registro só o confere a
 **Passo 3: a versão e o arquivo compose.**
 
 ```bash
-V=0.8.2-beta.1
+V=0.8.4-beta.1
 echo "V=$V" | sudo tee /srv/universo/.env
 sudoedit /srv/universo/compose.yaml
 ```
@@ -145,6 +145,11 @@ services:
     security_opt:
       - no-new-privileges:true
     mem_limit: 768m           # limite de memória: se acabar, o contêiner reinicia, a máquina não cai
+    logging:                  # o log girado pelo Docker: até três arquivos de 10 MB
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "7340:7340"                                 # todos os endereços: HTTP simples pela rede
     volumes:
@@ -197,6 +202,11 @@ services:
     security_opt:
       - no-new-privileges:true
     mem_limit: 768m           # limite de memória: se acabar, o contêiner reinicia, a máquina não cai
+    logging:                  # o log girado pelo Docker: até três arquivos de 10 MB
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "7340:7340"
     volumes:
@@ -297,6 +307,18 @@ Pronto: `https://notas.exemplo.com` abre a página de entrada do UniVerso, e o m
 
 ---
 
+### Sem domínio e sem abrir porta: o link da Cloudflare
+
+O próprio UniVerso pode abrir um link na internet pela Cloudflare, sem domínio, sem certificado e sem abrir porta no roteador — o mesmo link do app do computador ([Mesa pela Internet](/wiki/mesa-pela-internet/)).
+
+- **No script:** `sh universo.sh link quick` liga um **link rápido**; `sh universo.sh link own` pede o seu endereço e o token do túnel; `sh universo.sh link off` desliga. No menu do script é o item **11**.
+- **No Docker, CasaOS ou ZimaOS:** a variável `VERSO_TUNNEL=quick` (ou `own`, com `VERSO_TUNNEL_HOSTNAME` e `VERSO_TUNNEL_TOKEN_FILE`) no `universo.env` ou no compose.
+- **No console:** a página **Servidor** do console de administração tem **Ligar um link rápido**, **Ligar o meu endereço**, **Estender 12 horas** e **Desligar**. Ligar e estender pedem para você confirmar que é você. **O endereço só aparece ali**: o log não o escreve.
+
+Na primeira vez o UniVerso baixa o **cloudflared** (o programa da Cloudflare, versão fixa, conferida pela soma) para a pasta de dados dele; nada mais é instalado. O **link rápido** é o modo de teste da Cloudflare: um nome aleatório que muda a cada vez que liga, **12 horas** (o console estende por mais 12), até 200 pedidos ao mesmo tempo. As chaves de acesso (passkeys) e a cópia sem rede ficam presas ao nome dele e acabam com ele. Com o link ligado e sem `VERSO_PUBLIC_URL`, os convites e o link da mesa saem com o endereço do link.
+
+**O seu endereço**, que não muda: com uma conta grátis da Cloudflare e um domínio dela, no painel (**Zero Trust › Networks › Tunnels**) crie um túnel, copie o **token** que aparece depois de `--token` e, em **Public Hostname**, aponte o seu endereço para `http://localhost:7341`. Depois `sh universo.sh link own` (ou as variáveis). Um token colado no console vale só até o servidor reiniciar; para valer sempre, use a variável.
+
 ## 6. O primeiro admin, e conectar o app
 
 Ninguém se cadastra sozinho: a primeira conta é a do **admin**. Com `VERSO_ADMIN_EMAIL` e `VERSO_ADMIN_PASSWORD` vazios, o servidor imprime no log, ao subir, um **link de configuração** que vale uma hora e uma vez. Para achá-lo:
@@ -351,7 +373,7 @@ scp 'ubuntu@<IP do servidor>:universo-backup-*.tar.gz' .                        
 
 Copie o nome que o comando imprimiu (ou veja com `ls /var/backups/universo`): numa cópia mais nova do script ele traz no fim uma parte aleatória (`-a1b2c3`), numa mais antiga termina na hora.
 
-O guia também ensina a **criptografar** o backup (`backup --keygen` e `backup --encrypt`) antes de ele sair da máquina, numa versão mais nova do script.
+O guia também ensina a **criptografar** o backup (`backup --keygen` e `backup --encrypt`) antes de ele sair da máquina.
 
 Com **Docker**, pare o servidor, copie os dois diretórios e ligue de novo. O `umask 077` e o `>` fazem o arquivo nascer seu e legível só por você (ele guarda as contas e as senhas em hash; sem isso o `tar` com `sudo` o deixa do root e aberto a qualquer usuário da máquina):
 
@@ -372,7 +394,7 @@ Com **Docker**, troque a versão no `.env` e recrie o contêiner (os dados ficam
 
 ```bash
 cd /srv/universo
-echo "V=0.8.2-beta.1" | sudo tee .env   # troque pelo número da versão nova
+echo "V=0.8.4-beta.1" | sudo tee .env   # troque pelo número da versão nova
 docker compose pull
 docker compose up -d
 ```
@@ -414,4 +436,6 @@ Mais fundo: o manual completo do projeto é o `docs/reference/server-install.md`
 
 ---
 
-Para o que fazer com o servidor no ar, volte a [Verso num Servidor](/wiki/verso-num-servidor/); para o celular, [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/). A próxima nota, [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/), rola dados e sorteia em tabelas — numa mesa com o seu UniVerso, todos veem a mesma rolagem. Volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Para o celular, veja [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/); numa mesa com o seu UniVerso, todos veem a mesma rolagem dos [dados](/wiki/dados-e-tabelas-sorteadas/).
+
+Anterior: [Verso num Servidor](/wiki/verso-num-servidor/) · Próxima: [Instalar o servidor num NAS ou VPS](/wiki/instalar-o-servidor-num-nas-ou-vps/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

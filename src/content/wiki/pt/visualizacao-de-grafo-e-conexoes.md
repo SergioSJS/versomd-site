@@ -1,11 +1,11 @@
 ---
 title: "Visualização de Grafo e Conexões"
-description: "Como explorar a teia de relações entre suas anotações com zoom e pan intuitivos."
-order: 5
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 15
+group: start
 slug: "visualizacao-de-grafo-e-conexoes"
 twin: "graph-view-and-connections"
-source: "demo-vault/05 - Visualização de Grafo e Conexões.md"
+source: "demo-vault/15 - Visualização de Grafo e Conexões.md"
 updated: "2026-09-25"
 ---
 O **Grafo de Conhecimento** do Verso mapeia as conexões entre todas as suas notas, revelando aglomerados de ideias, tópicos centrais e pontes conceituais no seu cofre.
@@ -26,6 +26,7 @@ O **Grafo de Conhecimento** do Verso mapeia as conexões entre todas as suas not
 - **Mostrar notas sem links**, **Nomes** e **Cor por pasta** ligam e desligam o que se vê.
 - **Só arquivos existentes** vem ligado. Desligue para ver também as notas que você já citou com `[[ ]]` mas ainda não criou: cada uma é um círculo vazio, de contorno tracejado e nome em itálico, ligado às notas que a citam. Dê um duplo clique nela, ou chegue pelas setas e aperte Enter, para criar a nota e abri-la — o Verso pergunta antes (**Criar a nota "Goblin Rei"?**).
 - **Repulsão**, **Distância** e **Tamanho** ajustam o desenho.
+- Num painel estreito ou no celular, os controles ficam guardados atrás do botão **Ajustes do grafo**, no alto do grafo.
 - **Afastar**, **Aproximar** e **Ver tudo**; o botão **Mostrar tudo** (no alto do grafo, só aparece quando uma nota, um filtro ou uma tag restringe a vista) limpa tudo e volta para o grafo inteiro; o **×** no campo de filtro, ou Esc dentro dele, limpa só o filtro.
 
 ---
@@ -49,4 +50,4 @@ Neste cofre modelo, as notas formam nós conectados pelas relações:
 - Os guias técnicos conectam-se mutuamente e apontam para os [exemplos de Bases](/wiki/visualizacao-de-bases-e-dados/).
 - As notas de projetos (Projeto Alpha, Projeto Beta) formam um cluster interligado pelas tags compartilhadas e referências cruzadas.
 
-Voltar para [Início](/wiki/bem-vindo-ao-verso/) ou seguir para [Documentos e Mídia](/wiki/documentos-e-midia/).
+Anterior: [Visualização de Bases e Dados](/wiki/visualizacao-de-bases-e-dados/) · Próxima: [Dados Estruturados como Diagrama](/wiki/dados-estruturados-como-diagrama/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

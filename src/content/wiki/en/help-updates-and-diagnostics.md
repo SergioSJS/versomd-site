@@ -1,11 +1,11 @@
 ---
 title: "Help, Updates and Diagnostics"
-description: "Updates, reporting a problem and the console."
-order: 18
-group: tools
+description: "Where to start: what Verso is and a map of every lesson."
+order: 37
+group: start
 slug: "help-updates-and-diagnostics"
 twin: "ajuda-atualizacoes-e-diagnostico"
-source: "demo-vault-en/18 - Help, Updates and Diagnostics.md"
+source: "demo-vault-en/37 - Help, Updates and Diagnostics.md"
 updated: "2026-10-01"
 ---
 How to keep Verso up to date, report a problem and see what happens inside.
@@ -22,7 +22,7 @@ How to keep Verso up to date, report a problem and see what happens inside.
 
 ## Notifications
 
-What changes without you asking appears in a notice in the bottom right corner (on a phone, at the top): sync that dropped and sync that came back, the connection to the server, a conflict copy, a folder shared with you or a revoked share, a new version, a folder close to its quota, items leaving the trash within 3 days, someone joining the note you are editing (this one starts as **list only**, with no notice: the bell counts it and the mark of whoever joined, beside "live", gets a brief ring). Each change is said **once**; an information notice goes away after 6 seconds, a warning or error stays until you close it (`Esc` closes the one that has focus) or until the state returns. What you did — save, move, rename — is still said in the status bar, not here.
+What changes without you asking appears in a notice in the bottom right corner (on a phone, at the top): sync that dropped and sync that came back, the connection to the server, a conflict copy, a folder shared with you or a revoked share, a new version, a folder close to its quota, items leaving the trash within 3 days, someone joining the note you are editing (this one starts as **list only**, with no notice: the bell counts it and the mark of whoever joined, beside "live", gets a brief ring), and a message, picture or roll from someone else at [the Table](/en/wiki/the-table/) with the **Table** panel closed (this one starts **Off**: turn it on in **Settings › Notifications**). Each change is said **once**; an information notice goes away after 6 seconds, a warning or error stays until you close it (`Esc` closes the one that has focus) or until the state returns. What you did — save, move, rename — is still said in the status bar, not here.
 
 - **The bell**, in the status bar before **Report a problem** (on a phone, at the top of the panel), counts what you have not seen. Click it — or use **Notifications** in the palette (`⌘⇧P`) — to open the list: newest first, with the time, the folder when it is not this window's, and what you can do. Opening marks everything as seen; **Clear** empties it. The list stays on this computer (up to 100, for 30 days), and does not go to your account.
 - **Settings › Notifications**: for each kind, **Notice and list**, **List only** or **Off**. Turning it off does not hide the state: the status bar still tells you about sync, and the note about the conflict.
@@ -36,13 +36,13 @@ Try it: open **Settings › Notifications**, put **Presence** on **Notice and li
 
 The **Report a problem** button, in the status bar (bottom right), gets a dot when some error has happened. It opens a pre-filled report — the version, the app's state, the session's errors and the end of the log — for you to read, edit and **Copy**. Nothing is sent on its own.
 
-The app's log lives at `~/Library/Application Support/verso/logs/verso.log`, on your computer: what the app opened, the commands that failed, the window's errors.
+The app's log lives on your computer — `~/Library/Application Support/verso/logs/verso.log` on a Mac, `%LOCALAPPDATA%\verso\logs\verso.log` on Windows, `~/.config/verso/logs/verso.log` on Linux: what the app opened, the commands that failed, the window's errors.
 
 ---
 
 ## The Console
 
-`⌥⌘I` (or **View › Open Console**) opens the window's inspector: console, elements and network — useful for developers, or for sending a detailed error. **Settings › General › Developer console** turns it on and off.
+`⌥⌘I` (or **View › Open Console**) opens the window's inspector: console, elements and network — useful for developers, or for sending a detailed error. **Settings › General › Developer console** turns it on and off. On a phone or tablet there is no View menu: the inspector opens on a computer connected to the device, in its browser's developer tools — `chrome://inspect` in Chrome for an Android phone.
 
 ---
 
@@ -54,17 +54,21 @@ At the bottom of the window: the button to show and hide the files, the app's me
 
 ## The Mac Menu
 
+Besides Verso's commands (see [Settings, Appearance and Shortcuts](/en/wiki/settings-appearance-and-shortcuts/#the-menu-bar-macos)), the bar has the window's own items:
+
 - **Verso**: **Settings…** (`⌘,`) and **Quit Verso** (`⌘Q`).
-- **File**: **New Window**, **Open Folder…** (`⌘⇧O`) and **Open Recent**.
-- **Edit**: **Undo**, **Redo** and **Select All**.
-- **View**: **Open Console** (`⌥⌘I`).
+- **File**: **New Window**, **Open Folder…** (`⌘⇧O`), **Open File…**, **Open Recent**, **Close Tab** (`⌘W`) and **Close Window**.
+- **Edit**: **Undo**, **Redo**, **Cut**, **Copy**, **Paste** and **Select All**.
+- **View**: full screen, **Reload Window** (`⌘R`) and **Open Console** (`⌥⌘I`).
+- **Window**: minimize and maximize.
+- **Help**: **Notifications**, **Import the Tutorial…**, **Check for Updates…**, **Report a Problem…** and **Credits…**.
 
 ---
 
 ## This Folder
 
-This demo folder came from **Import the demo content** (in the palette and in the tree's menu). Importing again brings in whatever is new and keeps the files you have already changed.
+This demo folder came from **Import the demo content** (in the palette, in the menu of the tree's empty space and in **Help › Import the Tutorial…**). Importing again brings in whatever is new, updates the notes you never changed and keeps, named in the notice, the files you have already changed.
 
 ---
 
-Go on to [Organizing: stickers, covers and pages](/en/wiki/organizing-with-stickers-covers-and-pages/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Settings, Appearance and Shortcuts](/en/wiki/settings-appearance-and-shortcuts/) · Next: [Compatibility with Obsidian](/en/wiki/compatibility-with-obsidian/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

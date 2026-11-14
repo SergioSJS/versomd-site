@@ -1,6 +1,6 @@
 ---
 title: "Properties and Metadata"
-description: "How to use YAML frontmatter with the collapsible properties panel."
+description: "Where to start: what Verso is and a map of every lesson."
 order: 3
 group: start
 slug: "properties-and-metadata"
@@ -17,7 +17,7 @@ Verso recognizes metadata written in YAML at the top of the file (the so-called 
 Look at the properties table at the top of this note:
 
 1. **Collapse and expand**: click **Properties**, at the top of the panel, to collapse or expand the list. Verso remembers your choice.
-2. **Editing in place**: click a value to change a text or a number, tick and untick a checkbox, and add or remove items from a list (like the tags). A date is written as text, in the `YYYY-MM-DD` format.
+2. **Editing in place**: click a value to change a text or a number, tick and untick a checkbox, and add or remove items from a list (like the tags). A date is written as text, in the `YYYY-MM-DD` format (in a typed note whose schema declares the date, the field is a date picker — see [Typed Notes](/en/wiki/typed-notes/)).
 3. **New property**: the **Add property** button creates a new row in the panel.
 4. **Clean persistence**: what you change in the panel is written to the note's YAML block, without touching the rest of the text. To edit the YAML directly, use **Source** mode.
 
@@ -45,4 +45,4 @@ A property whose value is a wikilink **in quotes** (or a list of them) links the
 
 With `type:` and a **schema** for the type, the properties become a form: the declared ones come first, with the right label and field — see [Typed Notes](/en/wiki/typed-notes/).
 
-Go back to [Start](/en/wiki/welcome-to-verso/) or go on to [Bases and Data Views](/en/wiki/bases-and-data-views/).
+Previous: [Links, Anchors and Embedded Notes](/en/wiki/links-anchors-and-embedded-notes/) · Next: [Writing in the Editor](/en/wiki/writing-in-the-editor/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

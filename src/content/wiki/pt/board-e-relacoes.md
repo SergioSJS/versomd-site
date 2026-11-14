@@ -1,11 +1,11 @@
 ---
 title: "Board e Relações"
-description: "Boards (`.canvas`) desenhados com o Excalidraw, com as notas da pasta como cartões, e relações tipadas no frontmatter."
-order: 9
-group: boards
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 20
+group: organize
 slug: "board-e-relacoes"
 twin: "board-and-relations"
-source: "demo-vault/09 - Board e Relações.md"
+source: "demo-vault/20 - Board e Relações.md"
 updated: "2026-09-30"
 ---
 Um **board** é um arquivo `.canvas` — o mesmo formato do canvas do Obsidian — desenhado com o Excalidraw. Abra o Board de Demonstração para ver: as notas da pasta aparecem como cartões, com o conteúdo delas; um grupo junta os projetos; setas ligam um cartão a outro; e dá para desenhar à mão livre por cima de tudo.
@@ -16,7 +16,7 @@ Um **board** é um arquivo `.canvas` — o mesmo formato do canvas do Obsidian �
 
 ## O que dá para fazer num board
 
-- **Pôr coisas nele** pelo botão **Inserir**, na barra de ferramentas do board (onde fica a imagem): *Imagem ou PDF do computador…* (copiados para a pasta de anexos — também dá para soltar ou colar uma imagem no board), *Nota ou arquivo da pasta…* (qualquer nota, imagem ou PDF — ou arraste um arquivo da árvore para o board), *Cartão de texto* (Markdown) e *Link da web…* (um endereço, que só abre com um clique). No mesmo menu, *Setas soltas* faz as setas novas não prenderem nos cartões — segurar `⌘` enquanto desenha faz o mesmo.
+- **Pôr coisas nele** pelo botão **Inserir**, na barra de ferramentas do board (onde fica a imagem): *Imagem ou PDF do computador…* (copiados para a pasta de anexos — também dá para soltar ou colar uma imagem no board), *Nota ou arquivo da pasta…* (qualquer nota, imagem ou PDF — ou arraste um arquivo da árvore para o board), *Cartão de texto* (Markdown), *Link da web…* (um endereço, que só abre com um clique) e *Página web…* (a página viva dentro de um cartão, de um site que você permitiu — veja [Páginas Web e HTML](/wiki/paginas-web-e-html/)). No mesmo menu, *Setas soltas* faz as setas novas não prenderem nos cartões — segurar `⌘` enquanto desenha faz o mesmo.
 - **Imagens** aparecem só como a imagem, sem moldura nem título; selecionada, os botões **Abrir**, **Trocar arquivo…** e **Recortar** ficam no alto à direita. **Recortar** escolhe a parte da imagem que o cartão mostra, arrastando os cantos — o arquivo da imagem não muda, e **Restaurar original** desfaz.
 - **Ligar cartões**: com a ferramenta de seta do Excalidraw, desenhe de uma borda de cartão até a borda de outro. A seta vira uma aresta do canvas, que o Obsidian também mostra.
 - **Desenhar à vontade**: formas, traço livre, texto solto e setas soltas ficam no mesmo arquivo, sob a chave `verso`. O Obsidian mantém essa parte intacta quando edita o canvas.
@@ -25,10 +25,10 @@ Um **board** é um arquivo `.canvas` — o mesmo formato do canvas do Obsidian �
 - **Ver como lista**: o botão *Sumário* mostra grupos, cartões e conexões numa lista que dá para percorrer pelo teclado.
 - **Ver o JSON**: o modo *Texto*, no canto da aba, mostra o arquivo como ele é.
 - **Aprender a desenhar**: o Treino do Board ensina o Excalidraw lição por lição, e [Desenhando no Board](/wiki/desenhando-no-board/) reúne as ferramentas e os atalhos.
-- **Criar um board**: **Novo board** na paleta, no menu **Nova…** do botão `+` da faixa da esquerda, ou no menu de uma pasta da árvore. Ele nasce como `Sem título.canvas`, na pasta de **Ajustes › Board › Pasta para boards novos** (vazia: a raiz).
+- **Criar um board**: **Novo board** na paleta, no menu do botão **Nova nota** (`+`) da faixa da esquerda, ou no menu de uma pasta da árvore. Ele nasce como `Sem título.canvas`, na pasta de **Ajustes › Board › Pasta para boards novos** (vazia: a raiz).
 - **Exportar**: **Exportar imagem** (`⌘⇧E`, ou o menu ☰ do board) — **Formato** PNG ou SVG, **Escala** de 1× a 3×, **Fundo**, **Escuro** e **Só a seleção**; depois **Salvar na pasta**, **Salvar em Downloads** ou **Copiar**.
 - **Cartão perdido**: se o arquivo de um cartão some ou muda de nome fora do Verso, o cartão mostra *Não encontrado na pasta*; um duplo clique nele, ou **Trocar arquivo…**, aponta o cartão para o arquivo certo.
-- **Ajustes › Board**: abrir um `.canvas` como board ou como texto, abrir mostrando tudo ou onde você parou, o traço das formas novas (à mão livre ou limpo), a fonte do texto desenhado, a grade e a pasta dos boards novos.
+- **Ajustes › Board**: abrir um `.canvas` como board ou como texto, abrir mostrando tudo ou onde você parou, o traço das formas novas (à mão livre ou limpo), a fonte do texto desenhado, a grade, o que um duplo clique no vazio cria (**Cartão de texto** ou **Texto desenhado**) e a pasta dos boards novos.
 
 > **Nota**
 >
@@ -50,6 +50,6 @@ Esta própria nota tem uma: a propriedade `relacionado` no topo aponta para Proj
 
 ## Desenhos do plugin Excalidraw
 
-Uma nota desenhada com o plugin Excalidraw do Obsidian mostra, abaixo do título, o botão **Converter em board**. Ele mostra o `.canvas` novo e o cria ao lado do desenho quando você confirmar; o desenho original fica como estava. Experimente com o desenho deste cofre.
+Uma nota desenhada com o plugin Excalidraw do Obsidian abre mostrando o desenho, só para ver; abaixo do título, **Ver o texto** mostra a nota como ela está escrita (e **Ver o desenho** volta), e **Converter em board** — também no menu da nota na árvore — mostra o `.canvas` novo e o cria ao lado do desenho quando você confirmar; o desenho original fica como estava. Experimente com o desenho deste cofre.
 
-Voltar para [Início](/wiki/bem-vindo-ao-verso/).
+Anterior: [Páginas Web e HTML](/wiki/paginas-web-e-html/) · Próxima: [Desenhando no Board](/wiki/desenhando-no-board/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

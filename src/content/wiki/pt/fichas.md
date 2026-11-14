@@ -1,11 +1,11 @@
 ---
 title: "Fichas"
-description: "Um exemplo de cada layout de ficha `statblock`, com dados e contadores que gravam na nota, e o editor de layouts. Um exemplo completo, o Fractal, está na Campanha Fractal."
-order: 26
-group: rpg
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 23
+group: server
 slug: "fichas"
 twin: "statblocks"
-source: "demo-vault/26 - Fichas.md"
+source: "demo-vault/23 - Fichas.md"
 updated: "2026-10-20"
 ---
 Uma ficha de monstro, de personagem ou de facção sem sair da nota. Aqui você vê **um exemplo de cada layout que vem com o Verso** — 40 no total — e aprende a usá-los. O que a ficha guarda é **Markdown puro**: um bloco de código que qualquer editor lê.
@@ -21,6 +21,8 @@ Um bloco de código com a linguagem `statblock` desenha uma ficha a partir do YA
 O desenho vem do **layout**, escolhido com `layout:` pelo id ou pelo nome (maiúsculas e acentos não importam). Sem `layout:`, vale o primeiro da lista. Um layout que não existe desenha o padrão e avisa na própria ficha.
 
 Cada exemplo abaixo traz o seu `layout:` na primeira linha. **Experimente:** troque o id por outro da lista e veja a mesma ficha mudar de cara. O botão **Ver código** / **Ver ficha** alterna entre o YAML e o desenho.
+
+Para começar uma ficha nova, digite `/` no editor e escolha **Ficha de Atributos (Statblock)**: entra um bloco para você preencher — troque o `layout:` dele por um id da lista abaixo.
 
 ---
 
@@ -120,7 +122,7 @@ traits:
     desc: A trait of our own making.
 actions:
   - name: Spear
-    desc: Melee Attack Roll +4, reach 5 ft. Hit 4 (1d4 + 2) piercing damage.
+    desc: Melee Attack Roll +4, reach 5 ft. Hit 5 (1d6 + 2) piercing damage.
 ```
 
 ### Pathfinder 2e e Starfinder 2e
@@ -1053,11 +1055,13 @@ traits+:
 
 ## Usando as fichas
 
-- **Dados.** Um valor como `+4 to hit` ou `4 (1d4 + 2)` tem um **dado** ao lado. O modificador de cada atributo — o `(+2)` — é ele mesmo o botão: um clique rola, e o resultado abre por cima da ficha, sem empurrar nada e **sem ser gravado na nota** (Esc, o × ou um clique fora fecha). Num servidor, quem rola é o servidor e todos da sala veem.
-- **Bloco de rolagem.** Um layout de sistema tem um botão como *Rolar (Fractal)*: ele pergunta, por exemplo, quantos fatos se aplicam e mostra o resultado como o sistema lê. Experimente na ficha do Fractal acima.
-- **Contadores.** Os botões − e + de *PV atuais*, as caixas de estresse e as do relógio gravam **só aquele número** no YAML (`hp_current`, `stress`…); comentários, aspas e ordem ficam. Abra o modo **Fonte** e confira. Com o teclado, `Tab` chega ao grupo, as setas mudam o valor, `Home` zera e `End` enche. Se um valor deixar de ser número ou passar do máximo, a ficha mostra como está e o botão **Corrigir**.
-- **Quebrado.** Nos Obstáculos do Fractal cada item tem a marca **Quebrado**: um botão que risca o item e grava `quebrado: true` no YAML, com a contagem *N de M quebrados* no título.
+- **Dados.** Um valor como `+4 to hit` ou `4 (1d4 + 2)` tem um **dado** ao lado. O modificador de cada atributo — o `(+2)` — é ele mesmo o botão: um clique rola, e o resultado abre por cima da ficha, sem empurrar nada e **sem ser gravado na nota** (Esc, o × ou um clique fora fecha). Num servidor, quem rola é o servidor e todos da sala veem. Com a **Mesa** ligada, a rolagem entra também no painel **Mesa** (veja [A Mesa](/wiki/a-mesa/)).
+- **Bloco de rolagem.** Um layout de sistema pode ter um botão que rola do jeito do sistema — no Fractal, **Rolagem de Risco**; nos de World of Darkness, *Rolar o pool…*. Ele lê da ficha o que ela já tem (no Fractal, `fatos_aplicaveis`, o número de fatos que se aplicam), pergunta o que falta (aqui, *Vantagem?*) e mostra o resultado como o sistema o lê, embaixo do botão — só nesta janela, sem gravar na nota. Experimente na ficha do Fractal acima.
+- **Contadores.** Os botões − e + de *PV atuais*, as caixas de estresse e as do relógio gravam **só aquele número** no YAML (`hp_current`, `stress`…); comentários, aspas e ordem ficam. Abra o modo **Fonte** e confira. Com o teclado, `Tab` chega ao grupo, as setas mudam o valor, `Home` zera e `End` enche. Se um valor deixar de ser número ou passar do máximo, a ficha mostra como está e o botão **Corrigir para…**.
+- **Quebrado.** Nos Obstáculos do Desafio e nos Fatos da personagem do Fractal, cada item tem a marca **Quebrado**: um botão que risca o item e grava `quebrado: true` no YAML, com a contagem *N de M quebrados* no título.
 - **Links.** Um `[[link]]` dentro de um Obstáculo abre a nota. O exemplo completo, com o mundo, a personagem, três Desafios encaixados e um diário de sessão, está na pasta **Campanha Fractal**: comece por Mundo.
+- **Imagem.** Todo layout desenha uma imagem se a ficha tiver `image:` — um caminho da pasta (`image: "[[retrato.png]]"` também vale) ou um endereço da web.
+- **Numa nota incorporada.** `![[Nota da ficha]]` no modo de leitura mostra a ficha desenhada, só para ler; para mudar um contador, abra a nota dela.
 
 ---
 
@@ -1074,4 +1078,4 @@ Um bloco com o YAML inválido mostra o código como está; enquanto você digita
 
 ---
 
-Agora aprenda o oráculo e o assistente de projeto em [Oráculos e Criação de Mundos](/wiki/oraculos-e-criacao-de-mundos/). Volte às regras de rolagens em [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/), ou à [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/) · Próxima: [Oráculos e Criação de Mundos](/wiki/oraculos-e-criacao-de-mundos/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

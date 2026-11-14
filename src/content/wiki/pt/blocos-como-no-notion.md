@@ -1,11 +1,11 @@
 ---
 title: "Blocos como no Notion"
-description: "Arrastar parágrafos e itens pela alça ⋮⋮, o + que abre o menu `/`, o menu de cada bloco e as teclas do Notion."
-order: 20
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 5
 group: organize
 slug: "blocos-como-no-notion"
 twin: "blocks-like-in-notion"
-source: "demo-vault/20 - Blocos como no Notion.md"
+source: "demo-vault/05 - Blocos como no Notion.md"
 updated: "2026-10-06"
 ---
 No modo **Editar**, cada parágrafo, título, item de lista, citação, bloco de código ou tabela é um **bloco** que se move com o mouse — como no Notion — e o arquivo continua Markdown puro, que o Obsidian lê igual.
@@ -78,4 +78,4 @@ Este parágrafo quer ir para depois da dica: arraste-o pela ⋮⋮, ou ponha o c
 
 ---
 
-Próxima: [Notas Tipadas](/wiki/notas-tipadas/). Ou volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/), ou abra o Tour do Verso.
+Anterior: [Escrevendo no Editor](/wiki/escrevendo-no-editor/) · Próxima: [Amostras de Cor](/wiki/amostras-de-cor/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -1,11 +1,11 @@
 ---
 title: "Web Pages and HTML"
-description: "Web pages kept as notes, and HTML files."
-order: 16
-group: tools
+description: "Where to start: what Verso is and a map of every lesson."
+order: 19
+group: organize
 slug: "web-pages-and-html"
 twin: "paginas-web-e-html"
-source: "demo-vault-en/16 - Web Pages and HTML.md"
+source: "demo-vault-en/19 - Web Pages and HTML.md"
 updated: "2026-10-01"
 ---
 A web page can be a note of yours, with annotations; an `.html` file in the folder opens as a page; and a page can appear in the middle of a note.
@@ -14,7 +14,7 @@ A web page can be a note of yours, with annotations; an `.html` file in the fold
 
 ## A Page Saved as a Note
 
-**New web page…** (in the menu of the `+` button on the left ribbon, or in a folder's menu) asks for the address and creates a note with it. Every note with the `url` property at the top is a page: the tab gets the **Back**, **Forward** and **Reload** bar.
+**New web page…** (in the **New** menu of the `+` button on the left ribbon, or in a folder's menu) asks for the address and creates a note with it. Every note with the `url` property at the top is a page: the tab gets the **Back**, **Forward** and **Reload** bar.
 
 - **Show page** and **Show note** switch between the site and the note's text — your annotations about it.
 - The address, in the bar, opens the page in a window of its own.
@@ -40,4 +40,4 @@ An `<iframe>` embeds a page in the middle of a note; the first time a site appea
 
 ---
 
-Go on to [Terminal, CLI and Agents](/en/wiki/terminal-cli-and-agents/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Documents and Media](/en/wiki/documents-and-media/) · Next: [Board and Relations](/en/wiki/board-and-relations/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

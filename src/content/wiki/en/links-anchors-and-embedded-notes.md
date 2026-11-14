@@ -1,6 +1,6 @@
 ---
 title: "Links, Anchors and Embedded Notes"
-description: "Simple wikilinks, links with aliases, jumps to headings (`#Heading`), links to missing notes and note embedding."
+description: "Where to start: what Verso is and a map of every lesson."
 order: 2
 group: start
 slug: "links-anchors-and-embedded-notes"
@@ -120,4 +120,4 @@ Below are a few filler lines to make sure the anchor jump visibly scrolls the sc
 > **You have reached the Local Target Section!**
 > If you clicked the link `[[#Local Target Section]]`, the screen scrolled here automatically.
 
-Back to [Home](/en/wiki/welcome-to-verso/) or on to [Properties and Metadata](/en/wiki/properties-and-metadata/).
+Previous: [Markdown Guide and Syntax](/en/wiki/markdown-guide-and-syntax/) · Next: [Properties and Metadata](/en/wiki/properties-and-metadata/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

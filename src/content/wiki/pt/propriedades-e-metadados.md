@@ -1,6 +1,6 @@
 ---
 title: "Propriedades e Metadados"
-description: "Como usar o frontmatter YAML com o painel de propriedades retrátil."
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
 order: 3
 group: start
 slug: "propriedades-e-metadados"
@@ -17,7 +17,7 @@ O Verso reconhece metadados escritos em formato YAML no início do arquivo (o ch
 Observe a tabela de propriedades no topo desta nota:
 
 1. **Recolher e expandir**: clique em **Propriedades**, no topo do painel, para recolher ou expandir a lista. O Verso lembra a sua escolha.
-2. **Edição no local**: clique num valor para mudar um texto ou um número, marque e desmarque uma caixa, e acrescente ou tire itens de uma lista (como as tags). Uma data é escrita como texto, no formato `AAAA-MM-DD`.
+2. **Edição no local**: clique num valor para mudar um texto ou um número, marque e desmarque uma caixa, e acrescente ou tire itens de uma lista (como as tags). Uma data é escrita como texto, no formato `AAAA-MM-DD` (numa nota tipada, cujo schema declara a data, o campo é um seletor de data — veja [Notas Tipadas](/wiki/notas-tipadas/)).
 3. **Propriedade nova**: o botão **Adicionar propriedade** cria uma linha nova no painel.
 4. **Persistência limpa**: o que muda no painel é gravado no bloco YAML da nota, sem mexer no resto do texto. Para editar o YAML direto, use o modo **Fonte**.
 
@@ -45,4 +45,4 @@ Uma propriedade cujo valor é um wikilink **entre aspas** (ou uma lista deles) l
 
 Com `type:` e um **schema** do tipo, as propriedades viram um formulário: as declaradas primeiro, com rótulo e campo certos — veja [Notas Tipadas](/wiki/notas-tipadas/).
 
-Voltar para [Início](/wiki/bem-vindo-ao-verso/) ou seguir para [Visualização de Bases e Dados](/wiki/visualizacao-de-bases-e-dados/).
+Anterior: [Links, Âncoras e Notas Incorporadas](/wiki/links-ancoras-e-notas-incorporadas/) · Próxima: [Escrevendo no Editor](/wiki/escrevendo-no-editor/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

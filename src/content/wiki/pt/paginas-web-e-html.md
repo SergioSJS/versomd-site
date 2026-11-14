@@ -1,11 +1,11 @@
 ---
 title: "Páginas Web e HTML"
-description: "Páginas da web guardadas como notas e arquivos HTML."
-order: 16
-group: tools
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 19
+group: organize
 slug: "paginas-web-e-html"
 twin: "web-pages-and-html"
-source: "demo-vault/16 - Páginas Web e HTML.md"
+source: "demo-vault/19 - Páginas Web e HTML.md"
 updated: "2026-10-01"
 ---
 Uma página da web pode ser uma nota sua, com anotações; um arquivo `.html` da pasta abre como página; e uma página pode aparecer no meio de uma nota.
@@ -14,7 +14,7 @@ Uma página da web pode ser uma nota sua, com anotações; um arquivo `.html` da
 
 ## Uma Página Guardada como Nota
 
-**Nova página web…** (no menu **Nova…** do botão `+` da faixa da esquerda, ou no menu de uma pasta) pede o endereço e cria uma nota com ele. Toda nota com a propriedade `url` no topo é uma página: a aba ganha a barra **Voltar**, **Avançar** e **Recarregar**.
+**Nova página web…** (no menu **Novo** do botão `+` da faixa da esquerda, ou no menu de uma pasta) pede o endereço e cria uma nota com ele. Toda nota com a propriedade `url` no topo é uma página: a aba ganha a barra **Voltar**, **Avançar** e **Recarregar**.
 
 - **Ver página** e **Ver nota** alternam entre o site e o texto da nota — as suas anotações sobre ele.
 - O endereço, na barra, abre a página numa janela própria.
@@ -40,4 +40,4 @@ Um `<iframe>` embute uma página no meio da nota; na primeira vez que um site ap
 
 ---
 
-Siga para [Terminal, CLI e Agentes](/wiki/terminal-cli-e-agentes/) ou volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Documentos e Mídia](/wiki/documentos-e-midia/) · Próxima: [Board e Relações](/wiki/board-e-relacoes/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -1,11 +1,11 @@
 ---
 title: "Writing in the Editor"
-description: "The Reading, Edit and Source modes, the formatting bar, the `/` menu and saving."
-order: 11
-group: start
+description: "Where to start: what Verso is and a map of every lesson."
+order: 4
+group: organize
 slug: "writing-in-the-editor"
 twin: "escrevendo-no-editor"
-source: "demo-vault-en/11 - Writing in the Editor.md"
+source: "demo-vault-en/04 - Writing in the Editor.md"
 updated: "2026-10-01"
 ---
 Everything that happens while you write: a note's three modes, the formatting bar, the `/` menu, saving, and changes made outside Verso.
@@ -49,8 +49,9 @@ At the start of a line, type `/` and choose a block. Typing filters the list; `E
 
 - **Basic**: Heading 1, 2 and 3, Quote, Code block, Divider.
 - **Lists**: Task, Bullet list, Numbered list.
-- **Callouts**: Callout: note, Callout: tip, Callout: warning.
-- **Insert**: Table, Internal link, Embed note, Image, Link, **Today's date**, **Time now** and **Insert template…**.
+- **Callouts**: Callout: note, Callout: tip, Callout: warning, **Toggle** (a callout that starts closed) and **Secret** (hidden from those who only read the note on a UniVerso; see [Dice and Random Tables](/en/wiki/dice-and-random-tables/)).
+- **Insert**: Table, Internal link, Embed note, Image, Link, **Today's date**, **Time now**, **Insert template…** and **Add property**.
+- With the RPG features on (**Settings › Dice and RPG**, on by default), also **Oracle** among the callouts and **Dice roll**, **Ask Oracle…** and **Statblock Card** under Insert — see [Dice and Random Tables](/en/wiki/dice-and-random-tables/), [Statblocks](/en/wiki/statblocks/) and [Oracles and World Building](/en/wiki/oracles-and-world-building/).
 
 **A divider from the keyboard**: type `---` and press Enter. Verso writes the blank lines Markdown wants around the divider — one before, when the text above would turn it into a heading underline, and one after — and leaves the caret below, ready to write; a single `⌘Z` undoes it. Away from the caret, the blank line between two blocks shows only as a thin gap, and Reading adds no space for it at all.
 
@@ -88,4 +89,4 @@ If another program (Obsidian, Git, an editor) changes an open note:
 
 ---
 
-Continue to [Search and Navigation](/en/wiki/search-and-navigation/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Properties and Metadata](/en/wiki/properties-and-metadata/) · Next: [Blocks Like in Notion](/en/wiki/blocks-like-in-notion/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

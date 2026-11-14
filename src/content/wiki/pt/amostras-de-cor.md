@@ -1,11 +1,11 @@
 ---
 title: "Amostras de Cor"
-description: "Um quadradinho da cor ao lado de `#1d9e75`, `rgb()` e `hsl()`; um clique no editor abre o seletor, e o código volta no mesmo formato."
-order: 30
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 6
 group: organize
 slug: "amostras-de-cor"
 twin: "colour-swatches"
-source: "demo-vault/30 - Amostras de Cor.md"
+source: "demo-vault/06 - Amostras de Cor.md"
 updated: "2026-10-22"
 ---
 Notas de design, temas, mapas ou jogos guardam códigos de cor — `#1d9e75`, `rgb(29 158 117)` — que só dá para imaginar. O Verso desenha **um quadradinho da cor** ao lado do código, e, no editor, **um clique nele abre um seletor** que reescreve o código. O arquivo não muda por causa do quadradinho: ele é só desenho (como tudo que o Verso mostra sem você pedir).
@@ -47,4 +47,4 @@ Em **Ajustes › Aplicação › Recursos**, a chave **Amostras de cor** tira to
 
 ---
 
-Siga para [A Mesa](/wiki/a-mesa/), volte a [Sincronizar com uma Nuvem](/wiki/sincronizar-com-uma-nuvem/), consulte a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou explore o Tour do Verso.
+Anterior: [Blocos como no Notion](/wiki/blocos-como-no-notion/) · Próxima: [Arquivos e Pastas](/wiki/arquivos-e-pastas/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

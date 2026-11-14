@@ -1,11 +1,11 @@
 ---
 title: "Settings, Appearance and Shortcuts"
-description: "Theme, palette, fonts, language and your own shortcuts."
-order: 15
+description: "Where to start: what Verso is and a map of every lesson."
+order: 36
 group: start
 slug: "settings-appearance-and-shortcuts"
 twin: "ajustes-aparencia-e-atalhos"
-source: "demo-vault-en/15 - Settings, Appearance and Shortcuts.md"
+source: "demo-vault-en/36 - Settings, Appearance and Shortcuts.md"
 updated: "2026-10-01"
 ---
 `⌘,` opens **Settings** (also from the button on the left ribbon and from the menu **Verso › Settings…**). The **Search settings…** field finds an option by name.
@@ -14,20 +14,37 @@ updated: "2026-10-01"
 
 ## The Sections
 
-- **General**: the language (**System**, **Português (Brasil)** or **English**), the autosave delay, updates, the developer console, remote content and the sites allowed in notes.
-- **Notifications**: for each kind — sync, conflicts, sharing, updates, quota, trash, presence — **Notice and list**, **List only** or **Off**, and the system's notifications (see [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/#notifications)).
+The list on the left comes in four groups. A section only shows where it applies: the trash and periodic notes need an open folder, and the network ones exist only in the desktop app.
+
+**Application**
+- **General**: the language (**System**, **Português (Brasil)** or **English**), the autosave delay, updates and the app's version, the developer console, remote content, the sites allowed in notes and the **Maps' background**.
 - **Appearance**: theme, dark tone, text size and width and the **Themes** gallery — one click changes the look; **Copy** and **Edit** open the **Theme builder** —, with themes to share.
-- **Editor**: preview tabs, the mode notes open in, spell check and line numbers.
-- **Files and links**: build folders and `.gitignore`, the format of new links, and the folders for attachments, daily notes and templates.
-- **Board**: how a `.canvas` opens and how new boards are born (see [Board and Relations](/en/wiki/board-and-relations/)).
+- **Features**: turns the optional features on and off (data diagram, colour swatches, terminal), with the **Everything**, **Writing only** and **Custom** shortcuts. Turning a feature off changes no file.
+- **Notifications**: for each kind — sync, conflicts, sharing, updates, quota, trash, presence, table — **Notice and list**, **List only** or **Off**, the **Table sound** and the system's notifications (see [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/#notifications)).
 - **Hotkeys**: the keys for each command.
-- **Terminal and agents**: the `verso` command and Verso in AI agents (see [Terminal, CLI and Agents](/en/wiki/terminal-cli-and-agents/)).
+- **Credits and acknowledgements**: who and what Verso draws from, with the notices each licence asks for.
+
+**Notes & Editor**
+- **Editor**: preview tabs, the mode notes open in, spell check, block handles, link suggestions and line numbers.
+- **Files and links**: the folder's space and the trash's size, how long version history is kept, build folders and `.gitignore`, the largest file an import takes, the folders hidden from the picker, the format of new links, and the folders for attachments and templates.
+- **Organizing**: stickers, covers, the folder note, bookmarks, manual order and the folders hidden from the tree (see [Organizing: stickers, covers and pages](/en/wiki/organizing-with-stickers-covers-and-pages/)).
+- **Periodic notes**: the day, the week, the month, the quarter and the year, each with its format, folder and template (see [Daily Notes, Calendar and Templates](/en/wiki/daily-notes-calendar-and-templates/)).
+- **Trash**: what was deleted in this folder (see [Files and Folders](/en/wiki/files-and-folders/#the-trash)).
+- **Board**: how a `.canvas` opens and how new boards are born (see [Board and Relations](/en/wiki/board-and-relations/)).
+
+**RPG & Solo Play**
+- **Dice and RPG**, **Oracles & Solo RPG** and **Statblock Templates**: the RPG features, one switch each, and their settings (see [Dice and Random Tables](/en/wiki/dice-and-random-tables/)).
+
+**Network & System**
+- **Sync**, **Servers** and **Turn into a server**: the folder with a server or a cloud, the servers you sign in to and this computer serving its own folders (see [Verso on a Server](/en/wiki/verso-on-a-server/) and [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/)).
+- **Terminal and agents**: the `verso` command, the terminal and Verso in AI agents (see [Terminal, CLI and AI Agents](/en/wiki/terminal-cli-and-ai-agents/)).
+- **Account**: your account, when the window is a server's.
 
 ---
 
 ## From the Folder or from This Machine
 
-Three settings belong to the folder, not to the computer: the **Bookmarks**, the **build folders** and the **`.gitignore`** (in **Files and links**), and the **Folder note name** (in **Organizing**). They live inside the folder itself, in `.verso/settings.json`, and travel with it: open the synced folder on another computer — through Verso's sync (see [Verso on a Server](/en/wiki/verso-on-a-server/)), iCloud, OneDrive, Syncthing or git — and they are there. Beside each one, Settings says **Of the folder** or **Of this machine**: of this machine as long as the folder does not have the file, which only appears on the first change — opening a folder never creates it. Whoever can only read a server folder keeps its bookmarks on this computer, and the star works the same way: beside them, Settings says **Of this machine**.
+Four settings belong to the folder, not to the computer: the **build folders** and the **`.gitignore`** (in **Files and links**), and the **Folder note name** and the **Bookmarks** (in **Organizing**). They live inside the folder itself, in `.verso/settings.json`, and travel with it: open the synced folder on another computer — through Verso's sync (see [Verso on a Server](/en/wiki/verso-on-a-server/)), iCloud, OneDrive, Syncthing or git — and they are there. Beside each one, Settings says **Of the folder** or **Of this machine**: of this machine as long as the folder does not have the file, which only appears on the first change — opening a folder never creates it. Whoever can only read a server folder keeps its bookmarks on this computer, and the star works the same way: beside them, Settings says **Of this machine**.
 
 Try it: in **Files and links**, turn off **Ignore build folders** and watch the label change to **Of the folder**; turn it on again to go back.
 
@@ -109,4 +126,4 @@ The buttons on the left ribbon (search, open, today's note, graph…) can be dra
 
 ---
 
-Go on to [Web Pages and HTML](/en/wiki/web-pages-and-html/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Terminal, CLI and AI Agents](/en/wiki/terminal-cli-and-ai-agents/) · Next: [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

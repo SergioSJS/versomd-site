@@ -1,6 +1,6 @@
 ---
 title: "Markdown Guide and Syntax"
-description: "Collapsible headings, code blocks with a copy button, KaTeX math formulas, tables with resizable columns and hierarchical lists."
+description: "Where to start: what Verso is and a map of every lesson."
 order: 1
 group: start
 slug: "markdown-guide-and-syntax"
@@ -53,7 +53,7 @@ Lists support smart indentation via `Tab` and `Shift-Tab`, with highlighted visu
 
 ## Code Blocks with a Copy Button
 
-Hover over any code block below to see the **Copy** button in the top-right corner:
+Hover over any code block below to see the **Copy code** button (the copy icon) in the top-right corner, in Reading and Edit modes:
 
 ### Rust
 ```rust
@@ -165,4 +165,4 @@ The file stays Markdown: on every change the `|` bars line themselves up, and a 
 
 To widen a column, drag the right edge of its header cell, in Edit mode or in Reading. Verso keeps that width for the table and the note — the file doesn't change, and Obsidian shows the table as usual.
 
-Back to the [Home Page](/en/wiki/welcome-to-verso/) or continue to [Links, Anchors and Embedded Notes](/en/wiki/links-anchors-and-embedded-notes/).
+Previous: [Welcome to Verso](/en/wiki/welcome-to-verso/) · Next: [Links, Anchors and Embedded Notes](/en/wiki/links-anchors-and-embedded-notes/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

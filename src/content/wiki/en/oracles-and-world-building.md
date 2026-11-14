@@ -1,11 +1,11 @@
 ---
 title: "Oracles and World Building"
-description: "The oracle that writes the answer into the highlight; random tables; the new-project wizard with the tree in view; and each feature's switch in Settings."
-order: 27
-group: rpg
+description: "Where to start: what Verso is and a map of every lesson."
+order: 24
+group: server
 slug: "oracles-and-world-building"
 twin: "oraculos-e-criacao-de-mundos"
-source: "demo-vault-en/27 - Oracles and World Building.md"
+source: "demo-vault-en/24 - Oracles and World Building.md"
 updated: "2026-10-20"
 ---
 Tools for game masters, solo players and people who build worlds — or just write fiction. All of it follows the principle of files: what the tools create is **plain Markdown** in your note, readable in any editor. Statblocks have their own note: [Statblocks](/en/wiki/statblocks/).
@@ -14,7 +14,7 @@ Tools for game masters, solo players and people who build worlds — or just wri
 
 ## Turning on and off: Settings › RPG & Solo Play › Dice and RPG
 
-The RPG features have a page of their own, the first of the **RPG & Solo Play** group: **Dice and RPG**. Each tool is a feature with its own switch: **Dice**, **Random tables**, **Oracles**, **Statblocks** (the ones in [Statblocks](/en/wiki/statblocks/)) **World and campaign wizard** and **3D dice**. All of them come **on**, except 3D dice. The page has **Turn all on** and **Turn all off** links, and **Oracles** and **Statblocks** have a **Settings…** link to their own page. The shortcuts **Everything** and **Writing only**, in **Settings › Application › Features** (which also holds the **Data diagram** switch), turn them all on or off at once, the RPG ones too — first, Verso shows what will change, and you can cancel.
+The RPG features have a page of their own, the first of the **RPG & Solo Play** group: **Dice and RPG**. Each tool is a feature with its own switch: **Dice**, **Random tables**, **Oracles**, **Statblocks** (the ones in [Statblocks](/en/wiki/statblocks/)), **World and campaign wizard**, **3D dice**, **Table** (see [The Table](/en/wiki/the-table/)) and **Table sound** (see [Sound and Music at the Table](/en/wiki/sound-and-music-at-the-table/)). All of them come **on**, except 3D dice. The page has **Turn all on** and **Turn all off** buttons (**Turn all on** leaves 3D dice alone: those only by their own switch), and **Oracles** and **Statblocks** have a **Settings…** link to their own page. The shortcuts **Everything** and **Writing only**, in **Settings › Application › Features** (which also holds the **Data diagram**, **Colour swatches** and, in the desktop app, **Terminal** switches), turn them all on or off at once, the RPG ones too — first, Verso shows what will change, and you can cancel.
 
 Turning one off changes no file: a statblock becomes a code block, an `[!oracle]` becomes an ordinary callout, as Obsidian shows them without the plugin. Turning it on again brings everything back. The choice is **yours**: a folder never turns a feature on or off for whoever opens it.
 
@@ -54,7 +54,7 @@ A Markdown table or a list with a `^id` identifier can be drawn from, in any fol
 | 6 | Something supernatural changes the rules of the place |
 ^reviravolta
 
-In the text, `dice: [[#^reviravolta]]` becomes a button that draws a row. All the tables in the folder also show up in the oracle's **Tables** tab — with the name of the note they come from. Each is named by the nearest heading above it (here, *Tables are notes*) or, with no heading, by its `^id`; two tables under the same heading get the `^id` after it.
+In the text, `dice: [[#^reviravolta]]` becomes a button that draws a row. All the tables in the folder also show up in the oracle's **Tables** tab — with the note they come from and the `^id` under the list. Tables with two rows or more come in, and lists that are not task lists. Each is named by the nearest heading above it (here, *Tables are notes*) or, with no heading, by its `^id`; two tables under the same heading get the `^id` after it.
 
 ### Tuning the oracle
 
@@ -63,11 +63,11 @@ In **Settings › RPG & Solo Play › Oracles & Solo RPG**, everything saves its
 - **Try the oracle** opens the window so you can test without saving anything.
 - **Yes-or-no odds**: each bar shows how the d100 splits among the six answers, from *Yes, and…* to *No, and…*. Pick a **style** — *Balanced* (the default), *Likely twists* (inspired by Mythic GME, without its chaos factor), *Ironsworn* or *Narrative*, each with a sentence on what changes at the table — and it applies at once; **Undo** goes back to the previous one. In **Adjust by hand…** you change the numbers of each chance: the row says how much is missing or over (*3% missing*) and is saved only when it adds up to 100.
 - **Idea sparks**: when off, the oracle uses Verso's words, **in the window's language**. Turn on **Use my own words** to edit the four lists: type a word and press Enter, or paste several separated by commas; the **×** removes one (the arrows move between them, Delete erases). **Back to Verso's words** undoes it.
-- **Tables to draw from**: Verso's and those from your notes, with three sample options. **New table** writes a note with the list and the `^id` — you see the text first.
+- **Tables to draw from**: Verso's and those from your notes, with three sample options. **New table** writes a note with the list and the `^id` — you see the text first. **Import JSON…** brings tables in from a JSON (they become a note too); **Copy the folder's (JSON)** takes yours elsewhere.
 
 These settings stay **in the folder** and apply to everyone who opens it: if you share the folder, the other person sees the oracle the way you do. Where you can only read the folder, the page shows the values and says why they cannot be changed.
 
-In a server room, it is the server that **draws**, and everyone in the room sees who asked.
+In a server room, it is the server that **draws**, and everyone in the room sees who asked. With the **Table** on, each question also goes into the **Table** panel.
 
 ---
 
@@ -84,10 +84,28 @@ In the **AI Generator** tab, **Copy System Prompt for AI** copies the instructio
 
 ---
 
+## Maps from Watabou's generators
+
+[Watabou's generators](https://watabou.github.io) make dungeons, regions, cities and villages for free; the maps they make are yours to use (credit is appreciated). Verso brings them into your folder:
+
+1. In **One Page Dungeon**, use **Export as › JSON** (the rooms, for the drawing) and **Export as › Markdown** (the text and the seed). In **Perilous Shores**, **Save** gives the region's JSON. In **Dwellings** (houses), **Export › as JSON** gives the whole house, every floor.
+2. In Verso, **Import Watabou map…** (`⌘⇧P`, or **New** in a folder's menu). Choose the files, or drop them on the dialog. It says what they are and what it will create **before writing anything**; **Import** writes.
+3. A dungeon becomes a folder with its **note** — the title, the story and the numbered rooms, exactly as the generator wrote them (in English), with the seed in the properties — and a **board** with **Verso's own drawing**: rooms, walls, doors, water, columns and the room numbers, the same numbers as the note's list. It is an ordinary drawing: double-click to edit inside it. The note sits beside it as a card, and it is also the drawing's text version.
+4. A house becomes a folder with its **note** — the house in a sentence, then the rooms floor by floor, with their size, their doors and where they lead, the stairs and the windows — and a **board** with Verso's drawing: **one frame per floor**, from the basement up, all on one grid, so a floor's stairs sit at the same spot as the next floor's. The room names are the generator's; two of one name on a floor become *Room 1* and *Room 2*, the same in the drawing and in the note, which is the drawing's text version.
+5. A region becomes **one note** listing its towns, dangers and places. A town's or a danger's note is created only when you click its link, already holding its description, **its generator inside it** at its own seed, and **Open in the generator**.
+
+**New generated map…** creates a note with a generator **inside it** and the seed Verso drew kept in its properties, so the same map can be made again; the site is asked about once, like any page in a note (the generator needs the internet). In the desktop app, the generator's **Export** saves the file into your folder beside the note, and a Watabou export opens the import with it.
+
+The walls are also kept in the board, for when the table has vision and fog. Nothing of Watabou's code comes with Verso: the generators run on his site.
+
+---
+
 ## Credits
 
 **Settings › Application › Credits and acknowledgements** lists the people and works Verso builds on (such as Fractal, by Igor Téuri and Walter Licínio), the licence notices of the statblock layouts and the free software. **Open** takes you to each one's website in the browser.
 
 ---
 
-Go back to the rolling rules in [Dice and Random Tables](/en/wiki/dice-and-random-tables/), see the statblocks in [Statblocks](/en/wiki/statblocks/), check the [Home Page](/en/wiki/welcome-to-verso/), see the data of any file as boxes in [Structured Data as a Diagram](/en/wiki/structured-data-as-a-diagram/), or explore the Verso Tour.
+To see the data of any file as boxes, see [Structured Data as a Diagram](/en/wiki/structured-data-as-a-diagram/).
+
+Previous: [Statblocks](/en/wiki/statblocks/) · Next: [The Table](/en/wiki/the-table/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,11 +1,11 @@
 ---
 title: "Verso num Servidor"
-description: "O `verso serve`: instalar, contas por convite, dono, editores e leitores, editar junto e o app desktop conectado."
-order: 23
-group: server
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 30
+group: organize
 slug: "verso-num-servidor"
 twin: "verso-on-a-server"
-source: "demo-vault/23 - Verso num Servidor.md"
+source: "demo-vault/30 - Verso num Servidor.md"
 updated: ""
 ---
 O **UniVerso** é o Verso sem janela, numa máquina sua — um servidor em casa, um NAS, uma nuvem qualquer. As notas continuam **pastas comuns de arquivos Markdown** no disco dele; você as abre num navegador, no computador, no celular ou no tablet, e várias pessoas podem trabalhar na mesma pasta.
@@ -24,7 +24,9 @@ Três jeitos, do mesmo programa (o guia completo está em `docs/reference/server
 
 - **Docker**, para amd64 e arm64;
 - **CasaOS e ZimaOS**, por um arquivo compose;
-- um pacote **`.deb` ou `.rpm`** com um serviço do systemd, para uma máquina sem Docker.
+- um pacote **`.deb` ou `.rpm`** com um serviço do systemd, para uma máquina sem Docker — ou o **instalador guiado** `universo.sh`, que baixa, confere e instala o pacote certo num Linux com systemd (Ubuntu, Debian, Fedora…) e cuida do HTTPS, do primeiro admin e dos backups.
+
+Num NAS ou num VPS, passo a passo: [Instalar o servidor num NAS ou VPS](/wiki/instalar-o-servidor-num-nas-ou-vps/); no servidor grátis da Oracle: [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/). E, para uma sessão de jogo, o próprio app do computador pode ser o servidor, sem instalar nada: [Mesa pela Internet](/wiki/mesa-pela-internet/).
 
 Duas pastas importam: `VERSO_DATA_DIR`, num disco local, com as contas e os índices; e `VERSO_FOLDERS_DIR`, com as pastas de notas, que pode ficar num NAS. O backup é das duas.
 
@@ -35,7 +37,7 @@ O caminho mais curto: cole o arquivo compose, abra `http://<IP da máquina>:7340
 ## O primeiro admin e as contas
 
 - O admin vem das variáveis `VERSO_ADMIN_EMAIL` e `VERSO_ADMIN_PASSWORD`, **só na primeira subida**. Sem elas, o log mostra um link de configuração que vale uma hora.
-- **Ninguém se cadastra sozinho**: o admin **convida**, com um link de uso único que vale sete dias, e vê quem o usou.
+- **Ninguém se cadastra sozinho**: o admin **convida**, com um link de uso único que vale sete dias, e vê quem o usou. Uma conta a quem o admin deu a permissão **cria pastas** também convida, só para as mesas das pastas dela e só para ler; no console, **Feito por** diz quem fez cada convite.
 - Cada pasta tem um **dono**, **editores** e **leitores**. O admin não entra numa pasta sem dar acesso a si mesmo — e isso fica no registro que o dono lê.
 - Senha esquecida: o admin gera um link de senha nova. Admin perdido: `universo admin reset <e-mail>` na própria máquina.
 - Celular perdido: na página da conta, no console, **Encerrar sessões e tokens** desconecta a conta de todo navegador e aparelho na hora e revoga os tokens dela, sem trocar a senha — e fica no registro.
@@ -80,7 +82,7 @@ Ali também fica o **nome deste aparelho** — por padrão, o nome do sistema. D
 
 ---
 
-**Sem servidor nenhum**: o app do computador também pode servir as pastas que você marcar direto ao celular, na sua rede, sem conta e sem senha — o celular é pareado por um QR e você permite no computador. Veja [Parear o celular com o seu computador](/wiki/verso-no-celular-e-no-tablet/#parear-o-celular-com-o-seu-computador).
+**Sem servidor nenhum**: o app do computador também é um servidor, em **Ajustes › Transformar em servidor**. **Na minha rede**, ele serve as pastas que você marcar direto ao seu celular, sem conta e sem senha — o celular é pareado por um QR e você permite no computador; veja [Parear o celular com o seu computador](/wiki/verso-no-celular-e-no-tablet/#parear-o-celular-com-o-seu-computador). **Por um link na internet**, ele recebe gente de fora com convites, contas, a Mesa e os links de leitura, como um UniVerso, enquanto o computador fica ligado; o Verso de quem você convidou conecta por **Ajustes › Servidores** com o endereço do link. Veja [Mesa pela Internet](/wiki/mesa-pela-internet/).
 
 ## Sincronizar uma pasta deste computador
 
@@ -100,7 +102,7 @@ Com a pasta aberta, o jeito mais curto é **Ajustes › Servidores › Sincroniz
 
 A barra de status mostra o estado — *Sincronizada*, *enviando 3*, *Sem conexão*, *Servidor fora de alcance*, *Pausada*, *1 conflito* — e um clique nela abre a seção. Com o servidor fora do ar, a seção diz qual servidor não respondeu, e *Sincronizar agora* tenta de novo; *Sincronizar esta pasta* e a lista de pastas em Ajustes › Servidores dizem o mesmo ali mesmo, com **Tentar de novo**. Quem só **lê** a pasta no servidor recebe as mudanças; as feitas aqui ficam aqui. Desligar deixa os dois lados como estão.
 
-Arquivos que o iCloud ou o OneDrive deixaram só na nuvem aparecem em **Configurações › Sincronizar** como *arquivos que ainda não estão neste computador*, com o botão **Baixar N arquivos (X MB)**: ele diz o tamanho antes, recusa começar se o disco não comporta (ou se não dá para saber o espaço livre), baixa um de cada vez com o progresso e um **Parar**, e os que descem sincronizam na passada seguinte. Um arquivo que já sincronizou e voltou para a nuvem não pede nada: a linha discreta *estão só na nuvem; o servidor tem a cópia* o conta, e ele nunca é apagado no servidor.
+Arquivos que o iCloud ou o OneDrive deixaram só na nuvem aparecem em **Ajustes › Sincronizar** como *arquivos que ainda não estão neste computador*, com o botão **Baixar N arquivos (X MB)**: ele diz o tamanho antes, recusa começar se o disco não comporta (ou se não dá para saber o espaço livre), baixa um de cada vez com o progresso e um **Parar**, e os que descem sincronizam na passada seguinte. Um arquivo que já sincronizou e voltou para a nuvem não pede nada: a linha discreta *estão só na nuvem; o servidor tem a cópia* o conta, e ele nunca é apagado no servidor.
 
 ### Editar junto numa pasta sincronizada
 
@@ -137,8 +139,10 @@ Quem só **lê** uma nota não recebe os blocos `[!secret]` dela: o segredo do m
 
 Para que jogadores, ou qualquer pessoa, **leiam** o mundo sem fazer uma conta, a dona da pasta faz um **link de leitura**: clique com o botão direito na pasta e escolha **Link de leitura…**, ou numa nota e escolha **Copiar link de leitura…**. Escolha a validade (sem validade, 1, 7 ou 30 dias, ou até uma data) e, se quiser, uma **senha**. O endereço (`/r/…`) aparece **uma vez**, já copiado: o servidor guarda só uma marca dele. Quem o abrir lê, num navegador, só o que o link aponta — a pasta, ou a nota e o que ela incorpora —, na visão do leitor: **sem** os blocos `[!secret]`, sem editar, sem histórico, e um link para uma nota que não foi compartilhada aparece como texto simples *(não compartilhado)*. Os dados rolam no navegador de quem lê e não escrevem nada.
 
-Antes de o link ser feito, o diálogo diz quantas notas têm segredos e que quem lê não as verá. A árvore marca o que tem um link ativo, e o painel lista os links com quem fez cada um e quando foi aberto pela última vez. **Revogar** acaba o link na hora, até nas páginas que já estavam abertas. Os links de leitura **começam desligados**: quem administra liga em *Administração › Servidor*, e desligar encerra todos. Uma senha errada conta como um login recusado, e a dona é avisada por e-mail quando são muitas.
+Antes de o link ser feito, o diálogo diz quantas notas têm segredos e que quem lê não as verá. A árvore marca o que tem um link ativo, e o painel lista os links com quem fez cada um e quando foi aberto pela última vez. **Revogar** acaba o link na hora, até nas páginas que já estavam abertas. Os links de leitura **começam desligados**: quem administra liga em *Administração › Servidor* (no app que serve pela internet, em **Ligar os links de leitura**; veja [Mesa pela Internet](/wiki/mesa-pela-internet/#links-de-leitura)), e desligar encerra todos. Uma senha errada conta como um login recusado, e a dona é avisada por e-mail quando são muitas — se o servidor tem um servidor de e-mail configurado (`VERSO_SMTP_URL`).
 
 ---
 
-Para o celular e o tablet, veja [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/); para rolar dados e sortear numa tabela, [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/). Volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Para o celular e o tablet, veja [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/); para rolar dados e sortear numa tabela, [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/).
+
+Anterior: [Mesa pela Internet](/wiki/mesa-pela-internet/) · Próxima: [Instalar o seu UniVerso, Passo a Passo](/wiki/instalar-o-seu-universo-passo-a-passo/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

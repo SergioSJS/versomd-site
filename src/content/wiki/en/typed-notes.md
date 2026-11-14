@@ -1,11 +1,11 @@
 ---
 title: "Typed Notes"
-description: "`type:` and a schema: a type's form, what doesn't fit marked, nothing written without you, and `type:` in search."
-order: 21
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 13
+group: tools
 slug: "typed-notes"
 twin: "notas-tipadas"
-source: "demo-vault-en/21 - Typed Notes.md"
+source: "demo-vault-en/13 - Typed Notes.md"
 updated: "2026-10-07"
 ---
 A **typed note** is an ordinary note with `type:` in the frontmatter. When that name is the name of a **schema** in the folder, the properties panel turns into a form: the properties the type declares come first, with the right name and the right field for each one. The file stays plain Markdown — Obsidian reads the note as a note with properties.
@@ -78,7 +78,7 @@ In Obsidian, the note shows the same properties the Obsidian way: nothing in the
 ## Search and Agents
 
 - In search, `type:character` lists the notes of the type — together with `tag:`, `path:` and the words.
-- An agent through MCP ([Terminal, CLI and Agents](/en/wiki/terminal-cli-and-agents/)) receives each note's type and declared properties, and lists the notes of a type.
+- An agent through MCP ([Terminal, CLI and AI Agents](/en/wiki/terminal-cli-and-ai-agents/)) receives each note's type and declared properties, and lists the notes of a type.
 
 ---
 
@@ -93,6 +93,4 @@ In Obsidian, the note shows the same properties the Obsidian way: nothing in the
 
 ---
 
-Next: [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) — Verso with a finger instead of the mouse.
-
-Go back to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+Previous: [Daily Notes, Calendar and Templates](/en/wiki/daily-notes-calendar-and-templates/) · Next: [Bases and Data Views](/en/wiki/bases-and-data-views/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

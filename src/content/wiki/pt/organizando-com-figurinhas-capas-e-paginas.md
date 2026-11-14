@@ -1,11 +1,11 @@
 ---
 title: "Organizando: figurinhas, capas e páginas"
-description: "Figurinhas, cores, capas com reposicionamento, páginas de pasta, ordenação manual, itens ocultos e edição de notas incorporadas."
-order: 19
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 11
+group: start
 slug: "organizando-com-figurinhas-capas-e-paginas"
 twin: "organizing-with-stickers-covers-and-pages"
-source: "demo-vault/19 - Organizando com figurinhas, capas e páginas.md"
+source: "demo-vault/11 - Organizando com figurinhas, capas e páginas.md"
 updated: "2026-10-02"
 ---
 O Verso organiza notas e pastas com o mesmo frontmatter que o plugin make.md escreve no Obsidian: um cofre rotulado lá aparece rotulado aqui, e o contrário também. Tudo fica em Markdown, no próprio arquivo.
@@ -137,4 +137,4 @@ Focos são conjuntos de pastas e notas que atuam como raízes da árvore de arqu
 
 ---
 
-Siga para [Blocos como no Notion](/wiki/blocos-como-no-notion/), volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Anterior: [Abas, Painéis, Espaços de Trabalho e Janelas](/wiki/abas-paineis-espacos-de-trabalho-e-janelas/) · Próxima: [Notas Diárias, Calendário e Templates](/wiki/notas-diarias-calendario-e-templates/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

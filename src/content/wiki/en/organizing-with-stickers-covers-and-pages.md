@@ -1,11 +1,11 @@
 ---
 title: "Organizing: stickers, covers and pages"
-description: "Stickers, colors, covers with repositioning, folder pages, manual ordering, hidden items and editing embedded notes."
-order: 19
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 11
+group: start
 slug: "organizing-with-stickers-covers-and-pages"
 twin: "organizando-com-figurinhas-capas-e-paginas"
-source: "demo-vault-en/19 - Organizing with Stickers, Covers and Pages.md"
+source: "demo-vault-en/11 - Organizing with Stickers, Covers and Pages.md"
 updated: "2026-10-02"
 ---
 Verso organizes notes and folders with the same frontmatter the make.md plugin writes in Obsidian: a folder labeled there shows up labeled here, and the other way around. Everything stays in Markdown, in the file itself.
@@ -137,4 +137,4 @@ Focuses are sets of folders and notes that act as roots of the file tree — com
 
 ---
 
-Continue to [Blocks Like in Notion](/en/wiki/blocks-like-in-notion/), go back to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+Previous: [Tabs, Panes, Workspaces and Windows](/en/wiki/tabs-panes-workspaces-and-windows/) · Next: [Daily Notes, Calendar and Templates](/en/wiki/daily-notes-calendar-and-templates/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

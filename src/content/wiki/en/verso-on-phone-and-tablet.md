@@ -1,14 +1,14 @@
 ---
 title: "Verso on Phone and Tablet"
-description: "The bottom bar, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers."
-order: 22
-group: tools
+description: "Where to start: what Verso is and a map of every lesson."
+order: 28
+group: organize
 slug: "verso-on-phone-and-tablet"
 twin: "verso-no-celular-e-no-tablet"
-source: "demo-vault-en/22 - Verso on Phone and Tablet.md"
+source: "demo-vault-en/28 - Verso on Phone and Tablet.md"
 updated: "2026-10-09"
 ---
-Verso opens in the browser of your phone and tablet, served by `verso serve` — the same window as on the computer, arranging itself for the screen it has. This note shows what changes with a finger instead of the mouse.
+Verso opens in the browser of your phone and tablet, served by `verso serve` — the same window as on the computer, arranging itself for the screen it has. On Android there is also the [app](#the-android-app), the same window installed. This note shows what changes with a finger instead of the mouse.
 
 ---
 
@@ -16,7 +16,7 @@ Verso opens in the browser of your phone and tablet, served by `verso serve` —
 
 On a screen less than 760 px wide:
 
-- **The bottom bar** has six verbs: **Files** (the drawer with the tree), **Search**, **New note**, **Back**, **Commands** (the palette) and **Panel** (the right drawer, with outline, backlinks and tags). The side ribbon and the desktop status bar go away.
+- **The bottom bar** has six verbs: **Files** (the drawer with the tree), **Search**, **New note**, **Back**, **Commands** (the palette) and **Panel** (the right drawer: outline, links, tags, bookmarks, focuses, calendar — and the Table and the music, when on). The side ribbon and the desktop status bar go away.
 - **The tree is a drawer**: it opens with **Files** and closes with a tap outside it.
 - **One pane at a time**: a layout split into [side-by-side panes](/en/wiki/tabs-panes-workspaces-and-windows/) shows just one, with a **1/2** button in the tab bar that switches panes. The layout is kept and comes back whole on a wider screen.
 - **The tools of a narrow pane** fit in a **…** button: back, new note, the tabs and the **Tab actions…**.
@@ -33,7 +33,7 @@ On the tablet (760 to 1180 px) the side bars stay, and the tree's rows are talle
 - **Hold and release** is the right click: it opens the menu of a tree row, a tab or a card.
 - **Hold and drag** moves: a note to another folder, a tab, a kanban card. Dragging without holding first just scrolls the list.
 - **Nothing by gesture alone**: the focused tree row has a **…** button beside it with the same menu, and each kanban card has its own.
-- **Organize › Select** in a row's menu turns the tree into a selection: a checkbox on each row and a bar with **Move to…**, **Copy relative paths**, **Delete** and **Done**.
+- **Organize › Select** in a row's menu turns the tree into a selection: a checkbox on each row and a bar with **Move to…**, **Copy relative paths**, **Move to Trash** and **Done** (what you may not do in the folder is not there).
 - **Keep open**, in a tab's menu, keeps a preview tab, and **Open**, in a note's menu, opens without preview — what the double click does on the computer.
 
 ---
@@ -69,17 +69,17 @@ What the server is and how to install it: [Verso on a Server](/en/wiki/verso-on-
 
 ## Pair the Phone with Your Computer
 
-With nothing to install: Verso on your computer can itself serve the folders you tick to the phone's browser, **over the network both are on** (your home, for example). It is the same server as `verso serve`, inside the app; it stays **off** until you turn it on, and turns off again when the app closes. While it serves, a **book icon** shows in the Mac's menu bar (or in Windows' notification area), with a menu **Serving N folders… / Stop / Open Settings**; on Linux the mark sits in the app's status bar.
+With nothing to install: Verso on your computer can itself serve the folders you tick to the phone's browser, **over the network both are on** (your home, for example). It is the same server as `verso serve`, inside the app. **Turn into a server** has two boxes, **On my network** and **By an internet link (Cloudflare, testing mode)**; a phone pairs **over the network only**, and the link for playing with people who are away is [A Table over the Internet](/en/wiki/a-table-over-the-internet/). It stays **off** until you turn it on, and turns off again when the app closes. While it serves, the **Verso icon** (the app's mark) shows in the Mac's menu bar (or in Windows' notification area), with a menu **Serving N folders… / Stop / Open Settings**; on Linux the mark sits in the app's status bar.
 
-1. On the computer, **Settings › Turn into a server**. The folder open in the window comes first, with its tree of folders; the other folders you have already opened are in the **Recent** group. Tick the folders the phone may see — none comes ticked. To serve **only some folders inside** a folder, tick it and choose in its tree (the open folder's is already open; for recent ones, **Choose folders**). Tick only what the phone may see: each ticked folder reaches the phone as a folder of its own, the rest of the folder does not show up for it, not even by name, and the folder's attachments folder (the one Obsidian configures) goes along, read-only and files only (unticking the last one stops serving the folder; to serve it whole, **Serve the whole folder** in the tree). Then tap **Turn the server on**. The first time, Verso explains what the system is going to ask (local network, firewall) before asking; if you refuse, it says how to allow it, without touching the firewall on its own.
+1. On the computer, **Settings › Turn into a server**. The folder open in the window comes first, with its tree of folders; the other folders you have already opened are in the **Recent** group. Tick the folders the phone may see — none comes ticked. To serve **only some folders inside** a folder, tick it and choose in its tree (the open folder's is already open; for recent ones, **Choose folders**). Tick only what the phone may see: each ticked folder reaches the phone as a folder of its own, the rest of the folder does not show up for it, not even by name, and the folder's attachments folder (the one Obsidian configures) goes along, read-only and files only (unticking the last one stops serving the folder; to serve it whole, **Serve the whole folder** in the tree). In **Where to serve**, leave **On my network** ticked (it comes ticked). Then tap **Turn the server on**. The first time, Verso explains what the system is going to ask (local network, firewall) before asking; if you refuse, it says how to allow it, without touching the firewall on its own.
 2. Tap **Pair a phone**. The computer shows a **QR**, the address and an **eight-letter code**, valid for **2 minutes** and one use.
 3. On the phone, point the camera at the QR (or open the address in the browser and type the code). The browser warns that the certificate is not from a known authority: it is the certificate the app itself made for your computer. Accept it — **only on a network you trust**.
-4. On the computer, **Was it you who scanned this QR?** appears, with the phone's name, address and the time. **Allow** lets the phone in (tick *Can edit the notes* for it to write; without that, it only reads. A phone that edits comes in as **you**, the computer's owner, so it also **deletes** — into the folder's trash — even when it received only part of the folder); **Not me: refuse** ends the code. Three wrong codes close the window.
+4. On the computer, **Was it you who scanned this QR?** appears, with the phone's name, address and the time. **Allow** lets the phone in (*Can edit the notes* comes ticked; untick it for the phone only to read. A phone that edits comes in as **you**, the computer's owner, so it also **deletes** — into the folder's trash — even when it received only part of the folder); **Not me: refuse** ends the code. Three wrong codes close the window.
 5. The phone opens Verso's window with the ticked folders. In **Settings › Turn into a server** you see the paired phones and **Revoke** any one: its session ends right away. Up to 4 phones can stay paired; how many are **connected at the same time** is the **Devices connected at once** setting (1 to 16, 4 by default) — a phone over the number sees a message saying what to do and connects by itself when there is room. **Forget all phones** and **Replace this computer's identity** end all pairings at once.
 
-What stays out on purpose: the phone **never** opens folders you did not tick, does not see your disk, does not make the computer open anything in the system, does not change the app's settings and is not part of a folder that also syncs with a UniVerso (in that case, open the UniVerso's address on the phone). If the computer's address changes — another network, a VPN that connects —, the server **stops by itself** and warns you; you have to turn it on and pair again. On a network with client isolation (a café, a hotel) the phone cannot reach the computer, and Verso says so.
+What stays out on purpose: the phone **never** opens folders you did not tick, does not see your disk, does not make the computer open anything in the system, does not change the app's settings and does not open a folder someone else shared with you on a UniVerso (in that case, open the UniVerso's address on the phone; that folder's page and Settings say *shared with you on …: only its owner can serve it*). If the computer's address changes — another network, a VPN that connects —, the server **stops by itself** and warns you; you have to turn it on and pair again. On a network with client isolation (a café, a hotel) the phone cannot reach the computer, and Verso says so.
 
-The app's certificate is **not from a known authority**, so the phone's browser treats it as insecure and does not let the folder be [available offline](#offline). For that, use a UniVerso with real HTTPS, or `tailscale serve` — see [Verso on a Server](/en/wiki/verso-on-a-server/).
+The phone **never syncs**: it uses the browser's window, and only another person's Verso app that you invited syncs (see [A Table over the Internet](/en/wiki/a-table-over-the-internet/)). The app's certificate is **not from a known authority**, so the phone's browser treats it as insecure and does not let the folder be [available offline](#offline). For that, use a UniVerso with real HTTPS, or `tailscale serve` — see [Verso on a Server](/en/wiki/verso-on-a-server/).
 
 ---
 
@@ -97,10 +97,40 @@ Someone who only reads the folder keeps what the server hands them — without w
 
 ---
 
+## The Android App
+
+The Android app is the same Verso as on the computer, in an APK you install on the phone (outside the store: Android asks once to allow installing apps from elsewhere). The screen is the one the rest of this note describes; what changes:
+
+- **The phone's folder** lives **inside the app**: the first time it makes the folder *Verso* and offers this tutorial. No other app sees it, and it is **deleted with the app if Verso is uninstalled** — **Settings › Sync** says so. To keep a copy, sync it with a UniVerso or with a cloud (WebDAV, S3, see [Syncing with a Cloud](/en/wiki/syncing-with-a-cloud/)); the cloud's password stays in Android's encrypted store. Sync runs **while the app is open** and carries on where it stopped when it opens again; with **Sync in the background** on (**Settings › Sync**, off by default) it goes on with Verso closed, under a notification — optionally **Wi-Fi only** or **Only while charging**.
+- **A UniVerso**: in **Settings › Servers**, **Connect** opens the server's page in the phone's browser for you to sign in; then its folders show in the folder switcher (the folder's name, at the top of the drawer) and open in this window. The phone's name for the server is the one you gave it in Android's settings.
+- **The phone as a server**: **Settings › Turn into a server** works as on the computer ([above](#pair-the-phone-with-your-computer)), on the phone's Wi-Fi. While serving, a **notification** says what it serves and to how many devices, and the phone stays awake even with the screen off: **it drains the battery and warms up — keep it charging**. On mobile data only the **internet link** reaches the phone (**By an internet link**, as on the computer).
+- **A folder other apps see**: in the folder switcher, **Open another folder…** walks the phone's storage — the one Obsidian, the file manager and Syncthing see — to a folder, or makes a **New folder…** there. The first time, Verso asks for Android's **All files access**: Android opens its page, you turn it on for Verso and come back. Such a folder stays on the phone even if Verso is uninstalled. The phone opens the folder it showed last; the switcher says where each one sits (*inside the app*, *Phone/Documents*).
+- **Share with Verso**: in another app, **Share** a text, a link or a `.md` file and pick Verso — or open a `.md` with **Open with › Verso**: it becomes a **new note** at the top of the open folder, named by the file's name or the text's first line, and opens. The other app's file stays as it was; Verso keeps a copy.
+- **The phone's sound at the table**: the game master on a phone has **Share audio** with *Sound of the phone's apps*: Android asks for the microphone once and shows its screen-capture prompt each time (allow it); what Spotify or a game plays then goes to the table. Apps that forbid it, and calls, are not heard.
+- **Not on Android**: the terminal, the command line and the agents, several windows, a web page inside a note (it opens in the browser) and opening a loose file.
+- **Updates**: in **Settings › General**, **Check for updates** looks for a new version; downloaded and checked, it goes to Android's own install screen, which asks before installing.
+
+---
+
+## The App for iPad and iPhone
+
+The same Verso also comes to iPad and iPhone (iOS 16 or newer). For now it arrives **through AltStore Classic**, not the App Store:
+
+1. On your computer, install **AltServer** (altstore.io) and, through it, **AltStore** on the iPad or iPhone. It signs apps with **your own Apple ID**, free, for 7 days at a time, and renews them by itself while the computer and the device are on the same network.
+2. On the iPad or iPhone, download Verso's `.ipa` file from the version's page, open it with AltStore and tap **Install**.
+
+Through **AltStore PAL** (no computer needed) Verso comes later, and **for now in Brazil only**.
+
+What differs from Android:
+
+- **The app's folder** shows in the **Files** app, under *On My iPad › Verso* (or *On My iPhone*): other apps open its notes there, and Verso sees what they change when it comes back to the screen. It is deleted with Verso unless it syncs.
+- **A UniVerso** and **the device as a server** work as on Android, but iOS lets it serve only while Verso is on the screen.
+- **Not on iOS**: the internet link, the terminal, the command line and agents, and updates from the app itself (AltStore brings them).
+
 ## Screen Readers
 
 With VoiceOver (iPhone and iPad) or TalkBack (Android), a double tap and hold does the same as holding: it opens the menu. Every new button has a name, in Portuguese and in English.
 
 ---
 
-Go back to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+Previous: [Sound and Music at the Table](/en/wiki/sound-and-music-at-the-table/) · Next: [A Table over the Internet](/en/wiki/a-table-over-the-internet/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,11 +1,11 @@
 ---
 title: "Graph View and Connections"
-description: "How to explore the web of relations between your notes with intuitive zoom and pan."
-order: 5
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 15
+group: start
 slug: "graph-view-and-connections"
 twin: "visualizacao-de-grafo-e-conexoes"
-source: "demo-vault-en/05 - Graph View and Connections.md"
+source: "demo-vault-en/15 - Graph View and Connections.md"
 updated: "2026-09-25"
 ---
 Verso's **Knowledge Graph** maps the connections between all your notes, revealing clusters of ideas, central topics and conceptual bridges in your vault.
@@ -26,6 +26,7 @@ Verso's **Knowledge Graph** maps the connections between all your notes, reveali
 - **Show notes without links**, **Names** and **Color by folder** turn what you see on and off.
 - **Existing files only** starts on. Turn it off to also see the notes you have already cited with `[[ ]]` but not created yet: each is an empty circle with a dashed outline and an italic name, joined to the notes that cite it. Double-click it, or reach it with the arrow keys and press Enter, to create the note and open it — Verso asks first (**Create the note "Goblin Rei"?**).
 - **Repulsion**, **Distance** and **Size** adjust the drawing.
+- In a narrow pane or on a phone, the controls are tucked behind the **Graph settings** button, at the top of the graph.
 - **Zoom out**, **Zoom in** and **See everything**; the **Show all** button (at the top of the graph, shown only while a note, a filter or a tag narrows the view) clears everything and returns to the whole graph; the **×** in the filter field, or Esc inside it, clears the filter only.
 
 ---
@@ -49,4 +50,4 @@ In this sample vault, the notes form nodes connected by relations:
 - The technical guides connect to one another and point to the [Bases examples](/en/wiki/bases-and-data-views/).
 - The project notes (Project Alpha, Project Beta) form a cluster tied together by shared tags and cross references.
 
-Go back to [Start](/en/wiki/welcome-to-verso/) or go on to [Documents and Media](/en/wiki/documents-and-media/).
+Previous: [Bases and Data Views](/en/wiki/bases-and-data-views/) · Next: [Structured Data as a Diagram](/en/wiki/structured-data-as-a-diagram/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

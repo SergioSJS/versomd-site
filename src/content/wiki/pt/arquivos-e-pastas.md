@@ -1,11 +1,11 @@
 ---
 title: "Arquivos e Pastas"
-description: "Criar, renomear sem quebrar links, mover, anexar imagens e a lixeira."
-order: 14
-group: start
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 7
+group: organize
 slug: "arquivos-e-pastas"
 twin: "files-and-folders"
-source: "demo-vault/14 - Arquivos e Pastas.md"
+source: "demo-vault/07 - Arquivos e Pastas.md"
 updated: "2026-10-01"
 ---
 O cofre é uma pasta comum do seu computador: o que o Verso cria, renomeia ou apaga é um arquivo que você vê no Finder, e o que você muda no Finder o Verso vê.
@@ -15,7 +15,7 @@ O cofre é uma pasta comum do seu computador: o que o Verso cria, renomeia ou ap
 ## Criar
 
 - `⌘N` cria uma nota nova; `⌘⇧N` pede o nome antes.
-- O botão **Nova nota** (`+`) da faixa da esquerda abre o menu **Nova…**: nota, pasta, **Nova base**, **Novo board** e **Nova página web…**.
+- O botão **Nova nota** (`+`) da faixa da esquerda abre o menu **Novo**: **Nova nota nesta pasta**, **Nova pasta**, **Novo projeto a partir de modelo…**, **Nova base**, **Novo board**, **Nova página web…** e **Importar arquivos…**.
 - O botão direito numa pasta da árvore, ou no espaço vazio dela, tem os mesmos itens — o que você criar entra naquela pasta.
 - Um nome que o Windows não guarda — `CON`, `NUL`, `COM1`, ponto ou espaço no fim, ou `: * " < > ? | \` — não é criado nem dado num renomear, em nenhum sistema: a pasta pode ser sincronizada com um Windows. O campo diz por quê. Um arquivo que já tem um nome assim continua abrindo, e pode ser renomeado para um nome que todo sistema guarda.
 - Também não é criado nem dado num renomear um nome que só difere de outro da mesma pasta em maiúsculas e minúsculas — `nota.md` ao lado de `Nota.md`: num Mac ou no Windows os dois seriam um arquivo só. O mesmo vale para um nome que só difere na forma em que os acentos foram gravados (um `Café.md` vindo de outro sistema). Renomear `nota.md` para `Nota.md` continua valendo.
@@ -44,6 +44,7 @@ O botão com o nome da pasta, no alto da árvore, abre o seletor: as pastas dest
 
 - Arraste uma nota da árvore para outra pasta para movê-la. Com o dedo, segure a nota um instante antes de arrastar: deslizar direto só rola a árvore.
 - **Vários de uma vez:** `⌘`-clique acrescenta ou tira uma nota ou pasta da seleção, `⇧`-clique seleciona tudo desde a última clicada, e `Esc` limpa. Arraste a seleção para uma pasta, ou use o botão direito nela — **Mover para…**, **Copiar caminhos relativos**, **Mover para a lixeira** —, e tudo vai junto; os links que precisam mudar aparecem num plano só.
+- **Desfazer:** moveu ou renomeou para o lugar errado? `⌘Z` (`Ctrl+Z` no Windows e no Linux), com o foco na árvore ou logo depois de soltar, devolve o que foi movido para onde estava; `⌘⇧Z` move de novo. Depois que você clica numa nota para escrever, o `⌘Z` volta a desfazer o texto dela.
 - Arraste um arquivo da árvore para o **texto de uma nota**: entra um link para ele (ou um embed, se for imagem, PDF ou outro arquivo).
 - Arraste arquivos do Finder para a árvore: eles são copiados para a pasta onde você soltar; um nome já usado ganha `(2)` — nada é sobrescrito nem recusado — e a barra de status diz quais foram renomeados. No app de computador, soltar vai até o mesmo limite de **Importar arquivos…** (abaixo): o app copia o arquivo direto, sem passar pela janela. Na janela de um navegador, ou ao soltar dentro do texto de uma nota ou de um board, o limite é 32 MB por arquivo.
 - Sem arrastar: **Importar arquivos…** (paleta de comandos, ou **Novo ▸ Importar arquivos…** no botão direito de uma pasta ou do espaço vazio da árvore) abre o seletor de arquivos do sistema; os escolhidos são copiados para aquela pasta, um nome já usado ganha `(2)`, e o primeiro fica selecionado na árvore. O tamanho máximo de cada arquivo é um ajuste (**Ajustes › Arquivos e links › Tamanho máximo de um arquivo importado**, 32 MB de início, até 1024): um PDF de 200 MB entra sem passar pela janela, o app o copia direto para a pasta. Num servidor o limite é 32 MB.
@@ -53,7 +54,7 @@ O botão com o nome da pasta, no alto da árvore, abre o seletor: as pastas dest
 
 ## A Lixeira
 
-O que você apaga fica na **Lixeira** da pasta por 30 dias, e depois some de vez. Para vê-la: **Abrir a lixeira** na paleta de comandos, o botão direito no espaço vazio da árvore, ou **Ajustes › Arquivos e links**, onde o tamanho da lixeira aparece ao lado do espaço da pasta (ela não conta nesse espaço). A lixeira não aparece como uma linha da árvore: a árvore é dos seus arquivos.
+O que você apaga fica na **Lixeira** da pasta por 30 dias, e depois some de vez. Para vê-la: **Abrir a lixeira** na paleta de comandos ou no botão direito no espaço vazio da árvore, que abre **Ajustes › Lixeira**; em **Ajustes › Arquivos e links**, o tamanho da lixeira aparece ao lado do espaço da pasta (ela não conta nesse espaço). A lixeira não aparece como uma linha da árvore: a árvore é dos seus arquivos.
 
 - A lista mostra cada item com **onde estava**, o **tamanho**, **quando** foi apagado (e por quem, numa pasta de servidor) e **quando expira**; a busca no alto filtra pelo nome.
 - **Restaurar** devolve o item para onde estava — uma pasta volta com tudo o que tinha. Se já existe outro arquivo com aquele nome, nada é substituído: o item volta ao lado, como `Nome (restaurado 2026-10-11).md`, e o Verso diz onde ele foi parar — também quando o nome que está ali só difere em maiúsculas e minúsculas. Um nome que o Windows não guarda não é restaurado: o Verso diz por quê, e o item continua na lixeira.
@@ -93,7 +94,7 @@ A árvore de arquivos é uma única parada do `Tab`: ela lembra o item em que vo
 
 Um clique em qualquer ponto da linha de uma pasta abre e fecha a pasta na árvore (a setinha faz o mesmo); a página da pasta abre pelo botãozinho de pasta no fim da linha. O Verso lembra quais pastas você deixou abertas: ao abrir o app de novo, a árvore volta como estava. Num cofre grande, as pastas de primeiro nível começam fechadas, para a árvore não desenhar milhares de linhas de uma vez.
 
-Um clique no nome de uma pasta abre a pasta numa aba: **Miniaturas** ou **Lista**, com as colunas **Nome**, **Tipo**, **Tamanho** e **Modificado**. Uma imagem aparece em miniatura, e um PDF mostra a primeira página. Uma pasta pode ter a sua própria nota — `Pasta/Pasta.md` —, que aparece no topo como **Nota da pasta**; se ela não existe, **Criar nota da pasta** a cria.
+A página da pasta abre numa aba: **Miniaturas** ou **Lista**, com as colunas **Nome**, **Tipo**, **Tamanho** e **Modificado**. Uma imagem aparece em miniatura, e um PDF mostra a primeira página. Uma pasta pode ter a sua própria nota — `Pasta/Pasta.md` —, que aparece no topo como **Nota da pasta**; se ela não existe, **Criar nota da pasta** a cria.
 
 ---
 
@@ -101,9 +102,9 @@ Um clique no nome de uma pasta abre a pasta numa aba: **Miniaturas** ou **Lista*
 
 - O Verso guarda um índice das notas para buscar rápido. **Reindexar** (paleta ou faixa da esquerda) refaz o índice; a barra de status mostra o andamento.
 - **Ajustes › Arquivos e links › Ignorar pastas de build** e **Respeitar .gitignore** deixam de fora as pastas de build (`node_modules`, `target`, `dist`…) e o que o Git ignora.
-- Um arquivo que o macOS deixou só no iCloud (**Otimizar Armazenamento**) é baixado quando você o abre, com um aviso na barra de status.
+- Um arquivo que o macOS deixou só no iCloud (**Otimizar Armazenamento**) é baixado quando você mexe nele: ao abrir, ao mover (sozinho ou numa seleção), renomear ou apagar, ao passar o mouse sobre um link para ele e quando aparece num board — com um aviso na barra de status. Se não der para baixar (sem conexão), nada é movido e o aviso diz qual arquivo foi.
 - Se outro programa muda uma nota aberta, o Verso percebe — veja [Escrevendo no Editor](/wiki/escrevendo-no-editor/).
 
 ---
 
-Siga para [Ajustes, Aparência e Atalhos](/wiki/ajustes-aparencia-e-atalhos/) ou volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Amostras de Cor](/wiki/amostras-de-cor/) · Próxima: [Abrir um Arquivo Avulso](/wiki/abrir-um-arquivo-avulso/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -1,11 +1,11 @@
 ---
 title: "Blocks Like in Notion"
-description: "Dragging paragraphs and items by the ⋮⋮ handle, the + that opens the `/` menu, each block's menu and Notion's keys."
-order: 20
+description: "Where to start: what Verso is and a map of every lesson."
+order: 5
 group: organize
 slug: "blocks-like-in-notion"
 twin: "blocos-como-no-notion"
-source: "demo-vault-en/20 - Blocks Like in Notion.md"
+source: "demo-vault-en/05 - Blocks Like in Notion.md"
 updated: "2026-10-06"
 ---
 In **Edit** mode, every paragraph, heading, list item, quote, code block or table is a **block** that moves with the mouse — like in Notion — and the file stays plain Markdown, which Obsidian reads the same.
@@ -78,4 +78,4 @@ This paragraph wants to go after the tip: drag it by the ⋮⋮, or put the curs
 
 ---
 
-Next: [Typed Notes](/en/wiki/typed-notes/). Or go back to the [Home Page](/en/wiki/welcome-to-verso/), or open the Verso Tour.
+Previous: [Writing in the Editor](/en/wiki/writing-in-the-editor/) · Next: [Colour Swatches](/en/wiki/colour-swatches/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,11 +1,11 @@
 ---
 title: "Tabs, Panes, Workspaces and Windows"
-description: "Pinned and preview tabs, side-by-side panes, workspaces and windows."
-order: 13
-group: tools
+description: "Where to start: what Verso is and a map of every lesson."
+order: 10
+group: boards
 slug: "tabs-panes-workspaces-and-windows"
 twin: "abas-paineis-espacos-de-trabalho-e-janelas"
-source: "demo-vault-en/13 - Tabs, Panes, Workspaces and Windows.md"
+source: "demo-vault-en/10 - Tabs, Panes, Workspaces and Windows.md"
 updated: "2026-10-01"
 ---
 Several notes open at the same time: in tabs, side by side, in separate workspaces or in windows of their own.
@@ -41,9 +41,9 @@ Several notes open at the same time: in tabs, side by side, in separate workspac
 
 A workspace is a set of panes and tabs, so you can switch subjects without closing anything.
 
-- `⌘T` creates a new workspace; with two or more, the workspace bar appears and `⌘1` to `⌘9` switch between them.
+- `⌘T` (in the palette, **New workspace**) creates a new workspace, named *Workspace 2*, *Workspace 3*…; with two or more, the workspace bar appears and `⌘1` to `⌘9` switch between them. The **×** on the name, or **Close workspace** on the right click, closes one.
 - A double click on a workspace's name (or `F2`, or **Rename** on the right click) renames it.
-- Drag a tab onto another workspace's name to take it there.
+- Drag a tab onto another workspace's name to take it there — or, in the tab's menu, **Move to: Workspace 2**.
 
 ---
 
@@ -57,4 +57,4 @@ A workspace is a set of panes and tabs, so you can switch subjects without closi
 
 ---
 
-Continue to [Files and Folders](/en/wiki/files-and-folders/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Search and Navigation](/en/wiki/search-and-navigation/) · Next: [Organizing: stickers, covers and pages](/en/wiki/organizing-with-stickers-covers-and-pages/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

@@ -1,11 +1,11 @@
 ---
 title: "Escrevendo no Editor"
-description: "Os modos Leitura, Editar e Fonte, a barra de formatação, o menu `/` e o salvamento."
-order: 11
-group: start
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 4
+group: organize
 slug: "escrevendo-no-editor"
 twin: "writing-in-the-editor"
-source: "demo-vault/11 - Escrevendo no Editor.md"
+source: "demo-vault/04 - Escrevendo no Editor.md"
 updated: "2026-10-01"
 ---
 Tudo o que acontece enquanto você escreve: os três modos de uma nota, a barra de formatação, o menu `/`, o salvamento e as mudanças feitas fora do Verso.
@@ -49,8 +49,9 @@ No começo de uma linha, digite `/` e escolha um bloco. Digitar filtra a lista; 
 
 - **Básico**: Título 1, 2 e 3, Citação, Bloco de código, Divisória.
 - **Listas**: Tarefa, Lista, Lista numerada.
-- **Destaques**: Destaque: nota, Destaque: dica, Destaque: aviso.
-- **Inserir**: Tabela, Link interno, Embutir nota, Imagem, Link, **Data de hoje**, **Hora agora** e **Inserir template…**.
+- **Destaques**: Destaque: nota, Destaque: dica, Destaque: aviso, **Recolhível** (um destaque que começa fechado) e **Segredo** (escondido de quem só lê a nota num UniVerso; veja [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/)).
+- **Inserir**: Tabela, Link interno, Embutir nota, Imagem, Link, **Data de hoje**, **Hora agora**, **Inserir template…** e **Adicionar propriedade**.
+- Com os recursos de RPG ligados (**Ajustes › Dados e RPG**, ligados por padrão), também **Oráculo** nos destaques e **Dado**, **Consultar Oráculo…** e **Ficha de Atributos (Statblock)** em Inserir — veja [Dados e Tabelas Sorteadas](/wiki/dados-e-tabelas-sorteadas/), [Fichas](/wiki/fichas/) e [Oráculos e Criação de Mundos](/wiki/oraculos-e-criacao-de-mundos/).
 
 **Divisória pelo teclado**: digite `---` e aperte Enter. O Verso escreve a linha vazia que a Markdown pede em volta da divisória — antes, quando o texto de cima faria dela o sublinhado de um título, e depois — e deixa o cursor embaixo, pronto para escrever; um só `⌘Z` desfaz. Fora do cursor, a linha vazia entre dois blocos aparece só como um vão fino, e na Leitura ela não soma espaço nenhum.
 
@@ -88,4 +89,4 @@ Se outro programa (o Obsidian, o Git, um editor) muda uma nota aberta:
 
 ---
 
-Siga para [Busca e Navegação](/wiki/busca-e-navegacao/) ou volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Propriedades e Metadados](/wiki/propriedades-e-metadados/) · Próxima: [Blocos como no Notion](/wiki/blocos-como-no-notion/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

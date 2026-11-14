@@ -34,7 +34,7 @@ export const ptBR: Copy = {
     propsLabel: "Em resumo",
     props: [
       { key: "estado", valueHtml: "em teste; ainda sem download público" },
-      { key: "roda em", valueHtml: "macOS, Windows e Linux; no navegador e no celular, por um UniVerso" },
+      { key: "roda em", valueHtml: "macOS, Windows, Linux, Android, iPad e iPhone; no navegador, por um UniVerso" },
       { key: "servidor", valueHtml: "UniVerso, numa máquina sua: um mini PC, um NAS, a menor VPS" },
       { key: "licença", valueHtml: "MPL-2.0" },
       { key: "custa", valueHtml: "nada além da máquina onde ele roda" },
@@ -646,7 +646,7 @@ export const ptBR: Copy = {
         group: "platforms",
         label: "Celular",
         cells: [
-          { mark: "partial", text: "no navegador, por um UniVerso; offline nas pastas que você escolher, com HTTPS; sem app de loja" },
+          { mark: "partial", text: "app Android (APK) e iPad/iPhone pela AltStore, ou no navegador por um UniVerso; sem app de loja" },
           { mark: "yes", text: "apps iOS e Android, offline" },
           { mark: "yes", text: "apps; os da versão nova em teste" },
           { mark: "yes", text: "apps, com offline" },
@@ -794,7 +794,7 @@ export const ptBR: Copy = {
       today: {
         title: "O que já faz",
         introHtml:
-          "Tudo isto está nas versões de teste: no Mac com chip Apple, no Windows 11 e no Linux (x64), e no navegador e no celular por um UniVerso. O que está pronto mas ainda não saiu numa versão de teste fica no <a href=\"#roteiro\">roteiro</a>.",
+          "Tudo isto está nas versões de teste: no Mac com chip Apple, no Windows 11, no Linux (x64), no Android, no iPad e no iPhone (pela AltStore Classic; pela AltStore PAL, depois e por enquanto só no Brasil), e no navegador por um UniVerso. O que está pronto mas ainda não saiu numa versão de teste fica no <a href=\"#roteiro\">roteiro</a>.",
         groups: [
           {
             title: "Escrever",

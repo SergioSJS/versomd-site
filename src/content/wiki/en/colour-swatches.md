@@ -1,11 +1,11 @@
 ---
 title: "Colour Swatches"
-description: "A small square of the colour beside `#1d9e75`, `rgb()` and `hsl()`; a click in the editor opens the picker, and the code comes back in the same format."
-order: 30
+description: "Where to start: what Verso is and a map of every lesson."
+order: 6
 group: organize
 slug: "colour-swatches"
 twin: "amostras-de-cor"
-source: "demo-vault-en/30 - Colour Swatches.md"
+source: "demo-vault-en/06 - Colour Swatches.md"
 updated: "2026-10-22"
 ---
 Notes about design, themes, maps or games hold colour codes — `#1d9e75`, `rgb(29 158 117)` — that you can only imagine. Verso draws **a small square of the colour** beside the code, and, in the editor, **a click on it opens a picker** that rewrites the code. The file does not change because of the square: it is only a drawing (like everything Verso shows without being asked).
@@ -47,4 +47,4 @@ In **Settings › Application › Features**, the **Colour swatches** switch rem
 
 ---
 
-Go on to [The Table](/en/wiki/the-table/), go back to [Syncing with a Cloud](/en/wiki/syncing-with-a-cloud/), see the [Home Page](/en/wiki/welcome-to-verso/) or explore the Verso Tour.
+Previous: [Blocks Like in Notion](/en/wiki/blocks-like-in-notion/) · Next: [Files and Folders](/en/wiki/files-and-folders/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

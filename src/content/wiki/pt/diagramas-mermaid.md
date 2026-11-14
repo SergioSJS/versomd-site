@@ -1,11 +1,11 @@
 ---
 title: "Diagramas Mermaid"
-description: "Fluxogramas, sequências e outros diagramas escritos em texto e desenhados na nota."
-order: 8
-group: organize
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 17
+group: tools
 slug: "diagramas-mermaid"
 twin: "mermaid-diagrams"
-source: "demo-vault/08 - Diagramas Mermaid.md"
+source: "demo-vault/17 - Diagramas Mermaid.md"
 updated: ""
 ---
 O Verso oferece suporte nativo e seguro a diagramas **[Mermaid](https://mermaid.js.org/)** tanto no modo **Leitura** quanto no modo **Editar (Live Preview)**.
@@ -104,4 +104,4 @@ pie title Distribuição de Notas do Cofre
 
 ---
 
-Siga para [Board e Relações](/wiki/board-e-relacoes/) ou volte para a [Página Inicial](/wiki/bem-vindo-ao-verso/).
+Anterior: [Dados Estruturados como Diagrama](/wiki/dados-estruturados-como-diagrama/) · Próxima: [Documentos e Mídia](/wiki/documentos-e-midia/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -1,18 +1,18 @@
 ---
 title: "Installing the server on a NAS or a VPS"
-description: "The server on a NAS (CasaOS, ZimaOS, others with Docker) or on a VPS: the compose file or the installer, HTTPS, the public address, backups and the trash's limits."
-order: 38
-group: start
+description: "Where to start: what Verso is and a map of every lesson."
+order: 32
+group: rpg
 slug: "installing-the-server-on-a-nas-or-a-vps"
 twin: "instalar-o-servidor-num-nas-ou-vps"
-source: "demo-vault-en/38 - Installing the server on a NAS or a VPS.md"
+source: "demo-vault-en/32 - Installing the server on a NAS or a VPS.md"
 updated: "2026-10-31"
 ---
 A **UniVerso** is Verso on a server of your own ([Verso on a Server](/en/wiki/verso-on-a-server/)). It needs a machine that stays on: a **NAS** in the closet or a small rented server, a **VPS**. This note helps you pick the road for the machine you have, then walks it with real commands. It is the short map; when a step already has a full explanation, the link takes you there instead of repeating it: the long step by step is [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/), and the road for a free Oracle machine, with nothing but the menu, is [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/).
 
 > **Warning: Verso is in testing**
 >
-> While Verso's repository is private, downloading the program (and the Docker image) needs a GitHub **token** that the maintainer gives you, as note 24 explains. Without that access, you cannot install yet. The commands below are the ones in the project's install guide (`docs/reference/server-install.md`) and in the installer script itself (`sh universo.sh --help`).
+> While Verso's repository is private, downloading the program (and the Docker image) needs a GitHub **token** that the maintainer gives you, as note 31 explains. Without that access, you cannot install yet. The commands below are the ones in the project's install guide (`docs/reference/server-install.md`) and in the installer script itself (`sh universo.sh --help`).
 
 ---
 
@@ -33,9 +33,9 @@ Both roads end the same: `http://<machine address>:7340` opens the UniVerso, and
 
 ### ZimaOS and CasaOS
 
-1. **Sign in to the image registry**, once, in the system's terminal (while the repository is private): the `docker login ghcr.io` step in [note 24, Docker, step 2](/en/wiki/installing-your-universo-step-by-step/#3-path-2--docker), with its warning about the token's `read:packages`.
-2. In the panel, install a **custom app** and paste the compose file in [note 24, section 4](/en/wiki/installing-your-universo-step-by-step/#4-casaos-and-zimaos). There is nothing to fill in. Install.
-3. Open `http://<NAS address>:7340` in a browser and sign in with the setup link from the app's log (section 6 of note 24 has the screens; the same command is `docker logs universo 2>&1 | grep setup`). The log writes `localhost` in the link: swap in the NAS address.
+1. **Sign in to the image registry**, once, in the system's terminal (while the repository is private): the `docker login ghcr.io` step in [note 31, Docker, step 2](/en/wiki/installing-your-universo-step-by-step/#3-path-2--docker), with its warning about the token's `read:packages`.
+2. In the panel, install a **custom app** and paste the compose file in [note 31, section 4](/en/wiki/installing-your-universo-step-by-step/#4-casaos-and-zimaos). There is nothing to fill in. Install.
+3. Open `http://<NAS address>:7340` in a browser and sign in with the setup link from the app's log (section 6 of note 31 has the screens; the same command is `docker logs universo 2>&1 | grep setup`). The log writes `localhost` in the link: swap in the NAS address.
 
 What that file does, in four lines:
 
@@ -59,7 +59,7 @@ docker logs -f universo        # Ctrl+C to quit
 Change the two `source:` paths to folders of your NAS. The project has not written the screens of any one brand's panel (Synology, QNAP and the like), so that part is the panel's own documentation. Two things the compose file says about NAS:
 
 - If your NAS's folders belong to a user other than 1000, the file has a commented `user:` line for it (the numbers come from `id` on the NAS); the directories must then already be writable by that user. If the server cannot write, the administration console and the log say `UniVerso cannot write to … sudo chown -R 1000:1000 <the folder>`: run that command.
-- The announcement that lets the desktop app find the server by itself does not leave a container on Docker's default network. Type the server's address in the app, as note 24 shows in section 6.
+- The announcement that lets the desktop app find the server by itself does not leave a container on Docker's default network. Type the server's address in the app, as note 31 shows in section 6.
 
 **Updating**, over SSH in the same folder (the image is the `beta` tag, the newest test version):
 
@@ -90,7 +90,7 @@ sh universo.sh
 1. **Install** (`sh universo.sh install`): fetches the right package for this machine, checks its signature, installs it, starts the service and prints the link that creates the first admin. On a machine of 2 GB or less without swap it offers a swap file first (`sh universo.sh swap`), and you should accept it.
 2. **HTTPS** (section 4).
 3. **The first admin** (`sh universo.sh admin`): asks the e-mail and the password (12 characters at least), typed twice and hidden, and keeps it nowhere.
-4. **Open the ports** (`sh universo.sh firewall`) if you want to reach it from outside: it opens 80 and 443. A cloud has a firewall of its own, outside the machine, opened in the provider's console; note 34 shows it on Oracle's.
+4. **Open the ports** (`sh universo.sh firewall`) if you want to reach it from outside: it opens 80 and 443. A cloud has a firewall of its own, outside the machine, opened in the provider's console; note 33 shows it on Oracle's.
 
 The package listens only on the machine itself until you say otherwise. For plain HTTP over the network, put `VERSO_LISTEN=0.0.0.0:7340` in `/etc/universo/universo.env` and restart (`sudo systemctl restart universo`); with HTTPS in front, leave the default, and the proxy on the same machine reaches it.
 
@@ -123,7 +123,7 @@ sudo systemctl edit universo
 
 ## 4. HTTPS
 
-Plain HTTP works, but anyone on the same network can read your password and your notes as they pass. HTTPS also unlocks what the browser only gives to secure pages: offline mode, system notifications and passkeys. Without it Verso turns them off and tells you. [Note 24, section 5](/en/wiki/installing-your-universo-step-by-step/#5-https-optional-to-unlock-offline-and-notifications) has the choices in detail; the short version:
+Plain HTTP works, but anyone on the same network can read your password and your notes as they pass. HTTPS also unlocks what the browser only gives to secure pages: offline mode, system notifications and passkeys. Without it Verso turns them off and tells you. [Note 31, section 5](/en/wiki/installing-your-universo-step-by-step/#5-https-optional-to-unlock-offline-and-notifications) has the choices in detail; the short version:
 
 - **On a VPS, in one step:** `sh universo.sh https`. It installs Caddy from Caddy's own signed repository, gets the certificate and sets the address. The name is one of three: **your own domain** (whose `A` record must already point at the machine), **a free name made from the machine's address** (`150-230-1-2.sslip.io`, nothing to sign up for), or **a free DuckDNS name** (`sh universo.sh https --duckdns NAME`; it asks for your DuckDNS token, hidden, and keeps the name pointing at the machine if its address changes). Ports 80 and 443 must be open, here and at the cloud. If it fails it says why in words (a closed port, a name that does not point here), and running it again picks up where it was.
 - **For your own devices only, on a NAS or a VPS:** Tailscale. `tailscale serve --bg 7340` on the server, with every device that will open the UniVerso having the Tailscale app connected.
@@ -161,7 +161,7 @@ sh universo.sh schedule status             # see them; "schedule off" turns them
 
 `backup` stops the service for a moment. **A backup on the same machine does not survive losing it:** copy it off with `scp` or `rclone`. To restore, `sh universo.sh restore <file>` (add `--identity <key file>` for an encrypted one).
 
-On Docker or a NAS, the backup is the stop, copy and start in [note 24, section 7](/en/wiki/installing-your-universo-step-by-step/#7-backup-and-update), and your NAS's own snapshots or backup program can copy the two folders.
+On Docker or a NAS, the backup is the stop, copy and start in [note 31, section 7](/en/wiki/installing-your-universo-step-by-step/#7-backup-and-update), and your NAS's own snapshots or backup program can copy the two folders.
 
 **Updating**: back up first. On a VPS, `sh universo.sh update` (settings and data are kept; `--version X` picks one); on Docker, `docker compose pull` and `docker compose up -d`, as in section 2. The server never updates itself: the administration console says when a new version exists.
 
@@ -200,4 +200,6 @@ sh universo.sh support                 # a report with no password or token, to 
 - **The service does not start:** the log names the line (a `VERSO_PUBLIC_URL` that does not begin with `http://` or `https://`, for instance). Fix it and restart.
 - **A lost admin password:** `sh universo.sh reset-admin you@example.com` on a VPS; `docker exec universo universo admin reset you@example.com` on Docker. It prints a single-use link.
 
-The rest of the troubleshooting is at the end of [note 24](/en/wiki/installing-your-universo-step-by-step/#if-something-goes-wrong). Once the server is up, connecting the app and the phone is in section 6 of that note and in [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/). Go back to [Compatibility with Obsidian](/en/wiki/compatibility-with-obsidian/), to the [Home Page](/en/wiki/welcome-to-verso/) or open the Verso Tour.
+The rest of the troubleshooting is at the end of [note 31](/en/wiki/installing-your-universo-step-by-step/#if-something-goes-wrong). Once the server is up, connecting the app and the phone is in section 6 of that note and in [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/). With no server at all, only your computer on, [A Table over the Internet](/en/wiki/a-table-over-the-internet/) puts a table online through a link.
+
+Previous: [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/) · Next: [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

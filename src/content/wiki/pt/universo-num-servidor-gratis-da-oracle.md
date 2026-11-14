@@ -1,11 +1,11 @@
 ---
 title: "UniVerso num Servidor Grátis da Oracle"
-description: "O roteiro para quem nunca montou um servidor: uma máquina grátis da Oracle, o menu do instalador, o HTTPS com um nome grátis, o primeiro admin e o celular."
-order: 34
-group: server
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 33
+group: tools
 slug: "universo-num-servidor-gratis-da-oracle"
 twin: "universo-on-a-free-oracle-server"
-source: "demo-vault/34 - UniVerso num Servidor Grátis da Oracle.md"
+source: "demo-vault/33 - UniVerso num Servidor Grátis da Oracle.md"
 updated: "2026-10-30"
 ---
 Esta nota é o roteiro para quem **nunca montou um servidor** e quer o seu UniVerso funcionando no celular, de graça, em uns 30 minutos. Você vai criar uma máquina pequena na nuvem da Oracle, entrar nela, baixar o instalador e escolher as opções num **menu**: o instalador faz o resto (o endereço seguro, a conta de admin, o aviso do que está errado). Para os caminhos mais manuais (Docker, CasaOS, o seu domínio), a nota é a [Instalar o seu UniVerso, Passo a Passo](/wiki/instalar-o-seu-universo-passo-a-passo/); o que o UniVerso faz depois de pronto está na [Verso num Servidor](/wiki/verso-num-servidor/).
@@ -97,4 +97,6 @@ No navegador do celular, abra o endereço `https://…` que o instalador imprimi
 >
 > Uma máquina grátis que a Oracle julga parada (pouco uso de CPU, rede e memória por sete dias) pode ser recuperada por ela. Um servidor de notas para poucas pessoas pode parecer parado: **guarde backups fora da máquina**.
 
-Siga para [Terminal e Agentes de IA](/wiki/terminal-e-agentes-de-ia/) ou volte à [Abrir um Arquivo Avulso](/wiki/abrir-um-arquivo-avulso/). Para ver o que fazer com o servidor no ar, vá à [Verso num Servidor](/wiki/verso-num-servidor/); para a mesa de jogo, [Rodando uma Mesa](/wiki/rodando-uma-mesa/). Volte à [Página Inicial](/wiki/bem-vindo-ao-verso/) ou abra o Tour do Verso.
+Para ver o que fazer com o servidor no ar, vá à [Verso num Servidor](/wiki/verso-num-servidor/); para a mesa de jogo, [Rodando uma Mesa](/wiki/rodando-uma-mesa/).
+
+Anterior: [Instalar o servidor num NAS ou VPS](/wiki/instalar-o-servidor-num-nas-ou-vps/) · Próxima: [Sincronizar com uma Nuvem](/wiki/sincronizar-com-uma-nuvem/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

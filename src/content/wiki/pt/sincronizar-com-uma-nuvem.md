@@ -1,11 +1,11 @@
 ---
 title: "Sincronizar com uma Nuvem"
-description: "Uma pasta igual a uma pasta de um Nextcloud (WebDAV) ou de um bucket S3 que você já tem, sem servidor: o formulário, a chave de S3 limitada a uma pasta, a senha no chaveiro e o que esperar."
-order: 29
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 34
 group: server
 slug: "sincronizar-com-uma-nuvem"
 twin: "syncing-with-a-cloud"
-source: "demo-vault/29 - Sincronizar com uma Nuvem.md"
+source: "demo-vault/34 - Sincronizar com uma Nuvem.md"
 updated: "2026-10-21"
 ---
 Esta nota mostra como manter uma pasta do Verso **igual** a uma pasta de uma nuvem que você **já tem** — um Nextcloud (ou outro servidor WebDAV) ou um bucket S3 — sem instalar servidor nenhum. É a alternativa curta ao [UniVerso](/wiki/verso-num-servidor/): as notas continuam arquivos Markdown na sua pasta, e uma cópia fica na nuvem, para os seus outros computadores.
@@ -127,4 +127,4 @@ O nome do seu computador, que aparece na cópia de um conflito, se muda em **Aju
 
 ---
 
-Para fechar, veja [Amostras de Cor](/wiki/amostras-de-cor/): o quadradinho da cor ao lado de um código de cor.
+Anterior: [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/) · Próxima: [Terminal, CLI e Agentes de IA](/wiki/terminal-cli-e-agentes-de-ia/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

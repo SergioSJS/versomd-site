@@ -47,44 +47,78 @@ In this vault you will find hands-on demos of all of Verso's main capabilities:
 
 Explore the modules below to see each feature in detail:
 
-1. [Markdown Guide and Syntax](/en/wiki/markdown-guide-and-syntax/) — Collapsible headings, code blocks with a copy button, KaTeX math formulas, tables with resizable columns and hierarchical lists.
-2. [Links, Anchors and Embedded Notes](/en/wiki/links-anchors-and-embedded-notes/) — Simple wikilinks, links with aliases, jumps to headings (`[[#Heading]]`), links to missing notes and note embedding.
-3. [Properties and Metadata](/en/wiki/properties-and-metadata/) — How to use YAML frontmatter with the collapsible properties panel.
-4. [Bases and Data Views](/en/wiki/bases-and-data-views/) — How `.base` files work and how to embed live views in your notes.
-5. [Graph View and Connections](/en/wiki/graph-view-and-connections/) — How to explore the web of relations between your notes with intuitive zoom and pan.
-6. [Documents and Media](/en/wiki/documents-and-media/) — Viewing PDFs in 2-page mode, resizing images and embedding safe web pages through iframes.
-7. [Daily Notes, Calendar and Templates](/en/wiki/daily-notes-calendar-and-templates/) — Daily chronological log, monthly calendar navigation and note automation with templates.
-8. [Mermaid Diagrams](/en/wiki/mermaid-diagrams/) — Flowcharts, sequences and other diagrams written as text and drawn in the note.
-9. [Board and Relations](/en/wiki/board-and-relations/) — Boards (`.canvas`) drawn with Excalidraw, with the folder's notes as cards, and typed relations in the frontmatter.
-10. [Drawing on the Board](/en/wiki/drawing-on-the-board/) — The Excalidraw cheat sheet: tools, groups, arrows, layers and shortcuts.
-11. [Writing in the Editor](/en/wiki/writing-in-the-editor/) — The Reading, Edit and Source modes, the formatting bar, the `/` menu and saving.
-12. [Search and Navigation](/en/wiki/search-and-navigation/) — Searching, opening by name, replacing text across all notes, backlinks and bookmarks.
-13. [Tabs, Panes, Workspaces and Windows](/en/wiki/tabs-panes-workspaces-and-windows/) — Pinned and preview tabs, side-by-side panes, workspaces and windows.
-14. [Files and Folders](/en/wiki/files-and-folders/) — Creating, renaming without breaking links, moving, attaching images and the trash.
-15. [Settings, Appearance and Shortcuts](/en/wiki/settings-appearance-and-shortcuts/) — Theme, palette, fonts, language and your own shortcuts.
-16. [Web Pages and HTML](/en/wiki/web-pages-and-html/) — Web pages kept as notes, and HTML files.
-17. [Terminal, CLI and Agents](/en/wiki/terminal-cli-and-agents/) — The `verso` command and the vault in AI agents.
-18. [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/) — Updates, reporting a problem and the console.
-19. [Organizing: stickers, covers and pages](/en/wiki/organizing-with-stickers-covers-and-pages/) — Stickers, colors, covers with repositioning, folder pages, manual ordering, hidden items and editing embedded notes.
-20. [Blocks Like in Notion](/en/wiki/blocks-like-in-notion/) — Dragging paragraphs and items by the ⋮⋮ handle, the + that opens the `/` menu, each block's menu and Notion's keys.
-21. [Typed Notes](/en/wiki/typed-notes/) — `type:` and a schema: a type's form, what doesn't fit marked, nothing written without you, and `type:` in search.
-22. [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) — The bottom bar, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers.
-23. [Verso on a Server](/en/wiki/verso-on-a-server/) — `verso serve`: installing, accounts by invitation, owner, editors and readers, editing together and the connected desktop app.
-24. [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/) — From zero to a server of your own, for someone who has never set one up: the compose file or the install script, the first admin, HTTPS (optional, for offline use and notifications), the backup.
-25. [Dice and Random Tables](/en/wiki/dice-and-random-tables/) — `dice:` in a note rolls dice, a table or list with `^id` draws a row; nothing is written, and in a shared note everyone sees it.
-26. [Statblocks](/en/wiki/statblocks/) — An example of each `statblock` layout, with dice and counters that write to the note, and the layout editor. A complete example, the Fractal, is in the Fractal Campaign.
-27. [Oracles and World Building](/en/wiki/oracles-and-world-building/) — The oracle that writes the answer into the highlight; random tables; the new-project wizard with the tree in view; and each feature's switch in Settings.
-28. [Structured Data as a Diagram](/en/wiki/structured-data-as-a-diagram/) — A JSON, YAML, TOML, XML or CSV file, or a code block in one of those formats, seen as boxes and lines to move, collapse and search; read-only.
-29. [Syncing with a Cloud](/en/wiki/syncing-with-a-cloud/) — A folder kept the same as a folder in a Nextcloud (WebDAV) or an S3 bucket you already have, with no server: the form, the S3 key limited to one folder, the password in the keychain and what to expect.
-30. [Colour Swatches](/en/wiki/colour-swatches/) — A small square of the colour beside `#1d9e75`, `rgb()` and `hsl()`; a click in the editor opens the picker, and the code comes back in the same format.
-31. [The Table](/en/wiki/the-table/) — One log of every roll, table roll and oracle question, with who made it and from which note, in the right panel; other people's rolls arrive with their names.
-32. [Running a Table](/en/wiki/running-a-table/) — A campaign folder on a UniVerso: inviting the players, notes hidden until you release them, links to what has not appeared yet drawn with a padlock, who edits what, and the table's limits.
-33. [Open a Single File](/en/wiki/open-a-single-file/) — A double-click on an `.md` opens the file alone, with no folder, in a window with no tree or index and nothing written beside it; and how to make Verso the default app for `.md` on each system.
-34. [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/) — The route for someone who has never set up a server: a free Oracle machine, the installer's menu, HTTPS with a free name, the first admin and the phone.
-35. [Terminal and AI Agents](/en/wiki/terminal-and-ai-agents/) — A terminal of this computer in a tab, opened at the folder's root: turning it on, opening it, the buttons that find Claude Code, Gemini CLI and the other AI tools, the keys, and what a program run there does to the files.
-36. [Sound and Music at the Table](/en/wiki/sound-and-music-at-the-table/) — The game master plays a sound file and everyone at the table hears it at the same point, each with their own volume; a note of sound links becomes the soundboard, and whoever does not see the file does not hear it.
-37. [Compatibility with Obsidian](/en/wiki/compatibility-with-obsidian/) — For anyone coming from Obsidian or using both: the same folder, nothing rewritten on open, what works the same, what Verso adds, what does not exist and how to try it.
-38. [Installing the server on a NAS or a VPS](/en/wiki/installing-the-server-on-a-nas-or-a-vps/) — The server on a NAS (CasaOS, ZimaOS, others with Docker) or on a VPS: the compose file or the installer, HTTPS, the public address, backups and the trash's limits.
+### I. Getting started
+
+The basics of writing in Verso: the text, links, properties and the editor.
+
+- [Markdown Guide and Syntax](/en/wiki/markdown-guide-and-syntax/) — Collapsible headings, code blocks with a copy button, KaTeX math formulas, tables with resizable columns and hierarchical lists.
+- [Links, Anchors and Embedded Notes](/en/wiki/links-anchors-and-embedded-notes/) — Simple wikilinks, links with aliases, jumps to headings (`[[#Heading]]`), links to missing notes and note embedding.
+- [Properties and Metadata](/en/wiki/properties-and-metadata/) — How to use YAML frontmatter with the collapsible properties panel.
+- [Writing in the Editor](/en/wiki/writing-in-the-editor/) — The Reading, Edit and Source modes, the formatting bar, the `/` menu and saving.
+- [Blocks Like in Notion](/en/wiki/blocks-like-in-notion/) — Dragging paragraphs and items by the ⋮⋮ handle, the + that opens the `/` menu, each block's menu and Notion's keys.
+- [Colour Swatches](/en/wiki/colour-swatches/) — A small square of the colour beside `#1d9e75`, `rgb()` and `hsl()`; a click in the editor opens the picker, and the code comes back in the same format.
+
+### II. Organizing
+
+Where notes live and how to find them: files, search, tabs, stickers, daily notes and types.
+
+- [Files and Folders](/en/wiki/files-and-folders/) — Creating, renaming without breaking links, moving, attaching images and the trash.
+- [Open a Single File](/en/wiki/open-a-single-file/) — A double-click on an `.md` opens the file alone, with no folder, in a window with no tree or index and nothing written beside it; and how to make Verso the default app for `.md` on each system.
+- [Search and Navigation](/en/wiki/search-and-navigation/) — Searching, opening by name, replacing text across all notes, backlinks and bookmarks.
+- [Tabs, Panes, Workspaces and Windows](/en/wiki/tabs-panes-workspaces-and-windows/) — Pinned and preview tabs, side-by-side panes, workspaces and windows.
+- [Organizing: stickers, covers and pages](/en/wiki/organizing-with-stickers-covers-and-pages/) — Stickers, colors, covers with repositioning, folder pages, manual ordering, hidden items and editing embedded notes.
+- [Daily Notes, Calendar and Templates](/en/wiki/daily-notes-calendar-and-templates/) — Daily chronological log, monthly calendar navigation and note automation with templates.
+- [Typed Notes](/en/wiki/typed-notes/) — `type:` and a schema: a type's form, what doesn't fit marked, nothing written without you, and `type:` in search.
+
+### III. Other ways to see
+
+The same notes seen another way: bases, graph, diagrams, documents and web pages.
+
+- [Bases and Data Views](/en/wiki/bases-and-data-views/) — How `.base` files work and how to embed live views in your notes.
+- [Graph View and Connections](/en/wiki/graph-view-and-connections/) — How to explore the web of relations between your notes with intuitive zoom and pan.
+- [Structured Data as a Diagram](/en/wiki/structured-data-as-a-diagram/) — A JSON, YAML, TOML, XML or CSV file, or a code block in one of those formats, seen as boxes and lines to move, collapse and search; read-only.
+- [Mermaid Diagrams](/en/wiki/mermaid-diagrams/) — Flowcharts, sequences and other diagrams written as text and drawn in the note.
+- [Documents and Media](/en/wiki/documents-and-media/) — Viewing PDFs in 2-page mode, resizing images and embedding safe web pages through iframes.
+- [Web Pages and HTML](/en/wiki/web-pages-and-html/) — Web pages kept as notes, and HTML files.
+
+### IV. Board
+
+Verso's whiteboard, with the folder's notes as cards.
+
+- [Board and Relations](/en/wiki/board-and-relations/) — Boards (`.canvas`) drawn with Excalidraw, with the folder's notes as cards, and typed relations in the frontmatter.
+- [Drawing on the Board](/en/wiki/drawing-on-the-board/) — The Excalidraw cheat sheet: tools, groups, arrows, layers and shortcuts.
+
+### V. RPG
+
+Dice, statblocks, oracles and the game table, alone or with other people.
+
+- [Dice and Random Tables](/en/wiki/dice-and-random-tables/) — `dice:` in a note rolls dice, a table or list with `^id` draws a row; nothing is written, and in a shared note everyone sees it.
+- [Statblocks](/en/wiki/statblocks/) — An example of each `statblock` layout, with dice and counters that write to the note, and the layout editor. A complete example, the Fractal, is in the Fractal Campaign.
+- [Oracles and World Building](/en/wiki/oracles-and-world-building/) — The oracle that writes the answer into the highlight; random tables; the new-project wizard with the tree in view; maps from Watabou's generators, drawn by Verso; and each feature's switch in Settings.
+- [The Table](/en/wiki/the-table/) — One log of every roll, table roll and oracle question, with who made it and from which note, in the right panel; other people's rolls arrive with their names.
+- [Running a Table](/en/wiki/running-a-table/) — A campaign folder on a UniVerso: inviting the players, notes hidden until you release them, links to what has not appeared yet drawn with a padlock, who edits what, and the table's limits.
+- [Sound and Music at the Table](/en/wiki/sound-and-music-at-the-table/) — The game master plays a sound file and everyone at the table hears it at the same point, each with their own volume; a note of sound links becomes the soundboard, and whoever does not see the file does not hear it.
+
+### VI. Together and on other devices
+
+Verso on the phone, on a server of your own, over the internet and synced with a cloud.
+
+- [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) — The bottom bar, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers.
+- [A Table over the Internet](/en/wiki/a-table-over-the-internet/) — Verso on your computer turns into a server: a Cloudflare link (testing mode) or your own address, invitations, sitting at the table, read links and who gets in how.
+- [Verso on a Server](/en/wiki/verso-on-a-server/) — `verso serve`: installing, accounts by invitation, owner, editors and readers, editing together and the connected desktop app.
+- [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/) — From zero to a server of your own, for someone who has never set one up: the compose file or the install script, the first admin, HTTPS (optional, for offline use and notifications), the backup.
+- [Installing the server on a NAS or a VPS](/en/wiki/installing-the-server-on-a-nas-or-a-vps/) — The server on a NAS (CasaOS, ZimaOS, others with Docker) or on a VPS: the compose file or the installer, HTTPS, the public address, backups and the trash's limits.
+- [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/) — The route for someone who has never set up a server: a free Oracle machine, the installer's menu, HTTPS with a free name, the first admin and the phone.
+- [Syncing with a Cloud](/en/wiki/syncing-with-a-cloud/) — A folder kept the same as a folder in a Nextcloud (WebDAV) or an S3 bucket you already have, with no server: the form, the S3 key limited to one folder, the password in the keychain and what to expect.
+
+### VII. Advanced
+
+The terminal and AI agents, settings, help and living alongside Obsidian.
+
+- [Terminal, CLI and AI Agents](/en/wiki/terminal-cli-and-ai-agents/) — A terminal of this computer in a tab (turning it on, opening it, the keys and what a program run there does to the files), the `verso` command to search from the terminal, the folder in AI agents through MCP, and the buttons that find Claude Code, Gemini CLI and the other AI tools.
+- [Settings, Appearance and Shortcuts](/en/wiki/settings-appearance-and-shortcuts/) — Theme, palette, fonts, language and your own shortcuts.
+- [Help, Updates and Diagnostics](/en/wiki/help-updates-and-diagnostics/) — Updates, reporting a problem and the console.
+- [Compatibility with Obsidian](/en/wiki/compatibility-with-obsidian/) — For anyone coming from Obsidian or using both: the same folder, nothing rewritten on open, what works the same, what Verso adds, what does not exist and how to try it.
 
 ---
 

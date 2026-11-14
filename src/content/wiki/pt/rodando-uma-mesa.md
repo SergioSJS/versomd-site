@@ -1,16 +1,16 @@
 ---
 title: "Rodando uma Mesa"
-description: "Uma pasta de campanha num UniVerso: convidar as jogadoras, notas ocultas até você liberar, links para o que ainda não apareceu com um cadeado, quem edita o quê e os limites da mesa."
-order: 32
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 26
 group: rpg
 slug: "rodando-uma-mesa"
 twin: "running-a-table"
-source: "demo-vault/32 - Rodando uma Mesa.md"
+source: "demo-vault/26 - Rodando uma Mesa.md"
 updated: "2026-10-22"
 ---
 Uma **mesa** é uma pasta de campanha num UniVerso (o Verso num servidor seu, [Verso num Servidor](/wiki/verso-num-servidor/)): você, a mestra, convida as jogadoras só para ela, e cada nota fica **oculta** até você liberar. Nada disso é escrito nas notas: o que está liberado, o que tem nome secreto e quem pode editar fica no banco do servidor, então um arquivo sincronizado, ou aberto no Obsidian, é uma nota comum.
 
-Só a dona da pasta faz isto, numa pasta de um servidor ou numa pasta deste computador **sincronizada** com ele ([Verso num Servidor](/wiki/verso-num-servidor/)): a mestra pode conduzir a sessão do app de desktop, com a pasta local, enquanto as jogadoras usam o navegador ou o app do Windows na pasta do servidor. Sem conexão (ou com a sincronização pausada) a mesa fica indisponível e o painel **Mesa** diz isso; ela volta sozinha quando a conexão volta. Numa pasta só deste computador não há mesa, e nada disto aparece.
+Só a dona da pasta faz isto, numa pasta de um servidor ou numa pasta deste computador **sincronizada** com ele ([Verso num Servidor](/wiki/verso-num-servidor/)): a mestra pode conduzir a sessão do app de desktop, com a pasta local, enquanto as jogadoras usam o navegador ou o app de desktop delas na pasta do servidor. Sem conexão (ou com a sincronização pausada) a mesa fica indisponível e o painel **Mesa** diz isso; ela volta sozinha quando a conexão volta. Numa pasta só deste computador não há mesa, e nada disto aparece — a não ser que o próprio Verso dela vire servidor e você se sente à mesa ([Mesa pela Internet](/wiki/mesa-pela-internet/)): aí é a mesma mesa, com a mesma janela **Mesa** e os mesmos convites.
 
 ---
 
@@ -28,9 +28,11 @@ Uma mestra pode ter várias mesas, uma pasta cada.
 
 Na janela **Mesa**, **Convidar jogadores › Gerar link** faz um link de uso único, válido por 7 dias, que dá **leitura** desta mesa e só dela: quem aceita vê a pasta da mesa e nada acima nem ao lado. **Copiar o link** e mande.
 
-Só quem administra o servidor convida alguém que ainda não tem conta; quem já tem conta entra pelo **Compartilhar…** da pasta ([Arquivos e Pastas](/wiki/arquivos-e-pastas/)). E quem já tem conta neste servidor, de outra mesa, **aceita o link com a conta que tem**: na página do convite, se já está dentro, o botão é **Entrar na mesa como** seu nome (**Não sou eu** sai da conta); se não, **Já tenho conta — entrar e aceitar** pede o e-mail e a senha ali mesmo. Não se cria outra conta, e um convite feito para um e-mail só serve àquela conta.
+Num UniVerso, convida alguém que ainda não tem conta quem administra o servidor, e também a mestra a quem o admin deu a permissão **cria pastas**, nas mesas das pastas dela: o convite dela entra sempre como **leitura**, ela tem até **20 convites esperando** de uma vez, e a conta que nasce do convite não cria pastas. Se o admin tirar dela o **cria pastas**, os convites que ainda esperam acabam; quem já aceitou fica. Quem já tem conta entra pelo **Compartilhar…** da pasta ([Arquivos e Pastas](/wiki/arquivos-e-pastas/)). E quem já tem conta neste servidor, de outra mesa, **aceita o link com a conta que tem**: na página do convite, se já está dentro, o botão é **Entrar na mesa como** seu nome (**Não sou eu** sai da conta); se não, **Já tenho conta — entrar e aceitar** pede o e-mail e a senha ali mesmo. Não se cria outra conta, e um convite feito para um e-mail só serve àquela conta.
 
 **Mesa aberta** é uma **chave** no topo da janela, com um selo **Aberta** ou **Fechada**, e vale na hora: não há botão de salvar. Desligada, as jogadoras não conseguem abrir a pasta e quem está dentro sai; e você sempre entra. **O que a jogadora vê:** no lugar da pasta, "A mesa está fechada pelo mestre. Você entra quando ela abrir.", com **Tentar agora**; o app tenta de novo sozinho, de vez em quando, e ela entra assim que você ligar a chave. Para você, o botão da Mesa ao lado do nome da pasta diz **Mesa (fechada)** enquanto estiver desligada, para você não esquecer ninguém do lado de fora.
+
+Uma mesa que você **levou para o outro servidor** (o computador ou o UniVerso, veja [Mesa pela Internet](/wiki/mesa-pela-internet/)) fica fechada aqui de vez: a jogadora que a abre lê *A mesa mudou de servidor. O mestre levou esta mesa para outro servidor. Peça a ele um convite novo.*, sem tentar de novo, e a chave não reabre. **Desfazer** essa mesa antiga tira dela os jogadores que ela tinha.
 
 A janela é feita de cartões: **Convidar jogadores** (o link num campo, com **Copiar** e o dia em que vence), **Jogadores** (uma tabela, veja [Quem pode o quê: a tabela de jogadoras](#quem-pode-o-quê-a-tabela-de-jogadoras)), **Notas** (quantas liberadas e quantas ocultas, com **Liberar tudo** e **Ocultar tudo**, que valem para a mesa toda) e, recolhidos, os limites em **Avançado**. **Desfazer mesa** fica no pé, em vermelho e discreto, e pergunta antes.
 
@@ -54,7 +56,7 @@ Uma nota oculta não existe para a jogadora: não está em lista nenhuma, e pedi
 
 ## Quem vê esta nota
 
-Dentro da nota, ao lado da estrela, há um ícone de **usuários com um número**: quantas jogadoras veem esta nota. Passe o mouse (ou toque, ou dê foco com Tab e aperte Enter) para abrir a lista: para você, **cada jogadora da mesa**, com **Vê**, **Edita** ou **Não vê** (o ícone e a palavra, não só a cor) e um atalho **Acesso…** que abre o mesmo diálogo da nota; para a jogadora, só **quem vê a nota** ("Você, Bruno e o mestre" ou "A mesa toda"), nunca os seus controles. **Esc** fecha e o foco volta ao botão; no celular a lista abre como uma folha de baixo, com um botão para fechar. O ícone só aparece em notas de uma mesa que já tem jogadoras.
+Dentro da nota, ao lado da estrela, há um ícone de **usuários com um número**: quantas jogadoras veem esta nota. Passe o mouse (ou toque, ou dê foco com Tab e aperte Enter) para abrir a lista: para você, **cada jogadora da mesa**, com **Vê**, **Edita** ou **Não vê** (o ícone e a palavra, não só a cor) e um atalho **Alterar o acesso…** que abre o mesmo diálogo da nota; para a jogadora, só **quem vê a nota** ("Você, Bruno e o mestre" ou "A mesa toda"), nunca os seus controles. **Esc** fecha e o foco volta ao botão; no celular a lista abre como uma folha de baixo, com um botão para fechar. O ícone só aparece em notas de uma mesa que já tem jogadoras.
 
 ---
 
@@ -87,7 +89,7 @@ O cartão **Jogadores** é uma **tabela**, uma linha por jogadora, com colunas p
 | **Edita** | quantas notas ela pode editar (as que você marcou com **Edita** em **Acesso…**); clique para ver quais |
 | **Direitos** | quantos dos quatro direitos você deu a ela; clique no número para abrir as **quatro chaves** |
 
-Por padrão a jogadora só lê e escreve texto no chat: os quatro direitos começam **desligados** e é você quem liga, uma jogadora de cada vez, ou pela caixa **Todos** de cada direito, logo abaixo da tabela, que fica "mista" quando as jogadoras diferem:
+Por padrão a jogadora só lê e escreve texto no chat: os quatro direitos começam **desligados** e é você quem liga, uma jogadora de cada vez, ou pelas caixas de **Todos os jogadores**, logo abaixo da tabela, uma por direito, que ficam "mistas" quando as jogadoras diferem:
 
 | Direito | O que ela passa a poder |
 |---|---|
@@ -104,8 +106,8 @@ Cada chave salva na hora e diz **Salvo** ao lado; o leitor de tela lê "Ana pode
 
 ## Limites da mesa
 
-Em **Avançado: limites da mesa** (recolhido; cada campo salva ao sair dele ou com Enter e diz **Salvo** ao lado): quantas entradas o registro da [Mesa](/wiki/a-mesa/) guarda (de 1.000 a 200.000; 20.000 de início) e o tamanho de uma imagem nela (de 1 a 30 MB; 10 de início). Passando do limite do registro, saem as mais antigas que não estão fixadas. Cada mesa tem o seu registro e os seus limites: o ajuste de uma não muda a outra.
+Em **Avançado: limites da mesa** (recolhido; cada campo salva ao sair dele ou com Enter e diz **Salvo** ao lado): quantas entradas o registro da [Mesa](/wiki/a-mesa/) guarda (de 1.000 a 200.000; 20.000 de início) e o tamanho de um arquivo nela — imagem, PDF ou áudio (de 1 a 30 MB; 10 de início). Passando do limite do registro, saem as mais antigas que não estão fixadas. Cada mesa tem o seu registro e os seus limites: o ajuste de uma não muda a outra.
 
 ---
 
-Siga para [Abrir um Arquivo Avulso](/wiki/abrir-um-arquivo-avulso/), volte a [A Mesa](/wiki/a-mesa/), consulte a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou explore o Tour do Verso.
+Anterior: [A Mesa](/wiki/a-mesa/) · Próxima: [Som e Música na Mesa](/wiki/som-e-musica-na-mesa/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

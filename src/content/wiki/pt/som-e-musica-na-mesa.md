@@ -1,14 +1,14 @@
 ---
 title: "Som e Música na Mesa"
-description: "A mestra toca um arquivo de som e todos da mesa ouvem no mesmo ponto, cada um com o seu volume; uma nota com links de som vira a mesa de som, e quem não vê o arquivo não o ouve."
-order: 36
-group: start
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+order: 27
+group: rpg
 slug: "som-e-musica-na-mesa"
 twin: "sound-and-music-at-the-table"
-source: "demo-vault/36 - Som e Música na Mesa.md"
+source: "demo-vault/27 - Som e Música na Mesa.md"
 updated: "2026-10-31"
 ---
-Numa sessão, a música faz metade do clima: a taverna barulhenta, a estrada à noite, a batalha. No Verso, **o mestre aperta tocar e todo mundo da mesa ouve a mesma coisa, no mesmo ponto**, cada um com o próprio volume. A música tem uma aba só dela, **Música**, no painel da direita, ao lado da **Mesa** ([A Mesa](/wiki/a-mesa/)); funciona num UniVerso ([Rodando uma Mesa](/wiki/rodando-uma-mesa/)) e no app de desktop que serve a pasta.
+Numa sessão, a música faz metade do clima: a taverna barulhenta, a estrada à noite, a batalha. No Verso, **o mestre aperta tocar e todo mundo da mesa ouve a mesma coisa, no mesmo ponto**, cada um com o próprio volume. A música tem uma aba só dela, **Música**, no painel da direita, ao lado da **Mesa** ([A Mesa](/wiki/a-mesa/)); funciona num UniVerso ([Rodando uma Mesa](/wiki/rodando-uma-mesa/)) e na mesa que o seu próprio Verso serve, com a janela sentada à mesa ([Mesa pela Internet](/wiki/mesa-pela-internet/)).
 
 Nenhum som passa pela rede: cada janela toca a **sua própria cópia** do arquivo, e só o "o que toca e em que ponto" é dividido, pelo relógio do servidor. Por isso a qualidade é a do arquivo e ninguém fica atrás de ninguém. Nada disso é escrito em arquivo nenhum: o que está tocando fica na memória do servidor e some quando a última pessoa sai da mesa.
 
@@ -16,7 +16,7 @@ Nenhum som passa pela rede: cada janela toca a **sua própria cópia** do arquiv
 
 ## Ligar
 
-**Ajustes › Recursos › RPG e mesa › Som da mesa**. Vem ligado sempre que a **Mesa** está ligada; desligado, não há aba Música, botão nem item na barra de status, e nada é carregado. Até a primeira música tocar, nada do tocador é carregado também.
+**Ajustes › RPG & Mesa Solo › Dados e RPG › Som da mesa**. Vem ligado sempre que a **Mesa** está ligada; desligado, não há aba Música, botão nem item na barra de status, e nada é carregado. Até a primeira música tocar, nada do tocador é carregado também.
 
 ---
 
@@ -55,7 +55,7 @@ Não precisa de nada especial: **qualquer link para um arquivo de som numa nota 
 
 - A estrada, de novo
 
-Aperte o botão ao lado de **A taverna**: a faixa toca, *De: 36 - Som e Música na Mesa › Taverna*, e **Próxima faixa** leva para **A estrada**. No fim da lista, Próxima apaga; com **Repetir: a lista**, ela volta à primeira. Quando uma faixa termina sem repetir, a janela do mestre toca a próxima da lista, ou para.
+Aperte o botão ao lado de **A taverna**: a faixa toca, *De: 27 - Som e Música na Mesa › Taverna*, e **Próxima faixa** leva para **A estrada**. No fim da lista, Próxima apaga; com **Repetir: a lista**, ela volta à primeira. Quando uma faixa termina sem repetir, a janela do mestre toca a próxima da lista, ou para.
 
 No Obsidian, esta mesma nota é uma lista de links comum: nenhum código novo, nada que o Obsidian não leia.
 
@@ -67,7 +67,7 @@ Um **embed** de som vira um player na própria nota, como no Obsidian ([Document
 
 *taverna.mp3*
 
-- Ele toca **só para quem aperta**, nesta janela: bom para ouvir uma faixa antes de tocá-la para a mesa.
+- Ele toca **só para quem aperta**, nesta janela: bom para ouvir uma faixa antes de tocá-la para a mesa. Seus botões: tocar e pausar, a barra com o tempo, **Repetir**, **Silenciar** e o volume. Quando o player passa a ser o da mesa, **Repetir** é o da aba Música.
 - Para o mestre, o player tem também **Tocar para a mesa**: a faixa vai para a aba Música, com a cena do título acima dela, e o Verso faz a mesma pergunta de antes quando algum jogador não vê o arquivo. Sozinho, sem mesa, o botão diz **Tocar na aba Música**.
 - Se a música da mesa está tocando e você aperta tocar num player da nota, **a música da mesa fica mais baixa** enquanto ele toca — o player avisa — e volta ao volume quando ele para. Se o mestre começa uma música para a mesa enquanto o seu player toca, **o seu pausa**: *Pausado: a música da mesa começou.*
 - Um jogador só tem o player de um arquivo que ele vê. O embed de um arquivo oculto aparece como **🔒 (ainda não revelado)**, sem o nome; num board, o cartão dele fica trancado. Atenção: um arquivo sem acesso próprio segue as notas que o incluem — embutido numa nota que os jogadores veem, eles também o veem. Para guardar uma faixa, botão direito nela › **Acesso…** › *Toda a mesa: Não vê*.
@@ -130,7 +130,7 @@ Numa pasta só deste computador não há mesa, mas a aba Música funciona do mes
 
 O mestre pode compartilhar **o som das páginas abertas no Verso** (YouTube, Spotify Web, uma trilha de ambiente) com todos da mesa, sem nenhum arquivo na pasta. Entra só essa fonte: nunca outros programas do computador, nunca o som do sistema inteiro, e nunca os sons do próprio Verso (dados, avisos, a música da mesa, os players de áudio das notas). Esses continuam tocando na sua janela, a partir do próprio aplicativo, e nunca chegam à mesa. Isso existe só no **app para computador**; no navegador e no celular você **ouve**, mas não compartilha, e o botão nem aparece.
 
-1. Na aba **Música**, **Compartilhar áudio…** (no estado vazio ou no alto da aba). Só o mestre vê o botão.
+1. Na aba **Música**, **Compartilhar áudio…** (no alto da aba). Só o mestre vê o botão.
 2. Abra a página **como página**, não dentro de uma nota, e deixe-a tocar. Na lista, escolha **Páginas abertas no Verso**. Em **Qualidade** (fechado) fica a taxa: 96 kbit/s é um bom começo. Sem página aberta, a lista pede para abrir uma.
 3. Na primeira vez, o Verso avisa: *o som do que você compartilha vai para todos desta mesa; o que você pode tocar para os outros é responsabilidade sua; o Verso não grava nada*.
 4. Enquanto compartilha, a aba mostra *Compartilhando …*, um **medidor de nível** com a frase *Som chegando* (ou *Silêncio*, se a página não está soltando som ou está bloqueada), quantos ouvem e a taxa. **Parar de compartilhar** está na aba, na linha da aba Mesa e na barra de status. Você continua ouvindo a página direto; o Verso nunca toca o seu próprio fluxo de volta.
@@ -138,7 +138,7 @@ O mestre pode compartilhar **o som das páginas abertas no Verso** (YouTube, Spo
 
 > **No Mac (macOS 14.4 ou mais novo)** a única fonte é **Páginas abertas no Verso**: o som das páginas abertas como página (YouTube, Spotify Web, uma trilha de ambiente), todas juntas, e o nome diz quais sites estão tocando agora (*Páginas abertas no Verso: open.spotify.com*). Ela aparece quando uma página já fez som: comece a tocar nela e abra **Compartilhar áudio…** de novo. Os sons do próprio Verso saem por um caminho próprio enquanto você compartilha, com um atraso de alguns centésimos de segundo. **Vídeos e páginas mostrados dentro de uma nota vão junto**: no Mac o som deles não se separa, e o aviso do Verso diz isso. Na primeira vez, o macOS pede para permitir **Gravação de Áudio do Sistema** ao Verso. Se você disser não, o Verso avisa, e você pode permitir depois em **Ajustes do Sistema > Privacidade e Segurança > Gravação de Áudio do Sistema** (em algumas versões, *Tela e Áudio do Sistema*), e começar de novo. Uma fonte que dá *Silêncio* enquanto toca costuma ser esta permissão desligada. Uma cópia do Verso aberta pelo terminal (build de desenvolvimento) não acha páginas: use o app instalado. Num macOS mais antigo o seletor diz que precisa de um mais novo.
 >
-> **No Windows (Windows 11 ou mais novo)** o Verso compartilha **só o som das páginas abertas no Verso**, nunca outros programas e nunca os sons do próprio Verso (dados, avisos, a música da mesa: esses já tocam na sua janela). A lista tem uma fonte, **Páginas abertas no Verso**, e diz quais sites estão tocando agora; todas as páginas abertas vão juntas. Abra a página **como página**: uma página mostrada dentro de uma nota não é compartilhada, porque ali ela não se separa dos sons do próprio Verso. Sem página aberta, o seletor pede para abrir uma; no **Windows 10** ele diz que precisa do Windows 11. As páginas agora guardam seus logins num perfil só delas, então depois desta atualização entre mais uma vez nas páginas que você usa.
+> **No Windows (Windows 11 ou mais novo)** o Verso compartilha **só o som das páginas abertas no Verso**, nunca outros programas e nunca os sons do próprio Verso (dados, avisos, a música da mesa: esses já tocam na sua janela). A lista tem uma fonte, **Páginas abertas no Verso**, e diz quais sites estão tocando agora; todas as páginas abertas vão juntas. Abra a página **como página**: uma página mostrada dentro de uma nota não é compartilhada, porque ali ela não se separa dos sons do próprio Verso. Sem página aberta, o seletor pede para abrir uma; no **Windows 10** ele diz que precisa do Windows 11. As páginas guardam seus logins num perfil só delas: entre uma vez, dentro do Verso, nas páginas que você usa.
 >
 > **No Linux** a lista é a mesma do Windows: **só o som das páginas abertas no Verso** (YouTube, Spotify Web, uma trilha de ambiente), todas juntas, nunca outros programas e nunca os sons do próprio Verso; a lista diz quais sites estão tocando agora. Abra a página **como página**: **vídeos e páginas mostrados dentro de uma nota não são compartilhados no Linux**. Enquanto você compartilha, os sons do próprio Verso saem por um caminho próprio, com um atraso de alguns centésimos de segundo. Precisa das ferramentas de som do PulseAudio (`pactl`, `parec` e `pacat`, do pacote `pulseaudio-utils`, que o PipeWire também usa): o .deb e o .rpm as recomendam, e quem usa o AppImage as instala à mão. Sem elas o seletor avisa. Sem página aberta, ele pede para abrir uma.
 
@@ -149,4 +149,4 @@ As duas faixas
 
 As duas faixas de amostra (`assets/sons/`) são de **RandomMind**, em domínio público (CC0 1.0): `taverna.mp3` é “The Old Tower Inn” (<https://opengameart.org/content/medieval-the-old-tower-inn>) e `estrada.mp3` é “The Bard's Tale” (<https://opengameart.org/content/medieval-the-bards-tale>), as versões em loop, regravadas em mono para pesar pouco.
 
-Siga para a [Compatibilidade com o Obsidian](/wiki/compatibilidade-com-o-obsidian/), ou volte à [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/) ou a [A Mesa](/wiki/a-mesa/), consulte a [Página Inicial](/wiki/bem-vindo-ao-verso/) ou explore o Tour do Verso.
+Anterior: [Rodando uma Mesa](/wiki/rodando-uma-mesa/) · Próxima: [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

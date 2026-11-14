@@ -1,11 +1,11 @@
 ---
 title: "Mermaid Diagrams"
-description: "Flowcharts, sequences and other diagrams written as text and drawn in the note."
-order: 8
-group: organize
+description: "Where to start: what Verso is and a map of every lesson."
+order: 17
+group: tools
 slug: "mermaid-diagrams"
 twin: "diagramas-mermaid"
-source: "demo-vault-en/08 - Mermaid Diagrams.md"
+source: "demo-vault-en/17 - Mermaid Diagrams.md"
 updated: ""
 ---
 Verso has native, safe support for **[Mermaid](https://mermaid.js.org/)** diagrams in both **Reading** mode and **Edit** mode (Live Preview).
@@ -104,4 +104,4 @@ pie title Note Distribution in the Vault
 
 ---
 
-Continue to [Board and Relations](/en/wiki/board-and-relations/) or go back to the [Home Page](/en/wiki/welcome-to-verso/).
+Previous: [Structured Data as a Diagram](/en/wiki/structured-data-as-a-diagram/) · Next: [Documents and Media](/en/wiki/documents-and-media/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

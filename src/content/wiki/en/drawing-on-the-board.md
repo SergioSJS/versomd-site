@@ -1,14 +1,14 @@
 ---
 title: "Drawing on the Board"
-description: "The Excalidraw cheat sheet: tools, groups, arrows, layers and shortcuts."
-order: 10
-group: boards
+description: "Where to start: what Verso is and a map of every lesson."
+order: 21
+group: organize
 slug: "drawing-on-the-board"
 twin: "desenhando-no-board"
-source: "demo-vault-en/10 - Drawing on the Board.md"
+source: "demo-vault-en/21 - Drawing on the Board.md"
 updated: "2026-10-01"
 ---
-Verso's boards are drawn with **Excalidraw**. To learn by doing, open the Board Training: fourteen lessons, each with a space to practice. This note is the cheat sheet, to look things up later.
+Verso's boards are drawn with **Excalidraw**. To learn by doing, open the Board Training: sixteen lessons, each with a space to practice. This note is the cheat sheet, to look things up later.
 
 *Board Training*
 
@@ -89,6 +89,6 @@ With something selected, the left panel shows **Stroke**, **Background**, **Fill
 
 > **Note**
 >
-> With the board in focus, some of Verso's shortcuts give way to Excalidraw's: `⌘ D` duplicates, `⌘ K` creates a link on whatever is selected, `⌘ [` and `⌘ ]` change the layer. Click outside the board — in the file list, for example — to use them in Verso. `⌘ P`, `⌘ F` and `⌘ ⇧ E` work on the board too.
+> With the board in focus, some of Verso's shortcuts give way to Excalidraw's: `⌘ D` duplicates, `⌘ K` creates a link on whatever is selected, `⌘ [` and `⌘ ]` change the layer, and `⌘ +`, `⌘ −` and `⌘ 0` zoom the board, not the window. Click outside the board — in the file list, for example — to use them in Verso. `⌘ P`, `⌘ F` and `⌘ ⇧ E` work on the board too.
 
-Continue to [Writing in the Editor](/en/wiki/writing-in-the-editor/) or go back to [Home](/en/wiki/welcome-to-verso/) · See also the Verso Tour.
+Previous: [Board and Relations](/en/wiki/board-and-relations/) · Next: [Dice and Random Tables](/en/wiki/dice-and-random-tables/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

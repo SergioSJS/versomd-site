@@ -1,6 +1,6 @@
 ---
 title: "Links, Âncoras e Notas Incorporadas"
-description: "Wikilinks simples, links com apelidos, saltos para cabeçalhos (`#Título`), links para notas ausentes e incorporação de notas."
+description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
 order: 2
 group: start
 slug: "links-ancoras-e-notas-incorporadas"
@@ -120,4 +120,4 @@ Abaixo temos algumas linhas de preenchimento para garantir que o salto com ânco
 > **Você chegou à Seção de Destino Local!**
 > Se você clicou no link `[[#Seção de Destino Local]]`, a tela rolou até aqui automaticamente.
 
-Voltar para [Início](/wiki/bem-vindo-ao-verso/) ou seguir para [Propriedades e Metadados](/wiki/propriedades-e-metadados/).
+Anterior: [Guia de Markdown e Sintaxe](/wiki/guia-de-markdown-e-sintaxe/) · Próxima: [Propriedades e Metadados](/wiki/propriedades-e-metadados/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -1,11 +1,11 @@
 ---
 title: "Open a Single File"
-description: "A double-click on an `.md` opens the file alone, with no folder, in a window with no tree or index and nothing written beside it; and how to make Verso the default app for `.md` on each system."
-order: 33
-group: tools
+description: "Where to start: what Verso is and a map of every lesson."
+order: 8
+group: organize
 slug: "open-a-single-file"
 twin: "abrir-um-arquivo-avulso"
-source: "demo-vault-en/33 - Open a Single File.md"
+source: "demo-vault-en/08 - Open a Single File.md"
 updated: "2026-10-30"
 ---
 An `.md` in Downloads, on the Desktop, attached to a message: double-click, read, fix a line, close. For that Verso needs no folder: it opens **one file alone**, in a loose-files window — no tree, no search, no graph, no bin, no sync — and **writes nothing beside the file**: no index, no `.verso`, no `.trash`. What it writes is the file, as safely as in a folder: an atomic write and, if another program changed the file while you edited it, the conflict banner with both versions.
@@ -56,4 +56,4 @@ The installer registers Verso as **an** app that opens `.md` and `.markdown` —
 
 ---
 
-Go on to [UniVerso on a Free Oracle Server](/en/wiki/universo-on-a-free-oracle-server/), go back to [Running a Table](/en/wiki/running-a-table/), see the [Home Page](/en/wiki/welcome-to-verso/) or explore the Verso Tour.
+Previous: [Files and Folders](/en/wiki/files-and-folders/) · Next: [Search and Navigation](/en/wiki/search-and-navigation/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour
