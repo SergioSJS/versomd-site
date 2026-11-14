@@ -33,7 +33,7 @@ export const en: Copy = {
       "Verso is a note app that opens any folder of Markdown files — an Obsidian vault too — and never rewrites a file by opening it. With <strong>UniVerso</strong>, Verso’s server that you install yourself, the same folder stays in step across your computers, opens in a browser and on a phone, and can be shared with other people.",
     propsLabel: "In short",
     props: [
-      { key: "status", valueHtml: "in testing (beta); download from the <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>" },
+      { key: "status", valueHtml: "in testing (beta); <a href=\"/en/download/\">download here</a>" },
       { key: "runs on", valueHtml: "macOS, Windows, Linux, Android, iPad and iPhone; in a browser, through a UniVerso" },
       { key: "server", valueHtml: "UniVerso, on a machine of yours: a mini PC, a NAS, the smallest VPS" },
       { key: "licence", valueHtml: "<a href=\"https://github.com/SergioSJS/verso\">MPL-2.0, open source</a>" },
@@ -333,7 +333,7 @@ export const en: Copy = {
     introHtml: [
       "The table puts Verso beside the tools people who keep notes and people who run tabletop games tend to use, with what each one does and does not do.",
       "<strong>Where Verso is ahead:</strong> the notes are Markdown files you own, which Obsidian opens too; the server is yours; several people edit the same note, the same board and the same base live; and there is no paid plan. Obsidian keeps files but does not edit live without a third-party plugin; Notion and LegendKeeper edit live but keep the notes in their own service.",
-      "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a download on the <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
+      "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a <a href=\"/en/download/\">download here</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
     ],
     pains: {
       title: "Three common problems, and what Verso does about them",
@@ -772,7 +772,7 @@ export const en: Copy = {
       },
       {
         q: "Can I download it now?",
-        aHtml: ["Yes. The 0.8.5-beta.1 test version is on the <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>, with installers for macOS (Apple chip), Windows, Linux x64, Android and iPad and iPhone (through AltStore Classic), and UniVerso’s packages. The code is open source, under the MPL-2.0, at <a href=\"https://github.com/SergioSJS/verso\">github.com/SergioSJS/verso</a>. It is a test version, not V1, and there is no date for V1. To get an e-mail when a new version comes out, leave yours on the list."],
+        aHtml: ["Yes. The test version is on the <a href=\"/en/download/\">downloads page</a>, with installers for macOS (Apple chip), Windows, Linux x64, Android and iPad and iPhone (through AltStore Classic), and UniVerso’s packages. The code is open source, under the MPL-2.0, at <a href=\"https://github.com/SergioSJS/verso\">github.com/SergioSJS/verso</a>. It is a test version, not V1, and there is no date for V1. To get an e-mail when a new version comes out, leave yours on the list."],
       },
     ],
   },
@@ -907,7 +907,7 @@ export const en: Copy = {
       gallery: {
         title: "In pictures",
         introHtml:
-          "A few screens of the app, with the interface in English and the English tutorial notes that come with Verso. They show what is ready, including the RPG tools and the Table, which are already in the 0.8.5-beta.1 test version.",
+          "A few screens of the app, with the interface in English and the English tutorial notes that come with Verso. They show what is ready, including the RPG tools and the Table, which are already in the test version.",
         figures: [
           { stem: "oracles", kind: "shot", width: 1280, height: 800, alt: "The Oracle and Improvisation dialog open over a note: the question “Did the guard patrol hear the noise of the break-in?”, 50/50 odds, and the answer with the d100 result.", captionHtml: "Oracles: yes or no with adjustable odds, idea sparks and your own tables." },
           { stem: "statblock", kind: "shot", width: 1280, height: 800, alt: "A d20 creature card, the Cave Gnawer, with armor class, hit points, ability scores with modifiers, traits and actions with dice you roll by clicking, followed by a character card.", captionHtml: "Statblocks: a <code>statblock</code> block becomes a card, in your system’s layout." },
@@ -933,12 +933,12 @@ export const en: Copy = {
         title: "Roadmap",
         introHtml: [
           "What comes next, up to V1 — the release for everyone. It is a plan, not a promise: what goes in and in what order may change, and there are no dates.",
-          "<strong>Done</strong> is ready and already in the current test version, 0.8.5-beta.1; <strong>planned</strong> is decided for V1; <strong>after V1</strong> is for later.",
+          "<strong>Done</strong> is ready and already in the current test version; <strong>planned</strong> is decided for V1; <strong>after V1</strong> is for later.",
         ],
         states: { ready: "done", building: "being built", planned: "planned", later: "after V1" },
         groups: [
           {
-            title: "Ready, in the 0.8.5-beta.1 test version: RPG tools",
+            title: "Ready, in the test version: RPG tools",
             state: "ready",
             items: [
               { lead: "Oracles.", textHtml: "Yes-or-no questions with adjustable odds, idea sparks from word lists you edit, and your own random tables; the answer can go into the note." },
@@ -952,7 +952,7 @@ export const en: Copy = {
             ],
           },
           {
-            title: "Ready, in the 0.8.5-beta.1 test version: the Table and sharing",
+            title: "Ready, in the test version: the Table and sharing",
             state: "ready",
             items: [
               { lead: "The Table.", textHtml: "A log of rolls and chat that everyone who opened a UniVerso folder sees, with the pictures sent. The server does the rolling, and each roll carries the name of who rolled; a player can make a secret roll. Drag a roll and it becomes a card in your notes." },
@@ -1031,7 +1031,7 @@ export const en: Copy = {
       },
       eyebrow: "Notes, worlds and RPG",
       roadmapHtml:
-        "What is missing here — layers on maps, timelines, plugins — is, where planned, on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. The table counts what Verso already has ready, including the RPG tools and the Table, which are already in the 0.8.5-beta.1 test version.",
+        "What is missing here — layers on maps, timelines, plugins — is, where planned, on the <a href=\"/en/features/#roadmap\">roadmap to V1</a>. The table counts what Verso already has ready, including the RPG tools and the Table, which are already in the test version.",
     },
     download: {
       meta: {
