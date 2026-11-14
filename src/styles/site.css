@@ -263,12 +263,11 @@ strong { font-weight: 600; }
     gap: clamp(2.5rem, 4vw, 4.5rem);
   }
 }
+/* The line above a page's title: a few plain words, not a tracked label. */
 .eyebrow {
   margin: 0 0 1.2rem;
-  font: 500 0.8rem/1.3 var(--ui);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  font: 500 0.98rem/1.35 var(--ui);
+  color: var(--ink-2);
 }
 .hero h1 {
   margin: 0;
@@ -349,10 +348,8 @@ strong { font-weight: 600; }
   color: var(--ink-2);
 }
 .plate-label {
-  font: 600 0.72rem/1 var(--ui);
+  font: 600 0.82rem/1 var(--ui);
   font-style: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--brass-ink);
   margin-right: 0.6rem;
 }
@@ -400,10 +397,8 @@ strong { font-weight: 600; }
   margin: 0;
   padding-top: 0.1rem;
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  font-size: 0.88rem;
+  color: var(--ink-2);
 }
 .facts dl {
   margin: 0;
@@ -411,11 +406,9 @@ strong { font-weight: 600; }
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
   gap: 0.7rem 1.6rem;
 }
+/* The keys as a note's frontmatter writes them: lower case, in mono. */
 .facts dt {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font: 500 0.8rem/1.4 var(--mono);
   color: var(--ink-3);
 }
 .facts dd {
@@ -811,9 +804,7 @@ h4 {
   align-items: baseline;
   gap: 0.5rem;
   margin: 0 0 0.6rem;
-  font: 600 0.75rem/1 var(--ui);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font: 600 0.92rem/1 var(--ui);
   color: var(--brass-ink);
 }
 .step-n {
@@ -929,10 +920,8 @@ details > summary { cursor: pointer; }
   text-align: left;
   padding-bottom: 0.6rem;
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  font-size: 0.88rem;
+  color: var(--ink-2);
 }
 .numbers th,
 .numbers td {
@@ -1121,9 +1110,7 @@ details > summary { cursor: pointer; }
   .cc-label { padding-top: 0.85rem; }
 }
 .cc-label {
-  font: 600 0.72rem/1.3 var(--ui);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font: 600 0.88rem/1.3 var(--ui);
   color: var(--ink-2);
 }
 .cc-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; min-width: 0; }
@@ -1229,10 +1216,8 @@ details > summary { cursor: pointer; }
   text-align: left;
   padding: 0.85rem 1rem 0.6rem;
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  font-size: 0.88rem;
+  color: var(--ink-2);
 }
 /* The caption is as wide as the table; its words stay within the screen. */
 .compare-table caption span {
@@ -1253,10 +1238,8 @@ details > summary { cursor: pointer; }
 .compare-table .groups th,
 .compare-table .groups td {
   padding-block: 0.35rem;
-  font: 600 0.7rem/1.3 var(--ui);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  font: 600 0.82rem/1.3 var(--ui);
+  color: var(--ink-2);
   border-left: 1px solid var(--hair);
 }
 .compare-table .groups .corner { border-left: 0; }
@@ -1304,9 +1287,7 @@ a.tool-name { color: var(--seal); }
 .compare-table .row-group th {
   max-width: none;
   padding: 1rem 0.8rem 0.4rem;
-  font: 600 0.72rem/1.3 var(--ui);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font: 600 0.88rem/1.3 var(--ui);
   color: var(--brass-ink);
   background: var(--paper);
   border-top: 1px solid var(--ink-3);

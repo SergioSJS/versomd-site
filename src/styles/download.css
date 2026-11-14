@@ -111,8 +111,7 @@
 }
 .dl-badge {
   padding: 0.1rem 0.55rem;
-  font: 600 0.72rem/1.5 var(--ui);
-  letter-spacing: 0.04em;
+  font: 600 0.78rem/1.5 var(--ui);
   color: var(--seal-ink);
   background: var(--seal);
   border-radius: var(--radius-pill);

@@ -27,7 +27,7 @@ export const en: Copy = {
   switchTo: { label: "Ler em português", name: "Português", href: "/", hreflang: "pt-BR" },
   hero: {
     iconAlt: "Verso's icon: an open book with a ribbon",
-    eyebrow: "Markdown notes · local-first · your own server",
+    eyebrow: "Markdown notes, local-first, your own server",
     title: "Your notes are files. The server is yours.",
     ledeHtml:
       "Verso is a note app that opens any folder of Markdown files — an Obsidian vault too — and never rewrites a file by opening it. With <strong>UniVerso</strong>, Verso’s server that you install yourself, the same folder stays in step across your computers, opens in a browser and on a phone, and can be shared with other people.",
@@ -1007,7 +1007,7 @@ export const en: Copy = {
         description:
           "UniVerso is Verso as a server, on a machine of yours: the folder in step across computers, in a browser and on a phone, shared and edited together. Tested with dozens of devices at once on a 1-core, 1 GB machine the size of the smallest VPS, with nothing lost.",
       },
-      eyebrow: "UniVerso · Verso’s server",
+      eyebrow: "UniVerso, Verso’s server",
       title: "The server is yours.",
       ledeHtml:
         "UniVerso is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites, and so does a game master the admin lets make folders, for their own tables. Each folder has an owner, editors and readers — and a folder can become a role-playing campaign’s table.",

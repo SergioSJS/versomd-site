@@ -28,7 +28,7 @@ export const ptBR: Copy = {
   switchTo: { label: "Read in English", name: "English", href: "/en/", hreflang: "en" },
   hero: {
     iconAlt: "Ícone do Verso: um livro aberto com uma fita",
-    eyebrow: "Notas em Markdown · local-first · servidor próprio",
+    eyebrow: "Notas em Markdown, local-first, servidor próprio",
     title: "Suas notas são arquivos. O servidor é seu.",
     ledeHtml:
       "O Verso é um app de notas que abre qualquer pasta de arquivos Markdown — um vault do Obsidian também — e nunca reescreve um arquivo ao abri-lo. Com o <strong>UniVerso</strong>, o servidor do Verso que você mesmo instala, a mesma pasta fica em dia entre seus computadores, abre no navegador e no celular, e pode ser partilhada com outras pessoas.",
@@ -1008,7 +1008,7 @@ export const ptBR: Copy = {
         description:
           "O UniVerso é o Verso como servidor, numa máquina sua: a pasta em dia entre computadores, no navegador e no celular, partilhada e editada junto. Testado com dezenas de aparelhos ao mesmo tempo numa máquina de 1 núcleo e 1 GB, do tamanho da menor VPS, sem perder nada.",
       },
-      eyebrow: "UniVerso · o servidor do Verso",
+      eyebrow: "UniVerso, o servidor do Verso",
       title: "O servidor é seu.",
       ledeHtml:
         "O UniVerso é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida, e também um mestre a quem ele deixou criar pastas, para as mesas dele. Cada pasta tem um dono, quem edita e quem só lê — e uma pasta pode virar a mesa de uma campanha de RPG.",
