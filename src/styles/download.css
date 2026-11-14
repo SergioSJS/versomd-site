@@ -29,7 +29,8 @@
 .dl-rec-file { display: grid; gap: 0.1rem; min-width: 0; }
 .dl-rec-meta { font: 0.9rem/1.4 var(--ui); color: var(--ink-2); }
 .dl-rec-also { font: 500 0.95rem/1.4 var(--ui); }
-.dl-rec-list { margin: -0.3rem 0 0.8rem; padding-left: 1.1rem; }
+/* Each file is its link and a line under it: no bullets to align. */
+.dl-rec-list { margin: -0.3rem 0 0.8rem; padding-left: 0; list-style: none; }
 .dl-rec-list li { margin: 0.35rem 0; }
 .dl-rec-list a { display: inline-block; padding-block: 0.3rem; }
 .dl-rec-list a,
