@@ -203,14 +203,26 @@ export interface PageHead {
   ledeHtml: string;
 }
 
-/** What comes next: groups in order, each with its state, each item one
- *  short line a reader cares about. A plan, never a date. */
+/** What comes next, drawn as a rail with two stops: the stretches in the
+ *  order of `RoadmapState` (ready, building, planned, later), each with its
+ *  count of items (computed); "you are here" at the end of the ready
+ *  stretch, the V1 flag before the later one. A plan, never a date. */
 export interface Roadmap {
   title: string;
-  introHtml: string[];
-  /** The words of each state, shown beside a group's title. */
+  /** One sentence: what V1 is, and that this is a plan that may change. */
+  introHtml: string;
+  /** When the roadmap was last checked against the product; typed, not computed. */
+  updated: { text: string; dateTime: string };
+  /** The name of each stretch, which is also its state in words. */
   states: Record<RoadmapState, string>;
-  groups: { title: string; state: RoadmapState; items: { lead: string; textHtml?: string }[] }[];
+  /** The count beside a stretch's name; `{n}` is the number of items. */
+  count: { one: string; other: string };
+  /** The two stops on the rail. */
+  stops: { here: string; v1: string; v1Note: string };
+  /** Groups in order. A stretch with more than one group shows each
+   *  group's title as a quiet sub-heading; a group alone in its stretch
+   *  needs none. */
+  groups: { title?: string; state: RoadmapState; items: { lead: string; textHtml?: string }[] }[];
 }
 export type RoadmapState = "ready" | "building" | "planned" | "later";
 

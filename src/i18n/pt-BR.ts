@@ -943,14 +943,15 @@ export const ptBR: Copy = {
       },
       roadmap: {
         title: "Roteiro",
-        introHtml: [
-          "O que vem a seguir, até a V1 — a versão do lançamento público. É um plano, não uma promessa: o que entra e em que ordem pode mudar, e não há datas.",
-          "<strong>Já feito</strong> está pronto e já está na versão de teste atual; <strong>planejado</strong> está decidido para a V1; <strong>depois da V1</strong> fica para mais tarde.",
-        ],
-        states: { ready: "já feito", building: "em construção", planned: "planejado", later: "depois da V1" },
+        introHtml:
+          "O caminho até a V1, a versão do lançamento público: é um plano, não uma promessa — o que entra e em que ordem pode mudar, e não há datas.",
+        updated: { text: "Atualizado em 14 de novembro de 2026", dateTime: "2026-11-14" },
+        states: { ready: "Pronto, na versão de teste", building: "Em construção", planned: "Até a V1", later: "Depois da V1" },
+        count: { one: "{n} item", other: "{n} itens" },
+        stops: { here: "Você está aqui", v1: "V1", v1Note: "o lançamento público" },
         groups: [
           {
-            title: "Pronto, na versão de teste: ferramentas de RPG",
+            title: "Ferramentas de RPG",
             state: "ready",
             items: [
               { lead: "Oráculos.", textHtml: "Perguntas de sim ou não com chances ajustáveis, centelhas de ideias a partir de listas de palavras que você edita, e suas próprias tabelas aleatórias; a resposta pode ir para a nota." },
@@ -964,7 +965,7 @@ export const ptBR: Copy = {
             ],
           },
           {
-            title: "Pronto, na versão de teste: a Mesa e o compartilhamento",
+            title: "A Mesa e o compartilhamento",
             state: "ready",
             items: [
               { lead: "A Mesa.", textHtml: "Um registro de rolagens e conversa que todo mundo que abriu a pasta da mesa vê, num UniVerso ou no computador que a serve, com as imagens enviadas. Quem rola é o servidor, e cada rolagem leva o nome de quem rolou; um jogador pode ter uma rolagem secreta. Uma rolagem vira um cartão nas suas notas se você a arrastar." },
@@ -975,7 +976,6 @@ export const ptBR: Copy = {
             ],
           },
           {
-            title: "Também na V1",
             state: "planned",
             items: [
               { lead: "Mais da Mesa.", textHtml: "O painel do mestre, mostrar uma nota à mesa, sessões, avisos de “novo”, ver como um jogador vê, uma área dos jogadores nos boards e pinos de mapa." },
@@ -990,7 +990,6 @@ export const ptBR: Copy = {
             ],
           },
           {
-            title: "Mais tarde",
             state: "later",
             items: [
               { lead: "Arquivos servidos direto do bucket.", textHtml: "Um UniVerso que guarda os arquivos num bucket (S3) entrega cada imagem ou anexo por um link do próprio bucket, que vale por pouco tempo, sem passar pelo servidor." },

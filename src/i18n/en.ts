@@ -942,14 +942,15 @@ export const en: Copy = {
       },
       roadmap: {
         title: "Roadmap",
-        introHtml: [
-          "What comes next, up to V1 — the release for everyone. It is a plan, not a promise: what goes in and in what order may change, and there are no dates.",
-          "<strong>Done</strong> is ready and already in the current test version; <strong>planned</strong> is decided for V1; <strong>after V1</strong> is for later.",
-        ],
-        states: { ready: "done", building: "being built", planned: "planned", later: "after V1" },
+        introHtml:
+          "The way to V1, the release for everyone: it is a plan, not a promise — what goes in and in what order may change, and there are no dates.",
+        updated: { text: "Updated 14 November 2026", dateTime: "2026-11-14" },
+        states: { ready: "Ready, in the test version", building: "Being built", planned: "Up to V1", later: "After V1" },
+        count: { one: "{n} item", other: "{n} items" },
+        stops: { here: "You are here", v1: "V1", v1Note: "the release for everyone" },
         groups: [
           {
-            title: "Ready, in the test version: RPG tools",
+            title: "RPG tools",
             state: "ready",
             items: [
               { lead: "Oracles.", textHtml: "Yes-or-no questions with adjustable odds, idea sparks from word lists you edit, and your own random tables; the answer can go into the note." },
@@ -963,7 +964,7 @@ export const en: Copy = {
             ],
           },
           {
-            title: "Ready, in the test version: the Table and sharing",
+            title: "The Table and sharing",
             state: "ready",
             items: [
               { lead: "The Table.", textHtml: "A log of rolls and chat that everyone who opened the table’s folder sees, on a UniVerso or on the computer that serves it, with the pictures sent. The server does the rolling, and each roll carries the name of who rolled; a player can make a secret roll. Drag a roll and it becomes a card in your notes." },
@@ -974,7 +975,6 @@ export const en: Copy = {
             ],
           },
           {
-            title: "Also in V1",
             state: "planned",
             items: [
               { lead: "More of the Table.", textHtml: "The game master’s dashboard, showing a note to the table, sessions, “new” notices, seeing as a player sees, a players’ area on boards and map pins." },
@@ -989,7 +989,6 @@ export const en: Copy = {
             ],
           },
           {
-            title: "Later",
             state: "later",
             items: [
               { lead: "Files served straight from the bucket.", textHtml: "A UniVerso that keeps its files in a bucket (S3) hands each image or attachment over by a short-lived link of the bucket itself, without going through the server." },

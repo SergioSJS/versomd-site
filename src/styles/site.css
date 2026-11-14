@@ -538,8 +538,14 @@ h4 {
 }
 .feature-group li::marker { color: var(--brass); }
 
-/* The roadmap: a band, as "what it does not do yet" is; each group says
-   its state in a small label beside its title, in words and colour. */
+/* The roadmap: a band, as "what it does not do yet" is, holding a rail.
+   The rail runs through the stretches in order (ready, building, planned,
+   later) with two stops: "you are here" at the end of the ready stretch,
+   the V1 flag before "later". The line itself says how far along: solid
+   seal where Verso has been, brass ahead to V1, dashed after it. Each item
+   says its state by shape (check, ring, dash) as well as colour, and the
+   stretch's heading says it in words. Under 960px the rail is the left
+   edge, stretches stacked; from 960px it runs across the top. */
 .roadmap {
   margin-top: clamp(3.5rem, 2.5rem + 4vw, 6rem);
   padding-block: clamp(2.75rem, 2.25rem + 2.5vw, 4.5rem);
@@ -547,55 +553,226 @@ h4 {
   border-block: 1px solid var(--hair);
 }
 .roadmap h2 { margin-bottom: 0.9rem; }
-.roadmap-intro p { max-width: var(--measure); margin: 0 0 0.8rem; }
-.roadmap-intro p + p { font-size: 0.94em; color: var(--ink-2); }
-.roadmap-group { margin-top: 2.2rem; }
-.roadmap-group h3 {
+.roadmap-intro { max-width: var(--measure); margin: 0; }
+.roadmap-updated { margin: 0.5rem 0 0; font: 400 0.88rem/1.4 var(--ui); color: var(--ink-2); }
+
+.rm {
+  --rm-bg: var(--paper-2);
+  --rm-x: 0.6rem;          /* where the vertical rail runs, from the left */
+  --rm-indent: 2.4rem;     /* where a stretch's text starts */
+  --rm-gap: 3rem;          /* between columns, on the wide layout */
+  --rm-y: 2.3rem;          /* where the horizontal rail runs, from the top */
+  list-style: none;
+  margin: 2.4rem 0 0;
+  padding: 0;
+}
+.rm-stretch {
+  --rm-line: 2px solid var(--brass);
+  --rm-tone: var(--brass);
+  position: relative;
+  min-width: 0;
+  padding: 0 0 2.2rem var(--rm-indent);
+}
+.rm-stretch.is-ready    { --rm-line: 3px solid var(--seal); --rm-tone: var(--seal); }
+.rm-stretch.is-building { --rm-line: 3px solid color-mix(in oklch, var(--seal) 55%, var(--brass)); --rm-tone: var(--seal); }
+.rm-stretch.is-later    { --rm-line: 2px dashed var(--ink-3); --rm-tone: var(--ink-2); }
+.rm-stretch:last-child { padding-bottom: 0; }
+/* The rail's stretch: a line down the left edge, the full height. */
+.rm-stretch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--rm-x);
+  border-left: var(--rm-line);
+  transform: translateX(-50%);
+}
+.rm-stretch:last-child::before { bottom: auto; height: 100%; }
+/* Where a stretch begins: a small ring on the line, beside its heading. */
+.rm-stretch::after {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: var(--rm-x);
+  width: 0.7rem;
+  height: 0.7rem;
+  box-sizing: border-box;
+  border: 2px solid var(--rm-tone);
+  border-radius: 50%;
+  background: var(--rm-bg);
+  transform: translateX(-50%);
+}
+
+.rm-head {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 0.8rem;
-  margin-bottom: 0.4rem;
+  align-items: baseline;
+  gap: 0.15rem 0.75rem;
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.45rem);
 }
-.state {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.12rem 0.65rem;
-  font: 600 0.72rem/1.4 var(--ui);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.rm-count {
+  font: 400 0.88rem/1.3 var(--ui);
+  letter-spacing: 0;
   color: var(--ink-2);
-  background: var(--paper);
-  border: 1px solid var(--hair);
-  border-radius: var(--radius-pill);
+  font-variant-numeric: tabular-nums;
 }
-.is-ready .state { color: var(--seal-ink); background: var(--seal); border-color: var(--seal); }
-.is-building .state { color: var(--brass-ink); border-color: var(--seal); }
-.is-planned .state { color: var(--brass-ink); border-color: color-mix(in oklch, var(--brass) 55%, var(--hair)); }
-.roadmap-group ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0 2.5rem;
+.rm-sub {
+  margin: 1.1rem 0 0.15rem;
+  font: italic 500 1.02rem/1.3 var(--display);
+  letter-spacing: 0;
+  color: var(--ink-2);
 }
-@media (min-width: 760px) {
-  .roadmap-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-.roadmap-group li {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.8rem 0 0.95rem;
-  border-top: 1px solid var(--hair);
-}
-.roadmap-group li strong { font: 600 1rem/1.35 var(--ui); color: var(--ink); }
-.roadmap-group li span { font-size: 0.92em; line-height: 1.5; color: var(--ink-2); }
-.is-later li { padding-block: 0.6rem 0.7rem; }
-.is-later li strong { font-weight: 500; color: var(--ink-2); }
+.rm-head + .rm-sub { margin-top: 0.2rem; }
 
+.rm-items { list-style: none; margin: 0; padding: 0; }
+.rm-items > li { border-top: 1px solid var(--hair); }
+.rm-items > li:last-child { border-bottom: 1px solid var(--hair); }
+.rm-item > summary,
+.rm-plain {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0.62rem 0;
+  font: 500 0.98rem/1.35 var(--ui);
+  color: var(--ink);
+}
+.rm-item > summary {
+  position: relative;
+  padding-right: 1.8rem;
+  list-style: none;
+}
+.rm-item > summary::-webkit-details-marker { display: none; }
+/* The disclosure's own mark, at the end, as the questions have. */
+.rm-item > summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.2rem;
+  top: 0.7rem;
+  font: 400 1.2rem/1 var(--ui);
+  color: var(--ink-3);
+}
+.rm-item[open] > summary::after { content: "\2212"; }
+.rm-item > summary:hover .rm-lead { color: var(--seal); }
+.rm-item > summary:focus-visible { outline-offset: 2px; }
+.rm-glyph {
+  flex: none;
+  display: inline-flex;
+  width: 16px;
+  height: 1.35em;
+  align-items: center;
+  color: var(--rm-tone);
+}
+.rm-glyph svg { display: block; }
+.rm-lead { min-width: 0; }
+.is-later .rm-plain { color: var(--ink-2); }
+.rm-more {
+  margin: -0.15rem 0 0;
+  padding: 0 0.4rem 0.85rem calc(16px + 0.6rem);
+  font: 400 0.9rem/1.6 var(--book);
+  color: var(--ink-2);
+}
+
+/* The stops: in the flow after their stretch, the mark on the line. */
+.rm-stop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+  margin: 1.3rem 0 0;
+  font: 600 0.95rem/1.3 var(--ui);
+  color: var(--ink);
+}
+.rm-mark {
+  position: absolute;
+  left: calc(var(--rm-x) - var(--rm-indent));
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+.is-here .rm-mark {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: var(--seal);
+  box-shadow: 0 0 0 4px var(--rm-bg);
+  z-index: 1;
+}
+.is-here .rm-label { color: var(--seal); }
+.is-v1 .rm-mark {
+  color: var(--ink);
+  /* the pole's foot on the line */
+  transform: translate(calc(-50% + 4px), -60%);
+  line-height: 0;
+  background: var(--rm-bg);
+  padding: 2px 0;
+  z-index: 1;
+}
+.is-v1 .rm-label strong { font: 600 1.25rem/1 var(--display); color: var(--ink); }
+.rm-note { font-weight: 400; color: var(--ink-2); }
+/* A stretch that starts at a stop needs no ring of its own. */
+.rm-stretch.after-stop { padding-top: 0.4rem; }
+.rm-stretch.after-stop::after { top: 0.95rem; }
+
+@media (min-width: 960px) {
+  .rm {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    column-gap: var(--rm-gap);
+    margin-top: 1.6rem;
+  }
+  .rm-stretch,
+  .rm-stretch.after-stop { padding: calc(var(--rm-y) + 1.5rem) 0 0; }
+  /* The rail's stretch runs across the top, through the gap to the next. */
+  .rm-stretch::before,
+  .rm-stretch:last-child::before {
+    top: var(--rm-y);
+    bottom: auto;
+    left: 0;
+    right: calc(-1 * var(--rm-gap));
+    height: 0;
+    border-left: 0;
+    border-top: var(--rm-line);
+    transform: translateY(-50%);
+  }
+  .rm-stretch:last-child::before { right: 0; }
+  /* The line changes at the stop, in the middle of the gap. */
+  .rm-stretch.has-stop::before { right: calc(-0.5 * var(--rm-gap)); }
+  .rm-stretch.after-stop::before { left: calc(-0.5 * var(--rm-gap)); }
+  .rm-stretch::after,
+  .rm-stretch.after-stop::after {
+    top: var(--rm-y);
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+  .rm-stretch.after-stop::after { display: none; }
+  /* The stops sit on the rail, in the middle of the gap after their
+     stretch, their words above the line. */
+  .rm-stop {
+    position: absolute;
+    top: var(--rm-y);
+    right: calc(-0.5 * var(--rm-gap));
+    margin: 0;
+    min-height: 0;
+    display: block;
+    width: 0;
+    height: 0;
+  }
+  .rm-mark { left: 0; top: 0; }
+  .rm-label {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .is-v1 .rm-mark { transform: translate(calc(-50% + 4px), -100%); padding: 0; background: none; }
+  .is-v1 .rm-mark svg { display: block; }
+  .is-v1 .rm-label { left: 1rem; bottom: 0.95rem; transform: none; }
+}
 /* ── UniVerso: the steps, what it does, the numbers ────────────────────── */
 
 .steps {
