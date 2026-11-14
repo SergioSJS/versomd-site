@@ -981,7 +981,6 @@ export const ptBR: Copy = {
               { lead: "Mais da Mesa.", textHtml: "O painel do mestre, mostrar uma nota à mesa, sessões, avisos de “novo”, ver como um jogador vê, uma área dos jogadores nos boards e pinos de mapa." },
               { lead: "Dropbox, OneDrive e Google Drive.", textHtml: "A sincronização com esses serviços, além do WebDAV e do S3 que já existem." },
               { lead: "Arquivos que o Dropbox e o Google Drive deixam só na nuvem.", textHtml: "No Mac, um arquivo que esses serviços guardam só na nuvem nunca é lido como apagado, como já acontece com o iCloud." },
-              { lead: "Arquivos servidos direto do bucket.", textHtml: "Um UniVerso que guarda os arquivos num bucket (S3) entrega cada imagem ou anexo por um link do próprio bucket, que vale por pouco tempo, sem passar pelo servidor." },
               { lead: "Boards em pastas partilhadas.", textHtml: "Quem recebe uma pasta partilhada abre os boards dela com cada cartão no seu lugar, e os edita junto, ao vivo." },
               { lead: "Confirmar que é você num aparelho ligado.", textHtml: "A verificação do sistema e uma chave por aparelho." },
               { lead: "App do Windows assinado.", textHtml: "Sem o aviso do SmartScreen na instalação. O app do Mac não é notarizado pela Apple: ele abre pelo “Abrir mesmo assim” dos Ajustes do Sistema, uma vez." },
@@ -994,6 +993,7 @@ export const ptBR: Copy = {
             title: "Mais tarde",
             state: "later",
             items: [
+              { lead: "Arquivos servidos direto do bucket.", textHtml: "Um UniVerso que guarda os arquivos num bucket (S3) entrega cada imagem ou anexo por um link do próprio bucket, que vale por pouco tempo, sem passar pelo servidor." },
               { lead: "Plugins de terceiros." },
               { lead: "Criptografia de ponta a ponta, opcional." },
               { lead: "O servidor MCP pela rede." },

@@ -980,7 +980,6 @@ export const en: Copy = {
               { lead: "More of the Table.", textHtml: "The game master’s dashboard, showing a note to the table, sessions, “new” notices, seeing as a player sees, a players’ area on boards and map pins." },
               { lead: "Dropbox, OneDrive and Google Drive.", textHtml: "Sync with those services, besides the WebDAV and S3 that already exist." },
               { lead: "Files Dropbox and Google Drive keep only in the cloud.", textHtml: "On a Mac, a file those services keep only in the cloud is never read as deleted, as with iCloud already." },
-              { lead: "Files served straight from the bucket.", textHtml: "A UniVerso that keeps its files in a bucket (S3) hands each image or attachment over by a short-lived link of the bucket itself, without going through the server." },
               { lead: "Boards in shared folders.", textHtml: "Someone who receives a shared folder opens its boards with every card in place, and edits them together, live." },
               { lead: "Confirming it is you on a linked device.", textHtml: "The system’s own check and a key for each device." },
               { lead: "A signed Windows app.", textHtml: "No SmartScreen warning when installing. The Mac app is not notarized by Apple: it opens through System Settings’ “Open Anyway”, once." },
@@ -993,6 +992,7 @@ export const en: Copy = {
             title: "Later",
             state: "later",
             items: [
+              { lead: "Files served straight from the bucket.", textHtml: "A UniVerso that keeps its files in a bucket (S3) hands each image or attachment over by a short-lived link of the bucket itself, without going through the server." },
               { lead: "Third-party plugins." },
               { lead: "Optional end-to-end encryption." },
               { lead: "The MCP server over the network." },
