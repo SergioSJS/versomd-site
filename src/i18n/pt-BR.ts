@@ -36,7 +36,7 @@ export const ptBR: Copy = {
     props: [
       { key: "estado", valueHtml: "em teste (beta); <a href=\"/baixar/\">baixe aqui</a>" },
       { key: "roda em", valueHtml: "macOS, Windows, Linux, Android, iPad e iPhone; no navegador, por um UniVerso" },
-      { key: "servidor", valueHtml: "UniVerso, numa máquina sua: um mini PC, um NAS, a menor VPS" },
+      { key: "servidor", valueHtml: "UniVerso, numa máquina sua — um mini PC, um NAS, a menor VPS — ou o próprio app do computador" },
       { key: "licença", valueHtml: "<a href=\"https://github.com/SergioSJS/verso\">MPL-2.0, código aberto</a>" },
       { key: "custa", valueHtml: "nada além da máquina onde ele roda" },
     ],
@@ -64,7 +64,7 @@ export const ptBR: Copy = {
       {
         kicker: "UniVerso",
         title: "O servidor é seu",
-        text: "Para uma casa, um time pequeno ou uma mesa de RPG — com a Mesa de rolagens e conversa, dados, oráculos e fichas — que quer partilhar pastas num servidor que alguém de confiança roda.",
+        text: "Para uma casa, um time pequeno ou uma mesa de RPG — com a Mesa de rolagens, conversa e música, dados, oráculos e fichas — que quer partilhar pastas num servidor que alguém de confiança roda.",
       },
       {
         kicker: "MCP",
@@ -85,7 +85,7 @@ export const ptBR: Copy = {
       {
         page: "server",
         title: "UniVerso",
-        text: "O servidor que você mesmo roda: sincronizar, partilhar, editar junto, e os números medidos numa VPS de 1 GB.",
+        text: "O servidor que você mesmo roda: sincronizar, partilhar, editar junto, e os números medidos numa máquina de 1 GB, do tamanho da menor VPS.",
         link: "Conhecer o UniVerso",
       },
       {
@@ -114,7 +114,7 @@ export const ptBR: Copy = {
         {
           term: "Partilhar e dar acesso",
           textHtml:
-            "O dono dá a outra conta do mesmo UniVerso acesso a uma pasta, a uma nota, a um board ou a um arquivo. A janela Acesso tem três escolhas — não vê, vê, edita —, diz de onde vem cada uma, e o dono pode tirar depois.",
+            "O dono partilha uma pasta, ou uma pasta dentro dela, com outra conta do mesmo UniVerso, para ler ou para editar. Numa mesa, cada nota, board, arquivo ou pasta tem a janela Acesso, com três escolhas — não vê, vê, edita —, que diz de onde vem cada uma; o dono pode tirar depois.",
         },
         {
           term: "Editar junto",
@@ -124,7 +124,7 @@ export const ptBR: Copy = {
         {
           term: "A Mesa",
           textHtml:
-            "Uma pasta vira uma campanha, com um registro de conversa e rolagens que todo mundo da mesa vê. Quem rola é o servidor, com o nome de quem rolou; há rolagem secreta (só o mestre vê o resultado) e imagens no chat.",
+            "Uma pasta vira uma campanha, com um registro de conversa e rolagens que todo mundo da mesa vê. Quem rola é o servidor, com o nome de quem rolou; há rolagem secreta (só o mestre vê o resultado), imagens no chat e música que a mesa toda ouve.",
         },
         {
           term: "Convidar jogadores",
@@ -159,12 +159,22 @@ export const ptBR: Copy = {
         {
           term: "Navegador e celular",
           textHtml:
-            "O UniVerso serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial. Em pastas que você escolhe, e com HTTPS, o celular também abre e edita sem rede, e envia o que mudou quando a rede volta.",
+            "O UniVerso serve a mesma janela do app; no celular e no tablet ela se instala na tela inicial, e os apps do Android, do iPad e do iPhone entram nele e sincronizam. No navegador, em pastas que você escolhe e com HTTPS, o celular também abre e edita sem rede, e envia o que mudou quando a rede volta.",
         },
         {
           term: "Sem alugar servidor",
           textHtml:
-            "O app do computador também pode servir pastas na rede de casa: o celular se liga lendo um QR code, e você aprova no computador. Serve para uma noite de jogo em casa; para ficar no ar sempre, instale o UniVerso numa máquina sua.",
+            "O app do computador também é um servidor: serve pastas na rede de casa, com o celular se ligando por um QR code que você aprova no computador, ou pela internet, por um link da Cloudflare, sem domínio nem porta aberta; os jogadores entram por convite. Funciona enquanto o computador fica ligado, como o Foundry; para ficar no ar sempre, instale o UniVerso numa máquina sua.",
+        },
+        {
+          term: "Link na internet",
+          textHtml:
+            "Sem domínio e sem porta aberta, o UniVerso também ganha um endereço <code>https</code> pela Cloudflare: um link rápido, que muda a cada início e dura 12 horas renováveis, ou o seu próprio endereço. Liga-se no console, com <code>universo.sh link</code> ou por uma variável.",
+        },
+        {
+          term: "Instalar e manter",
+          textHtml:
+            "O instalador <code>universo.sh</code> pergunta antes de cada passo: instala, dá ao servidor um endereço <code>https</code> com o Caddy, cria o primeiro admin, faz backup — criptografado, se você quiser — e atualiza.",
         },
         {
           term: "Console",
@@ -204,7 +214,7 @@ export const ptBR: Copy = {
       {
         title: "Administre pelo console",
         textHtml:
-          "Ninguém se cadastra sozinho: quem administra convida. Em <code>/admin</code> ficam as contas, as pastas, os convites, as cotas e o registro de auditoria.",
+          "Ninguém se cadastra sozinho: quem administra convida, e também um mestre a quem ele deixou criar pastas, para as mesas dele. Em <code>/admin</code> ficam as contas, as pastas, os convites, as cotas e o registro de auditoria.",
         figure: {
           stem: "console-accounts",
           kind: "shot",
@@ -243,7 +253,7 @@ export const ptBR: Copy = {
       ],
       afterHtml: [
         "O mínimo que indicamos: 1 núcleo e 512 MB, para uma família ou um time pequeno. Com 1 GB, até umas 25 pessoas ativas ao mesmo tempo ficam confortáveis; acima disso o servidor continua certo, mas cada gravação espera mais — o limite é o núcleo e o disco, não a memória. A máquina estava na rede local, não num provedor; Raspberry Pi e NAS ainda não foram medidos.",
-        "Os números completos estão no guia de instalação do servidor, que sai junto com o código.",
+        "Os números completos estão no <a href=\"https://github.com/SergioSJS/verso/blob/main/docs/reference/server-install.md#14-what-it-needs\">guia de instalação do servidor</a> (em inglês), seção 14.",
       ],
     },
   },
@@ -298,19 +308,19 @@ export const ptBR: Copy = {
     intro: "Melhor saber antes.",
     items: [
       {
-        lead: "No celular, o offline pede HTTPS.",
+        lead: "Os apps do celular ficam fora das lojas.",
         textHtml:
-          "As pastas que você escolher ficam guardadas no celular e você escreve sem conexão, mas só num UniVerso servido por HTTPS. Sem HTTPS, ou num navegador comum, você trabalha direto na pasta do servidor e, sem conexão, não edita.",
+          "O do Android se instala pelo arquivo APK; o do iPad e do iPhone, pela AltStore Classic, que assina o app com o seu Apple ID por 7 dias de cada vez e o renova sozinha com o computador na mesma rede. No navegador do celular, sem o app, o offline pede um UniVerso servido por HTTPS.",
       },
       {
         lead: "Não tem plugins.",
         textHtml:
-          "Nem os do Obsidian, nem plugins próprios. Um sistema de plugins está planejado; os plugins do Obsidian não rodam no Verso.",
+          "Nem os do Obsidian, nem plugins próprios. Plugins de terceiros ficam para depois da V1; os do Obsidian não rodam no Verso.",
       },
       {
         lead: "Quem não tem conta só lê.",
         textHtml:
-          "Um link de leitura abre uma pasta ou uma nota para qualquer pessoa, sem conta, mas só para ler. Para editar junto, a pessoa precisa de uma conta do mesmo UniVerso.",
+          "Um link de leitura abre uma pasta ou uma nota para qualquer pessoa, sem conta, mas só para ler. Para editar junto, a pessoa precisa de uma conta do UniVerso, ou do computador que serve a mesa.",
       },
       {
         lead: "Não tem criptografia de ponta a ponta.",
@@ -319,7 +329,7 @@ export const ptBR: Copy = {
       },
       {
         lead: "Dropbox, OneDrive e Google Drive ainda não.",
-        textHtml: "O app do computador já sincroniza uma pasta com um UniVerso, com um WebDAV (como o Nextcloud) ou com um bucket S3. Dropbox, OneDrive e Google Drive estão planejados para a V1 (<a href=\"/recursos/#roteiro\">roteiro</a>).",
+        textHtml: "Os apps do computador e do Android já sincronizam uma pasta com um UniVerso, com um WebDAV (como o Nextcloud) ou com um bucket S3. Dropbox, OneDrive e Google Drive estão planejados para a V1 (<a href=\"/recursos/#roteiro\">roteiro</a>).",
       },
       {
         lead: "Os apps ainda avisam na instalação.",
@@ -334,14 +344,14 @@ export const ptBR: Copy = {
     introHtml: [
       "A tabela põe o Verso ao lado das ferramentas que quem guarda notas e quem mestra RPG costuma usar, com o que cada uma faz e o que não faz.",
       "<strong>Onde o Verso está à frente:</strong> as notas são arquivos Markdown seus, que o Obsidian também abre; o servidor é seu; várias pessoas editam a mesma nota, o mesmo board e a mesma base ao vivo; e não há plano pago. O Obsidian guarda arquivos, mas não edita ao vivo sem plugin de terceiros; o Notion e o LegendKeeper editam ao vivo, mas guardam as notas no serviço deles.",
-      "<strong>Onde está atrás:</strong> o Verso ainda está em teste (beta), com <a href=\"/baixar/\">download aqui</a>. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, é pelo navegador, sem app de loja, e o offline pede HTTPS. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
+      "<strong>Onde está atrás:</strong> o Verso ainda está em teste (beta), com <a href=\"/baixar/\">download aqui</a>. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, os apps ficam fora das lojas (o APK no Android, a AltStore no iPad e no iPhone). Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
     ],
     pains: {
       title: "Três problemas comuns, e o que o Verso faz com eles",
       items: [
         { lead: "O dilema do mestre.", textHtml: "O Verso partilha por pasta e por nota: a pasta dos jogadores com leitura, a sua só sua, no mesmo vault, sem duplicar notas. E um segredo dentro de uma nota — um parágrafo que só o mestre vê — nunca chega a quem só lê. World Anvil, Kanka, LegendKeeper e Foundry VTT também têm segredos." },
         { lead: "Preso a um serviço.", textHtml: "As notas são arquivos <code>.md</code> numa pasta sua, e o servidor é uma máquina sua. Sair do Verso é fechar o app: a pasta continua abrindo no Obsidian ou em qualquer editor." },
-        { lead: "Sincronizar entre aparelhos.", textHtml: "Com um UniVerso, a pasta fica em dia entre Mac, Windows e Linux e abre no navegador e no celular, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado, e no celular o offline pede HTTPS." },
+        { lead: "Sincronizar entre aparelhos.", textHtml: "Com um UniVerso, a pasta fica em dia entre Mac, Windows, Linux, Android, iPad e iPhone e abre no navegador, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado." },
       ],
     },
     tableCaption: "O Verso e outras ferramentas de notas e de RPG, capacidade por capacidade",
@@ -423,7 +433,7 @@ export const ptBR: Copy = {
         group: "data",
         label: "Visões de banco de dados",
         cells: [
-          { mark: "yes", text: "bases: tabela, kanban, lista, calendário" },
+          { mark: "yes", text: "bases: tabela, cartões, lista, kanban, calendário e mapa" },
           { mark: "yes", text: "Bases: tabela, cartões, lista, kanban" },
           { mark: "yes", text: "na versão nova" },
           { mark: "yes", text: "sim" },
@@ -463,7 +473,7 @@ export const ptBR: Copy = {
         group: "collab",
         label: "Servidor próprio",
         cells: [
-          { mark: "yes", text: "UniVerso: Docker, .deb, .rpm" },
+          { mark: "yes", text: "UniVerso (Docker, .deb, .rpm) ou o próprio app" },
           { mark: "no", text: "não; Sync e Publish são deles" },
           { mark: "partial", text: "o servidor de sync da versão nova (alfa)" },
           { mark: "no", text: "não" },
@@ -503,7 +513,7 @@ export const ptBR: Copy = {
         group: "collab",
         label: "Partilha com permissões",
         cells: [
-          { mark: "yes", text: "por pasta ou subpasta: ler ou escrever" },
+          { mark: "yes", text: "por pasta ou subpasta, ler ou escrever; numa mesa, por nota, board ou arquivo" },
           { mark: "partial", text: "o cofre inteiro, pelo Sync (pago)" },
           { mark: "partial", text: "o grafo inteiro" },
           { mark: "yes", text: "por página; regras por linha nas bases" },
@@ -563,7 +573,7 @@ export const ptBR: Copy = {
         group: "rpg",
         label: "Mapas interativos",
         cells: [
-          { mark: "partial", text: "uma imagem num board, com pinos que abrem notas e pinos secretos; sem camadas" },
+          { mark: "partial", text: "uma imagem num board, com pinos que abrem notas e pinos secretos; mapa geográfico nas bases; sem camadas" },
           { mark: "partial", text: "mapa geográfico nas bases; de mundo, por plugin" },
           { mark: "no", text: "não" },
           { mark: "partial", text: "mapa geográfico nas bases de dados" },
@@ -643,7 +653,7 @@ export const ptBR: Copy = {
         group: "platforms",
         label: "Celular",
         cells: [
-          { mark: "partial", text: "no navegador, por um UniVerso; offline nas pastas que você escolher, com HTTPS; sem app de loja" },
+          { mark: "partial", text: "apps de Android (APK) e de iPad e iPhone (AltStore), fora das lojas, com as notas no aparelho; e no navegador, por um UniVerso" },
           { mark: "yes", text: "apps iOS e Android, offline" },
           { mark: "yes", text: "apps; os da versão nova em teste" },
           { mark: "yes", text: "apps, com offline" },
@@ -746,14 +756,14 @@ export const ptBR: Copy = {
       {
         q: "É compatível com o Obsidian?",
         aHtml: [
-          "O Verso estende o dialeto do Obsidian e nunca o contradiz: links <code>[[…]]</code>, embeds, callouts, tags, propriedades no frontmatter e boards <code>.canvas</code> (JSON Canvas) abrem como no Obsidian, e nenhuma extensão do Verso muda o sentido de algo que já existe. A configuração do Verso fica fora da pasta, então o mesmo vault abre nos dois.",
+          "O Verso estende o dialeto do Obsidian e nunca o contradiz: links <code>[[…]]</code>, embeds, callouts, tags, propriedades no frontmatter, boards <code>.canvas</code> (JSON Canvas) e bases <code>.base</code> abrem como no Obsidian, e nenhuma extensão do Verso muda o sentido de algo que já existe. A configuração do Verso fica fora da pasta, então o mesmo vault abre nos dois.",
           "O Verso não é um clone do Obsidian e não roda os plugins dele.",
         ],
       },
       {
         q: "E a privacidade?",
         aHtml: [
-          "O app não manda telemetria. Ele só vai à rede para endereços que estão nas suas notas ou em que você clica, para ver se há versão nova e para o UniVerso que você configurou.",
+          "O app não manda telemetria. Ele só vai à rede para endereços que estão nas suas notas ou em que você clica, para ver se há versão nova, para o UniVerso ou a nuvem (WebDAV, S3) que você configurou e, se você ligar o link pela internet, para a Cloudflare, de onde baixa o <code>cloudflared</code>.",
           "No UniVerso, as notas ficam no disco de quem hospeda — e quem hospeda pode lê-las (veja acima).",
           "Este site não tem analytics nem cookies. A lista de espera guarda seu e-mail, o idioma da página e a hora, e serve só para avisar quando sair uma versão nova.",
         ],
@@ -820,7 +830,7 @@ export const ptBR: Copy = {
             title: "Boards",
             itemsHtml: [
               "Arquivos <code>.canvas</code>, o formato do Obsidian, desenhados com o Excalidraw.",
-              "As notas da pasta como cartões que você edita ali mesmo; imagens, que dá para recortar, e PDFs.",
+              "As notas da pasta como cartões que você edita ali mesmo; cartões de texto, imagens, que dá para recortar, PDFs, páginas da web e arquivos de dados.",
               "Setas que ficam no ponto onde foram desenhadas, e os desenhos do plugin Excalidraw do Obsidian.",
               "Mapas: uma imagem por baixo do board, pinos que abrem notas e pinos secretos que os jogadores não veem.",
             ],
@@ -844,8 +854,9 @@ export const ptBR: Copy = {
           {
             title: "Ler e guardar",
             itemsHtml: [
-              "Um leitor de PDF com duas páginas lado a lado, imagens e arquivos HTML.",
+              "Um leitor de PDF com duas páginas lado a lado, imagens, áudio e arquivos HTML.",
               "Páginas da web guardadas como notas.",
+              "Um arquivo <code>.md</code> abre sozinho, sem pasta, como num bloco de notas; um JSON, YAML, TOML, XML ou CSV abre como diagrama.",
             ],
           },
           {
@@ -956,11 +967,11 @@ export const ptBR: Copy = {
             title: "Pronto, na versão de teste: a Mesa e o compartilhamento",
             state: "ready",
             items: [
-              { lead: "A Mesa.", textHtml: "Um registro de rolagens e conversa que todo mundo que abriu a pasta de um UniVerso vê, com as imagens enviadas. Quem rola é o servidor, e cada rolagem leva o nome de quem rolou; um jogador pode ter uma rolagem secreta. Uma rolagem vira um cartão nas suas notas se você a arrastar." },
+              { lead: "A Mesa.", textHtml: "Um registro de rolagens e conversa que todo mundo que abriu a pasta da mesa vê, num UniVerso ou no computador que a serve, com as imagens enviadas. Quem rola é o servidor, e cada rolagem leva o nome de quem rolou; um jogador pode ter uma rolagem secreta. Uma rolagem vira um cartão nas suas notas se você a arrastar." },
               { lead: "Uma pasta é uma campanha.", textHtml: "O dono da pasta a transforma numa mesa, convida os jogadores por um link de uso único e libera cada nota para a mesa toda ou para alguns jogadores; cada nota diz quem a vê. Uma pasta pode ter mais de uma mesa, cada uma com a sua conversa." },
               { lead: "Um só modelo de acesso.", textHtml: "Qualquer nota, board, arquivo ou pasta tem a janela Acesso, com quem não vê, quem vê e quem edita. O jogador que edita um board o edita ao vivo, só com o que pode ver, e pode pôr imagens nele; quatro direitos, todos desligados de início, dizem o resto: imagens, arquivos, criar notas e criar boards." },
               { lead: "Link de leitura, sem conta.", textHtml: "Do UniVerso, uma pasta ou uma nota num endereço que qualquer pessoa abre no navegador para ler, com prazo e senha se você quiser, e que você revoga. Quem lê não recebe os segredos do mestre." },
-              { lead: "Sincronizar com uma nuvem que você já tem.", textHtml: "No app do computador, uma pasta pode ficar em dia com um WebDAV (Nextcloud e parecidos) ou com um bucket S3 (Amazon, MinIO, Cloudflare R2), sem servidor seu. O app confere o serviço antes de usar." },
+              { lead: "Sincronizar com uma nuvem que você já tem.", textHtml: "No app do computador e no do Android, uma pasta pode ficar em dia com um WebDAV (Nextcloud e parecidos) ou com um bucket S3 (Amazon, MinIO, Cloudflare R2), sem servidor seu. O app confere o serviço antes de usar." },
             ],
           },
           {
@@ -969,6 +980,8 @@ export const ptBR: Copy = {
             items: [
               { lead: "Mais da Mesa.", textHtml: "O painel do mestre, mostrar uma nota à mesa, sessões, avisos de “novo”, ver como um jogador vê, uma área dos jogadores nos boards e pinos de mapa." },
               { lead: "Dropbox, OneDrive e Google Drive.", textHtml: "A sincronização com esses serviços, além do WebDAV e do S3 que já existem." },
+              { lead: "Arquivos que o Dropbox e o Google Drive deixam só na nuvem.", textHtml: "No Mac, um arquivo que esses serviços guardam só na nuvem nunca é lido como apagado, como já acontece com o iCloud." },
+              { lead: "Boards em pastas partilhadas.", textHtml: "Quem recebe uma pasta partilhada abre os boards dela com cada cartão no seu lugar, e os edita junto, ao vivo." },
               { lead: "Confirmar que é você num aparelho ligado.", textHtml: "A verificação do sistema e uma chave por aparelho." },
               { lead: "App do Windows assinado.", textHtml: "Sem o aviso do SmartScreen na instalação. O app do Mac não é notarizado pela Apple: ele abre pelo “Abrir mesmo assim” dos Ajustes do Sistema, uma vez." },
               { lead: "Juntar por bloco o que duas pessoas editaram offline.", textHtml: "Duas pessoas que editaram a mesma nota sem conexão têm as edições juntadas, não copiadas." },
@@ -993,12 +1006,12 @@ export const ptBR: Copy = {
       meta: {
         title: "UniVerso, o servidor do Verso",
         description:
-          "O UniVerso é o Verso como servidor, numa máquina sua: a pasta em dia entre computadores, no navegador e no celular, partilhada e editada junto. Testado com dezenas de aparelhos ao mesmo tempo numa VPS de 1 núcleo e 1 GB, sem perder nada.",
+          "O UniVerso é o Verso como servidor, numa máquina sua: a pasta em dia entre computadores, no navegador e no celular, partilhada e editada junto. Testado com dezenas de aparelhos ao mesmo tempo numa máquina de 1 núcleo e 1 GB, do tamanho da menor VPS, sem perder nada.",
       },
       eyebrow: "UniVerso · o servidor do Verso",
       title: "O servidor é seu.",
       ledeHtml:
-        "O UniVerso é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida. Cada pasta tem um dono, quem edita e quem só lê — e uma pasta pode virar a mesa de uma campanha de RPG.",
+        "O UniVerso é o Verso como servidor: um só programa, instalado por imagem Docker (amd64 e arm64), por pacote <code>.deb</code> ou <code>.rpm</code> com systemd, ou por um arquivo compactado. Nele ficam as contas e as pastas — pastas comuns de Markdown no disco do servidor. Ninguém se cadastra sozinho: quem administra convida, e também um mestre a quem ele deixou criar pastas, para as mesas dele. Cada pasta tem um dono, quem edita e quem só lê — e uma pasta pode virar a mesa de uma campanha de RPG.",
       stepsTitle: "Em três passos",
       featuresTitle: "O que ele faz",
       gallery: {

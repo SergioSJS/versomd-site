@@ -35,7 +35,7 @@ export const en: Copy = {
     props: [
       { key: "status", valueHtml: "in testing (beta); <a href=\"/en/download/\">download here</a>" },
       { key: "runs on", valueHtml: "macOS, Windows, Linux, Android, iPad and iPhone; in a browser, through a UniVerso" },
-      { key: "server", valueHtml: "UniVerso, on a machine of yours: a mini PC, a NAS, the smallest VPS" },
+      { key: "server", valueHtml: "UniVerso, on a machine of yours — a mini PC, a NAS, the smallest VPS — or the desktop app itself" },
       { key: "licence", valueHtml: "<a href=\"https://github.com/SergioSJS/verso\">MPL-2.0, open source</a>" },
       { key: "costs", valueHtml: "nothing beyond the machine it runs on" },
     ],
@@ -63,7 +63,7 @@ export const en: Copy = {
       {
         kicker: "UniVerso",
         title: "The server is yours",
-        text: "For a household, a small team or a tabletop RPG group — with the Table’s rolls and chat, dice, oracles and sheets — that wants to share folders on a server someone they trust runs.",
+        text: "For a household, a small team or a tabletop RPG group — with the Table’s rolls, chat and music, dice, oracles and sheets — that wants to share folders on a server someone they trust runs.",
       },
       {
         kicker: "MCP",
@@ -84,7 +84,7 @@ export const en: Copy = {
       {
         page: "server",
         title: "UniVerso",
-        text: "The server you run yourself: sync, sharing, editing together, and the numbers measured on a 1 GB VPS.",
+        text: "The server you run yourself: sync, sharing, editing together, and the numbers measured on a 1 GB machine the size of the smallest VPS.",
         link: "Meet UniVerso",
       },
       {
@@ -113,7 +113,7 @@ export const en: Copy = {
         {
           term: "Share and give access",
           textHtml:
-            "The owner gives another account on the same UniVerso access to a folder, a note, a board or a file. The Access window has three choices — does not see, sees, edits — says where each comes from, and the owner can take it back.",
+            "The owner shares a folder, or a folder inside it, with another account on the same UniVerso, to read or to edit. At a table, every note, board, file or folder has the Access window, with three choices — does not see, sees, edits — that says where each comes from; the owner can take it back.",
         },
         {
           term: "Edit together",
@@ -123,7 +123,7 @@ export const en: Copy = {
         {
           term: "The Table",
           textHtml:
-            "A folder becomes a campaign, with a chat and roll log that everyone at the table sees. The server does the rolling, with the roller’s name; there are secret rolls (only the game master sees the result) and images in the chat.",
+            "A folder becomes a campaign, with a chat and roll log that everyone at the table sees. The server does the rolling, with the roller’s name; there are secret rolls (only the game master sees the result), images in the chat, and music the whole table hears.",
         },
         {
           term: "Invite players",
@@ -158,12 +158,22 @@ export const en: Copy = {
         {
           term: "Browser and phone",
           textHtml:
-            "UniVerso serves the same window as the app; on a phone or tablet it installs on the home screen. For folders you choose, over HTTPS, the phone also opens and edits with no network, and sends what changed when the network returns.",
+            "UniVerso serves the same window as the app; on a phone or tablet it installs on the home screen, and the Android, iPad and iPhone apps sign in to it and sync. In the browser, for folders you choose, over HTTPS, the phone also opens and edits with no network, and sends what changed when the network returns.",
         },
         {
           term: "No server to rent",
           textHtml:
-            "The desktop app can also serve folders on your home network: the phone connects by reading a QR code, and you approve it on the computer. Good for a game night at home; to stay up all the time, install UniVerso on a machine of your own.",
+            "The desktop app is a server too: it serves folders on your home network, with the phone connecting by a QR code you approve on the computer, or over the internet, by a Cloudflare link, with no domain and no open port; players come in by invitation. It works while the computer stays on, as Foundry does; to stay up all the time, install UniVerso on a machine of your own.",
+        },
+        {
+          term: "Internet link",
+          textHtml:
+            "With no domain and no open port, UniVerso can also get an <code>https</code> address through Cloudflare: a quick link, new at each start and good for 12 hours you can extend, or your own address. Turn it on in the console, with <code>universo.sh link</code> or with a variable.",
+        },
+        {
+          term: "Install and keep it",
+          textHtml:
+            "The <code>universo.sh</code> installer asks before each step: it installs, gives the server an <code>https</code> address with Caddy, makes the first admin, backs up — encrypted, if you want — and updates.",
         },
         {
           term: "Console",
@@ -203,7 +213,7 @@ export const en: Copy = {
       {
         title: "Run it from the console",
         textHtml:
-          "Nobody signs themselves up: the admin invites. At <code>/admin</code> are the accounts, the folders, the invitations, the quotas and the audit log.",
+          "Nobody signs themselves up: the admin invites, and so does a game master the admin lets make folders, for their own tables. At <code>/admin</code> are the accounts, the folders, the invitations, the quotas and the audit log.",
         figure: {
           stem: "console-accounts",
           kind: "shot",
@@ -242,7 +252,7 @@ export const en: Copy = {
       ],
       afterHtml: [
         "The minimum we suggest: 1 core and 512 MB, for a family or a small team. With 1 GB, up to about 25 active people at once is comfortable; beyond that the server stays correct, but each write waits longer — the limit is the core and the disk, not the memory. The machine was on the local network, not at a provider; a Raspberry Pi and a NAS have not been measured yet.",
-        "The full numbers are in the server’s install guide, which comes out with the code.",
+        "The full numbers are in the <a href=\"https://github.com/SergioSJS/verso/blob/main/docs/reference/server-install.md#14-what-it-needs\">server’s install guide</a>, section 14.",
       ],
     },
   },
@@ -297,19 +307,19 @@ export const en: Copy = {
     intro: "Better to know before.",
     items: [
       {
-        lead: "On a phone, offline needs HTTPS.",
+        lead: "The phone apps are not in the stores.",
         textHtml:
-          "The folders you choose are kept on the phone and you write without a connection, but only on a UniVerso served over HTTPS. Without HTTPS, or in an ordinary browser, you work directly on the server’s folder and, without a connection, you cannot edit.",
+          "The Android one installs from its APK file; the iPad and iPhone one through AltStore Classic, which signs the app with your Apple ID for 7 days at a time and renews it by itself with the computer on the same network. In a phone’s browser, without the app, offline needs a UniVerso served over HTTPS.",
       },
       {
         lead: "No plugins.",
         textHtml:
-          "Neither Obsidian’s nor its own. A plugin system is planned; Obsidian’s plugins do not run in Verso.",
+          "Neither Obsidian’s nor its own. Third-party plugins come after V1; Obsidian’s do not run in Verso.",
       },
       {
         lead: "Without an account you only read.",
         textHtml:
-          "A read link opens a folder or a note for anyone, with no account, but only to read. To edit together, a person needs an account on the same UniVerso.",
+          "A read link opens a folder or a note for anyone, with no account, but only to read. To edit together, a person needs an account on the UniVerso, or on the computer that serves the table.",
       },
       {
         lead: "No end-to-end encryption.",
@@ -318,7 +328,7 @@ export const en: Copy = {
       },
       {
         lead: "Not yet Dropbox, OneDrive or Google Drive.",
-        textHtml: "The desktop app already syncs a folder with a UniVerso, with a WebDAV server (such as Nextcloud) or with an S3 bucket. Dropbox, OneDrive and Google Drive are planned for V1 (<a href=\"/en/features/#roadmap\">roadmap</a>).",
+        textHtml: "The desktop and Android apps already sync a folder with a UniVerso, with a WebDAV server (such as Nextcloud) or with an S3 bucket. Dropbox, OneDrive and Google Drive are planned for V1 (<a href=\"/en/features/#roadmap\">roadmap</a>).",
       },
       {
         lead: "The apps still warn at install.",
@@ -333,14 +343,14 @@ export const en: Copy = {
     introHtml: [
       "The table puts Verso beside the tools people who keep notes and people who run tabletop games tend to use, with what each one does and does not do.",
       "<strong>Where Verso is ahead:</strong> the notes are Markdown files you own, which Obsidian opens too; the server is yours; several people edit the same note, the same board and the same base live; and there is no paid plan. Obsidian keeps files but does not edit live without a third-party plugin; Notion and LegendKeeper edit live but keep the notes in their own service.",
-      "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a <a href=\"/en/download/\">download here</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
+      "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a <a href=\"/en/download/\">download here</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone, its apps are outside the stores (an APK on Android, AltStore on iPad and iPhone). For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
     ],
     pains: {
       title: "Three common problems, and what Verso does about them",
       items: [
         { lead: "The game master’s dilemma.", textHtml: "Verso shares per folder and per note: the players’ folder read-only, yours yours alone, in the same vault, with no duplicated notes. And a secret inside a note — a paragraph only the game master sees — never reaches someone who only reads. World Anvil, Kanka, LegendKeeper and Foundry VTT have secrets too." },
         { lead: "Tied to a service.", textHtml: "The notes are <code>.md</code> files in a folder of yours, and the server is a machine of yours. Leaving Verso is closing the app: the folder still opens in Obsidian or any editor." },
-        { lead: "Keeping devices in step.", textHtml: "With a UniVerso, the folder stays in step across Mac, Windows and Linux and opens in a browser and on a phone, with no sync subscription. But someone has to keep the server running, and on a phone offline needs HTTPS." },
+        { lead: "Keeping devices in step.", textHtml: "With a UniVerso, the folder stays in step across Mac, Windows, Linux, Android, iPad and iPhone and opens in a browser, with no sync subscription. But someone has to keep the server running." },
       ],
     },
     tableCaption: "Verso and other note and RPG tools, capability by capability",
@@ -422,7 +432,7 @@ export const en: Copy = {
         group: "data",
         label: "Database views",
         cells: [
-          { mark: "yes", text: "bases: table, kanban, list, calendar" },
+          { mark: "yes", text: "bases: table, cards, list, kanban, calendar and map" },
           { mark: "yes", text: "Bases: table, cards, list, kanban" },
           { mark: "yes", text: "in the new version" },
           { mark: "yes", text: "yes" },
@@ -462,7 +472,7 @@ export const en: Copy = {
         group: "collab",
         label: "Your own server",
         cells: [
-          { mark: "yes", text: "UniVerso: Docker, .deb, .rpm" },
+          { mark: "yes", text: "UniVerso (Docker, .deb, .rpm) or the desktop app itself" },
           { mark: "no", text: "no; Sync and Publish are theirs" },
           { mark: "partial", text: "the new version’s sync server (alpha)" },
           { mark: "no", text: "no" },
@@ -502,7 +512,7 @@ export const en: Copy = {
         group: "collab",
         label: "Sharing with permissions",
         cells: [
-          { mark: "yes", text: "per folder or subfolder: read or write" },
+          { mark: "yes", text: "per folder or subfolder, read or write; at a table, per note, board or file" },
           { mark: "partial", text: "the whole vault, through Sync (paid)" },
           { mark: "partial", text: "the whole graph" },
           { mark: "yes", text: "per page; per-row rules in databases" },
@@ -562,7 +572,7 @@ export const en: Copy = {
         group: "rpg",
         label: "Interactive maps",
         cells: [
-          { mark: "partial", text: "an image on a board, with pins that open notes and secret pins; no layers" },
+          { mark: "partial", text: "an image on a board, with pins that open notes and secret pins; a geographic map in bases; no layers" },
           { mark: "partial", text: "geographic map in bases; fantasy maps by plugin" },
           { mark: "no", text: "no" },
           { mark: "partial", text: "geographic map in databases" },
@@ -642,7 +652,7 @@ export const en: Copy = {
         group: "platforms",
         label: "Phone",
         cells: [
-          { mark: "partial", text: "in the browser, through a UniVerso; offline in the folders you choose, over HTTPS; no store app" },
+          { mark: "partial", text: "Android (APK) and iPad and iPhone (AltStore) apps, outside the stores, with the notes on the device; and in the browser, through a UniVerso" },
           { mark: "yes", text: "iOS and Android apps, offline" },
           { mark: "yes", text: "apps; the new version’s in testing" },
           { mark: "yes", text: "apps, with offline" },
@@ -745,14 +755,14 @@ export const en: Copy = {
       {
         q: "Is it compatible with Obsidian?",
         aHtml: [
-          "Verso extends Obsidian’s dialect and never contradicts it: <code>[[…]]</code> links, embeds, callouts, tags, frontmatter properties and <code>.canvas</code> boards (JSON Canvas) open as in Obsidian, and no extension of Verso changes the meaning of something that already exists. Verso’s configuration lives outside the folder, so the same vault opens in both.",
+          "Verso extends Obsidian’s dialect and never contradicts it: <code>[[…]]</code> links, embeds, callouts, tags, frontmatter properties, <code>.canvas</code> boards (JSON Canvas) and <code>.base</code> bases open as in Obsidian, and no extension of Verso changes the meaning of something that already exists. Verso’s configuration lives outside the folder, so the same vault opens in both.",
           "Verso is not an Obsidian clone and does not run its plugins.",
         ],
       },
       {
         q: "What about privacy?",
         aHtml: [
-          "The app sends no telemetry. It reaches the network only for addresses in your notes or that you click, to check for a new version, and for the UniVerso you set up.",
+          "The app sends no telemetry. It reaches the network only for addresses in your notes or that you click, to check for a new version, for the UniVerso or the cloud (WebDAV, S3) you set up and, if you turn on the internet link, for Cloudflare, from which it downloads <code>cloudflared</code>.",
           "On a UniVerso, the notes live on the host’s disk — and whoever hosts can read them (see above).",
           "This site has no analytics and no cookies. The waitlist keeps your e-mail, the page’s language and the time, and serves only to tell you when a new version comes out.",
         ],
@@ -819,7 +829,7 @@ export const en: Copy = {
             title: "Boards",
             itemsHtml: [
               "<code>.canvas</code> files, Obsidian’s format, drawn with Excalidraw.",
-              "The folder’s notes as cards you edit in place; pictures, which you can crop, and PDFs.",
+              "The folder’s notes as cards you edit in place; text cards, pictures, which you can crop, PDFs, web pages and data files.",
               "Arrows that keep the point they were drawn to, and the drawings of Obsidian’s Excalidraw plugin.",
               "Maps: a picture under the board, pins that open notes, and secret pins the players do not see.",
             ],
@@ -843,8 +853,9 @@ export const en: Copy = {
           {
             title: "Reading and keeping",
             itemsHtml: [
-              "A PDF reader with two-page spreads, pictures and HTML files.",
+              "A PDF reader with two-page spreads, pictures, audio and HTML files.",
               "Web pages kept as notes.",
+              "A <code>.md</code> file opens by itself, with no folder, as in a notepad; a JSON, YAML, TOML, XML or CSV file opens as a diagram.",
             ],
           },
           {
@@ -955,11 +966,11 @@ export const en: Copy = {
             title: "Ready, in the test version: the Table and sharing",
             state: "ready",
             items: [
-              { lead: "The Table.", textHtml: "A log of rolls and chat that everyone who opened a UniVerso folder sees, with the pictures sent. The server does the rolling, and each roll carries the name of who rolled; a player can make a secret roll. Drag a roll and it becomes a card in your notes." },
+              { lead: "The Table.", textHtml: "A log of rolls and chat that everyone who opened the table’s folder sees, on a UniVerso or on the computer that serves it, with the pictures sent. The server does the rolling, and each roll carries the name of who rolled; a player can make a secret roll. Drag a roll and it becomes a card in your notes." },
               { lead: "A folder is a campaign.", textHtml: "The folder’s owner turns it into a table, invites players with a single-use link and releases each note to the whole table or to some players; each note says who sees it. A folder can have more than one table, each with its own chat." },
               { lead: "One access model.", textHtml: "Any note, board, file or folder has the Access window: who does not see it, who sees it and who edits it. A player who edits a board edits it live, with only what they may see, and can put pictures into it; four rights, all off at first, say the rest: images, files, creating notes and creating boards." },
               { lead: "Read links, no account.", textHtml: "From the UniVerso, a folder or a note at an address anyone opens in a browser to read, with an expiry and a passphrase if you want, and that you revoke. A reader does not receive the game master’s secrets." },
-              { lead: "Sync with a cloud you already have.", textHtml: "In the desktop app, a folder can stay in step with a WebDAV server (Nextcloud and the like) or an S3 bucket (Amazon, MinIO, Cloudflare R2), with no server of your own. The app checks the service before it uses it." },
+              { lead: "Sync with a cloud you already have.", textHtml: "In the desktop and Android apps, a folder can stay in step with a WebDAV server (Nextcloud and the like) or an S3 bucket (Amazon, MinIO, Cloudflare R2), with no server of your own. The app checks the service before it uses it." },
             ],
           },
           {
@@ -968,6 +979,8 @@ export const en: Copy = {
             items: [
               { lead: "More of the Table.", textHtml: "The game master’s dashboard, showing a note to the table, sessions, “new” notices, seeing as a player sees, a players’ area on boards and map pins." },
               { lead: "Dropbox, OneDrive and Google Drive.", textHtml: "Sync with those services, besides the WebDAV and S3 that already exist." },
+              { lead: "Files Dropbox and Google Drive keep only in the cloud.", textHtml: "On a Mac, a file those services keep only in the cloud is never read as deleted, as with iCloud already." },
+              { lead: "Boards in shared folders.", textHtml: "Someone who receives a shared folder opens its boards with every card in place, and edits them together, live." },
               { lead: "Confirming it is you on a linked device.", textHtml: "The system’s own check and a key for each device." },
               { lead: "A signed Windows app.", textHtml: "No SmartScreen warning when installing. The Mac app is not notarized by Apple: it opens through System Settings’ “Open Anyway”, once." },
               { lead: "Merging by block what two people edited offline.", textHtml: "Two people who edited the same note offline have their edits merged, not copied." },
@@ -992,12 +1005,12 @@ export const en: Copy = {
       meta: {
         title: "UniVerso, Verso’s server",
         description:
-          "UniVerso is Verso as a server, on a machine of yours: the folder in step across computers, in a browser and on a phone, shared and edited together. Tested with dozens of devices at once on a 1-core, 1 GB VPS, with nothing lost.",
+          "UniVerso is Verso as a server, on a machine of yours: the folder in step across computers, in a browser and on a phone, shared and edited together. Tested with dozens of devices at once on a 1-core, 1 GB machine the size of the smallest VPS, with nothing lost.",
       },
       eyebrow: "UniVerso · Verso’s server",
       title: "The server is yours.",
       ledeHtml:
-        "UniVerso is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites. Each folder has an owner, editors and readers — and a folder can become a role-playing campaign’s table.",
+        "UniVerso is Verso as a server: one program, installed as a Docker image (amd64 and arm64), as a <code>.deb</code> or <code>.rpm</code> package with systemd, or from an archive. It holds the accounts and the folders — ordinary folders of Markdown on the server’s disk. Nobody signs themselves up: the admin invites, and so does a game master the admin lets make folders, for their own tables. Each folder has an owner, editors and readers — and a folder can become a role-playing campaign’s table.",
       stepsTitle: "In three steps",
       featuresTitle: "What it does",
       gallery: {

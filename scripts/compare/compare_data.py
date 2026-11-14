@@ -66,7 +66,7 @@ ROWS = [
   ('Y', 'local e offline', 'local and offline'),
  ]),
  (('Servidor próprio', 'Your own server'), [
-  ('Y', 'UniVerso: Docker, .deb, .rpm', 'UniVerso: Docker, .deb, .rpm'),
+  ('Y', 'UniVerso (Docker, .deb, .rpm) ou o próprio app', 'UniVerso (Docker, .deb, .rpm) or the desktop app itself'),
   ('N', 'não; Sync e Publish são deles', 'no; Sync and Publish are theirs'),
   ('P', 'o servidor de sync da versão nova (alfa)', 'the new version’s sync server (alpha)'),
   ('N', 'não', 'no'),
@@ -98,7 +98,7 @@ ROWS = [
   ('N', 'não; jogo solo', 'no; solo play'),
  ]),
  (('Partilha com permissões', 'Sharing with permissions'), [
-  ('Y', 'por pasta ou subpasta: ler ou escrever', 'per folder or subfolder: read or write'),
+  ('Y', 'por pasta ou subpasta, ler ou escrever; numa mesa, por nota, board ou arquivo', 'per folder or subfolder, read or write; at a table, per note, board or file'),
   ('P', 'o cofre inteiro, pelo Sync (pago)', 'the whole vault, through Sync (paid)'),
   ('P', 'o grafo inteiro', 'the whole graph'),
   ('Y', 'por página; regras por linha nas bases', 'per page; per-row rules in databases'),
@@ -146,7 +146,7 @@ ROWS = [
   ('Y', 'mais de 50 oráculos, tabelas próprias, dados', '50+ oracles, custom tables, dice'),
  ]),
  (('Mapas interativos', 'Interactive maps'), [
-  ('P', 'uma imagem num board, com pinos que abrem notas e pinos secretos; sem camadas', 'an image on a board, with pins that open notes and secret pins; no layers'),
+  ('P', 'uma imagem num board, com pinos que abrem notas e pinos secretos; mapa geográfico nas bases; sem camadas', 'an image on a board, with pins that open notes and secret pins; a geographic map in bases; no layers'),
   ('P', 'mapa geográfico nas bases; de mundo, por plugin', 'geographic map in bases; fantasy maps by plugin'),
   ('N', 'não', 'no'),
   ('P', 'mapa geográfico nas bases de dados', 'geographic map in databases'),
@@ -178,7 +178,7 @@ ROWS = [
   ('I', 'o site não diz', 'the site does not say'),
  ]),
  (('Visões de banco de dados', 'Database views'), [
-  ('Y', 'bases: tabela, kanban, lista, calendário', 'bases: table, kanban, list, calendar'),
+  ('Y', 'bases: tabela, cartões, lista, kanban, calendário e mapa', 'bases: table, cards, list, kanban, calendar and map'),
   ('Y', 'Bases: tabela, cartões, lista, kanban', 'Bases: table, cards, list, kanban'),
   ('Y', 'na versão nova', 'in the new version'),
   ('Y', 'sim', 'yes'),
@@ -226,7 +226,7 @@ ROWS = [
   ('N', 'não; extras pagos', 'no; paid extras'),
  ]),
  (('Celular', 'Phone'), [
-  ('P', 'no navegador, por um UniVerso; offline nas pastas que você escolher, com HTTPS; sem app de loja', 'in the browser, through a UniVerso; offline in the folders you choose, over HTTPS; no store app'),
+  ('P', 'apps de Android (APK) e de iPad e iPhone (AltStore), fora das lojas, com as notas no aparelho; e no navegador, por um UniVerso', 'Android (APK) and iPad and iPhone (AltStore) apps, outside the stores, with the notes on the device; and in the browser, through a UniVerso'),
   ('Y', 'apps iOS e Android, offline', 'iOS and Android apps, offline'),
   ('Y', 'apps; os da versão nova em teste', 'apps; the new version’s in testing'),
   ('Y', 'apps, com offline', 'apps, with offline'),
@@ -296,13 +296,13 @@ PT = dict(
  intro=[
   "A tabela põe o Verso ao lado das ferramentas que quem guarda notas e quem mestra RPG costuma usar, com o que cada uma faz e o que não faz.",
   "<strong>Onde o Verso está à frente:</strong> as notas são arquivos Markdown seus, que o Obsidian também abre; o servidor é seu; várias pessoas editam a mesma nota, o mesmo board e a mesma base ao vivo; e não há plano pago. O Obsidian guarda arquivos, mas não edita ao vivo sem plugin de terceiros; o Notion e o LegendKeeper editam ao vivo, mas guardam as notas no serviço deles.",
-  "<strong>Onde está atrás:</strong> o Verso ainda está em teste (beta), com download na <a href=\"https://github.com/SergioSJS/verso/releases\">página de versões do GitHub</a>. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, é pelo navegador, sem app de loja, e o offline pede HTTPS. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
+  "<strong>Onde está atrás:</strong> o Verso ainda está em teste (beta), com <a href=\"/baixar/\">download aqui</a>. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, os apps ficam fora das lojas (o APK no Android, a AltStore no iPad e no iPhone). Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
  ],
  painsTitle="Três problemas comuns, e o que o Verso faz com eles",
  pains=[
   ("O dilema do mestre.", "O Verso partilha por pasta e por nota: a pasta dos jogadores com leitura, a sua só sua, no mesmo vault, sem duplicar notas. E um segredo dentro de uma nota — um parágrafo que só o mestre vê — nunca chega a quem só lê. World Anvil, Kanka, LegendKeeper e Foundry VTT também têm segredos."),
   ("Preso a um serviço.", "As notas são arquivos <code>.md</code> numa pasta sua, e o servidor é uma máquina sua. Sair do Verso é fechar o app: a pasta continua abrindo no Obsidian ou em qualquer editor."),
-  ("Sincronizar entre aparelhos.", "Com um UniVerso, a pasta fica em dia entre Mac, Windows e Linux e abre no navegador e no celular, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado, e no celular o offline pede HTTPS."),
+  ("Sincronizar entre aparelhos.", "Com um UniVerso, a pasta fica em dia entre Mac, Windows, Linux, Android, iPad e iPhone e abre no navegador, sem assinatura de sincronização. Mas alguém precisa manter o servidor ligado."),
  ],
  caption="O Verso e outras ferramentas de notas e de RPG, capacidade por capacidade",
  hint="A tabela rola para o lado; a coluna das capacidades e a do Verso ficam paradas.",
@@ -317,13 +317,13 @@ EN = dict(
  intro=[
   "The table puts Verso beside the tools people who keep notes and people who run tabletop games tend to use, with what each one does and does not do.",
   "<strong>Where Verso is ahead:</strong> the notes are Markdown files you own, which Obsidian opens too; the server is yours; several people edit the same note, the same board and the same base live; and there is no paid plan. Obsidian keeps files but does not edit live without a third-party plugin; Notion and LegendKeeper edit live but keep the notes in their own service.",
-  "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a download on the <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
+  "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a <a href=\"/en/download/\">download here</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone, its apps are outside the stores (an APK on Android, AltStore on iPad and iPhone). For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
  ],
  painsTitle="Three common problems, and what Verso does about them",
  pains=[
   ("The game master’s dilemma.", "Verso shares per folder and per note: the players’ folder read-only, yours yours alone, in the same vault, with no duplicated notes. And a secret inside a note — a paragraph only the game master sees — never reaches someone who only reads. World Anvil, Kanka, LegendKeeper and Foundry VTT have secrets too."),
   ("Tied to a service.", "The notes are <code>.md</code> files in a folder of yours, and the server is a machine of yours. Leaving Verso is closing the app: the folder still opens in Obsidian or any editor."),
-  ("Keeping devices in step.", "With a UniVerso, the folder stays in step across Mac, Windows and Linux and opens in a browser and on a phone, with no sync subscription. But someone has to keep the server running, and on a phone offline needs HTTPS."),
+  ("Keeping devices in step.", "With a UniVerso, the folder stays in step across Mac, Windows, Linux, Android, iPad and iPhone and opens in a browser, with no sync subscription. But someone has to keep the server running."),
  ],
  caption="Verso and other note and RPG tools, capability by capability",
  hint="The table scrolls sideways; the capability column and Verso’s stay put.",
