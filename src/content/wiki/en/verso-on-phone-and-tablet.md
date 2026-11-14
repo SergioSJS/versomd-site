@@ -1,8 +1,8 @@
 ---
 title: "Verso on Phone and Tablet"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The bottom bar, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers."
 order: 28
-group: organize
+group: tools
 slug: "verso-on-phone-and-tablet"
 twin: "verso-no-celular-e-no-tablet"
 source: "demo-vault-en/28 - Verso on Phone and Tablet.md"

@@ -1,8 +1,8 @@
 ---
 title: "Desenhando no Board"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "A cola do Excalidraw: ferramentas, grupos, setas, camadas e atalhos."
 order: 21
-group: organize
+group: boards
 slug: "desenhando-no-board"
 twin: "drawing-on-the-board"
 source: "demo-vault/21 - Desenhando no Board.md"

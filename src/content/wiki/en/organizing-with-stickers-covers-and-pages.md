@@ -1,8 +1,8 @@
 ---
 title: "Organizing: stickers, covers and pages"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Stickers, colors, covers with repositioning, folder pages, manual ordering, hidden items and editing embedded notes."
 order: 11
-group: start
+group: organize
 slug: "organizing-with-stickers-covers-and-pages"
 twin: "organizando-com-figurinhas-capas-e-paginas"
 source: "demo-vault-en/11 - Organizing with Stickers, Covers and Pages.md"

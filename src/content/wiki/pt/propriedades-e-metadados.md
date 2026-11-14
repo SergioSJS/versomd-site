@@ -1,6 +1,6 @@
 ---
 title: "Propriedades e Metadados"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Como usar o frontmatter YAML com o painel de propriedades retrátil."
 order: 3
 group: start
 slug: "propriedades-e-metadados"

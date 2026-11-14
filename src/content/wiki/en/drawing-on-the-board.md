@@ -1,8 +1,8 @@
 ---
 title: "Drawing on the Board"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The Excalidraw cheat sheet: tools, groups, arrows, layers and shortcuts."
 order: 21
-group: organize
+group: boards
 slug: "drawing-on-the-board"
 twin: "desenhando-no-board"
 source: "demo-vault-en/21 - Drawing on the Board.md"

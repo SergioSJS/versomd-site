@@ -1,8 +1,8 @@
 ---
 title: "Visualização de Bases e Dados"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Como funcionam os arquivos `.base` e como incorporar exibições vivas nas suas notas."
 order: 14
-group: start
+group: organize
 slug: "visualizacao-de-bases-e-dados"
 twin: "bases-and-data-views"
 source: "demo-vault/14 - Visualização de Bases e Dados.md"

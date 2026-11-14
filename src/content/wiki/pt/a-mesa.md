@@ -1,6 +1,6 @@
 ---
 title: "A Mesa"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Um registro de todas as rolagens, sorteios e perguntas ao oráculo, com quem fez e de qual nota, no painel da direita; as de outras pessoas chegam com o nome delas."
 order: 25
 group: rpg
 slug: "a-mesa"

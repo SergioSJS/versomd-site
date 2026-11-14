@@ -1,8 +1,8 @@
 ---
 title: "Oracles and World Building"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The oracle that writes the answer into the highlight; random tables; the new-project wizard with the tree in view; maps from Watabou's generators, drawn by Verso; and each feature's switch in Settings."
 order: 24
-group: server
+group: rpg
 slug: "oracles-and-world-building"
 twin: "oraculos-e-criacao-de-mundos"
 source: "demo-vault-en/24 - Oracles and World Building.md"

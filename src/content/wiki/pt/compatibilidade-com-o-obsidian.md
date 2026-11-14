@@ -1,8 +1,8 @@
 ---
 title: "Compatibilidade com o Obsidian"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Para quem vem do Obsidian ou usa os dois: a mesma pasta, nada reescrito ao abrir, o que funciona igual, o que o Verso acrescenta, o que não existe e como experimentar."
 order: 38
-group: start
+group: tools
 slug: "compatibilidade-com-o-obsidian"
 twin: "compatibility-with-obsidian"
 source: "demo-vault/38 - Compatibilidade com o Obsidian.md"

@@ -1,8 +1,8 @@
 ---
 title: "Daily Notes, Calendar and Templates"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Daily chronological log, monthly calendar navigation and note automation with templates."
 order: 12
-group: start
+group: organize
 slug: "daily-notes-calendar-and-templates"
 twin: "notas-diarias-calendario-e-templates"
 source: "demo-vault-en/12 - Daily Notes, Calendar and Templates.md"

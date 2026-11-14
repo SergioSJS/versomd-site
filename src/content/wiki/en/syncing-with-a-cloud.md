@@ -1,6 +1,6 @@
 ---
 title: "Syncing with a Cloud"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "A folder kept the same as a folder in a Nextcloud (WebDAV) or an S3 bucket you already have, with no server: the form, the S3 key limited to one folder, the password in the keychain and what to expect."
 order: 34
 group: server
 slug: "syncing-with-a-cloud"

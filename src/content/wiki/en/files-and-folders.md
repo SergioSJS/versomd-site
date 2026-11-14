@@ -1,6 +1,6 @@
 ---
 title: "Files and Folders"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Creating, renaming without breaking links, moving, attaching images and the trash."
 order: 7
 group: organize
 slug: "files-and-folders"

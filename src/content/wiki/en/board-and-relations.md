@@ -1,8 +1,8 @@
 ---
 title: "Board and Relations"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Boards (`.canvas`) drawn with Excalidraw, with the folder's notes as cards, and typed relations in the frontmatter."
 order: 20
-group: organize
+group: boards
 slug: "board-and-relations"
 twin: "board-e-relacoes"
 source: "demo-vault-en/20 - Board and Relations.md"

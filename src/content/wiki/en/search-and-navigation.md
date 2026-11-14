@@ -1,8 +1,8 @@
 ---
 title: "Search and Navigation"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Searching, opening by name, replacing text across all notes, backlinks and bookmarks."
 order: 9
-group: boards
+group: organize
 slug: "search-and-navigation"
 twin: "busca-e-navegacao"
 source: "demo-vault-en/09 - Search and Navigation.md"

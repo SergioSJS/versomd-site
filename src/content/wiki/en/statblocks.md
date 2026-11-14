@@ -1,8 +1,8 @@
 ---
 title: "Statblocks"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "An example of each `statblock` layout, with dice and counters that write to the note, and the layout editor. A complete example, the Fractal, is in the Fractal Campaign."
 order: 23
-group: server
+group: rpg
 slug: "statblocks"
 twin: "fichas"
 source: "demo-vault-en/23 - Statblocks.md"

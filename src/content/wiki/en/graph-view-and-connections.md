@@ -1,8 +1,8 @@
 ---
 title: "Graph View and Connections"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "How to explore the web of relations between your notes with intuitive zoom and pan."
 order: 15
-group: start
+group: organize
 slug: "graph-view-and-connections"
 twin: "visualizacao-de-grafo-e-conexoes"
 source: "demo-vault-en/15 - Graph View and Connections.md"

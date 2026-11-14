@@ -1,8 +1,8 @@
 ---
 title: "Verso num Servidor"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "O `verso serve`: instalar, contas por convite, dono, editores e leitores, editar junto e o app desktop conectado."
 order: 30
-group: organize
+group: server
 slug: "verso-num-servidor"
 twin: "verso-on-a-server"
 source: "demo-vault/30 - Verso num Servidor.md"

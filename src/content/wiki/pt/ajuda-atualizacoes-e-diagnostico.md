@@ -1,8 +1,8 @@
 ---
 title: "Ajuda, Atualizações e Diagnóstico"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Atualizações, relatar um problema e o console."
 order: 37
-group: start
+group: tools
 slug: "ajuda-atualizacoes-e-diagnostico"
 twin: "help-updates-and-diagnostics"
 source: "demo-vault/37 - Ajuda, Atualizações e Diagnóstico.md"

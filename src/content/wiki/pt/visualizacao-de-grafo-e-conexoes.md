@@ -1,8 +1,8 @@
 ---
 title: "Visualização de Grafo e Conexões"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Como explorar a teia de relações entre suas anotações com zoom e pan intuitivos."
 order: 15
-group: start
+group: organize
 slug: "visualizacao-de-grafo-e-conexoes"
 twin: "graph-view-and-connections"
 source: "demo-vault/15 - Visualização de Grafo e Conexões.md"

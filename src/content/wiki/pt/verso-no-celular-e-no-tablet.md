@@ -1,8 +1,8 @@
 ---
 title: "Verso no Celular e no Tablet"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "A barra de baixo, um painel por vez, segurar como clique direito, o cartão de um link, a barra do teclado e os leitores de tela."
 order: 28
-group: organize
+group: tools
 slug: "verso-no-celular-e-no-tablet"
 twin: "verso-on-phone-and-tablet"
 source: "demo-vault/28 - Verso no Celular e no Tablet.md"

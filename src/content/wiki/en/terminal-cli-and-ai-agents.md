@@ -1,8 +1,8 @@
 ---
 title: "Terminal, CLI and AI Agents"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "A terminal of this computer in a tab (turning it on, opening it, the keys and what a program run there does to the files), the `verso` command to search from the terminal, the folder in AI agents through MCP, and the buttons that find Claude Code, Gemini CLI and the other AI tools."
 order: 35
-group: start
+group: tools
 slug: "terminal-cli-and-ai-agents"
 twin: "terminal-cli-e-agentes-de-ia"
 source: "demo-vault-en/35 - Terminal, CLI and AI Agents.md"

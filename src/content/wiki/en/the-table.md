@@ -1,6 +1,6 @@
 ---
 title: "The Table"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "One log of every roll, table roll and oracle question, with who made it and from which note, in the right panel; other people's rolls arrive with their names."
 order: 25
 group: rpg
 slug: "the-table"

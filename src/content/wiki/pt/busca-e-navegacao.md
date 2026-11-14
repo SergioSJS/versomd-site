@@ -1,8 +1,8 @@
 ---
 title: "Busca e Navegação"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Buscar, abrir pelo nome, trocar texto em todas as notas, backlinks e favoritos."
 order: 9
-group: boards
+group: organize
 slug: "busca-e-navegacao"
 twin: "search-and-navigation"
 source: "demo-vault/09 - Busca e Navegação.md"

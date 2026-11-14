@@ -1,6 +1,6 @@
 ---
 title: "Open a Single File"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "A double-click on an `.md` opens the file alone, with no folder, in a window with no tree or index and nothing written beside it; and how to make Verso the default app for `.md` on each system."
 order: 8
 group: organize
 slug: "open-a-single-file"

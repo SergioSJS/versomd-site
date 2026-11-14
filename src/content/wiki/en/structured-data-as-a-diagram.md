@@ -1,8 +1,8 @@
 ---
 title: "Structured Data as a Diagram"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "A JSON, YAML, TOML, XML or CSV file, or a code block in one of those formats, seen as boxes and lines to move, collapse and search; read-only."
 order: 16
-group: tools
+group: organize
 slug: "structured-data-as-a-diagram"
 twin: "dados-estruturados-como-diagrama"
 source: "demo-vault-en/16 - Structured Data as a Diagram.md"

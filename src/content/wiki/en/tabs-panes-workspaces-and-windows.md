@@ -1,8 +1,8 @@
 ---
 title: "Tabs, Panes, Workspaces and Windows"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Pinned and preview tabs, side-by-side panes, workspaces and windows."
 order: 10
-group: boards
+group: tools
 slug: "tabs-panes-workspaces-and-windows"
 twin: "abas-paineis-espacos-de-trabalho-e-janelas"
 source: "demo-vault-en/10 - Tabs, Panes, Workspaces and Windows.md"

@@ -1,8 +1,8 @@
 ---
 title: "Installing Your UniVerso, Step by Step"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "From zero to a server of your own, for someone who has never set one up: the compose file or the install script, the first admin, HTTPS (optional, for offline use and notifications), the backup."
 order: 31
-group: rpg
+group: server
 slug: "installing-your-universo-step-by-step"
 twin: "instalar-o-seu-universo-passo-a-passo"
 source: "demo-vault-en/31 - Installing Your UniVerso, Step by Step.md"

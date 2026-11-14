@@ -1,6 +1,6 @@
 ---
 title: "Links, Anchors and Embedded Notes"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Simple wikilinks, links with aliases, jumps to headings (`#Heading`), links to missing notes and note embedding."
 order: 2
 group: start
 slug: "links-anchors-and-embedded-notes"

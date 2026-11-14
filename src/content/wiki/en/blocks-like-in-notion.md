@@ -1,8 +1,8 @@
 ---
 title: "Blocks Like in Notion"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Dragging paragraphs and items by the ⋮⋮ handle, the + that opens the `/` menu, each block's menu and Notion's keys."
 order: 5
-group: organize
+group: start
 slug: "blocks-like-in-notion"
 twin: "blocos-como-no-notion"
 source: "demo-vault-en/05 - Blocks Like in Notion.md"

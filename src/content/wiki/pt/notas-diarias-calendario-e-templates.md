@@ -1,8 +1,8 @@
 ---
 title: "Notas Diárias, Calendário e Templates"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Registro cronológico diário, navegação mensal pelo calendário e automação de notas com templates."
 order: 12
-group: start
+group: organize
 slug: "notas-diarias-calendario-e-templates"
 twin: "daily-notes-calendar-and-templates"
 source: "demo-vault/12 - Notas Diárias, Calendário e Templates.md"

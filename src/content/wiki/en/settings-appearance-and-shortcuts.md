@@ -1,8 +1,8 @@
 ---
 title: "Settings, Appearance and Shortcuts"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Theme, palette, fonts, language and your own shortcuts."
 order: 36
-group: start
+group: tools
 slug: "settings-appearance-and-shortcuts"
 twin: "ajustes-aparencia-e-atalhos"
 source: "demo-vault-en/36 - Settings, Appearance and Shortcuts.md"

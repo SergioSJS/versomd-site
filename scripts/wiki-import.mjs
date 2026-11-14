@@ -31,14 +31,18 @@ const LANGS = {
 };
 
 // Reader-facing groups, by lesson number (the vault's lessons are one flat
-// folder, so the grouping is the site's).
+// folder, so the grouping is the site's). The numbers follow the welcome
+// note's blocks (I. Getting started … VII. Advanced, renumbered in the
+// product on 2026-11-04): I = start; II and III = organize, but for the
+// windows lesson; IV = boards; V = rpg; VI = server, but for the phone
+// lesson; the windows and phone lessons and VII = tools.
 const GROUPS = {
-  start: [0, 1, 2, 3, 11, 12, 14, 15],
-  organize: [4, 5, 6, 7, 8, 19, 20, 21, 28, 30],
-  boards: [9, 10],
-  tools: [13, 16, 17, 18, 22, 33],
-  server: [23, 24, 34, 29],
-  rpg: [25, 26, 27, 31, 32],
+  start: [0, 1, 2, 3, 4, 5, 6],
+  organize: [7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  boards: [20, 21],
+  tools: [10, 28, 35, 36, 37, 38],
+  server: [29, 30, 31, 32, 33, 34],
+  rpg: [22, 23, 24, 25, 26, 27],
 };
 const groupOf = (n) => Object.keys(GROUPS).find((g) => GROUPS[g].includes(n)) ?? "start";
 
@@ -111,12 +115,13 @@ for (const lang of ["pt", "en"]) for (const p of pages[lang]) {
   index[lang].set(p.stem.replace(/^\d\d - /, "").toLowerCase(), p);
 }
 
-// Descriptions come from the welcome note's "map": `N. [[Note]] — what it covers`.
+// Descriptions come from the welcome note's "map": `- [[Note]] — what it
+// covers` (a numbered `N. [[Note]] — …` before 2026-11-04).
 function descriptions(lang) {
   const map = new Map();
   const welcome = pages[lang].find((p) => p.n === 0);
   for (const line of welcome.body.split("\n")) {
-    const m = line.match(/^\d+\.\s+\[\[([^\]|]+)(?:\|[^\]]*)?\]\]\s+[—-]\s+(.*)$/);
+    const m = line.match(/^(?:\d+\.|[-*])\s+\[\[([^\]|]+)(?:\|[^\]]*)?\]\]\s+[—-]\s+(.*)$/);
     if (m) map.set(m[1].trim().toLowerCase(), m[2].replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2").replace(/\[\[([^\]]+)\]\]/g, "$1").trim());
   }
   return map;

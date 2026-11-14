@@ -1,8 +1,8 @@
 ---
 title: "Blocos como no Notion"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Arrastar parágrafos e itens pela alça ⋮⋮, o + que abre o menu `/`, o menu de cada bloco e as teclas do Notion."
 order: 5
-group: organize
+group: start
 slug: "blocos-como-no-notion"
 twin: "blocks-like-in-notion"
 source: "demo-vault/05 - Blocos como no Notion.md"

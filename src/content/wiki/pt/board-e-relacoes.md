@@ -1,8 +1,8 @@
 ---
 title: "Board e Relações"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Boards (`.canvas`) desenhados com o Excalidraw, com as notas da pasta como cartões, e relações tipadas no frontmatter."
 order: 20
-group: organize
+group: boards
 slug: "board-e-relacoes"
 twin: "board-and-relations"
 source: "demo-vault/20 - Board e Relações.md"

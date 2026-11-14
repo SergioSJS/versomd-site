@@ -1,6 +1,6 @@
 ---
 title: "Mesa pela Internet"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "O Verso do seu computador vira um servidor: um link da Cloudflare (modo de teste) ou o seu próprio endereço, convites, sentar à mesa, links de leitura e quem entra como."
 order: 29
 group: server
 slug: "mesa-pela-internet"

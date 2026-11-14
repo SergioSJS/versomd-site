@@ -1,8 +1,8 @@
 ---
 title: "Fichas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Um exemplo de cada layout de ficha `statblock`, com dados e contadores que gravam na nota, e o editor de layouts. Um exemplo completo, o Fractal, está na Campanha Fractal."
 order: 23
-group: server
+group: rpg
 slug: "fichas"
 twin: "statblocks"
 source: "demo-vault/23 - Fichas.md"

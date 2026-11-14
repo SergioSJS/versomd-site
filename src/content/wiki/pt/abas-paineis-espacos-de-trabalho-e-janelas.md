@@ -1,8 +1,8 @@
 ---
 title: "Abas, Painéis, Espaços de Trabalho e Janelas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Abas fixas e de pré-visualização, painéis lado a lado, espaços de trabalho e janelas."
 order: 10
-group: boards
+group: tools
 slug: "abas-paineis-espacos-de-trabalho-e-janelas"
 twin: "tabs-panes-workspaces-and-windows"
 source: "demo-vault/10 - Abas, Painéis, Espaços de Trabalho e Janelas.md"

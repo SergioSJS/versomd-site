@@ -1,6 +1,6 @@
 ---
 title: "Links, Âncoras e Notas Incorporadas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Wikilinks simples, links com apelidos, saltos para cabeçalhos (`#Título`), links para notas ausentes e incorporação de notas."
 order: 2
 group: start
 slug: "links-ancoras-e-notas-incorporadas"

@@ -1,8 +1,8 @@
 ---
 title: "UniVerso on a Free Oracle Server"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The route for someone who has never set up a server: a free Oracle machine, the installer's menu, HTTPS with a free name, the first admin and the phone."
 order: 33
-group: tools
+group: server
 slug: "universo-on-a-free-oracle-server"
 twin: "universo-num-servidor-gratis-da-oracle"
 source: "demo-vault-en/33 - UniVerso on a Free Oracle Server.md"

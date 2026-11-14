@@ -1,8 +1,8 @@
 ---
 title: "Notas Tipadas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "`type:` e um schema: o formulário de um tipo, o que não cabe marcado, nada escrito sem você, e `type:` na busca."
 order: 13
-group: tools
+group: organize
 slug: "notas-tipadas"
 twin: "typed-notes"
 source: "demo-vault/13 - Notas Tipadas.md"

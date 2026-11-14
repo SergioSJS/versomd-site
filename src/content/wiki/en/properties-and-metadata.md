@@ -1,6 +1,6 @@
 ---
 title: "Properties and Metadata"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "How to use YAML frontmatter with the collapsible properties panel."
 order: 3
 group: start
 slug: "properties-and-metadata"

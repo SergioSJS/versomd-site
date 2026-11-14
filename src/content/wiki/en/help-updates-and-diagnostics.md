@@ -1,8 +1,8 @@
 ---
 title: "Help, Updates and Diagnostics"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Updates, reporting a problem and the console."
 order: 37
-group: start
+group: tools
 slug: "help-updates-and-diagnostics"
 twin: "ajuda-atualizacoes-e-diagnostico"
 source: "demo-vault-en/37 - Help, Updates and Diagnostics.md"

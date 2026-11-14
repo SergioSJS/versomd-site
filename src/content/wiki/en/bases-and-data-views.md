@@ -1,8 +1,8 @@
 ---
 title: "Bases and Data Views"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "How `.base` files work and how to embed live views in your notes."
 order: 14
-group: start
+group: organize
 slug: "bases-and-data-views"
 twin: "visualizacao-de-bases-e-dados"
 source: "demo-vault-en/14 - Bases and Data Views.md"

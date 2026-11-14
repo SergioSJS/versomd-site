@@ -1,8 +1,8 @@
 ---
 title: "Dados Estruturados como Diagrama"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Um arquivo JSON, YAML, TOML, XML ou CSV, ou um bloco de código desses formatos, visto como caixas e linhas para mover, recolher e buscar; só leitura."
 order: 16
-group: tools
+group: organize
 slug: "dados-estruturados-como-diagrama"
 twin: "structured-data-as-a-diagram"
 source: "demo-vault/16 - Dados Estruturados como Diagrama.md"

@@ -1,6 +1,6 @@
 ---
 title: "Web Pages and HTML"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Web pages kept as notes, and HTML files."
 order: 19
 group: organize
 slug: "web-pages-and-html"

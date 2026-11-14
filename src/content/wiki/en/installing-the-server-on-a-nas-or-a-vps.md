@@ -1,8 +1,8 @@
 ---
 title: "Installing the server on a NAS or a VPS"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The server on a NAS (CasaOS, ZimaOS, others with Docker) or on a VPS: the compose file or the installer, HTTPS, the public address, backups and the trash's limits."
 order: 32
-group: rpg
+group: server
 slug: "installing-the-server-on-a-nas-or-a-vps"
 twin: "instalar-o-servidor-num-nas-ou-vps"
 source: "demo-vault-en/32 - Installing the server on a NAS or a VPS.md"

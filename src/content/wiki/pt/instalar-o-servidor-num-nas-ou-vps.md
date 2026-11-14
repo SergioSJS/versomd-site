@@ -1,8 +1,8 @@
 ---
 title: "Instalar o servidor num NAS ou VPS"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "O servidor num NAS (CasaOS, ZimaOS, outros com Docker) ou num VPS: o compose ou o instalador, o HTTPS, o endereço público, backups e os limites da lixeira."
 order: 32
-group: rpg
+group: server
 slug: "instalar-o-servidor-num-nas-ou-vps"
 twin: "installing-the-server-on-a-nas-or-a-vps"
 source: "demo-vault/32 - Instalar o servidor num NAS ou VPS.md"

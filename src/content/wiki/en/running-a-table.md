@@ -1,6 +1,6 @@
 ---
 title: "Running a Table"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "A campaign folder on a UniVerso: inviting the players, notes hidden until you release them, links to what has not appeared yet drawn with a padlock, who edits what, and the table's limits."
 order: 26
 group: rpg
 slug: "running-a-table"

@@ -1,8 +1,8 @@
 ---
 title: "Diagramas Mermaid"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Fluxogramas, sequências e outros diagramas escritos em texto e desenhados na nota."
 order: 17
-group: tools
+group: organize
 slug: "diagramas-mermaid"
 twin: "mermaid-diagrams"
 source: "demo-vault/17 - Diagramas Mermaid.md"

@@ -1,8 +1,8 @@
 ---
 title: "Typed Notes"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "`type:` and a schema: a type's form, what doesn't fit marked, nothing written without you, and `type:` in search."
 order: 13
-group: tools
+group: organize
 slug: "typed-notes"
 twin: "notas-tipadas"
 source: "demo-vault-en/13 - Typed Notes.md"

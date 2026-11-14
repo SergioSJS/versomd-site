@@ -1,8 +1,8 @@
 ---
 title: "Escrevendo no Editor"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Os modos Leitura, Editar e Fonte, a barra de formatação, o menu `/` e o salvamento."
 order: 4
-group: organize
+group: start
 slug: "escrevendo-no-editor"
 twin: "writing-in-the-editor"
 source: "demo-vault/04 - Escrevendo no Editor.md"

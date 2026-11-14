@@ -1,8 +1,8 @@
 ---
 title: "Dice and Random Tables"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "`dice:` in a note rolls dice, a table or list with `^id` draws a row; nothing is written, and in a shared note everyone sees it."
 order: 22
-group: tools
+group: rpg
 slug: "dice-and-random-tables"
 twin: "dados-e-tabelas-sorteadas"
 source: "demo-vault-en/22 - Dice and Random Tables.md"

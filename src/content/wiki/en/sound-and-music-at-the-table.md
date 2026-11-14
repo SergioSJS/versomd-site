@@ -1,6 +1,6 @@
 ---
 title: "Sound and Music at the Table"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The game master plays a sound file and everyone at the table hears it at the same point, each with their own volume; a note of sound links becomes the soundboard, and whoever does not see the file does not hear it."
 order: 27
 group: rpg
 slug: "sound-and-music-at-the-table"

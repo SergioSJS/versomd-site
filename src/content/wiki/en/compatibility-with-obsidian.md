@@ -1,8 +1,8 @@
 ---
 title: "Compatibility with Obsidian"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "For anyone coming from Obsidian or using both: the same folder, nothing rewritten on open, what works the same, what Verso adds, what does not exist and how to try it."
 order: 38
-group: start
+group: tools
 slug: "compatibility-with-obsidian"
 twin: "compatibilidade-com-o-obsidian"
 source: "demo-vault-en/38 - Compatibility with Obsidian.md"

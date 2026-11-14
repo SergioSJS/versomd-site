@@ -1,6 +1,6 @@
 ---
 title: "Páginas Web e HTML"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Páginas da web guardadas como notas e arquivos HTML."
 order: 19
 group: organize
 slug: "paginas-web-e-html"

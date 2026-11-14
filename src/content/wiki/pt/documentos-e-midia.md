@@ -1,8 +1,8 @@
 ---
 title: "Documentos e Mídia"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Visualização de PDFs com modo de 2 páginas, redimensionamento de imagens e incorporação de páginas web seguras via iframes."
 order: 18
-group: tools
+group: organize
 slug: "documentos-e-midia"
 twin: "documents-and-media"
 source: "demo-vault/18 - Documentos e Mídia.md"

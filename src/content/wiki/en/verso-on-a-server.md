@@ -1,8 +1,8 @@
 ---
 title: "Verso on a Server"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "`verso serve`: installing, accounts by invitation, owner, editors and readers, editing together and the connected desktop app."
 order: 30
-group: organize
+group: server
 slug: "verso-on-a-server"
 twin: "verso-num-servidor"
 source: "demo-vault-en/30 - Verso on a Server.md"

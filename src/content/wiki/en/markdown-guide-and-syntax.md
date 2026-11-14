@@ -1,6 +1,6 @@
 ---
 title: "Markdown Guide and Syntax"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Collapsible headings, code blocks with a copy button, KaTeX math formulas, tables with resizable columns and hierarchical lists."
 order: 1
 group: start
 slug: "markdown-guide-and-syntax"

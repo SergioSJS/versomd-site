@@ -1,6 +1,6 @@
 ---
 title: "Rodando uma Mesa"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Uma pasta de campanha num UniVerso: convidar as jogadoras, notas ocultas até você liberar, links para o que ainda não apareceu com um cadeado, quem edita o quê e os limites da mesa."
 order: 26
 group: rpg
 slug: "rodando-uma-mesa"

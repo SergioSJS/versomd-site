@@ -1,6 +1,6 @@
 ---
 title: "Arquivos e Pastas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Criar, renomear sem quebrar links, mover, anexar imagens e a lixeira."
 order: 7
 group: organize
 slug: "arquivos-e-pastas"

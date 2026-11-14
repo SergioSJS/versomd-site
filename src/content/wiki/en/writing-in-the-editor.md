@@ -1,8 +1,8 @@
 ---
 title: "Writing in the Editor"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "The Reading, Edit and Source modes, the formatting bar, the `/` menu and saving."
 order: 4
-group: organize
+group: start
 slug: "writing-in-the-editor"
 twin: "escrevendo-no-editor"
 source: "demo-vault-en/04 - Writing in the Editor.md"

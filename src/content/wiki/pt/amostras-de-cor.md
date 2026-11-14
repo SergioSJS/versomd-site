@@ -1,8 +1,8 @@
 ---
 title: "Amostras de Cor"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Um quadradinho da cor ao lado de `#1d9e75`, `rgb()` e `hsl()`; um clique no editor abre o seletor, e o código volta no mesmo formato."
 order: 6
-group: organize
+group: start
 slug: "amostras-de-cor"
 twin: "colour-swatches"
 source: "demo-vault/06 - Amostras de Cor.md"

@@ -1,6 +1,6 @@
 ---
 title: "A Table over the Internet"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Verso on your computer turns into a server: a Cloudflare link (testing mode) or your own address, invitations, sitting at the table, read links and who gets in how."
 order: 29
 group: server
 slug: "a-table-over-the-internet"

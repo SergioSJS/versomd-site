@@ -1,8 +1,8 @@
 ---
 title: "Oráculos e Criação de Mundos"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "O oráculo que escreve a resposta no destaque; as tabelas sorteadas; o assistente de novo projeto com a árvore à vista; os mapas dos geradores do Watabou, desenhados pelo Verso; e a chave de cada recurso em Ajustes."
 order: 24
-group: server
+group: rpg
 slug: "oraculos-e-criacao-de-mundos"
 twin: "oracles-and-world-building"
 source: "demo-vault/24 - Oráculos e Criação de Mundos.md"

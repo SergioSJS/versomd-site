@@ -1,6 +1,6 @@
 ---
 title: "Abrir um Arquivo Avulso"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Dois cliques num `.md` abrem o arquivo sozinho, sem pasta, numa janela sem árvore nem índice e sem nada escrito ao lado; e como fazer do Verso o app padrão de `.md` em cada sistema."
 order: 8
 group: organize
 slug: "abrir-um-arquivo-avulso"

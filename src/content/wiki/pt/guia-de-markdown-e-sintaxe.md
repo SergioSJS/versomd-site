@@ -1,6 +1,6 @@
 ---
 title: "Guia de Markdown e Sintaxe"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Títulos recolhíveis, blocos de código com botão de copiar, fórmulas matemáticas em KaTeX, tabelas com colunas redimensionáveis e listas hierárquicas."
 order: 1
 group: start
 slug: "guia-de-markdown-e-sintaxe"

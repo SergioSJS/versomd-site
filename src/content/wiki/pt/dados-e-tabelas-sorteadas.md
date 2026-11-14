@@ -1,8 +1,8 @@
 ---
 title: "Dados e Tabelas Sorteadas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "`dice:` numa nota rola dados, uma tabela ou lista com `^id` sorteia uma linha; nada escrito, e numa nota compartilhada todos veem."
 order: 22
-group: tools
+group: rpg
 slug: "dados-e-tabelas-sorteadas"
 twin: "dice-and-random-tables"
 source: "demo-vault/22 - Dados e Tabelas Sorteadas.md"

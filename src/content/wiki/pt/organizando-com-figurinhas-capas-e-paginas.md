@@ -1,8 +1,8 @@
 ---
 title: "Organizando: figurinhas, capas e páginas"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Figurinhas, cores, capas com reposicionamento, páginas de pasta, ordenação manual, itens ocultos e edição de notas incorporadas."
 order: 11
-group: start
+group: organize
 slug: "organizando-com-figurinhas-capas-e-paginas"
 twin: "organizing-with-stickers-covers-and-pages"
 source: "demo-vault/11 - Organizando com figurinhas, capas e páginas.md"

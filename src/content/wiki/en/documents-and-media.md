@@ -1,8 +1,8 @@
 ---
 title: "Documents and Media"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Viewing PDFs in 2-page mode, resizing images and embedding safe web pages through iframes."
 order: 18
-group: tools
+group: organize
 slug: "documents-and-media"
 twin: "documentos-e-midia"
 source: "demo-vault-en/18 - Documents and Media.md"

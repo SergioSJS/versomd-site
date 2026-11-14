@@ -1,8 +1,8 @@
 ---
 title: "UniVerso num Servidor Grátis da Oracle"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "O roteiro para quem nunca montou um servidor: uma máquina grátis da Oracle, o menu do instalador, o HTTPS com um nome grátis, o primeiro admin e o celular."
 order: 33
-group: tools
+group: server
 slug: "universo-num-servidor-gratis-da-oracle"
 twin: "universo-on-a-free-oracle-server"
 source: "demo-vault/33 - UniVerso num Servidor Grátis da Oracle.md"

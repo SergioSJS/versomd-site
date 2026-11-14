@@ -1,8 +1,8 @@
 ---
 title: "Ajustes, Aparência e Atalhos"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Tema, paleta, fontes, idioma e os seus próprios atalhos."
 order: 36
-group: start
+group: tools
 slug: "ajustes-aparencia-e-atalhos"
 twin: "settings-appearance-and-shortcuts"
 source: "demo-vault/36 - Ajustes, Aparência e Atalhos.md"

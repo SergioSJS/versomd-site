@@ -1,8 +1,8 @@
 ---
 title: "Mermaid Diagrams"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "Flowcharts, sequences and other diagrams written as text and drawn in the note."
 order: 17
-group: tools
+group: organize
 slug: "mermaid-diagrams"
 twin: "diagramas-mermaid"
 source: "demo-vault-en/17 - Mermaid Diagrams.md"

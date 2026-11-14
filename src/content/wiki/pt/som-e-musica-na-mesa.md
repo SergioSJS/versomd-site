@@ -1,6 +1,6 @@
 ---
 title: "Som e Música na Mesa"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "A mestra toca um arquivo de som e todos da mesa ouvem no mesmo ponto, cada um com o seu volume; uma nota com links de som vira a mesa de som, e quem não vê o arquivo não o ouve."
 order: 27
 group: rpg
 slug: "som-e-musica-na-mesa"

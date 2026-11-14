@@ -1,6 +1,6 @@
 ---
 title: "Sincronizar com uma Nuvem"
-description: "Por onde começar: o que é o Verso e um mapa de todas as lições."
+description: "Uma pasta igual a uma pasta de um Nextcloud (WebDAV) ou de um bucket S3 que você já tem, sem servidor: o formulário, a chave de S3 limitada a uma pasta, a senha no chaveiro e o que esperar."
 order: 34
 group: server
 slug: "sincronizar-com-uma-nuvem"

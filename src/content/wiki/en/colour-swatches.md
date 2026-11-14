@@ -1,8 +1,8 @@
 ---
 title: "Colour Swatches"
-description: "Where to start: what Verso is and a map of every lesson."
+description: "A small square of the colour beside `#1d9e75`, `rgb()` and `hsl()`; a click in the editor opens the picker, and the code comes back in the same format."
 order: 6
-group: organize
+group: start
 slug: "colour-swatches"
 twin: "amostras-de-cor"
 source: "demo-vault-en/06 - Colour Swatches.md"
