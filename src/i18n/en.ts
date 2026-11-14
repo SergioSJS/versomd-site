@@ -874,7 +874,7 @@ export const en: Copy = {
               "The same window in a browser and on a phone; on a phone, the folders you choose are kept there and you write without a connection.",
               "The desktop app also serves folders, from the folder’s own page: on your home network, with the phone connecting by a QR code, or over the internet, by a Cloudflare link, with no domain and no open port; you approve each device on the computer.",
               "A UniVerso can also have its own link on the internet, through Cloudflare, with no domain and no open port.",
-              "A game master the admin lets make folders invites players by link; and a table can move between the computer and the UniVerso, with its notes hidden.",
+              "A game master the admin lets make folders invites players by link; and a table can move between the computer and the UniVerso, where it starts with its notes hidden and no players, who are invited again.",
               "Notices in the app when something changes without your asking — sync dropped or came back, a folder was shared with you — by kind, and in the system’s notifications if you want. <a href=\"/en/universo/\">More about UniVerso</a>.",
             ],
           },

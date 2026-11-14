@@ -875,7 +875,7 @@ export const ptBR: Copy = {
               "A mesma janela no navegador e no celular; no celular, as pastas que você escolher ficam guardadas e você escreve sem conexão.",
               "O app do computador também serve pastas: pela página da pasta, na rede de casa, com o celular se ligando por um QR code, ou pela internet, por um link da Cloudflare, sem domínio nem porta aberta; você aprova cada aparelho no computador.",
               "Um UniVerso também pode ter o seu link na internet, pela Cloudflare, sem domínio nem porta aberta.",
-              "Um mestre a quem o administrador deixou criar pastas convida jogadores por link; e uma mesa pode mudar entre o computador e o UniVerso, com as notas escondidas.",
+              "Um mestre a quem o administrador deixou criar pastas convida jogadores por link; e uma mesa pode mudar entre o computador e o UniVerso, onde começa com as notas escondidas e sem jogadores, que são convidados de novo.",
               "Avisos no app quando algo muda sem você pedir — a sincronização caiu ou voltou, uma pasta foi partilhada com você —, por tipo, e nas notificações do sistema se você quiser. <a href=\"/universo/\">Mais sobre o UniVerso</a>.",
             ],
           },
