@@ -1,6 +1,6 @@
 # One source for the comparison, both languages. Y/P/N/I = yes/partial/no/info.
 TOOLS = [
-  ("Verso", None, "em teste; sem download público", "in testing; no public download"),
+  ("Verso", None, "em teste (beta); download no GitHub", "in testing (beta); download on GitHub"),
   ("Obsidian", "https://obsidian.md/", "notas em Markdown", "Markdown notes"),
   ("Logseq", "https://logseq.com/", "outliner; versão nova em beta", "outliner; new version in beta"),
   ("Notion", "https://www.notion.com/", "espaço de trabalho na nuvem", "cloud workspace"),
@@ -258,7 +258,7 @@ ROWS = [
   ('N', 'não; assistente de IA pago, opcional', 'no; an optional paid AI assistant'),
  ]),
  (('Licença e código', 'Licence and code'), [
-  ('I', 'MPL-2.0; o repositório ainda é privado', 'MPL-2.0; the repository is still private'),
+  ('I', 'MPL-2.0, código aberto; o código está no GitHub', 'MPL-2.0, open source; the code is on GitHub'),
   ('I', 'proprietária, código fechado', 'proprietary, closed source'),
   ('I', 'AGPL-3.0, código aberto', 'AGPL-3.0, open source'),
   ('I', 'proprietária', 'proprietary'),
@@ -296,7 +296,7 @@ PT = dict(
  intro=[
   "A tabela põe o Verso ao lado das ferramentas que quem guarda notas e quem mestra RPG costuma usar, com o que cada uma faz e o que não faz.",
   "<strong>Onde o Verso está à frente:</strong> as notas são arquivos Markdown seus, que o Obsidian também abre; o servidor é seu; várias pessoas editam a mesma nota, o mesmo board e a mesma base ao vivo; e não há plano pago. O Obsidian guarda arquivos, mas não edita ao vivo sem plugin de terceiros; o Notion e o LegendKeeper editam ao vivo, mas guardam as notas no serviço deles.",
-  "<strong>Onde está atrás:</strong> o Verso ainda está em teste e sem download público. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, é pelo navegador, sem app de loja, e o offline pede HTTPS. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
+  "<strong>Onde está atrás:</strong> o Verso ainda está em teste (beta), com download na <a href=\"https://github.com/SergioSJS/verso/releases\">página de versões do GitHub</a>. Não tem camadas nos mapas, linhas do tempo, árvores genealógicas nem pacotes de regras prontos; não tem plugins; no celular, é pelo navegador, sem app de loja, e o offline pede HTTPS. Para um mundo pronto para usar hoje, World Anvil, Kanka e LegendKeeper vão mais longe; para jogar numa mesa virtual, o Foundry VTT. E o Chronicler, que como o Verso guarda Markdown no disco, já tem infoboxes, modelos de página e mapas com pinos e camadas (no Pro, em alfa) — mas é de uma pessoa só, sem servidor nem celular.",
  ],
  painsTitle="Três problemas comuns, e o que o Verso faz com eles",
  pains=[
@@ -317,7 +317,7 @@ EN = dict(
  intro=[
   "The table puts Verso beside the tools people who keep notes and people who run tabletop games tend to use, with what each one does and does not do.",
   "<strong>Where Verso is ahead:</strong> the notes are Markdown files you own, which Obsidian opens too; the server is yours; several people edit the same note, the same board and the same base live; and there is no paid plan. Obsidian keeps files but does not edit live without a third-party plugin; Notion and LegendKeeper edit live but keep the notes in their own service.",
-  "<strong>Where it is behind:</strong> Verso is still in testing, with no public download. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
+  "<strong>Where it is behind:</strong> Verso is still in testing (beta), with a download on the <a href=\"https://github.com/SergioSJS/verso/releases\">GitHub releases page</a>. It has no layers on its maps, no timelines, no family trees and no ready-made rules packs; it has no plugins; on a phone it works through the browser, with no store app, and offline needs HTTPS. For a world ready to use today, World Anvil, Kanka and LegendKeeper go further; to play at a virtual table, Foundry VTT. And Chronicler, which like Verso keeps Markdown on disk, already has infoboxes, page templates and maps with pins and layers (in Pro, in alpha) — but it is for one person, with no server and no phone.",
  ],
  painsTitle="Three common problems, and what Verso does about them",
  pains=[

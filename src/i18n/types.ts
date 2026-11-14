@@ -35,8 +35,10 @@ export interface Copy {
   meta: { title: string; description: string };
   skip: string;
   /** The header's pages, in order; the waitlist is a call to action, not a page. */
-  nav: { label: string; home: string; features: string; server: string; compare: string; wiki: string; waitlist: string };
+  nav: { label: string; home: string; features: string; server: string; compare: string; wiki: string; download: string };
   /** The control that goes back to the top of a long page. */
+  /** Where the downloads and the code are: the GitHub releases page and the repository. */
+  links: { releases: string; repo: string };
   toTop: string;
   switchTo: { label: string; name: string; href: string; hreflang: string };
   hero: {
@@ -48,6 +50,7 @@ export interface Copy {
     propsLabel: string;
     props: { key: string; valueHtml: string }[];
     cta: string;
+    ctaWaitlist: string;
     ctaSecondary: string;
     figure: Figure;
   };

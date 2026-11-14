@@ -20,7 +20,7 @@ reviewed it.
 ## The product it describes: read it, do not guess it
 
 The product's code is the sibling repository **`../verso`** (Verso: the app;
-UniVerso: its server), private for now. Every fact this site states about
+UniVerso: its server), public since 0.8.5-beta.1. Every fact this site states about
 Verso is checked there, never written from memory:
 
 - what it does and does not do: `../verso/README.md`, `../verso/CHANGELOG.md`
@@ -40,9 +40,9 @@ Read only; never edit `../verso` or its worktrees from a site session — the
 product has its own rules (`../verso/CLAUDE.md`) and its own sessions. If the
 site needs a product change, say so to the maintainer.
 
-Verso is **in testing, with no public download** until the maintainer says
-otherwise: the site never links to its repository, releases or a download
-before that (README, "The rule while the product is private").
+Verso is **in testing (beta)**: its repository is public (MPL-2.0) and the
+downloads are on its GitHub releases page, which the site links to (README,
+"Where the downloads are"). It is not V1; the site never says it is.
 
 ## The pages
 

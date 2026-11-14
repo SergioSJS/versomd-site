@@ -6,12 +6,12 @@ UniVerso. Static [Astro](https://astro.build) site in pt-BR (at `/`) and
 English (at `/en/`), served by Cloudflare Pages, with a waitlist kept in
 Cloudflare KV by a Pages Function. No analytics, no cookies, no third party.
 
-## The rule while the product is private
+## Where the downloads are
 
-Verso's own repository is private. This site does not link to it, to its
-releases or to any download until it opens. The section "what it does not do
-yet" says so, and the waitlist is how people hear when it changes. When the
-product opens, the download section comes in its own pull request.
+Verso's repository is public (MPL-2.0) and 0.8.5-beta.1 is a prerelease on
+its GitHub releases page. The site links to that page (`links.releases` in
+`src/i18n/`) for the download; the waitlist is now "an e-mail when a new
+version comes out".
 
 ## Run it
 
