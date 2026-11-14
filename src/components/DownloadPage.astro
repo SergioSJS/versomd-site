@@ -98,7 +98,7 @@ const sourceLine = fill(releases.source === "github" ? page.source.github : page
                         <span class="dl-rec-file">
                           <span class="dl-name">{file.name}</span>
                           <span class="dl-rec-meta">
-                            {primary.copy.name} {primary.release.version} · {formatSize(file.size, locale)}
+                            {primary.copy.name} {primary.release.version}, {formatSize(file.size, locale)}
                           </span>
                         </span>
                       </p>
@@ -109,7 +109,7 @@ const sourceLine = fill(releases.source === "github" ? page.source.github : page
                           <ul class="dl-rec-list">
                             {items(primary.files.files, ["deb", "rpm"]).map(({ kind: k, asset }) => (
                               <li>
-                                <a href={asset.url}>{asset.name}</a> <span class="dl-rec-meta">· {page.kinds[k].platform} · {formatSize(asset.size, locale)}</span>
+                                <a href={asset.url}>{asset.name}</a> <span class="dl-rec-meta">{page.kinds[k].platform}, {formatSize(asset.size, locale)}</span>
                               </li>
                             ))}
                           </ul>
@@ -122,7 +122,7 @@ const sourceLine = fill(releases.source === "github" ? page.source.github : page
                   {secondary && other && (
                     <p class="dl-rec-other">
                       {fill(page.recommend.alsoOther, { channel: secondary.copy.name, version: secondary.release.version })}{" "}
-                      <a href={other.url}>{other.name}</a> <span class="dl-rec-meta">· {formatSize(other.size, locale)}</span>
+                      <a href={other.url}>{other.name}</a> <span class="dl-rec-meta">({formatSize(other.size, locale)})</span>
                     </p>
                   )}
                 </div>
@@ -159,7 +159,7 @@ const sourceLine = fill(releases.source === "github" ? page.source.github : page
           <h2 id={ch.id}><span class="md" aria-hidden="true">##</span>{ch.name} <span class="dl-version">{release.version}</span></h2>
           <p class="dl-channel-intro">{ch.intro}</p>
           <p class="dl-channel-meta">
-            {fill(page.published, { date: formatDate(release.publishedAt, locale) })} · <a href={release.url}>{page.releasePage}</a>
+            <span>{fill(page.published, { date: formatDate(release.publishedAt, locale) })}</span> <a href={release.url}>{page.releasePage}</a>
           </p>
 
           {groups.map((g) => {

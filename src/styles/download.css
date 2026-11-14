@@ -10,7 +10,13 @@
   border-radius: var(--radius-l);
   background: color-mix(in oklch, var(--seal-wash) 60%, var(--paper));
 }
-.dl-recommend h2 { margin-bottom: 0.5rem; }
+/* Its title is an h2 like the channels', at a box's size. */
+.dl-recommend h2 { margin-bottom: 0.7rem; font-size: clamp(1.45rem, 1.25rem + 0.8vw, 1.85rem); }
+/* File names in mono, as in the lists below. */
+.dl-recommend .dl-name { font: 500 0.95rem/1.4 var(--mono); overflow-wrap: anywhere; color: var(--ink); }
+.dl-rec-list a,
+.dl-rec-other a { font: 500 0.9rem/1.4 var(--mono); }
+.dl-rec-list .dl-rec-meta { display: block; }
 .dl-recommend p { margin: 0 0 0.8rem; }
 .dl-rec > :last-child { margin-bottom: 0; }
 .dl-rec-detected { font: 500 1.05rem/1.4 var(--ui); color: var(--ink); }
@@ -24,7 +30,8 @@
 .dl-rec-meta { font: 0.9rem/1.4 var(--ui); color: var(--ink-2); }
 .dl-rec-also { font: 500 0.95rem/1.4 var(--ui); }
 .dl-rec-list { margin: -0.3rem 0 0.8rem; padding-left: 1.1rem; }
-.dl-rec-list li { margin: 0.2rem 0; }
+.dl-rec-list li { margin: 0.35rem 0; }
+.dl-rec-list a { display: inline-block; padding-block: 0.3rem; }
 .dl-rec-list a,
 .dl-rec-other a { overflow-wrap: anywhere; }
 .dl-rec-missing { font-weight: 500; }
@@ -41,7 +48,7 @@
 .dl-recommend-block + .wrap > .dl-notice { margin-top: 1.6rem; }
 .dl-version { font-variant-numeric: tabular-nums; color: var(--ink); }
 .block .dl-channel-intro { max-width: var(--measure); margin: -0.4rem 0 0.4rem; }
-.block .dl-channel-meta { margin: 0 0 1.4rem; font: 0.92rem/1.5 var(--ui); color: var(--ink-2); }
+.block .dl-channel-meta { display: flex; flex-wrap: wrap; gap: 0 1.2rem; margin: 0 0 1.4rem; font: 0.92rem/1.5 var(--ui); color: var(--ink-2); }
 
 .dl-group { margin-top: 2rem; }
 .dl-group h3 { margin: 0 0 0.6rem; font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem); }
