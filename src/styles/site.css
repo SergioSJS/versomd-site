@@ -37,7 +37,13 @@ body {
   -webkit-font-smoothing: antialiased;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
+  /* A short page (thanks, 404) keeps its footer at the bottom. */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
+body > main { flex: 1 0 auto; }
 @media (prefers-color-scheme: dark) {
   /* As the window: thin strokes for light text on a dark paper. */
   body { -moz-osx-font-smoothing: grayscale; }

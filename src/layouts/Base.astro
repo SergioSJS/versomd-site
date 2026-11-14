@@ -126,14 +126,34 @@ const pages: { id: Page; href: string; label: string }[] = [
       // the page; with it, the same link floats in the corner once the reader
       // is a screen and a half down, and steps aside near the top — and over
       // the footer, which on a phone it covered (the maintainer, 2026-10-31).
+      // Where the page's column reaches the corner (a phone, a tablet, a
+      // narrow window) the button would sit over the rows' own controls (the
+      // roadmap's "+", a download's link: 2026-11-14), so there it shows only
+      // while the reader scrolls up, the one moment they want it, and steps
+      // aside again after a pause, unless it has the focus.
       const link = document.querySelector<HTMLAnchorElement>("[data-to-top]");
       if (link) {
         link.classList.add("is-floating");
         let queued = false;
         let footerSeen = false;
+        let lastY = window.scrollY;
+        let goingUp = false;
+        let idle = 0;
+        const column = document.querySelector<HTMLElement>("main .wrap");
+        const crowded = () => {
+          if (!column) return true;
+          const right = column.getBoundingClientRect().right;
+          // the button: 44 px wide, 16 px from the edge, and a little air
+          return right > window.innerWidth - 16 - 44 - 8;
+        };
         const update = () => {
           queued = false;
-          link.classList.toggle("is-shown", !footerSeen && window.scrollY > window.innerHeight * 1.5);
+          const y = window.scrollY;
+          if (y !== lastY) goingUp = y < lastY;
+          lastY = y;
+          const far = !footerSeen && y > window.innerHeight * 1.5;
+          const show = far && (!crowded() || goingUp || link.matches(":focus"));
+          link.classList.toggle("is-shown", show);
         };
         const footer = document.querySelector(".colophon");
         if (footer && "IntersectionObserver" in window) {
@@ -145,12 +165,19 @@ const pages: { id: Page; href: string; label: string }[] = [
         window.addEventListener(
           "scroll",
           () => {
+            window.clearTimeout(idle);
+            idle = window.setTimeout(() => {
+              goingUp = false;
+              update();
+            }, 2500);
             if (queued) return;
             queued = true;
             requestAnimationFrame(update);
           },
           { passive: true },
         );
+        window.addEventListener("resize", update, { passive: true });
+        link.addEventListener("blur", update);
         update();
       }
     </script>
