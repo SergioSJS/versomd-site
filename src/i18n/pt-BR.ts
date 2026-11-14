@@ -861,6 +861,8 @@ export const ptBR: Copy = {
             itemsHtml: [
               "Segredos do mestre: um bloco <code>&gt; [!secret]</code> na nota, ou num cartão de texto do board, que quem só pode ler a pasta partilhada nunca recebe.",
               "<code>dice: 1d20</code> rola com um clique, e uma tabela da nota sorteia uma linha; o resultado nunca é gravado na nota.",
+              "Música e som na mesa: o mestre toca arquivos de som para todos ouvirem, e compartilha o som das páginas abertas no Verso.",
+              "Mapas do Watabou: o que você exporta de lá — uma masmorra, uma região, uma casa — vira uma pasta com a nota e um board com o desenho.",
             ],
           },
           {
@@ -871,8 +873,18 @@ export const ptBR: Copy = {
               "Notas, boards e bases editados junto, ao vivo, com o cursor e o nome de cada pessoa.",
               "Uma lixeira de 30 dias, e um console para quem administra.",
               "A mesma janela no navegador e no celular; no celular, as pastas que você escolher ficam guardadas e você escreve sem conexão.",
-              "O app do computador também pode servir suas pastas na rede de casa: o celular se liga lendo um QR code, e você aprova no computador.",
+              "O app do computador também serve pastas: pela página da pasta, na rede de casa, com o celular se ligando por um QR code, ou pela internet, por um link da Cloudflare, sem domínio nem porta aberta; você aprova cada aparelho no computador.",
+              "Um UniVerso também pode ter o seu link na internet, pela Cloudflare, sem domínio nem porta aberta.",
+              "Um mestre a quem o administrador deixou criar pastas convida jogadores por link; e uma mesa pode mudar entre o computador e o UniVerso, com as notas escondidas.",
               "Avisos no app quando algo muda sem você pedir — a sincronização caiu ou voltou, uma pasta foi partilhada com você —, por tipo, e nas notificações do sistema se você quiser. <a href=\"/universo/\">Mais sobre o UniVerso</a>.",
+            ],
+          },
+          {
+            title: "No Android, no iPad e no iPhone",
+            itemsHtml: [
+              "O app do Android entra num UniVerso e sincroniza; pode sincronizar em segundo plano, se você ligar, e abrir uma pasta do armazenamento do celular, que fica lá se o Verso for desinstalado.",
+              "No Android, um texto ou um arquivo <code>.md</code> chega pelo Compartilhar, e o celular pode ser um servidor ou compartilhar o som dele na mesa.",
+              "No iPad e no iPhone, as notas aparecem no app Arquivos, e outros apps as abrem no lugar.",
             ],
           },
           {
@@ -880,6 +892,7 @@ export const ptBR: Copy = {
             itemsHtml: [
               "Um servidor MCP só de leitura, que os Ajustes ligam ao Claude Desktop; cada chamada de um agente fica registrada.",
               "O comando <code>verso</code> indexa, busca e lista backlinks no terminal.",
+              "No app do computador, um terminal numa aba, desligado de início, para o Claude Code e outras ferramentas de IA de linha de comando.",
             ],
           },
           {
@@ -958,6 +971,7 @@ export const ptBR: Copy = {
               { lead: "Dropbox, OneDrive e Google Drive.", textHtml: "A sincronização com esses serviços, além do WebDAV e do S3 que já existem." },
               { lead: "Confirmar que é você num aparelho ligado.", textHtml: "A verificação do sistema e uma chave por aparelho." },
               { lead: "App do Windows assinado.", textHtml: "Sem o aviso do SmartScreen na instalação. O app do Mac não é notarizado pela Apple: ele abre pelo “Abrir mesmo assim” dos Ajustes do Sistema, uma vez." },
+              { lead: "Juntar por bloco o que duas pessoas editaram offline.", textHtml: "Duas pessoas que editaram a mesma nota sem conexão têm as edições juntadas, não copiadas." },
               { lead: "Mac com Intel e Linux ARM64.", textHtml: "Apps para esses computadores também." },
               { lead: "Feito para leitor de tela.", textHtml: "O app inteiro usável com um leitor de tela." },
             ],
@@ -970,7 +984,6 @@ export const ptBR: Copy = {
               { lead: "Criptografia de ponta a ponta, opcional." },
               { lead: "O servidor MCP pela rede." },
               { lead: "Um agente que escreve nas notas, com a diferença à vista." },
-              { lead: "Juntar por bloco o que duas pessoas editaram offline." },
             ],
           },
         ],

@@ -860,6 +860,8 @@ export const en: Copy = {
             itemsHtml: [
               "The game master’s secrets: a <code>&gt; [!secret]</code> block inside a note, or in a board’s text card, that someone who can only read the shared folder never receives.",
               "<code>dice: 1d20</code> rolls with a click, and a table in the note draws a row; the result is never written into the note.",
+              "Music and sound at the table: the game master plays sound files for everyone to hear, and shares the sound of pages open in Verso.",
+              "Watabou maps: what you export from there — a dungeon, a region, a house — becomes a folder with the note and a board with the drawing.",
             ],
           },
           {
@@ -870,8 +872,18 @@ export const en: Copy = {
               "Notes, boards and bases edited together, live, with each person’s cursor and name.",
               "A 30-day trash, and a console for the admin.",
               "The same window in a browser and on a phone; on a phone, the folders you choose are kept there and you write without a connection.",
-              "The desktop app can also serve its folders on your home network: the phone connects by reading a QR code, and you approve it on the computer.",
+              "The desktop app also serves folders, from the folder’s own page: on your home network, with the phone connecting by a QR code, or over the internet, by a Cloudflare link, with no domain and no open port; you approve each device on the computer.",
+              "A UniVerso can also have its own link on the internet, through Cloudflare, with no domain and no open port.",
+              "A game master the admin lets make folders invites players by link; and a table can move between the computer and the UniVerso, with its notes hidden.",
               "Notices in the app when something changes without your asking — sync dropped or came back, a folder was shared with you — by kind, and in the system’s notifications if you want. <a href=\"/en/universo/\">More about UniVerso</a>.",
+            ],
+          },
+          {
+            title: "On Android, iPad and iPhone",
+            itemsHtml: [
+              "The Android app signs in to a UniVerso and syncs; it can sync in the background, if you turn that on, and open a folder of the phone’s shared storage, which stays there if Verso is uninstalled.",
+              "On Android, a text or a <code>.md</code> file arrives through Share, and the phone can be a server or share its sound at the table.",
+              "On the iPad and iPhone, your notes show in the Files app, and other apps open them in place.",
             ],
           },
           {
@@ -879,6 +891,7 @@ export const en: Copy = {
             itemsHtml: [
               "A read-only MCP server, which Settings connects to Claude Desktop; every call an agent makes is logged.",
               "The <code>verso</code> command indexes, searches and lists backlinks in the terminal.",
+              "In the desktop app, a terminal in a tab, off at first, for Claude Code and other AI command-line tools.",
             ],
           },
           {
@@ -957,6 +970,7 @@ export const en: Copy = {
               { lead: "Dropbox, OneDrive and Google Drive.", textHtml: "Sync with those services, besides the WebDAV and S3 that already exist." },
               { lead: "Confirming it is you on a linked device.", textHtml: "The system’s own check and a key for each device." },
               { lead: "A signed Windows app.", textHtml: "No SmartScreen warning when installing. The Mac app is not notarized by Apple: it opens through System Settings’ “Open Anyway”, once." },
+              { lead: "Merging by block what two people edited offline.", textHtml: "Two people who edited the same note offline have their edits merged, not copied." },
               { lead: "Intel Macs and Linux ARM64.", textHtml: "Apps for those computers too." },
               { lead: "Made for screen readers.", textHtml: "The whole app usable with a screen reader." },
             ],
@@ -969,7 +983,6 @@ export const en: Copy = {
               { lead: "Optional end-to-end encryption." },
               { lead: "The MCP server over the network." },
               { lead: "An agent that writes into notes, with the difference in view." },
-              { lead: "Merging by block what two people edited offline." },
             ],
           },
         ],
