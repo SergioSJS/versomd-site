@@ -1137,8 +1137,14 @@ details > summary { cursor: pointer; }
 .cc-reset:hover { border-color: var(--ink); }
 /* On or off is said by a mark as well as by the colour. */
 .cc-chip::before { content: "+"; margin-right: 0.4rem; font-weight: 700; color: var(--ink-2); }
-.cc-chip[aria-pressed="true"] { color: var(--seal-ink); background: var(--seal); border-color: var(--seal); }
-.cc-chip[aria-pressed="true"]::before { content: "✓"; color: var(--seal-ink); }
+/* Chosen: a wash and a seal border, not a solid fill — with everything
+   chosen at first, twenty solid red pills shouted over the table. */
+.cc-chip[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--seal-wash);
+  border-color: var(--seal);
+}
+.cc-chip[aria-pressed="true"]::before { content: "✓"; color: var(--seal); }
 .cc-chip:focus-visible,
 .cc-preset:focus-visible,
 .cc-reset:focus-visible { outline-offset: 2px; }
