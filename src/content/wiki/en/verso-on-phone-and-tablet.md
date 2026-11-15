@@ -130,7 +130,7 @@ Through **AltStore PAL** (no computer needed) Verso comes later, and **for now i
 
 What differs from Android:
 
-- **The app's folder** shows in the **Files** app, under *On My iPad › Verso* (or *On My iPhone*): other apps open its notes there, and Verso sees what they change when it comes back to the screen. It is deleted with Verso unless it syncs.
+- **The app's folder** shows in the **Files** app, under *On My iPad › Verso* (or *On My iPhone*): other apps open its notes there, and Verso sees what they change when it comes back to the screen. It is deleted with Verso unless it syncs. iOS opens only the folders in Verso's **Documents**: the folder switcher has no *Open another folder…*, which on Android walks the phone's storage.
 - **A UniVerso** and **the device as a server** work as on Android, but iOS lets it serve only while Verso is on the screen. A server's folder you choose also becomes a copy that opens offline, always in Verso's **Documents**: it shows in Files under *On My iPad › Verso*, beside the *Verso* folder, with the server folder's name.
 - **Not on iOS**: the internet link, the terminal, the command line and agents, and updates from the app itself (AltStore brings them).
 

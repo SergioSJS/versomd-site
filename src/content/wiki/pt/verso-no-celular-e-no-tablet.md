@@ -130,7 +130,7 @@ Pela **AltStore PAL** (sem computador), o Verso vem depois, e **por enquanto só
 
 O que muda em relação ao Android:
 
-- **A pasta do app** aparece no app **Arquivos**, em *No meu iPad › Verso* (ou *No meu iPhone*): outros apps abrem as notas dali, e o que eles mudam o Verso vê ao voltar para a tela. Ela é apagada junto se o Verso for desinstalado, a não ser que sincronize.
+- **A pasta do app** aparece no app **Arquivos**, em *No meu iPad › Verso* (ou *No meu iPhone*): outros apps abrem as notas dali, e o que eles mudam o Verso vê ao voltar para a tela. Ela é apagada junto se o Verso for desinstalado, a não ser que sincronize. O iOS abre só as pastas dos **Documentos** do Verso: o seletor de pastas não tem *Abrir outra pasta…*, que no Android percorre o armazenamento do celular.
 - **Um UniVerso** e **o aparelho como servidor** funcionam como no Android, mas o iOS só deixa servir com o Verso na tela. Uma pasta do servidor escolhida também vira uma cópia que abre sem internet, sempre nos **Documentos** do Verso: aparece no Arquivos em *No meu iPad › Verso*, ao lado da pasta *Verso*, com o nome da pasta do servidor.
 - **Não tem** no iOS: o link pela internet, o terminal, a linha de comando e os agentes, e as atualizações pelo próprio app (a AltStore as traz).
 

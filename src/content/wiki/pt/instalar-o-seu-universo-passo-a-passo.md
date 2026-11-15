@@ -346,7 +346,7 @@ O app passa a dizer *Conectado como* o seu nome. Um servidor novo ainda não tem
 
 ### No celular e no tablet
 
-Não há app a instalar: abra `http://<IP da máquina>:7340` (ou o endereço `https://`, se houver) no navegador do celular e entre com o e-mail e a senha. (Com o Tailscale, o celular precisa estar com ele conectado.) Sem HTTPS, o modo offline fica desligado e a janela avisa. Como a janela se comporta numa tela pequena está em [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/).
+Pelo **app Verso** (Android, iPhone, iPad): **Ajustes › Servidores › Conectar**, e escolher uma pasta do servidor no seletor baixa uma cópia que abre também sem rede ([Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/)). Pelo **navegador**, sem instalar nada: abra `http://<IP da máquina>:7340` (ou o endereço `https://`, se houver) no navegador do celular e entre com o e-mail e a senha. (Com o Tailscale, o celular precisa estar com ele conectado.) Sem HTTPS, o modo offline fica desligado e a janela avisa. Como a janela se comporta numa tela pequena está em [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/).
 
 Para uma segunda pessoa, o admin sincroniza (ou cria) a pasta, depois um convite no console (`/admin/invitations`) e manda o link: [as contas e os convites](/wiki/verso-num-servidor/#o-primeiro-admin-e-as-contas).
 
