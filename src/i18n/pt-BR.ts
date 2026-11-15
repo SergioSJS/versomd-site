@@ -93,12 +93,12 @@ export const ptBR: Copy = {
       {
         map: "home",
         title: "Computador e celular, em casa",
-        who: "Quer abrir as notas do computador no navegador do celular, sem instalar servidor.",
-        stepsHtml: ["Instale o app e abra a pasta.", "<strong>Ajustes › Transformar em servidor</strong>: marque as pastas, <strong>Na minha rede</strong>.", "<strong>Parear um celular</strong>: o QR na câmera, e <strong>Permitir</strong>."],
-        offline: "O navegador do celular abre as pastas só em casa, com o computador ligado servindo, e não guarda cópia. Quer a pasta no celular também sem rede? O app do celular, com o cenário seguinte ou um UniVerso.",
+        who: "Quer as notas do computador no celular, sem instalar servidor: pelo navegador, ou com o app guardando uma cópia.",
+        stepsHtml: ["Instale o app e abra a pasta.", "<strong>Ajustes › Transformar em servidor</strong>: marque as pastas, <strong>Na minha rede</strong>.", "<strong>Parear um celular</strong>: no navegador, o QR na câmera; no app Verso (a partir da 0.9.0-beta.3), <strong>Ajustes › Servidores › Parear com um computador de casa</strong>, o endereço e o código. No computador, <strong>Permitir</strong>."],
+        offline: "Com o app, o celular guarda uma cópia da pasta que abre sem internet e sincroniza quando volta para a rede de casa com o computador servindo. Pelo navegador, as pastas abrem só em casa e não ficam no celular.",
         anchor: "2-computador-e-celular-sem-servidor",
         link: "O cenário na wiki",
-        figure: { title: "Computador e celular na rede da casa", desc: "Os arquivos moram só no computador, que serve as pastas marcadas ao navegador do celular, pareado por um QR, na rede da casa; o navegador não guarda cópia.", labels: ["Rede da casa", "App no computador", "Navegador do celular", "QR"] },
+        figure: { title: "Computador e celular na rede da casa", desc: "Os arquivos moram no computador, que serve as pastas marcadas na rede da casa: o navegador do celular, pareado por um QR, as abre sem guardar cópia; o app Verso do celular, pareado por um código, guarda uma cópia sincronizada que abre sem internet.", labels: ["Rede da casa", "App no computador", "Navegador\ndo celular", "App no\ncelular", "QR", "código"] },
       },
       {
         map: "cloud",

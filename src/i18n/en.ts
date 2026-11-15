@@ -92,12 +92,12 @@ export const en: Copy = {
       {
         map: "home",
         title: "Computer and phone, at home",
-        who: "You want to open the computer's notes in your phone's browser, with no server to install.",
-        stepsHtml: ["Install the app and open the folder.", "<strong>Settings › Turn into a server</strong>: tick the folders, <strong>On my network</strong>.", "<strong>Pair a phone</strong>: the QR code in the camera, then <strong>Allow</strong>."],
-        offline: "The phone's browser opens the folders only at home, with the computer on and serving, and keeps no copy. Want the folder on the phone offline too? The phone app, with the next setup or a UniVerso.",
+        who: "You want the computer's notes on your phone with no server to install: in the browser, or with the app keeping a copy.",
+        stepsHtml: ["Install the app and open the folder.", "<strong>Settings › Turn into a server</strong>: tick the folders, <strong>On my network</strong>.", "<strong>Pair a phone</strong>: in the browser, the QR code in the camera; in the Verso app (from 0.9.0-beta.3), <strong>Settings › Servers › Pair with a computer at home</strong>, the address and the code. On the computer, <strong>Allow</strong>."],
+        offline: "With the app, the phone keeps a copy of the folder that opens offline and syncs when it is back on the home network with the computer serving. In the browser, the folders open only at home and stay off the phone.",
         anchor: "2-computer-and-phone-no-server",
         link: "The scenario in the wiki",
-        figure: { title: "Computer and phone on the home network", desc: "The files live only on the computer, which serves the ticked folders to the phone's browser, paired by a QR code, on the home network; the browser keeps no copy.", labels: ["Home network", "Computer app", "Phone browser", "QR"] },
+        figure: { title: "Computer and phone on the home network", desc: "The files live on the computer, which serves the ticked folders on the home network: the phone's browser, paired by a QR code, opens them with no copy; the phone's Verso app, paired by a code, keeps a synced copy that opens offline.", labels: ["Home network", "Computer app", "Phone\nbrowser", "Phone\napp", "QR", "code"] },
       },
       {
         map: "cloud",
