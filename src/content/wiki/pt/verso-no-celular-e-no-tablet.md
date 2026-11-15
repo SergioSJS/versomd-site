@@ -1,11 +1,11 @@
 ---
 title: "Verso no Celular e no Tablet"
-description: "A barra de baixo, um painel por vez, segurar como clique direito, o cartão de um link, a barra do teclado e os leitores de tela."
-order: 28
+description: "Uma barra só no alto e a folha das abas, um painel por vez, segurar como clique direito, o cartão de um link, a barra do teclado e os leitores de tela."
+order: 29
 group: tools
 slug: "verso-no-celular-e-no-tablet"
 twin: "verso-on-phone-and-tablet"
-source: "demo-vault/28 - Verso no Celular e no Tablet.md"
+source: "demo-vault/29 - Verso no Celular e no Tablet.md"
 updated: "2026-10-09"
 ---
 O Verso abre no navegador do celular e do tablet, servido pelo `verso serve` — a mesma janela do computador, que se arranja para a tela que tem. No Android há também o [app](#o-app-para-android), a mesma janela instalada. Esta nota mostra o que muda com um dedo no lugar do mouse.
@@ -16,9 +16,11 @@ O Verso abre no navegador do celular e do tablet, servido pelo `verso serve` —
 
 Numa tela com menos de 760 px de largura:
 
-- **A barra de baixo** tem seis verbos: **Arquivos** (a gaveta com a árvore), **Buscar**, **Nova nota**, **Voltar**, **Comandos** (a paleta) e **Painel** (a gaveta da direita: estrutura, links, tags, favoritos, focos, calendário — e a Mesa e a música, quando ligadas). A fita lateral e a barra de status do computador saem.
+- **Uma barra só, no alto**: o **nome da nota** com a pasta dela embaixo, o botão de **modo** (o livro na Leitura, o lápis no Editar: um toque troca entre os dois), o **⋯** do painel, o botão com o **número de abas abertas** — na ponta direita, onde o polegar alcança — e o sino das **Notificações**. O resto da tela é do texto. A fita lateral e a barra de status do computador saem.
+- **O botão de abas** (ou um toque no nome da nota) abre uma folha logo abaixo da barra: as **abas abertas** (um toque traz a aba para a frente, o **×** fecha), o **caminho** da nota (cada pasta abre a vista dela), os três modos com nome — **Leitura**, **Editar** e **Fonte** — e seis ações: **Arquivos** (a gaveta com a árvore), **Buscar**, **Nova nota**, **Voltar**, **Comandos** (a paleta) e **Painel** (a gaveta da direita: estrutura, links, tags, favoritos, focos, calendário — e a Mesa e a música, quando ligadas). Um toque fora da folha, ou o Voltar do Android, fecha.
+- **A barra de baixo** repete essas seis ações e vem ligada. Para dar a tela toda ao texto, desligue **Barra inferior sempre visível**, no fim da folha, ou use **⋯ › Ocultar a barra inferior**; o mesmo **⋯** a traz de volta, e a escolha fica guardada.
 - **A árvore é uma gaveta**: abre por **Arquivos** e fecha com um toque fora dela.
-- **Um painel por vez**: um layout dividido em [painéis lado a lado](/wiki/abas-paineis-espacos-de-trabalho-e-janelas/) mostra uma só, com um botão **1/2** na barra de abas que troca de painel. O layout fica guardado e volta inteiro numa tela mais larga.
+- **Um painel por vez**: um layout dividido em [painéis lado a lado](/wiki/abas-paineis-espacos-de-trabalho-e-janelas/) mostra uma só, com um botão **1/2** na barra do alto que troca de painel. O layout fica guardado e volta inteiro numa tela mais larga.
 - **As ferramentas de um painel estreito** cabem num botão **…**: voltar, nova nota, as abas e as **Ações da aba…**.
 - **Um aviso que importa** — um salvamento que falhou, a conexão com o servidor — aparece no alto do painel, com o sino das **Notificações** ao lado; os avisos das notificações aparecem no alto também.
 
@@ -102,7 +104,12 @@ Quem só lê a pasta guarda o que o servidor lhe entrega — sem o que está esc
 O app para Android é o mesmo Verso do computador, num APK que você instala no celular (fora da loja: o Android pede para permitir instalar apps de fora uma vez). A tela é a deste resto da nota; o que muda:
 
 - **A pasta do celular** fica **dentro do app**: na primeira vez ele cria a pasta *Verso* e oferece este tutorial. Nenhum outro app a vê, e ela é **apagada junto se o Verso for desinstalado** — **Ajustes › Sincronizar** diz isso. Para guardar uma cópia, sincronize-a com um UniVerso ou com uma nuvem (WebDAV, S3, veja [Sincronizar com uma Nuvem](/wiki/sincronizar-com-uma-nuvem/)); a senha da nuvem fica no cofre cifrado do Android. A sincronização corre **enquanto o app está aberto** e continua de onde parou quando ele abre de novo; com **Sincronizar em segundo plano** ligado (**Ajustes › Sincronizar**, desligado de saída) ela segue com o Verso fechado, sob uma notificação — se quiser, **Só no Wi-Fi** ou **Só carregando**.
-- **Um UniVerso**: em **Ajustes › Servidores**, **Conectar** abre a página do servidor no navegador do celular para você entrar; depois as pastas dele aparecem no seletor de pastas (o nome da pasta, no alto da gaveta) e abrem nesta janela. O nome do celular para o servidor é o que você deu a ele nos ajustes do Android.
+- **Um UniVerso**: em **Ajustes › Servidores**, **Conectar** abre a página do servidor no navegador do celular para você entrar; depois as pastas dele aparecem no seletor de pastas (o nome da pasta, no alto da gaveta). O nome do celular para o servidor é o que você deu a ele nos ajustes do Android.
+- **Uma pasta do servidor vira uma cópia no celular, que abre sem internet**: tocar numa pasta do servidor no seletor (ou em **Abrir aqui**, em **Ajustes › Servidores**) pergunta onde guardar a cópia e mostra antes quanto ela ocupa (*12 arquivos · 3,4 MB*):
+  - **Dentro do app** — só o Verso vê; é **apagada se o app for desinstalado** (o servidor fica com tudo).
+  - **Celular/Documents** — o Obsidian e os outros apps veem; na primeira vez o Verso pede o **Acesso a todos os arquivos** (**Permitir acesso**, ligue para o Verso e volte; depois toque em **Baixar e abrir** de novo).
+
+  **Baixar e abrir** baixa a pasta inteira, mostra *Baixando: 3 de 12 arquivos…* e depois *Pronto*. A cópia fica sincronizada com o servidor: em **modo avião** ela abre como qualquer pasta do celular, e o que você mudar sobe quando a rede voltar, com o Verso aberto nela. Escolher a mesma pasta de novo abre a cópia direto, sem perguntar. Quem só lê recebe só o que o servidor deixa ler. Para olhar a pasta sem guardar nada, **Abrir só no servidor, sem cópia** — esse jeito só funciona com internet.
 - **O celular como servidor**: **Ajustes › Transformar em servidor** funciona como no computador ([acima](#parear-o-celular-com-o-seu-computador)), só que no Wi-Fi do celular. Enquanto serve, uma **notificação** diz o que está servindo e para quantos aparelhos, e o celular fica acordado mesmo com a tela apagada: **gasta bateria e esquenta — deixe-o carregando**. Nos dados móveis só o **link pela internet** alcança o celular (**Por um link na internet**, como no computador).
 - **Uma pasta que outros apps veem**: no seletor de pastas, **Abrir outra pasta…** percorre o armazenamento do celular — o que o Obsidian, o gerenciador de arquivos e o Syncthing veem — até uma pasta, ou cria uma **Nova pasta…** ali. Na primeira vez o Verso pede o **Acesso a todos os arquivos** do Android: o Android abre a página dele, você liga para o Verso e volta. Uma pasta assim fica no celular mesmo se o Verso for desinstalado. O celular abre a pasta que mostrou por último; o seletor diz onde cada uma está (*dentro do app*, *Celular/Documents*).
 - **Compartilhar com o Verso**: em outro app, **Compartilhar** um texto, um link ou um arquivo `.md` e escolher o Verso — ou abrir um `.md` com **Abrir com › Verso**: vira uma **nota nova** no alto da pasta aberta, com o nome do arquivo ou a primeira linha do texto, e abre. O arquivo do outro app fica como estava; o Verso guarda uma cópia.
@@ -123,8 +130,8 @@ Pela **AltStore PAL** (sem computador), o Verso vem depois, e **por enquanto só
 
 O que muda em relação ao Android:
 
-- **A pasta do app** aparece no app **Arquivos**, em *No meu iPad › Verso* (ou *No meu iPhone*): outros apps abrem as notas dali, e o que eles mudam o Verso vê ao voltar para a tela. Ela é apagada junto se o Verso for desinstalado, a não ser que sincronize.
-- **Um UniVerso** e **o aparelho como servidor** funcionam como no Android, mas o iOS só deixa servir com o Verso na tela.
+- **A pasta do app** aparece no app **Arquivos**, em *No meu iPad › Verso* (ou *No meu iPhone*): outros apps abrem as notas dali, e o que eles mudam o Verso vê ao voltar para a tela. Ela é apagada junto se o Verso for desinstalado, a não ser que sincronize. O iOS abre só as pastas dos **Documentos** do Verso: o seletor de pastas não tem *Abrir outra pasta…*, que no Android percorre o armazenamento do celular.
+- **Um UniVerso** e **o aparelho como servidor** funcionam como no Android, mas o iOS só deixa servir com o Verso na tela. Uma pasta do servidor escolhida também vira uma cópia que abre sem internet, sempre nos **Documentos** do Verso: aparece no Arquivos em *No meu iPad › Verso*, ao lado da pasta *Verso*, com o nome da pasta do servidor.
 - **Não tem** no iOS: o link pela internet, o terminal, a linha de comando e os agentes, e as atualizações pelo próprio app (a AltStore as traz).
 
 ## Leitores de Tela
@@ -133,4 +140,4 @@ Com o VoiceOver (iPhone e iPad) ou o TalkBack (Android), tocar duas vezes e segu
 
 ---
 
-Anterior: [Som e Música na Mesa](/wiki/som-e-musica-na-mesa/) · Próxima: [Mesa pela Internet](/wiki/mesa-pela-internet/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso
+Anterior: [Como Você Vai Usar o Verso](/wiki/como-voce-vai-usar-o-verso/) · Próxima: [Mesa pela Internet](/wiki/mesa-pela-internet/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

@@ -22,7 +22,7 @@ Nenhum som passa pela rede: cada janela toca a **sua própria cópia** do arquiv
 
 ## A aba Música
 
-Abra o painel da direita e escolha **Música** (a notinha musical, ao lado do dado da Mesa; no celular, **Painel** na barra de baixo, e a aba abre numa folha de baixo para cima). De cima para baixo:
+Abra o painel da direita e escolha **Música** (a notinha musical, ao lado do dado da Mesa; no celular, **Painel** na barra de baixo ou na folha do botão de abas, e a aba abre numa folha de baixo para cima). De cima para baixo:
 
 1. **Tocando agora**: o nome da faixa, de qual lista ela veio (*De: Música*, *De: Trilha › Taverna*), a barra de **Posição** e o tempo.
 2. Para o mestre, os botões: **Faixa anterior**, **Pausar** / **Continuar**, **Próxima faixa**, **Parar** e **Repetir** — um clique repete **esta faixa**; o segundo, **a lista** inteira; o terceiro desliga. E o **Volume da mesa**, o de todos de uma vez.
@@ -149,4 +149,4 @@ As duas faixas
 
 As duas faixas de amostra (`assets/sons/`) são de **RandomMind**, em domínio público (CC0 1.0): `taverna.mp3` é “The Old Tower Inn” (<https://opengameart.org/content/medieval-the-old-tower-inn>) e `estrada.mp3` é “The Bard's Tale” (<https://opengameart.org/content/medieval-the-bards-tale>), as versões em loop, regravadas em mono para pesar pouco.
 
-Anterior: [Rodando uma Mesa](/wiki/rodando-uma-mesa/) · Próxima: [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso
+Anterior: [Rodando uma Mesa](/wiki/rodando-uma-mesa/) · Próxima: [Como Você Vai Usar o Verso](/wiki/como-voce-vai-usar-o-verso/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

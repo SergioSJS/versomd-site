@@ -3,15 +3,31 @@
 // server and the comparison each have a page of their own (Base's header
 // links them); the cards under "who it is for" point at them too.
 import type { Copy } from "../i18n";
+import { render } from "astro:content";
 import Figure from "./Figure.astro";
+import ScenarioMap from "./ScenarioMap.astro";
 import WaitlistForm from "./WaitlistForm.astro";
+import { wikiPages, pagePath } from "../lib/wiki";
+import "../styles/scenarios.css";
 
 interface Props {
   copy: Copy;
 }
 
 const { copy } = Astro.props;
-const { hero, who, more, motion, notYet, faq, waitlist, ids, routes } = copy;
+const { hero, who, scenarios, more, motion, notYet, faq, waitlist, ids, routes } = copy;
+
+// "How will you use Verso?" links each way to its section of one wiki
+// lesson: the lesson and every section must exist in the imported wiki, or
+// the build fails (a re-import that renamed one would break the links).
+const wikiLang = copy.lang === "pt-BR" ? "pt" : "en";
+const lesson = (await wikiPages(wikiLang)).find((p) => pagePath(wikiLang, p.data.slug) === scenarios.wiki);
+if (!lesson) throw new Error(`home (${copy.lang}): no wiki page at ${scenarios.wiki}`);
+const sections = new Set((await render(lesson)).headings.map((h) => h.slug));
+for (const a of [...scenarios.items.map((i) => i.anchor), scenarios.obsidianAnchor]) {
+  if (!sections.has(a)) throw new Error(`home (${copy.lang}): no section #${a} in ${scenarios.wiki}`);
+}
+const toSection = (anchor: string) => `${scenarios.wiki}#${encodeURIComponent(anchor)}`;
 
 // The title is two sentences; the second is set apart, as the app sets a
 // note's title apart from its body.
@@ -86,6 +102,47 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
           ))
         }
       </ul>
+    </div>
+  </section>
+
+  <!-- How will you use Verso: the ways to set it up, each with a drawing of
+       where the files live, the install order and its section of the wiki. -->
+  <section class="block scenarios" aria-labelledby={ids.scenarios}>
+    <div class="wrap">
+      <div class="sc-head">
+        <h2 id={ids.scenarios}><span class="md" aria-hidden="true">##</span>{scenarios.title}</h2>
+        <div class="sc-aside">
+          <p class="aside sc-intro">{scenarios.intro}</p>
+          <p class="sc-legend" aria-hidden="true">
+            <span class="sc-key"><svg viewBox="0 0 12 12" width="12" height="12"><circle class="sm-seal" cx="6" cy="6" r="4.5" /></svg>{scenarios.legend.files}</span>
+            <span class="sc-key"><svg viewBox="0 0 28 12" width="28" height="12"><path class="sm-sync-line" d="M1 6H27" /></svg>{scenarios.legend.sync}</span>
+          </p>
+        </div>
+      </div>
+      <ul class="sc-list">
+        {
+          scenarios.items.map((item, i) => (
+            <li class="sc">
+              <div class="sc-plate">
+                <ScenarioMap map={item.map} id={`sc-${i + 1}`} title={item.figure.title} desc={item.figure.desc} labels={item.figure.labels} />
+              </div>
+              <h3>{item.title}</h3>
+              <p class="sc-who">{item.who}</p>
+              <p class="sc-label" id={`sc-${i + 1}-steps`}>{scenarios.stepsLabel}</p>
+              <ol class="sc-steps" aria-labelledby={`sc-${i + 1}-steps`}>
+                {item.stepsHtml.map((step) => <li set:html={step} />)}
+              </ol>
+              <p class="sc-offline"><strong>{scenarios.offlineLabel}:</strong> {item.offline}</p>
+              <a class="sc-link" href={toSection(item.anchor)}>{item.link}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="sc-obsidian">
+        <span set:html={scenarios.obsidianHtml} />
+        <a href={toSection(scenarios.obsidianAnchor)}>{scenarios.obsidianLink}</a>
+      </p>
+      <p class="sc-all"><a class="sc-all-link" href={scenarios.wiki}>{scenarios.all}</a></p>
     </div>
   </section>
 

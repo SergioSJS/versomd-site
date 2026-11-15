@@ -22,7 +22,7 @@ No sound crosses the network: each window plays **its own copy** of the file, an
 
 ## The Music tab
 
-Open the right panel and choose **Music** (the music note, beside the Table's die; on a phone, **Panel** in the bottom bar, and the tab opens as a sheet from the bottom). From top to bottom:
+Open the right panel and choose **Music** (the music note, beside the Table's die; on a phone, **Panel** on the bottom bar or in the tabs button's sheet, and the tab opens as a sheet from the bottom). From top to bottom:
 
 1. **Now playing**: the track's name, the list it came from (*From: Music*, *From: Soundtrack › Tavern*), the **Position** bar and the time.
 2. For the game master, the buttons: **Previous track**, **Pause** / **Resume**, **Next track**, **Stop** and **Loop** — one click loops **this track**; the second, **the list**; the third turns it off. And the **Table volume**, everyone's at once.
@@ -149,4 +149,4 @@ The two sample tracks
 
 The two sample tracks (`assets/sons/`) are by **RandomMind**, in the public domain (CC0 1.0): `taverna.mp3` is “The Old Tower Inn” (<https://opengameart.org/content/medieval-the-old-tower-inn>) and `estrada.mp3` is “The Bard's Tale” (<https://opengameart.org/content/medieval-the-bards-tale>), their loop versions, re-encoded in mono to weigh little.
 
-Previous: [Running a Table](/en/wiki/running-a-table/) · Next: [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour
+Previous: [Running a Table](/en/wiki/running-a-table/) · Next: [How Will You Use Verso](/en/wiki/how-will-you-use-verso/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

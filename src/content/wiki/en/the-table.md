@@ -14,7 +14,7 @@ In a game nobody rolls inside a single note: the game master rolls from a monste
 
 ## Seeing the Table
 
-1. Open the right panel (**Show right panel**, or **Panel** on the phone's bottom bar) and choose the **Table** tab.
+1. Open the right panel (**Show right panel**, or, on a phone, **Panel** on the bottom bar or in the tabs button's sheet) and choose the **Table** tab.
 2. Roll any die: `dice: 1d20+5`, `dice: 2d6`, or the palette's **Roll dice…**.
 3. The line appears at the end of the list: **You**, the time, the note it came from (a link: a click opens the note), the notation, each die as a small square and the **total**.
 

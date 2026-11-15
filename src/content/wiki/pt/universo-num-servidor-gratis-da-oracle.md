@@ -1,11 +1,11 @@
 ---
 title: "UniVerso num Servidor Grátis da Oracle"
 description: "O roteiro para quem nunca montou um servidor: uma máquina grátis da Oracle, o menu do instalador, o HTTPS com um nome grátis, o primeiro admin e o celular."
-order: 33
+order: 34
 group: server
 slug: "universo-num-servidor-gratis-da-oracle"
 twin: "universo-on-a-free-oracle-server"
-source: "demo-vault/33 - UniVerso num Servidor Grátis da Oracle.md"
+source: "demo-vault/34 - UniVerso num Servidor Grátis da Oracle.md"
 updated: "2026-10-30"
 ---
 Esta nota é o roteiro para quem **nunca montou um servidor** e quer o seu UniVerso funcionando no celular, de graça, em uns 30 minutos. Você vai criar uma máquina pequena na nuvem da Oracle, entrar nela, baixar o instalador e escolher as opções num **menu**: o instalador faz o resto (o endereço seguro, a conta de admin, o aviso do que está errado). Para os caminhos mais manuais (Docker, CasaOS, o seu domínio), a nota é a [Instalar o seu UniVerso, Passo a Passo](/wiki/instalar-o-seu-universo-passo-a-passo/); o que o UniVerso faz depois de pronto está na [Verso num Servidor](/wiki/verso-num-servidor/).

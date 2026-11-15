@@ -1,11 +1,11 @@
 ---
 title: "UniVerso on a Free Oracle Server"
 description: "The route for someone who has never set up a server: a free Oracle machine, the installer's menu, HTTPS with a free name, the first admin and the phone."
-order: 33
+order: 34
 group: server
 slug: "universo-on-a-free-oracle-server"
 twin: "universo-num-servidor-gratis-da-oracle"
-source: "demo-vault-en/33 - UniVerso on a Free Oracle Server.md"
+source: "demo-vault-en/34 - UniVerso on a Free Oracle Server.md"
 updated: "2026-10-30"
 ---
 This note is the route for someone who has **never set up a server** and wants their own UniVerso working on the phone, for free, in about 30 minutes. You will make a small machine in Oracle's cloud, get into it, download the installer and pick options from a **menu**: the installer does the rest (the safe address, the admin account, saying what is wrong in plain words). For the more manual roads (Docker, CasaOS, your own domain), the note is [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/); what the UniVerso does once it is up is in [Verso on a Server](/en/wiki/verso-on-a-server/).

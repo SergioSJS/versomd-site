@@ -1,11 +1,11 @@
 ---
 title: "Help, Updates and Diagnostics"
 description: "Updates, reporting a problem and the console."
-order: 37
+order: 38
 group: tools
 slug: "help-updates-and-diagnostics"
 twin: "ajuda-atualizacoes-e-diagnostico"
-source: "demo-vault-en/37 - Help, Updates and Diagnostics.md"
+source: "demo-vault-en/38 - Help, Updates and Diagnostics.md"
 updated: "2026-10-01"
 ---
 How to keep Verso up to date, report a problem and see what happens inside.

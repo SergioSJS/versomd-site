@@ -1,11 +1,11 @@
 ---
 title: "A Table over the Internet"
 description: "Verso on your computer turns into a server: a Cloudflare link (testing mode) or your own address, invitations, sitting at the table, read links and who gets in how."
-order: 29
+order: 30
 group: server
 slug: "a-table-over-the-internet"
 twin: "mesa-pela-internet"
-source: "demo-vault-en/29 - A Table over the Internet.md"
+source: "demo-vault-en/30 - A Table over the Internet.md"
 updated: "2026-11-04"
 ---
 Do you want to play with people who are not at your home, without renting a server or knowing about networks? Verso on your computer can **turn into a server** for a few hours: you turn it on, send the players a **link**, they come in through the browser and play at the [Table](/en/wiki/the-table/), as on a UniVerso ([Verso on a Server](/en/wiki/verso-on-a-server/)). It is the same idea as running Foundry on your computer: **the computer has to stay on and awake** while the table runs.
@@ -108,7 +108,7 @@ Then tick **Use my address for the link (instead of a quick link)** with the lin
 
 - **Password or passkey:** on your **network**, people sign in with the **password**. A **passkey** only works through the internet link. A passkey made on a **quick link goes away with it**; on **your own address**, it stays.
 - **People invited:** the list shows who accepted an invitation — name, e-mail, the folders they reach and when they were last seen. Nothing is sent by e-mail, so whoever forgot their password asks you: **New password** makes a link that works **once, for 24 hours**, and is shown only then — copy it and send it yourself; the person's sessions end at once, and the old password works until they make the new one. **End sessions** disconnects their browser, apps and tokens (the password stays). **Remove** asks first and deletes the account: they lose everything they reached here, and their apps and tokens stop at once (the notes stay); you can invite them again later. Turn the server on before asking for a new password: the link needs an address.
-- **Other people's Verso apps:** someone you invited can connect their own Verso (**Settings › Servers**) and sync the folder shared with them. Use the **link's address**: on the network, their Verso does not trust your computer's certificate and does not connect. The list shows each app with its name and the person, and **End** disconnects it. **Phones never sync**: they use the browser's window.
+- **Other people's Verso apps:** someone you invited can connect their own Verso (**Settings › Servers**) and sync the folder shared with them. Use the **link's address**: on the network, their Verso does not trust your computer's certificate and does not connect. The list shows each app with its name and the person, and **End** disconnects it. On a phone, the **Verso app** (Android, iPhone, iPad) connects and syncs like the computer's, through the link's address; the phone's **browser** opens the window without keeping a copy.
 - **Tokens:** whoever has an account can make, in the browser, a personal token for a program of theirs; it reaches only that account's folders, and never opens anything of the computer's owner.
 - **Your own phone or browser, away from home:** with the link on, **Pair a phone** shows the link's QR (with the network on too, a button switches between the network's QR and the link's). On the phone, open the QR — or the link's sign-in page, **Pair this phone with a code** — and type the code. It works only **while Pair is open on the computer** (2 minutes, 3 tries in all); otherwise the link does not even try the code. In **Was it you?**, the computer says the request came **through the link** and from which address. A device paired through a **quick link** leaves with that link (when it closes, changes or the server stops); through **your own address** it stays.
 

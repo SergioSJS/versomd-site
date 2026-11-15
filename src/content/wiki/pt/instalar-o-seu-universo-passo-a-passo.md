@@ -1,11 +1,11 @@
 ---
 title: "Instalar o seu UniVerso, Passo a Passo"
 description: "Do zero a um servidor seu, para quem nunca montou um: o compose ou o script de instalação, o primeiro admin, o HTTPS (opcional, para o offline e as notificações), o backup."
-order: 31
+order: 32
 group: server
 slug: "instalar-o-seu-universo-passo-a-passo"
 twin: "installing-your-universo-step-by-step"
-source: "demo-vault/31 - Instalar o seu UniVerso, Passo a Passo.md"
+source: "demo-vault/32 - Instalar o seu UniVerso, Passo a Passo.md"
 updated: "2026-10-15"
 ---
 Esta nota leva você, sem pressa, de uma máquina vazia a um **UniVerso** funcionando: o Verso num servidor seu, aberto no navegador do computador, do celular e do tablet. O que o UniVerso faz depois de instalado está em [Verso num Servidor](/wiki/verso-num-servidor/); aqui é só o caminho até lá. Não precisa ser programador: precisa copiar e colar com atenção.
@@ -340,13 +340,13 @@ No app Verso, abra os ajustes (**Verso › Ajustes…**, ⌘, no macOS; **Ctrl+,
 
 ![servidor-aprovar-aparelho](/wiki-assets/servidor-aprovar-aparelho.png)
 
-O app passa a dizer *Conectado como* o seu nome. Um servidor novo ainda não tem pastas, e **não há nada a criar antes**: com a pasta que você quer guardar aberta no app, clique em **Sincronizar ‘sua pasta’**. O app faz a pasta no servidor, com o mesmo nome, e já sincroniza; os seus arquivos ficam como estão e nenhum é apagado. Se o servidor já tem pastas, elas aparecem na lista, cada uma com **Abrir aqui** e **Sincronizar** (para ligar a sua a uma que já existe). O código vale 10 minutos; passou, clique em **Conectar** de novo.
+O app passa a dizer *Conectado como* o seu nome. Um servidor novo ainda não tem pastas, e **não há nada a criar antes**: com a pasta que você quer guardar aberta no app, clique em **Sincronizar ‘sua pasta’**. O app faz a pasta no servidor, com o mesmo nome, e já sincroniza; os seus arquivos ficam como estão e nenhum é apagado. Se o servidor já tem pastas, elas aparecem na lista, cada uma com **Abrir aqui** (baixa uma cópia dela para este aparelho, que abre mesmo sem internet — o app pergunta onde guardar e mostra o tamanho antes) e **Sincronizar** (para ligar a sua a uma que já existe). O código vale 10 minutos; passou, clique em **Conectar** de novo.
 
 ![servidor-app-conectado](/wiki-assets/servidor-app-conectado.png)
 
 ### No celular e no tablet
 
-Não há app a instalar: abra `http://<IP da máquina>:7340` (ou o endereço `https://`, se houver) no navegador do celular e entre com o e-mail e a senha. (Com o Tailscale, o celular precisa estar com ele conectado.) Sem HTTPS, o modo offline fica desligado e a janela avisa. Como a janela se comporta numa tela pequena está em [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/).
+Pelo **app Verso** (Android, iPhone, iPad): **Ajustes › Servidores › Conectar**, e escolher uma pasta do servidor no seletor baixa uma cópia que abre também sem rede ([Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/)). Pelo **navegador**, sem instalar nada: abra `http://<IP da máquina>:7340` (ou o endereço `https://`, se houver) no navegador do celular e entre com o e-mail e a senha. (Com o Tailscale, o celular precisa estar com ele conectado.) Sem HTTPS, o modo offline fica desligado e a janela avisa. Como a janela se comporta numa tela pequena está em [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/).
 
 Para uma segunda pessoa, o admin sincroniza (ou cria) a pasta, depois um convite no console (`/admin/invitations`) e manda o link: [as contas e os convites](/wiki/verso-num-servidor/#o-primeiro-admin-e-as-contas).
 

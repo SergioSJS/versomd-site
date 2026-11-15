@@ -33,15 +33,17 @@ const LANGS = {
 // Reader-facing groups, by lesson number (the vault's lessons are one flat
 // folder, so the grouping is the site's). The numbers follow the welcome
 // note's blocks (I. Getting started … VII. Advanced, renumbered in the
-// product on 2026-11-04): I = start; II and III = organize, but for the
-// windows lesson; IV = boards; V = rpg; VI = server, but for the phone
-// lesson; the windows and phone lessons and VII = tools.
+// product on 2026-11-04, and from 28 on 2026-11-15 when "How will you use
+// Verso" opened block VI): I = start, with that lesson (the place to choose
+// how to install); II and III = organize, but for the windows lesson;
+// IV = boards; V = rpg; VI = server, but for the scenarios and phone
+// lessons; the windows and phone lessons and VII = tools.
 const GROUPS = {
-  start: [0, 1, 2, 3, 4, 5, 6],
+  start: [0, 1, 2, 3, 4, 5, 6, 28],
   organize: [7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19],
   boards: [20, 21],
-  tools: [10, 28, 35, 36, 37, 38],
-  server: [29, 30, 31, 32, 33, 34],
+  tools: [10, 29, 36, 37, 38, 39],
+  server: [30, 31, 32, 33, 34, 35],
   rpg: [22, 23, 24, 25, 26, 27],
 };
 const groupOf = (n) => Object.keys(GROUPS).find((g) => GROUPS[g].includes(n)) ?? "start";

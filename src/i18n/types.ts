@@ -33,6 +33,9 @@ export interface CompareCell {
   text: string;
 }
 
+/** The drawings of "How will you use Verso?" (ScenarioMap.astro). */
+export type ScenarioMap = "local" | "home" | "cloud" | "universo" | "table" | "team";
+
 export interface Copy {
   lang: Lang;
   htmlLang: string;
@@ -62,6 +65,36 @@ export interface Copy {
   /** The three value cards after the hero: a small mark, a title, and the
    *  "who it is for" sentence that goes with it. */
   who: { title: string; items: { kicker: string; title: string; text: string }[] };
+  /** "How will you use Verso?": the ways to set it up, each with a small
+   *  drawing of where the files live, the install order and a link to its
+   *  section of the wiki lesson (wiki: the lesson's path; anchor: the
+   *  section's heading id there, checked at build time). */
+  scenarios: {
+    title: string;
+    intro: string;
+    /** The drawings' key: the seal dot, the brass dashes. */
+    legend: { files: string; sync: string };
+    /** The words before the steps and before what works offline. */
+    stepsLabel: string;
+    offlineLabel: string;
+    items: {
+      map: ScenarioMap;
+      title: string;
+      who: string;
+      stepsHtml: string[];
+      offline: string;
+      anchor: string;
+      link: string;
+      /** The drawing's name and description for assistive technology, and
+       *  its labels, in the order ScenarioMap.astro places them. */
+      figure: { title: string; desc: string; labels: string[] };
+    }[];
+    obsidianHtml: string;
+    obsidianAnchor: string;
+    obsidianLink: string;
+    wiki: string;
+    all: string;
+  };
   /** "Read on": the other pages, one card each, on the home page. */
   more: { title: string; items: { page: "features" | "server" | "compare"; title: string; text: string; link: string }[] };
   /** What used to be "how it works": the files on the features page, the
@@ -182,6 +215,7 @@ export interface Copy {
   /** Section anchors, in the page's language. */
   ids: {
     content: string;
+    scenarios: string;
     notYet: string;
     compare: string;
     faq: string;

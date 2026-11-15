@@ -1,11 +1,11 @@
 ---
 title: "Ajuda, Atualizações e Diagnóstico"
 description: "Atualizações, relatar um problema e o console."
-order: 37
+order: 38
 group: tools
 slug: "ajuda-atualizacoes-e-diagnostico"
 twin: "help-updates-and-diagnostics"
-source: "demo-vault/37 - Ajuda, Atualizações e Diagnóstico.md"
+source: "demo-vault/38 - Ajuda, Atualizações e Diagnóstico.md"
 updated: "2026-10-01"
 ---
 Como manter o Verso em dia, contar um problema e ver o que acontece por dentro.

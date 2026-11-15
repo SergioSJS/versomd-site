@@ -1,11 +1,11 @@
 ---
 title: "Mesa pela Internet"
 description: "O Verso do seu computador vira um servidor: um link da Cloudflare (modo de teste) ou o seu próprio endereço, convites, sentar à mesa, links de leitura e quem entra como."
-order: 29
+order: 30
 group: server
 slug: "mesa-pela-internet"
 twin: "a-table-over-the-internet"
-source: "demo-vault/29 - Mesa pela Internet.md"
+source: "demo-vault/30 - Mesa pela Internet.md"
 updated: "2026-11-04"
 ---
 Você quer jogar com gente que não está na sua casa, sem alugar servidor nem entender de rede? O Verso do seu computador pode **virar um servidor** por algumas horas: você liga, manda um **link** às jogadoras, elas entram pelo navegador e jogam na [Mesa](/wiki/a-mesa/), como num UniVerso ([Verso num Servidor](/wiki/verso-num-servidor/)). É a mesma ideia de rodar o Foundry no seu computador: **o computador precisa ficar ligado e acordado** enquanto a mesa acontece.
@@ -108,7 +108,7 @@ Depois, marque **Usar meu endereço no link (em vez de um link rápido)** com o 
 
 - **Senha ou passkey:** pela sua **rede**, entra-se com a **senha**. Uma **passkey** só vale pelo link da internet. A passkey feita num **link rápido some com ele**; no **seu endereço**, ela fica.
 - **Pessoas convidadas:** a lista mostra quem aceitou um convite — nome, e-mail, as pastas que alcança e quando foi vista por último. Nada é mandado por e-mail, então quem esqueceu a senha pede a você: **Nova senha** cria um link que vale **uma vez, por 24 horas**, e só aparece naquela hora — copie e mande você mesmo; as sessões da pessoa terminam na hora, e a senha antiga vale até ela criar a nova. **Encerrar sessões** desconecta navegador, apps e tokens dela (a senha continua). **Remover** pergunta antes e apaga a conta: a pessoa perde tudo o que alcançava aqui, e os apps e tokens dela param na hora (as notas ficam); dá para convidar de novo depois. Ligue o servidor antes de pedir uma senha nova: o link precisa de um endereço.
-- **Apps Verso de outras pessoas:** quem você convidou pode conectar o próprio Verso (**Ajustes › Servidores**) e sincronizar a pasta compartilhada com ele. Use o **endereço do link**: pela rede, o Verso dela não confia no certificado do seu computador e não conecta. A lista mostra cada app com o nome e a pessoa, e **Encerrar** o desconecta. **Celulares nunca sincronizam**: usam a janela do navegador.
+- **Apps Verso de outras pessoas:** quem você convidou pode conectar o próprio Verso (**Ajustes › Servidores**) e sincronizar a pasta compartilhada com ele. Use o **endereço do link**: pela rede, o Verso dela não confia no certificado do seu computador e não conecta. A lista mostra cada app com o nome e a pessoa, e **Encerrar** o desconecta. No celular, o **app Verso** (Android, iPhone, iPad) conecta e sincroniza como o do computador, pelo endereço do link; o **navegador** do celular abre a janela, sem guardar uma cópia.
 - **Tokens:** quem tem conta pode criar, no navegador, um token pessoal para um programa dela; ele alcança só as pastas daquela conta, e nunca abre nada do dono do computador.
 - **Celular ou navegador seu, fora de casa:** com o link ligado, **Parear um celular** mostra o QR do link (com a rede também ligada, um botão troca entre o QR da rede e o do link). No celular, abra o QR — ou a página de entrada do link, **Parear este celular com um código** — e digite o código. Ele só funciona **enquanto o Parear está aberto no computador** (2 minutos, 3 tentativas ao todo); fora disso o link nem tenta o código. No **Foi você?**, o computador diz que o pedido veio **pelo link** e de qual endereço. Um aparelho pareado por um **link rápido** sai junto com aquele link (quando ele fecha, muda ou o servidor para); pelo **seu endereço** ele fica.
 

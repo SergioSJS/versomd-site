@@ -1,11 +1,11 @@
 ---
 title: "Compatibility with Obsidian"
 description: "For anyone coming from Obsidian or using both: the same folder, nothing rewritten on open, what works the same, what Verso adds, what does not exist and how to try it."
-order: 38
+order: 39
 group: tools
 slug: "compatibility-with-obsidian"
 twin: "compatibilidade-com-o-obsidian"
-source: "demo-vault-en/38 - Compatibility with Obsidian.md"
+source: "demo-vault-en/39 - Compatibility with Obsidian.md"
 updated: "2026-10-31"
 ---
 If you already keep notes in **Obsidian**, you do not need to move anything to try Verso. Verso opens **the same folder**, reads the same files, and its file format *extends* Obsidian's: it never gives an existing construct a different meaning. This note says what that means in practice: what works the same, what Verso adds, what is different or not there, and how to use both on one folder without surprises.
