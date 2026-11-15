@@ -22,7 +22,7 @@ Nenhum som passa pela rede: cada janela toca a **sua própria cópia** do arquiv
 
 ## A aba Música
 
-Abra o painel da direita e escolha **Música** (a notinha musical, ao lado do dado da Mesa; no celular, **Painel** na barra de baixo ou na folha do botão de abas, e a aba abre numa folha de baixo para cima). De cima para baixo:
+Abra o painel da direita e escolha **Música** (a notinha musical, ao lado do dado da Mesa; no celular, **Painel** na barra de baixo ou na folha do botão de abas, e a aba abre numa folha que entra pela direita). De cima para baixo:
 
 1. **Tocando agora**: o nome da faixa, de qual lista ela veio (*De: Música*, *De: Trilha › Taverna*), a barra de **Posição** e o tempo.
 2. Para o mestre, os botões: **Faixa anterior**, **Pausar** / **Continuar**, **Próxima faixa**, **Parar** e **Repetir** — um clique repete **esta faixa**; o segundo, **a lista** inteira; o terceiro desliga. E o **Volume da mesa**, o de todos de uma vez.

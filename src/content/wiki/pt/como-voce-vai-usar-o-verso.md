@@ -21,7 +21,7 @@ O Verso é um app (no computador, no Android e no iPad ou iPhone) que abre uma p
 | Você quer… | Veja |
 |---|---|
 | Escrever só no seu computador, ou abrir um cofre do Obsidian | [1. Só no meu computador](#1-só-no-meu-computador) |
-| Ver as notas do computador no celular, em casa, sem instalar servidor | [2. Computador e celular, sem servidor](#2-computador-e-celular-sem-servidor) |
+| As notas do computador no celular, sem instalar servidor — no navegador, em casa, ou no app, com uma cópia que vai junto | [2. Computador e celular, sem servidor](#2-computador-e-celular-sem-servidor) |
 | As mesmas notas em vários aparelhos, sem servidor | [3. Sincronizar sem servidor](#3-sincronizar-sem-servidor) |
 | Tudo em todos os aparelhos, com cópia sem internet, e o navegador de qualquer lugar | [4. O seu UniVerso](#4-o-seu-universo) |
 | Jogar RPG com amigos pela internet | [5. Jogar RPG com amigos](#5-jogar-rpg-com-amigos) |
@@ -55,27 +55,36 @@ Mais: [Arquivos e Pastas](/wiki/arquivos-e-pastas/), [Compatibilidade com o Obsi
 
 ## 2. Computador e celular, sem servidor
 
-**Para quem:** quer ler e escrever as notas do computador no celular ou no tablet, **em casa**, sem montar servidor nenhum.
+**Para quem:** quer as notas do computador no celular ou no tablet, sem montar servidor nenhum. O próprio app do computador vira um servidor para a rede da sua casa, e há **dois jeitos** de chegar a ele pelo celular:
 
-O próprio app do computador vira um servidor para a rede da sua casa: o celular abre as pastas que você marcar no navegador dele.
+- **O navegador do celular** — nada para instalar no celular. Ele abre as pastas marcadas **enquanto você está em casa e o computador está servindo**; **não guarda cópia**.
+- **O app Verso** no celular (Android, iPad ou iPhone) — **pareado** com o computador uma vez. Ele guarda **a própria cópia** das pastas que você escolher, que abre **sem internet, em qualquer lugar**, e **sincroniza de volta** sempre que o celular está em casa com o computador servindo.
 
 ```mermaid
 flowchart TB
-  accTitle: Computador e celular na mesma rede
-  accDescr: O app do computador serve as pastas marcadas pela rede da casa; o navegador do celular, pareado por um QR, abre essas pastas enquanto o computador está ligado.
+  accTitle: Computador e celular na mesma rede, dois jeitos
+  accDescr: O app do computador serve as pastas marcadas pela rede da casa. O navegador do celular, pareado por um QR, só as abre enquanto o computador serve, sem cópia. O app Verso do celular, pareado por um código, guarda a própria cópia, que abre sem internet e sincroniza nos dois sentidos com o computador quando os dois se encontram em casa.
   subgraph casa["A rede da sua casa"]
-    pc["App Verso no computador<br/>com a pasta"] -->|"só as pastas marcadas"| cel["Navegador do celular<br/>pareado por QR"]
+    pc["App Verso no computador<br/>com a pasta"]
+    nav["Navegador do celular<br/>pareado por QR"]
+    app["App Verso no celular<br/>pareado por código"]
+    copia[("A própria cópia<br/>abre sem internet")]
+    pc -->|"só enquanto serve, sem cópia"| nav
+    pc <-->|"sincroniza em casa"| app
+    app --- copia
   end
 ```
 
 1. Instale o app do computador e abra a sua pasta ([cenário 1](#1-só-no-meu-computador)).
 2. **Ajustes › Transformar em servidor**: marque as pastas que o celular pode ver (nenhuma vem marcada), deixe **Na minha rede** marcada em **Onde servir** e toque em **Ligar o servidor**.
-3. **Parear um celular**: aponte a câmera do celular para o QR (ou abra o endereço e digite o código de oito letras). O navegador avisa que o certificado não é de uma autoridade conhecida: é o do seu computador; aceite **só numa rede em que você confia**.
-4. No computador, **Permitir**. O celular abre a janela do Verso com as pastas marcadas.
+3. **Parear um celular**: o computador mostra um QR, o endereço e um código de oito letras, por 2 minutos.
+   - **O navegador:** aponte a câmera do celular para o QR (ou abra o endereço e digite o código). O navegador avisa que o certificado não é de uma autoridade conhecida: é o do seu computador; aceite **só numa rede em que você confia**.
+   - **O app Verso:** no celular, **Ajustes › Servidores › Parear com um computador de casa**, digite o endereço e o código. O app não precisa de aviso nenhum: o próprio código prova que ele está falando com o seu computador.
+4. No computador, **Permitir**. O navegador abre a janela do Verso com as pastas marcadas; no app, o computador aparece em **Ajustes › Servidores** como **Computador de casa**: toque em **Abrir aqui** numa pasta e em **Baixar e abrir** — essa é a cópia.
 
-**Sem internet:** o computador, tudo. O celular **só enquanto** está na mesma rede e o app do computador está aberto e servindo: ele não guarda cópia (o certificado do app não deixa a pasta ficar disponível sem rede).
+**Sem internet:** o computador, tudo. O **navegador** do celular **só enquanto** está na mesma rede e o app do computador está servindo. O **app Verso** trabalha com a cópia em qualquer lugar — no ônibus, no avião —; o que você muda espera e sincroniza quando você volta para casa com o computador servindo, e a barra de status só diz *Longe do computador de casa: a cópia funciona sem ele*.
 
-**Quer as notas no celular mesmo fora de casa?** O app do Android (e o do iPad e do iPhone) tem a sua própria pasta, que abre sem internet; para ela ter as mesmas notas do computador, sincronize as duas: sem servidor, pelo [cenário 3](#3-sincronizar-sem-servidor); com um servidor seu, pelo [cenário 4](#4-o-seu-universo). No Android, o próprio celular também pode servir (**Ajustes › Transformar em servidor**, gastando bateria).
+No Android, o próprio celular também pode servir (**Ajustes › Transformar em servidor**, gastando bateria). Para ter as mesmas notas em aparelhos que nunca estão na mesma rede, veja o [cenário 3](#3-sincronizar-sem-servidor) ou o [cenário 4](#4-o-seu-universo).
 
 Mais: [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/#parear-o-celular-com-o-seu-computador).
 

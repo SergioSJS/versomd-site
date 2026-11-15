@@ -96,7 +96,7 @@ In the **AI Generator** tab, **Copy System Prompt for AI** copies the instructio
 
 **New generated map…** creates a note with a generator **inside it** and the seed Verso drew kept in its properties, so the same map can be made again; the site is asked about once, like any page in a note (the generator needs the internet). In the desktop app, the generator's **Export** saves the file into your folder beside the note, and a Watabou export opens the import with it.
 
-The walls are also kept in the board, for when the table has vision and fog. Nothing of Watabou's code comes with Verso: the generators run on his site.
+The walls are also kept in the board, for when the table has vision and fog. They are the game master's: on a UniVerso, players and readers of the board are not sent them, and a dungeon's **secret doors** (the dashed lines) are drawn for the game master alone — to a player, the way through looks open. Nothing of Watabou's code comes with Verso: the generators run on his site.
 
 ---
 

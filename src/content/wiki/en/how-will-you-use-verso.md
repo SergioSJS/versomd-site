@@ -21,7 +21,7 @@ Verso is an app (on the computer, on Android and on the iPad or iPhone) that ope
 | You want… | See |
 |---|---|
 | To write on your computer only, or to open an Obsidian vault | [1. Only on my computer](#1-only-on-my-computer) |
-| To see the computer's notes on your phone, at home, with no server to install | [2. Computer and phone, no server](#2-computer-and-phone-no-server) |
+| The computer's notes on your phone, with no server to install — in the browser at home, or in the app with a copy that goes with you | [2. Computer and phone, no server](#2-computer-and-phone-no-server) |
 | The same notes on several devices, with no server | [3. Sync without a server](#3-sync-without-a-server) |
 | Everything on every device, a copy that opens offline, and the browser from anywhere | [4. Your own UniVerso](#4-your-own-universo) |
 | To play an RPG with friends over the internet | [5. Playing an RPG with friends](#5-playing-an-rpg-with-friends) |
@@ -55,27 +55,36 @@ More: [Files and Folders](/en/wiki/files-and-folders/), [Compatibility with Obsi
 
 ## 2. Computer and phone, no server
 
-**Who it is for:** you want to read and write the computer's notes on your phone or tablet, **at home**, without setting up any server.
+**Who it is for:** you want the computer's notes on your phone or tablet, with no server to set up. The desktop app itself becomes a server for your home network, and there are **two ways** to reach it from the phone:
 
-The desktop app itself becomes a server for your home network: the phone opens the folders you tick in its browser.
+- **The phone's browser** — nothing to install on the phone. It opens the ticked folders **while you are home and the computer is serving**; it keeps **no copy**.
+- **The Verso app** on the phone (Android, iPad or iPhone) — **paired** with the computer once. It keeps **its own copy** of the folders you pick, which opens **offline, anywhere**, and **syncs back** whenever the phone is home with the computer serving.
 
 ```mermaid
 flowchart TB
-  accTitle: Computer and phone on the same network
-  accDescr: The desktop app serves the ticked folders on the home network; the phone's browser, paired by a QR code, opens those folders while the computer is on.
+  accTitle: Computer and phone on the same network, two ways
+  accDescr: The desktop app serves the ticked folders on the home network. The phone's browser, paired by a QR code, opens them only while the computer serves, with no copy. The Verso app on the phone, paired by a code, keeps a copy of its own that opens offline and syncs both ways with the computer when they meet at home.
   subgraph casa["Your home network"]
-    pc["Verso app on the computer<br/>with the folder"] -->|"only the ticked folders"| cel["The phone's browser<br/>paired by QR"]
+    pc["Verso app on the computer<br/>with the folder"]
+    nav["The phone's browser<br/>paired by QR"]
+    app["The Verso app on the phone<br/>paired by code"]
+    copia[("Its own copy<br/>opens offline")]
+    pc -->|"only while serving, no copy"| nav
+    pc <-->|"syncs when at home"| app
+    app --- copia
   end
 ```
 
 1. Install the desktop app and open your folder ([scenario 1](#1-only-on-my-computer)).
 2. **Settings › Turn into a server**: tick the folders the phone may see (none comes ticked), leave **On my network** ticked under **Where to serve** and tap **Turn the server on**.
-3. **Pair a phone**: point the phone's camera at the QR code (or open the address and type the eight-letter code). The browser warns that the certificate is not from a known authority: it is your computer's; accept it **only on a network you trust**.
-4. On the computer, **Allow**. The phone opens the Verso window with the ticked folders.
+3. **Pair a phone**: the computer shows a QR code, its address and an eight-letter code, for 2 minutes.
+   - **The browser:** point the phone's camera at the QR (or open the address and type the code). The browser warns that the certificate is not from a known authority: it is your computer's; accept it **only on a network you trust**.
+   - **The Verso app:** on the phone, **Settings › Servers › Pair with a computer at home**, type the address and the code. The app needs no warning to accept: the code itself proves it is talking to your computer.
+4. On the computer, **Allow**. The browser opens the Verso window with the ticked folders; in the app, the computer shows in **Settings › Servers** as **Computer at home**: tap **Open here** on a folder and **Download and open** — that is the copy.
 
-**Offline:** the computer, everything. The phone **only while** it is on the same network and the desktop app is open and serving: it keeps no copy (the app's certificate does not let the folder be available offline).
+**Offline:** the computer, everything. The phone's **browser only while** it is on the same network and the desktop app is serving. The **Verso app** works with its copy anywhere — the bus, the plane —; what you change waits and syncs when you are back home with the computer serving, and the status bar just says *Away from the computer at home: the copy works without it*.
 
-**Want the notes on the phone away from home too?** The Android app (and the iPad and iPhone app) has a folder of its own, which opens offline; for it to hold the same notes as the computer, sync the two: with no server, through [scenario 3](#3-sync-without-a-server); with a server of your own, through [scenario 4](#4-your-own-universo). On Android the phone itself can serve too (**Settings › Turn into a server**, at a cost in battery).
+On Android the phone itself can serve too (**Settings › Turn into a server**, at a cost in battery). To have the same notes on devices that are never on the same network, see [scenario 3](#3-sync-without-a-server) or [scenario 4](#4-your-own-universo).
 
 More: [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/#pair-the-phone-with-your-computer).
 

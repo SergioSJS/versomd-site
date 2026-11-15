@@ -22,7 +22,7 @@ No sound crosses the network: each window plays **its own copy** of the file, an
 
 ## The Music tab
 
-Open the right panel and choose **Music** (the music note, beside the Table's die; on a phone, **Panel** on the bottom bar or in the tabs button's sheet, and the tab opens as a sheet from the bottom). From top to bottom:
+Open the right panel and choose **Music** (the music note, beside the Table's die; on a phone, **Panel** on the bottom bar or in the tabs button's sheet, and the tab opens as a sheet that comes in from the right). From top to bottom:
 
 1. **Now playing**: the track's name, the list it came from (*From: Music*, *From: Soundtrack › Tavern*), the **Position** bar and the time.
 2. For the game master, the buttons: **Previous track**, **Pause** / **Resume**, **Next track**, **Stop** and **Loop** — one click loops **this track**; the second, **the list**; the third turns it off. And the **Table volume**, everyone's at once.

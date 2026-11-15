@@ -96,7 +96,7 @@ Na aba **Gerador com IA**, **Copiar System Prompt para IA** copia as instruçõe
 
 **Novo mapa gerado…** cria uma nota com um gerador **dentro dela** e a semente que o Verso sorteou guardada nas propriedades, para refazer o mesmo mapa; o site é perguntado uma vez, como qualquer página numa nota (o gerador precisa de internet). No app do computador, o **Export** do gerador grava o arquivo na sua pasta, ao lado da nota, e um export do Watabou abre a importação com ele.
 
-As paredes também ficam guardadas no board, para quando a mesa tiver visão e névoa. Nada do código do Watabou vem com o Verso: os geradores rodam no site dele.
+As paredes também ficam guardadas no board, para quando a mesa tiver visão e névoa. Elas são do mestre: num UniVerso, jogadores e leitores do board não as recebem, e as **portas secretas** de uma masmorra (as linhas tracejadas) são desenhadas só para o mestre — para um jogador, a passagem parece aberta. Nada do código do Watabou vem com o Verso: os geradores rodam no site dele.
 
 ---
 

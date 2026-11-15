@@ -44,13 +44,13 @@ Em **Mais ferramentas** (o `⋮` da barra) estão também **Desenho vira forma**
 - **Mover**: dois dedos no trackpad, ou a roda do mouse (com `⇧`, para os lados). Ou segure `espaço` e arraste.
 - **Aproximar**: a pinça no trackpad, `⌘` + roda, ou `⌘ +` e `⌘ −`. `⌘ 0` volta a 100%.
 - **Ver tudo**: `⇧ 1`. **Ver só a seleção**: `⇧ 2`.
-- **Ir a um grupo**: o botão **Sumário**, no alto à direita do board, lista os grupos e os cartões; um clique num grupo mostra o grupo inteiro.
+- **Ir a um grupo**: o botão **Sumário**, no alto à direita do board (no celular, em **⋯ › Board**), lista os grupos e os cartões; um clique num grupo mostra o grupo inteiro.
 
 ## Ligar uma coisa na outra
 
 Com a **Flecha**, comece em cima de um cartão e solte em cima de outro: a borda acende quando a seta gruda. Cada ponta fica mirando o ponto onde você começou e onde soltou — parando na borda do cartão — e continua mirando ali quando os cartões se movem e quando o board abre de novo. Um duplo clique na seta escreve um rótulo. Na coluna da esquerda, o botão **Tipo de seta** escolhe entre reta, curva e em cotovelo, e as **Pontas**.
 
-Para uma **seta livre**, que não prende em cartão nenhum, segure `⌘` enquanto desenha. Sem teclado (no toque), ligue **Inserir › Setas soltas**: as setas novas saem livres até você desligar. Com a Flecha na mão, a linha de dicas embaixo da barra lembra disso — e avisa quando Setas soltas está ligado.
+Para uma **seta livre**, que não prende em cartão nenhum, segure `⌘` enquanto desenha. Sem teclado (no toque), ligue **Inserir › Setas soltas** (no celular, **⋯ › Board › Setas soltas**): as setas novas saem livres até você desligar. Com a Flecha na mão, a linha de dicas embaixo da barra lembra disso — e avisa quando Setas soltas está ligado.
 
 Uma seta entre dois cartões é uma conexão do canvas, que o Obsidian também mostra. Entre duas notas, o botão **Promover a relação** grava o laço no frontmatter da nota de origem — veja [Board e Relações](/wiki/board-e-relacoes/).
 

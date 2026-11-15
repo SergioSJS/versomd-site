@@ -44,13 +44,13 @@ Under **More tools** (the `⋮` of the bar) there are also **Draw to shape** (`�
 - **Move**: two fingers on the trackpad, or the mouse wheel (with `⇧`, sideways). Or hold `space` and drag.
 - **Zoom in**: pinch on the trackpad, `⌘` + wheel, or `⌘ +` and `⌘ −`. `⌘ 0` goes back to 100%.
 - **See everything**: `⇧ 1`. **See only the selection**: `⇧ 2`.
-- **Go to a group**: the **Outline** button, at the top right of the board, lists the groups and the cards; a click on a group shows the whole group.
+- **Go to a group**: the **Outline** button, at the top right of the board (on a phone, in **⋯ › Board**), lists the groups and the cards; a click on a group shows the whole group.
 
 ## Connecting one thing to another
 
 With the **Arrow**, start on top of a card and release on top of another: the edge lights up when the arrow sticks. Each end keeps aiming at the point where you started and where you released — stopping at the card's edge — and keeps aiming there when the cards move and when the board opens again. A double click on the arrow writes a label. In the left column, the **Arrow type** button chooses between straight, curved and elbow, and the **Arrowheads**.
 
-For a **loose arrow**, which attaches to no card at all, hold `⌘` while drawing. Without a keyboard (on touch), turn on **Insert › Loose arrows**: new arrows come out loose until you turn it off. With the Arrow in hand, the hint line under the bar reminds you of this — and warns you when Loose arrows is on.
+For a **loose arrow**, which attaches to no card at all, hold `⌘` while drawing. Without a keyboard (on touch), turn on **Insert › Loose arrows** (on a phone, **⋯ › Board › Loose arrows**): new arrows come out loose until you turn it off. With the Arrow in hand, the hint line under the bar reminds you of this — and warns you when Loose arrows is on.
 
 An arrow between two cards is a canvas connection, which Obsidian shows too. Between two notes, the **Promote to relation** button writes the link into the source note's frontmatter — see [Board and Relations](/en/wiki/board-and-relations/).
 
