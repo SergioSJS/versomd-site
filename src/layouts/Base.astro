@@ -133,10 +133,19 @@ const pages: { id: Page; href: string; label: string }[] = [
         <a href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang}>{copy.switchTo.label}</a>
       </p>
       <fieldset class="theme-pick" data-theme-pick hidden>
-        <legend>{copy.theme.label}</legend>
-        <label><input type="radio" name="theme-pick" value="auto" />{copy.theme.auto}</label>
-        <label><input type="radio" name="theme-pick" value="light" />{copy.theme.light}</label>
-        <label><input type="radio" name="theme-pick" value="dark" />{copy.theme.dark}</label>
+        <legend class="sr">{copy.theme.label}</legend>
+        <label title={copy.theme.auto}>
+          <input class="sr" type="radio" name="theme-pick" value="auto" /><span class="sr">{copy.theme.auto}</span>
+          <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="ti-fill" /></svg>
+        </label>
+        <label title={copy.theme.light}>
+          <input class="sr" type="radio" name="theme-pick" value="light" /><span class="sr">{copy.theme.light}</span>
+          <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+        </label>
+        <label title={copy.theme.dark}>
+          <input class="sr" type="radio" name="theme-pick" value="dark" /><span class="sr">{copy.theme.dark}</span>
+          <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+        </label>
       </fieldset>
     </footer>
     <script>
