@@ -103,7 +103,8 @@ Dados, fichas, oráculos e a mesa de jogo, sozinho ou com outras pessoas.
 
 O Verso no celular, num servidor seu, pela internet e sincronizado com uma nuvem.
 
-- [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/) — A barra de baixo, um painel por vez, segurar como clique direito, o cartão de um link, a barra do teclado e os leitores de tela.
+- [Como Você Vai Usar o Verso](/wiki/como-voce-vai-usar-o-verso/) — Os jeitos de usar o Verso e o UniVerso, cada um com um desenho de onde moram os arquivos, o que instalar em que ordem e o que funciona sem internet: só no computador, com o celular em casa, sem servidor, com um UniVerso seu, numa mesa de RPG, em família ou equipe e junto com o Obsidian.
+- [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/) — Uma barra só no alto e a folha das abas, um painel por vez, segurar como clique direito, o cartão de um link, a barra do teclado e os leitores de tela.
 - [Mesa pela Internet](/wiki/mesa-pela-internet/) — O Verso do seu computador vira um servidor: um link da Cloudflare (modo de teste) ou o seu próprio endereço, convites, sentar à mesa, links de leitura e quem entra como.
 - [Verso num Servidor](/wiki/verso-num-servidor/) — O `verso serve`: instalar, contas por convite, dono, editores e leitores, editar junto e o app desktop conectado.
 - [Instalar o seu UniVerso, Passo a Passo](/wiki/instalar-o-seu-universo-passo-a-passo/) — Do zero a um servidor seu, para quem nunca montou um: o compose ou o script de instalação, o primeiro admin, o HTTPS (opcional, para o offline e as notificações), o backup.

@@ -1,11 +1,11 @@
 ---
 title: "Compatibilidade com o Obsidian"
 description: "Para quem vem do Obsidian ou usa os dois: a mesma pasta, nada reescrito ao abrir, o que funciona igual, o que o Verso acrescenta, o que não existe e como experimentar."
-order: 38
+order: 39
 group: tools
 slug: "compatibilidade-com-o-obsidian"
 twin: "compatibility-with-obsidian"
-source: "demo-vault/38 - Compatibilidade com o Obsidian.md"
+source: "demo-vault/39 - Compatibilidade com o Obsidian.md"
 updated: "2026-10-31"
 ---
 Se você já guarda suas notas no **Obsidian**, não precisa mover nada para experimentar o Verso. O Verso abre **a mesma pasta**, lê os mesmos arquivos, e o formato dele *estende* o do Obsidian: nunca dá a uma construção que já existe um significado diferente. Esta nota diz o que isso quer dizer na prática: o que funciona igual, o que o Verso acrescenta, o que é diferente ou não existe, e como usar os dois na mesma pasta sem susto.

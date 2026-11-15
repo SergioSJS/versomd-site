@@ -1,11 +1,11 @@
 ---
 title: "Mesa pela Internet"
 description: "O Verso do seu computador vira um servidor: um link da Cloudflare (modo de teste) ou o seu próprio endereço, convites, sentar à mesa, links de leitura e quem entra como."
-order: 29
+order: 30
 group: server
 slug: "mesa-pela-internet"
 twin: "a-table-over-the-internet"
-source: "demo-vault/29 - Mesa pela Internet.md"
+source: "demo-vault/30 - Mesa pela Internet.md"
 updated: "2026-11-04"
 ---
 Você quer jogar com gente que não está na sua casa, sem alugar servidor nem entender de rede? O Verso do seu computador pode **virar um servidor** por algumas horas: você liga, manda um **link** às jogadoras, elas entram pelo navegador e jogam na [Mesa](/wiki/a-mesa/), como num UniVerso ([Verso num Servidor](/wiki/verso-num-servidor/)). É a mesma ideia de rodar o Foundry no seu computador: **o computador precisa ficar ligado e acordado** enquanto a mesa acontece.

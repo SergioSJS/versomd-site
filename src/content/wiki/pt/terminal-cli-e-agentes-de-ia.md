@@ -1,11 +1,11 @@
 ---
 title: "Terminal, CLI e Agentes de IA"
 description: "Um terminal deste computador numa aba (ligar, abrir, as teclas e o que um programa rodado ali faz nos arquivos), o comando `verso` para buscar pelo terminal, o cofre nos agentes de IA pelo MCP e os botões que acham o Claude Code, o Gemini CLI e as outras ferramentas de IA."
-order: 35
+order: 36
 group: tools
 slug: "terminal-cli-e-agentes-de-ia"
 twin: "terminal-cli-and-ai-agents"
-source: "demo-vault/35 - Terminal, CLI e Agentes de IA.md"
+source: "demo-vault/36 - Terminal, CLI e Agentes de IA.md"
 updated: "2026-10-01"
 ---
 O Verso também trabalha fora das notas, de três jeitos:

@@ -14,7 +14,8 @@
     "releases:refresh": "node scripts/releases-refresh.mjs"
   },
   "dependencies": {
-    "astro": "5.18.2"
+    "astro": "5.18.2",
+    "beautiful-mermaid": "1.1.3"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",

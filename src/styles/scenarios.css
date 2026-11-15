@@ -1,0 +1,133 @@
+/* "How will you use Verso?" on the home page (Landing.astro, ScenarioMap.astro).
+ *
+ * Each way of using it is an open column led by a plate: a small drawing
+ * of where the files live, on the paper-2 of the site's figures. The drawings speak the window's language:
+ * ink hairlines, one seal dot where a whole copy of the files lives, brass
+ * dashes for sync. One column on a phone, two from 44rem, three from 68rem.
+ */
+
+.sc-head { display: grid; gap: 0 3rem; margin-bottom: 2.25rem; }
+.sc-head h2 { margin-bottom: 1rem; }
+@media (min-width: 68rem) {
+  .sc-head { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: end; }
+  .sc-head h2 { margin-bottom: 0; }
+}
+.sc-intro { max-width: var(--measure); margin: 0 0 0.9rem; }
+.sc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0;
+  font: 500 0.86rem/1.3 var(--ui);
+  color: var(--ink-2);
+}
+.sc-key { display: inline-flex; align-items: center; gap: 0.45rem; }
+.sc-key svg { display: block; flex: none; }
+
+.sc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.75rem 2.25rem;
+}
+@media (min-width: 44rem) { .sc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 68rem) { .sc-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.sc {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sc-plate {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.5rem 0.5rem;
+  background: var(--paper-2);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-l);
+}
+.sc h3 { margin: 0 0 0.35rem; font-size: clamp(1.25rem, 1.15rem + 0.35vw, 1.42rem); }
+.scenarios .sc-who { margin: 0 0 1rem; color: var(--ink-2); font-size: 0.97em; line-height: 1.5; }
+.scenarios .sc-label {
+  margin: 0 0 0.35rem;
+  font: 600 0.78rem/1.3 var(--ui);
+  letter-spacing: 0.02em;
+  color: var(--brass-ink);
+}
+.sc-steps {
+  margin: 0 0 0.9rem;
+  padding-left: 1.35rem;
+  font: 400 0.95rem/1.45 var(--ui);
+}
+.sc-steps li { padding-left: 0.15rem; }
+.sc-steps li + li { margin-top: 0.4rem; }
+.sc-steps li::marker { color: var(--brass-ink); font-weight: 600; }
+.sc-steps strong { font-weight: 600; }
+.sc-steps code { font-size: 0.84em; }
+.scenarios .sc-offline {
+  flex: 1;
+  margin: 0 0 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--hair);
+  font: 400 0.92rem/1.45 var(--ui);
+  color: var(--ink-2);
+}
+.sc-offline strong { color: var(--ink); }
+.sc-link,
+.sc-all-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 600 0.98rem/1.2 var(--ui);
+}
+.sc-link { align-self: flex-start; }
+
+.scenarios .sc-obsidian {
+  max-width: 52rem;
+  margin: 2.75rem 0 0;
+  padding: 1rem 1.2rem;
+  background: var(--brass-wash);
+  border-radius: var(--radius-l);
+  font-size: 0.98em;
+}
+.sc-obsidian strong { color: var(--heading-color); }
+.sc-obsidian a { white-space: nowrap; }
+.scenarios .sc-all { margin: 1rem 0 0; }
+
+/* The drawings. */
+.sm { display: block; width: 100%; height: auto; max-width: 22rem; margin-inline: auto; overflow: visible; }
+.sm-glyph {
+  fill: var(--paper);
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.sm-seal { fill: var(--seal); stroke: var(--paper-2); stroke-width: 1.5; }
+.sm-sync path,
+.sm-sync-line {
+  fill: none;
+  stroke: var(--brass);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+  stroke-linecap: round;
+}
+.sm-reach path,
+.sm-plain path {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sm-zone { fill: none; stroke: var(--control-line); stroke-width: 1; stroke-dasharray: 2 3; }
+.sm-label {
+  font: 500 11.5px/1 var(--ui);
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.sm-small { font-size: 10.5px; font-weight: 400; fill: var(--ink-2); }

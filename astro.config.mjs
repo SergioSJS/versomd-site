@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { rehypeMermaid } from "./src/lib/rehype-mermaid.mjs";
 
 // Callouts: the wiki's Markdown keeps them as a plain blockquote whose first
 // line is a bold label ("**Tip: Title**", written by scripts/wiki-import.mjs,
@@ -70,8 +71,10 @@ export default defineConfig({
   },
   // No syntax colouring: Shiki writes inline style attributes, which the
   // Content-Security-Policy (style-src 'self') refuses; code blocks are
-  // plain, styled by wiki.css.
-  markdown: { syntaxHighlight: false, rehypePlugins: [rehypeCallouts, rehypeTableScroll] },
+  // plain, styled by wiki.css. Mermaid blocks are drawn into inline SVG at
+  // build time (src/lib/rehype-mermaid.mjs), so no script and no inline
+  // style reach the page.
+  markdown: { syntaxHighlight: false, rehypePlugins: [rehypeMermaid, rehypeCallouts, rehypeTableScroll] },
   devToolbar: { enabled: false },
   // Astro inlines a small processed <script>; the policy's script-src 'self'
   // forbids inline code, so every script is emitted as a file in /_astro/.

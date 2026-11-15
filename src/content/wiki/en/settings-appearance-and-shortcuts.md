@@ -1,11 +1,11 @@
 ---
 title: "Settings, Appearance and Shortcuts"
 description: "Theme, palette, fonts, language and your own shortcuts."
-order: 36
+order: 37
 group: tools
 slug: "settings-appearance-and-shortcuts"
 twin: "ajustes-aparencia-e-atalhos"
-source: "demo-vault-en/36 - Settings, Appearance and Shortcuts.md"
+source: "demo-vault-en/37 - Settings, Appearance and Shortcuts.md"
 updated: "2026-10-01"
 ---
 `⌘,` opens **Settings** (also from the button on the left ribbon and from the menu **Verso › Settings…**). The **Search settings…** field finds an option by name.

@@ -1,11 +1,11 @@
 ---
 title: "Verso on Phone and Tablet"
-description: "The bottom bar, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers."
-order: 28
+description: "One bar at the top and the tabs sheet, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers."
+order: 29
 group: tools
 slug: "verso-on-phone-and-tablet"
 twin: "verso-no-celular-e-no-tablet"
-source: "demo-vault-en/28 - Verso on Phone and Tablet.md"
+source: "demo-vault-en/29 - Verso on Phone and Tablet.md"
 updated: "2026-10-09"
 ---
 Verso opens in the browser of your phone and tablet, served by `verso serve` — the same window as on the computer, arranging itself for the screen it has. On Android there is also the [app](#the-android-app), the same window installed. This note shows what changes with a finger instead of the mouse.
@@ -16,9 +16,11 @@ Verso opens in the browser of your phone and tablet, served by `verso serve` —
 
 On a screen less than 760 px wide:
 
-- **The bottom bar** has six verbs: **Files** (the drawer with the tree), **Search**, **New note**, **Back**, **Commands** (the palette) and **Panel** (the right drawer: outline, links, tags, bookmarks, focuses, calendar — and the Table and the music, when on). The side ribbon and the desktop status bar go away.
+- **One bar, at the top**: the **note's name** with its folder under it, the **mode** button (the book in Reading, the pencil in Edit: a tap switches between the two), the pane's **⋯**, the button with the **number of open tabs** — at the right end, where the thumb reaches — and the **Notifications** bell. The rest of the screen is the text's. The side ribbon and the desktop status bar go away.
+- **The tabs button** (or a tap on the note's name) opens a sheet just under the bar: the **open tabs** (a tap brings a tab to the front, the **×** closes it), the note's **path** (each folder opens its view), the three modes by name — **Reading**, **Edit** and **Source** — and six actions: **Files** (the drawer with the tree), **Search**, **New note**, **Back**, **Commands** (the palette) and **Panel** (the right drawer: outline, links, tags, bookmarks, focuses, calendar — and the Table and the music, when on). A tap outside the sheet, or Android's Back, closes it.
+- **The bottom bar** repeats those six actions and is on. To give the whole screen to the text, turn off **Bottom bar always shown**, at the end of the sheet, or use **⋯ › Hide the bottom bar**; the same **⋯** brings it back, and the choice is kept.
 - **The tree is a drawer**: it opens with **Files** and closes with a tap outside it.
-- **One pane at a time**: a layout split into [side-by-side panes](/en/wiki/tabs-panes-workspaces-and-windows/) shows just one, with a **1/2** button in the tab bar that switches panes. The layout is kept and comes back whole on a wider screen.
+- **One pane at a time**: a layout split into [side-by-side panes](/en/wiki/tabs-panes-workspaces-and-windows/) shows just one, with a **1/2** button in the top bar that switches panes. The layout is kept and comes back whole on a wider screen.
 - **The tools of a narrow pane** fit in a **…** button: back, new note, the tabs and the **Tab actions…**.
 - **A warning that matters** — a save that failed, the connection to the server — shows at the top of the pane, with the **Notifications** bell beside it; the notifications' warnings show at the top too.
 
@@ -102,7 +104,12 @@ Someone who only reads the folder keeps what the server hands them — without w
 The Android app is the same Verso as on the computer, in an APK you install on the phone (outside the store: Android asks once to allow installing apps from elsewhere). The screen is the one the rest of this note describes; what changes:
 
 - **The phone's folder** lives **inside the app**: the first time it makes the folder *Verso* and offers this tutorial. No other app sees it, and it is **deleted with the app if Verso is uninstalled** — **Settings › Sync** says so. To keep a copy, sync it with a UniVerso or with a cloud (WebDAV, S3, see [Syncing with a Cloud](/en/wiki/syncing-with-a-cloud/)); the cloud's password stays in Android's encrypted store. Sync runs **while the app is open** and carries on where it stopped when it opens again; with **Sync in the background** on (**Settings › Sync**, off by default) it goes on with Verso closed, under a notification — optionally **Wi-Fi only** or **Only while charging**.
-- **A UniVerso**: in **Settings › Servers**, **Connect** opens the server's page in the phone's browser for you to sign in; then its folders show in the folder switcher (the folder's name, at the top of the drawer) and open in this window. The phone's name for the server is the one you gave it in Android's settings.
+- **A UniVerso**: in **Settings › Servers**, **Connect** opens the server's page in the phone's browser for you to sign in; then its folders show in the folder switcher (the folder's name, at the top of the drawer). The phone's name for the server is the one you gave it in Android's settings.
+- **A server's folder becomes a copy on the phone, which opens offline**: tapping a server's folder in the switcher (or **Open here**, in **Settings › Servers**) asks where to keep the copy and first says how much it takes (*12 files · 3.4 MB*):
+  - **Inside the app** — only Verso sees it; it is **deleted if the app is uninstalled** (the server keeps everything).
+  - **Phone/Documents** — Obsidian and the other apps see it; the first time, Verso asks for Android's **All files access** (**Allow access**, turn it on for Verso and come back; then tap **Download and open** again).
+
+  **Download and open** downloads the whole folder, says *Downloading: 3 of 12 files…* and then *Done*. The copy stays synced with the server: in **airplane mode** it opens like any folder of the phone, and what you change goes up when the network is back, with Verso open on it. Choosing the same folder again opens the copy at once, with nothing asked. A reader gets only what the server lets them read. To look at the folder without keeping anything, **Open on the server only, no copy** — that way works only online.
 - **The phone as a server**: **Settings › Turn into a server** works as on the computer ([above](#pair-the-phone-with-your-computer)), on the phone's Wi-Fi. While serving, a **notification** says what it serves and to how many devices, and the phone stays awake even with the screen off: **it drains the battery and warms up — keep it charging**. On mobile data only the **internet link** reaches the phone (**By an internet link**, as on the computer).
 - **A folder other apps see**: in the folder switcher, **Open another folder…** walks the phone's storage — the one Obsidian, the file manager and Syncthing see — to a folder, or makes a **New folder…** there. The first time, Verso asks for Android's **All files access**: Android opens its page, you turn it on for Verso and come back. Such a folder stays on the phone even if Verso is uninstalled. The phone opens the folder it showed last; the switcher says where each one sits (*inside the app*, *Phone/Documents*).
 - **Share with Verso**: in another app, **Share** a text, a link or a `.md` file and pick Verso — or open a `.md` with **Open with › Verso**: it becomes a **new note** at the top of the open folder, named by the file's name or the text's first line, and opens. The other app's file stays as it was; Verso keeps a copy.
@@ -124,7 +131,7 @@ Through **AltStore PAL** (no computer needed) Verso comes later, and **for now i
 What differs from Android:
 
 - **The app's folder** shows in the **Files** app, under *On My iPad › Verso* (or *On My iPhone*): other apps open its notes there, and Verso sees what they change when it comes back to the screen. It is deleted with Verso unless it syncs.
-- **A UniVerso** and **the device as a server** work as on Android, but iOS lets it serve only while Verso is on the screen.
+- **A UniVerso** and **the device as a server** work as on Android, but iOS lets it serve only while Verso is on the screen. A server's folder you choose also becomes a copy that opens offline, always in Verso's **Documents**: it shows in Files under *On My iPad › Verso*, beside the *Verso* folder, with the server folder's name.
 - **Not on iOS**: the internet link, the terminal, the command line and agents, and updates from the app itself (AltStore brings them).
 
 ## Screen Readers
@@ -133,4 +140,4 @@ With VoiceOver (iPhone and iPad) or TalkBack (Android), a double tap and hold do
 
 ---
 
-Previous: [Sound and Music at the Table](/en/wiki/sound-and-music-at-the-table/) · Next: [A Table over the Internet](/en/wiki/a-table-over-the-internet/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour
+Previous: [How Will You Use Verso](/en/wiki/how-will-you-use-verso/) · Next: [A Table over the Internet](/en/wiki/a-table-over-the-internet/) · [Home Page](/en/wiki/welcome-to-verso/) · Verso Tour

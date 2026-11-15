@@ -1,11 +1,11 @@
 ---
 title: "Ajustes, Aparência e Atalhos"
 description: "Tema, paleta, fontes, idioma e os seus próprios atalhos."
-order: 36
+order: 37
 group: tools
 slug: "ajustes-aparencia-e-atalhos"
 twin: "settings-appearance-and-shortcuts"
-source: "demo-vault/36 - Ajustes, Aparência e Atalhos.md"
+source: "demo-vault/37 - Ajustes, Aparência e Atalhos.md"
 updated: "2026-10-01"
 ---
 `⌘,` abre os **Ajustes** (também no botão da faixa da esquerda e no menu **Verso › Ajustes…**). O campo **Buscar nos ajustes…** acha uma opção pelo nome.

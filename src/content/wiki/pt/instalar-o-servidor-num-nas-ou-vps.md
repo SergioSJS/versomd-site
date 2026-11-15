@@ -1,11 +1,11 @@
 ---
 title: "Instalar o servidor num NAS ou VPS"
 description: "O servidor num NAS (CasaOS, ZimaOS, outros com Docker) ou num VPS: o compose ou o instalador, o HTTPS, o endereço público, backups e os limites da lixeira."
-order: 32
+order: 33
 group: server
 slug: "instalar-o-servidor-num-nas-ou-vps"
 twin: "installing-the-server-on-a-nas-or-a-vps"
-source: "demo-vault/32 - Instalar o servidor num NAS ou VPS.md"
+source: "demo-vault/33 - Instalar o servidor num NAS ou VPS.md"
 updated: "2026-10-31"
 ---
 Um **UniVerso** é o Verso num servidor seu ([Verso num Servidor](/wiki/verso-num-servidor/)). Ele precisa de uma máquina que fique ligada: um **NAS** no armário ou um servidor pequeno alugado, um **VPS**. Esta nota ajuda a escolher o caminho para a máquina que você tem e depois o percorre com comandos de verdade. É o mapa curto; quando um passo já tem explicação completa, o link leva até ela em vez de repetir: o passo a passo longo é a [Instalar o seu UniVerso, Passo a Passo](/wiki/instalar-o-seu-universo-passo-a-passo/), e o roteiro para uma máquina grátis da Oracle, só com o menu, é a [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/).
@@ -33,8 +33,8 @@ Os dois caminhos terminam igual: `http://<endereço da máquina>:7340` abre o Un
 
 ### ZimaOS e CasaOS
 
-1. No painel, instale um **app personalizado** e cole o arquivo compose da [nota 31, seção 4](/wiki/instalar-o-seu-universo-passo-a-passo/#4-casaos-e-zimaos). Não há nada para preencher. Instale.
-2. Abra `http://<endereço do NAS>:7340` num navegador e entre pelo link de configuração que aparece no log do app (a seção 6 da nota 31 mostra as telas; o mesmo comando é `docker logs universo 2>&1 | grep setup`). O log escreve `localhost` no link: troque pelo endereço do NAS. Se a imagem responder `denied` ou `unauthorized` ao ser puxada, ela ainda não é pública: entre antes com `docker login ghcr.io` (um token *classic* do GitHub com `read:packages`), como a [nota 31](/wiki/instalar-o-seu-universo-passo-a-passo/#3-caminho-2--docker) diz.
+1. No painel, instale um **app personalizado** e cole o arquivo compose da [nota 32, seção 4](/wiki/instalar-o-seu-universo-passo-a-passo/#4-casaos-e-zimaos). Não há nada para preencher. Instale.
+2. Abra `http://<endereço do NAS>:7340` num navegador e entre pelo link de configuração que aparece no log do app (a seção 6 da nota 32 mostra as telas; o mesmo comando é `docker logs universo 2>&1 | grep setup`). O log escreve `localhost` no link: troque pelo endereço do NAS. Se a imagem responder `denied` ou `unauthorized` ao ser puxada, ela ainda não é pública: entre antes com `docker login ghcr.io` (um token *classic* do GitHub com `read:packages`), como a [nota 32](/wiki/instalar-o-seu-universo-passo-a-passo/#3-caminho-2--docker) diz.
 
 O que esse arquivo faz, em quatro linhas:
 
@@ -58,7 +58,7 @@ docker logs -f universo        # Ctrl+C para sair
 Troque os dois caminhos `source:` por pastas do seu NAS. O projeto não escreveu as telas do painel de nenhuma marca (Synology, QNAP e afins), então essa parte é a documentação do próprio painel. Duas coisas que o compose diz sobre NAS:
 
 - Se as pastas do seu NAS pertencem a um usuário que não é o 1000, o arquivo tem uma linha `user:` comentada para isso (os números saem do `id` no NAS); os diretórios precisam então já estar graváveis por esse usuário. Se o servidor não consegue gravar, o console de administração e o log dizem `UniVerso cannot write to … sudo chown -R 1000:1000 <a pasta>`: rode esse comando.
-- O anúncio que deixa o app de desktop achar o servidor sozinho não sai de um contêiner na rede padrão do Docker. Digite o endereço do servidor no app, como a nota 31 mostra na seção 6.
+- O anúncio que deixa o app de desktop achar o servidor sozinho não sai de um contêiner na rede padrão do Docker. Digite o endereço do servidor no app, como a nota 32 mostra na seção 6.
 
 **Atualizar**, por SSH na mesma pasta (a imagem é a etiqueta `beta`, a versão de teste mais nova):
 
@@ -88,7 +88,7 @@ sh universo.sh
 1. **Instalar** (`sh universo.sh install`): baixa o pacote certo para esta máquina, confere a assinatura, instala, liga o serviço e mostra o link que cria o primeiro admin. Numa máquina de 2 GB ou menos sem swap, ele oferece antes um arquivo de swap (`sh universo.sh swap`), e vale aceitar.
 2. **HTTPS** (seção 4).
 3. **O primeiro admin** (`sh universo.sh admin`): pergunta o e-mail e a senha (12 caracteres ou mais), digitada duas vezes e oculta, e não a guarda em lugar nenhum.
-4. **Abrir as portas** (`sh universo.sh firewall`) se quiser chegar de fora: abre a 80 e a 443. Uma nuvem tem um firewall próprio, fora da máquina, que se abre no console do provedor; a nota 33 mostra o da Oracle.
+4. **Abrir as portas** (`sh universo.sh firewall`) se quiser chegar de fora: abre a 80 e a 443. Uma nuvem tem um firewall próprio, fora da máquina, que se abre no console do provedor; a nota 34 mostra o da Oracle.
 
 O pacote só escuta na própria máquina até você dizer o contrário. Para HTTP simples pela rede, ponha `VERSO_LISTEN=0.0.0.0:7340` em `/etc/universo/universo.env` e reinicie (`sudo systemctl restart universo`); com HTTPS na frente, deixe o padrão, e o proxy na mesma máquina chega até ele.
 
@@ -121,7 +121,7 @@ sudo systemctl edit universo
 
 ## 4. HTTPS
 
-O HTTP simples funciona, mas qualquer pessoa na mesma rede lê a sua senha e as suas notas enquanto passam. O HTTPS também libera o que o navegador só dá a páginas seguras: modo offline, notificações do sistema e passkeys. Sem ele o Verso desliga essas coisas e avisa. A [nota 31, seção 5](/wiki/instalar-o-seu-universo-passo-a-passo/#5-https-opcional-para-liberar-offline-e-notificações) tem as escolhas em detalhe; a versão curta:
+O HTTP simples funciona, mas qualquer pessoa na mesma rede lê a sua senha e as suas notas enquanto passam. O HTTPS também libera o que o navegador só dá a páginas seguras: modo offline, notificações do sistema e passkeys. Sem ele o Verso desliga essas coisas e avisa. A [nota 32, seção 5](/wiki/instalar-o-seu-universo-passo-a-passo/#5-https-opcional-para-liberar-offline-e-notificações) tem as escolhas em detalhe; a versão curta:
 
 - **Num VPS, em um passo:** `sh universo.sh https`. Ele instala o Caddy do repositório assinado do próprio Caddy, pega o certificado e põe o endereço. O nome é um de três: **o seu domínio** (cujo registro `A` já precisa apontar para a máquina), **um nome grátis feito do endereço da máquina** (`150-230-1-2.sslip.io`, sem cadastro nenhum), ou **um nome grátis do DuckDNS** (`sh universo.sh https --duckdns NOME`; ele pede o seu token do DuckDNS, oculto, e mantém o nome apontando para a máquina se o endereço mudar). As portas 80 e 443 precisam estar abertas, aqui e na nuvem. Se falhar, diz o porquê em palavras (porta fechada, nome que não aponta para cá), e rodar de novo continua de onde parou.
 - **Só para os seus aparelhos, num NAS ou num VPS:** Tailscale. `tailscale serve --bg 7340` no servidor, com cada aparelho que vai abrir o UniVerso tendo o app do Tailscale conectado.
@@ -159,7 +159,7 @@ sh universo.sh schedule status             # veja-os; "schedule off" desliga
 
 O `backup` para o serviço por um instante. **Um backup na mesma máquina não sobrevive a perdê-la:** copie-o para fora com `scp` ou `rclone`. Para restaurar, `sh universo.sh restore <arquivo>` (com `--identity <arquivo da chave>` para um cifrado).
 
-No Docker ou num NAS, o backup é o parar, copiar e ligar da [nota 31, seção 7](/wiki/instalar-o-seu-universo-passo-a-passo/#7-backup-e-atualização), e os snapshots ou o programa de backup do próprio NAS podem copiar as duas pastas.
+No Docker ou num NAS, o backup é o parar, copiar e ligar da [nota 32, seção 7](/wiki/instalar-o-seu-universo-passo-a-passo/#7-backup-e-atualização), e os snapshots ou o programa de backup do próprio NAS podem copiar as duas pastas.
 
 **Atualizar**: faça o backup antes. Num VPS, `sh universo.sh update` (ajustes e dados ficam; `--version X` escolhe uma versão); no Docker, `docker compose pull` e `docker compose up -d`, como na seção 2. O servidor nunca se atualiza sozinho: o console de administração avisa quando existe uma versão nova.
 
@@ -198,6 +198,6 @@ sh universo.sh support                 # um relatório sem senha nem token, para
 - **O serviço não inicia:** o log nomeia a linha (uma `VERSO_PUBLIC_URL` que não começa com `http://` ou `https://`, por exemplo). Corrija e reinicie.
 - **Senha de admin perdida:** `sh universo.sh reset-admin voce@exemplo.com` num VPS; `docker exec universo universo admin reset voce@exemplo.com` no Docker. Ele imprime um link de uso único.
 
-O resto da solução de problemas está no fim da [nota 31](/wiki/instalar-o-seu-universo-passo-a-passo/#se-algo-der-errado). Com o servidor no ar, conectar o app e o celular está na seção 6 dessa nota e em [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/). Sem servidor nenhum, só com o seu computador ligado, a [Mesa pela Internet](/wiki/mesa-pela-internet/) põe uma mesa no ar por um link.
+O resto da solução de problemas está no fim da [nota 32](/wiki/instalar-o-seu-universo-passo-a-passo/#se-algo-der-errado). Com o servidor no ar, conectar o app e o celular está na seção 6 dessa nota e em [Verso no Celular e no Tablet](/wiki/verso-no-celular-e-no-tablet/). Sem servidor nenhum, só com o seu computador ligado, a [Mesa pela Internet](/wiki/mesa-pela-internet/) põe uma mesa no ar por um link.
 
 Anterior: [Instalar o seu UniVerso, Passo a Passo](/wiki/instalar-o-seu-universo-passo-a-passo/) · Próxima: [UniVerso num Servidor Grátis da Oracle](/wiki/universo-num-servidor-gratis-da-oracle/) · [Página Inicial](/wiki/bem-vindo-ao-verso/) · Tour do Verso

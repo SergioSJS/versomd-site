@@ -1,11 +1,11 @@
 ---
 title: "Verso on a Server"
 description: "`verso serve`: installing, accounts by invitation, owner, editors and readers, editing together and the connected desktop app."
-order: 30
+order: 31
 group: server
 slug: "verso-on-a-server"
 twin: "verso-num-servidor"
-source: "demo-vault-en/30 - Verso on a Server.md"
+source: "demo-vault-en/31 - Verso on a Server.md"
 updated: ""
 ---
 **UniVerso** is Verso without the window, on a machine of your own — a server at home, a NAS, any cloud. Your notes stay **ordinary folders of Markdown files** on its disk; you open them in a browser, on your computer, phone or tablet, and several people can work in the same folder.
@@ -76,7 +76,7 @@ In a note, a board or a text file that changed on disk while you were typing, th
 
 ## From the desktop app
 
-In **Settings › Servers**, pick the server under **Found on this network** (the app finds it on its own when it is on the same network) or type its address, and connect: the app **copies a code** to the clipboard and the browser opens the server's page, where you **paste the code** (or type the one the app shows) to **allow this computer** — nobody pastes a token. The page never takes the code from a link: a link someone sent you, with the code of their device, approves nothing until you paste the code from the app in front of you. After the code, the page says **who asked** — the device name, the address and the time of the request — and asks: *Was it you who asked, on this device?* **Approve this device** or **It was not me: refuse**. An address and a time that are not yours: refuse. Then pick a folder on the server, and the window shows it as if it were here.
+In **Settings › Servers**, pick the server under **Found on this network** (the app finds it on its own when it is on the same network) or type its address, and connect: the app **copies a code** to the clipboard and the browser opens the server's page, where you **paste the code** (or type the one the app shows) to **allow this computer** — nobody pastes a token. The page never takes the code from a link: a link someone sent you, with the code of their device, approves nothing until you paste the code from the app in front of you. After the code, the page says **who asked** — the device name, the address and the time of the request — and asks: *Was it you who asked, on this device?* **Approve this device** or **It was not me: refuse**. An address and a time that are not yours: refuse. Then pick a folder on the server (in the folder switcher, or **Open here** in Settings › Servers): the app asks **where to keep a copy** of it — on a computer, you choose the folder it goes in — and first says how many files and how many MB it has. **Choose where and download…** downloads the whole folder, shows its progress and opens it; it stays **synced** with the server (as in *Syncing*, below) and opens without a network. Choosing the same folder again opens the copy, with nothing asked. To work on the server directly, with no copy, there is **Open on the server only, no copy** — online only.
 
 That is also where **this device's name** lives — by default, the system's name. Give it a name of your own (two computers with the same system name stop being confused with each other): it goes into the name of conflict copies, the server's session list and each folder's latest changes.
 
@@ -86,7 +86,7 @@ That is also where **this device's name** lives — by default, the system's nam
 
 ## Syncing a folder from this computer
 
-Opening a server folder in a window is working **online**: everything goes over the network. **Syncing** is the other way: the folder lives on this computer — it opens without a network, Obsidian reads it, the backup copies it — and the server keeps the same files for your other devices, the browser and whoever shares the folder with you.
+Opening a server folder **on the server only, no copy** is working **online**: everything goes over the network. **Syncing** — what picking a server's folder already does with its copy — is the other way: the folder lives on this computer — it opens without a network, Obsidian reads it, the backup copies it — and the server keeps the same files for your other devices, the browser and whoever shares the folder with you.
 
 With the folder open, the shortest way is **Settings › Servers › Sync ‘your folder’**: one click makes the folder on the server, with the name of this one (`Name (2)` if there is already one with it — it never merges into another), and turns sync on. On a new server it is the only step, and whoever installed it (the admin) always can. In **Settings › Sync**, pick the server and **a new folder** (with the name of this one) or one you already have there. The folder's size shows before anything crosses. After that:
 

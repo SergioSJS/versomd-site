@@ -14,7 +14,7 @@ Num jogo, ninguém rola dentro de uma nota só: o mestre rola numa ficha de mons
 
 ## Ver a Mesa
 
-1. Abra o painel da direita (**Mostrar painel da direita**, ou **Painel** na barra de baixo do celular) e escolha a aba **Mesa**.
+1. Abra o painel da direita (**Mostrar painel da direita**, ou, no celular, **Painel** na barra de baixo ou na folha do botão de abas) e escolha a aba **Mesa**.
 2. Role um dado qualquer: `dice: 1d20+5`, `dice: 2d6`, ou o **Rolar dados…** da paleta.
 3. A linha aparece no fim da lista: **Você**, a hora, a nota de onde saiu (um link: um clique abre a nota), a notação, cada dado como um quadradinho e o **total**.
 

@@ -1,11 +1,11 @@
 ---
 title: "Installing Your UniVerso, Step by Step"
 description: "From zero to a server of your own, for someone who has never set one up: the compose file or the install script, the first admin, HTTPS (optional, for offline use and notifications), the backup."
-order: 31
+order: 32
 group: server
 slug: "installing-your-universo-step-by-step"
 twin: "instalar-o-seu-universo-passo-a-passo"
-source: "demo-vault-en/31 - Installing Your UniVerso, Step by Step.md"
+source: "demo-vault-en/32 - Installing Your UniVerso, Step by Step.md"
 updated: "2026-10-15"
 ---
 This note takes you, with no rush, from an empty machine to a working **UniVerso**: Verso on a server of your own, open in the browser of your computer, your phone and your tablet. What the UniVerso does once it is installed is in [Verso on a Server](/en/wiki/verso-on-a-server/); here is only the road to get there. You do not need to be a programmer: you need to copy and paste carefully.
@@ -340,7 +340,7 @@ In the Verso app, open Settings (**Verso › Settings…**, ⌘, on macOS; **Ctr
 
 ![servidor-aprovar-aparelho](/wiki-assets/servidor-aprovar-aparelho.png)
 
-The app now says *Connected as* your name. A new server has no folders yet, and **there is nothing to create beforehand**: with the folder you want to keep open in the app, click **Sync ‘your folder’**. The app makes the folder on the server, with the same name, and syncs it right away; your files stay as they are and none is deleted. If the server already has folders, they show up in the list, each with **Open here** and **Sync** (to link yours to one that already exists). The code is valid for 10 minutes; if it passed, click **Connect** again.
+The app now says *Connected as* your name. A new server has no folders yet, and **there is nothing to create beforehand**: with the folder you want to keep open in the app, click **Sync ‘your folder’**. The app makes the folder on the server, with the same name, and syncs it right away; your files stay as they are and none is deleted. If the server already has folders, they show up in the list, each with **Open here** (it downloads a copy of it to this device, which opens offline too — the app asks where to keep it and shows its size first) and **Sync** (to link yours to one that already exists). The code is valid for 10 minutes; if it passed, click **Connect** again.
 
 ![servidor-app-conectado](/wiki-assets/servidor-app-conectado.png)
 

@@ -1,11 +1,11 @@
 ---
 title: "A Table over the Internet"
 description: "Verso on your computer turns into a server: a Cloudflare link (testing mode) or your own address, invitations, sitting at the table, read links and who gets in how."
-order: 29
+order: 30
 group: server
 slug: "a-table-over-the-internet"
 twin: "mesa-pela-internet"
-source: "demo-vault-en/29 - A Table over the Internet.md"
+source: "demo-vault-en/30 - A Table over the Internet.md"
 updated: "2026-11-04"
 ---
 Do you want to play with people who are not at your home, without renting a server or knowing about networks? Verso on your computer can **turn into a server** for a few hours: you turn it on, send the players a **link**, they come in through the browser and play at the [Table](/en/wiki/the-table/), as on a UniVerso ([Verso on a Server](/en/wiki/verso-on-a-server/)). It is the same idea as running Foundry on your computer: **the computer has to stay on and awake** while the table runs.

@@ -103,7 +103,8 @@ Dice, statblocks, oracles and the game table, alone or with other people.
 
 Verso on the phone, on a server of your own, over the internet and synced with a cloud.
 
-- [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) — The bottom bar, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers.
+- [How Will You Use Verso](/en/wiki/how-will-you-use-verso/) — The ways to use Verso and UniVerso, each with a drawing of where the files live, what to install in what order and what works offline: on the computer only, with the phone at home, without a server, with your own UniVerso, at an RPG table, as a family or team and alongside Obsidian.
+- [Verso on Phone and Tablet](/en/wiki/verso-on-phone-and-tablet/) — One bar at the top and the tabs sheet, one pane at a time, holding as right-click, a link's card, the keyboard bar and screen readers.
 - [A Table over the Internet](/en/wiki/a-table-over-the-internet/) — Verso on your computer turns into a server: a Cloudflare link (testing mode) or your own address, invitations, sitting at the table, read links and who gets in how.
 - [Verso on a Server](/en/wiki/verso-on-a-server/) — `verso serve`: installing, accounts by invitation, owner, editors and readers, editing together and the connected desktop app.
 - [Installing Your UniVerso, Step by Step](/en/wiki/installing-your-universo-step-by-step/) — From zero to a server of your own, for someone who has never set one up: the compose file or the install script, the first admin, HTTPS (optional, for offline use and notifications), the backup.

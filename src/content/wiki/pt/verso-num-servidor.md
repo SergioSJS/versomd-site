@@ -1,11 +1,11 @@
 ---
 title: "Verso num Servidor"
 description: "O `verso serve`: instalar, contas por convite, dono, editores e leitores, editar junto e o app desktop conectado."
-order: 30
+order: 31
 group: server
 slug: "verso-num-servidor"
 twin: "verso-on-a-server"
-source: "demo-vault/30 - Verso num Servidor.md"
+source: "demo-vault/31 - Verso num Servidor.md"
 updated: ""
 ---
 O **UniVerso** é o Verso sem janela, numa máquina sua — um servidor em casa, um NAS, uma nuvem qualquer. As notas continuam **pastas comuns de arquivos Markdown** no disco dele; você as abre num navegador, no computador, no celular ou no tablet, e várias pessoas podem trabalhar na mesma pasta.
@@ -76,7 +76,7 @@ Numa nota, num board ou num arquivo de texto que mudou em disco enquanto você d
 
 ## Do app desktop
 
-Em **Ajustes › Servidores**, escolha o servidor em **Encontrados nesta rede** (o app o acha sozinho quando está na mesma rede) ou escreva o endereço dele, e conecte: o app **copia um código** para a área de transferência e o navegador abre a página do servidor, onde você **cola o código** (ou digita o que o app mostra) para **permitir este computador** — ninguém cola token. A página nunca pega o código de um link: um link que alguém mandou para você, com o código do aparelho dele, não aprova nada até você colar o código do app à sua frente. Depois do código, a página diz **quem pediu** — o nome do aparelho, o endereço e a hora do pedido — e pergunta: *Foi você quem pediu, neste aparelho?* **Aprovar este aparelho** ou **Não fui eu: recusar**. Um endereço e uma hora que não são os seus: recuse. Depois, escolha uma pasta do servidor, e a janela a mostra como se estivesse aqui.
+Em **Ajustes › Servidores**, escolha o servidor em **Encontrados nesta rede** (o app o acha sozinho quando está na mesma rede) ou escreva o endereço dele, e conecte: o app **copia um código** para a área de transferência e o navegador abre a página do servidor, onde você **cola o código** (ou digita o que o app mostra) para **permitir este computador** — ninguém cola token. A página nunca pega o código de um link: um link que alguém mandou para você, com o código do aparelho dele, não aprova nada até você colar o código do app à sua frente. Depois do código, a página diz **quem pediu** — o nome do aparelho, o endereço e a hora do pedido — e pergunta: *Foi você quem pediu, neste aparelho?* **Aprovar este aparelho** ou **Não fui eu: recusar**. Um endereço e uma hora que não são os seus: recuse. Depois, escolha uma pasta do servidor (no seletor de pastas, ou **Abrir aqui** em Ajustes › Servidores): o app pergunta **onde guardar uma cópia** dela — no computador, você escolhe a pasta onde ela fica — e mostra antes quantos arquivos e quantos MB ela tem. **Escolher onde e baixar…** baixa a pasta inteira, mostra o andamento e a abre; ela fica **sincronizada** com o servidor (como em *Sincronizar*, abaixo) e abre mesmo sem rede. Escolher a mesma pasta de novo abre a cópia, sem perguntar. Para trabalhar direto no servidor, sem cópia, há **Abrir só no servidor, sem cópia** — só com internet.
 
 Ali também fica o **nome deste aparelho** — por padrão, o nome do sistema. Dê um nome seu (dois computadores com o mesmo nome de sistema deixam de se confundir): ele vai no nome das cópias de conflito, na lista de sessões do servidor e nas últimas mudanças de cada pasta.
 
@@ -86,7 +86,7 @@ Ali também fica o **nome deste aparelho** — por padrão, o nome do sistema. D
 
 ## Sincronizar uma pasta deste computador
 
-Abrir uma pasta do servidor numa janela é trabalhar **online**: tudo passa pela rede. **Sincronizar** é o outro jeito: a pasta mora neste computador — abre sem rede, o Obsidian lê, o backup copia — e o servidor guarda os mesmos arquivos para os seus outros aparelhos, o navegador e quem divide a pasta com você.
+Abrir uma pasta do servidor **só no servidor, sem cópia** é trabalhar **online**: tudo passa pela rede. **Sincronizar** — o que escolher uma pasta do servidor já faz com a cópia dela — é o outro jeito: a pasta mora neste computador — abre sem rede, o Obsidian lê, o backup copia — e o servidor guarda os mesmos arquivos para os seus outros aparelhos, o navegador e quem divide a pasta com você.
 
 Com a pasta aberta, o jeito mais curto é **Ajustes › Servidores › Sincronizar ‘sua pasta’**: um clique faz a pasta no servidor, com o nome desta (`Nome (2)` se já houver uma com ele — nunca se junta a outra), e liga a sincronização. Num servidor novo é o único passo, e quem o instalou (o admin) sempre pode. Em **Ajustes › Sincronizar**, escolha o servidor e **uma pasta nova** (com o nome desta) ou uma que você já tem lá. O espaço da pasta aparece antes de qualquer coisa cruzar. Depois:
 
