@@ -73,7 +73,7 @@ export interface Copy {
     title: string;
     intro: string;
     /** The drawings' key: the seal dot, the brass dashes. */
-    legend: { files: string; sync: string };
+    legend: { files: string; sync: string; reach: string };
     /** The words before the steps and before what works offline. */
     stepsLabel: string;
     offlineLabel: string;

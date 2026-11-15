@@ -75,7 +75,7 @@ export const en: Copy = {
   scenarios: {
     title: "How will you use Verso?",
     intro: "Pick the way closest to yours: each says what to install, in what order, and what works offline. You can start with the first and change later; a folder stays a folder.",
-    legend: { files: "where the files live", sync: "syncs" },
+    legend: { files: "where the files live", sync: "syncs", reach: "opens in the browser, no copy" },
     stepsLabel: "In this order",
     offlineLabel: "Offline",
     items: [
@@ -92,12 +92,12 @@ export const en: Copy = {
       {
         map: "home",
         title: "Computer and phone, at home",
-        who: "You want the computer's notes on your phone, with no server to install.",
+        who: "You want to open the computer's notes in your phone's browser, with no server to install.",
         stepsHtml: ["Install the app and open the folder.", "<strong>Settings › Turn into a server</strong>: tick the folders, <strong>On my network</strong>.", "<strong>Pair a phone</strong>: the QR code in the camera, then <strong>Allow</strong>."],
-        offline: "The phone opens the folders while the computer serves them, on the same network.",
+        offline: "The phone's browser opens the folders only at home, with the computer on and serving, and keeps no copy. Want the folder on the phone offline too? The phone app, with the next setup or a UniVerso.",
         anchor: "2-computer-and-phone-no-server",
         link: "The scenario in the wiki",
-        figure: { title: "Computer and phone on the home network", desc: "The files live on the computer, which serves the ticked folders to the phone's browser, paired by a QR code, on the home network.", labels: ["Home network", "Computer", "Phone", "QR"] },
+        figure: { title: "Computer and phone on the home network", desc: "The files live only on the computer, which serves the ticked folders to the phone's browser, paired by a QR code, on the home network; the browser keeps no copy.", labels: ["Home network", "Computer app", "Phone browser", "QR"] },
       },
       {
         map: "cloud",
@@ -107,7 +107,7 @@ export const en: Copy = {
         offline: "Each device holds the whole folder; changes cross when the network is back.",
         anchor: "3-sync-without-a-server",
         link: "The scenario in the wiki, and Syncthing",
-        figure: { title: "Syncing with a cloud", desc: "The computer and the phone each hold the whole folder and sync it with a WebDAV or S3 cloud, which keeps another copy.", labels: ["Your cloud", "Computer", "Phone", "WebDAV · S3"] },
+        figure: { title: "Syncing with a cloud", desc: "The computer app and the phone app each hold the whole folder and sync it with a WebDAV or S3 cloud, which keeps another copy.", labels: ["Your cloud", "Computer app", "Phone app", "WebDAV · S3"] },
       },
       {
         map: "universo",
@@ -117,7 +117,7 @@ export const en: Copy = {
         offline: "The apps keep a synced copy that opens offline.",
         anchor: "4-your-own-universo",
         link: "The scenario in the wiki",
-        figure: { title: "Your own UniVerso", desc: "UniVerso holds the folders; the computer and the phone keep synced copies, and the browser opens the folders on the server.", labels: ["UniVerso", "Computer", "Phone", "Browser"] },
+        figure: { title: "Your own UniVerso", desc: "UniVerso holds the folders; the computer and phone apps keep synced copies, and any browser opens the folders on the server, with no copy.", labels: ["UniVerso", "Computer\napp", "Phone\napp", "Browser"] },
       },
       {
         map: "table",

@@ -18,7 +18,7 @@ interface Props {
 const { map, id, title, desc, labels } = Astro.props;
 const L = (i: number) => labels[i] ?? "";
 
-type Glyph = "laptop" | "phone" | "server" | "cloud" | "browser" | "person" | "folder";
+type Glyph = "laptop" | "phone" | "web" | "server" | "cloud" | "browser" | "person" | "folder";
 interface Item { g: Glyph; x: number; y: number; seal?: boolean }
 interface Text { t: string; x: number; y: number; anchor?: "start" | "middle" | "end"; small?: boolean }
 interface Link { x1: number; y1: number; x2: number; y2: number; kind: "sync" | "reach" | "plain" }
@@ -26,6 +26,8 @@ interface Link { x1: number; y1: number; x2: number; y2: number; kind: "sync" | 
 const P: Record<Glyph, string> = {
   laptop: "M-22 -18h44a2 2 0 0 1 2 2v26h-48v-26a2 2 0 0 1 2-2zM-29 10h58l-4 6h-50z",
   phone: "M-7 -19h14a4 4 0 0 1 4 4v30a4 4 0 0 1-4 4h-14a4 4 0 0 1-4-4v-30a4 4 0 0 1 4-4zM-3 13h6",
+  // A phone's browser: the phone with an address bar and a globe on its screen.
+  web: "M-7 -19h14a4 4 0 0 1 4 4v30a4 4 0 0 1-4 4h-14a4 4 0 0 1-4-4v-30a4 4 0 0 1 4-4zM-3 13h6M-11 -11h22M0 -5a6 6 0 1 1 0 12a6 6 0 1 1 0-12zM-6 1h12M0 -5a3 6 0 0 1 0 12a3 6 0 0 1 0-12z",
   server: "M-21 -13v26a21 6 0 0 0 42 0v-26M-21 -13a21 6 0 0 0 42 0a21 6 0 0 0-42 0M-21 0a21 6 0 0 0 42 0",
   cloud: "M-20 12h37a10 10 0 0 0 2-19.6a13 13 0 0 0-24.5-5a10 10 0 0 0-15 9a8 8 0 0 0 0.5 15.6z",
   browser: "M-21 -16h42a3 3 0 0 1 3 3v26a3 3 0 0 1-3 3h-42a3 3 0 0 1-3-3v-26a3 3 0 0 1 3-3zM-24 -7h48",
@@ -34,7 +36,7 @@ const P: Record<Glyph, string> = {
 };
 // Where a glyph's seal sits, from its centre.
 const SEAL: Record<Glyph, [number, number]> = {
-  laptop: [20, -18], phone: [10, -19], server: [20, -16], cloud: [16, -14], browser: [20, -16], person: [9, -14], folder: [19, -10],
+  laptop: [20, -18], phone: [10, -19], web: [10, -19], server: [20, -16], cloud: [16, -14], browser: [20, -16], person: [9, -14], folder: [19, -10],
 };
 
 let items: Item[] = [];
@@ -56,7 +58,7 @@ switch (map) {
     break;
   case "home":
     zone = { x: 6, y: 6, w: 268, h: 132, label: L(0) };
-    items = [{ g: "laptop", x: 80, y: 74, seal: true }, { g: "phone", x: 204, y: 74 }];
+    items = [{ g: "laptop", x: 80, y: 74, seal: true }, { g: "web", x: 204, y: 74 }];
     links = [{ x1: 114, y1: 74, x2: 186, y2: 74, kind: "reach" }];
     texts = [{ t: L(1), x: 80, y: 114 }, { t: L(2), x: 204, y: 114 }, { t: L(3), x: 150, y: 66, small: true }];
     break;
@@ -73,15 +75,15 @@ switch (map) {
     break;
   case "universo":
     items = [
-      { g: "server", x: 140, y: 34, seal: true }, { g: "laptop", x: 48, y: 104, seal: true },
-      { g: "phone", x: 140, y: 106, seal: true }, { g: "browser", x: 232, y: 104 },
+      { g: "server", x: 140, y: 34, seal: true }, { g: "laptop", x: 48, y: 98, seal: true },
+      { g: "phone", x: 140, y: 100, seal: true }, { g: "browser", x: 232, y: 98 },
     ];
     links = [
-      { x1: 72, y1: 84, x2: 116, y2: 50, kind: "sync" },
-      { x1: 140, y1: 84, x2: 140, y2: 56, kind: "sync" },
-      { x1: 214, y1: 84, x2: 166, y2: 50, kind: "reach" },
+      { x1: 72, y1: 78, x2: 116, y2: 50, kind: "sync" },
+      { x1: 140, y1: 78, x2: 140, y2: 56, kind: "sync" },
+      { x1: 214, y1: 78, x2: 166, y2: 50, kind: "reach" },
     ];
-    texts = [{ t: L(0), x: 170, y: 30, anchor: "start" }, { t: L(1), x: 48, y: 142 }, { t: L(2), x: 140, y: 142 }, { t: L(3), x: 232, y: 142 }];
+    texts = [{ t: L(0), x: 170, y: 30, anchor: "start" }, { t: L(1), x: 48, y: 133 }, { t: L(2), x: 140, y: 133 }, { t: L(3), x: 232, y: 133 }];
     break;
   case "table":
     items = [
@@ -144,7 +146,7 @@ const head = (l: Link) => {
   {
     texts.map((t) => (
       <text class={t.small ? "sm-label sm-small" : "sm-label"} x={t.x} y={t.y} text-anchor={t.anchor ?? "middle"}>
-        {t.t}
+        {t.t.split("\n").map((line, i) => (i ? <tspan x={t.x} dy="1.2em">{line}</tspan> : line))}
       </text>
     ))
   }

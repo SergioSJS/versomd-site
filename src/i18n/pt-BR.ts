@@ -76,7 +76,7 @@ export const ptBR: Copy = {
   scenarios: {
     title: "Como você vai usar o Verso?",
     intro: "Escolha o jeito mais perto do seu: cada um diz o que instalar, em que ordem, e o que funciona sem internet. Dá para começar pelo primeiro e mudar depois; uma pasta continua uma pasta.",
-    legend: { files: "onde moram os arquivos", sync: "sincroniza" },
+    legend: { files: "onde moram os arquivos", sync: "sincroniza", reach: "abre pelo navegador, sem cópia" },
     stepsLabel: "Em que ordem",
     offlineLabel: "Sem internet",
     items: [
@@ -93,12 +93,12 @@ export const ptBR: Copy = {
       {
         map: "home",
         title: "Computador e celular, em casa",
-        who: "Quer as notas do computador no celular, sem instalar servidor.",
+        who: "Quer abrir as notas do computador no navegador do celular, sem instalar servidor.",
         stepsHtml: ["Instale o app e abra a pasta.", "<strong>Ajustes › Transformar em servidor</strong>: marque as pastas, <strong>Na minha rede</strong>.", "<strong>Parear um celular</strong>: o QR na câmera, e <strong>Permitir</strong>."],
-        offline: "O celular abre as pastas enquanto o computador serve, na mesma rede.",
+        offline: "O navegador do celular abre as pastas só em casa, com o computador ligado servindo, e não guarda cópia. Quer a pasta no celular também sem rede? O app do celular, com o cenário seguinte ou um UniVerso.",
         anchor: "2-computador-e-celular-sem-servidor",
         link: "O cenário na wiki",
-        figure: { title: "Computador e celular na rede da casa", desc: "Os arquivos moram no computador, que serve as pastas marcadas ao navegador do celular, pareado por um QR, na rede da casa.", labels: ["Rede da casa", "Computador", "Celular", "QR"] },
+        figure: { title: "Computador e celular na rede da casa", desc: "Os arquivos moram só no computador, que serve as pastas marcadas ao navegador do celular, pareado por um QR, na rede da casa; o navegador não guarda cópia.", labels: ["Rede da casa", "App no computador", "Navegador do celular", "QR"] },
       },
       {
         map: "cloud",
@@ -108,7 +108,7 @@ export const ptBR: Copy = {
         offline: "Cada aparelho tem a pasta inteira; as mudanças cruzam quando a rede volta.",
         anchor: "3-sincronizar-sem-servidor",
         link: "O cenário na wiki, e o Syncthing",
-        figure: { title: "Sincronizar com uma nuvem", desc: "O computador e o celular têm cada um a pasta inteira e a sincronizam com uma nuvem WebDAV ou S3, que guarda outra cópia.", labels: ["Sua nuvem", "Computador", "Celular", "WebDAV · S3"] },
+        figure: { title: "Sincronizar com uma nuvem", desc: "O app do computador e o app do celular têm cada um a pasta inteira e a sincronizam com uma nuvem WebDAV ou S3, que guarda outra cópia.", labels: ["Sua nuvem", "App no computador", "App no celular", "WebDAV · S3"] },
       },
       {
         map: "universo",
@@ -118,7 +118,7 @@ export const ptBR: Copy = {
         offline: "Os apps guardam uma cópia sincronizada que abre sem internet.",
         anchor: "4-o-seu-universo",
         link: "O cenário na wiki",
-        figure: { title: "O seu UniVerso", desc: "O UniVerso guarda as pastas; o computador e o celular guardam cópias sincronizadas, e o navegador abre as pastas no servidor.", labels: ["UniVerso", "Computador", "Celular", "Navegador"] },
+        figure: { title: "O seu UniVerso", desc: "O UniVerso guarda as pastas; os apps do computador e do celular guardam cópias sincronizadas, e qualquer navegador abre as pastas no servidor, sem cópia.", labels: ["UniVerso", "App no\ncomputador", "App no\ncelular", "Navegador"] },
       },
       {
         map: "table",

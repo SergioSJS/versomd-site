@@ -114,6 +114,7 @@
   stroke-linecap: round;
 }
 .sm-reach path,
+.sm-reach-line,
 .sm-plain path {
   fill: none;
   stroke: var(--ink-3);
