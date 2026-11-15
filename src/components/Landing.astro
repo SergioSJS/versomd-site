@@ -1,4 +1,5 @@
 ---
+import SectionMark from "./SectionMark.astro";
 // The home page: the essentials, short. The features and the roadmap, the
 // server and the comparison each have a page of their own (Base's header
 // links them); the cards under "who it is for" point at them too.
@@ -90,7 +91,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
 
   <section class="block values" aria-labelledby="who">
     <div class="wrap">
-      <h2 id="who"><span class="md" aria-hidden="true">##</span>{who.title}</h2>
+      <h2 id="who"><SectionMark to="who" />{who.title}</h2>
       <ul class="cards">
         {
           who.items.map((item) => (
@@ -110,7 +111,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
   <section class="block scenarios" aria-labelledby={ids.scenarios}>
     <div class="wrap">
       <div class="sc-head">
-        <h2 id={ids.scenarios}><span class="md" aria-hidden="true">##</span>{scenarios.title}</h2>
+        <h2 id={ids.scenarios}><SectionMark to={ids.scenarios} />{scenarios.title}</h2>
         <div class="sc-aside">
           <p class="aside sc-intro">{scenarios.intro}</p>
           <p class="sc-legend" aria-hidden="true">
@@ -151,7 +152,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
        the link itself is the last line (its words say where it goes). -->
   <section class="block more" aria-labelledby="more">
     <div class="wrap">
-      <h2 id="more"><span class="md" aria-hidden="true">##</span>{more.title}</h2>
+      <h2 id="more"><SectionMark to="more" />{more.title}</h2>
       <ul class="more-cards">
         {
           more.items.map((item) => (
@@ -170,7 +171,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
 
   <section class="block motion" aria-labelledby="motion">
     <div class="wrap">
-      <h2 id="motion"><span class="md" aria-hidden="true">##</span>{motion.title}</h2>
+      <h2 id="motion"><SectionMark to="motion" />{motion.title}</h2>
       <p class="aside motion-intro">{motion.intro}</p>
       <!--
         Without JavaScript the four recordings stand one under the other and the
@@ -209,7 +210,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
 
   <section class="not-yet" aria-labelledby={ids.notYet}>
     <div class="wrap">
-      <h2 id={ids.notYet}><span class="md" aria-hidden="true">##</span>{notYet.title}</h2>
+      <h2 id={ids.notYet}><SectionMark to={ids.notYet} />{notYet.title}</h2>
       <p class="aside">{notYet.intro}</p>
       <ul>
         {
@@ -226,7 +227,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
 
   <section class="block faq" aria-labelledby={ids.faq}>
     <div class="wrap">
-      <h2 id={ids.faq}><span class="md" aria-hidden="true">##</span>{faq.title}</h2>
+      <h2 id={ids.faq}><SectionMark to={ids.faq} />{faq.title}</h2>
       <div class="qa-list">
         {
           faq.items.map((item) => (
@@ -242,7 +243,7 @@ const moved: Record<string, string> = copy.lang === "pt-BR"
 
   <section class="waitlist" aria-labelledby={ids.waitlist}>
     <div class="waitlist-inner">
-      <h2 id={ids.waitlist}><span class="md" aria-hidden="true">##</span>{waitlist.title}</h2>
+      <h2 id={ids.waitlist}><SectionMark to={ids.waitlist} />{waitlist.title}</h2>
       <p>{waitlist.intro}</p>
       <WaitlistForm copy={copy} />
     </div>

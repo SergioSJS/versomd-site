@@ -558,3 +558,22 @@
   .wn-side .wn-group > summary { min-height: 36px; }
   .toc-side a { min-height: 32px; padding-block: 0.25rem; }
 }
+
+/* A heading's "#" after its words (src/lib/rehype-section-links.mjs): faint
+   until the heading is pointed at or the link has the focus; on a touch
+   screen, where nothing is pointed at, always faint and tappable. */
+.prose .h-link {
+  margin-left: 0.35em;
+  padding: 0 0.15em;
+  font-family: var(--book);
+  font-weight: 400;
+  color: var(--brass);
+  text-decoration: none;
+  opacity: 0;
+  border-radius: 3px;
+}
+.prose :is(h2, h3):hover .h-link,
+.prose .h-link:focus-visible { opacity: 0.85; }
+.prose .h-link:hover { opacity: 1; color: var(--seal); }
+.prose .h-link:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
+@media (hover: none) { .prose .h-link { opacity: 0.55; } }

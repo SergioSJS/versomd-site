@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import { rehypeMermaid } from "./src/lib/rehype-mermaid.mjs";
+import { rehypeSectionLinks } from "./src/lib/rehype-section-links.mjs";
 
 // Callouts: the wiki's Markdown keeps them as a plain blockquote whose first
 // line is a bold label ("**Tip: Title**", written by scripts/wiki-import.mjs,
@@ -74,7 +76,7 @@ export default defineConfig({
   // plain, styled by wiki.css. Mermaid blocks are drawn into inline SVG at
   // build time (src/lib/rehype-mermaid.mjs), so no script and no inline
   // style reach the page.
-  markdown: { syntaxHighlight: false, rehypePlugins: [rehypeMermaid, rehypeCallouts, rehypeTableScroll] },
+  markdown: { syntaxHighlight: false, rehypePlugins: [rehypeMermaid, rehypeCallouts, rehypeTableScroll, rehypeHeadingIds, rehypeSectionLinks] },
   devToolbar: { enabled: false },
   // Astro inlines a small processed <script>; the policy's script-src 'self'
   // forbids inline code, so every script is emitted as a file in /_astro/.

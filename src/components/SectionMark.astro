@@ -1,0 +1,19 @@
+---
+// The Markdown mark before a heading ("##"), as a link to that heading: a
+// tap copies the section's address (the script in Base.astro) and, without
+// the script, it is a plain link to the section. Its name is said in the
+// page's language.
+import { copies } from "../i18n";
+
+interface Props {
+  /** The heading's id. */
+  to: string;
+  /** The mark: "#" for an h1, "##" for an h2. */
+  mark?: string;
+}
+
+const { to, mark = "##" } = Astro.props;
+const copy = Astro.url.pathname.startsWith("/en/") ? copies.en : copies["pt-BR"];
+---
+
+<a class="md" href={`#${to}`} aria-label={copy.sectionLink.label} title={copy.sectionLink.label} data-section-link>{mark}</a>

@@ -1253,6 +1253,8 @@ export const ptBR: Copy = {
     back: "Voltar ao início",
   },
   og: { imageAlt: "Verso: suas notas são arquivos. O servidor é seu." },
+  theme: { label: "Tema", auto: "Automático", light: "Claro", dark: "Escuro" },
+  sectionLink: { label: "Copiar o link desta seção", copied: "Link copiado" },
   footer: {
     lineHtml: "Verso · <span lang=\"en\">versomd.com</span> · MPL-2.0 · <a href=\"https://github.com/SergioSJS/versomd-site\">código deste site</a>",
     fontsHtml:

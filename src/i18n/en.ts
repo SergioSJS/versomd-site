@@ -1252,6 +1252,8 @@ export const en: Copy = {
     back: "Back to the start",
   },
   og: { imageAlt: "Verso: your notes are files. The server is yours." },
+  theme: { label: "Theme", auto: "Automatic", light: "Light", dark: "Dark" },
+  sectionLink: { label: "Copy this section's link", copied: "Link copied" },
   footer: {
     lineHtml: "Verso · versomd.com · MPL-2.0 · <a href=\"https://github.com/SergioSJS/versomd-site\">this site’s source</a>",
     fontsHtml:

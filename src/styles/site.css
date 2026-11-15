@@ -44,10 +44,15 @@ body {
   flex-direction: column;
 }
 body > main { flex: 1 0 auto; }
+/* The reader's choice (the theme switch, public/theme.js): light-dark()
+   in tokens.css follows color-scheme, so this is all a theme needs. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 @media (prefers-color-scheme: dark) {
   /* As the window: thin strokes for light text on a dark paper. */
-  body { -moz-osx-font-smoothing: grayscale; }
+  :root:not([data-theme="light"]) body { -moz-osx-font-smoothing: grayscale; }
 }
+:root[data-theme="dark"] body { -moz-osx-font-smoothing: grayscale; }
 
 ::selection { background: var(--selection); }
 
@@ -195,6 +200,28 @@ strong { font-weight: 600; }
   }
   .sections ul { justify-content: space-between; gap: 0 1rem; }
 }
+/* The theme's button: one icon for the current choice (automatic, light,
+   dark); a press steps to the next. */
+.theme-cycle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--ink-2);
+  background: none;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.theme-cycle:hover { color: var(--seal); }
+.theme-cycle .ti { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: none; }
+.theme-cycle .ti-fill { fill: currentColor; stroke: none; }
+.theme-cycle[data-choice="auto"] .ti-auto,
+.theme-cycle[data-choice="light"] .ti-light,
+.theme-cycle[data-choice="dark"] .ti-dark { display: block; }
+.theme-cycle[hidden] { display: none; }
 @media (max-width: 479px) {
   .masthead { gap: 0.5rem; }
   .mast-cta,
@@ -211,6 +238,22 @@ strong { font-weight: 600; }
   letter-spacing: 0.04em;
   margin-right: 0.45em;
   opacity: 0.85;
+}
+/* The mark is also the heading's link to itself (SectionMark.astro). */
+a.md { text-decoration: none; border-radius: 3px; }
+a.md:hover { opacity: 1; color: var(--seal); }
+a.md:focus-visible { opacity: 1; outline: 2px solid var(--seal); outline-offset: 2px; }
+/* What a copied link says, beside the mark, for a moment. */
+.link-copied {
+  display: inline-block;
+  margin: 0 0.6em;
+  padding: 0.1em 0.5em;
+  font: 500 0.8rem/1.4 var(--ui);
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: var(--paper);
+  background: var(--ink);
+  border-radius: 4px;
 }
 @media (min-width: 1320px) {
   .landing h1,
@@ -1496,6 +1539,30 @@ a.tool-name { color: var(--seal); }
 .colophon .fonts { flex-basis: 100%; order: 3; }
 .colophon a { color: var(--ink-2); display: inline-block; padding-block: 0.7rem; }
 .colophon p:not(.fonts) a { min-height: 44px; }
+/* The theme's three choices, written out, at the foot of every page. */
+.theme-pick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.25rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.theme-pick[hidden] { display: none; }
+.theme-pick legend { float: left; margin-right: 0.6rem; padding: 0; }
+.theme-pick label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0 0.6rem;
+  color: var(--ink-2);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.theme-pick label:has(input:checked) { color: var(--ink); background: var(--paper-3); font-weight: 600; }
+.theme-pick input { accent-color: var(--seal); margin: 0; }
 
 /* ── back to top ───────────────────────────────────────────────────────── */
 /* Without the script: a link at the end of the page. With it: a round

@@ -210,6 +210,10 @@ export interface Copy {
   /** The social-sharing image (Open Graph). */
   og: { imageAlt: string };
   footer: { lineHtml: string; fontsHtml: string; noTracking: string };
+  /** A heading's link to itself: its accessible name, and what is said once copied. */
+  sectionLink: { label: string; copied: string };
+  /** The site's theme: the switch's name and its three choices. */
+  theme: { label: string; auto: string; light: string; dark: string };
   figLabel: string;
   routes: { home: string; features: string; server: string; compare: string; wiki: string; download: string; thanks: string; failed: string };
   /** Section anchors, in the page's language. */

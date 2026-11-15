@@ -48,6 +48,7 @@ const pages: { id: Page; href: string; label: string }[] = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light dark" />
+    <script is:inline src="/theme.js"></script>
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbf6ee" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221d18" />
     {noindex && <meta name="robots" content="noindex" />}
@@ -73,7 +74,14 @@ const pages: { id: Page; href: string; label: string }[] = [
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
   </head>
-  <body>
+  <body
+    data-link-label={copy.sectionLink.label}
+    data-link-copied={copy.sectionLink.copied}
+    data-theme-label={copy.theme.label}
+    data-theme-auto={copy.theme.auto}
+    data-theme-light={copy.theme.light}
+    data-theme-dark={copy.theme.dark}
+  >
     <a class="skip" href={`#${skipTo ?? copy.ids.content}`}>{copy.skip}</a>
     <header class="masthead" id="top">
       <a class="wordmark" href={home} aria-label="Verso">
@@ -92,6 +100,11 @@ const pages: { id: Page; href: string; label: string }[] = [
         </ul>
       </nav>
       <a class="mast-cta" href={copy.routes.download} aria-current={current === "download" ? "page" : undefined}>{copy.nav.download}</a>
+      <button class="theme-cycle" type="button" data-theme-cycle hidden>
+        <svg class="ti ti-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16z" class="ti-fill" /></svg>
+        <svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" /></svg>
+        <svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+      </button>
       <a class="lang" href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang} aria-label={copy.switchTo.label}>
         {copy.switchTo.name}
       </a>
@@ -119,8 +132,98 @@ const pages: { id: Page; href: string; label: string }[] = [
       <p>
         <a href={altPath} hreflang={copy.switchTo.hreflang} lang={copy.switchTo.hreflang}>{copy.switchTo.label}</a>
       </p>
+      <fieldset class="theme-pick" data-theme-pick hidden>
+        <legend>{copy.theme.label}</legend>
+        <label><input type="radio" name="theme-pick" value="auto" />{copy.theme.auto}</label>
+        <label><input type="radio" name="theme-pick" value="light" />{copy.theme.light}</label>
+        <label><input type="radio" name="theme-pick" value="dark" />{copy.theme.dark}</label>
+      </fieldset>
     </footer>
     <script>
+      // The theme: automatic (the system's), light or dark — the masthead's
+      // button steps through the three, the footer's choice sets one; both
+      // say the current one and are kept in step. Kept in this browser
+      // (public/theme.js applies it before the page paints). Without the
+      // script both stay hidden and the system's theme holds.
+      type Theme = "auto" | "light" | "dark";
+      const order: Theme[] = ["auto", "light", "dark"];
+      const words = document.body.dataset;
+      const nameOf = (t: Theme) => (t === "auto" ? words.themeAuto : t === "light" ? words.themeLight : words.themeDark) ?? t;
+      const current = (): Theme => {
+        const t = document.documentElement.dataset.theme;
+        return t === "light" || t === "dark" ? t : "auto";
+      };
+      const cycle = document.querySelector<HTMLButtonElement>("[data-theme-cycle]");
+      const pick = document.querySelector<HTMLFieldSetElement>("[data-theme-pick]");
+      const paint = () => {
+        const t = current();
+        if (cycle) {
+          cycle.dataset.choice = t;
+          const label = `${words.themeLabel}: ${nameOf(t)}`;
+          cycle.setAttribute("aria-label", label);
+          cycle.title = label;
+        }
+        for (const r of pick?.querySelectorAll<HTMLInputElement>("input") ?? []) r.checked = r.value === t;
+      };
+      const set = (t: Theme) => {
+        if (t === "auto") delete document.documentElement.dataset.theme;
+        else document.documentElement.dataset.theme = t;
+        try {
+          if (t === "auto") localStorage.removeItem("versomd-theme");
+          else localStorage.setItem("versomd-theme", t);
+        } catch {
+          // Storage refused: the choice lasts for this page only.
+        }
+        paint();
+      };
+      if (cycle) {
+        cycle.hidden = false;
+        cycle.addEventListener("click", () => set(order[(order.indexOf(current()) + 1) % order.length]));
+      }
+      if (pick) {
+        pick.hidden = false;
+        pick.addEventListener("change", (e) => {
+          const v = (e.target as HTMLInputElement).value;
+          if (v === "auto" || v === "light" || v === "dark") set(v);
+        });
+      }
+      paint();
+
+      // A heading's link to itself (SectionMark.astro, the wiki's "#"): a tap
+      // copies the section's full address and says so beside the link; the
+      // address bar then shows the section, as after following the link. If
+      // the clipboard is refused, the link is simply followed.
+      const label = document.body.dataset.linkLabel ?? "";
+      const copied = document.body.dataset.linkCopied ?? "";
+      for (const a of document.querySelectorAll<HTMLAnchorElement>("a[data-section-link]")) {
+        if (!a.getAttribute("aria-label")) {
+          a.setAttribute("aria-label", label);
+          a.title = label;
+        }
+        a.addEventListener("click", (e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || !navigator.clipboard) return;
+          e.preventDefault();
+          const url = new URL(a.getAttribute("href") ?? "", location.href).href;
+          navigator.clipboard.writeText(url).then(
+            () => {
+              history.replaceState(null, "", url);
+              let note = a.parentElement?.querySelector<HTMLElement>(".link-copied");
+              if (!note) {
+                note = document.createElement("span");
+                note.className = "link-copied";
+                note.setAttribute("role", "status");
+                a.after(note);
+              }
+              note.textContent = copied;
+              window.setTimeout(() => note?.remove(), 1800);
+            },
+            () => {
+              location.hash = new URL(url).hash;
+            },
+          );
+        });
+      }
+
       // "Back to top" on a long page (on a short one there is no link, and
       // nothing to do). Without this script it is a plain link at the end of
       // the page; with it, the same link floats in the corner once the reader
