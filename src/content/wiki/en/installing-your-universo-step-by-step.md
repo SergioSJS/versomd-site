@@ -323,7 +323,7 @@ The link is `http://<machine IP>:7340/setup?token=…` (the log writes `localhos
 
 On the **First start** page, fill in **E-mail**, **Name**, **New password** (12 characters at least) and **Language**, and click **Create account**. From then on you sign in with that e-mail and that password, and the administration console (`/admin`) is yours.
 
-![servidor-primeiro-acesso](/wiki-assets/servidor-primeiro-acesso.png)
+*server-first-access*
 
 ### On the computer, with the app
 
@@ -338,11 +338,11 @@ In the Verso app, open Settings (**Verso › Settings…**, ⌘, on macOS; **Ctr
 3. Sign in with your account if the browser asks; on the **Connect an app** page, paste the code into **The app's code** and click **Continue**.
 4. Click **Approve this device**. The page says *Done. You can go back to the app.*
 
-![servidor-aprovar-aparelho](/wiki-assets/servidor-aprovar-aparelho.png)
+*server-approve-device*
 
 The app now says *Connected as* your name. A new server has no folders yet, and **there is nothing to create beforehand**: with the folder you want to keep open in the app, click **Sync ‘your folder’**. The app makes the folder on the server, with the same name, and syncs it right away; your files stay as they are and none is deleted. If the server already has folders, they show up in the list, each with **Open here** (it downloads a copy of it to this device, which opens offline too — the app asks where to keep it and shows its size first) and **Sync** (to link yours to one that already exists). The code is valid for 10 minutes; if it passed, click **Connect** again.
 
-![servidor-app-conectado](/wiki-assets/servidor-app-conectado.png)
+*server-app-connected*
 
 ### On the phone and the tablet
 
